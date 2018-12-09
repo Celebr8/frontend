@@ -1,2 +1,4 @@
 # Whichost.com front end
-This is the frontend of Whichost.com
+This is the frontend of Whichost.com v2.0
+
+This is based on (the sharetribe Flex template)[https://github.com/sharetribe/flex-template-web]. 
