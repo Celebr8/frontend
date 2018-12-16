@@ -40,6 +40,13 @@ export const mainLocationsData = [
 	}
 ]
 
+export const mainCountry = {
+		address: 'Ireland',
+		bounds: ['55.36', '-5.911', '51.427', '-10.382'],
+		origin: ['53.357', '-7.756'],
+		intl: 'Ireland'
+	}
+
 const joinAndEncode = (array) => encodeURIComponent(array.join(','))
 
 export const locationToURI = (location) => `?address=${encodeURIComponent(location.address)}&bounds=${joinAndEncode(location.bounds)}&origin=${joinAndEncode(location.origin)}`

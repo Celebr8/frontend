@@ -3,6 +3,7 @@ import { string } from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import classNames from 'classnames';
 import { NamedLink } from '../../components';
+import { mainCountry, locationToURI } from '../../locals';
 
 import css from './SectionHero.css';
 
@@ -23,8 +24,7 @@ const SectionHero = props => {
         <NamedLink
           name="SearchPage"
           to={{
-            search:
-              's?address=Finland&bounds=70.0922932%2C31.5870999%2C59.693623%2C20.456500199999937',
+            search: locationToURI(mainCountry)
           }}
           className={css.heroButton}
         >
