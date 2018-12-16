@@ -51,3 +51,4 @@ export const priceFilterConfig = {
   max: 1000,
   step: 5,
 };
+
