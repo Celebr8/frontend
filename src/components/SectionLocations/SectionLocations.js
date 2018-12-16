@@ -36,11 +36,11 @@ const mainLocationsData = [
 const joinAndEncode = (array) => encodeURIComponent(array.join(','))
 
 const locationToLink = (location) =>
-	{locationLink(
+	locationLink(
 		location.address,
 		location.img,
 		`?address=${encodeURIComponent(location.address)}&bounds=${joinAndEncode(location.bounds)}&origin=${joinAndEncode(location.origin)}`
-	)}
+	)
 
 class LocationImage extends Component {
 	render() {
@@ -73,7 +73,7 @@ const SectionLocations = props => {
 	const { rootClassName, className } = props;
 
 	const classes = classNames(rootClassName || css.root, className);
-
+	const locations = mainLocationsData.map( (location) => locationToLink(location))
 
 	return (
 		<div className={classes}>
@@ -81,26 +81,7 @@ const SectionLocations = props => {
 				<FormattedMessage id="SectionLocations.title" />
 			</div>
 			<div className={css.locations}>
-				{mainLocationsData.map( (location) => 
-					locationToLink(location)	
-				)}
-				{/*
-				{locationLink(
-					'Dublin',
-					dublinImage,
-					'?address=Dublin%2C%20Ireland&bounds=LEFT%2CTOP%2CRIGHT%2CBOTTOM&origin=X%2CY'
-				)}
-				{locationLink(
-					'Cork',
-					corkImage,
-					'?address=Cork%2C%20Ireland&bounds=67.18452510000002%2C27.32667850000007%2C66.1553745%2C24.736871199999996&origin=66.50394779999999%2C25.729390599999988'
-				)}
-				{locationLink(
-					'Galway',
-					galwayImage,
-					'?address=Galway%2C%20Ireland&bounds=66.1704578%2C29.14246849999995%2C66.1614402%2C29.110453699999994&origin=66.16594940000002%2C29.12646110000003'
-				)}
-				*/}
+				{locations}
 			</div>
 		</div>
 	);
