@@ -65,7 +65,7 @@ export class SearchPageComponent extends Component {
       },
       groupSizeFilter: {
         paramName: 'pub_groupSize',
-        config: groupSize,
+        options: groupSize,
       },
     };
   }
@@ -145,6 +145,8 @@ export class SearchPageComponent extends Component {
     });
 
     const filters = this.filters();
+
+		console.log(filters);
 
     // urlQueryParams doesn't contain page specific url params
     // like mapSearch, page or origin (origin depends on config.sortSearchByDistance)
