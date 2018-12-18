@@ -4,106 +4,138 @@
 
 export const amenities = [
 	{
-		key: "Parking"
+		key: "parking"
+		label: "Parking"
 	},
 	{
-		key: "Credit/Debit cards"
+		key: "credit-debit-cards"
+		label: "Credit/Debit cards"
 	},
 	{
-		key: "Wheelchair access"
+		key: "wheelchair-access"
+		label: "Wheelchair access"
 	},
 	{
-		key: "Sport/Movie screenings"
+		key: "sport-movie-screenings"
+		label: "Sport/Movie screenings"
 	},
 	{
-		key: "Outdoor area"
+		key: "outdoor-area"
+		label: "Outdoor area"
 	},
 	{
-		key: "Board games"
+		key: "board-games"
+		label: "Board games"
 	},
 	{
-		key: "Live music"
+		key: "live-music"
+		label: "live-music"
 	},
 	{
-		key: "Karaoke"
+		key: "karaoke"
+		label: "Karaoke"
 	},
 	{
-		key: "Seating"
+		key: "seating"
+		label: "Seating"
 	},
 	{
-		key: "Table service"
+		key: "table-service"
+		label: "Table service"
 	},
 	{
 		key: "Heating"
+		label: "Heating"
 	},
 	{
-		key: "Air Conditioner"
+		key: "air-conditioner"
+		label: "Air Conditioner"
 	},
 	{
-		key: "Cocktails"
+		key: "cocktails"
+		label: "Cocktails"
 	},
 	{
-		key: "Smoking area"
+		key: "smoking-area"
+		label: "Smoking area"
 	},
 ];
 
 export const regularyOpenOn = [
 	{
-		key: "Mondays"
+		key: "mondays"
+		label: "Mondays"
 	},
 	{
-		key: "Tuesdays"
+		key: "tuesdays"
+		label: "Tuesdays"
 	},
 	{
-		key: "Wednesdays"
+		key: "wednesdays"
+		label: "Wednesdays"
 	},
 	{
-		key: "Thursdays"
+		key: "thursdays"
+		label: "Thursdays"
 	},
 	{
-		key: "Fridays"
+		key: "fridays"
+		label: "Fridays"
 	},
 	{
-		key: "Saturdays"
+		key: "saturdays"
+		label: "Saturdays"
 	},
 	{
-		key: "Sundays"
+		key: "sundays"
+		label: "Sundays"
 	},
 ];
 
 export const groupSize = [
 	{
-		key: "1 - 10"
+		key: "1-10"
+		label: "1-10"
 	},
 	{
-		key: "11 - 20"
+		key: "11-20"
+		label: "11-20"
 	},
 	{
-		key: "21 - 30"
+		key: "21-30"
+		label: "21-30"
 	},
 	{
-		key: "31 - 40"
+		key: "31-40"
+		label: "31-40"
 	},
 	{
-		key: "41 - 50"
+		key: "41-50"
+		label: "41-50"
 	},
 	{
-		key: "51 - 60"
+		key: "51-60"
+		label: "51-60"
 	},
 	{
-		key: "61 - 70"
+		key: "61-70"
+		label: "61-70"
 	},
 	{
-		key: "71 - 80"
+		key: "71-80"
+		label: "71-80"
 	},
 	{
-		key: "81 - 90"
+		key: "81-90"
+		label: "81-90"
 	},
 	{
-		key: "91 - 100"
+		key: "91-100"
+		label: "91-100"
 	},
 	{
 		key: "More than 100"
+		label: "More than 100"
 	},
 ];
 
