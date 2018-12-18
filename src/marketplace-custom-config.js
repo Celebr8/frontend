@@ -61,7 +61,7 @@ export const amenities = [
 	},
 ];
 
-export const regularyOpenOn = [
+export const regularlyOpenOn = [
 	{
 		key: "mondays",
 		label: "Mondays"

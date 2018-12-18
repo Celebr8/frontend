@@ -207,9 +207,9 @@ export class SearchPageComponent extends Component {
             searchParamsForPagination={parse(location.search)}
             showAsModalMaxWidth={MODAL_BREAKPOINT}
             primaryFilters={{
-              amenities: filters.amenitiesFilter,
-              regularlyOpenOn: filters.regularlyOpenOnFilter,
-              groupSize: filters.groupSizeFilter,
+              amenitiesFilter: filters.amenitiesFilter,
+              regularlyOpenOnFilter: filters.regularlyOpenOnFilter,
+              groupSizeFilter: filters.groupSizeFilter,
             }}
           />
           <ModalInMobile
@@ -271,14 +271,10 @@ SearchPageComponent.propTypes = {
   searchListingsError: propTypes.error,
   searchParams: object,
   tab: oneOf(['filters', 'listings', 'map']).isRequired,
-  regularlyOpenOn: array,
-  regularlyOpenOn: array,
+
   amenities: array,
-  priceFilterConfig: shape({
-    min: number.isRequired,
-    max: number.isRequired,
-    step: number.isRequired,
-  }),
+  regularlyOpenOn: array,
+  groupSize: array,
 
   // from withRouter
   history: shape({
