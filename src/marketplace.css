@@ -35,8 +35,8 @@
     background-position: center center;
 
     @media (--viewportLarge) {
-      border-radius: 40px;
-      border: solid 36px var(--matterColorBright);
+      /* border-radius: 40px; */
+      /* border: solid 36px var(--matterColorBright); */
     }
   }
 
