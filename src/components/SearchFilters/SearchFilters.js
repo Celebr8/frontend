@@ -46,9 +46,9 @@ const SearchFiltersComponent = props => {
     listingsAreLoaded,
     resultsCount,
     searchInProgress,
-    categoryFilter,
     amenitiesFilter,
-    priceFilter,
+    groupSizeFilter,
+    regularlyOpenOnFilter,
     isSearchFiltersPanelOpen,
     toggleSearchFiltersPanel,
     searchFiltersPanelSelectedCount,
@@ -59,24 +59,28 @@ const SearchFiltersComponent = props => {
   const hasNoResult = listingsAreLoaded && resultsCount === 0;
   const classes = classNames(rootClassName || css.root, { [css.longInfo]: hasNoResult }, className);
 
-  const categoryLabel = intl.formatMessage({
-    id: 'SearchFilters.categoryLabel',
-  });
-
   const amenitiesLabel = intl.formatMessage({
     id: 'SearchFilters.amenitiesLabel',
+  });
+
+  const groupSizeLabel = intl.formatMessage({
+    id: 'SearchFilters.groupSizeLabel',
+  });
+
+  const regularlyOpenOnLabel = intl.formatMessage({
+    id: 'SearchFilters.regularlyOpenOnLabel',
   });
 
   const initialAmenities = amenitiesFilter
     ? initialValues(urlQueryParams, amenitiesFilter.paramName)
     : null;
 
-  const initialCategory = categoryFilter
-    ? initialValue(urlQueryParams, categoryFilter.paramName)
+  const initialGroupSize = groupSizeFilter
+    ? initialValue(urlQueryParams, groupSizeFilter.paramName)
     : null;
 
-  const initialPriceRange = priceFilter
-    ? initialPriceRangeValue(urlQueryParams, priceFilter.paramName)
+  const initialRegularlyOpenOn = regularlyOpenOnFilter
+    ? initialValue(urlQueryParams, regularlyOpenOnFilter.paramName)
     : null;
 
   const handleSelectOptions = (urlParam, options) => {
@@ -108,16 +112,6 @@ const SearchFiltersComponent = props => {
     history.push(createResourceLocatorString('SearchPage', routeConfiguration(), {}, queryParams));
   };
 
-  const categoryFilterElement = categoryFilter ? (
-    <SelectSingleFilter
-      urlParam={categoryFilter.paramName}
-      label={categoryLabel}
-      onSelect={handleSelectOption}
-      options={categoryFilter.options}
-      initialValue={initialCategory}
-      contentPlacementOffset={FILTER_DROPDOWN_OFFSET}
-    />
-  ) : null;
 
   const amenitiesFilterElement = amenitiesFilter ? (
     <SelectMultipleFilter
@@ -132,14 +126,24 @@ const SearchFiltersComponent = props => {
     />
   ) : null;
 
-  const priceFilterElement = priceFilter ? (
-    <PriceFilter
-      id="SearchFilters.priceFilter"
-      urlParam={priceFilter.paramName}
-      onSubmit={handlePrice}
-      showAsPopup
-      {...priceFilter.config}
-      initialValues={initialPriceRange}
+  const regularlyOpenOnFilterElement = regularlyOpenOnFilter? (
+    <SelectSingleFilter
+      urlParam={regularlyOpenOnFilter.paramName}
+      label={regularlyOpenOnLabel}
+      onSelect={handleSelectOption}
+      options={regularlyOpenOnFilter.options}
+      initialValue={initialRegularlyOpenOn}
+      contentPlacementOffset={FILTER_DROPDOWN_OFFSET}
+    />
+  ) : null;
+
+  const groupSizeFilterElement = groupSizeFilter? (
+    <SelectSingleFilter
+      urlParam={groupSizeFilter.paramName}
+      label={groupSizeLabel}
+      onSelect={handleSelectOption}
+      options={groupSizeFilter.options}
+      initialValue={initialGroupSize}
       contentPlacementOffset={FILTER_DROPDOWN_OFFSET}
     />
   ) : null;
@@ -164,9 +168,9 @@ const SearchFiltersComponent = props => {
   return (
     <div className={classes}>
       <div className={css.filters}>
-        {categoryFilterElement}
         {amenitiesFilterElement}
-        {priceFilterElement}
+        {groupSizeFilterElement}
+        {regularlyOpenOnFilterElement}
         {toggleSearchFiltersPanelButton}
       </div>
 

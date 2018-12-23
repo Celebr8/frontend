@@ -426,16 +426,8 @@ const filterWithOptions = shape({
     })
   ).isRequired,
 });
-const filterWithPriceConfig = shape({
-  paramName: string.isRequired,
-  config: shape({
-    min: number.isRequired,
-    max: number.isRequired,
-    step: number.isRequired,
-  }).isRequired,
-});
 
-propTypes.filterConfig = oneOfType([filterWithOptions, filterWithPriceConfig]);
+propTypes.filterConfig = oneOfType([filterWithOptions]);
 
 export const ERROR_CODE_TRANSACTION_LISTING_NOT_FOUND = 'transaction-listing-not-found';
 export const ERROR_CODE_TRANSACTION_INVALID_TRANSITION = 'transaction-invalid-transition';

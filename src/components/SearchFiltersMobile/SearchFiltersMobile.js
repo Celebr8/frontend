@@ -148,9 +148,9 @@ class SearchFiltersMobileComponent extends Component {
       onMapIconClick,
       onManageDisableScrolling,
       selectedFiltersCount,
-      categoryFilter,
-      amenitiesFilter,
-      priceFilter,
+			amenitiesFilter,
+			groupSizeFilter,
+			regularlyOpenOnFilter,
       intl,
     } = this.props;
 
@@ -180,21 +180,7 @@ class SearchFiltersMobileComponent extends Component {
         </SecondaryButton>
       );
 
-    const categoryLabel = intl.formatMessage({
-      id: 'SearchFiltersMobile.categoryLabel',
-    });
-    const initialCategory = categoryFilter ? this.initialValue(categoryFilter.paramName) : null;
-
-    const categoryFilterElement = categoryFilter ? (
-      <SelectSingleFilterPlain
-        urlParam={categoryFilter.paramName}
-        label={categoryLabel}
-        onSelect={this.handleSelectSingle}
-        options={categoryFilter.options}
-        initialValue={initialCategory}
-        intl={intl}
-      />
-    ) : null;
+		// Amenities
 
     const amenitiesLabel = intl.formatMessage({ id: 'SearchFiltersMobile.amenitiesLabel' });
 
@@ -212,16 +198,41 @@ class SearchFiltersMobileComponent extends Component {
       />
     ) : null;
 
-    const initialPriceRange = this.initialPriceRangeValue(priceFilter.paramName);
+		// Group size
 
-    const priceFilterElement = priceFilter ? (
-      <PriceFilter
-        id="SearchFiltersMobile.priceFilter"
-        urlParam={priceFilter.paramName}
-        onSubmit={this.handlePrice}
-        liveEdit
-        {...priceFilter.config}
-        initialValues={initialPriceRange}
+		const groupSizeLabel = intl.formatMessage({
+			id: 'SearchFilters.groupSizeLabel',
+		});
+
+    const initialGroupSize = groupSizeFilter ? this.initialValue(groupSizeFilter.paramName) : null;
+
+    const groupSizeFilterElement = groupSizeFilter ? (
+      <SelectSingleFilterPlain
+        urlParam={groupSizeFilter.paramName}
+        label={groupSizeLabel}
+        onSelect={this.handleSelectSingle}
+        options={groupSizeFilter.options}
+        initialValue={initialGroupSize}
+        intl={intl}
+      />
+    ) : null;
+
+		// Reguraly open on
+
+		const regularlyOpenOnLabel = intl.formatMessage({
+			id: 'SearchFilters.regularlyOpenOnLabel',
+		});
+
+    const initialReguralyOpenOn = regularlyOpenOnFilter ? this.initialValue(regularlyOpenOnFilter.paramName) : null;
+
+    const regularlyOpenOnFilterElement = regularlyOpenOnFilter ? (
+      <SelectSingleFilterPlain
+        urlParam={regularlyOpenOnFilter.paramName}
+        label={regularlyOpenOnLabel}
+        onSelect={this.handleSelectSingle}
+        options={regularlyOpenOnFilter.options}
+        initialValue={initialReguralyOpenOn}
+        intl={intl}
       />
     ) : null;
 
@@ -254,9 +265,9 @@ class SearchFiltersMobileComponent extends Component {
             </button>
           </div>
           <div className={css.filtersWrapper}>
-            {categoryFilterElement}
             {amenitiesFilterElement}
-            {priceFilterElement}
+            {regularlyOpenOnFilterElement}
+            {groupSizeFilterElement}
           </div>
           <div className={css.showListingsContainer}>
             <Button className={css.showListingsButton} onClick={this.closeFilters}>
