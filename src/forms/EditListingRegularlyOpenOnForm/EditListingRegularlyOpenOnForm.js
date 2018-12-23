@@ -4,6 +4,7 @@ import { compose } from 'redux';
 import { Form as FinalForm } from 'react-final-form';
 import { intlShape, injectIntl, FormattedMessage } from 'react-intl';
 import classNames from 'classnames';
+import config from '../../config';
 import { propTypes } from '../../util/types';
 import { Form, Button, FieldCheckboxGroup } from '../../components';
 
@@ -18,6 +19,7 @@ export const EditListingRegularlyOpenOnFormComponent = props => (
         disabled,
         handleSubmit,
         intl,
+				name,
         invalid,
         pristine,
         saveActionMsg,
