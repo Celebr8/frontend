@@ -52,20 +52,20 @@ export class SearchPageComponent extends Component {
   }
 
   filters() {
-    const { categories, amenities, priceFilterConfig } = this.props;
+    const { amenities, regularlyOpenOn, groupSize } = this.props;
 
     return {
-      categoryFilter: {
-        paramName: 'pub_category',
-        options: categories,
-      },
       amenitiesFilter: {
         paramName: 'pub_amenities',
         options: amenities,
       },
-      priceFilter: {
-        paramName: 'price',
-        config: priceFilterConfig,
+      regularlyOpenOnFilter: {
+        paramName: 'pub_regularlyOpenOn',
+        options: regularlyOpenOn,
+      },
+      groupSizeFilter: {
+        paramName: 'pub_groupSize',
+        options: groupSize,
       },
     };
   }
@@ -146,6 +146,8 @@ export class SearchPageComponent extends Component {
 
     const filters = this.filters();
 
+		console.log(filters);
+
     // urlQueryParams doesn't contain page specific url params
     // like mapSearch, page or origin (origin depends on config.sortSearchByDistance)
     const urlQueryParams = pickSearchParamsOnly(searchInURL, filters);
@@ -207,9 +209,9 @@ export class SearchPageComponent extends Component {
             searchParamsForPagination={parse(location.search)}
             showAsModalMaxWidth={MODAL_BREAKPOINT}
             primaryFilters={{
-              categoryFilter: filters.categoryFilter,
               amenitiesFilter: filters.amenitiesFilter,
-              priceFilter: filters.priceFilter,
+              regularlyOpenOnFilter: filters.regularlyOpenOnFilter,
+              groupSizeFilter: filters.groupSizeFilter,
             }}
           />
           <ModalInMobile
@@ -253,9 +255,9 @@ SearchPageComponent.defaultProps = {
   searchListingsError: null,
   searchParams: {},
   tab: 'listings',
-  categories: config.custom.categories,
+  groupSize: config.custom.groupSize,
   amenities: config.custom.amenities,
-  priceFilterConfig: config.custom.priceFilterConfig,
+  regularlyOpenOn: config.custom.regularlyOpenOn,
   activeListingId: null,
 };
 
@@ -271,13 +273,10 @@ SearchPageComponent.propTypes = {
   searchListingsError: propTypes.error,
   searchParams: object,
   tab: oneOf(['filters', 'listings', 'map']).isRequired,
-  categories: array,
+
   amenities: array,
-  priceFilterConfig: shape({
-    min: number.isRequired,
-    max: number.isRequired,
-    step: number.isRequired,
-  }),
+  regularlyOpenOn: array,
+  groupSize: array,
 
   // from withRouter
   history: shape({

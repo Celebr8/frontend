@@ -3,52 +3,139 @@
  */
 
 export const amenities = [
-  {
-    key: 'towels',
-    label: 'Towels',
-  },
-  {
-    key: 'bathroom',
-    label: 'Bathroom',
-  },
-  {
-    key: 'swimming_pool',
-    label: 'Swimming pool',
-  },
-  {
-    key: 'own_drinks',
-    label: 'Own drinks allowed',
-  },
-  {
-    key: 'jacuzzi',
-    label: 'Jacuzzi',
-  },
-  {
-    key: 'audiovisual_entertainment',
-    label: 'Audiovisual entertainment',
-  },
-  {
-    key: 'barbeque',
-    label: 'Barbeque',
-  },
-  {
-    key: 'own_food_allowed',
-    label: 'Own food allowed',
-  },
+	{
+		key: "parking",
+		label: "Parking"
+	},
+	{
+		key: "credit-debit-cards",
+		label: "Credit/Debit cards"
+	},
+	{
+		key: "wheelchair-access",
+		label: "Wheelchair access"
+	},
+	{
+		key: "sport-movie-screenings",
+		label: "Sport/Movie screenings"
+	},
+	{
+		key: "outdoor-area",
+		label: "Outdoor area"
+	},
+	{
+		key: "board-games",
+		label: "Board games"
+	},
+	{
+		key: "live-music",
+		label: "live-music"
+	},
+	{
+		key: "karaoke",
+		label: "Karaoke"
+	},
+	{
+		key: "seating",
+		label: "Seating"
+	},
+	{
+		key: "table-service",
+		label: "Table service"
+	},
+	{
+		key: "Heating",
+		label: "Heating"
+	},
+	{
+		key: "air-conditioner",
+		label: "Air Conditioner"
+	},
+	{
+		key: "cocktails",
+		label: "Cocktails"
+	},
+	{
+		key: "smoking-area",
+		label: "Smoking area"
+	},
 ];
 
-export const categories = [
-  { key: 'smoke', label: 'Smoke' },
-  { key: 'electric', label: 'Electric' },
-  { key: 'wood', label: 'Wood' },
-  { key: 'other', label: 'Other' },
+export const regularlyOpenOn = [
+	{
+		key: "mondays",
+		label: "Mondays"
+	},
+	{
+		key: "tuesdays",
+		label: "Tuesdays"
+	},
+	{
+		key: "wednesdays",
+		label: "Wednesdays"
+	},
+	{
+		key: "thursdays",
+		label: "Thursdays"
+	},
+	{
+		key: "fridays",
+		label: "Fridays"
+	},
+	{
+		key: "saturdays",
+		label: "Saturdays"
+	},
+	{
+		key: "sundays",
+		label: "Sundays"
+	},
 ];
 
-// Price filter configuration
-// Note: unlike most prices this is not handled in subunits
-export const priceFilterConfig = {
-  min: 0,
-  max: 1000,
-  step: 5,
-};
+export const groupSize = [
+	{
+		key: "1-10",
+		label: "1-10"
+	},
+	{
+		key: "11-20",
+		label: "11-20"
+	},
+	{
+		key: "21-30",
+		label: "21-30"
+	},
+	{
+		key: "31-40",
+		label: "31-40"
+	},
+	{
+		key: "41-50",
+		label: "41-50"
+	},
+	{
+		key: "51-60",
+		label: "51-60"
+	},
+	{
+		key: "61-70",
+		label: "61-70"
+	},
+	{
+		key: "71-80",
+		label: "71-80"
+	},
+	{
+		key: "81-90",
+		label: "81-90"
+	},
+	{
+		key: "91-100",
+		label: "91-100"
+	},
+	{
+		key: "More than 100",
+		label: "More than 100"
+	},
+];
 
