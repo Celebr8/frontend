@@ -5,6 +5,7 @@ import { Form as FinalForm } from 'react-final-form';
 import { intlShape, injectIntl, FormattedMessage } from 'react-intl';
 import classNames from 'classnames';
 import { propTypes } from '../../util/types';
+import config from '../../config';
 import { Form, Button, FieldCheckboxGroup } from '../../components';
 
 import css from './EditListingCapacityForm.css';
@@ -18,6 +19,7 @@ export const EditListingCapacityFormComponent = props => (
         disabled,
         handleSubmit,
         intl,
+				name,
         invalid,
         pristine,
         saveActionMsg,
