@@ -41,6 +41,8 @@ import SectionAvatar from './SectionAvatar';
 import SectionHeading from './SectionHeading';
 import SectionDescriptionMaybe from './SectionDescriptionMaybe';
 import SectionFeatures from './SectionFeatures';
+import SectionGroupSize from './SectionGroupSize';
+import SectionRegularlyOpenOn from './SectionRegularlyOpenOn';
 import SectionReviews from './SectionReviews';
 import SectionHost from './SectionHost';
 import SectionRulesMaybe from './SectionRulesMaybe';
@@ -458,6 +460,15 @@ export class ListingPageComponent extends Component {
                   <SectionFeatures
                     options={amenitiesConfig}
                     selectedOptions={publicData.amenities}
+                  />
+                  <SectionGroupSize
+                    publicData={publicData}
+                    selectedOptions={publicData.groupSize}
+                  />
+                  <SectionRegularlyOpenOn
+                    options={amenitiesConfig}
+                    publicData={publicData}
+                    selectedOptions={publicData.regularlyOpenOn}
                   />
                   <SectionRulesMaybe publicData={publicData} />
                   <SectionMapMaybe
