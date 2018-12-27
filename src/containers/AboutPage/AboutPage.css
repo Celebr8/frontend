@@ -34,6 +34,7 @@
 }
 
 .contentSide {
+	text-align: justify;
   font-style: italic;
 
   @media (--viewportMedium) {
@@ -44,10 +45,11 @@
 }
 
 .contentMain {
-  width: 90%;
+	text-align: justify;
+  width: 100%;
 
   @media (--viewportMedium) {
-    max-width: 650px;
+    max-width: 800px;
   }
 }
 
