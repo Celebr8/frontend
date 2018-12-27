@@ -2,6 +2,7 @@
 
 .pageTitle {
   text-align: center;
+  color: #ff3f00;
 }
 
 .staticPageWrapper {
@@ -17,7 +18,7 @@
 
 .coverImage {
   width: 100%;
-  height: 528px;
+  height: 300px;
   border-radius: 4px;
   object-fit: cover;
   margin: 32px 0 40px;
@@ -54,4 +55,11 @@
   @apply --marketplaceH3FontStyles;
   margin-top: 48px;
   margin-bottom: 24px;
+}
+
+.usersMust {
+  @apply --marketplaceH2FontStyles;
+  margin-top: 48px;
+  margin-bottom: 24px;
+  color: #ff3f00;
 }
