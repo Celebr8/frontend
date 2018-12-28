@@ -151,12 +151,12 @@ Whichost, at its sole option and without notice or any obligation to do so, may 
       Whichost owns all right, title, and interest in the Platform, Services, and all intellectual property embodied or contained in them (individually and collectively, “IP”). IP includes all registered or potential patents, copyrights, trademarks, trade secrets, and other proprietary rights. Through your Account, we grant you a limited, temporary, revocable, non-transferable, non-exclusive license to use the Platform and Service for the purposes described in this Agreement and only as provided to you through the Platform. This license does not constitute a transfer of ownership or grant you any additional rights to use the IP. We may suspend or close your Account and pursue legal action against you if we believe or determine that your use of the Platform, Service, or IP exceeds the scope of this grant; or that you are attempting to hack or disrupt the use of the Platform, Service, or IP by others; or that you are otherwise interfering with the normal operation of the Platform or Service.
       </p> 
       
-      <h3><strong>2.3 CONTENT</strong></h3>
+      <h3><strong>2.2 COMMUNITY GUIDELINES</strong></h3>
       <p>
       We have established Community Guidelines that set our expectations for all users on the Platform. You will review and abide by the Community Guidelines whenever using the Platform or Services, communicating with other users, or using or providing use of Pubs. If you believe that another user is violating the Community Guidelines, please email us at <a href="mailto:support@whichost.com">support@whichost.com</a>. Whichost shall have no duty to monitor users’ compliance with or to enforce the Community Guidelines and shall have no liability for any user’s violation of the Community Guidelines.
       </p> 
       
-      <h3><strong>2.2 COMMUNITY GUIDELINES</strong></h3>
+      <h3><strong>2.3 CONTENT</strong></h3>
       <p>
       <strong>(a) Posting Content</strong>. You represent and warrant that you are authorised to provide Content to the Platform and that any Content you provide does not violate the proprietary or privacy rights of a third party. You may not provide any Content that is copyrighted by third parties without their express permission. You grant Whichost a fully-paid, worldwide, non-exclusive, perpetual license to use, copy, transmit, distribute, modify, publicly display, and sub-license any Content you provide to us. This grant includes our ability to use any Content for both internal use (such as analysis to improve the Platform or Services) or external use (such as in marketing or online advertising). If you cannot provide us the above grant then you may not provide Content to us. You agree to indemnify, defend and hold us harmless for any damages or losses based on third-party claims that Content violates proprietary or privacy rights.
       </p>
