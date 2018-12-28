@@ -3,6 +3,7 @@
 .root {
   & p {
     @apply --marketplaceH4FontStyles;
+    text-align: justify;
   }
   & h2 {
     /* Adjust heading margins to work with the reduced body font size */
@@ -22,5 +23,15 @@
       margin-top: 0;
       margin-bottom: 54px;
     }
+  }
+  & ul {
+	  text-align: justify;
+	  list-style-type: disc;
+	  padding-left: 25px;
+  }
+  & ul li {
+	  font-size: 16px;
+	  line-height: 24px;
+	  letter-spacing: 0;
   }
 }
