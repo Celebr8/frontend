@@ -4,7 +4,7 @@ import { FieldSelect } from '../../components';
 
 import css from './EditListingDescriptionForm.css';
 
-const CustomListingTypeSelectFieldMaybe = props => {
+const CustomListingTypeSelectField = props => {
   const { name, id, listingTypes, intl } = props;
   const listingTypeLabel = intl.formatMessage({
     id: 'EditListingDescriptionForm.listingTypeLabel',
@@ -17,7 +17,7 @@ const CustomListingTypeSelectFieldMaybe = props => {
       id: 'EditListingDescriptionForm.listingTypeRequired',
     })
   );
-  return listingTypes ? (
+  return (
     <FieldSelect
       className={css.listingType}
       name={name}
@@ -34,7 +34,7 @@ const CustomListingTypeSelectFieldMaybe = props => {
         </option>
       ))}
     </FieldSelect>
-  ) : null;
+  ) 
 };
 
-export default CustomListingTypeSelectFieldMaybe;
+export default CustomListingTypeSelectField;

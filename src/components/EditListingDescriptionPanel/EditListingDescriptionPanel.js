@@ -37,6 +37,8 @@ const EditListingDescriptionPanel = props => {
     <FormattedMessage id="EditListingDescriptionPanel.createListingTitle" />
   );
 
+	console.log('config (EditListingDescriptionPanel)', config)
+
   return (
     <div className={classes}>
       <h1 className={css.title}>{panelTitle}</h1>
@@ -45,11 +47,11 @@ const EditListingDescriptionPanel = props => {
         initialValues={{ title, description, category: publicData.category }}
         saveActionMsg={submitButtonText}
         onSubmit={values => {
-          const { title, description, category } = values;
+          const { title, description, listingType } = values;
           const updateValues = {
             title: title.trim(),
             description,
-            publicData: { category },
+            publicData: { listingType },
           };
 
           onSubmit(updateValues);
@@ -58,7 +60,7 @@ const EditListingDescriptionPanel = props => {
         updated={panelUpdated}
         updateInProgress={updateInProgress}
         fetchErrors={errors}
-        categories={config.custom.categories}
+        listingTypes={config.custom.listingTypes}
       />
     </div>
   );
