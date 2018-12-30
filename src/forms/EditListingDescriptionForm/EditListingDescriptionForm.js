@@ -7,7 +7,7 @@ import classNames from 'classnames';
 import { propTypes } from '../../util/types';
 import { maxLength, required, composeValidators } from '../../util/validators';
 import { Form, Button, FieldTextInput } from '../../components';
-import CustomListingTypeSelectFieldMaybe from './CustomListingTypeSelectFieldMaybe';
+import CustomListingTypeSelectField from './CustomListingTypeSelectField';
 
 import css from './EditListingDescriptionForm.css';
 
@@ -30,6 +30,8 @@ const EditListingDescriptionFormComponent = props => (
         updateInProgress,
         fetchErrors,
       } = fieldRenderProps;
+
+			console.log('ListingTypes (EditListingDescriptionForm)', listingTypes	)
 
       const titleMessage = intl.formatMessage({ id: 'EditListingDescriptionForm.title' });
       const titlePlaceholderMessage = intl.formatMessage({
@@ -108,10 +110,10 @@ const EditListingDescriptionFormComponent = props => (
             validate={composeValidators(required(descriptionRequiredMessage))}
           />
 
-          <CustomListingTypeSelectFieldMaybe
+          <CustomListingTypeSelectField
             id="listingType"
             name="listingType"
-            listingType={listingTypes}
+            listingTypes={listingTypes}
             intl={intl}
           />
 
