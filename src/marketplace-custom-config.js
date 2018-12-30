@@ -139,3 +139,15 @@ export const groupSize = [
 	},
 ];
 
+export const listingTypes = [
+	{
+		key: "common",
+		label: "Common"
+	},
+	{
+		key: "private",
+		label: "Private"
+	},
+
+
+]
