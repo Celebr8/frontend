@@ -110,6 +110,7 @@ const EditListingWizardTab = props => {
     const updateValuesWithImages = { ...otherValues, ...imageProperty };
 
     if (isNewListingFlow) {
+
       const onUpsertListingDraft = isNewURI
         ? (tab, updateValues) => onCreateListingDraft(updateValues)
         : onUpdateListing;
