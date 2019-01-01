@@ -31,8 +31,6 @@ const EditListingDescriptionFormComponent = props => (
         fetchErrors,
       } = fieldRenderProps;
 
-			console.log('ListingTypes (EditListingDescriptionForm)', listingTypes	)
-
       const titleMessage = intl.formatMessage({ id: 'EditListingDescriptionForm.title' });
       const titlePlaceholderMessage = intl.formatMessage({
         id: 'EditListingDescriptionForm.titlePlaceholder',
@@ -111,8 +109,8 @@ const EditListingDescriptionFormComponent = props => (
           />
 
           <CustomListingTypeSelectField
-            id="listingType"
-            name="listingType"
+            id="type"
+            name="type"
             listingTypes={listingTypes}
             intl={intl}
           />
@@ -146,7 +144,7 @@ EditListingDescriptionFormComponent.propTypes = {
     showListingsError: propTypes.error,
     updateListingError: propTypes.error,
   }),
-  categories: arrayOf(
+  listingTypes: arrayOf(
     shape({
       key: string.isRequired,
       label: string.isRequired,
