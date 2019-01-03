@@ -558,10 +558,7 @@
   "SearchFilters.amenitiesLabel": "Amenities",
   "SearchFilters.regularlyOpenOnLabel": "Regularly open on",
   "SearchFilters.groupSizeLabel": "Group size",
-<<<<<<< HEAD
-=======
   "SearchFilters.listingTypeLabel": "Type",
->>>>>>> master
   "SearchFilters.filtersButtonLabel": "Filters",
   "SearchFilters.foundResults": "{count, number} {count, plural, one {result} other {results}}",
   "SearchFilters.loadingResults": "Loading search results…",
