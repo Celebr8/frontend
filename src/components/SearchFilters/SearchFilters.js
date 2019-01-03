@@ -49,6 +49,7 @@ const SearchFiltersComponent = props => {
     amenitiesFilter,
     groupSizeFilter,
     regularlyOpenOnFilter,
+    listingTypeFilter,
     isSearchFiltersPanelOpen,
     toggleSearchFiltersPanel,
     searchFiltersPanelSelectedCount,
@@ -71,6 +72,10 @@ const SearchFiltersComponent = props => {
     id: 'SearchFilters.regularlyOpenOnLabel',
   });
 
+  const listingTypeLabel = intl.formatMessage({
+    id: 'SearchFilters.listingTypeLabel',
+  });
+
   const initialAmenities = amenitiesFilter
     ? initialValues(urlQueryParams, amenitiesFilter.paramName)
     : null;
@@ -81,6 +86,10 @@ const SearchFiltersComponent = props => {
 
   const initialRegularlyOpenOn = regularlyOpenOnFilter
     ? initialValue(urlQueryParams, regularlyOpenOnFilter.paramName)
+    : null;
+
+  const initialListingType = listingTypeFilter
+    ? initialValue(urlQueryParams, listingTypeFilter.paramName)
     : null;
 
   const handleSelectOptions = (urlParam, options) => {
@@ -148,6 +157,17 @@ const SearchFiltersComponent = props => {
     />
   ) : null;
 
+  const listingTypeElement = listingTypeFilter? (
+    <SelectSingleFilter
+      urlParam={listingTypeFilter.paramName}
+      label={listingTypeLabel}
+      onSelect={handleSelectOption}
+      options={listingTypeFilter.options}
+      initialValue={initialListingType}
+      contentPlacementOffset={FILTER_DROPDOWN_OFFSET}
+    />
+  ) : null;
+
   const toggleSearchFiltersPanelButtonClasses =
     isSearchFiltersPanelOpen || searchFiltersPanelSelectedCount > 0
       ? css.searchFiltersPanelOpen
@@ -171,6 +191,7 @@ const SearchFiltersComponent = props => {
         {amenitiesFilterElement}
         {groupSizeFilterElement}
         {regularlyOpenOnFilterElement}
+        {listingTypeElement}
         {toggleSearchFiltersPanelButton}
       </div>
 
@@ -204,6 +225,7 @@ SearchFiltersComponent.defaultProps = {
   searchingInProgress: false,
   categoryFilter: null,
   amenitiesFilter: null,
+  listingTypeFilter: null,
   isSearchFiltersPanelOpen: false,
   toggleSearchFiltersPanel: null,
   searchFiltersPanelSelectedCount: 0,
