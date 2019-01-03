@@ -4,7 +4,7 @@
 /* ================ Fonts ================ */
 
 body {
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: 'Lato', sans-serif;
   -webkit-font-smoothing: antialiased; /* http://szafranek.net/blog/2009/02/22/font-smoothing-explained/ */
   -moz-osx-font-smoothing: grayscale; /* http://szafranek.net/blog/2009/02/22/font-smoothing-explained/ */
   text-rendering: optimizeSpeed;
@@ -89,7 +89,7 @@ label {
 }
 
 button {
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: 'Lato', sans-serif;
 }
 
 select {
@@ -118,9 +118,9 @@ textarea {
 
 :global(.fontsLoaded) {
   & body {
-    font-family: 'sofiapro', Helvetica, Arial, sans-serif;
+    font-family: 'Lato', sans-serif;
   }
   & button {
-    font-family: 'sofiapro', Helvetica, Arial, sans-serif;
+    font-family: 'Lato', sans-serif;
   }
 }
