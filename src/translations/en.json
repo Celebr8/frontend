@@ -303,6 +303,7 @@
   "ListingPage.featuresTitle": "Amenities",
   "ListingPage.regularlyOpenOnTitle": "Regularly open on",
   "ListingPage.groupSizeTitle": "Group size",
+  "ListingPage.listingTypeTitle": "Listing type",
   "ListingPage.finishListing": "Finish listing",
   "ListingPage.hostedBy": "Hosted by {name}",
   "ListingPage.loadingListingMessage": "Loading listing…",
