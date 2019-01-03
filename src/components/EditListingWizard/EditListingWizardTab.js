@@ -12,6 +12,8 @@ import { createResourceLocatorString } from '../../util/routes';
 import {
   EditListingDescriptionPanel,
   EditListingFeaturesPanel,
+  EditListingCapacityPanel,
+  EditListingRegularlyOpenOnPanel,
   EditListingLocationPanel,
   EditListingPhotosPanel,
   EditListingPoliciesPanel,
@@ -22,13 +24,18 @@ import css from './EditListingWizard.css';
 
 export const DESCRIPTION = 'description';
 export const FEATURES = 'features';
+export const CAPACITY = 'capacity';
+export const REGULARLY_OPEN_ON = 'reguraly_open_on';
 export const POLICY = 'policy';
 export const LOCATION = 'location';
 export const PRICING = 'pricing';
 export const PHOTOS = 'photos';
 
+
 // EditListingWizardTab component supports these tabs
-export const SUPPORTED_TABS = [DESCRIPTION, FEATURES, POLICY, LOCATION, PRICING, PHOTOS];
+export const SUPPORTED_TABS = [
+	DESCRIPTION, FEATURES, CAPACITY, REGULARLY_OPEN_ON, 
+	POLICY, LOCATION, PRICING, PHOTOS];
 
 const pathParamsToNextTab = (params, tab, marketplaceTabs) => {
   const nextTabIndex = marketplaceTabs.findIndex(s => s === tab) + 1;
@@ -103,6 +110,7 @@ const EditListingWizardTab = props => {
     const updateValuesWithImages = { ...otherValues, ...imageProperty };
 
     if (isNewListingFlow) {
+
       const onUpsertListingDraft = isNewURI
         ? (tab, updateValues) => onCreateListingDraft(updateValues)
         : onUpdateListing;
@@ -163,6 +171,34 @@ const EditListingWizardTab = props => {
         : 'EditListingWizard.saveEditFeatures';
       return (
         <EditListingFeaturesPanel
+          {...panelProps(FEATURES)}
+          submitButtonText={intl.formatMessage({ id: submitButtonTranslationKey })}
+          onSubmit={values => {
+            onCompleteEditListingWizardTab(tab, values);
+          }}
+        />
+      );
+    }
+    case CAPACITY: {
+      const submitButtonTranslationKey = isNewListingFlow
+        ? 'EditListingWizard.saveNewFeatures'
+        : 'EditListingWizard.saveEditFeatures';
+      return (
+        <EditListingCapacityPanel
+          {...panelProps(FEATURES)}
+          submitButtonText={intl.formatMessage({ id: submitButtonTranslationKey })}
+          onSubmit={values => {
+            onCompleteEditListingWizardTab(tab, values);
+          }}
+        />
+      );
+    }
+    case REGULARLY_OPEN_ON: {
+      const submitButtonTranslationKey = isNewListingFlow
+        ? 'EditListingWizard.saveNewFeatures'
+        : 'EditListingWizard.saveEditFeatures';
+      return (
+        <EditListingRegularlyOpenOnPanel
           {...panelProps(FEATURES)}
           submitButtonText={intl.formatMessage({ id: submitButtonTranslationKey })}
           onSubmit={values => {
