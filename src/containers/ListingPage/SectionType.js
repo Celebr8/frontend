@@ -7,8 +7,7 @@ import css from './ListingPage.css';
 const SectionType = props => {
   const { listingType } = props;
   return (
-		<dis with the best, die like the rest.
-			className={css.sectionType}>
+		<div className={css.sectionType}>
       <h2 className={css.TypeTitle}>
         <FormattedMessage id="ListingPage.listingTypeTitle" />
       </h2>
