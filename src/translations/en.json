@@ -287,6 +287,8 @@
   "ListingCard.perUnit": "per night",
   "ListingCard.unsupportedPrice": "({currency})",
   "ListingCard.unsupportedPriceTitle": "Unsupported currency ({currency})",
+  "ListingCard.privateSpace": "Private space",
+  "ListingCard.commonSpace": "Common space",
   "ListingPage.bannedUserDisplayName": "Banned user",
   "ListingPage.bookingHelp": "Start by choosing your dates.",
   "ListingPage.bookingHelpClosedListing": "Sorry, this listing has been closed.",
