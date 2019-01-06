@@ -29,7 +29,7 @@ export const amenities = [
 	},
 	{
 		key: "live-music",
-		label: "live-music"
+		label: "Live music"
 	},
 	{
 		key: "karaoke",
