@@ -246,16 +246,19 @@ const streetAddress = 'Bulevardi 14';
 const canonicalRootURL = process.env.REACT_APP_CANONICAL_ROOT_URL;
 
 // Site title is needed in meta tags (bots and social media sharing reads those)
-const siteTitle = 'Saunatime';
+const siteTitle = 'Whichost';
 
 // Twitter handle is needed in meta tags (twitter:site). Start it with '@' character
-const siteTwitterHandle = '@sharetribe';
+const siteTwitterHandle = '@WhichostIE';
 
 // Instagram page is used in SEO schema (http://schema.org/Organization)
-const siteInstagramPage = null;
+const siteInstagramPage = 'https://www.instagram.com/whichost/';
+
+// YouTube page is used in SEO schema (http://schema.org/Organization)
+const siteYouTubePage = null;
 
 // Facebook page is used in SEO schema (http://schema.org/Organization)
-const siteFacebookPage = 'https://www.facebook.com/Sharetribe/';
+const siteFacebookPage = 'https://www.facebook.com/whichost/';
 
 // Facebook counts shares with app or page associated by this id
 // Currently it is unset, but you can read more about fb:app_id from
