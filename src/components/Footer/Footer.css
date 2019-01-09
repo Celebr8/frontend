@@ -86,7 +86,7 @@
 /* Desktop: logo and organization stuff */
 .organization {
   flex-shrink: 0;
-  flex-basis: 220px;
+  flex-basis: 165px;
   display: none;
   margin-right: 24px;
   margin-bottom: 24px;
@@ -135,9 +135,10 @@
 /* Desktop and Mobile: links to more information */
 .infoLinks {
   order: 2;
-  flex-basis: 165px;
+  flex-basis: 280px;
   margin-right: 24px;
   margin-bottom: 24px;
+  margin-left: 40px;
 
   @media (--viewportMedium) {
     padding-top: 2px;
@@ -153,6 +154,58 @@
 .listItem {
   min-height: 24px;
   margin-bottom: 6px;
+
+  @media (--viewportMedium) {
+    margin-bottom: 0;
+  }
+}
+
+.listCustomer {
+  order: 2;
+  font-size: 20px;
+  min-height: 24px;
+  margin-bottom: 6px;
+  padding-bottom: 10px;
+  font-weight: 600;
+
+  @media (--viewportMedium) {
+    margin-bottom: 0;
+  }
+}
+
+.listPublican {
+  order: 3;
+  font-size: 20px;
+  min-height: 24px;
+  margin-bottom: 6px;
+  padding-bottom: 10px;
+  font-weight: 600;
+
+  @media (--viewportMedium) {
+    margin-bottom: 0;
+  }
+}
+
+.listWhichost {
+  order: 4;
+  font-size: 20px;
+  min-height: 24px;
+  margin-bottom: 6px;
+  padding-bottom: 10px;
+  font-weight: 600;
+
+  @media (--viewportMedium) {
+    margin-bottom: 0;
+  }
+}
+
+.listSearches {
+  order: 4;
+  font-size: 20px;
+  min-height: 24px;
+  margin-bottom: 6px;
+  padding-bottom: 10px;
+  font-weight: 600;
 
   @media (--viewportMedium) {
     margin-bottom: 0;
@@ -182,10 +235,11 @@
 
 /* Desktop and Mobile: searches - first column */
 .searches {
-  order: 3;
-  flex-basis: 165px;
+  order: 5;
+  flex-basis: 250px;
   margin-right: 24px;
   margin-bottom: 24px;
+  margin-left: 40px;
 
   @media (--viewportMedium) {
     padding-top: 2px;
@@ -196,8 +250,8 @@
 /* Desktop and Mobile: searches - second column */
 /* This is not always visible */
 .searchesExtra {
-  order: 4;
-  flex-basis: 165px;
+  order: 6;
+  flex-basis: 200px;
   margin-right: 24px;
   margin-bottom: 24px;
 
@@ -210,7 +264,7 @@
 /* Desktop: extra links (social media links and legal links) */
 .extraLinks {
   flex-shrink: 0;
-  order: 5;
+  order: 7;
   display: none;
   flex-basis: 109px;
   margin-right: 24px;
@@ -237,6 +291,7 @@
 .tosAndPrivacy {
   margin-top: 0;
   margin-bottom: 0;
+  text-transform: uppercase;
 }
 
 .legalLink,
@@ -308,5 +363,5 @@
 }
 
 .privacy {
-  margin-right: 24px;
+  margin-right: 15px;
 }
