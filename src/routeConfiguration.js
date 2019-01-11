@@ -4,6 +4,7 @@ import {
   AuthenticationPage,
   CheckoutPage,
   ContactDetailsPage,
+  DealsPage,
   EditListingPage,
   EmailVerificationPage,
   InboxPage,
@@ -248,6 +249,11 @@ const routeConfiguration = () => {
       authPage: 'LoginPage',
       component: props => <PayoutPreferencesPage {...props} />,
       loadData: PayoutPreferencesPage.loadData,
+    },
+    {
+      path: '/deals-page',
+      name: 'DealsPage',
+      component: props => <DealsPage {...props} />,
     },
     {
       path: '/terms-of-service',
