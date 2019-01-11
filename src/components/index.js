@@ -5,6 +5,7 @@ export { default as BookingBreakdown } from './BookingBreakdown/BookingBreakdown
 export { default as Button, PrimaryButton, SecondaryButton, InlineTextButton } from './Button/Button';
 export { default as CookieConsent } from './CookieConsent/CookieConsent';
 export { default as Discussion } from './Discussion/Discussion';
+export { default as Deals } from './Deals/Deals';
 export { default as EditListingDescriptionPanel } from './EditListingDescriptionPanel/EditListingDescriptionPanel';
 export { default as EditListingFeaturesPanel } from './EditListingFeaturesPanel/EditListingFeaturesPanel';
 export { default as EditListingCapacityPanel } from './EditListingCapacityPanel/EditListingCapacityPanel';
