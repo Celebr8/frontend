@@ -151,7 +151,7 @@ export class BookingDatesFormComponent extends Component {
                 unitType={unitType}
                 id={`${form}.bookingDate`}
                 label={bookingLabel}
-                placeholder={DatePlaceholderText}
+                placeholderText={DatePlaceholderText}
                 focusedInput={this.state.focusedInput}
                 onFocusedInputChange={this.onFocusedInputChange}
                 format={null}
