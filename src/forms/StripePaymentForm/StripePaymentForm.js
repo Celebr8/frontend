@@ -229,8 +229,8 @@ class StripePaymentForm extends Component {
       this.setState(prevState => {
 				console.log('trying to update the state')
 				console.log('last state', prevState)
-        const { token, message, oldAttendance } = prevState;
-        const newState = { token, message, attendance: oldAttendance + attendance };
+        const { token, message } = prevState;
+        const newState = { token, message, attendance };
         onChange(newState);
         return newState;
       });
@@ -280,11 +280,10 @@ class StripePaymentForm extends Component {
           <FormattedMessage id="StripePaymentForm.expectedAttendance" />
         </label>
 
-				<ExpandingTextarea 
+				<FieldTextInput 
 					id={`${formId}-attendance`}
 					className={css.attendance}
 					value={this.state.attendance}
-					type="text"
 					onChange={handleAttendanceChange}
 				/>
 
