@@ -76,7 +76,7 @@ const initialState = {
   cardValueValid: false,
   token: null,
   message: '',
-	attendance: '0'
+	attendance: 10
 };
 
 /**
@@ -196,7 +196,7 @@ class StripePaymentForm extends Component {
       intl,
     } = this.props;
     const submitInProgress = this.state.submitting || inProgress;
-    const submitDisabled = !this.state.cardValueValid || submitInProgress;
+    const submitDisabled = !this.state.cardValueValid || !this.state.attendance || submitInProgress;
     const classes = classNames(rootClassName || css.root, className);
     const cardClasses = classNames(css.card, {
       [css.cardSuccess]: this.state.cardValueValid,
@@ -225,15 +225,13 @@ class StripePaymentForm extends Component {
       // A change in the message should call the onChange prop with
       // the current token and the new message.
       const attendance = e.target.value;
-			console.log('trying to change state to ', attendance)
-      this.setState(prevState => {
-				console.log('trying to update the state')
-				console.log('last state', prevState)
-        const { token, message } = prevState;
-        const newState = { token, message, attendance };
-        onChange(newState);
-        return newState;
-      });
+			if(parseInt(attendance) > 1) 
+				this.setState(prevState => {
+					const { token, message } = prevState;
+					const newState = { token, message, attendance };
+					onChange(newState);
+					return newState;
+				});
     };
 
     const messageOptionalText = (
@@ -280,9 +278,10 @@ class StripePaymentForm extends Component {
           <FormattedMessage id="StripePaymentForm.expectedAttendance" />
         </label>
 
-				<FieldTextInput 
+				<input 
 					id={`${formId}-attendance`}
 					className={css.attendance}
+					type="number"
 					value={this.state.attendance}
 					onChange={handleAttendanceChange}
 				/>
