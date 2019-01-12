@@ -272,7 +272,9 @@ class StripePaymentForm extends Component {
           onChange={handleMessageChange}
         />
 
-
+        <h3 className={css.attendanceHeading}>
+          <FormattedMessage id="StripePaymentForm.attendanceHeading" />
+        </h3>
 
         <label className={css.messageLabel} htmlFor={`${formId}-attendance`}>
           <FormattedMessage id="StripePaymentForm.expectedAttendance" />

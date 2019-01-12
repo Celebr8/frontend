@@ -656,6 +656,7 @@
   "StripePaymentForm.creditCardDetails": "Credit card details",
   "StripePaymentForm.genericError": "Could not handle payment data. Please try again.",
   "StripePaymentForm.messageHeading": "Message",
+  "StripePaymentForm.attendanceHeading": "Attendance",
   "StripePaymentForm.messageLabel": "Say hello to your host {messageOptionalText}",
   "StripePaymentForm.messageOptionalText": "• optional",
   "StripePaymentForm.messagePlaceholder": "Hello {name}! I'm looking forward to…",
