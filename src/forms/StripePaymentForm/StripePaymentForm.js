@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage, injectIntl, intlShape } from 'react-intl';
 import classNames from 'classnames';
-import { Form, PrimaryButton, ExpandingTextarea } from '../../components';
+import { Form, PrimaryButton, ExpandingTextarea, FieldTextInput } from '../../components';
 import * as log from '../../util/log';
 import config from '../../config';
 
@@ -76,6 +76,7 @@ const initialState = {
   cardValueValid: false,
   token: null,
   message: '',
+	attendance: '0'
 };
 
 /**
@@ -128,9 +129,9 @@ class StripePaymentForm extends Component {
     // message.
 
     this.setState(prevState => {
-      const { message } = prevState;
+      const { message, attendance } = prevState;
       const token = null;
-      onChange({ token, message });
+      onChange({ token, message, attendance });
       return {
         error: error ? stripeErrorTranslation(intl, error) : null,
         cardValueValid: complete,
@@ -150,7 +151,7 @@ class StripePaymentForm extends Component {
 
     if (this.state.token) {
       // Token already fetched for the current card value
-      onSubmit({ token: this.state.token, message: this.state.message.trim() });
+      onSubmit({ token: this.state.token, message: this.state.message.trim(), attendance: this.state.attendance });
       return;
     }
 
@@ -168,7 +169,7 @@ class StripePaymentForm extends Component {
           });
         } else {
           this.setState({ submitting: false, token: token.id });
-          onSubmit({ token: token.id, message: this.state.message.trim() });
+          onSubmit({ token: token.id, message: this.state.message.trim(), attendance: this.state.attendance });
         }
       })
       .catch(e => {
@@ -219,6 +220,22 @@ class StripePaymentForm extends Component {
       });
     };
 
+
+    const handleAttendanceChange = e => {
+      // A change in the message should call the onChange prop with
+      // the current token and the new message.
+      const attendance = e.target.value;
+			console.log('trying to change state to ', attendance)
+      this.setState(prevState => {
+				console.log('trying to update the state')
+				console.log('last state', prevState)
+        const { token, message } = prevState;
+        const newState = { token, message, attendance };
+        onChange(newState);
+        return newState;
+      });
+    };
+
     const messageOptionalText = (
       <span className={css.messageOptional}>
         <FormattedMessage id="StripePaymentForm.messageOptionalText" />
@@ -256,6 +273,21 @@ class StripePaymentForm extends Component {
           value={this.state.message}
           onChange={handleMessageChange}
         />
+
+
+
+        <label className={css.messageLabel} htmlFor={`${formId}-attendance`}>
+          <FormattedMessage id="StripePaymentForm.expectedAttendance" />
+        </label>
+
+				<FieldTextInput 
+					id={`${formId}-attendance`}
+					className={css.attendance}
+					value={this.state.attendance}
+					onChange={handleAttendanceChange}
+				/>
+
+
         <div className={css.submitContainer}>
           <p className={css.paymentInfo}>{paymentInfo}</p>
           <PrimaryButton
@@ -264,7 +296,8 @@ class StripePaymentForm extends Component {
             inProgress={submitInProgress}
             disabled={submitDisabled}
           >
-            <FormattedMessage id="StripePaymentForm.submitPaymentInfo" />
+
+          <FormattedMessage id="StripePaymentForm.submitPaymentInfo" />
           </PrimaryButton>
         </div>
       </Form>
