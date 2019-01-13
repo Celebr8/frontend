@@ -9,7 +9,7 @@ import { required, bookingDatesRequired, composeValidators } from '../../util/va
 import { START_DATE, END_DATE } from '../../util/dates';
 import { propTypes } from '../../util/types';
 import config from '../../config';
-import { Form, PrimaryButton, FieldDateRangeInput } from '../../components';
+import { Form, PrimaryButton, FieldDateInput } from '../../components';
 import EstimatedBreakdownMaybe from './EstimatedBreakdownMaybe';
 
 import css from './BookingDatesForm.css';
@@ -33,16 +33,9 @@ export class BookingDatesFormComponent extends Component {
   // focus on that input, otherwise continue with the
   // default handleSubmit function.
   handleFormSubmit(e) {
-    const { startDate, endDate } = e.bookingDates || {};
-    if (!startDate) {
-      e.preventDefault();
-      this.setState({ focusedInput: START_DATE });
-    } else if (!endDate) {
-      e.preventDefault();
-      this.setState({ focusedInput: END_DATE });
-    } else {
+    const { date } = e.bookingDates || {};
+    if (date) 
       this.props.onSubmit(e);
-    }
   }
 
   render() {
@@ -75,8 +68,7 @@ export class BookingDatesFormComponent extends Component {
         onSubmit={this.handleFormSubmit}
         render={fieldRenderProps => {
           const {
-            endDatePlaceholder,
-            startDatePlaceholder,
+            DatePlaceholder,
             form,
             handleSubmit,
             intl,
@@ -88,19 +80,16 @@ export class BookingDatesFormComponent extends Component {
             timeSlots,
             fetchTimeSlotsError,
           } = fieldRenderProps;
-          const { startDate, endDate } = values && values.bookingDates ? values.bookingDates : {};
+          const { startDate } = values && values.bookingDates ? values.bookingDates : {};
 
-          const bookingStartLabel = intl.formatMessage({
+          const bookingLabel = intl.formatMessage({
             id: 'BookingDatesForm.bookingStartTitle',
           });
-          const bookingEndLabel = intl.formatMessage({ id: 'BookingDatesForm.bookingEndTitle' });
           const requiredMessage = intl.formatMessage({ id: 'BookingDatesForm.requiredDate' });
-          const startDateErrorMessage = intl.formatMessage({
-            id: 'FieldDateRangeInput.invalidStartDate',
+          const dateErrorMessage = intl.formatMessage({
+            id: 'FieldDateInput.invalidDate',
           });
-          const endDateErrorMessage = intl.formatMessage({
-            id: 'FieldDateRangeInput.invalidEndDate',
-          });
+
           const timeSlotsError = fetchTimeSlotsError ? (
             <p className={css.timeSlotsError}>
               <FormattedMessage id="BookingDatesForm.timeSlotsError" />
@@ -111,12 +100,10 @@ export class BookingDatesFormComponent extends Component {
           // EstimatedBreakdownMaybe component to change the calculations
           // for customized payment processes.
           const bookingData =
-            startDate && endDate
-              ? {
+            startDate ? {
                   unitType,
                   unitPrice,
                   startDate,
-                  endDate,
 
                   // NOTE: If unitType is `line-item/units`, a new picker
                   // for the quantity should be added to the form.
@@ -144,10 +131,8 @@ export class BookingDatesFormComponent extends Component {
             .startOf('day')
             .add(1, 'days')
             .toDate();
-          const startDatePlaceholderText =
-            startDatePlaceholder || intl.formatDate(today, dateFormatOptions);
-          const endDatePlaceholderText =
-            endDatePlaceholder || intl.formatDate(tomorrow, dateFormatOptions);
+          const DatePlaceholderText =
+            DatePlaceholder || intl.formatDate(today, dateFormatOptions);
           const submitButtonClasses = classNames(
             submitButtonWrapperClassName || css.submitButtonWrapper
           );
@@ -155,25 +140,18 @@ export class BookingDatesFormComponent extends Component {
           return (
             <Form onSubmit={handleSubmit} className={classes}>
               {timeSlotsError}
-              <FieldDateRangeInput
+              <FieldDateInput
                 className={css.bookingDates}
                 name="bookingDates"
-                unitType={unitType}
-                startDateId={`${form}.bookingStartDate`}
-                startDateLabel={bookingStartLabel}
-                startDatePlaceholderText={startDatePlaceholderText}
-                endDateId={`${form}.bookingEndDate`}
-                endDateLabel={bookingEndLabel}
-                endDatePlaceholderText={endDatePlaceholderText}
-                focusedInput={this.state.focusedInput}
-                onFocusedInputChange={this.onFocusedInputChange}
+                id={`${form}.bookingDate`}
+                label={bookingLabel}
+                placeholderText={DatePlaceholderText}
                 format={null}
                 timeSlots={timeSlots}
                 useMobileMargins
-                validate={composeValidators(
-                  required(requiredMessage),
-                  bookingDatesRequired(startDateErrorMessage, endDateErrorMessage)
-                )}
+                validate={
+                  required(requiredMessage)
+                }
               />
               {bookingInfo}
               <p className={css.smallPrint}>
@@ -204,8 +182,7 @@ BookingDatesFormComponent.defaultProps = {
   submitButtonWrapperClassName: null,
   price: null,
   isOwnListing: false,
-  startDatePlaceholder: null,
-  endDatePlaceholder: null,
+  DatePlaceholder: null,
   timeSlots: null,
 };
 
@@ -223,8 +200,7 @@ BookingDatesFormComponent.propTypes = {
   intl: intlShape.isRequired,
 
   // for tests
-  startDatePlaceholder: string,
-  endDatePlaceholder: string,
+  DatePlaceholder: string,
 };
 
 const BookingDatesForm = compose(injectIntl)(BookingDatesFormComponent);

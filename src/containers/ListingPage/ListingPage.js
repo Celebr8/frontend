@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 import React, { Component } from 'react';
+import * as moment from 'moment';
 import { array, arrayOf, bool, func, shape, string, oneOf } from 'prop-types';
 import { FormattedMessage, intlShape, injectIntl } from 'react-intl';
 import { compose } from 'redux';
@@ -127,12 +128,14 @@ export class ListingPageComponent extends Component {
 
     const { bookingDates, ...bookingData } = values;
 
+		const bookingEnd = moment(bookingDates.date).add(1,'days'); 
+
     const initialValues = {
       listing,
       bookingData,
       bookingDates: {
-        bookingStart: bookingDates.startDate,
-        bookingEnd: bookingDates.endDate,
+        bookingStart: bookingDates.date,
+				bookingEnd: bookingEnd
       },
     };
 
