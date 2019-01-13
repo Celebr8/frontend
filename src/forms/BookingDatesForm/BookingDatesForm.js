@@ -33,13 +33,10 @@ export class BookingDatesFormComponent extends Component {
   // focus on that input, otherwise continue with the
   // default handleSubmit function.
   handleFormSubmit(e) {
-    const { startDate } = e.bookingDates || {};
-    if (!startDate) {
-      this.setState({ focusedInput: START_DATE });
-		}
-		else {
+		console.log('handleFormSubmit: ', e)
+    const { date } = e.bookingDates || {};
+    if (date) 
       this.props.onSubmit(e);
-    }
   }
 
   render() {
