@@ -35,7 +35,6 @@ export class BookingDatesFormComponent extends Component {
   handleFormSubmit(e) {
     const { startDate } = e.bookingDates || {};
     if (!startDate) {
-      e.preventDefault();
       this.setState({ focusedInput: START_DATE });
 		}
 		else {
@@ -91,8 +90,8 @@ export class BookingDatesFormComponent extends Component {
             id: 'BookingDatesForm.bookingStartTitle',
           });
           const requiredMessage = intl.formatMessage({ id: 'BookingDatesForm.requiredDate' });
-          const startDateErrorMessage = intl.formatMessage({
-            id: 'FieldDateRangeInput.invalidStartDate',
+          const dateErrorMessage = intl.formatMessage({
+            id: 'FieldDateInput.invalidDate',
           });
 
           const timeSlotsError = fetchTimeSlotsError ? (
@@ -148,19 +147,15 @@ export class BookingDatesFormComponent extends Component {
               <FieldDateInput
                 className={css.bookingDates}
                 name="bookingDates"
-                unitType={unitType}
                 id={`${form}.bookingDate`}
                 label={bookingLabel}
                 placeholderText={DatePlaceholderText}
-                focusedInput={this.state.focusedInput}
-                onFocusedInputChange={this.onFocusedInputChange}
                 format={null}
                 timeSlots={timeSlots}
                 useMobileMargins
-                validate={composeValidators(
-                  required(requiredMessage),
-                  bookingDatesRequired(startDateErrorMessage)
-                )}
+                validate={
+                  required(requiredMessage)
+                }
               />
               {bookingInfo}
               <p className={css.smallPrint}>
