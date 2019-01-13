@@ -33,7 +33,6 @@ export class BookingDatesFormComponent extends Component {
   // focus on that input, otherwise continue with the
   // default handleSubmit function.
   handleFormSubmit(e) {
-		console.log('handleFormSubmit: ', e)
     const { date } = e.bookingDates || {};
     if (date) 
       this.props.onSubmit(e);
