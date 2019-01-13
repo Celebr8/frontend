@@ -94,37 +94,79 @@ const Footer = props => {
                 </p>
               </div>
             </div>
-            <div className={css.infoLinks}>
+             <div className={css.infoLinks}>
               <ul className={css.list}>
+              	<li className={css.listCustomer}>
+              		Customer
+              	</li>
+                <li className={css.listItem}>
+                  <a href="/login" className={css.link}>Log in</a>
+                </li>
+                <li className={css.listItem}>
+                  <a href="/signup" className={css.link}>Sign up</a>
+                </li> 
+                <li className={css.listItem}>
+                  <a href="https://docs.google.com/forms/d/e/1FAIpQLSfIG7NR-ixq6CFydZ_955OyNyhI1-1iS4UfkRdV7knFxnFlqA/viewform" target="_blank" className={css.link}>Invite a friend</a>
+                </li>
+                <li className={css.listItem}>
+                  <a href="/s?address=Ireland&bounds=55.36%2C-5.911%2C51.427%2C-10.382&origin=53.357%2C-7.756" className={css.link}>Find a pub</a>
+                </li>
+                <li className={css.listItem}>
+                  <a href="https://www.whichost.com/eng/legal#deals-section" target="_blank" className={css.link}>Deals for you</a>
+                </li>
+              </ul>
+            </div>
+             <div className={css.infoLinks}>
+              <ul className={css.list}>
+              	<li className={css.listPublican}>
+              		Publican
+              	</li>
+              	<li className={css.listItem}>
+                  <a href="/login" className={css.link}>Log in</a>
+                </li>
+                <li className={css.listItem}>
+                  <a href="/signup" className={css.link}>Sign up</a>
+                </li> 
                 <li className={css.listItem}>
                   <NamedLink name="NewListingPage" className={css.link}>
                     <FormattedMessage id="Footer.toNewListingPage" />
                   </NamedLink>
                 </li>
                 <li className={css.listItem}>
-                  <NamedLink name="AboutPage" className={css.link}>
-                    <FormattedMessage id="Footer.toAboutPage" />
-                  </NamedLink>
-                </li>   
-                <li className={css.listItem}>
-                  <NamedLink name="LandingPage" className={css.link}>
-                    <FormattedMessage id="Footer.toFAQPage" />
-                  </NamedLink>
+                  <a href="https://docs.google.com/document/d/1KtFBwGkdd79Sabjt1s4PBzpKkZtY0rDy3Wqkq0k8ED8/edit" target="_blank" className={css.link}>Guidebook</a>
                 </li>
                 <li className={css.listItem}>
-                  <NamedLink name="LandingPage" className={css.link}>
-                    <FormattedMessage id="Footer.toHelpPage" />
-                  </NamedLink>
+                  <a href="https://www.whichost.com/eng/legal#deals-section" target="_blank" className={css.link}>Deals for you</a>
+                </li>
+              </ul>
+            </div>
+            <div className={css.infoLinks}>
+              <ul className={css.list}>
+              	<li className={css.listWhichost}>
+              		Whichost
+              	</li>
+                <li className={css.listItem}>
+                  <a href="https://docs.google.com/forms/d/e/1FAIpQLSfIG7NR-ixq6CFydZ_955OyNyhI1-1iS4UfkRdV7knFxnFlqA/viewform" target="_blank" className={css.link}>Invite a friend</a>
+                </li>
+                  <li className={css.listItem}>
+                  <a href="https://docs.google.com/forms/d/e/1FAIpQLSejVl35N8A1lu_W99QkvovqLXn1ODOKBp35NZ524XHJnpdOeg/viewform" target="_blank" className={css.link}>Recommend a pub</a>
                 </li>
                 <li className={css.listItem}>
-                  <NamedLink name="AboutPage" to={{ hash: '#contact' }} className={css.link}>
-                    <FormattedMessage id="Footer.toContactPage" />
-                  </NamedLink>
+                  <a href="https://www.whichost.com/eng/legal#guidelines-section" target="_blank" className={css.link}>Guidelines</a>
+                </li>
+                <li className={css.listItem}>
+                  <a href="https://www.whichost.com/eng/faq" target="_blank" className={css.link}>Help centre</a>
+                </li>
+                <li className={css.listItem}>
+                  <a href="https://www.whichost.com/eng/legal#fees-section" target="_blank" className={css.link}>Fees</a>
                 </li>
               </ul>
             </div>
             <div className={css.searches}>
               <ul className={css.list}>
+              	<li className={css.listSearches}>
+              		Top cities
+              	</li>
                 <li className={css.listItem}>
 									{mainLocationsData.map((location) => renderFavoriteLocation(location))}
                 </li>
@@ -134,35 +176,54 @@ const Footer = props => {
               <ul className={css.list}>
               </ul>
             </div>
-            <div className={css.extraLinks}>
-              <div className={css.someLinks}>{socialMediaLinks}</div>
-              <div className={css.legalMatters}>
-                <ul className={css.tosAndPrivacy}>
-                  <li>
-                    <NamedLink name="TermsOfServicePage" className={css.legalLink}>
-                      <FormattedMessage id="Footer.termsOfUse" />
-                    </NamedLink>
-                  </li>
-                  <li>
-                    <NamedLink name="PrivacyPolicyPage" className={css.legalLink}>
-                      <FormattedMessage id="Footer.privacyPolicy" />
-                    </NamedLink>
-                  </li>
-                </ul>
-              </div>
+            
             </div>
+            <div className={css.extraLinks}>
+              
+              <div className={css.legalMatters}>
+                <div className={css.tosAndPrivacy}>
+                  <a className={css.someLinks}>{socialMediaLinks}</a>
+                  <NamedLink name="AboutPage" className={css.legalLink}>
+                    | &nbsp;&nbsp;<FormattedMessage id="Footer.toAboutPage" />&nbsp;&nbsp;|&nbsp;&nbsp;
+                  </NamedLink>
+                  <a href="mailto:support@whichost.com?subject=Generla inquiry" className={css.legalLink}>
+                    Contact&nbsp;&nbsp;|&nbsp;&nbsp;
+                  </a>
+                    <NamedLink name="TermsOfServicePage" className={css.legalLink}>
+                    <FormattedMessage id="Footer.termsOfUse" />&nbsp;&nbsp; |&nbsp;&nbsp;
+                    </NamedLink> 
+                    <NamedLink name="PrivacyPolicyPage" className={css.legalLink}>
+                      <FormattedMessage id="Footer.privacyPolicy" />&nbsp;&nbsp; |&nbsp;&nbsp;
+                    </NamedLink>
+                  <NamedLink name="TermsOfServicePage" className={css.legalLink}>
+                    Legal&nbsp;&nbsp; |&nbsp;&nbsp;
+                    </NamedLink>
+                </div>
+              </div>
           </div>
           <div className={css.copyrightAndTermsMobile}>
             <NamedLink name="LandingPage" className={css.organizationCopyrightMobile}>
               <FormattedMessage id="Footer.copyright" />
             </NamedLink>
             <div className={css.tosAndPrivacyMobile}>
+            	<NamedLink name="AboutPage" className={css.privacy}>
+                <FormattedMessage id="Footer.about" />
+              </NamedLink>
+              <a href="mailto:support@whichost.com?subject=Generla inquiry" className={css.privacy}>
+                    Contact
+                  </a>
+
               <NamedLink name="PrivacyPolicyPage" className={css.privacy}>
                 <FormattedMessage id="Footer.privacy" />
+              </NamedLink>
+              <NamedLink name="TermsOfServicePage" className={css.privacy}>
+              	Legal      
               </NamedLink>
               <NamedLink name="TermsOfServicePage" className={css.terms}>
                 <FormattedMessage id="Footer.terms" />
               </NamedLink>
+             
+
             </div>
           </div>
         </div>
