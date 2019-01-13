@@ -228,7 +228,7 @@
   "FieldBoolean.yes": "Yes",
   "FieldDateInput.clearDate": "Clear Date",
   "FieldDateInput.closeDatePicker": "Close",
-  "FieldDateInput.invalidDate": "The start date is not valid",
+  "FieldDateInput.invalidDate": "The date is not valid",
   "FieldDateInput.placeholderText": "Add party date",
   "FieldDateInput.screenReaderInputMessage": "Date input",
   "FieldDateRangeInput.clearDate": "Clear Date",
