@@ -144,8 +144,9 @@ const bookingData = (unitType, tx, isOrder, intl) => {
       : endDateRaw;
   const bookingEnd = formatDate(intl, endDate);
   const bookingPrice = isOrder ? tx.attributes.payinTotal : tx.attributes.payoutTotal;
+	const attendance = 12;
   const price = formatMoney(intl, bookingPrice);
-  return { bookingStart, bookingEnd, price, isSingleDay };
+  return { bookingStart, bookingEnd, price, isSingleDay, attendance };
 };
 
 // Functional component as internal helper to print BookingInfo if that is needed
@@ -157,12 +158,17 @@ const BookingInfoMaybe = props => {
     return null;
   }
 
-  const { bookingStart, bookingEnd, price, isSingleDay } = bookingData(unitType, tx, isOrder, intl);
+  const { bookingStart, bookingEnd, price, isSingleDay, attendance } = bookingData(unitType, tx, isOrder, intl);
   const dateInfo = isSingleDay ? bookingStart.short : `${bookingStart.short} - ${bookingEnd.short}`;
 
   return (
     <div className={classNames(css.bookingInfo, bookingClassName)}>
-      {dateInfo}
+			<p>
+				<FormattedMessage id="InboxPage.bookingFor" />
+				{attendance} 
+ 	    	<FormattedMessage id="InboxPage.attendanceUnit" />
+			</p>
+     	{dateInfo}
       <span className={css.itemPrice}>{price}</span>
     </div>
   );
