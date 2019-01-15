@@ -125,9 +125,13 @@ export class CheckoutPageComponent extends Component {
   }
 
   handleSubmit(values) {
+
+		console.log('handleSubmit, ', values)
+
     if (this.state.submitting) {
       return;
     }
+
     this.setState({ submitting: true });
 
     const cardToken = values.token;
@@ -138,10 +142,15 @@ export class CheckoutPageComponent extends Component {
     // NOTE: if unit type is line-item/units, quantity needs to be added.
     // The way to pass it to checkout page is through pageData.bookingData
     const requestParams = {
+
       listingId: this.state.pageData.listing.id,
       cardToken,
       bookingStart: speculatedTransaction.booking.attributes.start,
       bookingEnd: speculatedTransaction.booking.attributes.end,
+			protectedData: {
+				attendance: values.attendance
+			}
+
     };
 
     sendOrderRequest(requestParams, initialMessage)
