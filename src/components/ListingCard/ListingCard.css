@@ -121,6 +121,26 @@
   }
 }
 
+.listingTypeInfo span {
+  /* Font */
+  @apply --marketplaceTinyFontStyles;
+  color: var(--matterColor);
+
+  /* Remove default margins from font */
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 16px;
+  background-color: #0D2C54;
+  padding: 2px 6px 4px 4px;
+  color: #fff;
+  border-radius: 4px;
+
+  @media (--viewportMedium) {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
 .longWord {
   /* fallback option */
   word-break: break-all;
