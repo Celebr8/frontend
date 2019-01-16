@@ -271,6 +271,8 @@
   "InboxPage.ordersTabTitle": "Party",
   "InboxPage.ordersTitle": "Inbox: Party",
   "InboxPage.salesTabTitle": "Hosting",
+  "InboxPage.bookingFor": "Booking for ",
+  "InboxPage.attendanceUnit": " people",
   "InboxPage.salesTitle": "Inbox: Hosting",
   "InboxPage.stateAccepted": "Accepted",
   "InboxPage.stateCanceled": "Canceled",
