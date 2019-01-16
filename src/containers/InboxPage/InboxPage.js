@@ -144,7 +144,8 @@ const bookingData = (unitType, tx, isOrder, intl) => {
       : endDateRaw;
   const bookingEnd = formatDate(intl, endDate);
   const bookingPrice = isOrder ? tx.attributes.payinTotal : tx.attributes.payoutTotal;
-	const attendance = 12;
+	console.log('Attendance : ', unitType, tx, isOrder)
+	const attendance = tx.attributes.protectedData.attendance;;
   const price = formatMoney(intl, bookingPrice);
   return { bookingStart, bookingEnd, price, isSingleDay, attendance };
 };
