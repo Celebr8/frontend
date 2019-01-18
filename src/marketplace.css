@@ -42,17 +42,17 @@
 
   /* ================ Colors ================ */
 
-  --marketplaceColor: #c0392b;
+  --marketplaceColor: #ff3f00;
   --marketplaceColorLight: #ff4c38;
   --marketplaceColorDark: #8c291e;
 
   /* Used with inline CSS SVGs */
-  --marketplaceColorEncoded: %23c0392b;
+  --marketplaceColorEncoded: %23ff3f00;
 
   --successColor: #2ecc71;
   --successColorDark: #239954;
-  --failColor: #ff0000;
-  --attentionColor: #ffaa00;
+  --failColor: #ff3f00;
+  --attentionColor: #0C2D54;
   --bannedColorLight: var(--marketplaceColorLight);
   --bannedColorDark: var(--marketplaceColor);
 
