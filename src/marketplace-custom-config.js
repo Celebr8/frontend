@@ -29,7 +29,7 @@ export const amenities = [
 	},
 	{
 		key: "live-music",
-		label: "live-music"
+		label: "Live music"
 	},
 	{
 		key: "karaoke",
@@ -139,3 +139,15 @@ export const groupSize = [
 	},
 ];
 
+export const listingTypes = [
+	{
+		key: "common",
+		label: "Common"
+	},
+	{
+		key: "private",
+		label: "Private"
+	},
+
+
+]

@@ -52,7 +52,7 @@ export class SearchPageComponent extends Component {
   }
 
   filters() {
-    const { amenities, regularlyOpenOn, groupSize } = this.props;
+    const { amenities, regularlyOpenOn, groupSize, listingTypes } = this.props;
 
     return {
       amenitiesFilter: {
@@ -66,6 +66,10 @@ export class SearchPageComponent extends Component {
       groupSizeFilter: {
         paramName: 'pub_groupSize',
         options: groupSize,
+      },
+      listingTypeFilter: {
+        paramName: 'pub_type',
+        options: listingTypes,
       },
     };
   }
@@ -212,6 +216,7 @@ export class SearchPageComponent extends Component {
               amenitiesFilter: filters.amenitiesFilter,
               regularlyOpenOnFilter: filters.regularlyOpenOnFilter,
               groupSizeFilter: filters.groupSizeFilter,
+              listingTypeFilter: filters.listingTypeFilter,
             }}
           />
           <ModalInMobile
@@ -258,6 +263,7 @@ SearchPageComponent.defaultProps = {
   groupSize: config.custom.groupSize,
   amenities: config.custom.amenities,
   regularlyOpenOn: config.custom.regularlyOpenOn,
+	listingTypes: config.custom.listingTypes,
   activeListingId: null,
 };
 
@@ -277,6 +283,7 @@ SearchPageComponent.propTypes = {
   amenities: array,
   regularlyOpenOn: array,
   groupSize: array,
+  listingTypes: array,
 
   // from withRouter
   history: shape({

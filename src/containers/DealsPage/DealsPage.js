@@ -13,13 +13,13 @@ import {
   LayoutWrapperTopbar,
   LayoutWrapperFooter,
   Footer,
-  TermsOfService,
+	Deals
 } from '../../components';
 import config from '../../config';
 
-import css from './TermsOfServicePage.css';
+import css from './DealsPage.css';
 
-const TermsOfServicePageComponent = props => {
+const DealsPageComponent = props => {
   const { scrollingDisabled, intl } = props;
 
   const tabs = [
@@ -32,14 +32,14 @@ const TermsOfServicePageComponent = props => {
     },
     {
       text: intl.formatMessage({ id: 'TermsOfServicePage.tosTabTitle' }),
-      selected: true,
+      selected: false,
       linkProps: {
         name: 'TermsOfServicePage',
       },
     },
     {
       text: intl.formatMessage({ id: 'TermsOfServicePage.dealsTabTitle' }),
-      selected: false,
+      selected: true,
       linkProps: {
         name: 'DealsPage',
       },
@@ -64,7 +64,7 @@ const TermsOfServicePageComponent = props => {
             <h1 className={css.heading}>
               <FormattedMessage id="TermsOfServicePage.heading" />
             </h1>
-            <TermsOfService />
+            <Deals />
           </div>
         </LayoutWrapperMain>
         <LayoutWrapperFooter>
@@ -77,7 +77,7 @@ const TermsOfServicePageComponent = props => {
 
 const { bool } = PropTypes;
 
-TermsOfServicePageComponent.propTypes = {
+DealsPageComponent.propTypes = {
   scrollingDisabled: bool.isRequired,
 
   // from injectIntl
@@ -90,9 +90,9 @@ const mapStateToProps = state => {
   };
 };
 
-const TermsOfServicePage = compose(
+const DealsPage = compose(
   connect(mapStateToProps),
   injectIntl
-)(TermsOfServicePageComponent);
+)(DealsPageComponent);
 
-export default TermsOfServicePage;
+export default DealsPage;;
