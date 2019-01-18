@@ -112,7 +112,9 @@ const Footer = props => {
                   <a href="/s?address=Ireland&bounds=55.36%2C-5.911%2C51.427%2C-10.382&origin=53.357%2C-7.756" className={css.link}>Find a pub</a>
                 </li>
                 <li className={css.listItem}>
-                  <a href="https://www.whichost.com/eng/legal#deals-section" target="_blank" className={css.link}>Deals for you</a>
+                  <NamedLink name="DealsPage" className={css.link}>
+                    <FormattedMessage id="Footer.toDealsPage" />
+                  </NamedLink>
                 </li>
               </ul>
             </div>
@@ -136,7 +138,9 @@ const Footer = props => {
                   <a href="https://docs.google.com/document/d/1KtFBwGkdd79Sabjt1s4PBzpKkZtY0rDy3Wqkq0k8ED8/edit" target="_blank" className={css.link}>Guidebook</a>
                 </li>
                 <li className={css.listItem}>
-                  <a href="https://www.whichost.com/eng/legal#deals-section" target="_blank" className={css.link}>Deals for you</a>
+                  <NamedLink name="DealsPage" className={css.link}>
+                    <FormattedMessage id="Footer.toDealsPage" />
+                  </NamedLink>
                 </li>
               </ul>
             </div>
