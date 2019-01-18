@@ -42,15 +42,19 @@ const EditListingDescriptionPanel = props => {
       <h1 className={css.title}>{panelTitle}</h1>
       <EditListingDescriptionForm
         className={css.form}
-        initialValues={{ title, description, category: publicData.category }}
+        initialValues={{ title, description, type: publicData.type }}
         saveActionMsg={submitButtonText}
         onSubmit={values => {
-          const { title, description, category } = values;
+					console.log('onSubmit (EditListingDescriptionPanel)')
+					console.log('values', values)
+          const { title, description, type } = values;
           const updateValues = {
             title: title.trim(),
             description,
-            publicData: { category },
+            publicData: { type },
           };
+
+					console.log('onSubmit (EditListingDescriptionPanel)', values)
 
           onSubmit(updateValues);
         }}
@@ -58,7 +62,7 @@ const EditListingDescriptionPanel = props => {
         updated={panelUpdated}
         updateInProgress={updateInProgress}
         fetchErrors={errors}
-        categories={config.custom.categories}
+        listingTypes={config.custom.listingTypes}
       />
     </div>
   );

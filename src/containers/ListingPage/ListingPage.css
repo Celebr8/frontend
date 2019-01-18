@@ -392,6 +392,26 @@
   }
 }
 
+.sectionGroupSize {
+  padding: 0 24px;
+  margin-bottom: 32px;
+
+  @media (--viewportMedium) {
+    padding: 0;
+    margin-bottom: 52px;
+  }
+}
+
+.sectionGroupSize {
+  padding: 0 24px;
+  margin-bottom: 32px;
+
+  @media (--viewportMedium) {
+    padding: 0;
+    margin-bottom: 52px;
+  }
+}
+
 .featuresTitle {
   /* Font */
   @apply --marketplaceH3FontStyles;
