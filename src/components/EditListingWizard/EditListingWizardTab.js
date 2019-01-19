@@ -180,8 +180,8 @@ const EditListingWizardTab = props => {
     }
     case CAPACITY: {
       const submitButtonTranslationKey = isNewListingFlow
-        ? 'EditListingWizard.saveNewFeatures'
-        : 'EditListingWizard.saveEditFeatures';
+        ? 'EditListingWizard.saveNewCapacity'
+        : 'EditListingWizard.saveEditCapacity';
       return (
         <EditListingCapacityPanel
           {...panelProps(FEATURES)}
@@ -194,8 +194,8 @@ const EditListingWizardTab = props => {
     }
     case REGULARLY_OPEN_ON: {
       const submitButtonTranslationKey = isNewListingFlow
-        ? 'EditListingWizard.saveNewFeatures'
-        : 'EditListingWizard.saveEditFeatures';
+        ? 'EditListingWizard.saveNewRegularlyOpenOn'
+        : 'EditListingWizard.saveEditRegularlyOpenOn';
       return (
         <EditListingRegularlyOpenOnPanel
           {...panelProps(FEATURES)}
