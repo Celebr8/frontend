@@ -142,11 +142,11 @@ export const groupSize = [
 export const listingTypes = [
 	{
 		key: "common",
-		label: "Common"
+		label: "Common space"
 	},
 	{
 		key: "private",
-		label: "Private"
+		label: "Private space"
 	},
 
 
