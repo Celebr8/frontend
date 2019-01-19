@@ -8,6 +8,7 @@
   & h2 {
     /* Adjust heading margins to work with the reduced body font size */
     margin: 23px 0 19px 0;
+    padding-top: 25px;
 
     @media (--viewportMedium) {
       margin: 24px 0 24px 0;
@@ -17,11 +18,11 @@
   & .lastUpdated {
     @apply --marketplaceBodyFontStyles;
     margin-top: 0;
-    margin-bottom: 55px;
+    margin-bottom: 25px;
 
     @media (--viewportMedium) {
       margin-top: 0;
-      margin-bottom: 54px;
+      margin-bottom: 24px;
     }
   }
   & ul {
@@ -32,6 +33,23 @@
   & ul li {
 	  line-height: 24px;
 	  letter-spacing: 0;
+  }
+  
+  & .dealButton a {
+    @apply --marketplaceBodyFontStyles;
+    margin-top: 0;
+    margin-bottom: 25px;
+    font-size: 22px;
+    background-color: #0d2c54;
+    padding: 4px 8px 6px 6px;
+    color: #fff!important;
+    border-radius: 4px;
+    text-decoration: none;
+
+    @media (--viewportMedium) {
+      margin-top: 0;
+      margin-bottom: 24px;
+    }
   }
 }
 
