@@ -310,6 +310,8 @@
   "ListingPage.regularlyOpenOnTitle": "Regularly open on",
   "ListingPage.groupSizeTitle": "Group size",
   "ListingPage.listingTypeTitle": "Listing type",
+  "ListingPage.listingTypeCommon": "Common space",
+  "ListingPage.listingTypePrivate": "Private space",
   "ListingPage.finishListing": "Finish listing",
   "ListingPage.hostedBy": "Hosted by {name}",
   "ListingPage.loadingListingMessage": "Loading listing…",
