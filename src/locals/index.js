@@ -27,14 +27,14 @@ export const mainLocationsData = [
 	{
 		address: 'Cork, Ireland',
 		img: corkImage,
-		bounds: ['51.918', '-8.3934', '51.8654', '51.9035'],
+		bounds: ['51.918', '-8.3934', '51.8654', '-8.54181'],
 		origin: ['51.8985','-8.4711'],
 		intl: 'Cork'
 	},
 	{
 		address: 'Galway, Ireland',
 		img: galwayImage,
-		bounds: ['53.3109', '-8.9588', '53.253', '53.276'],
+		bounds: ['53.3109', '-8.9588', '53.253', '-9.237719'],
 		origin: ['53.2748', '-9.0488'],
 		intl: 'Galway'
 	}
