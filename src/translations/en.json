@@ -118,6 +118,7 @@
   "DateInput.closeDatePicker": "Close",
   "DateInput.defaultPlaceholder": "Date input",
   "DateInput.screenReaderInputMessage": "Date input",
+  "DealsPage.heading": "Deals",
   "EditListingDescriptionForm.listingTypeLabel": "Space type",
   "EditListingDescriptionForm.listingTypePlaceholder": "Choose the type of your pub space (common or private)",
   "EditListingDescriptionForm.listingTypeRequired": "You need to select a listingType for your space.",
