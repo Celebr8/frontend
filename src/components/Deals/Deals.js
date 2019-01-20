@@ -12,7 +12,7 @@ const Deals = props => {
   return (
     <div className={classes}>
       <p className={css.lastUpdated}>Last updated: January 11, 2019</p>
-      <p className={css.dealButton}><a href="#birthday-deal-section">Birthday Deal</a>&nbsp;&nbsp;&nbsp;<a href="#corporate-deal-section">Corporate Deal</a>&nbsp;&nbsp;&nbsp;<a href="#association-deal-section">Association Deal</a></p>
+      <p className={css.dealButton}><a href="#birthday-deal-section">Birthday Deal</a>&nbsp;&nbsp;&nbsp;<a href="#corporate-deal-section">Corporate Deal</a>&nbsp;&nbsp;&nbsp;<a href="#organisation-deal-section">Organisation Deal</a></p>
 	  <p>With Whichost, you can easily and quickly find and book unique, inspiring spaces to host your parties, which in itself is already an amazing benefit.</p>
 	  <h2 id="birthday-deal-section">BIRTHDAY DEAL</h2>
 	  <p>With our Birthday Deal we want to give you a special gift on your birthday where you can win an Amazon Gift Card for up to €200.00 in value. This is the deal:</p>
@@ -195,10 +195,10 @@ const Deals = props => {
 	  </ol>
 	  <h2 id="corporate-deal-section">CORPORATE DEAL</h2>
 	  <p>With Whichost, you can easily and quickly find and book unique, inspiring pubs to host your parties, which in itself is already an amazing benefit. With our Corporate Deal we want to bring more benefits to your company by partnering with you, to give your employees more special benefits.</p>
-	  <p>Please contact us on <a href="mailto:deals@whichost.com">deals@whichost.com</a> and we will be more than happy to have a chat with you and provide you detailed information about our Whichost Corporate Deal.</p>
-	  <h2 id="association-deal-section">ASSOCIATION DEAL</h2>
-	  <p>By using Whichost, members of any association get more exposure, more parties, more & new customers and can easily manage everything from their mobile device, tablet or PC. However, we want to expand our benefits for your association by partnering with you to give your members more special benefits.</p>
-	  <p>Please contact us on <a href="mailto:deals@whichost.com">deals@whichost.com</a> and we will be more than happy to have a chat with you and provide you detailed information about our Whichost Association Deal.</p>
+	  <p>Please contact us on <a href="mailto:corporate@whichost.com">corporate@whichost.com</a> and we will be more than happy to have a chat with you and provide you detailed information about our Whichost Corporate Deal.</p>
+	  <h2 id="organisation-deal-section">ORGANISATION DEAL</h2>
+	  <p>By using Whichost, members of any organisation get more exposure, more parties, more & new customers and can easily manage everything from their mobile device, tablet or PC. However, we want to expand our benefits for your organisation by partnering with you to give your members more special benefits.</p>
+	  <p>Please contact us on <a href="mailto:organisation@whichost.com">organisation@whichost.com</a> and we will be more than happy to have a chat with you and provide you detailed information about our Whichost Organisation Deal.</p>
     </div>
   );
 };
