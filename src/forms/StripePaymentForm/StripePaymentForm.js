@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage, injectIntl, intlShape } from 'react-intl';
 import classNames from 'classnames';
-import { Form, PrimaryButton, ExpandingTextarea, FieldTextInput } from '../../components';
+import { Form, PrimaryButton, ExpandingTextarea, FieldTextInput, FieldSelect } from '../../components';
 import * as log from '../../util/log';
 import config from '../../config';
 
@@ -213,8 +213,7 @@ class StripePaymentForm extends Component {
       // the current token and the new message.
       const message = e.target.value;
       this.setState(prevState => {
-        const { token } = prevState;
-        const newState = { token, message };
+        const newState = { ...prevState, message };
         onChange(newState);
         return newState;
       });
@@ -227,13 +226,20 @@ class StripePaymentForm extends Component {
       const attendance = e.target.value;
 			if(parseInt(attendance) > 1) 
 				this.setState(prevState => {
-					const { token, message } = prevState;
-					const newState = { token, message, attendance };
+					const newState = { ...prevState, attendance };
 					onChange(newState);
 					return newState;
 				});
     };
 
+    const handleOccasionChange = e => {
+      const occasion = e.target.value;
+      this.setState(prevState => {
+				const newState = { ...prevState, occasion };
+        onChange(newState);
+        return newState;
+      });
+    };
     const messageOptionalText = (
       <span className={css.messageOptional}>
         <FormattedMessage id="StripePaymentForm.messageOptionalText" />
@@ -272,6 +278,30 @@ class StripePaymentForm extends Component {
           onChange={handleMessageChange}
         />
 
+			<h3 className={css.occasionHeading}>
+				<FormattedMessage id="StripePaymentForm.occasionHeading" />
+			</h3>
+
+				<label className={css.occasionLabel}>
+					<FormattedMessage id="StripePaymentForm.occasionLabel" />
+				</label>
+
+				<select 
+					className={css.occasion}
+					name="occasion"
+					id="occasion"
+					onChange={handleOccasionChange}
+				>
+					<option value="justBecause">
+						{intl.formatMessage({ id: 'StripePaymentForm.justBecause' } )}
+					</option>
+
+					<option value="birthday">
+						{intl.formatMessage({ id: 'StripePaymentForm.birthday' } )}
+					</option>
+
+				</select>
+
         <h3 className={css.attendanceHeading}>
           <FormattedMessage id="StripePaymentForm.attendanceHeading" />
         </h3>
@@ -287,7 +317,6 @@ class StripePaymentForm extends Component {
 					value={this.state.attendance}
 					onChange={handleAttendanceChange}
 				/>
-
 
         <div className={css.submitContainer}>
           <p className={css.paymentInfo}>{paymentInfo}</p>
