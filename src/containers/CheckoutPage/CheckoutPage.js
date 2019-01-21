@@ -148,7 +148,8 @@ export class CheckoutPageComponent extends Component {
       bookingStart: speculatedTransaction.booking.attributes.start,
       bookingEnd: speculatedTransaction.booking.attributes.end,
 			protectedData: {
-				attendance: values.attendance
+				attendance: values.attendance,
+				occasion: values.occasion
 			}
 
     };

@@ -102,6 +102,26 @@
   }
 }
 
+.occasionHeading {
+  margin: 0 0 14px 0;
+  color: var(--matterColorAnti);
+
+  @media (--viewportMedium) {
+    margin: 0 0 26px 0;
+  }
+}
+
+.occasion {
+  margin-top: 22px;
+
+  @media (--viewportMedium) {
+    margin-top: 26px;
+  }
+  @media (--viewportLarge) {
+    margin-top: 17px;
+  }
+}
+
 .submitButton {
   margin-top: 22px;
 
