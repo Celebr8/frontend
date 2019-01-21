@@ -639,6 +639,8 @@
   "SignupForm.passwordTooShort": "The password should be at least {minLength} characters.",
   "SignupForm.signUp": "Sign up",
   "SignupForm.termsAndConditionsAcceptText": "By signing up you accept the {termsLink}",
+  "SignupForm.moreThan18Text": "I am more than 18 years old.",
+  "SignupForm.moreThan18Required": "You need to be more than 18 years old to sign up to the platform.",
   "SignupForm.termsAndConditionsLinkText": "terms and conditions",
   "StripeBankAccountTokenInputField.accountNumber.inline": "account number",
   "StripeBankAccountTokenInputField.accountNumber.label": "Bank account number",
