@@ -146,8 +146,9 @@ const bookingData = (unitType, tx, isOrder, intl) => {
   const bookingPrice = isOrder ? tx.attributes.payinTotal : tx.attributes.payoutTotal;
 	console.log('Attendance : ', unitType, tx, isOrder)
 	const attendance = tx.attributes.protectedData.attendance;;
+	const occasion = tx.attributes.protectedData.occasion;;
   const price = formatMoney(intl, bookingPrice);
-  return { bookingStart, bookingEnd, price, isSingleDay, attendance };
+  return { bookingStart, bookingEnd, price, isSingleDay, attendance, occasion };
 };
 
 // Functional component as internal helper to print BookingInfo if that is needed
@@ -159,8 +160,11 @@ const BookingInfoMaybe = props => {
     return null;
   }
 
-  const { bookingStart, bookingEnd, price, isSingleDay, attendance } = bookingData(unitType, tx, isOrder, intl);
+  const { bookingStart, bookingEnd, price, isSingleDay, attendance, occasion } = bookingData(unitType, tx, isOrder, intl);
   const dateInfo = isSingleDay ? bookingStart.short : `${bookingStart.short} - ${bookingEnd.short}`;
+
+	occasionIdIntl = `InboxPage.${occasion}`
+	const occasionFormatted = <FormattedMessage id={occasionIdIntl}>
 
   return (
     <div className={classNames(css.bookingInfo, bookingClassName)}>
@@ -170,6 +174,9 @@ const BookingInfoMaybe = props => {
  	    	<FormattedMessage id="InboxPage.attendanceUnit" />
 			</p>
      	{dateInfo}
+			<p><FormattedMessage id="InboxPage.occasion" /> : 
+					{occasionFormatted}
+			</p>
       <span className={css.itemPrice}>{price}</span>
     </div>
   );
