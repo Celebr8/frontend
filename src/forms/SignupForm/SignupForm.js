@@ -5,7 +5,7 @@ import { FormattedMessage, injectIntl, intlShape } from 'react-intl';
 import { Form as FinalForm } from 'react-final-form';
 import classNames from 'classnames';
 import * as validators from '../../util/validators';
-import { Form, PrimaryButton, FieldTextInput } from '../../components';
+import { Form, PrimaryButton, FieldTextInput, FieldCheckbox } from '../../components';
 
 import css from './SignupForm.css';
 
@@ -105,7 +105,23 @@ const SignupFormComponent = props => (
       const lastNameRequiredMessage = intl.formatMessage({
         id: 'SignupForm.lastNameRequired',
       });
+
       const lastNameRequired = validators.required(lastNameRequiredMessage);
+
+			// More than 18
+
+      const moreThan18RequiredMessage = intl.formatMessage({
+        id: 'SignupForm.moreThan18Required',
+      });
+			const moreThan18Required = (message => value => (
+			
+				value? undefined: message
+			
+			))(moreThan18RequiredMessage)
+
+			const moreThan18Label = intl.formatMessage({
+        id: 'SignupForm.moreThan18Text',
+      });
 
       const classes = classNames(rootClassName || css.root, className);
       const submitInProgress = inProgress;
@@ -174,6 +190,17 @@ const SignupFormComponent = props => (
               validate={passwordValidators}
             />
           </div>
+
+					<div className={css.bottomWrapper}>
+						<p className={css.bottomWrapperText}>
+							<FieldCheckbox
+								id='moreThan18'
+								name="moreThan18"
+								label={moreThan18Label}
+								validate={moreThan18Required}
+							/>
+						</p>
+					</div>
 
           <div className={css.bottomWrapper}>
             <p className={css.bottomWrapperText}>
