@@ -163,10 +163,8 @@ const BookingInfoMaybe = props => {
   const { bookingStart, bookingEnd, price, isSingleDay, attendance, occasion } = bookingData(unitType, tx, isOrder, intl);
   const dateInfo = isSingleDay ? bookingStart.short : `${bookingStart.short} - ${bookingEnd.short}`;
 
-	const occasionFormatted = occasion == 'justBecause' ? 
-		intl.formatMessage({id: 'InboxPage.justBecause'}) : 
-		intl.formatMessage({id: 'InboxPage.birthday'});
-
+	const	occasionIdIntl = 'InboxPage.' + occasion;
+	const occasionFormatted = <FormattedMessage id={occasionIdIntl}>;
 
   return (
     <div className={classNames(css.bookingInfo, bookingClassName)}>
@@ -175,11 +173,10 @@ const BookingInfoMaybe = props => {
 				{attendance} 
  	    	<FormattedMessage id="InboxPage.attendanceUnit" />
 			</p>
-			<p>
-				<FormattedMessage id="Inbox.occasion" />
-				{occasionFormatted}
-			</p>
      	{dateInfo}
+			<p><FormattedMessage id="InboxPage.occasion" />  
+					{occasionFormatted}
+			</p>
       <span className={css.itemPrice}>{price}</span>
     </div>
   );

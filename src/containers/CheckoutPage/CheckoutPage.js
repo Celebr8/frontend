@@ -138,6 +138,10 @@ export class CheckoutPageComponent extends Component {
     const initialMessage = values.message;
     const { history, sendOrderRequest, speculatedTransaction, dispatch } = this.props;
 
+		// The transaction type have to be known here, to be passed to sendOrderRequest
+
+		const listingType = this.state.pageData.listing.attributes.publicData.type || 'common';
+
     // Create order aka transaction
     // NOTE: if unit type is line-item/units, quantity needs to be added.
     // The way to pass it to checkout page is through pageData.bookingData
@@ -154,7 +158,7 @@ export class CheckoutPageComponent extends Component {
 
     };
 
-    sendOrderRequest(requestParams, initialMessage)
+    sendOrderRequest(requestParams, initialMessage, listingType)
       .then(values => {
         const { orderId, initialMessageSuccess } = values;
         this.setState({ submitting: false });
@@ -536,9 +540,11 @@ const mapStateToProps = state => {
   };
 };
 
+// sendOrderRequest have to pass the listing Type to initiate Order
+
 const mapDispatchToProps = dispatch => ({
   dispatch,
-  sendOrderRequest: (params, initialMessage) => dispatch(initiateOrder(params, initialMessage)),
+  sendOrderRequest: (params, initialMessage, listingType) => dispatch(initiateOrder(params, initialMessage, listingType)),
   fetchSpeculatedTransaction: params => dispatch(speculateTransaction(params)),
 });
 

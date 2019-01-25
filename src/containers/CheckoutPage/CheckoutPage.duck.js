@@ -106,13 +106,19 @@ export const speculateTransactionError = e => ({
 
 /* ================ Thunks ================ */
 
-export const initiateOrder = (orderParams, initialMessage) => (dispatch, getState, sdk) => {
+export const initiateOrder = (orderParams, initialMessage, listingType) => (dispatch, getState, sdk) => {
   dispatch(initiateOrderRequest());
+
+	// Transition have to react to the listing type passed downstream from CheckoutPage
+	const process = listingType == 'common' ? "preauth-nightly-common-spaces/release-1" : undefined;
+
   const bodyParams = {
+		processAlias: process,
     transition: TRANSITION_REQUEST,
     processAlias: config.bookingProcessAlias,
     params: orderParams,
   };
+
   return sdk.transactions
     .initiate(bodyParams)
     .then(response => {
