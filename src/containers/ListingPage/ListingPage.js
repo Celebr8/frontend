@@ -56,6 +56,22 @@ const MIN_LENGTH_FOR_LONG_WORDS_IN_TITLE = 16;
 
 const { UUID } = sdkTypes;
 
+const freeTimeSlots = (now) => 
+	[...Array(89).keys()].map( (i) =>
+		({
+			type: 'timeSlot',
+			attributes: {
+				type: 'time-slot/day',
+				start: moment(now).add(i, 'days'),
+				end: moment(now).add(i+1, 'days')
+			},
+			id: {
+				uuid: 'dummy'	
+			}
+		})	
+	);
+
+
 const priceData = (price, intl) => {
   if (price && price.currency === config.currency) {
     const formattedPrice = formatMoney(intl, price);
@@ -412,6 +428,14 @@ export class ListingPageComponent extends Component {
         </span>
       ) : null;
 
+		console.log('listingType', publicData.type)
+
+		const timeSlotsAdjusted = publicData.type == 'common' ? 
+			freeTimeSlots() :
+			timeSlots;
+
+		console.log('timeslotsAdjusted', timeSlotsAdjusted)
+
     return (
       <Page
         title={schemaTitle}
@@ -515,7 +539,7 @@ export class ListingPageComponent extends Component {
                   handleBookButtonClick={handleBookButtonClick}
                   handleMobileBookModalClose={handleMobileBookModalClose}
                   onManageDisableScrolling={onManageDisableScrolling}
-                  timeSlots={timeSlots}
+                  timeSlots={timeSlotsAdjusted}
                   fetchTimeSlotsError={fetchTimeSlotsError}
                 />
               </div>
