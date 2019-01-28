@@ -163,9 +163,14 @@ export const initiateOrder = (orderParams, initialMessage, listingType) => (disp
  * pricing info for the booking breakdown to get a proper estimate for
  * the price with the chosen information.
  */
-export const speculateTransaction = params => (dispatch, getState, sdk) => {
+export const speculateTransaction = (params, listingType) => (dispatch, getState, sdk) => {
+
   dispatch(speculateTransactionRequest());
+
+	const process = listingType == 'common' ? "preauth-nightly-common-spaces/release-1" : undefined;
   const bodyParams = {
+
+		processAlias: process,
     transition: TRANSITION_REQUEST,
     processAlias: config.bookingProcessAlias,
     params: {

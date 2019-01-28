@@ -114,11 +114,14 @@ export class CheckoutPageComponent extends Component {
       // Fetch speculated transaction for showing price in booking breakdown
       // NOTE: if unit type is line-item/units, quantity needs to be added.
       // The way to pass it to checkout page is through pageData.bookingData
+
+			const listingType = pageData.listing.attributes.publicData.type || 'common';
+
       fetchSpeculatedTransaction({
         listingId,
         bookingStart: bookingStartForAPI,
         bookingEnd: bookingEndForAPI,
-      });
+      }, listingType);
     }
 
     this.setState({ pageData: pageData || {}, dataLoaded: true });
@@ -545,7 +548,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => ({
   dispatch,
   sendOrderRequest: (params, initialMessage, listingType) => dispatch(initiateOrder(params, initialMessage, listingType)),
-  fetchSpeculatedTransaction: params => dispatch(speculateTransaction(params)),
+  fetchSpeculatedTransaction: (params, listingType) => dispatch(speculateTransaction(params, listingType)),
 });
 
 const CheckoutPage = compose(
