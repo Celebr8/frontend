@@ -12,9 +12,9 @@ It will contains datas relative to internationalisation (favorite operating citi
 
 */
 
-import dublinImage from './images/location_dublin.jpg';
-import corkImage from './images/location_cork.jpg';
-import galwayImage from './images/location_galway.jpg';
+import dublinImage from './images/location_dublin.png';
+import corkImage from './images/location_cork.png';
+import galwayImage from './images/location_galway.png';
 
 export const mainLocationsData = [
 	{
