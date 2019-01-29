@@ -26,7 +26,8 @@ const sortSearchByDistance = false;
 //
 // In a way, 'processAlias' defines which transaction process (or processes)
 // this particular web application is able to handle.
-const bookingProcessAlias = 'preauth-with-nightly-booking/release-1';
+const bookingProcessAliasPrivate = 'preauth-with-nightly-booking/release-1';
+const bookingProcessAliasCommon = 'preauth-nightly-common-spaces/release-1';
 
 // The transaction line item code for the main unit type in bookings.
 //
@@ -343,7 +344,8 @@ const config = {
   env,
   dev,
   locale,
-  bookingProcessAlias,
+  bookingProcessAliasPrivate,
+  bookingProcessAliasCommon,
   bookingUnitType,
   fetchAvailableTimeSlots,
   dayCountAvailableForBooking,
