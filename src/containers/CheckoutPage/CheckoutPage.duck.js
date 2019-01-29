@@ -6,6 +6,13 @@ import { TRANSITION_REQUEST } from '../../util/types';
 import * as log from '../../util/log';
 import { fetchCurrentUserHasOrdersSuccess } from '../../ducks/user.duck';
 
+// ================ Process alias ================ //
+
+const processAliasDecide = (listingType) => 
+	listingType == 'common' ? 
+		config.bookingProcessAliasCommon : 
+		config.bookingProcessAliasPrivate;
+
 // ================ Action types ================ //
 
 export const SET_INITAL_VALUES = 'app/CheckoutPage/SET_INITIAL_VALUES';
@@ -110,12 +117,9 @@ export const initiateOrder = (orderParams, initialMessage, listingType) => (disp
   dispatch(initiateOrderRequest());
 
 	// Transition have to react to the listing type passed downstream from CheckoutPage
-	const process = listingType == 'common' ? "preauth-nightly-common-spaces/release-1" : undefined;
-
   const bodyParams = {
-		processAlias: process,
     transition: TRANSITION_REQUEST,
-    processAlias: config.bookingProcessAlias,
+    processAlias: processAliasDecide(listingType),
     params: orderParams,
   };
 
@@ -167,12 +171,10 @@ export const speculateTransaction = (params, listingType) => (dispatch, getState
 
   dispatch(speculateTransactionRequest());
 
-	const process = listingType == 'common' ? "preauth-nightly-common-spaces/release-1" : undefined;
   const bodyParams = {
 
-		processAlias: process,
+		processAlias: processAliasDecide(listingType),
     transition: TRANSITION_REQUEST,
-    processAlias: config.bookingProcessAlias,
     params: {
       ...params,
       cardToken: 'CheckoutPage_speculative_card_token',
