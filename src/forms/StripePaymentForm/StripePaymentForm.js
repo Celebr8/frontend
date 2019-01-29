@@ -225,7 +225,7 @@ class StripePaymentForm extends Component {
       // A change in the message should call the onChange prop with
       // the current token and the new message.
       const attendance = e.target.value;
-			if(parseInt(attendance) > 1) 
+			if(parseInt(attendance) > 8) 
 				this.setState(prevState => {
 					const { token, message } = prevState;
 					const newState = { token, message, attendance };
