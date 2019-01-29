@@ -126,8 +126,6 @@ export class CheckoutPageComponent extends Component {
 
   handleSubmit(values) {
 
-		console.log('handleSubmit, ', values)
-
     if (this.state.submitting) {
       return;
     }
