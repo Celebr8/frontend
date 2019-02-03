@@ -531,6 +531,7 @@
   "ProfilePage.editProfileLinkDesktop": "Edit profile",
   "ProfilePage.editProfileLinkMobile": "Edit",
   "ProfilePage.listingsTitle": "My pubs ({count})",
+  "ProfilePage.userMajority": "This user have reached majority.",
   "ProfilePage.loadingDataFailed": "Whoops, something went wrong. Please try again.",
   "ProfilePage.loadingReviewsFailed": "Loading reviews failed.",
   "ProfilePage.mobileHeading": "{name}",
