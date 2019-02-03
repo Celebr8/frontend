@@ -340,7 +340,6 @@ export const OrderOccasion = props => {
 
 	const occasion = transaction.attributes.protectedData.occasion;
 
-	console.log('occasion = ', occasion)
 
 	return occasion == 'birthday'?
 		(<p>
