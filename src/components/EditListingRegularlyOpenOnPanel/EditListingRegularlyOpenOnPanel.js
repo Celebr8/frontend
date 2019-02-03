@@ -10,7 +10,7 @@ import { ListingLink } from '../../components';
 
 import css from './EditListingRegularlyOpenOnPanel.css';
 
-const FEATURES_NAME = 'regularly_open_on';
+const REGULARLY_OPEN_ON_NAME = 'regularlyOpenOn';
 
 const EditListingRegularlyOpenOnPanel = props => {
   const {
@@ -47,7 +47,7 @@ const EditListingRegularlyOpenOnPanel = props => {
       <h1 className={css.title}>{panelTitle}</h1>
       <EditListingRegularlyOpenOnForm
         className={css.form}
-        name={FEATURES_NAME}
+        name={REGULARLY_OPEN_ON_NAME}
         initialValues={initialValues}
         onSubmit={values => {
           const { regularlyOpenOn = [] } = values;
