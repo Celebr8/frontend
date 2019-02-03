@@ -81,10 +81,6 @@ export class ProfileSettingsPageComponent extends Component {
     const { firstName, lastName, bio } = user.attributes.profile;
 		const birthday = ensureBirthday(user);
 
-		console.log('user', user)
-
-		console.log('birthday', birthday)
-
     const profileImageId = user.profileImage ? user.profileImage.id : null;
     const profileImage = image || { imageId: profileImageId };
 
