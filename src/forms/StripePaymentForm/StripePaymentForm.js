@@ -149,9 +149,18 @@ class StripePaymentForm extends Component {
 
     const { intl, onSubmit } = this.props;
 
+		const values = {
+			message: this.state.message.trim(), 
+			attendance: this.state.attendance,
+			occasion: this.state.occasion		
+		}
+
     if (this.state.token) {
       // Token already fetched for the current card value
-      onSubmit({ token: this.state.token, message: this.state.message.trim(), attendance: this.state.attendance });
+			onSubmit({ 
+				token: this.state.token, 
+				...values
+			});
       return;
     }
 
@@ -169,7 +178,10 @@ class StripePaymentForm extends Component {
           });
         } else {
           this.setState({ submitting: false, token: token.id });
-          onSubmit({ token: token.id, message: this.state.message.trim(), attendance: this.state.attendance });
+					onSubmit({ 
+						token: token.id,
+						...values	
+					});
         }
       })
       .catch(e => {
@@ -223,6 +235,9 @@ class StripePaymentForm extends Component {
     const handleAttendanceChange = e => {
       // A change in the message should call the onChange prop with
       // the current token and the new message.
+
+			console.log('handleOccasionChange', this.state)
+
       const attendance = e.target.value;
 			if(parseInt(attendance) > 1) 
 				this.setState(prevState => {
@@ -233,6 +248,7 @@ class StripePaymentForm extends Component {
     };
 
     const handleOccasionChange = e => {
+			console.log('handleOccasionChange', this.state)
       const occasion = e.target.value;
       this.setState(prevState => {
 				const newState = { ...prevState, occasion };
@@ -240,6 +256,7 @@ class StripePaymentForm extends Component {
         return newState;
       });
     };
+
     const messageOptionalText = (
       <span className={css.messageOptional}>
         <FormattedMessage id="StripePaymentForm.messageOptionalText" />
