@@ -84,11 +84,10 @@ class BirthdayInputComponent extends Component {
     this.handleSelectChange = this.handleSelectChange.bind(this);
   }
   componentWillMount() {
-    const value = this.props.valueFromForm;
-    if (value instanceof Date) {
-      this.setState({ selected: selectedFromDate(value) });
-    }
+    const value = this.props.value;
+    this.setState({ selected: value });
   }
+
   componentWillReceiveProps(newProps) {
     const oldValue = this.props.valueFromForm;
     const newValue = newProps.valueFromForm;
