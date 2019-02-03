@@ -293,6 +293,7 @@
   "InboxPage.statePending": "Pending",
   "InboxPage.stateRequested": "Requested",
   "InboxPage.title": "Inbox",
+  "InboxPage.occasionBirthday": "This is a birthday party!",
   "LandingPage.schemaDescription": "Book your party using Whichost or increase your pub's exposure.",
   "LandingPage.schemaTitle": "Celebrate Anywhere | {siteTitle}",
   "ListingCard.hostedBy": "Hosted by {authorName}.",

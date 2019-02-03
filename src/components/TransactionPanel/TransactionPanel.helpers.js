@@ -47,6 +47,7 @@ export const FeedSection = props => {
   const txTransitions = currentTransaction.attributes.transitions
     ? currentTransaction.attributes.transitions
     : [];
+
   const hasOlderMessages = totalMessagePages > oldestMessagePageFetched;
 
   const showFeed =
@@ -328,6 +329,23 @@ export const OrderAttendance = props => {
 			<FormattedMessage id="InboxPage.attendanceUnit" />
 		</p>
 	)
+
+}
+
+export const OrderOccasion = props => {
+
+	const {
+		transaction	
+	} = props;
+
+	const occasion = transaction.attributes.protectedData.occasion;
+
+
+	return occasion == 'birthday'?
+		(<p>
+			<FormattedMessage id="InboxPage.occasionBirthday" />
+		</p>)
+		: null;
 
 }
 
