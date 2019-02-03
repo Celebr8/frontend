@@ -161,6 +161,8 @@ export class CheckoutPageComponent extends Component {
 
     };
 
+		console.log('Sending the following transaction', requestParams)
+
     sendOrderRequest(requestParams, initialMessage, listingType)
       .then(values => {
         const { orderId, initialMessageSuccess } = values;
