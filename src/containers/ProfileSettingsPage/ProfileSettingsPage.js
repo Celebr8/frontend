@@ -29,6 +29,13 @@ const onImageUploadHandler = (values, fn) => {
   }
 };
 
+
+const ensureBirthday = (user) =>
+	user.id? 
+	user.attributes.profile.protectedData.birthday:
+	null;
+
+
 export class ProfileSettingsPageComponent extends Component {
   render() {
     const {
@@ -70,15 +77,30 @@ export class ProfileSettingsPageComponent extends Component {
     };
 
     const user = ensureCurrentUser(currentUser);
+
     const { firstName, lastName, bio } = user.attributes.profile;
+		const birthday = ensureBirthday(user);
+
+		console.log('user', user)
+
+		console.log('birthday', birthday)
+
     const profileImageId = user.profileImage ? user.profileImage.id : null;
     const profileImage = image || { imageId: profileImageId };
+
+
+		const initialValues = { 
+			firstName, 
+			lastName, 
+			bio, 
+			birthday,
+			profileImage: user.profileImage };
 
     const profileSettingsForm = user.id ? (
       <ProfileSettingsForm
         className={css.form}
         currentUser={currentUser}
-        initialValues={{ firstName, lastName, bio, profileImage: user.profileImage }}
+        initialValues={initialValues}
         profileImage={profileImage}
         onImageUpload={e => onImageUploadHandler(e, onImageUpload)}
         uploadInProgress={uploadInProgress}
