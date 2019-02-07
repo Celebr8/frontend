@@ -25,35 +25,37 @@ const renderSocialMediaLinks = intl => {
   const goToInsta = intl.formatMessage({ id: 'Footer.goToInstagram' });
   const goToTwitter = intl.formatMessage({ id: 'Footer.goToTwitter' });
 
-	const fbLink = null;
+  const fbLink = siteFacebookPage ? (
+    <ExternalLink key="linkToFacebook" href={siteFacebookPage} className={css.icon} title={goToFb}>
+      <IconSocialMediaFacebook />
+    </ExternalLink>
+  ) : null;
 
-  // const fbLink = siteFacebookPage ? (
-  //   <ExternalLink key="linkToFacebook" href={siteFacebookPage} className={css.icon} title={goToFb}>
-  //     <IconSocialMediaFacebook />
+  // const twitterLink = siteTwitterPage ? (
+  //   <ExternalLink
+  //     key="linkToTwitter"
+  //     href={siteTwitterPage}
+  //     className={css.icon}
+  //     title={goToTwitter}
+  //   >
+  //     <IconSocialMediaTwitter />
+  //   </ExternalLink>
+  // ) : null;
+	
+	const twitterLink = null;
+	const instragramLink = null;
+
+  // const instragramLink = siteInstagramPage ? (
+  //   <ExternalLink
+  //     key="linkToInstagram"
+  //     href={siteInstagramPage}
+  //     className={css.icon}
+  //     title={goToInsta}
+  //   >
+  //     <IconSocialMediaInstagram />
   //   </ExternalLink>
   // ) : null;
 
-  const twitterLink = siteTwitterPage ? (
-    <ExternalLink
-      key="linkToTwitter"
-      href={siteTwitterPage}
-      className={css.icon}
-      title={goToTwitter}
-    >
-      <IconSocialMediaTwitter />
-    </ExternalLink>
-  ) : null;
-
-  const instragramLink = siteInstagramPage ? (
-    <ExternalLink
-      key="linkToInstagram"
-      href={siteInstagramPage}
-      className={css.icon}
-      title={goToInsta}
-    >
-      <IconSocialMediaInstagram />
-    </ExternalLink>
-  ) : null;
   return [fbLink, twitterLink, instragramLink].filter(v => v != null);
 };
 
