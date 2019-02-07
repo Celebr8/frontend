@@ -186,7 +186,7 @@ const Footer = props => {
               
               <div className={css.legalMatters}>
                 <div className={css.tosAndPrivacy}>
-                  <a className={css.someLinks}>{socialMediaLinks}</a>
+									{/* <a className={css.someLinks}>{socialMediaLinks}</a> */}
                   <NamedLink name="AboutPage" className={css.legalLink}>
                     | &nbsp;&nbsp;<FormattedMessage id="Footer.toAboutPage" />&nbsp;&nbsp;|&nbsp;&nbsp;
                   </NamedLink>
