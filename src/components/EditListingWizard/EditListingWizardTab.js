@@ -103,6 +103,7 @@ const EditListingWizardTab = props => {
   };
 
   const onCompleteEditListingWizardTab = (tab, updateValues) => {
+
     // Normalize images for API call
     const { images: updatedImages, ...otherValues } = updateValues;
     const imageProperty =
@@ -181,8 +182,8 @@ const EditListingWizardTab = props => {
     }
     case CAPACITY: {
       const submitButtonTranslationKey = isNewListingFlow
-        ? 'EditListingWizard.saveNewFeatures'
-        : 'EditListingWizard.saveEditFeatures';
+        ? 'EditListingWizard.saveNewCapacity'
+        : 'EditListingWizard.saveEditCapacity';
       return (
         <EditListingCapacityPanel
           {...panelProps(FEATURES)}
@@ -195,8 +196,8 @@ const EditListingWizardTab = props => {
     }
     case REGULARLY_OPEN_ON: {
       const submitButtonTranslationKey = isNewListingFlow
-        ? 'EditListingWizard.saveNewFeatures'
-        : 'EditListingWizard.saveEditFeatures';
+        ? 'EditListingWizard.saveNewRegularlyOpenOn'
+        : 'EditListingWizard.saveEditRegularlyOpenOn';
       return (
         <EditListingRegularlyOpenOnPanel
           {...panelProps(FEATURES)}

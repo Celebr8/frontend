@@ -10,7 +10,7 @@ import { ListingLink } from '../../components';
 
 import css from './EditListingCapacityPanel.css';
 
-const FEATURES_NAME = 'capacity';
+const GROUPSIZE_NAME = 'groupSize';
 
 const EditListingCapacityPanel = props => {
   const {
@@ -47,7 +47,7 @@ const EditListingCapacityPanel = props => {
       <h1 className={css.title}>{panelTitle}</h1>
       <EditListingCapacityForm
         className={css.form}
-        name={FEATURES_NAME}
+        name={GROUPSIZE_NAME}
         initialValues={initialValues}
         onSubmit={values => {
           const { groupSize = [] } = values;

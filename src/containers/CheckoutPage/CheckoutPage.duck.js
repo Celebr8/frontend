@@ -6,6 +6,13 @@ import { TRANSITION_REQUEST } from '../../util/types';
 import * as log from '../../util/log';
 import { fetchCurrentUserHasOrdersSuccess } from '../../ducks/user.duck';
 
+// ================ Process alias ================ //
+
+const processAliasDecide = (listingType) => 
+	listingType == 'common' ? 
+		config.bookingProcessAliasCommon : 
+		config.bookingProcessAliasPrivate;
+
 // ================ Action types ================ //
 
 export const SET_INITAL_VALUES = 'app/CheckoutPage/SET_INITIAL_VALUES';
@@ -106,13 +113,16 @@ export const speculateTransactionError = e => ({
 
 /* ================ Thunks ================ */
 
-export const initiateOrder = (orderParams, initialMessage) => (dispatch, getState, sdk) => {
+export const initiateOrder = (orderParams, initialMessage, listingType) => (dispatch, getState, sdk) => {
   dispatch(initiateOrderRequest());
+
+	// Transition have to react to the listing type passed downstream from CheckoutPage
   const bodyParams = {
     transition: TRANSITION_REQUEST,
-    processAlias: config.bookingProcessAlias,
+    processAlias: processAliasDecide(listingType),
     params: orderParams,
   };
+
   return sdk.transactions
     .initiate(bodyParams)
     .then(response => {
@@ -157,11 +167,14 @@ export const initiateOrder = (orderParams, initialMessage) => (dispatch, getStat
  * pricing info for the booking breakdown to get a proper estimate for
  * the price with the chosen information.
  */
-export const speculateTransaction = params => (dispatch, getState, sdk) => {
+export const speculateTransaction = (params, listingType) => (dispatch, getState, sdk) => {
+
   dispatch(speculateTransactionRequest());
+
   const bodyParams = {
+
+		processAlias: processAliasDecide(listingType),
     transition: TRANSITION_REQUEST,
-    processAlias: config.bookingProcessAlias,
     params: {
       ...params,
       cardToken: 'CheckoutPage_speculative_card_token',

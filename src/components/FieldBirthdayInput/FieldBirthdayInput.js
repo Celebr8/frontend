@@ -84,11 +84,10 @@ class BirthdayInputComponent extends Component {
     this.handleSelectChange = this.handleSelectChange.bind(this);
   }
   componentWillMount() {
-    const value = this.props.valueFromForm;
-    if (value instanceof Date) {
-      this.setState({ selected: selectedFromDate(value) });
-    }
+    const value = this.props.value;
+    value !== undefined ? this.setState({ selected: value }) : null;
   }
+
   componentWillReceiveProps(newProps) {
     const oldValue = this.props.valueFromForm;
     const newValue = newProps.valueFromForm;
@@ -139,6 +138,8 @@ class BirthdayInputComponent extends Component {
       id: 'PayoutDetailsForm.birthdayMonthPlaceholder',
     });
     const yearPlaceholder = intl.formatMessage({ id: 'PayoutDetailsForm.birthdayYearPlaceholder' });
+
+		console.log('Trying to retrieve `day` from this.state.selected', this.state)
 
     return (
       <div className={css.inputRoot}>

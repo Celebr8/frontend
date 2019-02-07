@@ -89,14 +89,11 @@ export const bookingDateRequired = inValidDateMessage => value => {
   return !dateIsValid ? inValidDateMessage : VALID;
 };
 
-export const bookingDatesRequired = (inValidStartDateMessage, inValidEndDateMessage) => value => {
+export const bookingDatesRequired = (inValidStartDateMessage) => value => {
   const startDateIsValid = value && value.startDate instanceof Date;
-  const endDateIsValid = value && value.endDate instanceof Date;
 
   if (!startDateIsValid) {
     return inValidStartDateMessage;
-  } else if (!endDateIsValid) {
-    return inValidEndDateMessage;
   } else {
     return VALID;
   }

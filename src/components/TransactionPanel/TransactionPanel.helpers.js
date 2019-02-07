@@ -47,6 +47,7 @@ export const FeedSection = props => {
   const txTransitions = currentTransaction.attributes.transitions
     ? currentTransaction.attributes.transitions
     : [];
+
   const hasOlderMessages = totalMessagePages > oldestMessagePageFetched;
 
   const showFeed =
@@ -311,6 +312,42 @@ export const OrderTitle = props => {
     return null;
   }
 };
+
+
+export const OrderAttendance = props => {
+
+	const {
+		transaction	
+	} = props;
+
+	const attendance = transaction.attributes.protectedData.attendance;
+
+	return (
+		<p>
+			<FormattedMessage id="InboxPage.bookingFor" />
+				{attendance} 
+			<FormattedMessage id="InboxPage.attendanceUnit" />
+		</p>
+	)
+
+}
+
+export const OrderOccasion = props => {
+
+	const {
+		transaction	
+	} = props;
+
+	const occasion = transaction.attributes.protectedData.occasion;
+
+
+	return occasion == 'birthday'?
+		(<p>
+			<FormattedMessage id="InboxPage.occasionBirthday" />
+		</p>)
+		: null;
+
+}
 
 // Functional component as a helper to build order message below title
 export const OrderMessage = props => {
