@@ -189,22 +189,22 @@ const Footer = props => {
               
               <div className={css.legalMatters}>
                 <div className={css.tosAndPrivacy}>
-									<a className={css.someLinks}></a>
+									<a className={css.someLinks}>{socialMediaLinks}</a>
 
                   <NamedLink name="AboutPage" className={css.legalLink}>
-                    <FormattedMessage id="Footer.toAboutPage" />
+                    | &nbsp;&nbsp;<FormattedMessage id="Footer.toAboutPage" />&nbsp;&nbsp;|&nbsp;&nbsp;
                   </NamedLink>
-                  <a href="mailto:support@whichost.com?subject=Generla inquiry" className={css.legalLink}>
+                  <a href="mailto:support@whichost.com?subject=General inquiry" className={css.legalLink}>
                     Contact&nbsp;&nbsp;|&nbsp;&nbsp;
                   </a>
                     <NamedLink name="TermsOfServicePage" className={css.legalLink}>
-                    <FormattedMessage id="Footer.termsOfUse" />
+                    <FormattedMessage id="Footer.termsOfUse" />&nbsp;&nbsp; |&nbsp;&nbsp;
                     </NamedLink> 
                     <NamedLink name="PrivacyPolicyPage" className={css.legalLink}>
-                      <FormattedMessage id="Footer.privacyPolicy" />
+                      <FormattedMessage id="Footer.privacyPolicy" />&nbsp;&nbsp; |&nbsp;&nbsp;
                     </NamedLink>
                   <NamedLink name="TermsOfServicePage" className={css.legalLink}>
-                    Legal
+                    Legal&nbsp;&nbsp; |&nbsp;&nbsp;
                     </NamedLink>
                 </div>
               </div>
