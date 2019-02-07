@@ -55,7 +55,6 @@ const renderSocialMediaLinks = intl => {
   //     <IconSocialMediaInstagram />
   //   </ExternalLink>
   // ) : null;
-
   return [fbLink, twitterLink, instragramLink].filter(v => v != null);
 };
 
@@ -191,6 +190,7 @@ const Footer = props => {
               <div className={css.legalMatters}>
                 <div className={css.tosAndPrivacy}>
 									<a className={css.someLinks}>{socialMediaLinks}</a>
+									WTF?
                   <NamedLink name="AboutPage" className={css.legalLink}>
                     | &nbsp;&nbsp;<FormattedMessage id="Footer.toAboutPage" />&nbsp;&nbsp;|&nbsp;&nbsp;
                   </NamedLink>
