@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 import React, { Component } from 'react';
+import * as moment from 'moment';
 import { array, arrayOf, bool, func, shape, string, oneOf } from 'prop-types';
 import { FormattedMessage, intlShape, injectIntl } from 'react-intl';
 import { compose } from 'redux';
@@ -54,6 +55,22 @@ import css from './ListingPage.css';
 const MIN_LENGTH_FOR_LONG_WORDS_IN_TITLE = 16;
 
 const { UUID } = sdkTypes;
+
+const freeTimeSlots = (now) => 
+	[...Array(89).keys()].map( (i) =>
+		({
+			type: 'timeSlot',
+			attributes: {
+				type: 'time-slot/day',
+				start: moment(now).add(i, 'days'),
+				end: moment(now).add(i+1, 'days')
+			},
+			id: {
+				uuid: 'dummy'	
+			}
+		})	
+	);
+
 
 const priceData = (price, intl) => {
   if (price && price.currency === config.currency) {
@@ -127,12 +144,14 @@ export class ListingPageComponent extends Component {
 
     const { bookingDates, ...bookingData } = values;
 
+		const bookingEnd = moment(bookingDates.date).add(1,'days'); 
+
     const initialValues = {
       listing,
       bookingData,
       bookingDates: {
-        bookingStart: bookingDates.startDate,
-        bookingEnd: bookingDates.endDate,
+        bookingStart: bookingDates.date,
+				bookingEnd: bookingEnd
       },
     };
 
@@ -409,6 +428,14 @@ export class ListingPageComponent extends Component {
         </span>
       ) : null;
 
+		console.log('listingType', publicData.type)
+
+		const timeSlotsAdjusted = publicData.type == 'common' ? 
+			freeTimeSlots() :
+			timeSlots;
+
+		console.log('timeslotsAdjusted', timeSlotsAdjusted)
+
     return (
       <Page
         title={schemaTitle}
@@ -512,7 +539,7 @@ export class ListingPageComponent extends Component {
                   handleBookButtonClick={handleBookButtonClick}
                   handleMobileBookModalClose={handleMobileBookModalClose}
                   onManageDisableScrolling={onManageDisableScrolling}
-                  timeSlots={timeSlots}
+                  timeSlots={timeSlotsAdjusted}
                   fetchTimeSlotsError={fetchTimeSlotsError}
                 />
               </div>

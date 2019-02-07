@@ -9,7 +9,11 @@ import { ensureCurrentUser } from '../../util/data';
 import { propTypes } from '../../util/types';
 import * as validators from '../../util/validators';
 import { isUploadImageOverLimitError } from '../../util/errors';
-import { Form, Avatar, Button, ImageFromFile, IconSpinner, FieldTextInput } from '../../components';
+import { Form, Avatar, Button, 
+	ImageFromFile, 
+	IconSpinner, 
+	FieldTextInput, 
+	FieldBirthdayInput } from '../../components';
 
 import css from './ProfileSettingsForm.css';
 
@@ -96,6 +100,17 @@ class ProfileSettingsFormComponent extends Component {
           const bioPlaceholder = intl.formatMessage({
             id: 'ProfileSettingsForm.bioPlaceholder',
           });
+
+					// Birthday
+          const birthdayLabel = intl.formatMessage({
+            id: 'ProfileSettingsForm.birthdayLabel',
+          });
+
+					const majorityRequiredMessage = intl.formatMessage({
+						id: 'ProfileSettingsForm.majorityRequiredMessage'		
+					})
+
+					const majorityRequired = validators.ageAtLeast(majorityRequiredMessage, 18);
 
           const uploadingOverlay =
             uploadInProgress || this.state.uploadDelay ? (
@@ -285,6 +300,19 @@ class ProfileSettingsFormComponent extends Component {
                   />
                 </div>
               </div>
+              <div className={css.sectionContainer}>
+                <h3 className={css.sectionTitle}>
+                  <FormattedMessage id="ProfileSettingsForm.birthday" />
+                </h3>
+                <div>
+									<FieldBirthdayInput 
+										id="birthday"
+										name="birthday"
+										label={birthdayLabel}
+										validate={majorityRequired}
+									/>
+                </div>
+              </div>
               <div className={classNames(css.sectionContainer, css.lastSection)}>
                 <h3 className={css.sectionTitle}>
                   <FormattedMessage id="ProfileSettingsForm.bioHeading" />
@@ -337,7 +365,7 @@ ProfileSettingsFormComponent.propTypes = {
   updateProfileReady: bool,
 
   // from injectIntl
-  intl: intlShape.isRequired,
+  intl: intlShape.isRequired
 };
 
 const ProfileSettingsForm = compose(injectIntl)(ProfileSettingsFormComponent);

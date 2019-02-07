@@ -114,37 +114,54 @@ export class CheckoutPageComponent extends Component {
       // Fetch speculated transaction for showing price in booking breakdown
       // NOTE: if unit type is line-item/units, quantity needs to be added.
       // The way to pass it to checkout page is through pageData.bookingData
+
+			const listingType = pageData.listing.attributes.publicData.type || 'common';
+
       fetchSpeculatedTransaction({
         listingId,
         bookingStart: bookingStartForAPI,
         bookingEnd: bookingEndForAPI,
-      });
+      }, listingType);
     }
 
     this.setState({ pageData: pageData || {}, dataLoaded: true });
   }
 
   handleSubmit(values) {
+
     if (this.state.submitting) {
       return;
     }
+
     this.setState({ submitting: true });
 
     const cardToken = values.token;
     const initialMessage = values.message;
     const { history, sendOrderRequest, speculatedTransaction, dispatch } = this.props;
 
+		// The transaction type have to be known here, to be passed to sendOrderRequest
+
+		const listingType = this.state.pageData.listing.attributes.publicData.type || 'common';
+
     // Create order aka transaction
     // NOTE: if unit type is line-item/units, quantity needs to be added.
     // The way to pass it to checkout page is through pageData.bookingData
     const requestParams = {
+
       listingId: this.state.pageData.listing.id,
       cardToken,
       bookingStart: speculatedTransaction.booking.attributes.start,
       bookingEnd: speculatedTransaction.booking.attributes.end,
+			protectedData: {
+				attendance: values.attendance,
+				occasion: values.occasion
+			}
+
     };
 
-    sendOrderRequest(requestParams, initialMessage)
+		console.log('Sending the following transaction', requestParams)
+
+    sendOrderRequest(requestParams, initialMessage, listingType)
       .then(values => {
         const { orderId, initialMessageSuccess } = values;
         this.setState({ submitting: false });
@@ -526,10 +543,12 @@ const mapStateToProps = state => {
   };
 };
 
+// sendOrderRequest have to pass the listing Type to initiate Order
+
 const mapDispatchToProps = dispatch => ({
   dispatch,
-  sendOrderRequest: (params, initialMessage) => dispatch(initiateOrder(params, initialMessage)),
-  fetchSpeculatedTransaction: params => dispatch(speculateTransaction(params)),
+  sendOrderRequest: (params, initialMessage, listingType) => dispatch(initiateOrder(params, initialMessage, listingType)),
+  fetchSpeculatedTransaction: (params, listingType) => dispatch(speculateTransaction(params, listingType)),
 });
 
 const CheckoutPage = compose(

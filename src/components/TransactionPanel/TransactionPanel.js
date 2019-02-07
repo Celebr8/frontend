@@ -18,6 +18,8 @@ import {
   TransactionPageTitle,
   TransactionPageMessage,
   displayNames,
+	OrderAttendance,
+	OrderOccasion
 } from './TransactionPanel.helpers';
 
 import css from './TransactionPanel.css';
@@ -248,6 +250,13 @@ export class TransactionPanelComponent extends Component {
               isCustomerBanned={isCustomerBanned}
               transactionRole={transactionRole}
             />
+						<OrderAttendance 
+							transaction={currentTransaction}
+						/>
+
+						<OrderOccasion 
+							transaction={currentTransaction}
+						/>
 
             <div className={css.bookingDetailsMobile}>
               <div className={css.addressMobileWrapper}>

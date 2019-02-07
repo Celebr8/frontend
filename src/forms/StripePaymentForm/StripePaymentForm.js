@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage, injectIntl, intlShape } from 'react-intl';
 import classNames from 'classnames';
-import { Form, PrimaryButton, ExpandingTextarea } from '../../components';
+import { Form, PrimaryButton, ExpandingTextarea, FieldTextInput, FieldSelect } from '../../components';
 import * as log from '../../util/log';
 import config from '../../config';
 
@@ -76,6 +76,7 @@ const initialState = {
   cardValueValid: false,
   token: null,
   message: '',
+	attendance: 10
 };
 
 /**
@@ -128,9 +129,9 @@ class StripePaymentForm extends Component {
     // message.
 
     this.setState(prevState => {
-      const { message } = prevState;
+      const { message, attendance } = prevState;
       const token = null;
-      onChange({ token, message });
+      onChange({ token, message, attendance });
       return {
         error: error ? stripeErrorTranslation(intl, error) : null,
         cardValueValid: complete,
@@ -148,9 +149,18 @@ class StripePaymentForm extends Component {
 
     const { intl, onSubmit } = this.props;
 
+		const values = {
+			message: this.state.message.trim(), 
+			attendance: this.state.attendance,
+			occasion: this.state.occasion		
+		}
+
     if (this.state.token) {
       // Token already fetched for the current card value
-      onSubmit({ token: this.state.token, message: this.state.message.trim() });
+			onSubmit({ 
+				token: this.state.token, 
+				...values
+			});
       return;
     }
 
@@ -168,7 +178,10 @@ class StripePaymentForm extends Component {
           });
         } else {
           this.setState({ submitting: false, token: token.id });
-          onSubmit({ token: token.id, message: this.state.message.trim() });
+					onSubmit({ 
+						token: token.id,
+						...values	
+					});
         }
       })
       .catch(e => {
@@ -195,7 +208,7 @@ class StripePaymentForm extends Component {
       intl,
     } = this.props;
     const submitInProgress = this.state.submitting || inProgress;
-    const submitDisabled = !this.state.cardValueValid || submitInProgress;
+    const submitDisabled = !this.state.cardValueValid || !this.state.attendance || submitInProgress;
     const classes = classNames(rootClassName || css.root, className);
     const cardClasses = classNames(css.card, {
       [css.cardSuccess]: this.state.cardValueValid,
@@ -212,8 +225,33 @@ class StripePaymentForm extends Component {
       // the current token and the new message.
       const message = e.target.value;
       this.setState(prevState => {
-        const { token } = prevState;
-        const newState = { token, message };
+        const newState = { ...prevState, message };
+        onChange(newState);
+        return newState;
+      });
+    };
+
+
+    const handleAttendanceChange = e => {
+      // A change in the message should call the onChange prop with
+      // the current token and the new message.
+
+			console.log('handleOccasionChange', this.state)
+
+      const attendance = e.target.value;
+			if(parseInt(attendance) > 8) 
+				this.setState(prevState => {
+					const newState = { ...prevState, attendance };
+					onChange(newState);
+					return newState;
+				});
+    };
+
+    const handleOccasionChange = e => {
+			console.log('handleOccasionChange', this.state)
+      const occasion = e.target.value;
+      this.setState(prevState => {
+				const newState = { ...prevState, occasion };
         onChange(newState);
         return newState;
       });
@@ -256,6 +294,47 @@ class StripePaymentForm extends Component {
           value={this.state.message}
           onChange={handleMessageChange}
         />
+
+			<h3 className={css.occasionHeading}>
+				<FormattedMessage id="StripePaymentForm.occasionHeading" />
+			</h3>
+
+				<label className={css.occasionLabel}>
+					<FormattedMessage id="StripePaymentForm.occasionLabel" />
+				</label>
+
+				<select 
+					className={css.occasion}
+					name="occasion"
+					id="occasion"
+					onChange={handleOccasionChange}
+				>
+					<option value="justBecause">
+						{intl.formatMessage({ id: 'StripePaymentForm.justBecause' } )}
+					</option>
+
+					<option value="birthday">
+						{intl.formatMessage({ id: 'StripePaymentForm.birthday' } )}
+					</option>
+
+				</select>
+
+        <h3 className={css.attendanceHeading}>
+          <FormattedMessage id="StripePaymentForm.attendanceHeading" />
+        </h3>
+
+        <label className={css.messageLabel} htmlFor={`${formId}-attendance`}>
+          <FormattedMessage id="StripePaymentForm.expectedAttendance" />
+        </label>
+
+				<input 
+					id={`${formId}-attendance`}
+					className={css.attendance}
+					type="number"
+					value={this.state.attendance}
+					onChange={handleAttendanceChange}
+				/>
+
         <div className={css.submitContainer}>
           <p className={css.paymentInfo}>{paymentInfo}</p>
           <PrimaryButton
@@ -264,7 +343,8 @@ class StripePaymentForm extends Component {
             inProgress={submitInProgress}
             disabled={submitDisabled}
           >
-            <FormattedMessage id="StripePaymentForm.submitPaymentInfo" />
+
+          <FormattedMessage id="StripePaymentForm.submitPaymentInfo" />
           </PrimaryButton>
         </div>
       </Form>
