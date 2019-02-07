@@ -18,6 +18,9 @@ import css from './Footer.css';
 import { mainLocationsData, locationToURI } from '../../locals';
 
 const renderSocialMediaLinks = intl => {
+
+	return null;
+
   const { siteFacebookPage, siteInstagramPage, siteTwitterHandle } = config;
   const siteTwitterPage = twitterPageURL(siteTwitterHandle);
 
@@ -192,7 +195,7 @@ const Footer = props => {
 									<a className={css.someLinks}>{socialMediaLinks}</a>
 
                   <NamedLink name="AboutPage" className={css.legalLink}>
-                    | &nbsp;&nbsp;<FormattedMessage id="Footer.toAboutPage" />&nbsp;&nbsp;|&nbsp;&nbsp;
+                    <FormattedMessage id="Footer.toAboutPage" />&nbsp;&nbsp;|&nbsp;&nbsp;
                   </NamedLink>
                   <a href="mailto:support@whichost.com?subject=General inquiry" className={css.legalLink}>
                     Contact&nbsp;&nbsp;|&nbsp;&nbsp;
