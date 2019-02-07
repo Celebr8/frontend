@@ -25,11 +25,13 @@ const renderSocialMediaLinks = intl => {
   const goToInsta = intl.formatMessage({ id: 'Footer.goToInstagram' });
   const goToTwitter = intl.formatMessage({ id: 'Footer.goToTwitter' });
 
-  const fbLink = siteFacebookPage ? (
-    <ExternalLink key="linkToFacebook" href={siteFacebookPage} className={css.icon} title={goToFb}>
-      <IconSocialMediaFacebook />
-    </ExternalLink>
-  ) : null;
+	const fbLink = null;
+
+  // const fbLink = siteFacebookPage ? (
+  //   <ExternalLink key="linkToFacebook" href={siteFacebookPage} className={css.icon} title={goToFb}>
+  //     <IconSocialMediaFacebook />
+  //   </ExternalLink>
+  // ) : null;
 
   const twitterLink = siteTwitterPage ? (
     <ExternalLink
