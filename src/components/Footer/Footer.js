@@ -18,6 +18,9 @@ import css from './Footer.css';
 import { mainLocationsData, locationToURI } from '../../locals';
 
 const renderSocialMediaLinks = intl => {
+
+	return null;
+
   const { siteFacebookPage, siteInstagramPage, siteTwitterHandle } = config;
   const siteTwitterPage = twitterPageURL(siteTwitterHandle);
 
@@ -31,27 +34,30 @@ const renderSocialMediaLinks = intl => {
     </ExternalLink>
   ) : null;
 
-  const twitterLink = siteTwitterPage ? (
-    <ExternalLink
-      key="linkToTwitter"
-      href={siteTwitterPage}
-      className={css.icon}
-      title={goToTwitter}
-    >
-      <IconSocialMediaTwitter />
-    </ExternalLink>
-  ) : null;
+  // const twitterLink = siteTwitterPage ? (
+  //   <ExternalLink
+  //     key="linkToTwitter"
+  //     href={siteTwitterPage}
+  //     className={css.icon}
+  //     title={goToTwitter}
+  //   >
+  //     <IconSocialMediaTwitter />
+  //   </ExternalLink>
+  // ) : null;
+	
+	const twitterLink = null;
+	const instragramLink = null;
 
-  const instragramLink = siteInstagramPage ? (
-    <ExternalLink
-      key="linkToInstagram"
-      href={siteInstagramPage}
-      className={css.icon}
-      title={goToInsta}
-    >
-      <IconSocialMediaInstagram />
-    </ExternalLink>
-  ) : null;
+  // const instragramLink = siteInstagramPage ? (
+  //   <ExternalLink
+  //     key="linkToInstagram"
+  //     href={siteInstagramPage}
+  //     className={css.icon}
+  //     title={goToInsta}
+  //   >
+  //     <IconSocialMediaInstagram />
+  //   </ExternalLink>
+  // ) : null;
   return [fbLink, twitterLink, instragramLink].filter(v => v != null);
 };
 
@@ -186,11 +192,12 @@ const Footer = props => {
               
               <div className={css.legalMatters}>
                 <div className={css.tosAndPrivacy}>
-                  <a className={css.someLinks}>{socialMediaLinks}</a>
+									<a className={css.someLinks}>{socialMediaLinks}</a>
+
                   <NamedLink name="AboutPage" className={css.legalLink}>
-                    | &nbsp;&nbsp;<FormattedMessage id="Footer.toAboutPage" />&nbsp;&nbsp;|&nbsp;&nbsp;
+                    <FormattedMessage id="Footer.toAboutPage" />&nbsp;&nbsp;|&nbsp;&nbsp;
                   </NamedLink>
-                  <a href="mailto:support@whichost.com?subject=Generla inquiry" className={css.legalLink}>
+                  <a href="mailto:support@whichost.com?subject=General inquiry" className={css.legalLink}>
                     Contact&nbsp;&nbsp;|&nbsp;&nbsp;
                   </a>
                     <NamedLink name="TermsOfServicePage" className={css.legalLink}>
