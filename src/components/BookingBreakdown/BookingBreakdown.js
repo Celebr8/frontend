@@ -37,6 +37,20 @@ export const BookingBreakdownComponent = props => {
   });
 
   const classes = classNames(rootClassName || css.root, className);
+	/*
+
+			<LineItemProviderCommissionMaybe
+        transaction={transaction}
+        isProvider={isProvider}
+        intl={intl}
+      />
+      <LineItemProviderCommissionRefundMaybe
+        transaction={transaction}
+        isProvider={isProvider}
+        intl={intl}
+      />
+
+	*/
 
   return (
     <div className={classes}>
@@ -63,18 +77,6 @@ export const BookingBreakdownComponent = props => {
         intl={intl}
       />
 
-		{/* 
-			<LineItemProviderCommissionMaybe
-        transaction={transaction}
-        isProvider={isProvider}
-        intl={intl}
-      />
-      <LineItemProviderCommissionRefundMaybe
-        transaction={transaction}
-        isProvider={isProvider}
-        intl={intl}
-      />
-		*/}
 
       <hr className={css.totalDivider} />
       <LineItemTotalPrice transaction={transaction} isProvider={isProvider} intl={intl} />
