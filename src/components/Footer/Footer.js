@@ -162,13 +162,13 @@ const Footer = props => {
                   <a href="https://docs.google.com/forms/d/e/1FAIpQLSejVl35N8A1lu_W99QkvovqLXn1ODOKBp35NZ524XHJnpdOeg/viewform" target="_blank" className={css.link}>Recommend a pub</a>
                 </li>
                 <li className={css.listItem}>
-                  <a href="https://www.whichost.com/eng/legal#guidelines-section" target="_blank" className={css.link}>Guidelines</a>
+                  <a href="https://info.whichost.com/eng/legal#guidelines-section" target="_blank" className={css.link}>Guidelines</a>
                 </li>
                 <li className={css.listItem}>
-                  <a href="https://www.whichost.com/eng/faq" target="_blank" className={css.link}>Help centre</a>
+                  <a href="https://info.whichost.com/eng/faq" target="_blank" className={css.link}>Help centre</a>
                 </li>
                 <li className={css.listItem}>
-                  <a href="https://www.whichost.com/eng/legal#fees-section" target="_blank" className={css.link}>Fees</a>
+                  <a href="https://info.whichost.com/eng/legal#fees-section" target="_blank" className={css.link}>Fees</a>
                 </li>
               </ul>
             </div>
@@ -220,7 +220,7 @@ const Footer = props => {
             	<NamedLink name="AboutPage" className={css.privacy}>
                 <FormattedMessage id="Footer.about" />
               </NamedLink>
-              <a href="mailto:support@whichost.com?subject=Generla inquiry" className={css.privacy}>
+              <a href="mailto:support@whichost.com?subject=General%20inquiry" className={css.privacy}>
                     Contact
                   </a>
 
