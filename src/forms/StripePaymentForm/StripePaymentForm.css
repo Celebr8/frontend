@@ -78,6 +78,8 @@
 
 .message {
   border-bottom-color: var(--matterColorAnti);
+	margin-top: 16px;
+	margin-bottom: 16px;
 }
 
 .submitContainer {
@@ -112,6 +114,25 @@
 }
 
 .occasion {
+  margin-top: 22px;
+
+  @media (--viewportMedium) {
+    margin-top: 26px;
+  }
+  @media (--viewportLarge) {
+    margin-top: 17px;
+  }
+}
+
+.attendanceHeading {
+  color: var(--matterColorAnti);
+
+	margin-top: 16px;
+	margin-bottom: 16px;
+
+}
+
+.attendance {
   margin-top: 22px;
 
   @media (--viewportMedium) {

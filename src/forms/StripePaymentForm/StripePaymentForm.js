@@ -248,7 +248,6 @@ class StripePaymentForm extends Component {
     };
 
     const handleOccasionChange = e => {
-			console.log('handleOccasionChange', this.state)
       const occasion = e.target.value;
       this.setState(prevState => {
 				const newState = { ...prevState, occasion };
