@@ -40,3 +40,8 @@
 .selectError {
   border-bottom-color: var(--failColor);
 }
+
+label {
+	white-space: nowrap;
+	text-align: left;
+}

@@ -358,7 +358,7 @@
   "ManageListingCard.finishListingDraft": "Finish listing",
   "ManageListingCard.manageAvailability": "Manage availability",
   "ManageListingCard.openListing": "Open listing",
-  "ManageListingCard.pendingApproval": "{listingTitle} is pending admin approval and can't be booked.",
+  "ManageListingCard.pendingApproval": "Your listing {listingTitle} is undergoing our quality check at the moment. This normally takes up to 48 hours. We’ll get back to you as soon as possible. We apologize for any inconvenience that this might have caused.",
   "ManageListingCard.perUnit": "per night",
   "ManageListingCard.priceNotSet": "Price per night not set",
   "ManageListingCard.unsupportedPrice": "({currency})",
