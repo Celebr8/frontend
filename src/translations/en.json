@@ -338,7 +338,7 @@
   "ListingPage.viewImagesButton": "View photos ({count})",
   "ListingPage.yourHostHeading": "Your host",
   "LocationAutocompleteInput.currentLocation": "Current location",
-  "LocationSearchForm.placeholder": "Search pubs…",
+  "LocationSearchForm.placeholder": "Enter location",
   "LoginForm.emailInvalid": "A valid email address is required",
   "LoginForm.emailLabel": "Email",
   "LoginForm.birthday": "Birthday",
