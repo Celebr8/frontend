@@ -143,11 +143,6 @@ const Footer = props => {
                 <li className={css.listItem}>
                   <a href="https://docs.google.com/document/d/1KtFBwGkdd79Sabjt1s4PBzpKkZtY0rDy3Wqkq0k8ED8/edit" target="_blank" className={css.link}>Guidebook</a>
                 </li>
-                <li className={css.listItem}>
-                  <NamedLink name="DealsPage" className={css.link}>
-                    <FormattedMessage id="Footer.toDealsPage" />
-                  </NamedLink>
-                </li>
               </ul>
             </div>
             <div className={css.infoLinks}>
