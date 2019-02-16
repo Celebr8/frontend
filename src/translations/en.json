@@ -531,7 +531,7 @@
   "ProfilePage.editProfileLinkDesktop": "Edit profile",
   "ProfilePage.editProfileLinkMobile": "Edit",
   "ProfilePage.listingsTitle": "My pubs ({count})",
-  "ProfilePage.userMajority": "This user have reached majority.",
+  "ProfilePage.userMajority": "This user is over 18 years of age.",
   "ProfilePage.loadingDataFailed": "Whoops, something went wrong. Please try again.",
   "ProfilePage.loadingReviewsFailed": "Loading reviews failed.",
   "ProfilePage.mobileHeading": "{name}",
