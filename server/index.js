@@ -70,6 +70,14 @@ app.use(log.requestHandler());
 // See: https://www.npmjs.com/package/helmet
 app.use(helmet());
 
+app.use(function(req,res,next) {
+
+	console.log('Middleware called')
+
+	return res.redirect(301, 'https://info.whichost.com/claim');
+
+})
+
 if (cspEnabled) {
   // When a CSP directive is violated, the browser posts a JSON body
   // to the defined report URL and we need to parse this body.
@@ -260,13 +268,6 @@ if (cspEnabled) {
   });
 }
 
-app.use(function(req,res,next) {
-
-	console.log('Middleware called')
-
-	return res.redirect(301, 'https://info.whichost.com/claim');
-
-})
 
 app.listen(PORT, () => {
   const mode = dev ? 'development' : 'production';
