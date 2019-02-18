@@ -126,6 +126,7 @@
 }
 .avatarPlaceholderText {
   display: none;
+  white-space: pre-wrap;
 
   @media (--viewportMedium) {
     display: block;
