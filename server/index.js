@@ -72,6 +72,10 @@ app.use(helmet());
 
 app.use('*', function(req,res,next) {
 
+	console.log('req:')
+	console.log(req.url)
+	console.log(req.url.startWith('/claim'))
+
 	if(req.url.startsWith('/claim'))
 		return res.redirect(301, 'https://info.whichost.com/claim');
 	else return next()
