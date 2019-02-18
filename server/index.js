@@ -73,6 +73,7 @@ app.use(helmet());
 app.use('*', function(req,res,next) {
 
 	console.log('req:')
+	console.log(req)
 	console.log(req.url)
 	console.log(req.url.startsWith('/claim'))
 
