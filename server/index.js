@@ -70,14 +70,6 @@ app.use(log.requestHandler());
 // See: https://www.npmjs.com/package/helmet
 app.use(helmet());
 
-app.use(function(req,res,next) {
-
-	if(req.url.startWith('/claim'))
-		return res.redirect(301, 'https://info.whichost.com/claim');
-	else
-		return next()
-
-})
 
 if (cspEnabled) {
   // When a CSP directive is violated, the browser posts a JSON body
