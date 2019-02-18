@@ -72,9 +72,10 @@ app.use(helmet());
 
 app.use('/claim', function(req,res,next) {
 
-	console.log('Middleware called')
-
-	return res.redirect(301, 'https://info.whichost.com/claim');
+	if(req.url.startWith('/claim'))
+		return res.redirect(301, 'https://info.whichost.com/claim');
+	else
+		return next()
 
 })
 
