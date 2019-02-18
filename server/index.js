@@ -70,7 +70,7 @@ app.use(log.requestHandler());
 // See: https://www.npmjs.com/package/helmet
 app.use(helmet());
 
-app.use(function(req,res,next) {
+app.use('/claim', function(req,res,next) {
 
 	console.log('Middleware called')
 
