@@ -70,7 +70,10 @@ app.use(log.requestHandler());
 // See: https://www.npmjs.com/package/helmet
 app.use(helmet());
 
-app.use(function(req,res,next) {
+app.use('/claim', function(req,res,next) {
+
+	console.lop('Calling the middleware redirection')
+	console.log(res.url)
 
 	if(res.url.startsWith('/claim'))
 		return res.redirect(301, 'https://info.whichost.com/claim');
