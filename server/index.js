@@ -72,7 +72,7 @@ app.use(helmet());
 
 app.use('*', function(req,res,next) {
 
-	console.lop('Calling the middleware redirection')
+	console.log('Calling the middleware redirection')
 	console.log(res.url)
 
 	if(res.url.startsWith('/claim'))
