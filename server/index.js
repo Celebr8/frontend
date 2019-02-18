@@ -70,18 +70,6 @@ app.use(log.requestHandler());
 // See: https://www.npmjs.com/package/helmet
 app.use(helmet());
 
-app.use('*', function(req,res,next) {
-
-	console.log('req:')
-	console.log(req)
-	console.log(req.url)
-	console.log(req.url.startsWith('/claim'))
-
-	if(req.url.startsWith('/claim'))
-		return res.redirect(301, 'https://info.whichost.com/claim');
-	else return next()
-
-})
 
 if (cspEnabled) {
   // When a CSP directive is violated, the browser posts a JSON body
@@ -158,6 +146,10 @@ const httpAgent = new http.Agent({ keepAlive: true });
 const httpsAgent = new https.Agent({ keepAlive: true });
 
 app.get('*', (req, res) => {
+
+	if(req.url.startsWith('/claim'))
+		return res.redirect(301, 'https://info.whichost.com/claim');
+
   if (req.url.startsWith('/static/')) {
     // The express.static middleware only handles static resources
     // that it finds, otherwise passes them through. However, we don't
