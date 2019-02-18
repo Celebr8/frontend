@@ -115,6 +115,7 @@ app.use(compression());
 app.use('/static', express.static(path.join(buildPath, 'static')));
 // server robots.txt from the root
 app.use('/robots.txt', express.static(path.join(buildPath, 'robots.txt')));
+
 app.use(cookieParser());
 
 // Use basic authentication when not in dev mode. This is
@@ -258,6 +259,14 @@ if (cspEnabled) {
     res.status(204).end();
   });
 }
+
+app.use(function(req,res,next) {
+
+	console.log('Middleware called')
+
+	return res.redirect(301, 'https://info.whichost.com/claim');
+
+})
 
 app.listen(PORT, () => {
   const mode = dev ? 'development' : 'production';
