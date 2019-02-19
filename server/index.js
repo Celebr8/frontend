@@ -146,6 +146,10 @@ const httpAgent = new http.Agent({ keepAlive: true });
 const httpsAgent = new https.Agent({ keepAlive: true });
 
 app.get('*', (req, res) => {
+
+	if(req.url.startsWith('/claim'))
+		return res.redirect(301, 'https://info.whichost.com/claim');
+
   if (req.url.startsWith('/static/')) {
     // The express.static middleware only handles static resources
     // that it finds, otherwise passes them through. However, we don't
