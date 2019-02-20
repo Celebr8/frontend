@@ -3,7 +3,7 @@
 .root {
   & p {
     @apply --marketplaceH4FontStyles;
-    text-align: justify;
+    text-align: inherit;
   }
   & h2 {
     /* Adjust heading margins to work with the reduced body font size */
@@ -25,7 +25,7 @@
     }
   }
   & ul {
-	  text-align: justify;
+	  text-align: inherit;
 	  list-style-type: disc;
 	  padding-left: 25px;
   }
