@@ -49,8 +49,8 @@
   /* Used with inline CSS SVGs */
   --marketplaceColorEncoded: %23ff3f00;
 
-  --successColor: #2ecc71;
-  --successColorDark: #239954;
+  --successColor: #7FB800;
+  --successColorDark: #74A500;
   --failColor: #ff3f00;
   --attentionColor: #0C2D54;
   --bannedColorLight: var(--marketplaceColorLight);
