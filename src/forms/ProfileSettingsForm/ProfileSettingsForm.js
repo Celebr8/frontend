@@ -110,7 +110,14 @@ class ProfileSettingsFormComponent extends Component {
 						id: 'ProfileSettingsForm.majorityRequiredMessage'		
 					})
 
-					const majorityRequired = validators.ageAtLeast(majorityRequiredMessage, 18);
+					const birthdayRequiredMessage = intl.formatMessage({
+						id: 'ProfileSettingsForm.birthdayRequiredMessage'		
+					})
+					
+					const birthdayValidators = validators.composeValidators(
+						validators.ageAtLeast(majorityRequiredMessage, 18),
+						validators.required(birthdayRequiredMessage)
+					);
 
           const uploadingOverlay =
             uploadInProgress || this.state.uploadDelay ? (
@@ -309,7 +316,7 @@ class ProfileSettingsFormComponent extends Component {
 										id="birthday"
 										name="birthday"
 										label={birthdayLabel}
-										validate={majorityRequired}
+										validate={birthdayValidators}
 									/>
                 </div>
               </div>
