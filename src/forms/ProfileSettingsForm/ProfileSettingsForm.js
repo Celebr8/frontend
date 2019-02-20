@@ -115,8 +115,8 @@ class ProfileSettingsFormComponent extends Component {
 					})
 					
 					const birthdayValidators = validators.composeValidators(
-						validators.ageAtLeast(majorityRequiredMessage, 18),
-						validators.required(birthdayRequiredMessage)
+						validators.required(birthdayRequiredMessage),
+						validators.ageAtLeast(majorityRequiredMessage, 18)
 					);
 
           const uploadingOverlay =
