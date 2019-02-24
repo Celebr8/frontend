@@ -685,7 +685,7 @@
   "StripePaymentForm.messagePlaceholder": "Hello {name}! I'm looking forward to…",
   "StripePaymentForm.paymentHeading": "Payment",
   "StripePaymentForm.expectedAttendance": "Number of people coming",
-  "StripePaymentForm.attendanceErrorNotEnough": "That's not enough people for a party",
+  "StripePaymentForm.attendanceErrorNotEnough": "For a group of less than 10, we recommand you walk into the pub. There's no need for booking.",
   "StripePaymentForm.attendanceErrorTooMuch": "That's too much people. Please enquire support.",
   "StripePaymentForm.occasionHeading": "Occasion",
   "StripePaymentForm.occasionLabel": "What's the occasion",
