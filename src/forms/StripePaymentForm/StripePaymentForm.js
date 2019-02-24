@@ -350,7 +350,7 @@ class StripePaymentForm extends Component {
 					className={css.attendance}
 					value={this.state.attendance}
 					onChange={handleAttendanceChange}
-				/> people </p>
+				/> people (minimum 10) </p>
 
 		<p>{this.validAttendance(this.state.attendance)}</p>
 
