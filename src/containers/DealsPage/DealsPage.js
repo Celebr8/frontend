@@ -24,29 +24,22 @@ const DealsPageComponent = props => {
 
   const tabs = [
     {
-      text: intl.formatMessage({ id: 'TermsOfServicePage.privacyTabTitle' }),
-      selected: false,
-      linkProps: {
-        name: 'PrivacyPolicyPage',
-      },
-    },
-    {
-      text: intl.formatMessage({ id: 'TermsOfServicePage.tosTabTitle' }),
-      selected: false,
-      linkProps: {
-        name: 'TermsOfServicePage',
-      },
-    },
-    {
-      text: intl.formatMessage({ id: 'TermsOfServicePage.dealsTabTitle' }),
+      text: intl.formatMessage({ id: 'DealsPage.dealsTabTitle' }),
       selected: true,
       linkProps: {
         name: 'DealsPage',
       },
     },
+    {
+      text: intl.formatMessage({ id: 'DealsPage.birthdayDealTabTitle' }),
+      selected: false,
+      linkProps: {
+        name: 'BirthdayDealPage',
+      },
+    },
   ];
   const siteTitle = config.siteTitle;
-  const schemaTitle = intl.formatMessage({ id: 'TermsOfServicePage.schemaTitle' }, { siteTitle });
+  const schemaTitle = intl.formatMessage({ id: 'DealsPage.schemaTitle' }, { siteTitle });
   const schema = {
     '@context': 'http://schema.org',
     '@type': 'WebPage',

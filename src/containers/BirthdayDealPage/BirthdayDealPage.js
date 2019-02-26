@@ -13,33 +13,34 @@ import {
   LayoutWrapperTopbar,
   LayoutWrapperFooter,
   Footer,
-  PrivacyPolicy,
+	Deals,
+	BirthdayDeal
 } from '../../components';
 import config from '../../config';
 
-import css from './PrivacyPolicyPage.css';
+import css from './BirthdayDealPage.css';
 
-const PrivacyPolicyPageComponent = props => {
+const BirthdayDealPageComponent = props => {
   const { scrollingDisabled, intl } = props;
 
   const tabs = [
     {
-      text: intl.formatMessage({ id: 'TermsOfServicePage.privacyTabTitle' }),
+      text: intl.formatMessage({ id: 'DealsPage.dealsTabTitle' }),
       selected: true,
       linkProps: {
-        name: 'PrivacyPolicyPage',
+        name: 'DealsPage',
       },
     },
     {
-      text: intl.formatMessage({ id: 'TermsOfServicePage.tosTabTitle' }),
+      text: intl.formatMessage({ id: 'DealsPage.birthdayDealTabTitle' }),
       selected: false,
       linkProps: {
-        name: 'TermsOfServicePage',
+        name: 'BirthdayDealPage',
       },
-    }
+    },
   ];
   const siteTitle = config.siteTitle;
-  const schemaTitle = intl.formatMessage({ id: 'TermsOfServicePage.schemaTitle' }, { siteTitle });
+  const schemaTitle = intl.formatMessage({ id: 'DealsPage.schemaTitle' }, { siteTitle });
   const schema = {
     '@context': 'http://schema.org',
     '@type': 'WebPage',
@@ -49,15 +50,15 @@ const PrivacyPolicyPageComponent = props => {
     <Page title={schemaTitle} scrollingDisabled={scrollingDisabled} schema={schema}>
       <LayoutSideNavigation>
         <LayoutWrapperTopbar>
-          <TopbarContainer currentPage="PrivacyPolicyPage" />
+          <TopbarContainer currentPage="BirthdayDealPage" />
         </LayoutWrapperTopbar>
         <LayoutWrapperSideNav tabs={tabs} />
         <LayoutWrapperMain>
           <div className={css.content}>
             <h1 className={css.heading}>
-              <FormattedMessage id="PrivacyPolicyPage.heading" />
+              <FormattedMessage id="BirthdayDealPage.heading" />
             </h1>
-            <PrivacyPolicy />
+            <BirthdayDeal />
           </div>
         </LayoutWrapperMain>
         <LayoutWrapperFooter>
@@ -70,7 +71,7 @@ const PrivacyPolicyPageComponent = props => {
 
 const { bool } = PropTypes;
 
-PrivacyPolicyPageComponent.propTypes = {
+BirthdayDealPageComponent.propTypes = {
   scrollingDisabled: bool.isRequired,
 
   // from injectIntl
@@ -83,9 +84,9 @@ const mapStateToProps = state => {
   };
 };
 
-const PrivacyPolicyPage = compose(
+const BirthdayDealPage = compose(
   connect(mapStateToProps),
   injectIntl
-)(PrivacyPolicyPageComponent);
+)(BirthdayDealPageComponent);
 
-export default PrivacyPolicyPage;
+export default BirthdayDealPage;;
