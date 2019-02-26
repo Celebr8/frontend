@@ -5,6 +5,7 @@ import {
   CheckoutPage,
   ContactDetailsPage,
   DealsPage,
+  BirthdayDealPage,
   EditListingPage,
   EmailVerificationPage,
   InboxPage,
@@ -254,6 +255,11 @@ const routeConfiguration = () => {
       path: '/deals-page',
       name: 'DealsPage',
       component: props => <DealsPage {...props} />,
+    },
+    {
+      path: '/birthday-deal-page',
+      name: 'BirthdayDealPage',
+      component: props => <BirthdayDealPage {...props} />,
     },
     {
       path: '/terms-of-service',
