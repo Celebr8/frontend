@@ -5,6 +5,9 @@ import { connect } from 'react-redux';
 import { injectIntl, intlShape, FormattedMessage } from 'react-intl';
 import { isScrollingDisabled } from '../../ducks/UI.duck';
 import { TopbarContainer } from '../../containers';
+
+import { dealsTabs } from '../DealsPage/dealsTabs'
+
 import {
   Page,
   LayoutSideNavigation,
@@ -23,23 +26,9 @@ import css from './BirthdayDealPage.css';
 const BirthdayDealPageComponent = props => {
   const { scrollingDisabled, intl } = props;
 
-  const tabs = [
-    {
-      text: intl.formatMessage({ id: 'DealsPage.dealsTabTitle' }),
-      selected: true,
-      linkProps: {
-        name: 'DealsPage',
-      },
-    },
-    {
-      text: intl.formatMessage({ id: 'DealsPage.birthdayDealTabTitle' }),
-      selected: false,
-      linkProps: {
-        name: 'BirthdayDealPage',
-      },
-    },
-  ];
-  const siteTitle = config.siteTitle;
+	const tabs = dealsTabs(intl);
+
+	const siteTitle = config.siteTitle;
   const schemaTitle = intl.formatMessage({ id: 'DealsPage.schemaTitle' }, { siteTitle });
   const schema = {
     '@context': 'http://schema.org',
