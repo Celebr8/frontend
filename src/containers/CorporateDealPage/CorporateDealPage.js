@@ -5,7 +5,9 @@ import { connect } from 'react-redux';
 import { injectIntl, intlShape, FormattedMessage } from 'react-intl';
 import { isScrollingDisabled } from '../../ducks/UI.duck';
 import { TopbarContainer } from '../../containers';
-import { dealsTabs } from './dealsTabs'
+
+import { dealsTabs } from '../DealsPage/dealsTabs'
+
 import {
   Page,
   LayoutSideNavigation,
@@ -14,17 +16,18 @@ import {
   LayoutWrapperTopbar,
   LayoutWrapperFooter,
   Footer,
-	Deals
+	Deals,
+	BirthdayDeal
 } from '../../components';
 import config from '../../config';
 
-import css from './DealsPage.css';
+import css from './CorporateDealPage.css';
 
-const DealsPageComponent = props => {
+const CorporateDealPageComponent = props => {
   const { scrollingDisabled, intl } = props;
 
 	const tabs = dealsTabs(intl);
-	
+
 	const siteTitle = config.siteTitle;
   const schemaTitle = intl.formatMessage({ id: 'DealsPage.schemaTitle' }, { siteTitle });
   const schema = {
@@ -36,15 +39,15 @@ const DealsPageComponent = props => {
     <Page title={schemaTitle} scrollingDisabled={scrollingDisabled} schema={schema}>
       <LayoutSideNavigation>
         <LayoutWrapperTopbar>
-          <TopbarContainer currentPage="DealsPage" />
+          <TopbarContainer currentPage="CorporateDealPage" />
         </LayoutWrapperTopbar>
         <LayoutWrapperSideNav tabs={tabs} />
         <LayoutWrapperMain>
           <div className={css.content}>
             <h1 className={css.heading}>
-              <FormattedMessage id="DealsPage.heading" />
+              <FormattedMessage id="CorporateDealPage.heading" />
             </h1>
-            <Deals />
+            <BirthdayDeal />
           </div>
         </LayoutWrapperMain>
         <LayoutWrapperFooter>
@@ -57,7 +60,7 @@ const DealsPageComponent = props => {
 
 const { bool } = PropTypes;
 
-DealsPageComponent.propTypes = {
+CorporateDealPageComponent.propTypes = {
   scrollingDisabled: bool.isRequired,
 
   // from injectIntl
@@ -70,9 +73,9 @@ const mapStateToProps = state => {
   };
 };
 
-const DealsPage = compose(
+const CorporateDealPage = compose(
   connect(mapStateToProps),
   injectIntl
-)(DealsPageComponent);
+)(CorporateDealPageComponent);
 
-export default DealsPage;;
+export default CorporateDealPage;;
