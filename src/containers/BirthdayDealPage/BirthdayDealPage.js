@@ -26,7 +26,7 @@ import css from './BirthdayDealPage.css';
 const BirthdayDealPageComponent = props => {
   const { scrollingDisabled, intl } = props;
 
-	const tabs = dealsTabs(intl);
+	const tabs = dealsTabs(intl, 'BirthdayDealPage');
 
 	const siteTitle = config.siteTitle;
   const schemaTitle = intl.formatMessage({ id: 'DealsPage.schemaTitle' }, { siteTitle });

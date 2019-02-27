@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-import css from './BirthdayDeal.css';
+import css from './CorporateDeal.css';
 
-const BirthdayDeal  = props => {
+const CorporateDeal  = props => {
   const { rootClassName, className } = props;
   const classes = classNames(rootClassName || css.root, className);
 
@@ -203,16 +203,16 @@ const BirthdayDeal  = props => {
   );
 };
 
-BirthdayDeal.defaultProps = {
+CorporateDeal.defaultProps = {
   rootClassName: null,
   className: null,
 };
 
 const { string } = PropTypes;
 
-BirthdayDeal.propTypes = {
+CorporateDeal.propTypes = {
   rootClassName: string,
   className: string,
 };
 
-export default BirthdayDeal;
+export default CorporateDeal;

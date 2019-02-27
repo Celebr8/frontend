@@ -17,7 +17,7 @@ import {
   LayoutWrapperFooter,
   Footer,
 	Deals,
-	BirthdayDeal
+	CorporateDeal
 } from '../../components';
 import config from '../../config';
 
@@ -26,7 +26,7 @@ import css from './CorporateDealPage.css';
 const CorporateDealPageComponent = props => {
   const { scrollingDisabled, intl } = props;
 
-	const tabs = dealsTabs(intl);
+	const tabs = dealsTabs(intl, 'CorporateDealPage');
 
 	const siteTitle = config.siteTitle;
   const schemaTitle = intl.formatMessage({ id: 'DealsPage.schemaTitle' }, { siteTitle });
@@ -47,7 +47,7 @@ const CorporateDealPageComponent = props => {
             <h1 className={css.heading}>
               <FormattedMessage id="CorporateDealPage.heading" />
             </h1>
-            <BirthdayDeal />
+            <CorporateDeal />
           </div>
         </LayoutWrapperMain>
         <LayoutWrapperFooter>
