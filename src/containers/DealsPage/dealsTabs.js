@@ -1,21 +1,21 @@
-export const dealsTabs = (intl) => [
+export const dealsTabs = (intl, selected) => [
     {
       text: intl.formatMessage({ id: 'DealsPage.dealsTabTitle' }),
-      selected: true,
+      selected: selected == 'DealsPage',
       linkProps: {
         name: 'DealsPage',
       },
     },
     {
       text: intl.formatMessage({ id: 'DealsPage.birthdayDealTabTitle' }),
-      selected: false,
+      selected: selected == 'BirthdayDealPage',
       linkProps: {
         name: 'BirthdayDealPage',
       },
     },
     {
       text: intl.formatMessage({ id: 'DealsPage.corporateDealTabTitle' }),
-      selected: false,
+      selected: selected == 'CorporateDealPage',
       linkProps: {
         name: 'CorporateDealPage',
       },
