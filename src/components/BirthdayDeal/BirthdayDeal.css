@@ -14,6 +14,10 @@
       margin: 24px 0 24px 0;
     }
   }
+  
+  & span {
+	  color: #ff3f00;
+  }
 
   & .lastUpdated {
     @apply --marketplaceBodyFontStyles;
@@ -83,3 +87,77 @@ li ol > li {
 li ol > li:before {
   content: counters(item, ".") ". ";
 }
+
+/** TEST **/
+* {
+  padding:0px 0px 0px 0px;
+  box-sizing:border-box;
+  font-family: Arial,Verdana,Helvetica,sans-serif;
+}
+
+.post_container {
+  border: 1px solid #ff3f00;
+  border-radius: 4px;
+  overflow-y: auto;
+  margin-top: 25px;
+}
+
+.post-title {
+  padding: 0px 0px 15px 0px;
+  margin: 0px;
+    font-weight: bold;
+    font-size: 200%;
+    color: #ff3f00;
+}
+
+.read-more {
+    font-weight: bold;
+    font-size: 90%;
+    text-transform: uppercase;
+}
+
+.read-more a {
+    color: #000;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.read-more a:hover {
+    color: #ff3f00;
+    text-decoration: underline;
+}
+
+
+.image {
+  border-radius: 0px; 
+  padding-bottom:35%;
+  background-repeat:no-repeat;
+  background-size:cover;
+  background-position:center center;
+  position:center;
+  width:50%;
+}
+
+.desc, .image_left {
+  float:left;
+  display:block
+}
+
+.image_right {
+  float:right;
+  display:block
+}
+
+.desc {
+  width:50%;
+  text-align:left;
+  padding:15px 15px 15px 15px;
+  color: #424242;
+}
+
+@media (max-width:600px) {
+  .desc, .image {
+    float:none;
+    width:100%;
+  }
+  }
