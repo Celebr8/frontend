@@ -39,14 +39,11 @@ const DealsPageComponent = props => {
 				<LayoutWrapperTopbar>
 					<TopbarContainer currentPage="DealsPage" />
 				</LayoutWrapperTopbar>
-				<LayoutWrapperHero>
+				<LayoutWrapperHero className={css.hero}>
 					<div className={css.heroContent}>
 						<h1 className={css.heroMainTitle}>
 							<FormattedMessage id="DealsPage.title" />
 						</h1>
-						<h2 className={css.heroSubTitle}>
-							<FormattedMessage id="DealsPage.subTitle" />
-						</h2>
 					</div>
 				</LayoutWrapperHero>
 				<LayoutWrapperSideNav tabs={tabs} />

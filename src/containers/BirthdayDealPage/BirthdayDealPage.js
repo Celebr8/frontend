@@ -10,9 +10,10 @@ import { dealsTabs } from '../DealsPage/dealsTabs'
 
 import {
   Page,
-  LayoutSideNavigation,
+  LayoutSideNavigationWithHero,
   LayoutWrapperMain,
   LayoutWrapperSideNav,
+  LayoutWrapperHero,
   LayoutWrapperTopbar,
   LayoutWrapperFooter,
   Footer,
@@ -37,10 +38,17 @@ const BirthdayDealPageComponent = props => {
   };
   return (
     <Page title={schemaTitle} scrollingDisabled={scrollingDisabled} schema={schema}>
-      <LayoutSideNavigation>
+      <LayoutSideNavigationWithHero>
         <LayoutWrapperTopbar>
           <TopbarContainer currentPage="BirthdayDealPage" />
         </LayoutWrapperTopbar>
+				<LayoutWrapperHero className={css.hero}>
+					<div className={css.heroContent}>
+						<h1 className={css.heroMainTitle}>
+							<FormattedMessage id="DealsPage.title" />
+						</h1>
+					</div>
+				</LayoutWrapperHero>
         <LayoutWrapperSideNav tabs={tabs} />
         <LayoutWrapperMain>
           <div className={css.content}>
@@ -53,7 +61,7 @@ const BirthdayDealPageComponent = props => {
         <LayoutWrapperFooter>
           <Footer />
         </LayoutWrapperFooter>
-      </LayoutSideNavigation>
+      </LayoutSideNavigationWithHero>
     </Page>
   );
 };
