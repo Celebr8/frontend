@@ -48,6 +48,7 @@ const DealsPageComponent = props => {
 				</LayoutWrapperHero>
 				<LayoutWrapperSideNav tabs={tabs} />
 				<LayoutWrapperMain>
+					<Deals />
 				</LayoutWrapperMain>
 				<LayoutWrapperFooter>
 					<Footer />
