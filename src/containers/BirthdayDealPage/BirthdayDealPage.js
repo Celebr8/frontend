@@ -10,9 +10,10 @@ import { dealsTabs } from '../DealsPage/dealsTabs'
 
 import {
   Page,
-  LayoutSideNavigation,
+  LayoutSideNavigationWithHero,
   LayoutWrapperMain,
   LayoutWrapperSideNav,
+  LayoutWrapperHero,
   LayoutWrapperTopbar,
   LayoutWrapperFooter,
   Footer,
@@ -26,7 +27,7 @@ import css from './BirthdayDealPage.css';
 const BirthdayDealPageComponent = props => {
   const { scrollingDisabled, intl } = props;
 
-	const tabs = dealsTabs(intl);
+	const tabs = dealsTabs(intl, 'BirthdayDealPage');
 
 	const siteTitle = config.siteTitle;
   const schemaTitle = intl.formatMessage({ id: 'DealsPage.schemaTitle' }, { siteTitle });
@@ -37,10 +38,17 @@ const BirthdayDealPageComponent = props => {
   };
   return (
     <Page title={schemaTitle} scrollingDisabled={scrollingDisabled} schema={schema}>
-      <LayoutSideNavigation>
+      <LayoutSideNavigationWithHero>
         <LayoutWrapperTopbar>
           <TopbarContainer currentPage="BirthdayDealPage" />
         </LayoutWrapperTopbar>
+				<LayoutWrapperHero className={css.hero}>
+					<div className={css.heroContent}>
+						<h1 className={css.heroMainTitle}>
+							<FormattedMessage id="DealsPage.title" />
+						</h1>
+					</div>
+				</LayoutWrapperHero>
         <LayoutWrapperSideNav tabs={tabs} />
         <LayoutWrapperMain>
           <div className={css.content}>
@@ -53,7 +61,7 @@ const BirthdayDealPageComponent = props => {
         <LayoutWrapperFooter>
           <Footer />
         </LayoutWrapperFooter>
-      </LayoutSideNavigation>
+      </LayoutSideNavigationWithHero>
     </Page>
   );
 };
