@@ -251,12 +251,8 @@ class StripePaymentForm extends Component {
 			// A change in the message should call the onChange prop with
 			// the current token and the new message.
 
-			console.log('handleAttendanceChange', e)
 			const attendance = e.target.value;
-			console.log('attendance', attendance)
-			console.log('parseInt(attendance)', parseInt(attendance))
 			const onlyNumber = new RegExp('^[0-9]*$');
-			console.log('number', onlyNumber.test(attendance))
 			if(onlyNumber.test(attendance)) 
 				this.setState(prevState => {
 					const newState = { ...prevState, attendance };
@@ -345,12 +341,12 @@ class StripePaymentForm extends Component {
 			</label>
 
 			<p><input 
-					style={{width: "30%", display: "inline"}}
+					style={{width: "3em", display: "inline"}}
 					id={`${formId}-attendance`}
 					className={css.attendance}
 					value={this.state.attendance}
 					onChange={handleAttendanceChange}
-				/> people (minimum 10) </p>
+				/> people.</p>
 
 		<p>{this.validAttendance(this.state.attendance)}</p>
 
