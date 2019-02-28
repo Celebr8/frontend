@@ -102,7 +102,7 @@ li ol > li:before {
   margin-top: 25px;
 }
 
-.post-title {
+.postTitle {
   padding: 0px 0px 15px 0px;
   margin: 0px;
     font-weight: bold;
@@ -110,7 +110,7 @@ li ol > li:before {
     color: #ff3f00;
 }
 
-.read-more {
+.readMore {
     font-weight: bold;
     font-size: 90%;
     text-transform: uppercase;
