@@ -88,76 +88,95 @@ li ol > li:before {
   content: counters(item, ".") ". ";
 }
 
-/** TEST **/
-* {
-  padding:0px 0px 0px 0px;
-  box-sizing:border-box;
-  font-family: Arial,Verdana,Helvetica,sans-serif;
+/** DEALS PAGE **/
+
+.container {
+	width: 100%;
 }
 
-.post_container {
-  border: 1px solid #ff3f00;
-  border-radius: 4px;
+.boxes .boxLeft img{
+	width: 45%;
+	float: left;
+	margin-right: 15px;
+}
+
+.boxLeft {
+	
+}
+
+.boxes .boxRight img{
+	width: 45%;
+	float: right;
+	margin-left: 15px;
+}
+
+.boxRight {
+	
+}
+
+.boxes{
+  margin-top:50px;
+  border: 0px solid #ff3f00;
+  border-radius: 0px;
   overflow-y: auto;
-  margin-top: 25px;
 }
 
-.postTitle {
-  padding: 0px 0px 15px 0px;
-  margin: 0px;
-    font-weight: bold;
-    font-size: 200%;
-    color: #ff3f00;
+.boxRight h3, .boxRight p, .boxRight a {
+	padding-left: 0;
+}
+
+.boxes h3 {
+	margin-top: 0px;
+	padding-bottom: 5px;
+	color: #ff3f00;
+	border-bottom: 1px solid #ff3f00;
+}
+
+.boxes p {
+	margin-top: 0px;
+	margin-bottom: 5px;
+}
+
+img {
+	border-radius: 4px;
 }
 
 .readMore {
-    font-weight: bold;
-    font-size: 90%;
-    text-transform: uppercase;
+	padding-top: 10px;
+	font-size: 14px;
+	font-weight: bold;
 }
 
-.read-more a {
+.readMore a {
+	font-size: 14px;
+	font-weight: bold;
     color: #000;
     text-transform: uppercase;
     text-decoration: none;
 }
 
-.read-more a:hover {
+.readMore a:hover {
     color: #ff3f00;
     text-decoration: underline;
 }
 
-
-.image {
-  border-radius: 0px; 
-  padding-bottom:35%;
-  background-repeat:no-repeat;
-  background-size:cover;
-  background-position:center center;
-  position:center;
-  width:50%;
-}
-
-.desc, .image_left {
-  float:left;
-  display:block
-}
-
-.image_right {
-  float:right;
-  display:block
-}
-
-.desc {
-  width:50%;
-  text-align:left;
-  padding:15px 15px 15px 15px;
-  color: #424242;
-}
-
-@media (max-width:600px) {
-  .desc, .image {
-    float:none;
-    width:100%;
+@media (max-width: 768px) {
+  .boxes .boxLeft img,
+  .boxes .boxRight img,
+  .boxRight h3,
+  .boxRight p,
+  .boxRight a {
+    float: none;
+    text-align: left;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .boxRight h3,
+  .boxLeft h3,
+  .boxRight p {
+	  padding-top: 10px;
+	  margin-top: 10px;
   }
   }
