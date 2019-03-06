@@ -7,6 +7,8 @@ import { formatMoney } from '../../util/currency';
 import { ensureListing } from '../../util/data';
 import config from '../../config';
 
+import WhichostCarret from './whichost-carret.png';
+
 import css from './SearchMapPriceLabel.css';
 
 class SearchMapPriceLabel extends Component {
@@ -37,9 +39,9 @@ class SearchMapPriceLabel extends Component {
 
     return (
       <button className={classes} onClick={() => onListingClicked(currentListing)}>
-        <div className={css.caretShadow} />
-        <div className={priceLabelClasses}>{formattedPrice}</div>
-        <div className={caretClasses} />
+        <div className={css.whichostIcon}>
+					<img src={WhichostCarret} alt="Whichost icon" />
+				</div>
       </button>
     );
   }
