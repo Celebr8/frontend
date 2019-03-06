@@ -14,6 +14,10 @@
       margin: 24px 0 24px 0;
     }
   }
+  
+  & span {
+	  color: #ff3f00;
+  }
 
   & .lastUpdated {
     @apply --marketplaceBodyFontStyles;
@@ -83,3 +87,96 @@ li ol > li {
 li ol > li:before {
   content: counters(item, ".") ". ";
 }
+
+/** DEALS PAGE **/
+
+.container {
+	width: 100%;
+}
+
+.boxes .boxLeft img{
+	width: 45%;
+	float: left;
+	margin-right: 15px;
+}
+
+.boxLeft {
+	
+}
+
+.boxes .boxRight img{
+	width: 45%;
+	float: right;
+	margin-left: 15px;
+}
+
+.boxRight {
+	
+}
+
+.boxes{
+  margin-top:50px;
+  border: 0px solid #ff3f00;
+  border-radius: 0px;
+  overflow-y: auto;
+}
+
+.boxRight h3, .boxRight p, .boxRight a {
+	padding-left: 0;
+}
+
+.boxes h3 {
+	margin-top: 0px;
+	padding-bottom: 5px;
+	color: #ff3f00;
+	border-bottom: 1px solid #ff3f00;
+}
+
+.boxes p {
+	margin-top: 0px;
+	margin-bottom: 5px;
+}
+
+img {
+	border-radius: 4px;
+}
+
+.readMore {
+	padding-top: 10px;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.readMore a {
+	font-size: 14px;
+	font-weight: bold;
+    color: #000;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.readMore a:hover {
+    color: #ff3f00;
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .boxes .boxLeft img,
+  .boxes .boxRight img,
+  .boxRight h3,
+  .boxRight p,
+  .boxRight a {
+    float: none;
+    text-align: left;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .boxRight h3,
+  .boxLeft h3,
+  .boxRight p {
+	  padding-top: 10px;
+	  margin-top: 10px;
+  }
+  }
