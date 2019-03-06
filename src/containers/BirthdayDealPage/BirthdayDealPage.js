@@ -5,41 +5,32 @@ import { connect } from 'react-redux';
 import { injectIntl, intlShape, FormattedMessage } from 'react-intl';
 import { isScrollingDisabled } from '../../ducks/UI.duck';
 import { TopbarContainer } from '../../containers';
+
+import { dealsTabs } from '../DealsPage/dealsTabs'
+
 import {
   Page,
-  LayoutSideNavigation,
+  LayoutSideNavigationWithHero,
   LayoutWrapperMain,
   LayoutWrapperSideNav,
+  LayoutWrapperHero,
   LayoutWrapperTopbar,
   LayoutWrapperFooter,
   Footer,
-  PrivacyPolicy,
+	Deals,
+	BirthdayDeal
 } from '../../components';
 import config from '../../config';
 
-import css from './PrivacyPolicyPage.css';
+import css from './BirthdayDealPage.css';
 
-const PrivacyPolicyPageComponent = props => {
+const BirthdayDealPageComponent = props => {
   const { scrollingDisabled, intl } = props;
 
-  const tabs = [
-    {
-      text: intl.formatMessage({ id: 'TermsOfServicePage.privacyTabTitle' }),
-      selected: true,
-      linkProps: {
-        name: 'PrivacyPolicyPage',
-      },
-    },
-    {
-      text: intl.formatMessage({ id: 'TermsOfServicePage.tosTabTitle' }),
-      selected: false,
-      linkProps: {
-        name: 'TermsOfServicePage',
-      },
-    }
-  ];
-  const siteTitle = config.siteTitle;
-  const schemaTitle = intl.formatMessage({ id: 'TermsOfServicePage.schemaTitle' }, { siteTitle });
+	const tabs = dealsTabs(intl, 'BirthdayDealPage');
+
+	const siteTitle = config.siteTitle;
+  const schemaTitle = intl.formatMessage({ id: 'DealsPage.schemaTitle' }, { siteTitle });
   const schema = {
     '@context': 'http://schema.org',
     '@type': 'WebPage',
@@ -47,30 +38,37 @@ const PrivacyPolicyPageComponent = props => {
   };
   return (
     <Page title={schemaTitle} scrollingDisabled={scrollingDisabled} schema={schema}>
-      <LayoutSideNavigation>
+      <LayoutSideNavigationWithHero>
         <LayoutWrapperTopbar>
-          <TopbarContainer currentPage="PrivacyPolicyPage" />
+          <TopbarContainer currentPage="BirthdayDealPage" />
         </LayoutWrapperTopbar>
+				<LayoutWrapperHero className={css.hero}>
+					<div className={css.heroContent}>
+						<h1 className={css.heroMainTitle}>
+							<FormattedMessage id="DealsPage.title" />
+						</h1>
+					</div>
+				</LayoutWrapperHero>
         <LayoutWrapperSideNav tabs={tabs} />
         <LayoutWrapperMain>
           <div className={css.content}>
             <h1 className={css.heading}>
-              <FormattedMessage id="PrivacyPolicyPage.heading" />
+              <FormattedMessage id="BirthdayDealPage.heading" />
             </h1>
-            <PrivacyPolicy />
+            <BirthdayDeal />
           </div>
         </LayoutWrapperMain>
         <LayoutWrapperFooter>
           <Footer />
         </LayoutWrapperFooter>
-      </LayoutSideNavigation>
+      </LayoutSideNavigationWithHero>
     </Page>
   );
 };
 
 const { bool } = PropTypes;
 
-PrivacyPolicyPageComponent.propTypes = {
+BirthdayDealPageComponent.propTypes = {
   scrollingDisabled: bool.isRequired,
 
   // from injectIntl
@@ -83,9 +81,9 @@ const mapStateToProps = state => {
   };
 };
 
-const PrivacyPolicyPage = compose(
+const BirthdayDealPage = compose(
   connect(mapStateToProps),
   injectIntl
-)(PrivacyPolicyPageComponent);
+)(BirthdayDealPageComponent);
 
-export default PrivacyPolicyPage;
+export default BirthdayDealPage;;
