@@ -687,7 +687,7 @@
   "StripePaymentForm.paymentHeading": "Payment",
   "StripePaymentForm.expectedAttendance": "Number of people coming",
   "StripePaymentForm.attendanceErrorNotEnough": "Minimum 10. For smaller parties, you are safe just walking into a pub. ;)",
-  "StripePaymentForm.attendanceErrorTooMuch": "That's too many people.",
+  "StripePaymentForm.attendanceErrorTooMuch": "That's too many people. Write us a message if you need assistance.",
   "StripePaymentForm.occasionHeading": "Occasion",
   "StripePaymentForm.occasionLabel": "What's the occasion",
   "StripePaymentForm.justBecause": "Just because",
