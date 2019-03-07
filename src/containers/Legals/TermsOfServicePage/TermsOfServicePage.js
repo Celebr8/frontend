@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
 import { injectIntl, intlShape, FormattedMessage } from 'react-intl';
-import { isScrollingDisabled } from '../../ducks/UI.duck';
-import { TopbarContainer } from '../../containers';
+import { isScrollingDisabled } from '../../../ducks/UI.duck';
+import { TopbarContainer } from '../../../containers';
 import {
   Page,
   LayoutSideNavigation,
@@ -13,26 +13,26 @@ import {
   LayoutWrapperTopbar,
   LayoutWrapperFooter,
   Footer,
-  PrivacyPolicy,
-} from '../../components';
-import config from '../../config';
+  TermsOfService,
+} from '../../../components';
+import config from '../../../config';
 
-import css from './PrivacyPolicyPage.css';
+import css from './TermsOfServicePage.css';
 
-const PrivacyPolicyPageComponent = props => {
+const TermsOfServicePageComponent = props => {
   const { scrollingDisabled, intl } = props;
 
   const tabs = [
     {
       text: intl.formatMessage({ id: 'TermsOfServicePage.privacyTabTitle' }),
-      selected: true,
+      selected: false,
       linkProps: {
         name: 'PrivacyPolicyPage',
       },
     },
     {
       text: intl.formatMessage({ id: 'TermsOfServicePage.tosTabTitle' }),
-      selected: false,
+      selected: true,
       linkProps: {
         name: 'TermsOfServicePage',
       },
@@ -49,15 +49,15 @@ const PrivacyPolicyPageComponent = props => {
     <Page title={schemaTitle} scrollingDisabled={scrollingDisabled} schema={schema}>
       <LayoutSideNavigation>
         <LayoutWrapperTopbar>
-          <TopbarContainer currentPage="PrivacyPolicyPage" />
+          <TopbarContainer currentPage="TermsOfServicePage" />
         </LayoutWrapperTopbar>
         <LayoutWrapperSideNav tabs={tabs} />
         <LayoutWrapperMain>
           <div className={css.content}>
             <h1 className={css.heading}>
-              <FormattedMessage id="PrivacyPolicyPage.heading" />
+              <FormattedMessage id="TermsOfServicePage.heading" />
             </h1>
-            <PrivacyPolicy />
+            <TermsOfService />
           </div>
         </LayoutWrapperMain>
         <LayoutWrapperFooter>
@@ -70,7 +70,7 @@ const PrivacyPolicyPageComponent = props => {
 
 const { bool } = PropTypes;
 
-PrivacyPolicyPageComponent.propTypes = {
+TermsOfServicePageComponent.propTypes = {
   scrollingDisabled: bool.isRequired,
 
   // from injectIntl
@@ -83,9 +83,9 @@ const mapStateToProps = state => {
   };
 };
 
-const PrivacyPolicyPage = compose(
+const TermsOfServicePage = compose(
   connect(mapStateToProps),
   injectIntl
-)(PrivacyPolicyPageComponent);
+)(TermsOfServicePageComponent);
 
-export default PrivacyPolicyPage;
+export default TermsOfServicePage;
