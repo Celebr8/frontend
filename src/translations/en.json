@@ -681,7 +681,7 @@
   "StripePaymentForm.genericError": "Could not handle payment data. Please try again.",
   "StripePaymentForm.messageHeading": "Message",
   "StripePaymentForm.attendanceHeading": "Attendance",
-  "StripePaymentForm.messageLabel": "Say hello to your host {messageOptionalText}",
+  "StripePaymentForm.messageLabel": "Say hello to your host and let them know if you have any special requests {messageOptionalText}",
   "StripePaymentForm.messageOptionalText": "• optional",
   "StripePaymentForm.messagePlaceholder": "Hello {name}! I'm looking forward to…",
   "StripePaymentForm.paymentHeading": "Payment",
