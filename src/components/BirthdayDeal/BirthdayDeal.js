@@ -61,9 +61,16 @@ const BirthdayDeal  = props => {
 	  			</div>
 	  		</div>
 	  	</section>
-	  		
-
-   
+	  	<section className={css.getInTouch}>
+	  		<h3>Excited? Do you have any questions?</h3>
+	  		<p>Don't hesitate to contact us via the highlited options below. As we don't sleep at all, we'll get back to you very soon.</p>
+	  				<div className={css.btnGroup + ' ' + css.containerButton}>
+	  					<section className={css.centerButtons}>
+	  						<button>Email us</button>
+	  						<button>Book a call</button>
+	  					</section>
+	  				</div>
+	  	</section>
     </div>
     
     
