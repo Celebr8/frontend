@@ -72,7 +72,7 @@ const BirthdayDeal  = props => {
 	  				</div>
 	  	</section>
 	  	
-	  	<section className={css.termsAndConditionsAcordion}>
+	  	<section className={css.termsAndConditionsAccordion}>
 	  		<h2>Terms & Conditions</h2>
 	  <ol>
 	  	<li>The Whichost Birthday Deal is currently available only for Ireland and the UK.</li>
@@ -190,7 +190,7 @@ const BirthdayDeal  = props => {
 	  	<li>Whichost reserves the right to change these terms and conditions at any time without prior notice. In the event that any changes are made, the revised terms and conditions shall be published immediately.</li>
 	  </ol>	
 	  </section>
-	  <section className={css.examplesAcordion}>
+	  <section className={css.examplesAccordion}>
 	  <h2>Examples</h2>
 	  <p>Below you will find examples of each of the benefits and how to avail them.</p>
 	  <ol>

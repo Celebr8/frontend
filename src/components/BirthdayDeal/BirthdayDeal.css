@@ -179,7 +179,7 @@ img {
 	  padding-top: 10px;
 	  margin-top: 10px;
   }
-  }
+ }
   
 
 /** BUTTONS **/
@@ -244,10 +244,28 @@ img {
 	padding-bottom: 5px;
 }
 
-.termsAndConditionsAcordion {
+.termsAndConditionsAccordion {
 	padding-top: 50px;
 }
 
-.examplesAcordion {
+.examplesAccordion {
 	
 }
+
+@media (max-width: 768px) {
+  .getInTouch h3,
+  .getInTouch p {
+    float: none;
+    text-align: left;
+    width: 100%;
+    margin-top: 0;
+    padding: 0;
+  }
+  
+  .btnGroup button {
+  margin: 0;
+  padding: 0;
+  float: none; /* Float the buttons side by side */
+  width: 100%;
+	}
+ }
