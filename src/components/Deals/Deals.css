@@ -14,72 +14,71 @@
       margin: 24px 0 24px 0;
     }
   }
+}
 
-  & .lastUpdated {
-    @apply --marketplaceBodyFontStyles;
-    margin-top: 0;
-    margin-bottom: 25px;
+.postContainer {
+  border: 1px solid #ff3f00;
+  border-radius: 4px;
+  overflow-y: auto;
+  margin-top: 25px;
+}
 
-    @media (--viewportMedium) {
-      margin-top: 0;
-      margin-bottom: 24px;
-    }
-  }
-  & ul {
-	  text-align: inherit;
-	  list-style-type: disc;
-	  padding-left: 25px;
-  }
-  & ul li {
-	  line-height: 24px;
-	  letter-spacing: 0;
-  }
-  
-  & .dealButton a {
-    @apply --marketplaceBodyFontStyles;
-    margin-top: 0;
-    margin-bottom: 25px;
-    font-size: 22px;
-    background-color: #0d2c54;
-    padding: 4px 8px 6px 6px;
-    color: #fff!important;
-    border-radius: 4px;
+.postTitle {
+  padding: 0px 0px 15px 0px;
+  margin: 0px;
+    font-weight: bold;
+    font-size: 200%;
+    color: #ff3f00;
+}
+
+.readMore {
+    font-weight: bold;
+    font-size: 90%;
+    text-transform: uppercase;
+}
+
+.readMore a {
+    color: #000;
+    text-transform: uppercase;
     text-decoration: none;
+}
 
-    @media (--viewportMedium) {
-      margin-top: 0;
-      margin-bottom: 24px;
-    }
+.readMore a:hover {
+    color: #ff3f00;
+    text-decoration: underline;
+}
+
+
+.image {
+  border-radius: 0px; 
+  padding-bottom:35%;
+  background-repeat:no-repeat;
+  background-size:cover;
+  background-position:center center;
+  position:center;
+  width:50%;
+}
+
+.desc, .image_left {
+  float:left;
+  display:block
+}
+
+.imageRight {
+  float:right;
+  display:block
+}
+
+.desc {
+  width:50%;
+  text-align:left;
+  padding:15px 15px 15px 15px;
+  color: #424242;
+}
+
+@media (max-width:600px) {
+  .desc, .image {
+    float:none;
+    width:100%;
   }
-}
-
-body {
-  text-align: inherit;
-}
-
-ol {
-  list-style-type: none;
-  counter-reset: item;
-  margin: 0;
-  padding-left: 0px;
-}
-
-ol > li {
-	font-size: 16px;
-  display: table;
-  counter-increment: item;
-}
-
-ol > li:before {
-  content: counters(item, ".") ". ";
-  display: table-cell;
-  padding-right: 0.6em;
-}
-
-li ol > li {
-  margin: 0;
-}
-
-li ol > li:before {
-  content: counters(item, ".") ". ";
-}
+}  
