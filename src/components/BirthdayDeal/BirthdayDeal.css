@@ -88,6 +88,14 @@ li ol > li:before {
   content: counters(item, ".") ". ";
 }
 
+/** ACCORDION **/
+
+.accordionContent {
+
+	
+
+}
+
 /** DEALS PAGE **/
 
 .container {
