@@ -1,12 +1,15 @@
 .header {
 
-	color: green;
+	border: 2px solid grey;
+	padding-left: 1em;
 
 }
 
 .content {
 
-	color: blue;
+	padding-left: 1em;
+
+	border: 2px solid grey;
 
 }
 
