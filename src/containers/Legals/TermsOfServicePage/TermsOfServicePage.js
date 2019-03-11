@@ -15,30 +15,18 @@ import {
   Footer,
   TermsOfService,
 } from '../../../components';
+
 import config from '../../../config';
+import { legalsTabs } from '../tabs';
 
 import css from './TermsOfServicePage.css';
 
 const TermsOfServicePageComponent = props => {
   const { scrollingDisabled, intl } = props;
 
-  const tabs = [
-    {
-      text: intl.formatMessage({ id: 'TermsOfServicePage.privacyTabTitle' }),
-      selected: false,
-      linkProps: {
-        name: 'PrivacyPolicyPage',
-      },
-    },
-    {
-      text: intl.formatMessage({ id: 'TermsOfServicePage.tosTabTitle' }),
-      selected: true,
-      linkProps: {
-        name: 'TermsOfServicePage',
-      },
-    }
-  ];
-  const siteTitle = config.siteTitle;
+	const tabs = legalsTabs(intl, 'TermsOfServicePage');
+
+	const siteTitle = config.siteTitle;
   const schemaTitle = intl.formatMessage({ id: 'TermsOfServicePage.schemaTitle' }, { siteTitle });
   const schema = {
     '@context': 'http://schema.org',
