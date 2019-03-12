@@ -23,8 +23,8 @@ const BirthdayDeal  = props => {
 		<div className={classes}>
 
 			<section className={css.container}>
-				<p>We support your celebration because we care.</p>
-				<p><span>Follow these three simple steps and we will reward you with up to <b>€ 200</b></span></p>
+				<p>Book your birthday party through Whichost and treat yourself!</p>
+				<p><span>Follow these three simple steps to receive up to <b>€230</b> as a birthday gift from us.</span></p>
 			</section>
 
 			<section className={css.boxes}>
@@ -32,10 +32,10 @@ const BirthdayDeal  = props => {
 					<div className={css.boxLeft}>
 						<img src={image1}></img>
 						<h3>Happy Birthday!</h3>
-						<p>At Whichost it's all about your day! That's why we reward you for celebrating.</p>
-						<p>Search for a pub, select the type "Birthday" and book it.</p>
+						<p>At Whichost we are all about giving back! That’s why we reward you for celebrating with us.</p>
+						<p>Search for a pub, select “Birthday party” under occasion type and book it (step 1).</p>
 						<section className={css.readMore}>
-							<a href="#" target="_blank">Browse pubs now -></a>
+							<a href="https://www.whichost.com/s?address=Ireland&bounds=55.36%2C-5.911%2C51.427%2C-10.382&origin=53.357%2C-7.756" target="_blank">Browse pubs now -></a>
 						</section>
 					</div>
 				</div>
@@ -46,9 +46,9 @@ const BirthdayDeal  = props => {
 					<div className={css.boxRight}>
 						<img src={image2}></img>
 						<h3>Have a great time!</h3>
-						<p>Take your friends and show them how to party but don't forget to not leave a mess behind. It's all about leaving the place like you would like to find it next time.</p>
+						<p>Take your friends out and show them how to party without leaving a mess. It’s all about leaving the place as you would like to find it (step 2).</p>
 						<section className={css.readMore}>
-							<a href="#" target="_blank">Community guidelines -></a>
+							<a href="https://info.whichost.com/eng/legal#guidelines-section" target="_blank">Community guidelines -></a>
 						</section>
 					</div>
 				</div>
@@ -59,10 +59,9 @@ const BirthdayDeal  = props => {
 					<div className={css.boxLeft}>
 						<img src={image3}></img>
 						<h3>Let us know how it was!</h3>
-						<p>We are excited about this special day!</p>
-						<p>Gather your party group together, take a picture, post it on social media  and let us know how your party was.</p>
+						<p>Show us how you party. Gather your party group together, take a picture, post it on social media and let us know how your party was by tagging Whichost (step 3).</p>
 						<section className={css.readMore}>
-							<a href="#" target="_blank">Learn about the deal terms -></a>
+							<a href="#termsAndConditions">Read more about the terms -></a>
 						</section>
 					</div>
 				</div>
@@ -72,14 +71,18 @@ const BirthdayDeal  = props => {
 				<p>Don´t hesitate to contact us via the highlited options below. As we don´t sleep at all, we´ll get back to you very soon.</p>
 				<div className={css.btnGroup + ' ' + css.containerButton}>
 					<section className={css.centerButtons}>
-						<button>Email us</button>
-						<button>Book a call</button>
+                        <form action="mailto:support@whichost.com?subject=Deal inquiry" method="get" target="_blank">
+                            <button type="submit">Email us</button>
+                        </form>
+						<form action="https://info.whichost.com/eng/book-a-call" method="get" target="_blank">
+                            <button type="submit">Book a call</button>
+                        </form>
 					</section>
 				</div>
 			</section>
 
         <details>
-            <summary>Terms and Conditions</summary>
+            <summary id="termsAndConditions">Terms and Conditions</summary>
             <p>
     <ol>
 		<li>The Whichost Birthday Deal is currently available only for Ireland and the UK.</li>
