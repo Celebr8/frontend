@@ -233,7 +233,6 @@ img {
 .btnGroup button:hover {
   background-color: #fff;
   color: #ff3f00;
-  
   border: 1px solid #ff3f00; /* Green border */
 }
 
