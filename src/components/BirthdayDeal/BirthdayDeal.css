@@ -277,3 +277,113 @@ img {
   width: 100%;
 	}
  }
+
+/* Accordion */
+
+details {
+  width: 100%;
+  min-height: 5px;
+  max-width: 700px;
+  padding: 15px 70px 15px 15px;
+  margin: 0 auto;
+  margin-top: 80px;
+  position: relative;
+  font-size: 22px;
+  border: 2px solid #ff3f00;
+  border-radius: 4px;
+  box-sizing: border-box;
+  transition: all .3s;
+}
+
+details + details {
+  margin-top: 20px;
+}
+
+details[open] {
+  min-height: 50px;
+  background-color: #transparent;
+  color: #ff3f00;
+}
+
+details p {
+  color: #4a4a4a;
+  font-weight: 300;
+}
+
+summary {
+  font-weight: 500;
+  cursor: pointer;
+}
+
+/* removed outline as for codepen only
+  don't remove focus on elements
+  it's bad accessibility
+  don't be _that_ guy
+*/
+summary:focus {
+  outline: none;
+}
+
+summary::-webkit-details-marker {
+  display: none
+}
+
+summary::after {
+  padding: 20px;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  color: #ff3f00;
+  font-family: "Font Awesome 5 Free";
+  font-size: 20px;
+  font-style: normal;
+  font-variant-caps: normal;
+  font-variant-ligatures: normal;
+  font-weight: 900;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  content: "+";
+  transform: translateY(-50%);
+  transition: .3s ease;
+}
+
+details[open] summary::after {
+  content: "-";
+  font-size: 30px;
+  top: 0;
+  transform: translateY(0);
+  transition: .3s ease;
+}
+
+details[open] summary:hover::after {
+  animation: pulse 1s ease;
+}
+
+@keyframes pulse {
+  25% {
+    transform: scale(1.1);
+  }
+  50% {
+    transform: scale(1);
+  }
+  75% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
