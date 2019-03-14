@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
 import { injectIntl, intlShape, FormattedMessage } from 'react-intl';
-import { isScrollingDisabled } from '../../ducks/UI.duck';
-import { TopbarContainer } from '../../containers';
-import { dealsTabs } from './dealsTabs'
+import { isScrollingDisabled } from '../../../ducks/UI.duck';
+import { TopbarContainer } from '../../../containers';
+import { dealsTabs } from '../tabs'
 import {
 	Page,
 	LayoutSideNavigationWithHero,
@@ -16,8 +16,8 @@ import {
 	LayoutWrapperFooter,
 	Footer,
 	Deals
-} from '../../components';
-import config from '../../config';
+} from '../../../components';
+import config from '../../../config';
 
 import css from './DealsPage.css';
 

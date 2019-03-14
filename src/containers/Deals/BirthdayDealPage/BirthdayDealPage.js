@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
 import { injectIntl, intlShape, FormattedMessage } from 'react-intl';
-import { isScrollingDisabled } from '../../ducks/UI.duck';
-import { TopbarContainer } from '../../containers';
+import { isScrollingDisabled } from '../../../ducks/UI.duck';
+import { TopbarContainer } from '../../../containers';
 
-import { dealsTabs } from '../DealsPage/dealsTabs'
+import { dealsTabs } from '../tabs'
 
 import {
   Page,
@@ -19,8 +19,8 @@ import {
   Footer,
 	Deals,
 	BirthdayDeal
-} from '../../components';
-import config from '../../config';
+} from '../../../components';
+import config from '../../../config';
 
 import css from './BirthdayDealPage.css';
 
