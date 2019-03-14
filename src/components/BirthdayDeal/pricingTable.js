@@ -7,13 +7,13 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 
 
-export const pricingTable = (props) => (
+export const PricingTable = (props) => (
 	<Table>
 		<TableHead>
 			<TableRow>
 				<TableCell>Party size</TableCell>
-				<TableCell>Party day</TableCell>
-				<TableCell>Amazon gift card value</TableCell>
+				<TableCell align="right">Party day</TableCell>
+				<TableCell align="right">Amazon gift card value</TableCell>
 			</TableRow>
 		</TableHead>
 		<TableBody>
@@ -33,6 +33,4 @@ export const pricingTable = (props) => (
 			</TableRow>
 		</TableBody>
 	</Table>
-
-
 )
