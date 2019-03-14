@@ -72,6 +72,11 @@ ol > li {
 	font-size: 16px;
   display: table;
   counter-increment: item;
+  padding-bottom: 10px;
+}
+
+ol > li:first-child {
+  padding-top: 10px;
 }
 
 ol > li:before {
@@ -269,12 +274,20 @@ img {
     padding: 0;
   }
   
-  .btnGroup button {
-  margin: 0;
-  padding: 0;
-  float: none; /* Float the buttons side by side */
-  width: 100%;
+  .btnGroup .centerButtons {
+	  display: block;
 	}
+	
+	.btnGroup button{
+	  float:none;
+	  padding: 10px 0px;
+	  margin-left: 0;
+	  width: 100%;
+	  }
+	  
+	.btnGroup button:first-child{
+	  margin-bottom: 15px;
+	  }
  }
 
 /* Accordion */

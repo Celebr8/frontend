@@ -9,7 +9,6 @@ import image2 from './img/birthday_deal_image_02.png';
 import image3 from './img/birthday_deal_image_03.png';
 
 
-
 const BirthdayDeal  = props => {
 	const { rootClassName, className } = props;
 	const classes = classNames(rootClassName || css.root, className);
@@ -23,8 +22,8 @@ const BirthdayDeal  = props => {
 		<div className={classes}>
 
 			<section className={css.container}>
-				<p>Book your birthday party through Whichost and treat yourself!</p>
-				<p><span>Follow these three simple steps to receive up to <b>€230</b> as a birthday gift from us.</span></p>
+				<p>Book your birthday party through Whichost and treat yourself! With Whichost, you can easily and quickly find and book unique, inspiring spaces to host your parties, which in itself is already an amazing benefit.</p>
+				<p><span>Enjoy an Amazon Gift Card of up to <b>€ 230.00</b> on us, by just following these simple three steps!</span></p>
 			</section>
 
 			<section className={css.boxes}>
@@ -66,9 +65,10 @@ const BirthdayDeal  = props => {
 					</div>
 				</div>
 			</section>
+			
 			<section className={css.getInTouch}>
-				<h3>Excited? Do you have any questions?</h3>
-				<p>Don´t hesitate to contact us via the highlited options below. As we don´t sleep at all, we´ll get back to you very soon.</p>
+				<h3>Do you have any questions?</h3>
+				<p>Don't hesitate to contact us via the highlighted options below. As we don't sleep at all, we'll get back to you very soon.</p>
 				<div className={css.btnGroup + ' ' + css.containerButton}>
 					<section className={css.centerButtons}>
                         <form action="mailto:support@whichost.com?subject=Deal inquiry" method="get" target="_blank">
@@ -91,13 +91,13 @@ const BirthdayDeal  = props => {
 				<li>Users with an incomplete profile and no Birthday date indicated, will not avail of this benefit.</li>
 			</ol>
 		</li>
-		<li>You get a 100% refund as soon as the booking is confirmed, and not within five days of making use of the booking (having the celebration/party) as per the normal procedure.
+		<li>You get 100% back of your booking payment once it’s confirmed and not within five days of making use of the booking (having the celebration/party) as per the normal procedure. This will come either as a refund or credit to your party bill receipt.
 			<ol>
-				<li>The refund goes back to the same payment method used to request the booking;</li>
-				<li>The refund might take between 7-15 business days. The speed depends entirely on the financial institution used by the user;</li>
-				<li>This benefit is only valid for listings that are managed by Whichost.
+				<li>A refund goes back to the same payment method used to request the booking;</li>
+				<li>A refund might take between 7-15 business days. The speed depends entirely on your financial institution;</li>
+				<li>The refund benefit is only valid for listings that are managed by Whichost.
 					<ol>
-						<li>You can find this information at the bottom of the description of the listing. If it`s managed by Whichost it will say: <b>This listing is managed by Whichost.</b></li>
+						<li>You can find this information at the bottom of the description of the listing. If it's managed by Whichost it will say: <b>“This listing is managed by Whichost.”</b></li>
 					</ol>
 				</li>
 			</ol>
