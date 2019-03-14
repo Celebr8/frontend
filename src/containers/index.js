@@ -2,9 +2,6 @@ export { default as AboutPage } from './AboutPage/AboutPage';
 export { default as AuthenticationPage } from './AuthenticationPage/AuthenticationPage';
 export { default as CheckoutPage } from './CheckoutPage/CheckoutPage';
 export { default as ContactDetailsPage } from './ContactDetailsPage/ContactDetailsPage';
-export { default as DealsPage  } from './Deals/DealsPage/DealsPage';
-export { default as BirthdayDealPage  } from './Deals/BirthdayDealPage/BirthdayDealPage';
-export { default as CorporateDealPage  } from './Deals/CorporateDealPage/CorporateDealPage';
 export { default as EditListingPage } from './EditListingPage/EditListingPage';
 export { default as EmailVerificationPage } from './EmailVerificationPage/EmailVerificationPage';
 export { default as InboxPage } from './InboxPage/InboxPage';
@@ -25,3 +22,6 @@ export { default as TopbarContainer } from './TopbarContainer/TopbarContainer';
 export { default as TransactionPage } from './TransactionPage/TransactionPage';
 
 export * from './Legals';
+export * from './Deals';
+export * from './Pricing';
+export * from './HelpCenter';
