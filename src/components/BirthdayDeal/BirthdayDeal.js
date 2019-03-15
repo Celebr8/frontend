@@ -68,7 +68,7 @@ const BirthdayDeal  = props => {
 				</div>
 			</section>
 			 
-    <PricingTable />
+    	<PricingTable />
     
 			<section className={css.getInTouch}>
 				<h3>Do you have any questions?</h3>
