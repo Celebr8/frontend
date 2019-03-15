@@ -1,3 +1,4 @@
+
 import React from 'react';
 import PropTypes from 'prop-types';
 import { compose } from 'redux';
@@ -23,7 +24,6 @@ import CardHeader from '@material-ui/core/CardHeader';
 import Grid from '@material-ui/core/Grid';
 import StarIcon from '@material-ui/icons/StarBorder';
 import Typography from '@material-ui/core/Typography';
-
 import config from '../../../config';
 
 import css from './BookAPartyPage.css';
@@ -65,7 +65,7 @@ const tiers = [
 ];
 
 const BookAPartyPageComponent = props => {
-	const { scrollingDisabled, classes, intl } = props;
+	const { scrollingDisabled, intl } = props;
 
 	const siteTitle = config.siteTitle;
 	const schemaTitle = intl.formatMessage({ id: 'BookAPartyPage.schemaTitle' }, { siteTitle });
@@ -92,10 +92,10 @@ const BookAPartyPageComponent = props => {
 										titleTypographyProps={{ align: 'center' }}
 										subheaderTypographyProps={{ align: 'center' }}
 										action={tier.title === 'Pro' ? <StarIcon /> : null}
-										className={classes.cardHeader}
+										className={css.cardHeader}
 									/>
 									<CardContent>
-										<div className={classes.cardPricing}>
+										<div className={css.cardPricing}>
 											<Typography component="h2" variant="h3" color="textPrimary">
 												${tier.price}
 											</Typography>
@@ -109,7 +109,7 @@ const BookAPartyPageComponent = props => {
 											</Typography>
 										))}
 									</CardContent>
-									<CardActions className={classes.cardActions}>
+									<CardActions className={css.cardActions}>
 										<Button fullWidth variant={tier.buttonVariant} color="primary">
 											{tier.buttonText}
 										</Button>
