@@ -387,10 +387,15 @@ class StripePaymentForm extends Component {
 			</select>
 
 
+			<p><input 
+					style={{width: "4em", display: "inline"}}
+					id={`${formId}-attendance`}
+					className={css.attendance}
+					value={this.state.attendance}
+					onChange={handleAttendanceChange}
+				/> people</p>
 
-
-
-
+		<p className={css.validAttendance}>{this.validAttendance(this.state.attendance)}</p>
 
 
 
