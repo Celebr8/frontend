@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
+import { PricingTable } from './pricingTable';
+
 import css from './CorporateDeal.css';
 
 import image1 from './img/employee_benefit_image_01.png'; 
@@ -45,6 +47,16 @@ const CorporateDeal  = props => {
                 <p>With our Employee Benefit, we want to give your employees the benefit of receiving an Amazon Gift Card of up to €300.00 in value (it gives money) with every party.</p>
                 <p>If providing employees with great benefits is very important for your organisation, contact us at corporate@whichost.com and we will be more than happy to have a chat and provide you with detailed information about our Whichost Employee Benefit.</p>      
     </section>
+    
+    <h2>This is how it works</h2>
+    <p>They will get will get 100% of their booking payment back once the booking is confirmed. This will come either as a refund or credit to their party bill receipt.</p>
+				<p> They will receive up to €280.00 in an Amazon Gift Card for parties held between Thursdays and Sundays, depending on the size of the party (see table below).</p>
+				<p>They will receive up to €300.00 in an Amazon Gift Card for parties held between Mondays and Wednesdays, depending on the size of the party (see table below).</p>
+    <PricingTable />
+    
+    <p><b>We will add an extra €10.00 to the Amazon Gift Card</b> if they have their party at a pub that they recommended to us<b>*</b>. They can recommend a pub at any time by <a href="https://docs.google.com/forms/d/e/1FAIpQLSejVl35N8A1lu_W99QkvovqLXn1ODOKBp35NZ524XHJnpdOeg/viewform" target="_blank">clicking here</a>.</p>
+    <p><i>* Valid only for recommendations of pubs that are not already listed on Whichost.</i></p>
+
       
       <section className={css.getInTouch}>
 				<h3>Don't let your employees wait. Reward them now!</h3>
@@ -62,11 +74,194 @@ const CorporateDeal  = props => {
 			</section>
     
     <details>
-            <summary>A</summary>               
-    </details>
-    <details>
-            <summary>B</summary>                         
-    </details>
+            <summary id="termsAndConditions">Terms and Conditions</summary>
+            <p>
+   
+    <ol>
+    
+		<li>The Whichost Employee Benefit is currently available only for Ireland and the UK.</li>
+	
+		<li>The employee must register to Whichost using their organisation email address and have their Whichost account fully completed.
+			<ol>
+				<li>Users with an incomplete profile and using an email different than the one provided by your organisation, will not avail of this benefit.</li>
+				<li>If an employee was already a user of Whichost previously to this benefit, the user needs to change the email address in their Whichost account to their organisation email address.</li>
+			</ol>
+		</li>
+
+		<li>The employee gets a 100% of their booking payment back  once the booking is confirmed and not within five days of making use of the booking (having the celebration/party) as per the normal procedure. This will come either as a refund or credit to their party bill receipt.
+			<ol>
+				<li>A refund goes back to the same payment method used to request the booking;</li>
+				<li>A refund might take between 7-15 business days. The speed depends entirely on the financial institution used by the employee;</li>
+				<li>The refund benefit is only valid for listings that are managed by Whichost.
+					<ol>
+						<li>The employee can find this information at the bottom of the description of the listing. If it's managed by Whichost it will say: <b>“This listing is managed by Whichost.”</b></li>
+					</ol>
+				</li>
+			</ol>
+
+		</li>
+		<li>By having the party through Whichost between Thursdays and Sundays, and reviewing the pub, the employee  will receive an Amazon Gift Card of up to €280.00, depending on the size of the party as follows:
+			<ul>
+				<li>Up to 30 people - € 20.00</li>
+				<li>31 to 50 people - € 45.00</li>
+				<li>51 to 100 people - € 80.00</li>
+				<li>101 to 200 people - € 160.00</li>
+				<li>201+ people - € 270.00</li>
+			</ul>
+		
+			<ol>
+				<li>Whichost will add an extra €10.00 to the Amazon Gift Card if the employee has the party at a pub that they recommended to us*. The employee can recommend a pub at any time by <a href="https://docs.google.com/forms/d/e/1FAIpQLSejVl35N8A1lu_W99QkvovqLXn1ODOKBp35NZ524XHJnpdOeg/viewform" target="_blank">clicking here</a>.
+					<ol>
+						<li>This is valid for recommendations of pubs not already listed on Whichost.</li>
+						<li>The employee that recommended the pub must be the same one that books it through Whichost and celebrates their party there.</li>
+						<li>The party must be booked at least one full week (7 days) after recommending the pub. That will give Whichost enough time to collect information on the pub and create the listing.</li>
+					</ol>
+				</li>
+				<li>Only the employee that booked the pub can post the review.</li>
+				<li>One review per booked party.</li>
+				<li>The employee must provide proof that the party was held. For this they can use Instagram, Facebook or Twitter as follows:
+					<ol>
+						<li>The employee can prove that they held the party with an Instagram post:
+							<ol>
+								<li>The post must be generated by the same employee that booked the party.</li>
+								<li>The post must be a picture of the party being held at the pub, which means capturing as many of the party participants as possible at the pub.</li>
+								<li>When posting the picture on Instagram, the employee must properly tag the Whichost Instagram account by entering @whichost in the post. This will be the way for us to track.</li>
+								<li>The post must be kept live on the employee’s Instagram account for at least one full week (7 days).</li>
+							</ol>
+						</li>
+						<li>The employee can prove that they held the party with an Facebook post:
+							<ol>
+								<li>The post must be generated by the same employee that booked the party.</li>
+								<li>The post must be a picture of the party being held at the pub, which means capturing as many of the party participants as possible at the pub.</li>
+								<li>When posting the picture on Facebook, the employee must properly tag the Whichost Facebook page by entering @whichost in the post and selecting the Whichost Facebook Page from the options that will be presented. For this to happen, the employee must Like the Whichost Facebook Page previous to the post. This will be the way for us to track.</li>
+								<li>The post must be kept live on the employee’s Facebook account for at least one full week (7 days).</li>
+							</ol>
+						</li>
+						<li>The employee can prove that they held the party with an Twitter post:
+							<ol>
+								<li>The post must be generated by the same employee that booked the party.</li>
+								<li>The post must be a picture of the party being held at the pub, which means capturing as many of the party participants as possible at the pub.</li>
+								<li>When posting the picture on Twitter, the employee must properly tag the Whichost Twitter account by entering @whichostie in the post. For this to happen, the employee must follow the Whichost Twitter account previous to the post. This will be the way for us to track.</li>
+								<li>The post must be kept live on the employee’s Twitter account for at least one full week (7 days).</li>
+							</ol>
+						</li>
+					</ol>
+				</li>
+				<li>The review must be submitted within one week of making use of the booking.</li>
+				<li>All Amazon Gift Cards are sent electronically to the employee’s email address in their Whichost account.</li>
+			</ol>	
+		</li>
+		<li>By having the party through Whichost between Mondays and Wednesdays, and reviewing the pub, the employee will receive an Amazon Gift Card of up to €300.00, depending on the size of the party as follows:
+			<ul>
+				<li>Up to 30 people - € 30.00</li>
+				<li>31 to 50 people - € 55.00</li>
+				<li>51 to 100 people - € 95.00</li>
+				<li>101 to 200 people - € 175.00</li>
+				<li>201+ people - € 300.00</li>
+			</ul>
+		
+			<ol>
+				<li>Only the employee that booked the pub can post the review.</li>
+				<li>One review per booked party.</li>
+				<li>The employee must provide proof that the party was held. For this they can use Instagram, Facebook or Twitter as follows:
+					<ol>
+						<li>The employee can prove that they held the party with an Instagram post:
+							<ol>
+								<li>The post must be generated by the same employee that booked the party.</li>
+								<li>The post must be a picture of the party being held at the pub, which means capturing as many of the party participants as possible at the pub.</li>
+								<li>When posting the picture on Instagram, the employee must properly tag the Whichost Instagram account by entering @whichost in the post. This will be the way for us to track.</li>
+								<li>The post must be kept live on the employee’s Instagram account for at least one full week (7 days).</li>
+							</ol>
+						</li>
+						<li>The employee can prove that they held the party with an Facebook post:
+							<ol>
+								<li>The post must be generated by the same employee that booked the party.</li>
+								<li>The post must be a picture of the party being held at the pub, which means capturing as many of the party participants as possible at the pub.</li>
+								<li>When posting the picture on Facebook, the employee must properly tag the Whichost Facebook page by entering @whichost in the post and selecting the Whichost Facebook Page from the options that will be presented. For this to happen, the employee must Like the Whichost Facebook Page previous to the post. This will be the way for us to track.</li>
+								<li>The post must be kept live on the employee’s Facebook account for at least one full week (7 days).</li>
+							</ol>
+						</li>
+						<li>The employee can prove that they held the party with an Twitter post:
+							<ol>
+								<li>The post must be generated by the same employee that booked the party.</li>
+								<li>The post must be a picture of the party being held at the pub, which means capturing as many of the party participants as possible at the pub.</li>
+								<li>When posting the picture on Twitter, the employee must properly tag the Whichost Twitter account by entering @whichostie in the post. For this to happen, the employee must follow the Whichost Twitter account previous to the post. This will be the way for us to track.</li>
+								<li>The post must be kept live on the employee’s Twitter account for at least one full week (7 days).</li>
+							</ol>
+						</li>
+					</ol>
+				</li>
+				<li>The review must be submitted within one week of making use of the booking.</li>
+				<li>All Amazon Gift Cards are sent electronically to the employee’s email address in their Whichost account.</li>
+			</ol>	
+		</li>		<li>All Amazon Gift Cards are provided in British Pound Sterling (‎£) and are valid for Amazon UK (www.amazon.co.uk).
+			<ol>
+				<li>At the day of issuing the Amazon Gift Card, we will convert your total award, from Euros (€) into British Pound Sterling (‎£) using the conversion rate provided by Google.</li>
+			</ol>
+		</li>
+		<li>This Whichost benefit does not accumulate with any other deals, promotions or benefits that Whichost may provide at any time.</li>
+		<li>Whichost reserves the right to change these terms and conditions at any time without prior notice. In the event that any changes are made, the revised terms and conditions shall be published immediately.</li> 
+	</ol>
+    </p>
+</details>
+
+<details>
+<summary>Examples</summary>
+<p>Below you will find examples of each of the benefits and how to avail them.</p>
+<p>
+		<ol>
+			<li><b>Example explaining how to avail the 100% refund benefit:</b>
+				<ol>
+					<li>Aoife, a fictitious employee of yours, registers to Whichost using her organisation email address.</li>
+					<li>Aoife completes her profile.</li>
+					<li>Aoife requests a booking at a pub that is managed by Whichost.</li>
+					<li>The booking is confirmed.</li>
+					<li>Aoife’s 100% refund is triggered (if the listing is managed by Whichost).</li>
+				</ol>
+			</li>
+			<li><b>Example explaining how to avail the Amazon Gift Card if the pub was already listed on Whichost:</b>
+				<ol>
+					<li>Aoife, a fictitious employee of yours, registers to Whichost using her organisation email address.</li>
+					<li>Aoife completes her profile.</li>
+					<li>Aoife requests a booking for 20 people at a pub that is managed by Whichost.</li>
+					<li>The booking is confirmed.</li>
+					<li>Aoife’s 100% refund is triggered (if the listing is managed by Whichost).</li>
+					<li>Aoife enjoys the party and while at it she posts an image of the party on her Instagram/Facebook/Twitter account, tagging Whichost in that post.</li>
+					<li>Aoife keeps the post live for at least a full week (7 days) on her Instagram/Facebook/Twitter account.</li>
+					<li>Aoife writes a review for the pub on Whichost.</li>
+					<li>Whichost checks the Instagram/Facebook/Twitter post and the bookings in the platform and if everything matches, they send:
+						<ol>
+							<li>A €20.00 Amazon Gift Card to Aoife’s email address (the one registered in her Whichost account) if the party was held on a Thursday, Friday, Saturday or Sunday.</li>
+							<li>A €30.00 Amazon Gift Card to Aoife’s email address (the one registered in her Whichost account) if the party was held on a Monday, Tuesday or Wednesday.</li>
+						</ol>
+					</li>
+					<li>If the information does not match, for any reason, Whichost will contact Aoife to clarify.</li>
+				</ol>
+			</li>
+			<li><b>Example explaining how to avail the Amazon Gift Card if the pub was not already listed on Whichost and it was recommended:</b>
+				<ol>
+					<li>Aoife registers to Whichost.</li>
+					<li>Aoife completes her profile.</li>
+					<li>Aoife recommends a pub ABC to Whichost through the <a href="https://docs.google.com/forms/d/e/1FAIpQLSejVl35N8A1lu_W99QkvovqLXn1ODOKBp35NZ524XHJnpdOeg/viewform" target="_blank">‘Recommending a pub’</a> form provided by Whichost.</li>
+					<li>Whichost adds the pub ABC to the platform and replies to Aoife confirming she can now book the party.</li>
+					<li>Aoife requests a booking for a party of 20 people at pub ABC through Whichost.</li>
+					<li>The pub confirms the booking.</li>
+					<li>Aoife’s 100% refund is triggered (if the listing is managed by Whichost).</li>
+					<li>Aoife enjoys the party and while at it she posts an image of the party on her Instagram/Facebook/Twitter account, tagging Whichost in that post.</li>
+					<li>Aoife keeps the post live for at least a full week (7 days) on her Instagram/Facebook/Twitter account.</li>
+					<li>Aoife writes a review for the pub on Whichost.</li>
+					<li>Whichost checks the Instagram/Facebook/Twitter post and the bookings in the platform and if everything matches, they send:
+						<ol>
+							<li>A €30.00 (€20.00 for the party of 20 + €10.00 for the pub recommendation) Amazon Gift Card to Aoife’s email address (the one registered in her Whichost account) if the party was held on a Thursday, Friday, Saturday or Sunday.</li>
+							<li>A €30.00 Amazon Gift Card to Aoife’s email address (the one registered in her Whichost account) if the party was held on a Monday, Tuesday or Wednesday.</li>
+						</ol>
+					</li>
+					<li>If the information does not match, for any reason, Whichost will contact Aoife to clarify.</li>
+				</ol>
+			</li>
+		</ol>
+</p>
+</details>
       
     </div>
   );
