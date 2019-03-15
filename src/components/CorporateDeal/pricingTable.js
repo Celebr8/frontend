@@ -22,70 +22,70 @@ export const PricingTable = (props) => (
 					Up to 30
 				</TableCell>
 				<TableCell align="right">TH - SU</TableCell>
-				<TableCell align="right">€ 15.00</TableCell>
+				<TableCell align="right">€ 20.00</TableCell>
 			</TableRow>
 			<TableRow key="UNIQUE_ID2">
 				<TableCell component="th" scope="row">
 					31 - 50
 				</TableCell>
 				<TableCell align="right">TH - SU</TableCell>
-				<TableCell align="right">€ 35.00</TableCell>
+				<TableCell align="right">€ 45.00</TableCell>
 			</TableRow>
 			<TableRow key="UNIQUE_ID3">
 				<TableCell component="th" scope="row">
 					51 - 100
 				</TableCell>
 				<TableCell align="right">TH - SU</TableCell>
-				<TableCell align="right">€ 60.00</TableCell>
+				<TableCell align="right">€ 80.00</TableCell>
 			</TableRow>
 			<TableRow key="UNIQUE_ID4">
 				<TableCell component="th" scope="row">
 					101 - 200
 				</TableCell>
 				<TableCell align="right">TH - SU</TableCell>
-				<TableCell align="right">€ 115.00</TableCell>
+				<TableCell align="right">€ 160.00</TableCell>
 			</TableRow>
 			<TableRow key="UNIQUE_ID5">
 				<TableCell component="th" scope="row">
 					201+
 				</TableCell>
 				<TableCell align="right">TH - SU</TableCell>
-				<TableCell align="right">€ 200.00</TableCell>
+				<TableCell align="right">€ 270.00</TableCell>
 			</TableRow>
 			<TableRow key="UNIQUE_ID6">
 				<TableCell component="th" scope="row">
 					Up to 30
 				</TableCell>
 				<TableCell align="right">MO - WE</TableCell>
-				<TableCell align="right">€ 25.00</TableCell>
+				<TableCell align="right">€ 30.00</TableCell>
 			</TableRow>
 			<TableRow key="UNIQUE_ID7">
 				<TableCell component="th" scope="row">
 					31 - 50
 				</TableCell>
 				<TableCell align="right">MO - WE</TableCell>
-				<TableCell align="right">€ 45.00</TableCell>
+				<TableCell align="right">€ 55.00</TableCell>
 			</TableRow>
 			<TableRow key="UNIQUE_ID8">
 				<TableCell component="th" scope="row">
 					51 - 100
 				</TableCell>
 				<TableCell align="right">MO - WE</TableCell>
-				<TableCell align="right">€ 75.00</TableCell>
+				<TableCell align="right">€ 95.00</TableCell>
 			</TableRow>
 			<TableRow key="UNIQUE_ID9">
 				<TableCell component="th" scope="row">
 					101 - 200
 				</TableCell>
 				<TableCell align="right">MO - WE</TableCell>
-				<TableCell align="right">€ 130.00</TableCell>
+				<TableCell align="right">€ 175.00</TableCell>
 			</TableRow>
 			<TableRow key="UNIQUE_ID10">
 				<TableCell component="th" scope="row">
 					201+
 				</TableCell>
 				<TableCell align="right">MO - WE</TableCell>
-				<TableCell align="right">€ 230.00</TableCell>
+				<TableCell align="right">€ 300.00</TableCell>
 			</TableRow>
 		</TableBody>
 	</Table>

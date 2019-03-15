@@ -242,7 +242,7 @@ img {
 }
 
 .getInTouch {
-	margin-top: 50px;
+	margin-top: 75px;
 }
 
 .getInTouch h3 {
@@ -301,7 +301,7 @@ details {
   margin-top: 80px;
   position: relative;
   font-size: 22px;
-  border: 2px solid #ff3f00;
+  border: 1px double #ff3f00;
   border-radius: 4px;
   box-sizing: border-box;
   transition: all .3s;
@@ -387,15 +387,31 @@ details[open] summary:hover::after {
 }
 
 
+/* TABLE */
 
+table {
+	font-family: 'Lato';
+	border: 1px double #ff3f00;
+	border-radius: 4px;
+	margin-top: 25px;
+}
 
+thead {
+	background-color: #ff3f00;
+	line-height: 15px;
+}
 
+thead th {
+	color: #fff!important;
+}
 
+thead tr {
+	height: 5px!important;
+}
 
-
-
-
-
+tbody tr {
+	height: 0!important;
+}
 
 
 

@@ -67,8 +67,23 @@ const BirthdayDeal  = props => {
 					</div>
 				</div>
 			</section>
+			<br/><br/>
+			<section>
+			<p>With our Birthday Deal, we want to give you a special gift on your birthday where you will receive an Amazon Gift Card of up to €230.00 in value.</p>
+			<h2>This is how it works</h2>
+				<p>You will get will get 100% back of your booking payment once it’s confirmed. This will come either as a refund or credit to your party bill receipt.</p>
+				<p>Receive up to €200.00 in an Amazon Gift Card for parties held between Thursdays and Sundays, depending on the size of the party (see table below).</p>
+				<p>Receive up to €230.00 in an Amazon Gift Card for parties held between Mondays and Wednesdays (see table below).</p>
+			</section>
 			 
     	<PricingTable />
+    	
+    	<p><b>We will add an extra €10.00 to the Amazon Gift Card</b> if you have your party at a pub that you recommended to us<b>*</b>. You can recommend a pub at any time by <a href="https://docs.google.com/forms/d/e/1FAIpQLSejVl35N8A1lu_W99QkvovqLXn1ODOKBp35NZ524XHJnpdOeg/viewform" target="_blank">clicking here</a>.</p>
+    <p><i>* Valid only for recommendations of pubs that are not already listed on Whichost.</i></p>
+    	
+    	<section>
+    	
+    	</section>
     
 			<section className={css.getInTouch}>
 				<h3>Do you have any questions?</h3>
