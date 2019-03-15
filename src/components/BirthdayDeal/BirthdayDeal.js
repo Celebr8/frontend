@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+
 import { PricingTable } from './pricingTable';
 
 import css from './BirthdayDeal.css';
@@ -67,7 +68,7 @@ const BirthdayDeal  = props => {
 				</div>
 			</section>
 			 
-    <princingTable />
+    <PricingTable />
     
 			<section className={css.getInTouch}>
 				<h3>Do you have any questions?</h3>
