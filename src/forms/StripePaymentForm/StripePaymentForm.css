@@ -104,6 +104,13 @@
   }
 }
 
+.validAttendance {
+  color: var(--matterColorAnti);
+	font-size: 15px;
+	margin-bottom: 16px;
+	margin-top: 0px;
+}
+
 .occasionHeading {
   margin: 0 0 14px 0;
   color: var(--matterColorAnti);
@@ -133,6 +140,25 @@
 }
 
 .attendance {
+  margin-top: 22px;
+
+  @media (--viewportMedium) {
+    margin-top: 26px;
+  }
+  @media (--viewportLarge) {
+    margin-top: 17px;
+  }
+}
+
+.hourHeading {
+  color: var(--matterColorAnti);
+
+	margin-top: 16px;
+	margin-bottom: 16px;
+
+}
+
+.hour {
   margin-top: 22px;
 
   @media (--viewportMedium) {

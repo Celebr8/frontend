@@ -8,6 +8,8 @@ import config from '../../config';
 
 import css from './StripePaymentForm.css';
 
+import TextField from '@material-ui/core/TextField';
+
 /**
  * Translate a Stripe API error object.
  *
@@ -139,6 +141,7 @@ class StripePaymentForm extends Component {
 			};
 		});
 	}
+
 	handleSubmit(event) {
 		event.preventDefault();
 
@@ -198,7 +201,7 @@ class StripePaymentForm extends Component {
 	}
 
 	validAttendance(attendance){
-	
+
 		if(attendance < 8) 
 			return this.props.intl.formatMessage({
 				id:	`StripePaymentForm.attendanceErrorNotEnough`
@@ -211,6 +214,7 @@ class StripePaymentForm extends Component {
 			return null;
 
 	}
+
 	render() {
 		const {
 			className,
@@ -246,17 +250,13 @@ class StripePaymentForm extends Component {
 			});
 		};
 
-
 		const handleAttendanceChange = e => {
 			// A change in the message should call the onChange prop with
 			// the current token and the new message.
 
-			console.log('handleAttendanceChange', e)
 			const attendance = e.target.value;
-			console.log('attendance', attendance)
-			console.log('parseInt(attendance)', parseInt(attendance))
 			const onlyNumber = new RegExp('^[0-9]*$');
-			console.log('number', onlyNumber.test(attendance))
+
 			if(onlyNumber.test(attendance)) 
 				this.setState(prevState => {
 					const newState = { ...prevState, attendance };
@@ -272,6 +272,18 @@ class StripePaymentForm extends Component {
 				onChange(newState);
 				return newState;
 			});
+		};
+
+		const handleHourChange = e => {
+
+			const hour = e.target.value;
+
+			this.setState(prevState => {
+				const newState = { ...prevState, hour };
+				onChange(newState);
+				return newState;
+			});
+
 		};
 
 		const messageOptionalText = (
@@ -304,6 +316,7 @@ class StripePaymentForm extends Component {
 				<label className={css.messageLabel} htmlFor={`${formId}-message`}>
 					<FormattedMessage id="StripePaymentForm.messageLabel" values={{ messageOptionalText }} />
 				</label>
+
 				<ExpandingTextarea
 					id={`${formId}-message`}
 					className={css.message}
@@ -311,6 +324,43 @@ class StripePaymentForm extends Component {
 					value={this.state.message}
 					onChange={handleMessageChange}
 				/>
+
+		<h3 className={css.hourHeading}>
+			<FormattedMessage id="StripePaymentForm.hourHeading" />
+		</h3>
+
+		<label className={css.messageLabel} htmlFor={`${formId}-hour`}>
+			<FormattedMessage id="StripePaymentForm.expectedHour" />
+		</label>
+		<TextField
+			id="datetime-local"
+			type="time"
+			defaultValue="07:30"		
+			className={classes.textField}
+			InputLabelProps={{
+				shrink: true,
+			}}
+		/>
+
+
+			<h3 className={css.attendanceHeading}>
+				<FormattedMessage id="StripePaymentForm.attendanceHeading" />
+			</h3>
+
+			<label className={css.messageLabel} htmlFor={`${formId}-attendance`}>
+				<FormattedMessage id="StripePaymentForm.expectedAttendance" />
+			</label>
+
+			<p><input 
+					style={{width: "4em", display: "inline"}}
+					id={`${formId}-attendance`}
+					className={css.attendance}
+					value={this.state.attendance}
+					onChange={handleAttendanceChange}
+				/> people</p>
+
+		<p className={css.validAttendance}>{this.validAttendance(this.state.attendance)}</p>
+
 
 			<h3 className={css.occasionHeading}>
 				<FormattedMessage id="StripePaymentForm.occasionHeading" />
@@ -336,37 +386,27 @@ class StripePaymentForm extends Component {
 
 			</select>
 
-			<h3 className={css.attendanceHeading}>
-				<FormattedMessage id="StripePaymentForm.attendanceHeading" />
-			</h3>
 
-			<label className={css.messageLabel} htmlFor={`${formId}-attendance`}>
-				<FormattedMessage id="StripePaymentForm.expectedAttendance" />
-			</label>
 
-			<p><input 
-					style={{width: "30%", display: "inline"}}
-					id={`${formId}-attendance`}
-					className={css.attendance}
-					value={this.state.attendance}
-					onChange={handleAttendanceChange}
-				/> people (minimum 10) </p>
 
-		<p>{this.validAttendance(this.state.attendance)}</p>
 
-		<div className={css.submitContainer}>
-			<p className={css.paymentInfo}>{paymentInfo}</p>
-			<PrimaryButton
-				className={css.submitButton}
-				type="submit"
-				inProgress={submitInProgress}
-				disabled={submitDisabled}
-			>
 
-			<FormattedMessage id="StripePaymentForm.submitPaymentInfo" />
-		</PrimaryButton>
-	</div>
-</Form>
+
+
+
+	<div className={css.submitContainer}>
+		<p className={css.paymentInfo}>{paymentInfo}</p>
+		<PrimaryButton
+			className={css.submitButton}
+			type="submit"
+			inProgress={submitInProgress}
+			disabled={submitDisabled}
+		>
+
+		<FormattedMessage id="StripePaymentForm.submitPaymentInfo" />
+	</PrimaryButton>
+			</div>
+		</Form>
 		);
 	}
 }
