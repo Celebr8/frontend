@@ -3,10 +3,26 @@ import {
   AboutPage,
   AuthenticationPage,
   CheckoutPage,
+
+	// Legals
+
+  CommunityGuidelinesPage,
   ContactDetailsPage,
+  CookiePolicyPage,
+  PrivacyPolicyPage,
+  TermsOfServicePage,
+	
+	// Deals
+
   DealsPage,
   BirthdayDealPage,
   CorporateDealPage,
+
+	// Pricing
+
+	BookAPartyPage,
+	ListMySpacePage,
+	
   EditListingPage,
   EmailVerificationPage,
   InboxPage,
@@ -14,16 +30,15 @@ import {
   ListingPage,
   ManageListingsPage,
   NotFoundPage,
+  NonDiscriminationPolicyPage,
   PasswordChangePage,
   PasswordRecoveryPage,
   PasswordResetPage,
   PayoutPreferencesPage,
-  PrivacyPolicyPage,
   ProfilePage,
   ProfileSettingsPage,
   SearchPage,
   StyleguidePage,
-  TermsOfServicePage,
   TransactionPage,
 } from './containers';
 
@@ -253,29 +268,54 @@ const routeConfiguration = () => {
       loadData: PayoutPreferencesPage.loadData,
     },
     {
-      path: '/deals-page',
+      path: '/deals',
       name: 'DealsPage',
       component: props => <DealsPage {...props} />,
     },
     {
-      path: '/birthday-deal-page',
+			path: '/deals/birthday-deal',
       name: 'BirthdayDealPage',
       component: props => <BirthdayDealPage {...props} />,
     },
     {
-      path: '/corporate-deal-page',
+			path: '/deals/corporate-deal',
       name: 'CorporateDealPage',
       component: props => <CorporateDealPage {...props} />,
     },
     {
-      path: '/terms-of-service',
+			path: '/legals/terms-of-service',
       name: 'TermsOfServicePage',
       component: props => <TermsOfServicePage {...props} />,
     },
     {
-      path: '/privacy-policy',
+			path: '/legals/privacy-policy',
       name: 'PrivacyPolicyPage',
       component: props => <PrivacyPolicyPage {...props} />,
+    },
+    {
+			path: '/legals/non-discrimination',
+      name: 'NonDiscriminationPolicyPage',
+      component: props => <NonDiscriminationPolicyPage {...props} />,
+    },
+    {
+			path: '/legals/cookie-policy',
+      name: 'CookiePolicyPage',
+      component: props => <CookiePolicyPage {...props} />,
+    },
+    {
+			path: '/legals/community-guidelines',
+      name: 'CommunityGuidelinesPage',
+      component: props => <CommunityGuidelinesPage {...props} />,
+    },
+    {
+			path: '/pricing/book-a-party',
+      name: 'BookAPartyPage',
+      component: props => <BookAPartyPage {...props} />,
+    },
+    {
+			path: '/pricing/list-my-space',
+      name: 'ListMySpacePage',
+      component: props => <ListMySpacePage {...props} />,
     },
     {
       path: '/styleguide',

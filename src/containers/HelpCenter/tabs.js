@@ -1,23 +1,44 @@
 export const helpCenterTabs = (intl, selected) => [
     {
-      text: intl.formatMessage({ id: 'DealsPage.dealsTabTitle' }),
-      selected: selected == 'DealsPage',
+      text: intl.formatMessage({ id: 'HelpCenter.ContactUsTabTitle' }),
+      selected: selected == 'ContactUsPage',
       linkProps: {
-        name: 'DealsPage',
+        name: 'ContactUsPage',
       },
     },
     {
-      text: intl.formatMessage({ id: 'DealsPage.birthdayDealTabTitle' }),
-      selected: selected == 'BirthdayDealPage',
+      text: intl.formatMessage({ id: 'HelpCenter.FAQTabTitle' }),
+      selected: selected == 'FAQPage',
       linkProps: {
-        name: 'BirthdayDealPage',
+        name: 'FAQPage',
       },
     },
     {
-      text: intl.formatMessage({ id: 'DealsPage.corporateDealTabTitle' }),
-      selected: selected == 'CorporateDealPage',
+      text: intl.formatMessage({ id: 'HelpCenter.FeesTabTitle' }),
+      selected: selected == 'FeesPage',
       linkProps: {
-        name: 'CorporateDealPage',
+        name: 'FeesPage',
+      },
+    },
+    {
+      text: intl.formatMessage({ id: 'HelpCenter.DealsTabTitle' }),
+      selected: selected == 'DealsHelpPage',
+      linkProps: {
+        name: 'DealsHelpPage',
+      },
+    },
+    {
+      text: intl.formatMessage({ id: 'HelpCenter.FirstStepsTabTitle' }),
+      selected: selected == 'FirstStepsPage',
+      linkProps: {
+        name: 'FirstStepsPage',
+      },
+    },
+    {
+      text: intl.formatMessage({ id: 'HelpCenter.GuidebookForProvidersTabTitle' }),
+      selected: selected == 'GuidebookForProvidersPage',
+      linkProps: {
+        name: 'GuidebookForProvidersPage',
       },
     },
   ];

@@ -14,14 +14,13 @@ import {
 	LayoutWrapperSideNav,
 	LayoutWrapperTopbar,
 	LayoutWrapperFooter,
-	Footer,
-	HelpDeals
+	Footer
 } from '../../../components';
 import config from '../../../config';
 
-import css from './DealsPage.css';
+import css from './DealsHelpPage.css';
 
-const DealsPageComponent = props => {
+const DealsHelpPageComponent = props => {
 	const { scrollingDisabled, intl } = props;
 
 	const tabs = helpCenterTabs(intl, 'DealsPage');
@@ -62,7 +61,7 @@ const DealsPageComponent = props => {
 
 const { bool } = PropTypes;
 
-DealsPageComponent.propTypes = {
+DealsHelpPageComponent.propTypes = {
 	scrollingDisabled: bool.isRequired,
 
 	// from injectIntl
@@ -75,9 +74,9 @@ const mapStateToProps = state => {
 	};
 };
 
-const DealsPage = compose(
+const DealsHelpPage = compose(
 	connect(mapStateToProps),
 	injectIntl
-)(DealsPageComponent);
+)(DealsHelpPageComponent);
 
-export default DealsPage;;
+export default DealsHelpPage;;
