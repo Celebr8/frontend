@@ -1,3 +1,4 @@
+export { default as Accordion } from './Accordion/Accordion';
 export { default as ActivityFeed } from './ActivityFeed/ActivityFeed';
 export { default as AddImages } from './AddImages/AddImages';
 export { default as Avatar, AvatarMedium, AvatarLarge } from './Avatar/Avatar';
