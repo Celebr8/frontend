@@ -2,12 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
+import { PricingTable } from './pricingTable';
+
 import css from './BirthdayDeal.css';
 
 import image1 from './img/birthday_deal_image_01.png';
 import image2 from './img/birthday_deal_image_02.png';
 import image3 from './img/birthday_deal_image_03.png';
-
 
 
 const BirthdayDeal  = props => {
@@ -23,8 +24,8 @@ const BirthdayDeal  = props => {
 		<div className={classes}>
 
 			<section className={css.container}>
-				<p>Book your birthday party through Whichost and treat yourself!</p>
-				<p><span>Follow these three simple steps to receive up to <b>€230</b> as a birthday gift from us.</span></p>
+				<p>Book your birthday party through Whichost and treat yourself! With Whichost, you can easily and quickly find and book unique, inspiring spaces to host your parties, which in itself is already an amazing benefit.</p>
+				<p><span>Enjoy an Amazon Gift Card of up to <b>€ 230.00</b> on us, by just following these simple three steps!</span></p>
 			</section>
 
 			<section className={css.boxes}>
@@ -66,12 +67,30 @@ const BirthdayDeal  = props => {
 					</div>
 				</div>
 			</section>
+			<br/><br/>
+			<section>
+			<p>With our Birthday Deal, we want to give you a special gift on your birthday where you will receive an Amazon Gift Card of up to €230.00 in value.</p>
+			<h2>This is how it works</h2>
+				<p>You will get will get 100% back of your booking payment once it’s confirmed. This will come either as a refund or credit to your party bill receipt.</p>
+				<p>Receive up to €200.00 in an Amazon Gift Card for parties held between Thursdays and Sundays, depending on the size of the party (see table below).</p>
+				<p>Receive up to €230.00 in an Amazon Gift Card for parties held between Mondays and Wednesdays (see table below).</p>
+			</section>
+			 
+    	<PricingTable />
+    	
+    	<p><b>We will add an extra €10.00 to the Amazon Gift Card</b> if you have your party at a pub that you recommended to us<b>*</b>. You can recommend a pub at any time by <a href="https://docs.google.com/forms/d/e/1FAIpQLSejVl35N8A1lu_W99QkvovqLXn1ODOKBp35NZ524XHJnpdOeg/viewform" target="_blank">clicking here</a>.</p>
+    <p><i>* Valid only for recommendations of pubs that are not already listed on Whichost.</i></p>
+    	
+    	<section>
+    	
+    	</section>
+    
 			<section className={css.getInTouch}>
-				<h3>Excited? Do you have any questions?</h3>
-				<p>Don´t hesitate to contact us via the highlited options below. As we don´t sleep at all, we´ll get back to you very soon.</p>
+				<h3>Do you have any questions?</h3>
+				<p>Don't hesitate to contact us via the highlighted options below. As we don't sleep at all, we'll get back to you very soon.</p>
 				<div className={css.btnGroup + ' ' + css.containerButton}>
 					<section className={css.centerButtons}>
-                        <form action="mailto:support@whichost.com?subject=Deal inquiry" method="get" target="_blank">
+                        <form action="mailto:support@whichost.com" method="get" target="_blank">
                             <button type="submit">Email us</button>
                         </form>
 						<form action="https://info.whichost.com/eng/book-a-call" method="get" target="_blank">
@@ -80,7 +99,6 @@ const BirthdayDeal  = props => {
 					</section>
 				</div>
 			</section>
-
         <details>
             <summary id="termsAndConditions">Terms and Conditions</summary>
             <p>
@@ -91,13 +109,13 @@ const BirthdayDeal  = props => {
 				<li>Users with an incomplete profile and no Birthday date indicated, will not avail of this benefit.</li>
 			</ol>
 		</li>
-		<li>You get a 100% refund as soon as the booking is confirmed, and not within five days of making use of the booking (having the celebration/party) as per the normal procedure.
+		<li>You get 100% back of your booking payment once it’s confirmed and not within five days of making use of the booking (having the celebration/party) as per the normal procedure. This will come either as a refund or credit to your party bill receipt.
 			<ol>
-				<li>The refund goes back to the same payment method used to request the booking;</li>
-				<li>The refund might take between 7-15 business days. The speed depends entirely on the financial institution used by the user;</li>
-				<li>This benefit is only valid for listings that are managed by Whichost.
+				<li>A refund goes back to the same payment method used to request the booking;</li>
+				<li>A refund might take between 7-15 business days. The speed depends entirely on your financial institution;</li>
+				<li>The refund benefit is only valid for listings that are managed by Whichost.
 					<ol>
-						<li>You can find this information at the bottom of the description of the listing. If it`s managed by Whichost it will say: <b>This listing is managed by Whichost.</b></li>
+						<li>You can find this information at the bottom of the description of the listing. If it's managed by Whichost it will say: <b>“This listing is managed by Whichost.”</b></li>
 					</ol>
 				</li>
 			</ol>
