@@ -10,7 +10,7 @@
     since browsers support CSS Properties already.
  */
 
-  --TabNav_linkWidth: 200px;
+  --TabNav_linkWidth: 215px;
   --TabNav_linkBorderWidth: 4px;
 }
 
@@ -60,7 +60,7 @@
 
   @media (--viewportLarge) {
     border-bottom-width: 0px;
-    margin-bottom: 14px;
+    margin-bottom: 10px;
     width: var(--TabNav_linkWidth);
 
     /* Remove mobile (horizontally aligned) nav styling */
