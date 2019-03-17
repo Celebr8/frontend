@@ -75,16 +75,16 @@ const BirthdayDeal  = props => {
 				<p>Receive up to €200.00 in an Amazon Gift Card for parties held between Thursdays and Sundays, depending on the size of the party (see table below).</p>
 				<p>Receive up to €230.00 in an Amazon Gift Card for parties held between Mondays and Wednesdays (see table below).</p>
 			</section>
-			 
+
     	<PricingTable />
-    	
-    	<p><b>We will add an extra €10.00 to the Amazon Gift Card</b> if you have your party at a pub that you recommended to us<b>*</b>. You can recommend a pub at any time by <a href="https://docs.google.com/forms/d/e/1FAIpQLSejVl35N8A1lu_W99QkvovqLXn1ODOKBp35NZ524XHJnpdOeg/viewform" target="_blank">clicking here</a>.</p>
+
+    	<p><b>We will add an extra €10.00 to the Amazon Gift Card</b> if you have your party at a pub that you recommended to us<b>*</b>. You can recommend a pub at any time by <a href="https://docs.google.com/forms/d/e/1FAIpQLSfr2dEghUT1VF1i9BWPsvZIJpnHe2FPVmCuoHJaAR3AXDe_GA/viewform" target="_blank">clicking here</a>.</p>
     <p><i>* Valid only for recommendations of pubs that are not already listed on Whichost.</i></p>
-    	
+
     	<section>
-    	
+
     	</section>
-    
+
 			<section className={css.getInTouch}>
 				<h3>Do you have any questions?</h3>
 				<p>Don't hesitate to contact us via the highlighted options below. As we don't sleep at all, we'll get back to you very soon.</p>
@@ -162,7 +162,7 @@ const BirthdayDeal  = props => {
 				<li>All Amazon Gift Cards are sent electronically to the user’s email address in their Whichost account.</li>
 				<li>The additional €0.50 or €1.00 reward per additional person is added to the value of the Amazon Gift Card.</li>
 				<li>The maximum amount per Amazon Gift Card is €200.00.</li>
-			</ol>	
+			</ol>
 		</li>
 		<li>If the pub does not exist in the Whichost platform, you get awarded a €10.00 or €15.00 Amazon Gift Card, plus €0.50 or €1.00 per additional person for parties of more than 10 people, for recommending the pub, booking a party there through Whichost and posting a review. Conditions:
 			<ol>
@@ -257,7 +257,7 @@ const BirthdayDeal  = props => {
 				<ol>
 					<li>Aoife registers to Whichost.</li>
 					<li>Aoife completes her profile and indicates her birthday in it.</li>
-					<li>Aoife recommends a pub ABC to Whichost through the ‘Recommend a pub’ form inside Whichost.</li>
+					<li>Aoife recommends a pub ABC to Whichost through the <a href="https://docs.google.com/forms/d/e/1FAIpQLSfr2dEghUT1VF1i9BWPsvZIJpnHe2FPVmCuoHJaAR3AXDe_GA/viewform" target="_blank">‘Recommend a pub’</a> form inside Whichost.</li>
 					<li>Whichost adds the pub ABC to the platform and replies to Aoife confirming she can now book the party.</li>
 					<li>Aoife requests a booking for a party of 20 people at pub ABC through Whichost, to celebrate her birthday.</li>
 					<li>The pub confirms the booking.</li>
@@ -277,7 +277,7 @@ const BirthdayDeal  = props => {
 		</ol>
 </p>
 </details>
-                                     
+
 		</div>
 
 
