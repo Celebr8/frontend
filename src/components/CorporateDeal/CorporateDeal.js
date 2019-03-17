@@ -6,7 +6,7 @@ import { PricingTable } from './pricingTable';
 
 import css from './CorporateDeal.css';
 
-import image1 from './img/employee_benefit_image_01.png'; 
+import image1 from './img/employee_benefit_image_01.png';
 
 const CorporateDeal  = props => {
   const { rootClassName, className } = props;
@@ -15,11 +15,11 @@ const CorporateDeal  = props => {
   // prettier-ignore
   return (
     <div className={classes}>
-      
+
       <section className={css.container}>
-				<p>The main focus of an employee benefits strategy, in any organisation, is to improve talent attraction and employee retention. The latter is especially important because losing a valued employee can cost up to 5x their annual salary</p>
+				<p>The main focus of an employees benefits strategy, in any organisation, is to improve talent attraction and employee retention. The latter is especially important because losing a valued employee can cost up to 5x their annual salary</p>
       </section>
-      
+
       <section className={css.boxes}>
 				<div className={css.container}>
 					<div className={css.boxLeft}>
@@ -31,7 +31,7 @@ const CorporateDeal  = props => {
 					</div>
 				</div>
         </section>
-      
+
       <section>
         <br></br><b>That can come mainly in four ways:</b>
             <ol>
@@ -41,26 +41,26 @@ const CorporateDeal  = props => {
                 <li>Higher salary (more money).</li>
             </ol>
       </section>
-    
+
     <section>
                 <p>With Whichost, you and your employees can easily find and book pubs to host your parties, which in itself is already an amazing benefit (it saves time).</p>
                 <p>With our Employee Benefit, we want to give your employees the benefit of receiving an Amazon Gift Card of up to €300.00 in value (it gives money) with every party.</p>
-                <p>If providing employees with great benefits is very important for your organisation, contact us at corporate@whichost.com and we will be more than happy to have a chat and provide you with detailed information about our Whichost Employee Benefit.</p>      
+                <p>If providing employees with great benefits is very important for your organisation, contact us at corporate@whichost.com and we will be more than happy to have a chat and provide you with detailed information about our Whichost Employee Benefit.</p>
     </section>
-    
+
     <h2>This is how it works</h2>
     <p>They will get will get 100% of their booking payment back once the booking is confirmed. This will come either as a refund or credit to their party bill receipt.</p>
 				<p> They will receive up to €280.00 in an Amazon Gift Card for parties held between Thursdays and Sundays, depending on the size of the party (see table below).</p>
 				<p>They will receive up to €300.00 in an Amazon Gift Card for parties held between Mondays and Wednesdays, depending on the size of the party (see table below).</p>
     <PricingTable />
-    
-    <p><b>We will add an extra €10.00 to the Amazon Gift Card</b> if they have their party at a pub that they recommended to us<b>*</b>. They can recommend a pub at any time by <a href="https://docs.google.com/forms/d/e/1FAIpQLSejVl35N8A1lu_W99QkvovqLXn1ODOKBp35NZ524XHJnpdOeg/viewform" target="_blank">clicking here</a>.</p>
+
+    <p><b>We will add an extra €10.00 to the Amazon Gift Card</b> if they have their party at a pub that they recommended to us<b>*</b>. They can recommend a pub at any time by <a href="https://docs.google.com/forms/d/e/1FAIpQLSfr2dEghUT1VF1i9BWPsvZIJpnHe2FPVmCuoHJaAR3AXDe_GA/viewform" target="_blank">clicking here</a>.</p>
     <p><i>* Valid only for recommendations of pubs that are not already listed on Whichost.</i></p>
 
-      
+
       <section className={css.getInTouch}>
 				<h3>Don't let your employees wait. Reward them now!</h3>
-				<p>Get in touch with us and we'll help you to implement our Whichost Employee Benefit into your company and bring the work life ballance to the next level!</p>
+				<p>If providing employees with great benefits is very important for your organisation, contact us and we will be more than happy to have a chat and provide you with detailed information about our Whichost Employees Benefit and how to implement it.</p>
 				<div className={css.btnGroup + ' ' + css.containerButton}>
 					<section className={css.centerButtons}>
                         <form action="mailto:support@whichost.com" method="get" target="_blank">
@@ -72,15 +72,15 @@ const CorporateDeal  = props => {
 					</section>
 				</div>
 			</section>
-    
+
     <details>
             <summary id="termsAndConditions">Terms and Conditions</summary>
             <p>
-   
+
     <ol>
-    
+
 		<li>The Whichost Employee Benefit is currently available only for Ireland and the UK.</li>
-	
+
 		<li>The employee must register to Whichost using their organisation email address and have their Whichost account fully completed.
 			<ol>
 				<li>Users with an incomplete profile and using an email different than the one provided by your organisation, will not avail of this benefit.</li>
@@ -108,9 +108,9 @@ const CorporateDeal  = props => {
 				<li>101 to 200 people - € 160.00</li>
 				<li>201+ people - € 270.00</li>
 			</ul>
-		
+
 			<ol>
-				<li>Whichost will add an extra €10.00 to the Amazon Gift Card if the employee has the party at a pub that they recommended to us*. The employee can recommend a pub at any time by <a href="https://docs.google.com/forms/d/e/1FAIpQLSejVl35N8A1lu_W99QkvovqLXn1ODOKBp35NZ524XHJnpdOeg/viewform" target="_blank">clicking here</a>.
+				<li>Whichost will add an extra €10.00 to the Amazon Gift Card if the employee has the party at a pub that they recommended to us*. The employee can recommend a pub at any time by <a href="https://docs.google.com/forms/d/e/1FAIpQLSfr2dEghUT1VF1i9BWPsvZIJpnHe2FPVmCuoHJaAR3AXDe_GA/viewform" target="_blank">clicking here</a>.
 					<ol>
 						<li>This is valid for recommendations of pubs not already listed on Whichost.</li>
 						<li>The employee that recommended the pub must be the same one that books it through Whichost and celebrates their party there.</li>
@@ -149,7 +149,7 @@ const CorporateDeal  = props => {
 				</li>
 				<li>The review must be submitted within one week of making use of the booking.</li>
 				<li>All Amazon Gift Cards are sent electronically to the employee’s email address in their Whichost account.</li>
-			</ol>	
+			</ol>
 		</li>
 		<li>By having the party through Whichost between Mondays and Wednesdays, and reviewing the pub, the employee will receive an Amazon Gift Card of up to €300.00, depending on the size of the party as follows:
 			<ul>
@@ -159,7 +159,7 @@ const CorporateDeal  = props => {
 				<li>101 to 200 people - € 175.00</li>
 				<li>201+ people - € 300.00</li>
 			</ul>
-		
+
 			<ol>
 				<li>Only the employee that booked the pub can post the review.</li>
 				<li>One review per booked party.</li>
@@ -193,14 +193,14 @@ const CorporateDeal  = props => {
 				</li>
 				<li>The review must be submitted within one week of making use of the booking.</li>
 				<li>All Amazon Gift Cards are sent electronically to the employee’s email address in their Whichost account.</li>
-			</ol>	
+			</ol>
 		</li>		<li>All Amazon Gift Cards are provided in British Pound Sterling (‎£) and are valid for Amazon UK (www.amazon.co.uk).
 			<ol>
 				<li>At the day of issuing the Amazon Gift Card, we will convert your total award, from Euros (€) into British Pound Sterling (‎£) using the conversion rate provided by Google.</li>
 			</ol>
 		</li>
 		<li>This Whichost benefit does not accumulate with any other deals, promotions or benefits that Whichost may provide at any time.</li>
-		<li>Whichost reserves the right to change these terms and conditions at any time without prior notice. In the event that any changes are made, the revised terms and conditions shall be published immediately.</li> 
+		<li>Whichost reserves the right to change these terms and conditions at any time without prior notice. In the event that any changes are made, the revised terms and conditions shall be published immediately.</li>
 	</ol>
     </p>
 </details>
@@ -242,7 +242,7 @@ const CorporateDeal  = props => {
 				<ol>
 					<li>Aoife registers to Whichost.</li>
 					<li>Aoife completes her profile.</li>
-					<li>Aoife recommends a pub ABC to Whichost through the <a href="https://docs.google.com/forms/d/e/1FAIpQLSejVl35N8A1lu_W99QkvovqLXn1ODOKBp35NZ524XHJnpdOeg/viewform" target="_blank">‘Recommending a pub’</a> form provided by Whichost.</li>
+					<li>Aoife recommends a pub ABC to Whichost through the <a href="https://docs.google.com/forms/d/e/1FAIpQLSfr2dEghUT1VF1i9BWPsvZIJpnHe2FPVmCuoHJaAR3AXDe_GA/viewform" target="_blank">‘Recommending a pub’</a> form provided by Whichost.</li>
 					<li>Whichost adds the pub ABC to the platform and replies to Aoife confirming she can now book the party.</li>
 					<li>Aoife requests a booking for a party of 20 people at pub ABC through Whichost.</li>
 					<li>The pub confirms the booking.</li>
@@ -262,7 +262,7 @@ const CorporateDeal  = props => {
 		</ol>
 </p>
 </details>
-      
+
     </div>
   );
 };
