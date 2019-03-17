@@ -114,7 +114,7 @@ const CorporateDeal  = props => {
 					<ol>
 						<li>This is valid for recommendations of pubs not already listed on Whichost.</li>
 						<li>The employee that recommended the pub must be the same one that books it through Whichost and celebrates their party there.</li>
-						<li>The party must be booked at least one full week (7 days) after recommending the pub. That will give Whichost enough time to collect information on the pub and create the listing.</li>
+						<li>The party must be booked at least one full week (7 days) after recommending the pub. That will give Whichost enough time for the pub to be listed.</li>
 					</ol>
 				</li>
 				<li>Only the employee that booked the pub can post the review.</li>
@@ -194,7 +194,8 @@ const CorporateDeal  = props => {
 				<li>The review must be submitted within one week of making use of the booking.</li>
 				<li>All Amazon Gift Cards are sent electronically to the employee’s email address in their Whichost account.</li>
 			</ol>
-		</li>		<li>All Amazon Gift Cards are provided in British Pound Sterling (‎£) and are valid for Amazon UK (www.amazon.co.uk).
+		</li>
+    <li>All Amazon Gift Cards are provided in British Pound Sterling (‎£) and are valid for Amazon UK (www.amazon.co.uk).
 			<ol>
 				<li>At the day of issuing the Amazon Gift Card, we will convert your total award, from Euros (€) into British Pound Sterling (‎£) using the conversion rate provided by Google.</li>
 			</ol>
@@ -226,7 +227,7 @@ const CorporateDeal  = props => {
 					<li>Aoife requests a booking for 20 people at a pub that is managed by Whichost.</li>
 					<li>The booking is confirmed.</li>
 					<li>Aoife’s 100% refund is triggered (if the listing is managed by Whichost).</li>
-					<li>Aoife enjoys the party and while at it she posts an image of the party on her Instagram/Facebook/Twitter account, tagging Whichost in that post.</li>
+					<li>Aoife enjoys the party and while at it, she posts an image of the party on her Instagram/Facebook/Twitter account, tagging Whichost in that post.</li>
 					<li>Aoife keeps the post live for at least a full week (7 days) on her Instagram/Facebook/Twitter account.</li>
 					<li>Aoife writes a review for the pub on Whichost.</li>
 					<li>Whichost checks the Instagram/Facebook/Twitter post and the bookings in the platform and if everything matches, they send:
@@ -247,7 +248,7 @@ const CorporateDeal  = props => {
 					<li>Aoife requests a booking for a party of 20 people at pub ABC through Whichost.</li>
 					<li>The pub confirms the booking.</li>
 					<li>Aoife’s 100% refund is triggered (if the listing is managed by Whichost).</li>
-					<li>Aoife enjoys the party and while at it she posts an image of the party on her Instagram/Facebook/Twitter account, tagging Whichost in that post.</li>
+					<li>Aoife enjoys the party and while at it, she posts an image of the party on her Instagram/Facebook/Twitter account, tagging Whichost in that post.</li>
 					<li>Aoife keeps the post live for at least a full week (7 days) on her Instagram/Facebook/Twitter account.</li>
 					<li>Aoife writes a review for the pub on Whichost.</li>
 					<li>Whichost checks the Instagram/Facebook/Twitter post and the bookings in the platform and if everything matches, they send:
