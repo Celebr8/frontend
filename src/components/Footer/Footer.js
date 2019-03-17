@@ -147,23 +147,29 @@ const Footer = props => {
             </div>
             <div className={css.infoLinks}>
               <ul className={css.list}>
-              	<li className={css.listWhichost}>
+              	<li key="whichost" className={css.listWhichost}>
               		Whichost
               	</li>
-                <li className={css.listItem}>
+                <li key="inviteAFriend" className={css.listItem}>
                   <a href="https://docs.google.com/forms/d/e/1FAIpQLSfIG7NR-ixq6CFydZ_955OyNyhI1-1iS4UfkRdV7knFxnFlqA/viewform" target="_blank" className={css.link}>Invite a friend</a>
                 </li>
-                  <li className={css.listItem}>
+                  <li key="recommandAPub" className={css.listItem}>
                   <a href="https://docs.google.com/forms/d/e/1FAIpQLSejVl35N8A1lu_W99QkvovqLXn1ODOKBp35NZ524XHJnpdOeg/viewform" target="_blank" className={css.link}>Recommend a pub</a>
                 </li>
-                <li className={css.listItem}>
-                  <a href="https://info.whichost.com/eng/legal#guidelines-section" target="_blank" className={css.link}>Guidelines</a>
+                <li key="guidelines" className={css.listItem}>
+									<a href="/legals/community-guidelines" target="_blank" className={css.link}>
+										<FormattedMessage id="Footer.toCommunityGuidelines" />
+									</a>
                 </li>
-                <li className={css.listItem}>
-                  <a href="https://info.whichost.com/eng/faq" target="_blank" className={css.link}>Help centre</a>
+                <li key="helpCenter" className={css.listItem}>
+									<a href="/help/FAQ" target="_blank" className={css.link}>
+										<FormattedMessage id="Footer.toFAQPage" />
+									</a>
                 </li>
-                <li className={css.listItem}>
-                  <a href="https://info.whichost.com/eng/legal#fees-section" target="_blank" className={css.link}>Fees</a>
+                <li key="fees" className={css.listItem}>
+									<a href="/help/Fees" target="_blank" className={css.link}>
+										<FormattedMessage id="Footer.toPricing" />
+									</a>
                 </li>
               </ul>
             </div>
