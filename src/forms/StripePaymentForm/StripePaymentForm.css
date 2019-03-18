@@ -104,6 +104,13 @@
   }
 }
 
+.validAttendance {
+  color: var(--matterColorAnti);
+	font-size: 15px;
+	margin-bottom: 16px;
+	margin-top: 0px;
+}
+
 .occasionHeading {
   margin: 0 0 14px 0;
   color: var(--matterColorAnti);

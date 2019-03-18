@@ -139,6 +139,7 @@ class StripePaymentForm extends Component {
 			};
 		});
 	}
+
 	handleSubmit(event) {
 		event.preventDefault();
 
@@ -198,7 +199,7 @@ class StripePaymentForm extends Component {
 	}
 
 	validAttendance(attendance){
-	
+
 		if(attendance < 8) 
 			return this.props.intl.formatMessage({
 				id:	`StripePaymentForm.attendanceErrorNotEnough`
@@ -211,6 +212,7 @@ class StripePaymentForm extends Component {
 			return null;
 
 	}
+
 	render() {
 		const {
 			className,
@@ -253,6 +255,7 @@ class StripePaymentForm extends Component {
 
 			const attendance = e.target.value;
 			const onlyNumber = new RegExp('^[0-9]*$');
+
 			if(onlyNumber.test(attendance)) 
 				this.setState(prevState => {
 					const newState = { ...prevState, attendance };
@@ -300,6 +303,7 @@ class StripePaymentForm extends Component {
 				<label className={css.messageLabel} htmlFor={`${formId}-message`}>
 					<FormattedMessage id="StripePaymentForm.messageLabel" values={{ messageOptionalText }} />
 				</label>
+
 				<ExpandingTextarea
 					id={`${formId}-message`}
 					className={css.message}
@@ -341,14 +345,14 @@ class StripePaymentForm extends Component {
 			</label>
 
 			<p><input 
-					style={{width: "3em", display: "inline"}}
+					style={{width: "4em", display: "inline"}}
 					id={`${formId}-attendance`}
 					className={css.attendance}
 					value={this.state.attendance}
 					onChange={handleAttendanceChange}
 				/> people.</p>
 
-		<p>{this.validAttendance(this.state.attendance)}</p>
+		<p className={css.validAttendance}>{this.validAttendance(this.state.attendance)}</p>
 
 		<div className={css.submitContainer}>
 			<p className={css.paymentInfo}>{paymentInfo}</p>
@@ -362,7 +366,7 @@ class StripePaymentForm extends Component {
 			<FormattedMessage id="StripePaymentForm.submitPaymentInfo" />
 		</PrimaryButton>
 	</div>
-</Form>
+			</Form>
 		);
 	}
 }

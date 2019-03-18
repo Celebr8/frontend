@@ -36,14 +36,7 @@ const TermsOfServicePageComponent = props => {
       linkProps: {
         name: 'TermsOfServicePage',
       },
-    },
-    {
-      text: intl.formatMessage({ id: 'TermsOfServicePage.dealsTabTitle' }),
-      selected: false,
-      linkProps: {
-        name: 'DealsPage',
-      },
-    },
+    }
   ];
   const siteTitle = config.siteTitle;
   const schemaTitle = intl.formatMessage({ id: 'TermsOfServicePage.schemaTitle' }, { siteTitle });
