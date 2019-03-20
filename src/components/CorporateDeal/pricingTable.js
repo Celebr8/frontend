@@ -13,7 +13,7 @@ export const PricingTable = (props) => (
 			<TableRow>
 				<TableCell>Party size<br/>(People)</TableCell>
 				<TableCell align="center">Gift card value<br/>MO -WE</TableCell>
-				<TableCell align="center">Gift card value<br/>TU - SU</TableCell>
+				<TableCell align="center">Gift card value<br/>TH - SU</TableCell>
 			</TableRow>
 		</TableHead>
 		<TableBody>
