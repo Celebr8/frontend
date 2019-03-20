@@ -263,7 +263,7 @@ const routeConfiguration = () => {
       component: props => <BirthdayDealPage {...props} />,
     },
     {
-      path: '/employee-benefit',
+      path: '/employees-benefit',
       name: 'CorporateDealPage',
       component: props => <CorporateDealPage {...props} />,
     },
