@@ -45,7 +45,7 @@ const CorporateDeal  = props => {
     <section>
                 <p>With Whichost, you and your employees can easily find and book pubs to host your parties, which in itself is already an amazing benefit (it saves time).</p>
                 <p>With our Employee Benefit, we want to give your employees the benefit of receiving an Amazon Gift Card of up to €300.00 in value (it gives money) with every party.</p>
-                <p>If providing employees with great benefits is very important for your organisation, contact us at corporate@whichost.com and we will be more than happy to have a chat and provide you with detailed information about our Whichost Employee Benefit.</p>
+                <p>If providing employees with great benefits is very important for your organisation, contact us at <a href="mailto:corporate@whichost.com?subject=Whichost Employee Benefit" target="_blank">corporate@whichost.com</a> and we will be more than happy to have a chat and provide you with detailed information about our Whichost Employee Benefit.</p>
     </section>
 
     <h2>This is how it works</h2>
