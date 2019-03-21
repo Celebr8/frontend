@@ -71,9 +71,11 @@ const BirthdayDeal  = props => {
 			<section>
 			<p>With our Birthday Deal, we want to give you a special gift on your birthday where you will receive an Amazon Gift Card of up to €230.00 in value.</p>
 			<h2>This is how it works</h2>
-				<p>You will get will get 100% back of your booking payment once it’s confirmed. This will come either as a refund or credit to your party bill receipt.</p>
-				<p>Receive up to €200.00 in an Amazon Gift Card for parties held between Thursdays and Sundays, depending on the size of the party (see table below).</p>
-				<p>Receive up to €230.00 in an Amazon Gift Card for parties held between Mondays and Wednesdays (see table below).</p>
+			<ul>
+				<p><li>You will get will get 100% back of your booking payment once it’s confirmed. This will come either as a refund or credit to your party bill receipt.</li></p>
+				<p><li>Receive up to €200.00 in an Amazon Gift Card for parties held between Thursdays and Sundays, depending on the size of the party (see table below).</li></p>
+				<p><li>Receive up to €230.00 in an Amazon Gift Card for parties held between Mondays and Wednesdays (see table below).</li></p>
+			</ul>
 			</section>
 
     	<PricingTable />
