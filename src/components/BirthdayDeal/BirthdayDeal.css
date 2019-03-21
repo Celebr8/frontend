@@ -93,6 +93,14 @@ li ol > li:before {
   content: counters(item, ".") ". ";
 }
 
+ol li ul li {
+  font-size: 16px;
+}
+
+ol li ul li:first-child {
+  padding-top: 10px;
+}
+
 /** ACCORDION **/
 
 .accordionContent {
