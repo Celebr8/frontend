@@ -49,9 +49,11 @@ const CorporateDeal  = props => {
     </section>
 
     <h2>This is how it works</h2>
-    <p>They will get will get 100% of their booking payment back once the booking is confirmed. This will come either as a refund or credit to their party bill receipt.</p>
-				<p> They will receive up to €280.00 in an Amazon Gift Card for parties held between Thursdays and Sundays, depending on the size of the party (see table below).</p>
-				<p>They will receive up to €300.00 in an Amazon Gift Card for parties held between Mondays and Wednesdays, depending on the size of the party (see table below).</p>
+      <ul>
+        <p><li>They will get will get 100% of their booking payment back once the booking is confirmed. This will come either as a refund or credit to their party bill receipt.</li></p>
+				<p><li>They will receive up to €280.00 in an Amazon Gift Card for parties held between Thursdays and Sundays, depending on the size of the party (see table below).</li></p>
+				<p><li>They will receive up to €300.00 in an Amazon Gift Card for parties held between Mondays and Wednesdays, depending on the size of the party (see table below).</li></p>
+      </ul>
     <PricingTable />
 
     <p><b>We will add an extra €10.00 to the Amazon Gift Card</b> if they have their party at a pub that they recommended to us<b>*</b>. They can recommend a pub at any time by <a href="https://docs.google.com/forms/d/e/1FAIpQLSfr2dEghUT1VF1i9BWPsvZIJpnHe2FPVmCuoHJaAR3AXDe_GA/viewform" target="_blank">clicking here</a>.</p>
