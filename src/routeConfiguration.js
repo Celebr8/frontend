@@ -253,17 +253,17 @@ const routeConfiguration = () => {
       loadData: PayoutPreferencesPage.loadData,
     },
     {
-      path: '/deals-page',
+      path: '/deals',
       name: 'DealsPage',
       component: props => <DealsPage {...props} />,
     },
     {
-      path: '/birthday-deal-page',
+      path: '/birthday-deal',
       name: 'BirthdayDealPage',
       component: props => <BirthdayDealPage {...props} />,
     },
     {
-      path: '/corporate-deal-page',
+      path: '/employees-benefit',
       name: 'CorporateDealPage',
       component: props => <CorporateDealPage {...props} />,
     },
