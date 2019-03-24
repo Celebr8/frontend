@@ -17,7 +17,7 @@ const CorporateDeal  = props => {
     <div className={classes}>
 
       <section className={css.container}>
-				<p>The main focus of an employees benefits strategy, in any organisation, is to improve talent attraction and employee retention. The latter is especially important because losing a valued employee can cost up to 5x their annual salary</p>
+				<p>The main focus of an employees benefits strategy, in any organisation, is to improve talent attraction and employee retention. The latter is especially important because losing a valued employee can cost up to 5x their annual salary.</p>
       </section>
 
       <section className={css.boxes}>
@@ -45,13 +45,14 @@ const CorporateDeal  = props => {
     <section>
                 <p>With Whichost, you and your employees can easily find and book pubs to host your parties, which in itself is already an amazing benefit (it saves time).</p>
                 <p>With our Employee Benefit, we want to give your employees the benefit of receiving an Amazon Gift Card of up to €300.00 in value (it gives money) with every party.</p>
-                <p>If providing employees with great benefits is very important for your organisation, contact us at <a href="mailto:corporate@whichost.com?subject=Whichost Employee Benefit" target="_blank">corporate@whichost.com</a> and we will be more than happy to have a chat and provide you with detailed information about our Whichost Employee Benefit.</p>
     </section>
 
     <h2>This is how it works</h2>
-    <p>They will get will get 100% of their booking payment back once the booking is confirmed. This will come either as a refund or credit to their party bill receipt.</p>
-				<p> They will receive up to €280.00 in an Amazon Gift Card for parties held between Thursdays and Sundays, depending on the size of the party (see table below).</p>
-				<p>They will receive up to €300.00 in an Amazon Gift Card for parties held between Mondays and Wednesdays, depending on the size of the party (see table below).</p>
+      <ul>
+        <p><li>They will get will get 100% of their booking payment back once the booking is confirmed. This will come either as a refund or credit to their party bill receipt.</li></p>
+				<p><li>They will receive up to €280.00 in an Amazon Gift Card for parties held between Thursdays and Sundays, depending on the size of the party (see table below).</li></p>
+				<p><li>They will receive up to €300.00 in an Amazon Gift Card for parties held between Mondays and Wednesdays, depending on the size of the party (see table below).</li></p>
+      </ul>
     <PricingTable />
 
     <p><b>We will add an extra €10.00 to the Amazon Gift Card</b> if they have their party at a pub that they recommended to us<b>*</b>. They can recommend a pub at any time by <a href="https://docs.google.com/forms/d/e/1FAIpQLSfr2dEghUT1VF1i9BWPsvZIJpnHe2FPVmCuoHJaAR3AXDe_GA/viewform" target="_blank">clicking here</a>.</p>
@@ -63,7 +64,7 @@ const CorporateDeal  = props => {
 				<p>If providing employees with great benefits is very important for your organisation, contact us and we will be more than happy to have a chat and provide you with detailed information about our Whichost Employees Benefit and how to implement it.</p>
 				<div className={css.btnGroup + ' ' + css.containerButton}>
 					<section className={css.centerButtons}>
-                        <form action="mailto:support@whichost.com" method="get" target="_blank">
+                        <form action="mailto:corporate@whichost.com?subject=Whichost Employee Benefit" method="get" target="_blank">
                             <button type="submit">Email us</button>
                         </form>
 						<form action="https://info.whichost.com/eng/book-a-call" method="get" target="_blank">
