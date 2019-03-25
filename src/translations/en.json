@@ -125,7 +125,7 @@
   "DealsPage.birthdayDealTabTitle": "Birthday Deal",
   "DealsPage.corporateDealTabTitle": "Employee Benefit",
 	"BirthdayDealPage.heading": "Birthday Deal",
-  "CorporateDealPage.heading": "Employee benefit",
+  "CorporateDealPage.heading": "Employee Benefit",
   "EditListingDescriptionForm.listingTypeLabel": "Space type",
   "EditListingDescriptionForm.listingTypePlaceholder": "Choose the type of space for your listing (common or private)",
   "EditListingDescriptionForm.listingTypeRequired": "You need to select a listingType for your space.",
