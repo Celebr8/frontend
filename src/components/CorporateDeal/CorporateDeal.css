@@ -14,7 +14,7 @@
       margin: 24px 0 24px 0;
     }
   }
-    
+
     & span {
         color: #ff3f00;
     }
@@ -38,7 +38,7 @@
 	  line-height: 24px;
 	  letter-spacing: 0;
   }
-  
+
   & .dealButton a {
     @apply --marketplaceBodyFontStyles;
     margin-top: 0;
@@ -101,7 +101,7 @@ li ol > li:before {
 }
 
 .boxLeft {
-	
+
 }
 
 .boxes .boxRight img{
@@ -111,7 +111,7 @@ li ol > li:before {
 }
 
 .boxRight {
-	
+
 }
 
 .boxes{
@@ -172,7 +172,7 @@ img {
     margin: 0;
     padding: 0;
   }
-  
+
   .boxRight h3,
   .boxLeft h3,
   .boxRight p {
@@ -180,7 +180,7 @@ img {
 	  margin-top: 10px;
   }
  }
-  
+
 
 /** BUTTONS **/
 
@@ -200,7 +200,7 @@ img {
   cursor: pointer; /* Pointer/hand icon */
   float: left; /* Float the buttons side by side */
   width: 180px;
- 
+
 }
 
 
@@ -248,7 +248,7 @@ img {
 }
 
 .examplesAccordion {
-	
+
 }
 
 @media (max-width: 768px) {
@@ -260,18 +260,18 @@ img {
     margin-top: 0;
     padding: 0;
   }
-  
+
   .btnGroup .centerButtons {
 	  display: block;
 	}
-	
+
 	.btnGroup button{
 	  float:none;
 	  padding: 10px 0px;
 	  margin-left: 0;
 	  width: 100%;
 	  }
-	  
+
 	.btnGroup button:first-child{
 	  margin-bottom: 15px;
 	  }
