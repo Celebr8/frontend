@@ -39,7 +39,7 @@
     "react-dates": "^18.2.2",
     "react-dom": "^16.6.3",
     "react-final-form": "^4.0.2",
-    "react-final-form-arrays": "^2.0.1",
+    "react-final-form-arrays": "2.0.1",
     "react-google-maps": "^9.4.5",
     "react-helmet": "^5.2.0",
     "react-intl": "^2.7.2",
