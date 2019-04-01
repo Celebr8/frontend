@@ -114,6 +114,12 @@
   white-space: nowrap;
 }
 
+.helpCenterLink {
+  text-decoration: none;
+  white-space: nowrap;
+  color: var(--marketplaceColor);
+}
+
 .signupLink {
   text-decoration: none;
   white-space: nowrap;
