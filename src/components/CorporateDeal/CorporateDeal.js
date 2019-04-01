@@ -25,7 +25,7 @@ const CorporateDeal  = props => {
 					<div className={css.boxLeft}>
 						<img src={image1}></img>
 						<h3>Win win for everyone!</h3>
-						<p>Give your employees the benefit of enjoying an Amazon Gift Card of up to <span><b>€ 300.00</b></span> on us, with every party they book through Whichost!</p>
+						<p><strong>Give your employees the benefit of enjoying an Amazon Gift Card of up to <span><b>€ 300.00</b></span> on us, with every party that they book through Whichost, at no cost to your organisation!</strong></p>
 						<p>How many of your employees would be more inclined to stay if they had good benefits? <b>75% of them</b>.</p>
                         <p>And what’s the number one benefit for them? Plenty of research confirms that the number one benefit for employees is having <b>more money in their bank accounts</b>.</p>
 					</div>
@@ -45,6 +45,7 @@ const CorporateDeal  = props => {
     <section>
                 <p>With Whichost, you and your employees can easily find and book pubs to host your parties, which in itself is already an amazing benefit (it saves time).</p>
                 <p>With our Employee Benefit, we want to give your employees the benefit of receiving an Amazon Gift Card of up to €300.00 in value (it gives money) with every party.</p>
+								<p><strong>Your employees already book pubs to host their parties and celebrations (birthdays, promotions, graduations, farewells, etc.) so why not give them another reason to celebrate.</strong></p>
     </section>
 
     <h2>This is how it works</h2>
