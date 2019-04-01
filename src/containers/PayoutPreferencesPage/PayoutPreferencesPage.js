@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { bool, func } from 'prop-types';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
@@ -71,16 +71,16 @@ export const PayoutPreferencesPageComponent = props => {
 	if (currentUserLoaded && payoutDetailsSaved) {
 		message = <FormattedMessage id="PayoutPreferencesPage.payoutDetailsSaved" />;
 	} else if (currentUserLoaded && stripeConnected) {
-		const link = <a href="mailto:support@whichost.com">
+		const url = 'mailto:support@whichost.com?subject=Payment%20Information%20Change&body=Please%20update%20the%20payment%20information%20to%20the%20following%20IBAN:%0A%0AThe%20name%20of%20the%20pub%20listed%20is:%0A%0AThank%20you.%20%0A';
+
+		const link = <a href={url}>
 			<FormattedMessage id="PayoutPreferencesPage.stripeAlreadyConnectedLink" />
 		</a>
 
-		message = intl.formatMessage(
-			{ id:"PayoutPreferencesPage.stripeAlreadyConnected" },
-			{
-				here: link		
-			}
-		)
+			message = <Fragment>
+				<FormattedMessage id="PayoutPreferencesPage.stripeAlreadyConnected" />
+					{link}
+			</Fragment>
 	} else if (currentUserLoaded && !stripeConnected) {
 		message = <FormattedMessage id="PayoutPreferencesPage.stripeNotConnected" />;
 	}
