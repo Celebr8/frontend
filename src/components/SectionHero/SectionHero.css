@@ -93,7 +93,7 @@
 
   @media (--viewportMedium) {
     max-width: var(--SectionHero_desktopTitleMaxWidth);
-    margin: 0 0 63px 0;
+    margin: 0 0 15px 0;
   }
 }
 
@@ -108,13 +108,24 @@
 
   @media (--viewportMedium) {
     max-width: var(--SectionHero_desktopTitleMaxWidth);
-    margin: 0 0 63px 0;
+    margin: 0 0 25px 0;
   }
 }
 
-.temporaryOfferLink {
+.temporaryOffer span {
+  font-size: 18px;
+  font-weight: 200;
+}
 
+.temporaryOfferLink span {
+  font-size: 18px;
+  font-weight: 200;
+  color: white;
+  text-decoration: underline;
+}
 
+.temporaryOfferLink span:hover {
+  color: #ff3f00;
 }
 
 .heroButton {
