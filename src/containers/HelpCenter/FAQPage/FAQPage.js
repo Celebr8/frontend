@@ -449,7 +449,7 @@ class FAQPagePanelsBase extends React.Component {
 				</ExpansionPanel>
 				<ExpansionPanel expanded={expanded === 'panel30'} onChange={this.handleChange('panel30')}>
 					<ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-						<Typography className={classes.headingNoDetails}><b>How do reviews work?</b></Typography>
+						<Typography className={classes.headingNoDetails}><b>How do customer reviews work?</b></Typography>
 					</ExpansionPanelSummary>
 					<ExpansionPanelDetails>
 						<Typography>
@@ -511,6 +511,321 @@ class FAQPagePanelsBase extends React.Component {
 					<ExpansionPanelDetails>
 						<Typography>
 						We do not currently have a deposit option, but instead only offer full booking payments to be accepted on our platform. If you require a deposit, accept a booking request, and do not use Whichost for the full payment of this, please note that this is outside our Services Agreement and a Booking Agreement.
+						</Typography>
+					</ExpansionPanelDetails>
+				</ExpansionPanel>
+				<ExpansionPanel expanded={expanded === 'panel36'} onChange={this.handleChange('panel36')}>
+					<ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
+						<Typography className={classes.headingNoDetails}><b>How can I enforce a cancellation policy?</b></Typography>
+					</ExpansionPanelSummary>
+					<ExpansionPanelDetails>
+						<Typography>
+						We let pubs exchange messages with customers and bookings directly to communicate availability, changes in dates, booking modifications, and also cancellations. In the event that this can not be agreed upon directly with a customer and pub, you can email us at <a href="mailto:support@whichost.com?subject=Cancellation Policy Request" target="_blank">support@whichost.com</a> directly.
+						</Typography>
+					</ExpansionPanelDetails>
+				</ExpansionPanel>
+				<ExpansionPanel expanded={expanded === 'panel37'} onChange={this.handleChange('panel37')}>
+					<ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
+						<Typography className={classes.headingNoDetails}><b>I accepted a booking request. When will the money for the booking be in my account?</b></Typography>
+					</ExpansionPanelSummary>
+					<ExpansionPanelDetails>
+						<Typography>
+						The amount that you made from the booking will appear in the bank account that you entered in your payout information within a few business days following the booking date. This time period is typically 7-10 business days for the first transfer and is then quicker for following transfers. This process is handled by Stripe. Rest assured that once you accept a booking request, the person that booked your pub has been charged for the booking and paid for it. If you have any questions about this at any time, please email us at <a href="mailto:support@whichost.com?subject=Payout Inquiry" target="_blank">support@whichost.com</a>.
+						</Typography>
+					</ExpansionPanelDetails>
+				</ExpansionPanel>
+				<ExpansionPanel expanded={expanded === 'panel38'} onChange={this.handleChange('panel38')}>
+					<ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
+						<Typography className={classes.headingNoDetails}><b>Do I have to report and pay taxes for pub booking income?</b></Typography>
+					</ExpansionPanelSummary>
+					<ExpansionPanelDetails>
+						<Typography>
+						You must also legally report income generated from Whichost to your business and it is your responsibility to do so. If you are responsible for charging local taxes on services, you must also comply with these regulations.
+						</Typography>
+					</ExpansionPanelDetails>
+				</ExpansionPanel>
+				<ExpansionPanel expanded={expanded === 'panel39'} onChange={this.handleChange('panel39')}>
+					<ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
+						<Typography className={classes.headingNoDetails}><b>I don't see my questions here.</b></Typography>
+					</ExpansionPanelSummary>
+					<ExpansionPanelDetails>
+						<Typography>
+						Please, feel free to contact us at <a href="mailto:support@whichost.com?subject=Help Center Question" target="_blank">support@whichost.com</a>. We'll be happy to answer all of your questions.
+						</Typography>
+					</ExpansionPanelDetails>
+				</ExpansionPanel>
+
+				<h2>Users</h2>
+				<ExpansionPanel expanded={expanded === 'panel40'} onChange={this.handleChange('panel40')}>
+					<ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
+						<Typography className={classes.headingNoDetails}><b>How do I request to book a pub?</b></Typography>
+					</ExpansionPanelSummary>
+					<ExpansionPanelDetails>
+						<Typography>
+						Booking a pub is easy on Whichost and you can do so by creating a user account if you have not done so already. Once you do, you can then select a pub listing and click “Request to book”. On the next page, you will be able to enter a message to the pub regarding how you intend to use it, any specific details, requirements, or needs regarding the booking request. You can enter your payment information and send the booking request to the pub.
+						<br/><br/>You will only be charged if the pub accepts your booking request within 72 hours (3 days). If they do not accept or deny your booking request within 72 hours, it will automatically expire and you will not be charged.
+						</Typography>
+					</ExpansionPanelDetails>
+				</ExpansionPanel>
+				<ExpansionPanel expanded={expanded === 'panel41'} onChange={this.handleChange('panel41')}>
+					<ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
+						<Typography className={classes.headingNoDetails}><b>How do I request a certain time, rate, or option that is not available but indicated on the listing?</b></Typography>
+					</ExpansionPanelSummary>
+					<ExpansionPanelDetails>
+						<Typography>
+						If you are having trouble with a booking request, you can easily message the listing owner directly from the pub listing. Please note that it is against our Community Guidelines to send personal contact information or transact off our platform.
+						</Typography>
+					</ExpansionPanelDetails>
+				</ExpansionPanel>
+				<ExpansionPanel expanded={expanded === 'panel42'} onChange={this.handleChange('panel42')}>
+					<ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
+						<Typography className={classes.headingNoDetails}><b>I made a booking request to a pub and I see a hold on my card even though the request was just denied. Is this a charge?</b></Typography>
+					</ExpansionPanelSummary>
+					<ExpansionPanelDetails>
+						<Typography>
+						When you submit a booking request, a temporary hold is placed on your card until the request is accepted, denied, or it expires. If the request is accepted, your card is charged for the booking request amount. If the booking request is denied or expires, your card is not charged and the amount is no longer held. This time period is dependant on your bank, but holds are typically released by the next business day. Your card will not be charged for denied or expired bookings for any reason. If you have any questions about this, please email us at <a href="mailto:support@whichost.com?subject=Unauthorized Charge" target="_blank">support@whichost.com</a>.
+						</Typography>
+					</ExpansionPanelDetails>
+				</ExpansionPanel>
+				<ExpansionPanel expanded={expanded === 'panel43'} onChange={this.handleChange('panel43')}>
+					<ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
+						<Typography className={classes.headingNoDetails}><b>Is a booking request binding?</b></Typography>
+					</ExpansionPanelSummary>
+					<ExpansionPanelDetails>
+						<Typography>
+						A booking request is not binding, it is simply letting a pub know you intend to book. A request becomes a binding Booking Agreement once accepted by the listing owner or pub. If you sent a request by mistake, need to modify it, or cancel, we eencourage you to immediately notify the pub using our messaging. Each pub listing enforces their own cancellation policy identified on their listing, so please keep this in mind prior to submitting a booking request. If you require assistance with a booking request, you can send us a message at any time at <a href="mailto:support@whichost.com?subject=Booking Request Inquiry" target="_blank">support@whichost.com</a>.
+						</Typography>
+					</ExpansionPanelDetails>
+				</ExpansionPanel>
+				<ExpansionPanel expanded={expanded === 'panel44'} onChange={this.handleChange('panel44')}>
+					<ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
+						<Typography className={classes.headingNoDetails}><b>How can I cancel my booking?</b></Typography>
+					</ExpansionPanelSummary>
+					<ExpansionPanelDetails>
+						<Typography>
+						It's really simple! You can do it by sending a message to the pub and indicating that you wish to cancel your booking!
+						<br/><br/>Remember to cancel your booking if you cannot make it, this will give other customers the opportunity to book at that pub last minute.
+						</Typography>
+					</ExpansionPanelDetails>
+				</ExpansionPanel>
+				<ExpansionPanel expanded={expanded === 'panel45'} onChange={this.handleChange('panel45')}>
+					<ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
+						<Typography className={classes.headingNoDetails}><b>How many requests can I send?</b></Typography>
+					</ExpansionPanelSummary>
+					<ExpansionPanelDetails>
+						<Typography>
+						You can send multiple requests, but we strongly recommend that you wait to hear back from a pub once you send a request. If the request is urgent, you can contact the pubs over the "Contact" button on the listing page underneath the title of the pub.
+						<br/><br/>By contacting the pub over the "Contact" button, you can contact as many pubs as you wish and you don't have to worry that you will end up with more than one booking, since you're sending "just" contact inquiries and not booking requests.
+						</Typography>
+					</ExpansionPanelDetails>
+				</ExpansionPanel>
+				<ExpansionPanel expanded={expanded === 'panel46'} onChange={this.handleChange('panel46')}>
+					<ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
+						<Typography className={classes.headingNoDetails}><b>How long will it take for a pub to respond to my request?</b></Typography>
+					</ExpansionPanelSummary>
+					<ExpansionPanelDetails>
+						<Typography>
+						Pubs are typically very responsive and reply back as soon as they receive a booking request. If you do not hear back from a pub regarding your request, you can also send them a message regarding the booking request directly from their listing.
+						</Typography>
+					</ExpansionPanelDetails>
+				</ExpansionPanel>
+				<ExpansionPanel expanded={expanded === 'panel47'} onChange={this.handleChange('panel47')}>
+					<ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
+						<Typography className={classes.headingNoDetails}><b>Is there a minimum or maximum booking duration?</b></Typography>
+					</ExpansionPanelSummary>
+					<ExpansionPanelDetails>
+						<Typography>
+						Whichost does not require an hourly minimum for pub listings, but we rather let pubs individually indicate their hourly minimums directly on their listing. If they mention an hourly minimum in their description, please note that they might not accept your booking request if it does not comply with their hourly minimum.
+						</Typography>
+					</ExpansionPanelDetails>
+				</ExpansionPanel>
+				<ExpansionPanel expanded={expanded === 'panel48'} onChange={this.handleChange('panel48')}>
+					<ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
+						<Typography className={classes.headingNoDetails}><b>Can I modify a booking once it has been sent as a booking request?</b></Typography>
+					</ExpansionPanelSummary>
+					<ExpansionPanelDetails>
+						<Typography>
+						Once a booking request has been sent it can not be modified. You can, however, message the pub directly, request for them to cancel, and resubmit another booking request.
+						</Typography>
+					</ExpansionPanelDetails>
+				</ExpansionPanel>
+				<ExpansionPanel expanded={expanded === 'panel49'} onChange={this.handleChange('panel49')}>
+					<ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
+						<Typography className={classes.headingNoDetails}><b>When is a booing confirmed?</b></Typography>
+					</ExpansionPanelSummary>
+					<ExpansionPanelDetails>
+						<Typography>
+						A booking is confirmed once indicated as completed by the pub listing owner.
+						</Typography>
+					</ExpansionPanelDetails>
+				</ExpansionPanel>
+				<ExpansionPanel expanded={expanded === 'panel50'} onChange={this.handleChange('panel50')}>
+					<ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
+						<Typography className={classes.headingNoDetails}><b>How do pub reviews work?</b></Typography>
+					</ExpansionPanelSummary>
+					<ExpansionPanelDetails>
+						<Typography>
+						Trust between customers and pubs is very important. One way to build trust is with rates and comments to each other, after a transaction. This is how trust is built with Whichost. After a booking is used, both the customer and the pub can review each other. A review consists of:
+						<ol>
+							<li>A positive or negative rating (thumbs up or down);</li>
+							<li>A free-form text comment.</li>
+						</ol>
+						If you want you can choose not to review the pub. However, you can't refuse a review from the pub after a used booking.
+						Reviews are visible to everyone on each user's profile page. As a side note, a pub’s rating (percentage of positive ratings and number of ratings) is also shown on each listing page.
+						<br/><br/><i>Please note that reviews are only available for paid transactions.</i>
+							</Typography>
+					</ExpansionPanelDetails>
+				</ExpansionPanel>
+				<ExpansionPanel expanded={expanded === 'panel51'} onChange={this.handleChange('panel51')}>
+					<ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
+						<Typography className={classes.headingNoDetails}><b>Is it possible to edit or delete reviews?</b></Typography>
+					</ExpansionPanelSummary>
+					<ExpansionPanelDetails>
+						<Typography>
+						Currently, it is not possible to edit or delete reviews. If there is an issue with a review, you can email us at <a href="mailto:support@whichost.com?subject=Review Dispute inquiry" target="_blank">support@whichost.com</a> and we'll be happy to help.
+						</Typography>
+					</ExpansionPanelDetails>
+				</ExpansionPanel>
+				<ExpansionPanel expanded={expanded === 'panel52'} onChange={this.handleChange('panel52')}>
+					<ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
+						<Typography className={classes.headingNoDetails}><b>How can I be safe and cautious when using Whichost?</b></Typography>
+					</ExpansionPanelSummary>
+					<ExpansionPanelDetails>
+						<Typography>
+						While we do everything that we can to build the most trusted community of pubs to book, we rely on the community of users to help us by being proactive and always report any suspicious activity on our platform. We also have <a href="https://info.whichost.com/eng/legal#guidelines-section" target="_blank">Community Guidelines</a> in that outlines this in more detail.
+						</Typography>
+					</ExpansionPanelDetails>
+				</ExpansionPanel>
+				<ExpansionPanel expanded={expanded === 'panel53'} onChange={this.handleChange('panel53')}>
+					<ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
+						<Typography className={classes.headingNoDetails}><b>Do I have to communicate on Whichost?</b></Typography>
+					</ExpansionPanelSummary>
+					<ExpansionPanelDetails>
+						<Typography>
+						Yes, we ask that you never take communication outside of our platform messaging and never give your contact information prior to entering a Booking Agreement. We also have <a href="https://info.whichost.com/eng/legal#guidelines-section" target="_blank">Community Guidelines</a> in place that outlines this in more detail.
+						</Typography>
+					</ExpansionPanelDetails>
+				</ExpansionPanel>
+				<ExpansionPanel expanded={expanded === 'panel54'} onChange={this.handleChange('panel54')}>
+					<ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
+						<Typography className={classes.headingNoDetails}><b>I don't see my questions here.</b></Typography>
+					</ExpansionPanelSummary>
+					<ExpansionPanelDetails>
+						<Typography>
+						Please, feel free to contact us at <a href="mailto:support@whichost.com?subject=Help Center Question" target="_blank">support@whichost.com</a>. We'll be happy to answer all of your questions.
+						</Typography>
+					</ExpansionPanelDetails>
+				</ExpansionPanel>
+
+				<h2>Legal and Insurance</h2>
+				<ExpansionPanel expanded={expanded === 'panel55'} onChange={this.handleChange('panel55')}>
+					<ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
+						<Typography className={classes.headingNoDetails}><b>Do I need insurance for my pub?</b></Typography>
+					</ExpansionPanelSummary>
+					<ExpansionPanelDetails>
+						<Typography>
+						Yes. However, it's not mandatory. We recommend you to have an insurance policy in place for your pub, as we don't cover any damages at the moment.
+						</Typography>
+					</ExpansionPanelDetails>
+				</ExpansionPanel>
+				<ExpansionPanel expanded={expanded === 'panel56'} onChange={this.handleChange('panel56')}>
+					<ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
+						<Typography className={classes.headingNoDetails}><b>Does Whichost offer insurance?</b></Typography>
+					</ExpansionPanelSummary>
+					<ExpansionPanelDetails>
+						<Typography>
+						No, Whichost does not offer insurance. We suggest that all pubs adequately ensure their pub, equipment, and premises.
+						</Typography>
+					</ExpansionPanelDetails>
+				</ExpansionPanel>
+				<ExpansionPanel expanded={expanded === 'panel57'} onChange={this.handleChange('panel57')}>
+					<ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
+						<Typography className={classes.headingNoDetails}><b>Do I need customers to sign an agreement, waiver, or any other form of agreement?</b></Typography>
+					</ExpansionPanelSummary>
+					<ExpansionPanelDetails>
+						<Typography>
+						Your Booking Agreement through Whichost is an agreement for a customer to use the pub as defined in the listing for the exact date, time period, and for that price. If you have further pub requirements, please notify the booking request directly and ensure they are aware of these prior to accepting the booking request, prior to the booking time, and their arrival.
+						</Typography>
+					</ExpansionPanelDetails>
+				</ExpansionPanel>
+				<ExpansionPanel expanded={expanded === 'panel58'} onChange={this.handleChange('panel58')}>
+					<ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
+						<Typography className={classes.headingNoDetails}><b>I don't see my questions here.</b></Typography>
+					</ExpansionPanelSummary>
+					<ExpansionPanelDetails>
+						<Typography>
+						Please, feel free to contact us at <a href="mailto:support@whichost.com?subject=Help Center Question" target="_blank">support@whichost.com</a>. We'll be happy to answer all of your questions.
+						</Typography>
+					</ExpansionPanelDetails>
+				</ExpansionPanel>
+
+				<h2>Accounts</h2>
+				<ExpansionPanel expanded={expanded === 'panel59'} onChange={this.handleChange('panel59')}>
+					<ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
+						<Typography className={classes.headingNoDetails}><b>How do I create an account?</b></Typography>
+					</ExpansionPanelSummary>
+					<ExpansionPanelDetails>
+						<Typography>
+						You can create a user account in minutes doing the following:
+						<ol>
+							<li>Click “Sign up” at the top right</li>
+							<li>Enter your email address and create a secure password</li>
+							<li>Please check the email address you entered and confirm your email</li>
+						</ol>
+						</Typography>
+					</ExpansionPanelDetails>
+				</ExpansionPanel>
+				<ExpansionPanel expanded={expanded === 'panel60'} onChange={this.handleChange('panel60')}>
+					<ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
+						<Typography className={classes.headingNoDetails}><b>How do I reply to messages and booking requests?</b></Typography>
+					</ExpansionPanelSummary>
+					<ExpansionPanelDetails>
+						<Typography>
+						You can reply to messages and accept a booking request by doing the following:
+						<ol>
+							<li>When logged into your Whichost account, click on “Inbox” in the top right navigation, within your profile picture.</li>
+							<li>On the left side navigation of your Messages Inbox, select the “My Requests” to see your pub booking requests and “Booking Requests” tab to respond to booking requests.</li>
+						</ol>
+						</Typography>
+					</ExpansionPanelDetails>
+				</ExpansionPanel>
+				<ExpansionPanel expanded={expanded === 'panel61'} onChange={this.handleChange('panel61')}>
+					<ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
+						<Typography className={classes.headingNoDetails}><b>How can I delete my account?</b></Typography>
+					</ExpansionPanelSummary>
+					<ExpansionPanelDetails>
+						<Typography>
+						We are really sorry to hear that you want to delete your account. Please contact us at <a href="mailto:support@whichost.com?subject=Account Deletion Request" target="_blank">support@whichost.com</a> and we will assist you with the deletion.
+						</Typography>
+					</ExpansionPanelDetails>
+				</ExpansionPanel>
+				<ExpansionPanel expanded={expanded === 'panel62'} onChange={this.handleChange('panel62')}>
+					<ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
+						<Typography className={classes.headingNoDetails}><b>How can I report a suspicious account activity?</b></Typography>
+					</ExpansionPanelSummary>
+					<ExpansionPanelDetails>
+						<Typography>
+						Please report any suspicious activity immediately by sending us an email at <a href="mailto:support@whichost.com?subject=Suspicious Account Activity" target="_blank">support@whichost.com</a>.
+						</Typography>
+					</ExpansionPanelDetails>
+				</ExpansionPanel>
+				<ExpansionPanel expanded={expanded === 'panel63'} onChange={this.handleChange('panel63')}>
+					<ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
+						<Typography className={classes.headingNoDetails}><b>How do I report other users for acting against Whichost policies?</b></Typography>
+					</ExpansionPanelSummary>
+					<ExpansionPanelDetails>
+						<Typography>
+						Please report any suspicious activity or users immediately by sending us an email at <a href="mailto:support@whichost.com?subject=User acting against Whichost policies" target="_blank">support@whichost.com</a>.
+						</Typography>
+					</ExpansionPanelDetails>
+				</ExpansionPanel>
+				<ExpansionPanel expanded={expanded === 'panel64'} onChange={this.handleChange('panel64')}>
+					<ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
+						<Typography className={classes.headingNoDetails}><b>I don't see my questions here.</b></Typography>
+					</ExpansionPanelSummary>
+					<ExpansionPanelDetails>
+						<Typography>
+						Please, feel free to contact us at <a href="mailto:support@whichost.com?subject=Help Center Question" target="_blank">support@whichost.com</a>. We'll be happy to answer all of your questions.
 						</Typography>
 					</ExpansionPanelDetails>
 				</ExpansionPanel>
