@@ -44,7 +44,7 @@ const renderSocialMediaLinks = intl => {
   //     <IconSocialMediaTwitter />
   //   </ExternalLink>
   // ) : null;
-	
+
 	const twitterLink = null;
 	const instragramLink = null;
 
@@ -61,7 +61,7 @@ const renderSocialMediaLinks = intl => {
   return [fbLink, twitterLink, instragramLink].filter(v => v != null);
 };
 
-const renderFavoriteLocation = (location) => 
+const renderFavoriteLocation = (location) =>
 	<li>
 		<NamedLink
 			name="SearchPage"
@@ -72,7 +72,7 @@ const renderFavoriteLocation = (location) =>
 		>
 			<FormattedMessage id={`Footer.search${location.intl}`} />
 		</NamedLink>
-	</li>	
+	</li>
 
 const Footer = props => {
   const { rootClassName, className, intl } = props;
@@ -110,7 +110,7 @@ const Footer = props => {
                 </li>
                 <li className={css.listItem}>
                   <a href="/signup" className={css.link}>Sign up</a>
-                </li> 
+                </li>
                 <li className={css.listItem}>
                   <a href="https://docs.google.com/forms/d/e/1FAIpQLSfIG7NR-ixq6CFydZ_955OyNyhI1-1iS4UfkRdV7knFxnFlqA/viewform" target="_blank" className={css.link}>Invite a friend</a>
                 </li>
@@ -134,7 +134,7 @@ const Footer = props => {
                 </li>
                 <li className={css.listItem}>
                   <a href="/signup" className={css.link}>Sign up</a>
-                </li> 
+                </li>
                 <li className={css.listItem}>
                   <NamedLink name="NewListingPage" className={css.link}>
                     <FormattedMessage id="Footer.toNewListingPage" />
@@ -150,6 +150,9 @@ const Footer = props => {
               	<li className={css.listWhichost}>
               		Whichost
               	</li>
+                <li className={css.listItem}>
+                  <a href="https://info.whichost.com/join-the-team/" target="_blank" className={css.link}>We're hiring</a>
+                </li>
                 <li className={css.listItem}>
                   <a href="https://docs.google.com/forms/d/e/1FAIpQLSfIG7NR-ixq6CFydZ_955OyNyhI1-1iS4UfkRdV7knFxnFlqA/viewform" target="_blank" className={css.link}>Invite a friend</a>
                 </li>
@@ -181,10 +184,10 @@ const Footer = props => {
               <ul className={css.list}>
               </ul>
             </div>
-            
+
             </div>
             <div className={css.extraLinks}>
-              
+
               <div className={css.legalMatters}>
                 <div className={css.tosAndPrivacy}>
 									<a className={css.someLinks}>{socialMediaLinks}</a>
@@ -197,7 +200,7 @@ const Footer = props => {
                   </a>
                     <NamedLink name="TermsOfServicePage" className={css.legalLink}>
                     <FormattedMessage id="Footer.termsOfUse" />&nbsp;&nbsp; |&nbsp;&nbsp;
-                    </NamedLink> 
+                    </NamedLink>
                     <NamedLink name="PrivacyPolicyPage" className={css.legalLink}>
                       <FormattedMessage id="Footer.privacyPolicy" />&nbsp;&nbsp; |&nbsp;&nbsp;
                     </NamedLink>
@@ -223,12 +226,12 @@ const Footer = props => {
                 <FormattedMessage id="Footer.privacy" />
               </NamedLink>
               <NamedLink name="TermsOfServicePage" className={css.privacy}>
-              	Legal      
+              	Legal
               </NamedLink>
               <NamedLink name="TermsOfServicePage" className={css.terms}>
                 <FormattedMessage id="Footer.terms" />
               </NamedLink>
-             
+
 
             </div>
           </div>
