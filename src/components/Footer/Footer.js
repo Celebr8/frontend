@@ -181,8 +181,9 @@ const Footer = props => {
               </ul>
             </div>
             <div className={css.searchesExtra}>
-              <ul className={css.list}>
-              </ul>
+							<div className={css.companyRegistrationMobile}>
+								<FormattedMessage id="Footer.companyRegistration" />
+							</div>
             </div>
 
             </div>
@@ -232,8 +233,6 @@ const Footer = props => {
               <NamedLink name="TermsOfServicePage" className={css.terms}>
                 <FormattedMessage id="Footer.terms" />
               </NamedLink>
-
-              <FormattedMessage id="Footer.companyRegistration" />
 
             </div>
           </div>
