@@ -46,12 +46,19 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus convallis ante 
 class FeesTabs extends React.Component {
 	
   state = {
-    value: 1,
+    value: false,
   };
 
   handleChange = (event, value) => {
     this.setState({ value });
   };
+
+	componentDidMount(){
+	
+		setTimeout(() => 
+			this.setState({value: 0}), 1000)
+	
+	}
 
   render() {
     const { classes } = this.props;
@@ -65,20 +72,22 @@ class FeesTabs extends React.Component {
 		const selectedTab = tabs[this.state.value];
 
     return (
-			<div style={{flexGrow: 1}}> 
-				<Tabs
-					value={this.state.value}
-					onChange={this.handleChange}
-					indicatorColor="primary"
-					textColor="primary"
-					centered
-				>
-					<Tab label="Item One" />
-					<Tab label="Item Two" />
-					<Tab label="Item Three" />
-				</Tabs>
+			<Fragment>
+				<Paper> 
+					<Tabs
+						value={this.state.value}
+						onChange={this.handleChange}
+						indicatorColor="primary"
+						textColor="primary"
+						centered
+					>
+						<Tab label="Item One" />
+						<Tab label="Item Two" />
+						<Tab label="Item Three" />
+					</Tabs>
+				</Paper>
 				{selectedTab}
-			</div>
+			</Fragment>
     );
   }
 }
