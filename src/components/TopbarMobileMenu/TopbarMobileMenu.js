@@ -84,7 +84,7 @@ const TopbarMobileMenu = props => {
         <InlineTextButton className={css.logoutButton} onClick={onLogout}>
           <FormattedMessage id="TopbarMobileMenu.logoutLink" />
         </InlineTextButton>
-				<a className={css.navigationLink} href="https://info.whichost.com/eng/faq">
+				<a className={css.navigationLink} target="_blank" href="https://info.whichost.com/eng/faq">
 					<span className={css.helpCenter}>
 						<FormattedMessage id="TopbarDesktop.helpCenter" />
 					</span>
