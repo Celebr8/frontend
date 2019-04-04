@@ -92,9 +92,9 @@ const BirthdayDeal  = props => {
 				<p>Don't hesitate to contact us via the highlighted options below. As we don't sleep at all, we'll get back to you very soon.</p>
 				<div className={css.btnGroup + ' ' + css.containerButton}>
 					<section className={css.centerButtons}>
-                        <form action="mailto:support@whichost.com" method="get" target="_blank">
+                        <a href="mailto:support@whichost.com">
                             <button type="submit">Email us</button>
-                        </form>
+                        </a>
 						<form action="https://info.whichost.com/eng/book-a-call" method="get" target="_blank">
                             <button type="submit">Book a call</button>
                         </form>
