@@ -8,6 +8,8 @@ import { TopbarContainer } from '../../../containers';
 
 import { helpCenterTabs } from '../tabs'
 
+import { ContactUsForm } from '../../../forms';
+
 import {
 	Page,
 	LayoutSideNavigationWithHero,
@@ -19,14 +21,27 @@ import {
 	Footer,
 	ContactUs
 } from '../../../components';
+
 import config from '../../../config';
+
+import { sendContactUsMessage } from './ContactUsPage.duck';
 
 import css from './ContactUsPage.css';
 
 const ContactUsPageComponent = props => {
-	const { scrollingDisabled, intl } = props;
+	const { 
+		scrollingDisabled,
+		intl,
+		onSendMessage
+	} = props;
 
 	const tabs = helpCenterTabs(intl, 'ContactUsPage');
+
+	const initialValues = {
+		email: '',	
+		phoneNumber: '',
+		message: ''
+	}
 
 	const siteTitle = config.siteTitle;
 	const schemaTitle = intl.formatMessage({ id: 'ContactUsPage.schemaTitle' }, { siteTitle });
@@ -50,7 +65,11 @@ const ContactUsPageComponent = props => {
 				</LayoutWrapperHero>
 				<LayoutWrapperSideNav tabs={tabs} />
 				<LayoutWrapperMain>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>"
+					<ContactUsForm 
+						className={css.form}
+						initialValues={initialValues}
+						onSubmit={values => onSendMessage(values)}
+					/>
 				</LayoutWrapperMain>
 				<LayoutWrapperFooter>
 					<Footer />
@@ -74,6 +93,10 @@ const mapStateToProps = state => {
 		scrollingDisabled: isScrollingDisabled(state),
 	};
 };
+
+const mapDispatchToProps = dispatch => ({
+	onSendMessage: (values) => dispatch(sendContactUsMessage(values))
+})
 
 const ContactUsPage = compose(
 	connect(mapStateToProps),
