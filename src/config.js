@@ -338,13 +338,6 @@ const maps = {
   },
 };
 
-const mailgunApiKey = process.env.MAILGUN_API_KEY;
-const mailgunBaseUrl = process.env.MAILGUN_BASE_URL;
-
-console.log('process.env', process.env)
-console.log('mailgunApiKey', mailgunApiKey)
-console.log('mailgunBaseUrl', mailgunBaseUrl)
-
 // NOTE: only expose configuration that should be visible in the
 // client side, don't add any server secrets in this file.
 const config = {
@@ -382,9 +375,7 @@ const config = {
   sentryDsn,
   usingSSL,
   maps,
-	custom,
-	mailgunApiKey,
-	mailgunBaseUrl
+  custom,
 };
 
 export default config;

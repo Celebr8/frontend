@@ -1,3 +1,12 @@
+import mailgun from 'mailgun.js';
+
+const MAILGUN_API_KEY = '***REMOVED***';
+const MAILGUN_BASE_DOMAIN = 'sandbox130fe99f5c0d4204b867b4f7536fa95e.mailgun.org'
+
+console.log('MAILGUN_API_KEY', MAILGUN_API_KEY)
+
+const mg = mailgun.client({username: 'api', key: MAILGUN_API_KEY});
+
 // ================ Action types ================ //
 
 export const SEND_CONTACT_US_MESSAGE_REQUEST = 'app/HelpCenter/ContactUsPage/SEND_CONTACT_US_MESSAGE_REQUEST'
@@ -57,7 +66,7 @@ export const sendContactUsMessageSuccess = () => ({
  */
 export const sendContactUsMessage = params => (dispatch, getState, sdk) => {
 	dispatch(sendContactUsMessageRequest())
-	return sdk.mg.messages.create(sdk.mg.mailgunBaseUrl, {
+	return mg.messages.create(MAILGUN_BASE_DOMAIN, {
 		from: `Anonymous <${params.email}>`,
 		to: ['loic@whichost.com'],
 		subject: params.subject,
