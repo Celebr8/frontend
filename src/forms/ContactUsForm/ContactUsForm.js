@@ -29,17 +29,11 @@ class ContactUsFormComponent  extends Component {
             handleSubmit,
             intl,
             invalid,
-            values,
           } = fieldRenderProps;
-          const { email, phoneNumber, message } = values;
 
-          // const user = ensureCurrentUser(currentUser);
+          const { email, phoneNumber, message, subject } = fieldRenderProps;
 
-          // if (!user.id) {
-          //   return null;
-          // }
-
-          // const { email: currentEmail, emailVerified, pendingEmail, profile } = user.attributes;
+					const values = { email, phoneNumber, message, subject };
 
           // email
 
@@ -47,13 +41,16 @@ class ContactUsFormComponent  extends Component {
             id: 'ContactUsForm.emailLabel',
           });
 
-          const emailPlaceholder = '';
+          const emailPlaceholder = intl.formatMessage({
+            id: 'ContactUsForm.emailPlaceholder',
+          });
 
           const emailRequiredMessage = intl.formatMessage({
             id: 'ContactUsForm.emailRequired',
           });
 
           const emailRequired = validators.required(emailRequiredMessage);
+
           const emailInvalidMessage = intl.formatMessage({
             id: 'ContactUsForm.emailInvalid',
           });
@@ -78,6 +75,17 @@ class ContactUsFormComponent  extends Component {
           const messagePlaceholder = intl.formatMessage({
             id: 'ContactUsForm.messagePlaceholder',
           });
+
+					// Subject
+
+          const subjectLabel = intl.formatMessage({
+            id: 'ContactUsForm.subjectLabel',
+          });
+
+          const subjectPlaceholder = intl.formatMessage({
+            id: 'ContactUsForm.subjectPlaceholder',
+          });
+
           // const tooManyVerificationRequests = isTooManyEmailVerificationRequestsError(
           //   sendVerificationEmailError
           // );
@@ -88,7 +96,7 @@ class ContactUsFormComponent  extends Component {
             <Form
               className={classes}
               onSubmit={e => {
-                this.submittedValues = values;
+								this.submittedValues = values;
                 handleSubmit(e);
               }}
             >
@@ -101,12 +109,21 @@ class ContactUsFormComponent  extends Component {
                   placeholder={emailPlaceholder}
                   validate={validators.composeValidators(emailRequired, emailValid)}
                 />
+
                 <FieldPhoneNumberInput
                   className={css.phone}
                   name="phoneNumber"
                   id={formId ? `${formId}.phoneNumber` : 'phoneNumber'}
                   label={phoneLabel}
                   placeholder={phonePlaceholder}
+                />
+
+                <FieldTextInput
+                  className={css.subject}
+                  name="subject"
+                  id={formId ? `${formId}.subject` : 'subject'}
+                  label={subjectLabel}
+                  placeholder={subjectPlaceholder}
                 />
 
 								<FieldTextInput
@@ -143,7 +160,8 @@ ContactUsFormComponent.defaultProps = {
   inProgress: false,
   email: null,
   phoneNumber: null,
-	message: null
+	message: null,
+	subject: null
 };
 
 const { bool, func, string } = PropTypes;
@@ -154,7 +172,11 @@ ContactUsFormComponent.propTypes = {
   formId: string,
   inProgress: bool,
   intl: intlShape.isRequired,
-  ready: bool.isRequired,
+	ready: bool.isRequired,
+	email: string,
+	phoneNumber: string,
+	message: string,
+	subject: null
 };
 
 const ContactUsForm = compose(injectIntl)(ContactUsFormComponent);

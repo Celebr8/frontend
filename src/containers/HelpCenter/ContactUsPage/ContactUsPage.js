@@ -35,12 +35,15 @@ const ContactUsPageComponent = props => {
 		onSendMessage
 	} = props;
 
+	console.log('onSendMessage', onSendMessage)
+
 	const tabs = helpCenterTabs(intl, 'ContactUsPage');
 
 	const initialValues = {
 		email: '',	
 		phoneNumber: '',
-		message: ''
+		message: '',
+		subject: ''
 	}
 
 	const siteTitle = config.siteTitle;
@@ -99,7 +102,7 @@ const mapDispatchToProps = dispatch => ({
 })
 
 const ContactUsPage = compose(
-	connect(mapStateToProps),
+	connect(mapStateToProps, mapDispatchToProps),
 	injectIntl
 )(ContactUsPageComponent);
 

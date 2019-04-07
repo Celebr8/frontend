@@ -32,6 +32,8 @@ import routeConfiguration from './routeConfiguration';
 import * as log from './util/log';
 import { LoggingAnalyticsHandler, GoogleAnalyticsHandler } from './analytics/handlers';
 
+import mailgun from 'mailgun.js';
+
 import './marketplaceIndex.css';
 
 
@@ -97,6 +99,16 @@ if (typeof window !== 'undefined') {
     ],
     ...baseUrl,
   });
+
+
+	// This is dirty
+	console.info('key: ', config.mailgunApiKey)
+	const mg = mailgun.client({username: 'api', key: config.mailgunApiKey})
+
+	sdk.mg = mg;
+	sdk.mg.mailgunBaseUrl = config.mailgunBaseUrl;
+	// End of dirtiness
+
   const analyticsHandlers = setupAnalyticsHandlers();
   const store = configureStore(initialState, sdk, analyticsHandlers);
 
