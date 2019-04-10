@@ -96,7 +96,7 @@ const BirthdayDeal  = props => {
                             <button type="submit">Email us</button>
                         </form>
 						<form action="https://info.whichost.com/eng/book-a-call" method="get" target="_blank">
-                            <button type="submit">Book a call</button>
+                            <button type="submit">Request a Callback</button>
                         </form>
 					</section>
 				</div>
