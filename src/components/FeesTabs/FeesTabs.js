@@ -25,7 +25,7 @@ const styles = {
   },
 };
 
-const ItemOnePleaseChangeMyName = () => (
+const pubFeesTab = () => (
 	<TabContainer>
   <p>Whichost is not a venture-backed startup. We’re proud to say that we are a self-funded company, which relies on the support of its marketplace members.</p>
   <p>Whichost charges according to the size of the party and it also considers if the listing is being managed by the pub or by Whichost:</p>
@@ -57,7 +57,7 @@ const ItemOnePleaseChangeMyName = () => (
 	</TabContainer>
 )
 
-const ItemTwoPleaseChangeMyName = () => (
+const userFeesTab = () => (
 	<TabContainer>
   <p>Whichost charges a 10% fee on top of the value of the booking. This fee is paid at the same moment that the user is requesting the booking.</p>
   <p>For example: let’s say a pub’s listing is priced at €9.00 to book it for one night. As soon as the user requests a booking, they will pay €9.90, which is the original €9.00 of the listing plus the 10% of it, which is €0.90. No charge is made to the user’s credit card until the pub accepts the booking request.</p>
@@ -65,7 +65,7 @@ const ItemTwoPleaseChangeMyName = () => (
 	</TabContainer>
 )
 
-const ItemThreePleaseChangeMyName = () => (
+const otherFeesTab = () => (
 	<TabContainer>
   <h2>OVERTIME FEES</h2>
   <p>In the event that a booking exceeds the timeframe of the original booking agreement, the pub is responsible for collecting additional payment for the pub usage, pub services, or other additional fees agreed upon. Since this is outside the booking agreement on the Whichost platform, Whichost is not liable for collecting this payment or any circumstances outside the original booking agreement.</p>
@@ -96,9 +96,9 @@ class FeesTabs extends React.Component {
     const { classes } = this.props;
 
 		const tabs = {
-			0: <ItemOnePleaseChangeMyName />,
-			1: <ItemTwoPleaseChangeMyName />,
-			2: <ItemThreePleaseChangeMyName />
+			0: <pubFeesTab />,
+			1: <userFeesTab />,
+			2: <otherFeesTab />
 		}
 
 		const selectedTab = tabs[this.state.value];
