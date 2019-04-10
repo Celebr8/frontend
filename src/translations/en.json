@@ -182,7 +182,7 @@
   "EditListingPoliciesPanel.createListingTitle": "Time to set some ground rules for the partiers.",
   "EditListingPoliciesPanel.title": "Edit the rules of {listingTitle}",
   "EditListingPricingForm.priceInputPlaceholder": "Choose your price…",
-  "EditListingPricingForm.pricePerUnit": "Price per night in euros",
+  "EditListingPricingForm.pricePerUnit": "Price per night in euros (minimum 3€)",
   "EditListingPricingForm.priceRequired": "You need to add a valid price.",
   "EditListingPricingForm.priceTooLow": "Price should be at least {minPrice}.",
   "EditListingPricingForm.showListingFailed": "Fetching listing data failed",
