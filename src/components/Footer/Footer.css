@@ -352,13 +352,16 @@
   /* Tell parent component how much space this one prefers */
   flex-basis: 172px;
 
-  margin-top: 0;
+  margin-top: 8px;
   margin-bottom: 0;
 
   &:hover {
     color: var(--marketplaceColor);
     text-decoration: none;
   }
+
+	font-size: 10px;
+
 }
 
 .tosAndPrivacyMobile {
