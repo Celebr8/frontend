@@ -1,11 +1,7 @@
 import mailgun from 'mailgun.js';
 
-const MAILGUN_API_KEY = '***REMOVED***';
-const MAILGUN_BASE_DOMAIN = 'sandbox130fe99f5c0d4204b867b4f7536fa95e.mailgun.org'
-
-console.log('MAILGUN_API_KEY', MAILGUN_API_KEY)
-
-const mg = mailgun.client({username: 'api', key: MAILGUN_API_KEY});
+const SERVICE_MESSAGE_URL = 'https://whichost-service-message.herokuapp.com/message';
+//const SERVICE_MESSAGE_URL = 'http://localhost:80/message';
 
 // ================ Action types ================ //
 
@@ -66,15 +62,26 @@ export const sendContactUsMessageSuccess = () => ({
  */
 export const sendContactUsMessage = params => (dispatch, getState, sdk) => {
 	dispatch(sendContactUsMessageRequest())
-	return mg.messages.create(MAILGUN_BASE_DOMAIN, {
-		from: `Anonymous <${params.email}>`,
-		to: ['loic@whichost.com'],
-		subject: params.subject,
-		text: params.message
-	})
-	.then(() => {
 
+	const data = {
+		email: params.email,
+		phoneNumber: params.phoneNumber,
+		subject: params.subject,
+		message: params.message
+	}
+
+	return fetch(SERVICE_MESSAGE_URL, {
+		method: 'post',
+		body: JSON.stringify(data)
+	})	
+	.then((answer) => {
+
+		console.log('success', answer)
 		dispatch(sendContactUsMessageSuccess())	
+	
+	}).catch((error) => {
+
+		console.log('error while trying to contact mailgun', error)	
 	
 	})
 }
