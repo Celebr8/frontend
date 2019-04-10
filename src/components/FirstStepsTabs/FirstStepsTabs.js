@@ -27,53 +27,78 @@ const styles = {
 
 const ItemOnePleaseChangeMyName = () => (
 	<TabContainer>
-  <p>Whichost is not a venture-backed startup. We’re proud to say that we are a self-funded company, which relies on the support of its marketplace members.</p>
-  <p>Whichost charges according to the size of the party and it also considers if the listing is being managed by the pub or by Whichost:</p>
-
-  <h2>FOR LISTINGS MANAGED BY THE PUB</h2>
-  <p>In the case of listings managed by the pub we have two price tables. One for parties from Thursdays to Sundays, and another one for parties between Mondays to Wednesdays. Why? Because we understand that parties from Mondays to Wednesdays have a much higher value for pubs and their bottom-line.</p>
-  <br/><b>Parties from Thursdays to Sundays</b>
-  <br/>Up to 30 people: € 35.00
-  <br/>31 to 50 people: € 90.00
-  <br/>51 to 100 people: € 170.00
-  <br/>101 to 200 people: € 300.00
-  <br/>201 and more people: € 480.00
-
-  <br/><br/><b>Parties from Mondays to Wednesdays</b>
-  <br/>Up to 30 people: € 40.00
-  <br/>31 to 50 people: € 100.00
-  <br/>51 to 100 people: € 190.00
-  <br/>101 to 200 people: € 380.00
-  <br/>201 and more people: € 550.00
-
-  <h2>FOR LISTINGS MANAGED BY WHICHOST</h2>
-  <p>A listing being managed by Whichost means that we are the middle-man. Not only we are doing the job of being the point of contact between the pub and their customers, but we are also managing the listing itself. The price per party is higher and we do not take into consideration the day of the week.</p>
-  <br/><b>Parties from Mondays to Sundays</b>
-  <br/>Up to 30 people: € 40.00
-  <br/>31 to 50 people: € 100.00
-  <br/>51 to 100 people: € 190.00
-  <br/>101 to 200 people: € 380.00
-  <br/>201 and more people: € 550.00
+  <h2>We know more than you think about you.</h2>
+  <p>Don't worry. We're to busy and we're serious enough not to stalk you, but here's what we definitely know:
+    <ol>
+      <li>You like spending time with your friends and you like to party;</li>
+      <li>You use your phone every day;</li>
+      <li>You don't really like making phone calls;</li>
+      <li>When you're searching for a pub online, you waste time in most of the cases;</li>
+      <li>You preffer to book and buy online, with a click/tap.</li>
+    </ol>
+  </p>
+  <p>That's why you are here. You want to easily find and book the perfect pub for your next party.</p>
+  <br/>
+  <p><b>Here are the steps you need to start saving time</b></p>
+    <ol>
+      <li>Create a profile by clicking on <a href="https://www.whichost.com/signup" target="_blank">Sign up</a>;</li>
+      <li>Enter the needed information and click on the button "Sign up";</li>
+      <li>Check your emails and click on the verification link to verify your account. We want to be sure you've entered the correct email addres;</li>
+      <li><a href="https://www.whichost.com/s?address=Ireland&bounds=55.36%2C-5.911%2C51.427%2C-10.382&origin=53.357%2C-7.756" target="_blank">Browse pubs</a> to find the perfect pub for your occasion;</li>
+      <li>Read the details of the pub listing and contact the pub over the highlighted "Contact" button underneath the title of the listing, in case you have querstions for the publican, before you book;</li>
+      <li>When you're ready to book, click on "Request to book" on the listing page;</li>
+      <li>Done;</li>
+      <li><i>(optional)</i><a href="https://www.whichost.com/help/contact-us" target="_blank"> Contact us</a> in case you have further questions.</li>
+    </ol>
+    <br/>
+    <h2>Is your birthday coming up?</h2>
+    <p>Happy birthday! We have a great gift for you! Check out our <a href="https://www.whichost.com/birthday-deal" target="_blank">Birthday Deal</a> page and have a great time on us! <i>(T&Cs apply)</i></p>
+    <br/>
+    <h2>Are you part of a corporation? Reward your colleagues!</h2>
+    <p>We have a great deal for your corporation! Check out our <a href="https://www.whichost.com/employees-benefit" target="_blank">Corporate Benefit</a> page and reward your employees and colleagues now! <i>(T&Cs apply)</i></p>
+    <br/>
+    <h2>Contact us. We're here to help.</h2>
+    <p>If you're ready to start saving time but you still have questions that are not covered by our <a href="https://www.whichost.com/help/faq" target="_blank">help center</a>, we invite you to <a href="https://www.whichost.com/help/contact-us" target="_blank">contact us</a> and we'll assist you personally.</p>
+    <br/>
+    <p><i>Enjoy the rest of the day!<br/><b>The Whichost team!</b></i></p>
 	</TabContainer>
 )
 
 const ItemTwoPleaseChangeMyName = () => (
 	<TabContainer>
-  <p>Whichost charges a 10% fee on top of the value of the booking. This fee is paid at the same moment that the user is requesting the booking.</p>
-  <p>For example: let’s say a pub’s listing is priced at €9.00 to book it for one night. As soon as the user requests a booking, they will pay €9.90, which is the original €9.00 of the listing plus the 10% of it, which is €0.90. No charge is made to the user’s credit card until the pub accepts the booking request.</p>
-  <p>If the pub rejects the booking request or does not act on it within 3 days, the request is automatically cancelled and the user’s funds are immediately returned to their card.</p>
-	</TabContainer>
+  <h2>Higher income, more exposure, returning customers.</h2>
+  <p>If you're aiming for a higher income and if you want to gain more exposure for your pub, you're in the right place. Keep your customers returning and strengthen your relationship with them by offering the option to easily find and book your pub online over Whichost.com</p>
+  <p><b>Here's what you need to start a profitable Whichost business:</b></p>
+  <p>
+    <ol>
+      <li>Create a profile by clicking on <a href="https://www.whichost.com/signup" target="_blank">Sign up</a>;</li>
+      <li>Enter the needed information and click on the button "Sign up";</li>
+      <li>Check your emails and click on the verification link to verify your account. We want to be sure you've entered the correct email addres;</li>
+      <li>Click on <a href="https://www.whichost.com/l/new" target="_blank">+ Add your pub</a>;</li>
+      <li>Add content to your new listing by following the steps on the page;</li>
+      <li>Share your new listing on social media platforms by using the link in the browser;</li>
+      <li>Done;</li>
+      <li><i>(optional)</i><a href="https://www.whichost.com/help/contact-us" target="_blank"> Contact us</a> in case you have further questions.</li>
+    </ol>
+  </p>
+  <br/>
+  <h2>Why should you use Whichost? Because it's a win-win-win.</h2>
+  <p>We are on a mission. We know that the pub industry is shrinking, we know that parties are becomming the bigest source of income, we know that party-people nowdays are mobile and preffer to book online and <b>Whichost is the solution:</b>
+  <br/><br/>
+    <ol>
+      <li><b>Your win:</b> You increase your income, gain more exposure and keep your customers returning;</li>
+      <li><b>Your customer's win:</b> They are happy to have the option to easily find and book your pub;</li>
+      <li><b>Whichost's win:</b> We are happy to see the pub industry flowrish again.</li>
+    </ol>
+  </p>
+  <br/>
+  <h2>Contact us. We're here to help.</h2>
+  <p>If you're ready to start but you still have questions that are not covered by our <a href="https://www.whichost.com/help/faq" target="_blank">help center</a>, we invite you to <a href="https://www.whichost.com/help/contact-us" target="_blank">contact us</a> and we'll assist you personally.</p>
+  <br/>
+  <p><i>Enjoy the rest of the day!<br/><b>The Whichost team!</b></i></p>
+  </TabContainer>
 )
 
-const ItemThreePleaseChangeMyName = () => (
-	<TabContainer>
-  <h2>OVERTIME FEES</h2>
-  <p>In the event that a booking exceeds the timeframe of the original booking agreement, the pub is responsible for collecting additional payment for the pub usage, pub services, or other additional fees agreed upon. Since this is outside the booking agreement on the Whichost platform, Whichost is not liable for collecting this payment or any circumstances outside the original booking agreement.</p>
-
-  <h2>FINES FOR DAMAGE</h2>
-  <p>We try to avoid all events of damage, but in the rare event that damage to the pub property, amenities, or other takes place during the time period of the booking agreement, the customer (user booking) is directly responsible for these fees. As defined in the Services Agreement, the customer is liable for this damage and Whichost may collect this if required. It is encouraged for both the pub and customer to work through this directly since it is usually best to keep it between both parties. Pubs are also encouraged and in some instances required to have their own insurance policies per our Service Agreement for this very reason. If you need to report damage to your pub, amenities, or other at any time, please take the proper action to first contact any local authorities if necessary, your insurance provider, and also <a href="https://www.whichost.com/help/contact-us">contact us</a> immediately.</p>
-	</TabContainer>
-)
 
 class FirstStepsTabs extends React.Component {
 
@@ -97,8 +122,7 @@ class FirstStepsTabs extends React.Component {
 
 		const tabs = {
 			0: <ItemOnePleaseChangeMyName />,
-			1: <ItemTwoPleaseChangeMyName />,
-			2: <ItemThreePleaseChangeMyName />
+			1: <ItemTwoPleaseChangeMyName />
 		}
 
 		const selectedTab = tabs[this.state.value];
@@ -113,9 +137,8 @@ class FirstStepsTabs extends React.Component {
 						textColor="secondary"
 						centered
 					>
-						<Tab label="Pub fees" />
-						<Tab label="User fees" />
-						<Tab label="Other fees" />
+						<Tab label="Steps for users" />
+						<Tab label="Steps for providers" />
 					</Tabs>
 				</Paper>
 				{selectedTab}
