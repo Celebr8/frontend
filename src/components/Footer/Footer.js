@@ -19,8 +19,6 @@ import { mainLocationsData, locationToURI } from '../../locals';
 
 const renderSocialMediaLinks = intl => {
 
-	return null;
-
   const { siteFacebookPage, siteInstagramPage, siteTwitterHandle } = config;
   const siteTwitterPage = twitterPageURL(siteTwitterHandle);
 
@@ -34,31 +32,30 @@ const renderSocialMediaLinks = intl => {
     </ExternalLink>
   ) : null;
 
-  // const twitterLink = siteTwitterPage ? (
-  //   <ExternalLink
-  //     key="linkToTwitter"
-  //     href={siteTwitterPage}
-  //     className={css.icon}
-  //     title={goToTwitter}
-  //   >
-  //     <IconSocialMediaTwitter />
-  //   </ExternalLink>
-  // ) : null;
+  const twitterLink = siteTwitterPage ? (
+    <ExternalLink
+      key="linkToTwitter"
+      href={siteTwitterPage}
+      className={css.icon}
+      title={goToTwitter}
+    >
+      <IconSocialMediaTwitter />
+    </ExternalLink>
+  ) : null;
 
-	const twitterLink = null;
-	const instragramLink = null;
-
-  // const instragramLink = siteInstagramPage ? (
-  //   <ExternalLink
-  //     key="linkToInstagram"
-  //     href={siteInstagramPage}
-  //     className={css.icon}
-  //     title={goToInsta}
-  //   >
-  //     <IconSocialMediaInstagram />
-  //   </ExternalLink>
-  // ) : null;
+   const instragramLink = siteInstagramPage ? (
+     <ExternalLink
+       key="linkToInstagram"
+       href={siteInstagramPage}
+       className={css.icon}
+       title={goToInsta}
+     >
+       <IconSocialMediaInstagram />
+     </ExternalLink>
+   ) : null;
+	
   return [fbLink, twitterLink, instragramLink].filter(v => v != null);
+	
 };
 
 const renderFavoriteLocation = (location) =>
@@ -213,6 +210,7 @@ const Footer = props => {
 							<FormattedMessage id="Footer.copyright" /><br />
             </NamedLink>
             <div className={css.tosAndPrivacyMobile}>
+							<a className={css.someLinks}>{socialMediaLinks}</a>
             	<NamedLink name="AboutPage" className={css.privacy}>
                 <FormattedMessage id="Footer.about" />
               </NamedLink>
