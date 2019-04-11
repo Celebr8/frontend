@@ -515,7 +515,7 @@
   "PayoutPreferencesPage.passwordTabTitle": "Password",
   "PayoutPreferencesPage.paymentsTabTitle": "Payments",
   "PayoutPreferencesPage.payoutDetailsSaved": "Payment information successfully saved! If you want to change your payment details, please contact the marketplace admins.",
-  "PayoutPreferencesPage.stripeAlreadyConnected": "You’ve already entered your payment details. If you want to change your payment details, please.",
+  "PayoutPreferencesPage.stripeAlreadyConnected": "You’ve already entered your payment details. If you want to change your payment details, please ",
   "PayoutPreferencesPage.stripeAlreadyConnectedLink": "contact us.",
   "PayoutPreferencesPage.stripeNotConnected": "Payment information not saved. Please fill in the form to accept payments from your listings.",
   "PayoutPreferencesPage.submitButtonText": "Save details",
