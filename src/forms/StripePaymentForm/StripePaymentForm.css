@@ -82,6 +82,31 @@
 	margin-bottom: 16px;
 }
 
+.timeHeading {
+  color: var(--matterColorAnti);
+  margin: 40px 0 14px 0;
+
+  @media (--viewportMedium) {
+    margin: 41px 0 26px 0;
+  }
+  @media (--viewportLarge) {
+    margin: 40px 0 26px 0;
+  }
+}
+
+.timeLabel {
+  margin: 0 0 5px 0;
+
+  @media (--viewportMedium) {
+    margin: 0 0 6px 0;
+  }
+}
+.time {
+  border-bottom-color: var(--matterColorAnti);
+	margin-top: 16px;
+	margin-bottom: 16px;
+}
+
 .submitContainer {
   margin-top: auto;
 

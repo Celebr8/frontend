@@ -8,6 +8,8 @@ import config from '../../config';
 
 import css from './StripePaymentForm.css';
 
+import TextField from '@material-ui/core/TextField';
+
 /**
  * Translate a Stripe API error object.
  *
@@ -76,7 +78,8 @@ const initialState = {
 	cardValueValid: false,
 	token: null,
 	message: '',
-	attendance: 10
+	attendance: 10,
+	time: '20:30'
 };
 
 /**
@@ -153,7 +156,8 @@ class StripePaymentForm extends Component {
 		const values = {
 			message: this.state.message.trim(), 
 			attendance: this.state.attendance,
-			occasion: this.state.occasion		
+			occasion: this.state.occasion,
+			time: this.state.time
 		}
 
 		if (this.state.token) {
@@ -264,6 +268,15 @@ class StripePaymentForm extends Component {
 				});
 		};
 
+		const handleTimeChange = e => {
+			const time = e.target.value;
+			this.setState(prevState => {
+				const newState = { ...prevState, time };
+				onChange(newState);
+				return newState;
+			});
+		};
+
 		const handleOccasionChange = e => {
 			const occasion = e.target.value;
 			this.setState(prevState => {
@@ -310,6 +323,30 @@ class StripePaymentForm extends Component {
 					placeholder={messagePlaceholder}
 					value={this.state.message}
 					onChange={handleMessageChange}
+				/>
+
+
+			<h3 className={css.timeHeading}>
+				<FormattedMessage id="StripePaymentForm.timeHeading" />
+			</h3>
+
+			<label className={css.timeLabel}>
+				<FormattedMessage id="StripePaymentForm.timeLabel" />
+			</label>
+
+			<TextField
+					id="time"
+					type="time"
+					defaultValue="20:30"
+					className={classes.time}
+					InputLabelProps={{
+						shrink: true,
+					}}
+					value={this.state.time}
+					onChange={handleTimeChange}
+					inputProps={{
+						step: 900, // 15 min
+					}}
 				/>
 
 			<h3 className={css.occasionHeading}>

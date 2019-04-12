@@ -19,7 +19,8 @@ import {
   TransactionPageMessage,
   displayNames,
 	OrderAttendance,
-	OrderOccasion
+	OrderOccasion,
+	OrderTime
 } from './TransactionPanel.helpers';
 
 import css from './TransactionPanel.css';
@@ -255,6 +256,10 @@ export class TransactionPanelComponent extends Component {
 						/>
 
 						<OrderOccasion 
+							transaction={currentTransaction}
+						/>
+
+						<OrderTime 
 							transaction={currentTransaction}
 						/>
 
