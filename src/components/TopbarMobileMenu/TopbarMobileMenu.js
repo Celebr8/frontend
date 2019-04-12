@@ -43,6 +43,11 @@ const TopbarMobileMenu = props => {
         <FormattedMessage id="TopbarMobileMenu.signupOrLogin" values={{ signup, login }} />
       </span>
     );
+
+		const helpCenterLink = (
+      <a href="https://info.whichost.com/eng/faq" target="_blank" className={css.link}>Help centre</a>
+		)
+
     return (
       <div className={css.root}>
         <div className={css.content}>
@@ -53,6 +58,16 @@ const TopbarMobileMenu = props => {
             />
           </div>
         </div>
+				<div className={css.help}>
+					<div className={css.content}>
+						<div className={css.helpCenter}>
+							<FormattedMessage
+								id="TopbarMobileMenu.helpMenu"
+								values={{ lineBreak: <br />, helpCenterLink }}
+							/>
+						</div>
+					</div>
+				</div>
         <div className={css.footer}>
           <NamedLink className={css.createNewListingLink} name="NewListingPage">
             <FormattedMessage id="TopbarMobileMenu.newListingLink" />
