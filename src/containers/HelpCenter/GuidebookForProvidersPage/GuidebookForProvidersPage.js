@@ -55,7 +55,7 @@ const GuidebookForProvidersPageComponent = props => {
 					<h2>Contact us. We're here to help.</h2>
 			    <p>If you still have questions that are not covered by our <a href="https://www.whichost.com/help/faq" target="_blank">help center</a>, we invite you to <a href="https://www.whichost.com/help/contact-us" target="_blank">contact us</a> and we'll assist you personally.</p>
 			    <br/>
-			    <p><i>Enjoy the rest of the day!<br/><b>The Whichost team!</b></i></p>
+			    <p><i>Enjoy the rest of the day!<br/>The Whichost team!</i></p>
 				</LayoutWrapperMain>
 				<LayoutWrapperFooter>
 					<Footer />
