@@ -1,7 +1,7 @@
 ---
 name: Bug
 about: Bug issue template
-title: ''
+title: What's to be done? (imperative present)
 labels: bug
 assignees: ''
 

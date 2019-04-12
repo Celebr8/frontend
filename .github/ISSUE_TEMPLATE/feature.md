@@ -1,7 +1,7 @@
 ---
 name: Feature
 about: Template for features issues
-title: ''
+title: What's to be done? (imperative present)
 labels: enhancement
 assignees: ''
 

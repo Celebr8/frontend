@@ -1,7 +1,7 @@
 ---
 name: Trivial
 about: Template for trivial issues
-title: ''
+title: What's to be done? (imperative present)
 labels: Trivial
 assignees: ''
 
