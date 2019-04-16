@@ -68,12 +68,22 @@ export const PayoutPreferencesPageComponent = props => {
 
 	let message = <FormattedMessage id="PayoutPreferencesPage.loadingData" />;
 
+	const contactUrl = 'mailto:support@whichost.com?subject=Payment%20Information%20Change&body=Please%20update%20the%20payment%20information%20to%20the%20following%20IBAN:%0A%0AThe%20name%20of%20the%20pub%20listed%20is:%0A%0AThank%20you.%20%0A';
 	if (currentUserLoaded && payoutDetailsSaved) {
-		message = <FormattedMessage id="PayoutPreferencesPage.payoutDetailsSaved" />;
-	} else if (currentUserLoaded && stripeConnected) {
-		const url = 'mailto:support@whichost.com?subject=Payment%20Information%20Change&body=Please%20update%20the%20payment%20information%20to%20the%20following%20IBAN:%0A%0AThe%20name%20of%20the%20pub%20listed%20is:%0A%0AThank%20you.%20%0A';
 
-		const link = <a href={url} target="_blank">
+
+		const link = <a href={contactUrl} target="_blank">
+			<FormattedMessage id="PayoutPreferencesPage.payoutDetailsSavedLink" />
+		</a>
+
+		message = <Fragment>
+				<FormattedMessage id="PayoutPreferencesPage.payoutDetailsSaved" />
+					{link}
+			</Fragment>
+
+	} else if (currentUserLoaded && stripeConnected) {
+
+		const link = <a href={contactUrl} target="_blank">
 			<FormattedMessage id="PayoutPreferencesPage.stripeAlreadyConnectedLink" />
 		</a>
 
