@@ -16,6 +16,8 @@ import css from './StripePaymentForm.css';
 
 import TextField from '@material-ui/core/TextField';
 
+import * as moment from 'moment';
+
 /**
  * Translate a Stripe API error object.
  *
@@ -220,6 +222,16 @@ class StripePaymentForm extends Component {
     else return null;
   }
 
+  validTime(time) {
+
+		if(moment(time, 'HH:mm').hour() < 12)
+			return this.props.intl.formatMessage({
+				id: `StripePaymentForm.timeErrorTooEarly`	
+			})
+		else return null
+
+  }
+
   render() {
     const {
       className,
@@ -233,7 +245,10 @@ class StripePaymentForm extends Component {
     } = this.props;
     const submitInProgress = this.state.submitting || inProgress;
     const submitDisabled =
-      !this.state.cardValueValid || this.validAttendance(this.state.attendance) || submitInProgress;
+			!this.state.cardValueValid || 
+			this.validAttendance(this.state.attendance) || 
+			this.validTime(this.state.time) ||
+			submitInProgress;
     const classes = classNames(rootClassName || css.root, className);
     const cardClasses = classNames(css.card, {
       [css.cardSuccess]: this.state.cardValueValid,
@@ -363,6 +378,8 @@ class StripePaymentForm extends Component {
 							}}
 						/>
 					</span>
+
+          <p className={css.validTime}>{this.validTime(this.state.time)}</p>
         </Fragment>
         <Fragment>
           <h3 className={css.occasionHeading}>

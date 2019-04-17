@@ -96,6 +96,7 @@
   }
 }
 
+.validTime,
 .validAttendance {
   color: var(--matterColorAnti);
 	font-size: 15px;
