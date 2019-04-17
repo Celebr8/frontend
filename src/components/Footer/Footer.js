@@ -222,7 +222,7 @@ const Footer = props => {
             <div className={css.searchesExtra} />
           </div>
           <div className={css.extraLinks}>
-            <a className={css.someLinks}>{socialMediaLinks}</a>
+						<div className={css.someLinks}>{socialMediaLinks}</div>
             <div className={css.legalMatters}>
               <div className={css.tosAndPrivacy}>
 
