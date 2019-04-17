@@ -210,24 +210,29 @@ const Footer = props => {
 							<FormattedMessage id="Footer.copyright" /><br />
             </NamedLink>
             <div className={css.tosAndPrivacyMobile}>
+
 							<a className={css.someLinks}>{socialMediaLinks}</a>
-            	<NamedLink name="AboutPage" className={css.privacy}>
+
+            	<NamedLink name="AboutPage" className={css.about}>
                 <FormattedMessage id="Footer.about" />
               </NamedLink>
 
-              <a href="mailto:support@whichost.com?subject=General%20inquiry" className={css.privacy}>
+              <a href="mailto:support@whichost.com?subject=General%20inquiry" className={css.contact}>
                     Contact
               </a>
 
               <NamedLink name="PrivacyPolicyPage" className={css.privacy}>
                 <FormattedMessage id="Footer.privacy" />
               </NamedLink>
-              <NamedLink name="TermsOfServicePage" className={css.privacy}>
+
+              <NamedLink name="TermsOfServicePage" className={css.legalLink}>
               	Legal
               </NamedLink>
+
               <NamedLink name="TermsOfServicePage" className={css.terms}>
                 <FormattedMessage id="Footer.terms" />
               </NamedLink>
+
             </div>
           </div>
         </div>
