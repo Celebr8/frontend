@@ -343,9 +343,19 @@
   }
 }
 
+.registrationMobile {
+
+  @apply --marketplaceTinyFontStyles;
+	order: 10;
+
+  @media (--viewportMedium) {
+    display: none;
+  }
+
+}
 .organizationCopyrightMobile {
   /* Font */
-  @apply --marketplaceTinyFontStyles;
+  @apply --marketplaceTinyFontStyles; 
   color: var(--matterColorAnti);
   transition: var(--transitionStyleButton);
 
@@ -360,7 +370,7 @@
     text-decoration: none;
   }
 
-	font-size: 10px;
+	text-size: 10px;
 
 }
 
