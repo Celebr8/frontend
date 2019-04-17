@@ -3,34 +3,32 @@ import PropTypes from 'prop-types';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
 import { injectIntl, intlShape, FormattedMessage } from 'react-intl';
-import { isScrollingDisabled } from '../../ducks/UI.duck';
-import { TopbarContainer } from '../../containers';
-
-import { dealsTabs } from '../DealsPage/dealsTabs'
-
+import { isScrollingDisabled } from '../../../ducks/UI.duck';
+import { TopbarContainer } from '../../../containers';
 import {
   Page,
-  LayoutSideNavigationWithHero,
+  LayoutSideNavigation,
   LayoutWrapperMain,
   LayoutWrapperSideNav,
-  LayoutWrapperHero,
   LayoutWrapperTopbar,
   LayoutWrapperFooter,
   Footer,
-	Deals,
-	CorporateDeal
-} from '../../components';
-import config from '../../config';
+  PrivacyPolicy,
+} from '../../../components';
 
-import css from './CorporateDealPage.css';
+import config from '../../../config';
+import { legalsTabs } from '../tabs';
 
-const CorporateDealPageComponent = props => {
+import css from './PrivacyPolicyPage.css';
+
+const PrivacyPolicyPageComponent = props => {
+
   const { scrollingDisabled, intl } = props;
 
-	const tabs = dealsTabs(intl, 'CorporateDealPage');
+	const tabs = legalsTabs(intl, 'PrivacyPolicyPage');
 
 	const siteTitle = config.siteTitle;
-  const schemaTitle = intl.formatMessage({ id: 'DealsPage.schemaTitle' }, { siteTitle });
+  const schemaTitle = intl.formatMessage({ id: 'TermsOfServicePage.schemaTitle' }, { siteTitle });
   const schema = {
     '@context': 'http://schema.org',
     '@type': 'WebPage',
@@ -38,37 +36,30 @@ const CorporateDealPageComponent = props => {
   };
   return (
     <Page title={schemaTitle} scrollingDisabled={scrollingDisabled} schema={schema}>
-      <LayoutSideNavigationWithHero>
+      <LayoutSideNavigation>
         <LayoutWrapperTopbar>
-          <TopbarContainer currentPage="CorporateDealPage" />
+          <TopbarContainer currentPage="PrivacyPolicyPage" />
         </LayoutWrapperTopbar>
         <LayoutWrapperSideNav tabs={tabs} />
-				<LayoutWrapperHero className={css.hero}>
-					<div className={css.heroContent}>
-						<h1 className={css.heroMainTitle}>
-							<FormattedMessage id="DealsPage.title" />
-						</h1>
-					</div>
-				</LayoutWrapperHero>
         <LayoutWrapperMain>
           <div className={css.content}>
             <h1 className={css.heading}>
-              <FormattedMessage id="CorporateDealPage.heading" />
+              <FormattedMessage id="PrivacyPolicyPage.heading" />
             </h1>
-            <CorporateDeal />
+            <PrivacyPolicy />
           </div>
         </LayoutWrapperMain>
         <LayoutWrapperFooter>
           <Footer />
         </LayoutWrapperFooter>
-      </LayoutSideNavigationWithHero>
+      </LayoutSideNavigation>
     </Page>
   );
 };
 
 const { bool } = PropTypes;
 
-CorporateDealPageComponent.propTypes = {
+PrivacyPolicyPageComponent.propTypes = {
   scrollingDisabled: bool.isRequired,
 
   // from injectIntl
@@ -81,9 +72,9 @@ const mapStateToProps = state => {
   };
 };
 
-const CorporateDealPage = compose(
+const PrivacyPolicyPage = compose(
   connect(mapStateToProps),
   injectIntl
-)(CorporateDealPageComponent);
+)(PrivacyPolicyPageComponent);
 
-export default CorporateDealPage;;
+export default PrivacyPolicyPage;
