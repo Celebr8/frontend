@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { string } from 'prop-types';
 import { FormattedMessage, injectIntl, intlShape } from 'react-intl';
 import classNames from 'classnames';
@@ -74,12 +74,13 @@ const Footer = props => {
   const { rootClassName, className, intl } = props;
   const socialMediaLinks = renderSocialMediaLinks(intl);
   const classes = classNames(rootClassName || css.root, className);
+  const separator = <Fragment>&nbsp;&nbsp;|&nbsp;&nbsp;</Fragment>;
 
   return (
     <div className={classes}>
       <div className={css.topBorderWrapper}>
         <div className={css.content}>
-          <div className={css.someLiksMobile}>{socialMediaLinks}</div>
+          <div className={css.someLinksMobile}>{socialMediaLinks}</div>
           <div className={css.links}>
             <div className={css.organization} id="organization">
               <NamedLink name="LandingPage" className={css.logoLink}>
@@ -224,29 +225,29 @@ const Footer = props => {
           <div className={css.extraLinks}>
             <div className={css.legalMatters}>
               <div className={css.tosAndPrivacy}>
-
-								<div className={css.someLinks}>{socialMediaLinks}</div>
+                <div className={css.someLinks}>{socialMediaLinks}</div>
 
                 <NamedLink name="AboutPage" className={css.legalLink}>
                   <FormattedMessage id="Footer.toAboutPage" />
-                  &nbsp;&nbsp;|&nbsp;&nbsp;
                 </NamedLink>
+								{separator}
                 <a
-                  href="mailto:support@whichost.com?subject=General inquiry"
+                  href="mailto:support@whichost.com?subject=General%20inquiry"
                   className={css.legalLink}
                 >
-                  Contact&nbsp;&nbsp;|&nbsp;&nbsp;
+                  Contact
                 </a>
+								{separator}
                 <NamedLink name="TermsOfServicePage" className={css.legalLink}>
                   <FormattedMessage id="Footer.termsOfUse" />
-                  &nbsp;&nbsp; |&nbsp;&nbsp;
                 </NamedLink>
+								{separator}
                 <NamedLink name="PrivacyPolicyPage" className={css.legalLink}>
                   <FormattedMessage id="Footer.privacyPolicy" />
-                  &nbsp;&nbsp; |&nbsp;&nbsp;
                 </NamedLink>
+								{separator}
                 <NamedLink name="TermsOfServicePage" className={css.legalLink}>
-                  Legal&nbsp;&nbsp; |&nbsp;&nbsp;
+                  Legal
                 </NamedLink>
               </div>
             </div>
@@ -257,6 +258,7 @@ const Footer = props => {
               <br />
             </NamedLink>
             <div className={css.tosAndPrivacyMobile}>
+							
               <NamedLink name="AboutPage" className={css.privacy}>
                 <FormattedMessage id="Footer.about" />
               </NamedLink>

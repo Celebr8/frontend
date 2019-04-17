@@ -51,8 +51,14 @@
 }
  
 
+.someLinks {
+
+	display: inline;
+
+}
+
 /* Mobile only social media links */
-.someLiksMobile {
+.someLinksMobile {
   margin-bottom: 24px;
 
   @media (--viewportMedium) {
