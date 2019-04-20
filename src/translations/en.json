@@ -411,6 +411,7 @@
   "NotFoundPage.description": "We can't find the page or pub you're looking for. Make sure you've typed in the URL correctly or try searching Whichost.",
   "NotFoundPage.heading": "Sorry, we couldn't find that page.",
   "NotFoundPage.title": "Page not found",
+  "NonDiscriminationPolicyPage.heading": "Inclusion Policy",
   "Page.schemaDescription": "Book your party using Whichost or increase your pub's exposure.",
   "Page.schemaTitle": "Celebrate Anywhere!  | {siteTitle}",
   "PaginationLinks.next": "Next page",
