@@ -9,7 +9,7 @@ import { propTypes } from '../../util/types';
 import * as validators from '../../util/validators';
 import { FieldPhoneNumberInput, Form, PrimaryButton, FieldTextInput } from '../../components';
 
-import { loadReCaptcha, ReCaptcha } from 'react-recaptcha-google';
+import { ReCaptcha } from 'react-recaptcha-google';
 
 import css from './ContactUsForm.css';
 
@@ -24,10 +24,6 @@ class ContactUsFormComponent extends Component {
 
     this.onLoadRecaptcha = this.onLoadRecaptcha.bind(this);
     this.verifyCallback = this.verifyCallback.bind(this);
-  }
-
-  componentWillMount() {
-    loadReCaptcha();
   }
 
   onLoadRecaptcha() {
