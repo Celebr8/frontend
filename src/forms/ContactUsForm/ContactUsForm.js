@@ -102,9 +102,15 @@ class ContactUsFormComponent extends Component {
               id: 'ContactUsForm.phoneLabel',
             });
 
+            const phoneRequiredMessage = intl.formatMessage({
+              id: 'ContactUsForm.phoneRequired',
+            });
+
             const phonePlaceholder = intl.formatMessage({
               id: 'ContactUsForm.phonePlaceholder',
             });
+
+            const phoneRequired = validators.required(phoneRequiredMessage);
 
             // message
 
@@ -112,9 +118,15 @@ class ContactUsFormComponent extends Component {
               id: 'ContactUsForm.messageLabel',
             });
 
+            const messageRequiredMessage = intl.formatMessage({
+              id: 'ContactUsForm.messageRequired',
+            });
+
             const messagePlaceholder = intl.formatMessage({
               id: 'ContactUsForm.messagePlaceholder',
             });
+
+            const messageRequired = validators.required(messageRequiredMessage);
 
             // Subject
 
@@ -122,9 +134,15 @@ class ContactUsFormComponent extends Component {
               id: 'ContactUsForm.subjectLabel',
             });
 
+            const subjectRequiredMessage = intl.formatMessage({
+              id: 'ContactUsForm.subjectRequired',
+            });
+
             const subjectPlaceholder = intl.formatMessage({
               id: 'ContactUsForm.subjectPlaceholder',
             });
+
+            const subjectRequired = validators.required(subjectRequiredMessage);
 
             const classes = classNames(rootClassName || css.root, className);
 
@@ -133,6 +151,7 @@ class ContactUsFormComponent extends Component {
             ) : null;
 
             const submitInProgress = sendingInProgress;
+						const submitDisabled = invalid || submitInProgress;
 
             return (
               <Form
@@ -158,6 +177,7 @@ class ContactUsFormComponent extends Component {
                     id={formId ? `${formId}.phoneNumber` : 'phoneNumber'}
                     label={phoneLabel}
                     placeholder={phonePlaceholder}
+                    validate={phoneRequired}
                   />
 
                   <FieldTextInput
@@ -166,6 +186,7 @@ class ContactUsFormComponent extends Component {
                     id={formId ? `${formId}.subject` : 'subject'}
                     label={subjectLabel}
                     placeholder={subjectPlaceholder}
+                    validate={subjectRequired}
                   />
 
                   <FieldTextInput
@@ -174,6 +195,7 @@ class ContactUsFormComponent extends Component {
                     id={formId ? `${formId}.message` : 'message'}
                     label={messageLabel}
                     placeholder={messagePlaceholder}
+                    validate={messageRequired}
                   />
                 </div>
 
@@ -182,6 +204,7 @@ class ContactUsFormComponent extends Component {
                     className={css.submitButton}
                     type="submit"
                     inProgress={submitInProgress}
+										disabled={submitDisabled}
                   >
                     <FormattedMessage id="ContactUsForm.sendMessage" />
                   </PrimaryButton>
