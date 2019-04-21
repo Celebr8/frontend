@@ -74,8 +74,7 @@ const usingSSL = process.env.REACT_APP_SHARETRIBE_USING_SSL === 'true';
 
 // reCaptcha google API key 
 const reCaptchaSiteKey = process.env.REACT_APP_RECAPTCHA_SITE_KEY;
-
-console.log('reCaptchaSiteKey', reCaptchaSiteKey)
+const serviceMessageUrl = process.env.REACT_APP_SERVICE_MESSAGE_URL;
 
 // Currency formatting options.
 // See: https://github.com/yahoo/react-intl/wiki/API#formatnumber
@@ -383,6 +382,7 @@ const config = {
   facebookAppId,
   sentryDsn,
 	reCaptchaSiteKey,
+	serviceMessageUrl,
   usingSSL,
   maps,
   custom,

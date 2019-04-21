@@ -1,5 +1,4 @@
-//const SERVICE_MESSAGE_URL = 'https://whichost-service-message.herokuapp.com/message';
-const SERVICE_MESSAGE_URL = 'http://localhost:80/message';
+import config from '../../../config';
 
 // ================ Action types ================ //
 
@@ -83,7 +82,8 @@ export const sendContactUsMessage = params => (dispatch, getState, sdk) => {
     recaptchaToken: params.recaptchaToken,
   };
 
-  return fetch(SERVICE_MESSAGE_URL, {
+	console.log(config.serviceMessageUrl)
+  return fetch(config.serviceMessageUrl, {
     method: 'post',
     body: JSON.stringify(data),
   })
