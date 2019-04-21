@@ -18,7 +18,9 @@ import config from '../../config';
 class ContactUsFormComponent extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      recaptchaToken: null,
+    };
 
     this.onLoadRecaptcha = this.onLoadRecaptcha.bind(this);
     this.verifyCallback = this.verifyCallback.bind(this);
@@ -37,12 +39,16 @@ class ContactUsFormComponent extends Component {
 
   verifyCallback(recaptchaToken) {
     // Here you will get the final recaptchaToken!!!
-    console.log(recaptchaToken, '<= your recaptcha token');
+    const state = { ...state, recaptchaToken };
+    this.setState(state);
   }
 
   render() {
-    console.log('siteKey', config.reCaptchaSiteKey);
-    console.log('config', config);
+    const recaptchaToken = this.state.recaptchaToken;
+
+		const onSubmit = (values) => this.props.onSubmit({...values, recaptchaToken})
+		const finalFormProps = {...this.props, onSubmit}
+
     return (
       <Fragment>
         <ReCaptcha
@@ -56,7 +62,7 @@ class ContactUsFormComponent extends Component {
           verifyCallback={this.verifyCallback}
         />
         <FinalForm
-          {...this.props}
+          {...finalFormProps}
           render={fieldRenderProps => {
             const {
               rootClassName,
@@ -69,9 +75,9 @@ class ContactUsFormComponent extends Component {
               sendingError,
             } = fieldRenderProps;
 
-            const { email, phoneNumber, message, subject } = fieldRenderProps;
+            const { email, phoneNumber, message, subject, recaptchaToken } = fieldRenderProps;
 
-            const values = { email, phoneNumber, message, subject };
+            const values = { email, phoneNumber, message, subject, recaptchaToken };
 
             // email
 
@@ -123,10 +129,6 @@ class ContactUsFormComponent extends Component {
             const subjectPlaceholder = intl.formatMessage({
               id: 'ContactUsForm.subjectPlaceholder',
             });
-
-            // const tooManyVerificationRequests = isTooManyEmailVerificationRequestsError(
-            //   sendVerificationEmailError
-            // );
 
             const classes = classNames(rootClassName || css.root, className);
 

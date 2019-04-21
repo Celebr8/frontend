@@ -22,6 +22,7 @@ import TransactionPage from './TransactionPage/TransactionPage.duck';
 export {
   CheckoutPage,
   ContactDetailsPage,
+  ContactUsPage,
   EditListingPage,
   InboxPage,
   ListingPage,

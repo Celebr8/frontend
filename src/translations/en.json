@@ -83,6 +83,8 @@
   "CheckoutPage.title": "Book {listingTitle}",
 	"ContactUsPage.schemaTitle": "Contact us",
 	"ContactUsPage.title": "Contact us",
+  "ContactUsPage.sendingSuccess": "Your mail have been sent. We will get back to you as soon as possible",
+  "ContactUsPage.sendingError": "An error occured: {sendingError}",
 	"ContactUsForm.emailLabel": "Your email address",
   "ContactUsForm.emailRequired": "An email address is required",
   "ContactUsForm.emailInvalid": "A valid email address is required",
