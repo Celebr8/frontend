@@ -91,6 +91,12 @@
   word-wrap: break-word;
 }
 
+.sendingError {
+
+	color: var(--failColor);
+
+}
+
 .helperLink {
   color: var(--matterColor);
   border-bottom: solid 1px var(--matterColor);

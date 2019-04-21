@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
+
 import { injectIntl, intlShape, FormattedMessage } from 'react-intl';
 import { isScrollingDisabled } from '../../../ducks/UI.duck';
 import { TopbarContainer } from '../../../containers';
@@ -32,10 +33,10 @@ const ContactUsPageComponent = props => {
 	const { 
 		scrollingDisabled,
 		intl,
-		onSendMessage
+		onSendMessage,
+		sendingInProgress,
+		sendingError
 	} = props;
-
-	console.log('onSendMessage', onSendMessage)
 
 	const tabs = helpCenterTabs(intl, 'ContactUsPage');
 
@@ -72,6 +73,8 @@ const ContactUsPageComponent = props => {
 						className={css.form}
 						initialValues={initialValues}
 						onSubmit={values => onSendMessage(values)}
+						sendingInProgress={sendingInProgress}
+						sendingError={sendingError}
 					/>
 				</LayoutWrapperMain>
 				<LayoutWrapperFooter>
@@ -94,6 +97,8 @@ ContactUsPageComponent.propTypes = {
 const mapStateToProps = state => {
 	return {
 		scrollingDisabled: isScrollingDisabled(state),
+		sendingError: state.sendingError,
+		sendingInProgress: state.sendingInProgress
 	};
 };
 

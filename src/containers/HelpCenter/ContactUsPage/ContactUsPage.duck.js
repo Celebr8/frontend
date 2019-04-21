@@ -1,5 +1,3 @@
-import mailgun from 'mailgun.js';
-
 const SERVICE_MESSAGE_URL = 'https://whichost-service-message.herokuapp.com/message';
 //const SERVICE_MESSAGE_URL = 'http://localhost:80/message';
 
@@ -76,7 +74,6 @@ export const sendContactUsMessage = params => (dispatch, getState, sdk) => {
 	})	
 	.then((answer) => {
 
-		console.log('success', answer)
 		dispatch(sendContactUsMessageSuccess())	
 	
 	}).catch((error) => {
