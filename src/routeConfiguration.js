@@ -302,7 +302,7 @@ const routeConfiguration = () => {
       component: props => <PrivacyPolicyPage {...props} />,
     },
     {
-			path: '/legal/non-discrimination',
+			path: '/legals/inclusion',
       name: 'NonDiscriminationPolicyPage',
       component: props => <NonDiscriminationPolicyPage {...props} />,
     },
