@@ -56,6 +56,7 @@ export { default as ImageFromFile } from './ImageFromFile/ImageFromFile';
 export { default as LayoutSideNavigation } from './LayoutSideNavigation/LayoutSideNavigation';
 export { default as LayoutSideNavigationWithHero } from './LayoutSideNavigationWithHero/LayoutSideNavigationWithHero';
 export { default as LayoutSingleColumn } from './LayoutSingleColumn/LayoutSingleColumn';
+export { default as LayoutSingleColumnWithHero } from './LayoutSingleColumnWithHero/LayoutSingleColumnWithHero';
 export { default as LayoutWrapperFooter } from './LayoutWrapperFooter/LayoutWrapperFooter';
 export { default as LayoutWrapperHero } from './LayoutWrapperHero/LayoutWrapperHero';
 export { default as LayoutWrapperMain } from './LayoutWrapperMain/LayoutWrapperMain';
