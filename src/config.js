@@ -60,7 +60,7 @@ const currency = process.env.REACT_APP_SHARETRIBE_MARKETPLACE_CURRENCY;
 
 // Listing minimum price in currency sub units, e.g. cents.
 // 0 means no restriction to the price
-const listingMinimumPriceSubUnits = 0;
+const listingMinimumPriceSubUnits = 900;
 
 // Sentry DSN (Data Source Name), a client key for authenticating calls to Sentry
 const sentryDsn = process.env.REACT_APP_PUBLIC_SENTRY_DSN;

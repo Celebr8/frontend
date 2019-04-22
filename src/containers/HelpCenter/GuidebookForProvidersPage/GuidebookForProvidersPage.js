@@ -48,7 +48,14 @@ const GuidebookForProvidersPageComponent = props => {
 				</LayoutWrapperHero>
 				<LayoutWrapperSideNav tabs={tabs} />
 				<LayoutWrapperMain>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>"
+					<h2>Guide Documentation for Publicans</h2>
+					<p>Using Whichost is very straightforward. However, if you ever need guidance you can <a href="https://docs.google.com/document/d/1KtFBwGkdd79Sabjt1s4PBzpKkZtY0rDy3Wqkq0k8ED8/edit" target="_blank">open the Whichost Guide for Publicans</a>. This document contains all the basic information you need to properly manage your listing(s).</p>
+					<p>On our <a href="https://www.whichost.com/help/first-step" target="_blank">First Steps</a> page you can read about the first steps you need to make, to start listing your pub on Whichost.</p>
+					<br/>
+					<h2>Contact us. We're here to help.</h2>
+			    <p>If you still have questions that are not covered by our <a href="https://www.whichost.com/help/faq" target="_blank">help center</a>, we invite you to <a href="https://www.whichost.com/help/contact-us" target="_blank">contact us</a> and we'll assist you personally.</p>
+			    <br/>
+			    <p><i>Enjoy the rest of the day!<br/>The Whichost team!</i></p>
 				</LayoutWrapperMain>
 				<LayoutWrapperFooter>
 					<Footer />

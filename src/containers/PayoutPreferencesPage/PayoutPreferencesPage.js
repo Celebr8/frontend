@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { bool, func } from 'prop-types';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
@@ -68,19 +68,29 @@ export const PayoutPreferencesPageComponent = props => {
 
 	let message = <FormattedMessage id="PayoutPreferencesPage.loadingData" />;
 
+	const contactUrl = 'mailto:support@whichost.com?subject=Payment%20Information%20Change&body=Please%20update%20the%20payment%20information%20to%20the%20following%20IBAN:%0A%0AThe%20name%20of%20the%20pub%20listed%20is:%0A%0AThank%20you.%20%0A';
 	if (currentUserLoaded && payoutDetailsSaved) {
-		message = <FormattedMessage id="PayoutPreferencesPage.payoutDetailsSaved" />;
+
+
+		const link = <a href={contactUrl} target="_blank">
+			<FormattedMessage id="PayoutPreferencesPage.payoutDetailsSavedLink" />
+		</a>
+
+		message = <Fragment>
+				<FormattedMessage id="PayoutPreferencesPage.payoutDetailsSaved" />
+					{link}
+			</Fragment>
+
 	} else if (currentUserLoaded && stripeConnected) {
-		const link = <a href="mailto:support@whichost.com">
+
+		const link = <a href={contactUrl} target="_blank">
 			<FormattedMessage id="PayoutPreferencesPage.stripeAlreadyConnectedLink" />
 		</a>
 
-		message = intl.formatMessage(
-			{ id:"PayoutPreferencesPage.stripeAlreadyConnected" },
-			{
-				here: link		
-			}
-		)
+			message = <Fragment>
+				<FormattedMessage id="PayoutPreferencesPage.stripeAlreadyConnected" />
+					{link}
+			</Fragment>
 	} else if (currentUserLoaded && !stripeConnected) {
 		message = <FormattedMessage id="PayoutPreferencesPage.stripeNotConnected" />;
 	}

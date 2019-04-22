@@ -21,13 +21,13 @@
   --marketplaceDefaultFontStyles: {
     font-family: 'Lato', sans-serif;
     font-weight: var(--fontWeightMedium);
-    font-size: 18px;
+    font-size: 16px;
     line-height: 24px;
     letter-spacing: -0.1px;
     /* No margins for default font */
 
     @media (--viewportMedium) {
-      font-size: 20px;
+      font-size: 16px;
       line-height: 24px;
     }
   }

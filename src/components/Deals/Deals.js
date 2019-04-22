@@ -10,30 +10,14 @@ const Deals = props => {
 
 	// prettier-ignore
 	return (
-		<div>
-		<div className={css.postContainer}>
-			<div className={[css.image, css.imageLeft]}> 
-			</div>
-			<div className={css.desc}>
-				<h3 className={css.postTitle}>Post title</h3>
-				Description here asjhd skdhf kasdhf askdfh ;alskdf lasdfj askdjfh kasdhf kasjd hf ere asjhd skdhf kasdhf askdfh ;alskdf lasdfj askdjfh kasdhf kasjd hf ere asjhd skdhf kasdhf askdfh ;alskdf lasdfj askdjfh kasdhf kasjd hfere asjhd skdhf kasdhf askdfh ;alskdf lasdfj askdjfh kasdhf kasjd hf
-			</div>
-			<div className={[css.readMore, css.desc]}>
-				<a href="#" target="_blank">Read more about the terms &nbsp;<i className="fa">&#xf101;</i></a>
-			</div>
-		</div>
-		<div className={css.postContainer}>
-			<div className={[css.image,,css.imageRight]}>
-			</div>
-			<div className={css.desc}>
-				<h3 className={css.postTitle}>Post title</h3>
-				Description here asjhd skdhf kasdhf askdfh ;alskdf lasdfj askdjfh kasdhf kasjd hf ere asjhd skdhf kasdhf askdfh ;alskdf lasdfj askdjfh kasdhf kasjd hf ere asjhd skdhf kasdhf askdfh ;alskdf lasdfj askdjfh kasdhf kasjd hfere asjhd skdhf kasdhf askdfh ;alskdf lasdfj askdjfh kasdhf kasjd hf
-			</div>
-			<div className={[css.readMore, css.desc]}>
-				<a href="#" target="_blank">Community Guidelines &nbsp;<i className="fa">&#xf101;</i></a>
-			</div>
-		</div>
-	</div>
+        <section>
+		<h1>Part of our culture is giving back</h1>
+        <p> On this page you will find all the ways in which we'll give back to our community and customers.</p>
+        <p>Take a look at the menu and you'll see our active deals for you as a loyal customer. We call them <b>"The Whichost Deals"</b>.</p>
+        <p>Click for example on <b>"Birthday deal"</b>, read through the details and don't hesitate to <u><a href="mailto:support@whichost.com">write us a email</a></u>, in case you have further questions. You can also <u><a href="https://info.whichost.com/eng/book-a-call">book a call</a></u> and we'll get back to you over the phone.</p>
+        <br></br>
+        <h3>Have fun!</h3>
+        </section>
 	);
 };
 

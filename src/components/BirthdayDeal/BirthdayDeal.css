@@ -14,7 +14,7 @@
       margin: 24px 0 24px 0;
     }
   }
-  
+
   & span {
 	  color: #ff3f00;
   }
@@ -38,7 +38,7 @@
 	  line-height: 24px;
 	  letter-spacing: 0;
   }
-  
+
   & .dealButton a {
     @apply --marketplaceBodyFontStyles;
     margin-top: 0;
@@ -59,7 +59,7 @@
 
 body {
   text-align: inherit;
-}
+} 
 
 ol {
   list-style-type: none;
@@ -93,11 +93,20 @@ li ol > li:before {
   content: counters(item, ".") ". ";
 }
 
+ol li ul li,
+ul {
+  font-size: 16px;
+}
+
+ol li ul li:first-child {
+  padding-top: 10px;
+}
+
 /** ACCORDION **/
 
 .accordionContent {
 
-	
+
 
 }
 
@@ -114,7 +123,7 @@ li ol > li:before {
 }
 
 .boxLeft {
-	
+
 }
 
 .boxes .boxRight img{
@@ -124,7 +133,7 @@ li ol > li:before {
 }
 
 .boxRight {
-	
+
 }
 
 .boxes{
@@ -185,7 +194,7 @@ img {
     margin: 0;
     padding: 0;
   }
-  
+
   .boxRight h3,
   .boxLeft h3,
   .boxRight p {
@@ -193,7 +202,7 @@ img {
 	  margin-top: 10px;
   }
  }
-  
+
 
 /** BUTTONS **/
 
@@ -213,7 +222,7 @@ img {
   cursor: pointer; /* Pointer/hand icon */
   float: left; /* Float the buttons side by side */
   width: 180px;
- 
+
 }
 
 
@@ -242,7 +251,7 @@ img {
 }
 
 .getInTouch {
-	margin-top: 100px;
+	margin-top: 75px;
 }
 
 .getInTouch h3 {
@@ -261,7 +270,7 @@ img {
 }
 
 .examplesAccordion {
-	
+
 }
 
 @media (max-width: 768px) {
@@ -273,18 +282,18 @@ img {
     margin-top: 0;
     padding: 0;
   }
-  
+
   .btnGroup .centerButtons {
 	  display: block;
 	}
-	
+
 	.btnGroup button{
 	  float:none;
 	  padding: 10px 0px;
 	  margin-left: 0;
 	  width: 100%;
 	  }
-	  
+
 	.btnGroup button:first-child{
 	  margin-bottom: 15px;
 	  }
@@ -301,7 +310,7 @@ details {
   margin-top: 80px;
   position: relative;
   font-size: 22px;
-  border: 2px solid #ff3f00;
+  border: 1px double #ff3f00;
   border-radius: 4px;
   box-sizing: border-box;
   transition: all .3s;
@@ -387,15 +396,39 @@ details[open] summary:hover::after {
 }
 
 
+/* TABLE */
 
+table {
+	font-family: 'Lato';
+	border: 1px double #ff3f00;
+	border-radius: 4px;
+	margin-top: 25px;
+}
 
+thead {
+	background-color: #ff3f00;
+	line-height: 15px;
+}
 
+thead th {
+	color: #fff!important;
+}
 
+thead tr {
+	height: 5px!important;
+}
 
+tbody tr {
+	height: 0!important;
+}
 
-
-
-
-
-
-
+@media (max-width: 768px) {
+  thead th,
+  tbody th,
+  tbody tr th,
+  tbody tr td {
+    float: none;
+    text-align: center!important;
+    padding: 4px 2px 4px 2px!important;
+  }
+ }
