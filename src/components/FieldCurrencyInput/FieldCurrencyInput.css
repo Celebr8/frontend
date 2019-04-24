@@ -11,3 +11,7 @@
 .inputError {
   border-bottom-color: var(--failColor);
 }
+
+label {
+	word-wrap: break-word;
+}
