@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { string } from 'prop-types';
 import { FormattedMessage, injectIntl, intlShape } from 'react-intl';
 import classNames from 'classnames';
@@ -18,7 +18,6 @@ import css from './Footer.css';
 import { mainLocationsData, locationToURI } from '../../locals';
 
 const renderSocialMediaLinks = intl => {
-  return null;
 
   const { siteFacebookPage, siteInstagramPage, siteTwitterHandle } = config;
   const siteTwitterPage = twitterPageURL(siteTwitterHandle);
@@ -33,31 +32,30 @@ const renderSocialMediaLinks = intl => {
     </ExternalLink>
   ) : null;
 
-  // const twitterLink = siteTwitterPage ? (
-  //   <ExternalLink
-  //     key="linkToTwitter"
-  //     href={siteTwitterPage}
-  //     className={css.icon}
-  //     title={goToTwitter}
-  //   >
-  //     <IconSocialMediaTwitter />
-  //   </ExternalLink>
-  // ) : null;
+  const twitterLink = siteTwitterPage ? (
+    <ExternalLink
+      key="linkToTwitter"
+      href={siteTwitterPage}
+      className={css.icon}
+      title={goToTwitter}
+    >
+      <IconSocialMediaTwitter />
+    </ExternalLink>
+  ) : null;
 
-  const twitterLink = null;
-  const instragramLink = null;
+  const instragramLink = siteInstagramPage ? (
+    <ExternalLink
+      key="linkToInstagram"
+      href={siteInstagramPage}
+      className={css.icon}
+      title={goToInsta}
+    >
+      <IconSocialMediaInstagram />
+    </ExternalLink>
+  ) : null;
 
-  // const instragramLink = siteInstagramPage ? (
-  //   <ExternalLink
-  //     key="linkToInstagram"
-  //     href={siteInstagramPage}
-  //     className={css.icon}
-  //     title={goToInsta}
-  //   >
-  //     <IconSocialMediaInstagram />
-  //   </ExternalLink>
-  // ) : null;
   return [fbLink, twitterLink, instragramLink].filter(v => v != null);
+
 };
 
 const renderFavoriteLocation = location => (
@@ -78,12 +76,13 @@ const Footer = props => {
   const { rootClassName, className, intl } = props;
   const socialMediaLinks = renderSocialMediaLinks(intl);
   const classes = classNames(rootClassName || css.root, className);
+  const separator = <Fragment>&nbsp;&nbsp;|&nbsp;&nbsp;</Fragment>;
 
   return (
     <div className={classes}>
       <div className={css.topBorderWrapper}>
         <div className={css.content}>
-          <div className={css.someLiksMobile}>{socialMediaLinks}</div>
+          <div className={css.someLinksMobile}>{socialMediaLinks}</div>
           <div className={css.links}>
             <div className={css.organization} id="organization">
               <NamedLink name="LandingPage" className={css.logoLink}>
@@ -224,41 +223,44 @@ const Footer = props => {
               </ul>
             </div>
             <div className={css.searchesExtra} />
-						<div className={css.registrationMobile}>
-							<FormattedMessage id="Footer.copyright" />
-						</div>
           </div>
           <div className={css.extraLinks}>
             <div className={css.legalMatters}>
               <div className={css.tosAndPrivacy}>
-                <a className={css.someLinks}>{socialMediaLinks}</a>
+                <div className={css.someLinks}>{socialMediaLinks}</div>
 
                 <NamedLink name="AboutPage" className={css.legalLink}>
                   <FormattedMessage id="Footer.toAboutPage" />
-                  &nbsp;&nbsp;|&nbsp;&nbsp;
                 </NamedLink>
+								{separator}
                 <a
-                  href="mailto:support@whichost.com?subject=General inquiry"
+                  href="mailto:support@whichost.com?subject=General%20inquiry"
                   className={css.legalLink}
                 >
-                  Contact&nbsp;&nbsp;|&nbsp;&nbsp;
+                  Contact
                 </a>
+								{separator}
                 <NamedLink name="TermsOfServicePage" className={css.legalLink}>
                   <FormattedMessage id="Footer.termsOfUse" />
-                  &nbsp;&nbsp; |&nbsp;&nbsp;
                 </NamedLink>
+								{separator}
                 <NamedLink name="PrivacyPolicyPage" className={css.legalLink}>
                   <FormattedMessage id="Footer.privacyPolicy" />
-                  &nbsp;&nbsp; |&nbsp;&nbsp;
                 </NamedLink>
+								{separator}
                 <NamedLink name="TermsOfServicePage" className={css.legalLink}>
-                  Legal&nbsp;&nbsp; |&nbsp;&nbsp;
+                  Legal
                 </NamedLink>
               </div>
             </div>
           </div>
           <div className={css.copyrightAndTermsMobile}>
+            <NamedLink name="LandingPage" className={css.organizationCopyrightMobile}>
+              <FormattedMessage id="Footer.copyright" />
+              <br />
+            </NamedLink>
             <div className={css.tosAndPrivacyMobile}>
+							
               <NamedLink name="AboutPage" className={css.privacy}>
                 <FormattedMessage id="Footer.about" />
               </NamedLink>
