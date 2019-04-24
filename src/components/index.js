@@ -31,6 +31,7 @@ export { default as FieldPhoneNumberInput } from './FieldPhoneNumberInput/FieldP
 export { default as FieldReviewRating } from './FieldReviewRating/FieldReviewRating';
 export { default as FieldSelect } from './FieldSelect/FieldSelect';
 export { default as FieldTextInput } from './FieldTextInput/FieldTextInput';
+export { default as FirstStepsTabs } from './FirstStepsTabs/FirstStepsTabs';
 export { default as FeesTabs } from './FeesTabs/FeesTabs';
 export { default as Footer } from './Footer/Footer';
 export { default as Form } from './Form/Form';
@@ -56,6 +57,7 @@ export { default as ImageFromFile } from './ImageFromFile/ImageFromFile';
 export { default as LayoutSideNavigation } from './LayoutSideNavigation/LayoutSideNavigation';
 export { default as LayoutSideNavigationWithHero } from './LayoutSideNavigationWithHero/LayoutSideNavigationWithHero';
 export { default as LayoutSingleColumn } from './LayoutSingleColumn/LayoutSingleColumn';
+export { default as LayoutSingleColumnWithHero } from './LayoutSingleColumnWithHero/LayoutSingleColumnWithHero';
 export { default as LayoutWrapperFooter } from './LayoutWrapperFooter/LayoutWrapperFooter';
 export { default as LayoutWrapperHero } from './LayoutWrapperHero/LayoutWrapperHero';
 export { default as LayoutWrapperMain } from './LayoutWrapperMain/LayoutWrapperMain';

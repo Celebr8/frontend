@@ -2,6 +2,7 @@ import React from 'react';
 import {
   AboutPage,
   AuthenticationPage,
+  CareersPage,
   CheckoutPage,
 
 	// Legals
@@ -81,6 +82,11 @@ const routeConfiguration = () => {
       path: '/about',
       name: 'AboutPage',
       component: AboutPage,
+    },
+    {
+      path: '/careers',
+      name: 'CareersPage',
+      component: CareersPage,
     },
     {
       path: '/s',
@@ -292,27 +298,27 @@ const routeConfiguration = () => {
       component: props => <CorporateDealPage {...props} />,
     },
     {
-			path: '/legals/terms-of-service',
+			path: '/legal/terms-of-service',
       name: 'TermsOfServicePage',
       component: props => <TermsOfServicePage {...props} />,
     },
     {
-			path: '/legals/privacy-policy',
+			path: '/legal/privacy-policy',
       name: 'PrivacyPolicyPage',
       component: props => <PrivacyPolicyPage {...props} />,
     },
     {
-			path: '/legals/non-discrimination',
+			path: '/legals/inclusion',
       name: 'NonDiscriminationPolicyPage',
       component: props => <NonDiscriminationPolicyPage {...props} />,
     },
     {
-			path: '/legals/cookie-policy',
+			path: '/legal/cookie-policy',
       name: 'CookiePolicyPage',
       component: props => <CookiePolicyPage {...props} />,
     },
     {
-			path: '/legals/community-guidelines',
+			path: '/legal/community-guidelines',
       name: 'CommunityGuidelinesPage',
       component: props => <CommunityGuidelinesPage {...props} />,
     },

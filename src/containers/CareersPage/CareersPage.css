@@ -1,5 +1,4 @@
-
-@import '../../../marketplace.css';
+@import '../../marketplace.css';
 
 .heading {
   margin: 5px 0 18px 0;
@@ -11,7 +10,7 @@
 
 .content {
   @media (--viewportLarge) {
-    max-width: 100%;
+    max-width: 563px;
   }
 }
 
@@ -115,3 +114,101 @@
     margin: 0 0 63px 0;
   }
 }
+
+p {
+  line-height: 22px!important;
+}
+
+/* BUTTONS */
+.containerButton {
+	margin-top: 25px;
+}
+
+.btnGroup button {
+  background-color: #ff3f00; /* Green background */
+  text-transform: uppercase;
+  border: 1px solid #ff3f00; /* Green border */
+  border-radius: 4px;
+  color: white; /* White text */
+  padding: 10px 0px; /* Some padding */
+  margin-right: 50px;
+  margin-left: 50px;
+  cursor: pointer; /* Pointer/hand icon */
+  float: left; /* Float the buttons side by side */
+  width: 180px;
+
+}
+
+
+.centerButtons {
+   display: flex;
+   justify-content: center;
+}
+
+
+/* Clear floats (clearfix hack) */
+.btnGroup:after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.btnGroup button:not(:last-child) {
+  border-right: none; /* Prevent double borders */
+}
+
+/* Add a background color on hover */
+.btnGroup button:hover {
+  background-color: #fff;
+  color: #ff3f00;
+  border: 1px solid #ff3f00; /* Green border */
+}
+
+.getInTouch {
+	margin-top: 100px;
+}
+
+.getInTouch h3 {
+	text-align: center;
+	padding-bottom: 5px;
+	color: #ff3f00;
+}
+
+.getInTouch p {
+	text-align: center;
+	padding-bottom: 5px;
+}
+
+.termsAndConditionsAccordion {
+	padding-top: 50px;
+}
+
+.examplesAccordion {
+
+}
+
+@media (max-width: 768px) {
+  .getInTouch h3,
+  .getInTouch p {
+    float: none;
+    text-align: left;
+    width: 100%;
+    margin-top: 0;
+    padding: 0;
+  }
+
+  .btnGroup .centerButtons {
+	  display: block;
+	}
+
+	.btnGroup button{
+	  float:none;
+	  padding: 10px 0px;
+	  margin-left: 0;
+	  width: 100%;
+	  }
+
+	.btnGroup button:first-child{
+	  margin-bottom: 15px;
+	  }
+ }

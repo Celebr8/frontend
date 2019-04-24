@@ -15,6 +15,10 @@
     }
   }
 
+    & span {
+        color: #ff3f00;
+    }
+
   & .lastUpdated {
     @apply --marketplaceBodyFontStyles;
     margin-top: 0;
@@ -34,7 +38,7 @@
 	  line-height: 24px;
 	  letter-spacing: 0;
   }
-  
+
   & .dealButton a {
     @apply --marketplaceBodyFontStyles;
     margin-top: 0;
@@ -82,4 +86,289 @@ li ol > li {
 
 li ol > li:before {
   content: counters(item, ".") ". ";
+}
+
+/** EMPLOYEE BENEFIT PAGE **/
+
+.container {
+	width: 100%;
+}
+
+.boxes .boxLeft img{
+	width: 45%;
+	float: left;
+	margin-right: 15px;
+}
+
+.boxLeft {
+
+}
+
+.boxes .boxRight img{
+	width: 45%;
+	float: right;
+	margin-left: 15px;
+}
+
+.boxRight {
+
+}
+
+.boxes{
+  margin-top:50px;
+  border: 0px solid #ff3f00;
+  border-radius: 0px;
+  overflow-y: auto;
+}
+
+.boxRight h3, .boxRight p, .boxRight a {
+	padding-left: 0;
+}
+
+.boxes h3 {
+	margin-top: 0px;
+	padding-bottom: 5px;
+	color: #ff3f00;
+	border-bottom: 1px solid #ff3f00;
+}
+
+.boxes p {
+	margin-top: 0px;
+	margin-bottom: 5px;
+}
+
+img {
+	border-radius: 4px;
+}
+
+.readMore {
+	padding-top: 10px;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.readMore a {
+	font-size: 14px;
+	font-weight: bold;
+    color: #000;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.readMore a:hover {
+    color: #ff3f00;
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .boxes .boxLeft img,
+  .boxes .boxRight img,
+  .boxRight h3,
+  .boxRight p,
+  .boxRight a {
+    float: none;
+    text-align: left;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .boxRight h3,
+  .boxLeft h3,
+  .boxRight p {
+	  padding-top: 10px;
+	  margin-top: 10px;
+  }
+ }
+
+
+/** BUTTONS **/
+
+.containerButton {
+	margin-top: 25px;
+}
+
+.btnGroup button {
+  background-color: #ff3f00; /* Green background */
+  text-transform: uppercase;
+  border: 1px solid #ff3f00; /* Green border */
+  border-radius: 4px;
+  color: white; /* White text */
+  padding: 10px 0px; /* Some padding */
+  margin-right: 50px;
+  margin-left: 50px;
+  cursor: pointer; /* Pointer/hand icon */
+  float: left; /* Float the buttons side by side */
+  width: 180px;
+
+}
+
+
+.centerButtons {
+   display: flex;
+   justify-content: center;
+}
+
+
+/* Clear floats (clearfix hack) */
+.btnGroup:after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.btnGroup button:not(:last-child) {
+  border-right: none; /* Prevent double borders */
+}
+
+/* Add a background color on hover */
+.btnGroup button:hover {
+  background-color: #fff;
+  color: #ff3f00;
+  border: 1px solid #ff3f00; /* Green border */
+}
+
+.getInTouch {
+	margin-top: 75px;
+}
+
+.getInTouch h3 {
+	text-align: center;
+	padding-bottom: 5px;
+	color: #ff3f00;
+}
+
+.getInTouch p {
+	text-align: center;
+	padding-bottom: 5px;
+}
+
+.termsAndConditionsAccordion {
+	padding-top: 50px;
+}
+
+.examplesAccordion {
+
+}
+
+@media (max-width: 768px) {
+  .getInTouch h3,
+  .getInTouch p {
+    float: none;
+    text-align: left;
+    width: 100%;
+    margin-top: 0;
+    padding: 0;
+  }
+
+  .btnGroup .centerButtons {
+	  display: block;
+	}
+
+	.btnGroup button{
+	  float:none;
+	  padding: 10px 0px;
+	  margin-left: 0;
+	  width: 100%;
+	  }
+
+	.btnGroup button:first-child{
+	  margin-bottom: 15px;
+	  }
+ }
+
+/* Accordion */
+
+details {
+  width: 100%;
+  min-height: 5px;
+  max-width: 700px;
+  padding: 15px 70px 15px 15px;
+  margin: 0 auto;
+  margin-top: 80px;
+  position: relative;
+  font-size: 22px;
+  border: 2px solid #ff3f00;
+  border-radius: 4px;
+  box-sizing: border-box;
+  transition: all .3s;
+}
+
+details + details {
+  margin-top: 20px;
+}
+
+details[open] {
+  min-height: 50px;
+  background-color: #transparent;
+  color: #ff3f00;
+}
+
+details p {
+  color: #4a4a4a;
+  font-weight: 300;
+}
+
+summary {
+  font-weight: 500;
+  cursor: pointer;
+}
+
+/* removed outline as for codepen only
+  don't remove focus on elements
+  it's bad accessibility
+  don't be _that_ guy
+*/
+summary:focus {
+  outline: none;
+}
+
+summary::-webkit-details-marker {
+  display: none
+}
+
+summary::after {
+  padding: 20px;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  color: #ff3f00;
+  font-family: "Font Awesome 5 Free";
+  font-size: 20px;
+  font-style: normal;
+  font-variant-caps: normal;
+  font-variant-ligatures: normal;
+  font-weight: 900;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  content: "+";
+  transform: translateY(-50%);
+  transition: .3s ease;
+}
+
+details[open] summary::after {
+  content: "-";
+  font-size: 30px;
+  top: 0;
+  transform: translateY(0);
+  transition: .3s ease;
+}
+
+details[open] summary:hover::after {
+  animation: pulse 1s ease;
+}
+
+@keyframes pulse {
+  25% {
+    transform: scale(1.1);
+  }
+  50% {
+    transform: scale(1);
+  }
+  75% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
