@@ -49,6 +49,7 @@
     padding: 0 24px;
   }
 }
+ 
 
 /* Mobile only social media links */
 .someLiksMobile {
@@ -289,6 +290,8 @@
 }
 
 .tosAndPrivacy {
+	color: #b2b2b2;
+	font-size: 13px;
   margin-top: 0;
   margin-bottom: 0;
   text-transform: uppercase;
@@ -340,22 +343,35 @@
   }
 }
 
+.registrationMobile {
+
+  @apply --marketplaceTinyFontStyles;
+	order: 10;
+
+  @media (--viewportMedium) {
+    display: none;
+  }
+
+}
 .organizationCopyrightMobile {
   /* Font */
-  @apply --marketplaceTinyFontStyles;
+  @apply --marketplaceTinyFontStyles; 
   color: var(--matterColorAnti);
   transition: var(--transitionStyleButton);
 
   /* Tell parent component how much space this one prefers */
   flex-basis: 172px;
 
-  margin-top: 0;
+  margin-top: 8px;
   margin-bottom: 0;
 
   &:hover {
     color: var(--marketplaceColor);
     text-decoration: none;
   }
+
+	text-size: 10px;
+
 }
 
 .tosAndPrivacyMobile {

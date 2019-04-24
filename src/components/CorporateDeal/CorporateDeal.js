@@ -45,6 +45,7 @@ const CorporateDeal  = props => {
     <section>
                 <p>With Whichost, you and your employees can easily find and book pubs to host your parties, which in itself is already an amazing benefit (it saves time).</p>
                 <p>With our Employee Benefit, we want to give your employees the benefit of receiving an One4all Gift Card of up to €300.00 in value (it gives money) with every party.</p>
+								<p><strong>Your employees already book pubs to host their parties and celebrations (birthdays, promotions, graduations, farewells, etc.) so why not give them another reason to celebrate.</strong></p>
     </section>
 
     <h2>This is how it works</h2>
@@ -68,7 +69,7 @@ const CorporateDeal  = props => {
                             <button type="submit">Email us</button>
                         </form>
 						<form action="https://info.whichost.com/eng/book-a-call" method="get" target="_blank">
-                            <button type="submit">Book a call</button>
+                            <button type="submit">Request a Callback</button>
                         </form>
 					</section>
 				</div>

@@ -113,6 +113,29 @@
   }
 }
 
+.helpCenterLink {
+  @apply --TopbarDesktop_linkHover;
+  @apply --marketplaceH4FontStyles;
+  height: 100%;
+  padding: 0 12px 0 12px;
+  margin-top: 0;
+  margin-bottom: 0;
+  color: var(--matterColor);
+
+  &:hover {
+    color: var(--matterColorDark);
+  }
+
+  @media (--viewportMedium) {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+.helpCenter {
+  @apply --TopbarDesktop_label;
+}
+
 /* Create listing (CTA for providers) */
 .createListingLink {
   @apply --TopbarDesktop_linkHover;

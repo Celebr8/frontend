@@ -1,0 +1,5 @@
+export { default as PrivacyPolicyPage } from './PrivacyPolicyPage/PrivacyPolicyPage'
+export { default as TermsOfServicePage } from './TermsOfServicePage/TermsOfServicePage'
+export { default as CookiePolicyPage } from './CookiePolicyPage/CookiePolicyPage'
+export { default as NonDiscriminationPolicyPage } from './NonDiscriminationPolicyPage/NonDiscriminationPolicyPage'
+export { default as CommunityGuidelinesPage } from './CommunityGuidelinesPage/CommunityGuidelinesPage'
