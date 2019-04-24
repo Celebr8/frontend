@@ -25,7 +25,7 @@ const CorporateDeal  = props => {
 					<div className={css.boxLeft}>
 						<img src={image1}></img>
 						<h3>Win win for everyone!</h3>
-						<p>Give your employees the benefit of enjoying an Amazon Gift Card of up to <span><b>€ 300.00</b></span> on us, with every party they book through Whichost!</p>
+						<p>Give your employees the benefit of enjoying an One4all Gift Card of up to <span><b>€ 300.00</b></span> on us, with every party they book through Whichost!</p>
 						<p>How many of your employees would be more inclined to stay if they had good benefits? <b>75% of them</b>.</p>
                         <p>And what’s the number one benefit for them? Plenty of research confirms that the number one benefit for employees is having <b>more money in their bank accounts</b>.</p>
 					</div>
@@ -44,18 +44,18 @@ const CorporateDeal  = props => {
 
     <section>
                 <p>With Whichost, you and your employees can easily find and book pubs to host your parties, which in itself is already an amazing benefit (it saves time).</p>
-                <p>With our Employee Benefit, we want to give your employees the benefit of receiving an Amazon Gift Card of up to €300.00 in value (it gives money) with every party.</p>
+                <p>With our Employee Benefit, we want to give your employees the benefit of receiving an One4all Gift Card of up to €300.00 in value (it gives money) with every party.</p>
     </section>
 
     <h2>This is how it works</h2>
       <ul>
         <p><li>They will get will get 100% of their booking payment back once the booking is confirmed. This will come either as a refund or credit to their party bill receipt.</li></p>
-				<p><li>They will receive up to €280.00 in an Amazon Gift Card for parties held between Thursdays and Sundays, depending on the size of the party (see table below).</li></p>
-				<p><li>They will receive up to €300.00 in an Amazon Gift Card for parties held between Mondays and Wednesdays, depending on the size of the party (see table below).</li></p>
+				<p><li>They will receive up to €280.00 in an One4all Gift Card for parties held between Thursdays and Sundays, depending on the size of the party (see table below).</li></p>
+				<p><li>They will receive up to €300.00 in an One4all Gift Card for parties held between Mondays and Wednesdays, depending on the size of the party (see table below).</li></p>
       </ul>
     <PricingTable />
 
-    <p><b>We will add an extra €10.00 to the Amazon Gift Card</b> if they have their party at a pub that they recommended to us<b>*</b>. They can recommend a pub at any time by <a href="https://docs.google.com/forms/d/e/1FAIpQLSfr2dEghUT1VF1i9BWPsvZIJpnHe2FPVmCuoHJaAR3AXDe_GA/viewform" target="_blank">clicking here</a>.</p>
+    <p><b>We will add an extra €10.00 to the One4all Gift Card</b> if they have their party at a pub that they recommended to us<b>*</b>. They can recommend a pub at any time by <a href="https://docs.google.com/forms/d/e/1FAIpQLSfr2dEghUT1VF1i9BWPsvZIJpnHe2FPVmCuoHJaAR3AXDe_GA/viewform" target="_blank">clicking here</a>.</p>
     <p><i>* Valid only for recommendations of pubs that are not already listed on Whichost.</i></p>
 
 
@@ -101,7 +101,7 @@ const CorporateDeal  = props => {
 			</ol>
 
 		</li>
-		<li>By having the party through Whichost between Thursdays and Sundays, and reviewing the pub, the employee  will receive an Amazon Gift Card of up to €280.00, depending on the size of the party as follows:
+		<li>By having the party through Whichost between Thursdays and Sundays, and reviewing the pub, the employee  will receive an One4all Gift Card of up to €280.00, depending on the size of the party as follows:
 			<ul>
 				<li>Up to 30 people - € 20.00</li>
 				<li>31 to 50 people - € 45.00</li>
@@ -111,7 +111,7 @@ const CorporateDeal  = props => {
 			</ul>
 
 			<ol>
-				<li>Whichost will add an extra €10.00 to the Amazon Gift Card if the employee has the party at a pub that they recommended to us*. The employee can recommend a pub at any time by <a href="https://docs.google.com/forms/d/e/1FAIpQLSfr2dEghUT1VF1i9BWPsvZIJpnHe2FPVmCuoHJaAR3AXDe_GA/viewform" target="_blank">clicking here</a>.
+				<li>Whichost will add an extra €10.00 to the One4all Gift Card if the employee has the party at a pub that they recommended to us*. The employee can recommend a pub at any time by <a href="https://docs.google.com/forms/d/e/1FAIpQLSfr2dEghUT1VF1i9BWPsvZIJpnHe2FPVmCuoHJaAR3AXDe_GA/viewform" target="_blank">clicking here</a>.
 					<ol>
 						<li>This is valid for recommendations of pubs not already listed on Whichost.</li>
 						<li>The employee that recommended the pub must be the same one that books it through Whichost and celebrates their party there.</li>
@@ -149,10 +149,10 @@ const CorporateDeal  = props => {
 					</ol>
 				</li>
 				<li>The review must be submitted within one week of making use of the booking.</li>
-				<li>All Amazon Gift Cards are sent electronically to the employee’s email address in their Whichost account.</li>
+				<li>All One4all Gift Cards are sent electronically to the employee’s email address in their Whichost account.</li>
 			</ol>
 		</li>
-		<li>By having the party through Whichost between Mondays and Wednesdays, and reviewing the pub, the employee will receive an Amazon Gift Card of up to €300.00, depending on the size of the party as follows:
+		<li>By having the party through Whichost between Mondays and Wednesdays, and reviewing the pub, the employee will receive an One4all Gift Card of up to €300.00, depending on the size of the party as follows:
 			<ul>
 				<li>Up to 30 people - € 30.00</li>
 				<li>31 to 50 people - € 55.00</li>
@@ -193,12 +193,12 @@ const CorporateDeal  = props => {
 					</ol>
 				</li>
 				<li>The review must be submitted within one week of making use of the booking.</li>
-				<li>All Amazon Gift Cards are sent electronically to the employee’s email address in their Whichost account.</li>
+				<li>All One4all Gift Cards are sent electronically to the employee’s email address in their Whichost account.</li>
 			</ol>
 		</li>
-    <li>All Amazon Gift Cards are provided in British Pound Sterling (‎£) and are valid for Amazon UK (www.amazon.co.uk).
+    <li>All One4all Gift Cards are provided in British Pound Sterling (‎£) and are valid for Amazon UK (www.amazon.co.uk).
 			<ol>
-				<li>At the day of issuing the Amazon Gift Card, we will convert your total award, from Euros (€) into British Pound Sterling (‎£) using the conversion rate provided by Google.</li>
+				<li>At the day of issuing the One4all Gift Card, we will convert your total award, from Euros (€) into British Pound Sterling (‎£) using the conversion rate provided by Google.</li>
 			</ol>
 		</li>
 		<li>This Whichost benefit does not accumulate with any other deals, promotions or benefits that Whichost may provide at any time.</li>
@@ -221,7 +221,7 @@ const CorporateDeal  = props => {
 					<li>Aoife’s 100% refund is triggered (if the listing is managed by Whichost).</li>
 				</ol>
 			</li>
-			<li><b>Example explaining how to avail the Amazon Gift Card if the pub was already listed on Whichost:</b>
+			<li><b>Example explaining how to avail the One4all Gift Card if the pub was already listed on Whichost:</b>
 				<ol>
 					<li>Aoife, a fictitious employee of yours, registers to Whichost using her organisation email address.</li>
 					<li>Aoife completes her profile.</li>
@@ -233,14 +233,14 @@ const CorporateDeal  = props => {
 					<li>Aoife writes a review for the pub on Whichost.</li>
 					<li>Whichost checks the Instagram/Facebook/Twitter post and the bookings in the platform and if everything matches, they send:
 						<ol>
-							<li>A €20.00 Amazon Gift Card to Aoife’s email address (the one registered in her Whichost account) if the party was held on a Thursday, Friday, Saturday or Sunday.</li>
-							<li>A €30.00 Amazon Gift Card to Aoife’s email address (the one registered in her Whichost account) if the party was held on a Monday, Tuesday or Wednesday.</li>
+							<li>A €20.00 One4all Gift Card to Aoife’s email address (the one registered in her Whichost account) if the party was held on a Thursday, Friday, Saturday or Sunday.</li>
+							<li>A €30.00 One4all Gift Card to Aoife’s email address (the one registered in her Whichost account) if the party was held on a Monday, Tuesday or Wednesday.</li>
 						</ol>
 					</li>
 					<li>If the information does not match, for any reason, Whichost will contact Aoife to clarify.</li>
 				</ol>
 			</li>
-			<li><b>Example explaining how to avail the Amazon Gift Card if the pub was not already listed on Whichost and it was recommended:</b>
+			<li><b>Example explaining how to avail the One4all Gift Card if the pub was not already listed on Whichost and it was recommended:</b>
 				<ol>
 					<li>Aoife registers to Whichost.</li>
 					<li>Aoife completes her profile.</li>
@@ -254,8 +254,8 @@ const CorporateDeal  = props => {
 					<li>Aoife writes a review for the pub on Whichost.</li>
 					<li>Whichost checks the Instagram/Facebook/Twitter post and the bookings in the platform and if everything matches, they send:
 						<ol>
-							<li>A €30.00 (€20.00 for the party of 20 + €10.00 for the pub recommendation) Amazon Gift Card to Aoife’s email address (the one registered in her Whichost account) if the party was held on a Thursday, Friday, Saturday or Sunday.</li>
-							<li>A €30.00 Amazon Gift Card to Aoife’s email address (the one registered in her Whichost account) if the party was held on a Monday, Tuesday or Wednesday.</li>
+							<li>A €30.00 (€20.00 for the party of 20 + €10.00 for the pub recommendation) One4all Gift Card to Aoife’s email address (the one registered in her Whichost account) if the party was held on a Thursday, Friday, Saturday or Sunday.</li>
+							<li>A €30.00 One4all Gift Card to Aoife’s email address (the one registered in her Whichost account) if the party was held on a Monday, Tuesday or Wednesday.</li>
 						</ol>
 					</li>
 					<li>If the information does not match, for any reason, Whichost will contact Aoife to clarify.</li>
