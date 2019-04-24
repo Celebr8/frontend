@@ -1,0 +1,214 @@
+@import '../../marketplace.css';
+
+.heading {
+  margin: 5px 0 18px 0;
+
+  @media (--viewportMedium) {
+    margin: 2px 0 23px 0;
+  }
+}
+
+.content {
+  @media (--viewportLarge) {
+    max-width: 563px;
+  }
+}
+
+.heroContainer {
+  display: flex;
+  flex-direction: column;
+  min-height: 300px;
+  height: 67.5vh;
+  max-height: 600px;
+  padding: 0;
+
+  @media (--viewportMedium) {
+    min-height: 500px;
+    height: 70vh;
+    max-height: none;
+  }
+
+  @media (--viewportLarge) {
+    max-height: 800px;
+    min-height: 600px;
+    height: calc(70vh - var(--topbarHeightDesktop));
+  }
+}
+
+.hero {
+  flex-grow: 1;
+  justify-content: flex-end;
+  padding-bottom: 32px;
+
+  @media (--viewportMedium) {
+    padding-bottom: 83px;
+  }
+
+  @media (--viewportLarge) {
+    justify-content: center;
+    padding-top: 60px;
+  }
+}
+
+
+/* Animation for the hero elements */
+
+@keyframes animationTitle {
+  0% {
+    visibility: hidden;
+    opacity: 0;
+    top: -20px;
+  }
+  100% {
+    visibility: visible;
+    opacity: 1;
+    top: 0;
+  }
+}
+
+
+.heroContent {
+  margin: 0 24px 0 24px;
+
+  @media (--viewportMedium) {
+    margin: 0 7.5vw 0 7.5vw;
+  }
+
+  /* Special viewport for adjusting the heroContent's placement */
+
+  @media only screen and (min-width: 1025px) and (max-width: 1366px) {
+    padding: 0 36px 0 36px;
+  }
+
+  @media only screen and (min-width: 1367px) {
+    margin: 0 auto;
+    max-width: calc(1052px + 36px + 36px);
+    width: 100%;
+    padding: 0 36px 0 36px;
+  }
+}
+
+.heroMainTitle {
+  @apply --marketplaceHeroTitleFontStyles;
+  color: var(--matterColorLight);
+
+  @apply --SectionHero_animation;
+  animation-delay: 0.5s;
+
+  @media (--viewportMedium) {
+    max-width: var(--SectionHero_desktopTitleMaxWidth);
+  }
+}
+
+.heroSubTitle {
+  @apply --marketplaceBodyFontStyles;
+
+  color: var(--matterColorLight);
+  margin: 0 0 32px 0;
+
+  @apply --SectionHero_animation;
+  animation-delay: 0.65s;
+
+  @media (--viewportMedium) {
+    max-width: var(--SectionHero_desktopTitleMaxWidth);
+    margin: 0 0 63px 0;
+  }
+}
+
+p {
+  line-height: 22px!important;
+}
+
+/* BUTTONS */
+.containerButton {
+	margin-top: 25px;
+}
+
+.btnGroup button {
+  background-color: #ff3f00; /* Green background */
+  text-transform: uppercase;
+  border: 1px solid #ff3f00; /* Green border */
+  border-radius: 4px;
+  color: white; /* White text */
+  padding: 10px 0px; /* Some padding */
+  margin-right: 50px;
+  margin-left: 50px;
+  cursor: pointer; /* Pointer/hand icon */
+  float: left; /* Float the buttons side by side */
+  width: 180px;
+
+}
+
+
+.centerButtons {
+   display: flex;
+   justify-content: center;
+}
+
+
+/* Clear floats (clearfix hack) */
+.btnGroup:after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.btnGroup button:not(:last-child) {
+  border-right: none; /* Prevent double borders */
+}
+
+/* Add a background color on hover */
+.btnGroup button:hover {
+  background-color: #fff;
+  color: #ff3f00;
+  border: 1px solid #ff3f00; /* Green border */
+}
+
+.getInTouch {
+	margin-top: 100px;
+}
+
+.getInTouch h3 {
+	text-align: center;
+	padding-bottom: 5px;
+	color: #ff3f00;
+}
+
+.getInTouch p {
+	text-align: center;
+	padding-bottom: 5px;
+}
+
+.termsAndConditionsAccordion {
+	padding-top: 50px;
+}
+
+.examplesAccordion {
+
+}
+
+@media (max-width: 768px) {
+  .getInTouch h3,
+  .getInTouch p {
+    float: none;
+    text-align: left;
+    width: 100%;
+    margin-top: 0;
+    padding: 0;
+  }
+
+  .btnGroup .centerButtons {
+	  display: block;
+	}
+
+	.btnGroup button{
+	  float:none;
+	  padding: 10px 0px;
+	  margin-left: 0;
+	  width: 100%;
+	  }
+
+	.btnGroup button:first-child{
+	  margin-bottom: 15px;
+	  }
+ }

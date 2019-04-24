@@ -2,6 +2,7 @@ import React from 'react';
 import {
   AboutPage,
   AuthenticationPage,
+  CareersPage,
   CheckoutPage,
 
 	// Legals
@@ -81,6 +82,11 @@ const routeConfiguration = () => {
       path: '/about',
       name: 'AboutPage',
       component: AboutPage,
+    },
+    {
+      path: '/careers',
+      name: 'CareersPage',
+      component: CareersPage,
     },
     {
       path: '/s',
@@ -302,7 +308,7 @@ const routeConfiguration = () => {
       component: props => <PrivacyPolicyPage {...props} />,
     },
     {
-			path: '/legal/non-discrimination',
+			path: '/legals/inclusion',
       name: 'NonDiscriminationPolicyPage',
       component: props => <NonDiscriminationPolicyPage {...props} />,
     },

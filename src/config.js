@@ -1,6 +1,10 @@
 import * as custom from './marketplace-custom-config.js';
 import defaultLocationSearches from './default-location-searches';
 
+import dotenv from 'dotenv';
+
+dotenv.config();
+
 const env = process.env.REACT_APP_ENV;
 const dev = process.env.REACT_APP_ENV === 'development';
 
@@ -67,6 +71,10 @@ const sentryDsn = process.env.REACT_APP_PUBLIC_SENTRY_DSN;
 
 // If webapp is using SSL (i.e. it's behind 'https' protocol)
 const usingSSL = process.env.REACT_APP_SHARETRIBE_USING_SSL === 'true';
+
+// reCaptcha google API key 
+const reCaptchaSiteKey = process.env.REACT_APP_RECAPTCHA_SITE_KEY;
+const serviceMessageUrl = process.env.REACT_APP_SERVICE_MESSAGE_URL;
 
 // Currency formatting options.
 // See: https://github.com/yahoo/react-intl/wiki/API#formatnumber
@@ -373,6 +381,8 @@ const config = {
   siteTwitterHandle,
   facebookAppId,
   sentryDsn,
+	reCaptchaSiteKey,
+	serviceMessageUrl,
   usingSSL,
   maps,
   custom,

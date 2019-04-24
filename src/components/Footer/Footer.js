@@ -18,6 +18,7 @@ import css from './Footer.css';
 import { mainLocationsData, locationToURI } from '../../locals';
 
 const renderSocialMediaLinks = intl => {
+
   const { siteFacebookPage, siteInstagramPage, siteTwitterHandle } = config;
   const siteTwitterPage = twitterPageURL(siteTwitterHandle);
 
@@ -54,6 +55,7 @@ const renderSocialMediaLinks = intl => {
   ) : null;
 
   return [fbLink, twitterLink, instragramLink].filter(v => v != null);
+
 };
 
 const renderFavoriteLocation = location => (
