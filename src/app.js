@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import ReactDOMServer from 'react-dom/server';
 
@@ -16,6 +16,7 @@ import configureStore from './store';
 import routeConfiguration from './routeConfiguration';
 import Routes from './Routes';
 import config from './config';
+import { loadReCaptcha } from 'react-recaptcha-google'
 
 // If you want to change the language, Change the imports to the match
 // the wanted locale.
@@ -45,19 +46,24 @@ const setupLocale = () => {
   moment.locale(config.locale);
 };
 
-export const ClientApp = props => {
-  const { store } = props;
-  setupLocale();
-  return (
-    <IntlProvider locale={config.locale} messages={localeMessages}>
-      <Provider store={store}>
-        <BrowserRouter>
-          <Routes routes={routeConfiguration()} />
-        </BrowserRouter>
-      </Provider>
-    </IntlProvider>
-  );
-};
+export class ClientApp extends Component {
+  componentDidMount() {
+    loadReCaptcha();
+  }
+  render() {
+    const { store } = this.props;
+    setupLocale();
+    return (
+      <IntlProvider locale={config.locale} messages={localeMessages}>
+        <Provider store={store}>
+          <BrowserRouter>
+            <Routes routes={routeConfiguration()} />
+          </BrowserRouter>
+        </Provider>
+      </IntlProvider>
+    );
+  }
+}
 
 const { any, string } = PropTypes;
 
