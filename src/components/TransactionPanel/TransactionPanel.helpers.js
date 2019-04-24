@@ -332,6 +332,21 @@ export const OrderAttendance = props => {
 
 }
 
+export const OrderTime = props => {
+
+	const {
+		transaction	
+	} = props;
+
+	const time = transaction.attributes.protectedData.time;
+
+	return time?
+		(<p>
+			<FormattedMessage id="InboxPage.time" /> : {time}
+		</p>)
+		: null;
+
+}
 export const OrderOccasion = props => {
 
 	const {

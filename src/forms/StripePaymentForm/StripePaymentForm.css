@@ -9,8 +9,9 @@
   @apply --marketplaceInputStyles;
 
   /* Layout */
-  padding: 8px 0 6px 0;
+  padding: 8px 0 16px 0;
   height: 36px;
+  margin: 16px 0 14px 0;
 
   /* Border */
   border-bottom-color: var(--attentionColor);
@@ -32,39 +33,25 @@
   border-bottom-color: var(--failColor);
 }
 
-.paymentHeading {
-  margin: 0 0 14px 0;
+.paymentHeading,
+.messageHeading,
+.timeHeading,
+.occasionHeading,
+.attendanceHeading
+{
+  margin: 16px 0 14px 0;
   color: var(--matterColorAnti);
 
   @media (--viewportMedium) {
-    margin: 0 0 26px 0;
+    margin: 32px 0 16px 0;
   }
 }
 
-.paymentLabel {
-  margin: 0;
-
-  @media (--viewportMedium) {
-    margin-bottom: 2px;
-  }
-  @media (--viewportLarge) {
-    margin-bottom: 4px;
-  }
-}
-
-.messageHeading {
-  color: var(--matterColorAnti);
-  margin: 40px 0 14px 0;
-
-  @media (--viewportMedium) {
-    margin: 41px 0 26px 0;
-  }
-  @media (--viewportLarge) {
-    margin: 40px 0 26px 0;
-  }
-}
-
-.messageLabel {
+.messageLabel,
+.timeLabel,
+.occasionLabel,
+.attendanceLabel 
+{
   margin: 0 0 5px 0;
 
   @media (--viewportMedium) {
@@ -76,7 +63,12 @@
   color: var(--matterColorAnti);
 }
 
-.message {
+
+.message,
+.time,
+.occasion,
+.attendance
+{
   border-bottom-color: var(--matterColorAnti);
 	margin-top: 16px;
 	margin-bottom: 16px;
@@ -86,7 +78,7 @@
   margin-top: auto;
 
   @media (--viewportLarge) {
-    margin-top: 72px;
+    margin-top: 32px;
   }
 }
 
@@ -104,6 +96,7 @@
   }
 }
 
+.validTime,
 .validAttendance {
   color: var(--matterColorAnti);
 	font-size: 15px;
@@ -111,44 +104,6 @@
 	margin-top: 0px;
 }
 
-.occasionHeading {
-  margin: 0 0 14px 0;
-  color: var(--matterColorAnti);
-
-  @media (--viewportMedium) {
-    margin: 0 0 26px 0;
-  }
-}
-
-.occasion {
-  margin-top: 22px;
-
-  @media (--viewportMedium) {
-    margin-top: 26px;
-  }
-  @media (--viewportLarge) {
-    margin-top: 17px;
-  }
-}
-
-.attendanceHeading {
-  color: var(--matterColorAnti);
-
-	margin-top: 16px;
-	margin-bottom: 16px;
-
-}
-
-.attendance {
-  margin-top: 22px;
-
-  @media (--viewportMedium) {
-    margin-top: 26px;
-  }
-  @media (--viewportLarge) {
-    margin-top: 17px;
-  }
-}
 
 .submitButton {
   margin-top: 22px;

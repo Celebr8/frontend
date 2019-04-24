@@ -154,7 +154,8 @@ export class CheckoutPageComponent extends Component {
       bookingEnd: speculatedTransaction.booking.attributes.end,
 			protectedData: {
 				attendance: values.attendance,
-				occasion: values.occasion
+				occasion: values.occasion,
+				time: values.time
 			}
 
     };
