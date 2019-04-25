@@ -197,11 +197,6 @@ const CorporateDeal  = props => {
 				<li>All One4all Gift Cards are sent electronically to the employee’s email address in their Whichost account.</li>
 			</ol>
 		</li>
-    <li>All One4all Gift Cards are provided in British Pound Sterling (‎£) and are valid for Amazon UK (www.amazon.co.uk).
-			<ol>
-				<li>At the day of issuing the One4all Gift Card, we will convert your total award, from Euros (€) into British Pound Sterling (‎£) using the conversion rate provided by Google.</li>
-			</ol>
-		</li>
 		<li>This Whichost benefit does not accumulate with any other deals, promotions or benefits that Whichost may provide at any time.</li>
 		<li>Whichost reserves the right to change these terms and conditions at any time without prior notice. In the event that any changes are made, the revised terms and conditions shall be published immediately.</li>
 	</ol>
