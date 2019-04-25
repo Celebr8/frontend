@@ -103,14 +103,14 @@ const Footer = props => {
               <ul className={css.list}>
                 <li className={css.listCustomer}>Customer</li>
                 <li className={css.listItem}>
-                  <a href="/login" className={css.link}>
+                  <NamedLink name="LoginPage" className={css.link}>
                     Log in
-                  </a>
+                  </NamedLink>
                 </li>
                 <li className={css.listItem}>
-                  <a href="/signup" className={css.link}>
+									<NamedLink name="SignupPage" className={css.link}>
                     Sign up
-                  </a>
+                  </NamedLink>
                 </li>
                 <li className={css.listItem}>
                   <a
@@ -140,14 +140,14 @@ const Footer = props => {
               <ul className={css.list}>
                 <li className={css.listPublican}>Publican</li>
                 <li className={css.listItem}>
-                  <a href="/login" className={css.link}>
+                  <NamedLink name="LoginPage" className={css.link}>
                     Log in
-                  </a>
+                  </NamedLink>
                 </li>
                 <li className={css.listItem}>
-                  <a href="/signup" className={css.link}>
+                  <NamedLink name="SignupPage" className={css.link}>
                     Sign up
-                  </a>
+                  </NamedLink>
                 </li>
                 <li className={css.listItem}>
                   <NamedLink name="NewListingPage" className={css.link}>
@@ -155,13 +155,13 @@ const Footer = props => {
                   </NamedLink>
                 </li>
                 <li className={css.listItem}>
-                  <a
-                    href="https://docs.google.com/document/d/1KtFBwGkdd79Sabjt1s4PBzpKkZtY0rDy3Wqkq0k8ED8/edit"
+                  <NamedLink
+                    name="GuidebookForProvidersPage"
                     target="_blank"
                     className={css.link}
                   >
                     Guidebook
-                  </a>
+                  </NamedLink>
                 </li>
               </ul>
             </div>
@@ -171,13 +171,9 @@ const Footer = props => {
                   Whichost
                 </li>
                 <li className={css.listItem}>
-                  <a
-                    href="https://info.whichost.com/join-the-team/"
-                    target="_blank"
-                    className={css.link}
-                  >
-                    We're hiring
-                  </a>
+                  <NamedLink name="CareersPage" className={css.link}>
+                    <FormattedMessage id="Footer.careersPage" />
+                  </NamedLink>
                 </li>
                 <li key="inviteAFriend" className={css.listItem}>
                   <a
@@ -198,19 +194,19 @@ const Footer = props => {
                   </a>
                 </li>
                 <li key="guidelines" className={css.listItem}>
-                  <a href="/legals/community-guidelines" target="_blank" className={css.link}>
+                  <NamedLink name="CommunityGuidelinesPage" target="_blank" className={css.link}>
                     <FormattedMessage id="Footer.toCommunityGuidelines" />
-                  </a>
+                  </NamedLink>
                 </li>
                 <li key="helpCenter" className={css.listItem}>
-                  <a href="/help/FAQ" target="_blank" className={css.link}>
+                  <NamedLink name="FAQPage" target="_blank" className={css.link}>
                     <FormattedMessage id="Footer.toFAQPage" />
-                  </a>
+                  </NamedLink>
                 </li>
                 <li key="fees" className={css.listItem}>
-                  <a href="/help/Fees" target="_blank" className={css.link}>
+                  <NamedLink name="FeesPage" target="_blank" className={css.link}>
                     <FormattedMessage id="Footer.toPricing" />
-                  </a>
+                  </NamedLink>
                 </li>
               </ul>
             </div>
@@ -233,12 +229,12 @@ const Footer = props => {
                   <FormattedMessage id="Footer.toAboutPage" />
                 </NamedLink>
 								{separator}
-                <a
-                  href="mailto:support@whichost.com?subject=General%20inquiry"
+                <NamedLink
+                  name="ContactUsPage"
                   className={css.legalLink}
                 >
                   Contact
-                </a>
+                </NamedLink>
 								{separator}
                 <NamedLink name="TermsOfServicePage" className={css.legalLink}>
                   <FormattedMessage id="Footer.termsOfUse" />
@@ -265,12 +261,12 @@ const Footer = props => {
                 <FormattedMessage id="Footer.about" />
               </NamedLink>
 
-              <a
-                href="mailto:support@whichost.com?subject=General%20inquiry"
+              <NamedLink 
+                name="ContactUsPage"
                 className={css.privacy}
               >
                 Contact
-              </a>
+              </NamedLink>
 
               <NamedLink name="PrivacyPolicyPage" className={css.privacy}>
                 <FormattedMessage id="Footer.privacy" />

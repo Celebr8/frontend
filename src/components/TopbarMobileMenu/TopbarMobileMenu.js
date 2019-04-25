@@ -45,7 +45,7 @@ const TopbarMobileMenu = props => {
     );
 
 		const helpCenterLink = (
-      <a href="https://info.whichost.com/eng/faq" target="_blank" className={css.link}>Help centre</a>
+      <NamedLink name="FAQPage" target="_blank" className={css.link}>Help centre</NamedLink>
 		)
 
     return (
@@ -99,11 +99,14 @@ const TopbarMobileMenu = props => {
         <InlineTextButton className={css.logoutButton} onClick={onLogout}>
           <FormattedMessage id="TopbarMobileMenu.logoutLink" />
         </InlineTextButton>
-				<a className={css.navigationLink} target="_blank" href="https://info.whichost.com/eng/faq">
+				<NamedLink 
+					className={css.navigationLink} 
+					target="_blank" 
+					name="FAQPage">
 					<span className={css.helpCenter}>
 						<FormattedMessage id="TopbarDesktop.helpCenter" />
 					</span>
-				</a>
+				</NamedLink>
         <NamedLink
           className={classNames(css.inbox, currentPageClass('InboxPage'))}
           name="InboxPage"

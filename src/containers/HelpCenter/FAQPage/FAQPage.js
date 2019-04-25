@@ -15,7 +15,8 @@ import {
 	LayoutWrapperTopbar,
 	LayoutWrapperFooter,
 	Footer,
-	FAQ
+	FAQ,
+	NamedLink
 } from '../../../components';
 import config from '../../../config';
 
@@ -197,7 +198,7 @@ class FAQPagePanelsBase extends React.Component {
 					</ExpansionPanelSummary>
 					<ExpansionPanelDetails>
 						<Typography>
-						Please, feel free to contact us at <a href="mailto:support@whichost.com?subject=Help Center Question" target="_blank">support@whichost.com</a>. We'll be happy to answer all of your questions.
+							Please, feel free to contact us at <a href="mailto:support@whichost.com?subject=Help Center Question" target="_blank">support@whichost.com</a> or by clicking <NamedLink name="ContactUsPage">here</NamedLink>. We'll be happy to answer all of your questions.
 						</Typography>
 					</ExpansionPanelDetails>
 				</ExpansionPanel>
@@ -235,7 +236,7 @@ class FAQPagePanelsBase extends React.Component {
 					<ExpansionPanelDetails>
 						<Typography>
 						Adding your pub to Whichost is easy and only takes a few minutes. Once you’ve created a Whichost account, simply click the “+ Add my pub” at the top right.
-						Please note that all listings are subject to review by our team to ensure the safety of our community. If you need help with your listing, please email us at <a href="mailto:support@whichost.com?subject=How do I list my pub inquiry" target="_blank">support@whichost.com</a>.
+						Please note that all listings are subject to review by our team to ensure the safety of our community. If you need help with your listing, please <NamedLink name="ContactUsPage">click here</NamedLink>or email us at <a href="mailto:support@whichost.com?subject=How do I list my pub inquiry" target="_blank">support@whichost.com</a>.
 						</Typography>
 					</ExpansionPanelDetails>
 				</ExpansionPanel>
@@ -298,7 +299,7 @@ class FAQPagePanelsBase extends React.Component {
 					<ExpansionPanelDetails>
 						<Typography>
 						Whichost is a fresh and self-funded startup. Instead of starting a venture-backed startup that focuses on vanity metrics, revenue at all costs, and expectations of investors, we’ve chosen to keep Whichost a self-funded company. We’ve raised € 0.00 to date and this is something that we're incredibly proud of. We would rather build a platform that is so valuable that the community is willing to pay for Whichost, we can reinvest revenue in the site, and we commit ourselves to building the best online community for pubs in the world.
-						<br/><br/>If at any time you feel that Whichost's pricing is not worth the nominal fee to support the site, community, and offer the level of service and commitment that we do, please email us at <a href="mailto:support@whichost.com" target="_blank">support@whichost.com</a>. We will cancel your account for you if needed. We would also love to hear your feedback (good and bad at <a href="mailto:feedback@whichost.com" target="_blank">feedback@whichost.com</a>), learn more about your pub's needs, and find the best way that Whichost can help you.
+						<br/><br/>If at any time you feel that Whichost's pricing is not worth the nominal fee to support the site, community, and offer the level of service and commitment that we do, please contact us <NamedLink name="ContactUsPage">here</NamedLink> or email us at <a href="mailto:support@whichost.com" target="_blank">support@whichost.com</a>. We will cancel your account for you if needed. We would also love to hear your feedback (good and bad at <a href="mailto:feedback@whichost.com" target="_blank">feedback@whichost.com</a>), learn more about your pub's needs, and find the best way that Whichost can help you.
 						<br/><br/><a href="https://www.whichost.com/help/fees" target="_blank">Learn more about our fees.</a>
 						</Typography>
 					</ExpansionPanelDetails>
@@ -322,7 +323,7 @@ class FAQPagePanelsBase extends React.Component {
 						The ideal image ratio should be 3:2, for example 660x440 pixels or 1500x1000 pixels.
 						<br/><br/>If the uploaded image ratio is within 20% of the 3:2 ratio, for example 680x440 pixels, it will be cropped to the target ratio (660x440 pixels) to avoid gray bars on the sides. If the image is not even close to the target ratio (e.g. more than 20% should be cropped), for example 1200x440 pixels, no cropping will happen at all.
 						<br/><br/>You can use a basic image editor (like Paint) or some online tools like "Cropp.me" or "Cut My Pic".
-						<br/><br/>In the case that you don't have quality images of your space(s) and need help with it, please contact us at <a href="mailto:support@whichost.com" target="_blank">support@whichost.com</a> and we'll put you in touch with a photographer.
+						<br/><br/>In the case that you don't have quality images of your space(s) and need help with it, please contact us <NamedLink name="ContactUsPage">here</NamedLink> or at <a href="mailto:support@whichost.com" target="_blank">support@whichost.com</a> and we'll put you in touch with a photographer.
 						</Typography>
 					</ExpansionPanelDetails>
 				</ExpansionPanel>
@@ -408,7 +409,7 @@ class FAQPagePanelsBase extends React.Component {
 							<li>On the left navigation, click on “Payments” which will take you to the “Payment settings”;</li>
 							<li>Enter your contact information (required by Stripe for verification) and bank account information.</li>
 							</ol>
-							If at any time you need help with this, please email us at <a href="mailto:support@whichost.com?subject=Adding my payout information" target="_blank">support@whichost.com</a>
+							If at any time you need help with this, please <NamedLink name="ContactUsPage">click here</NamedLink> or email us at <a href="mailto:support@whichost.com?subject=Adding my payout information" target="_blank">support@whichost.com</a>
 						</Typography>
 					</ExpansionPanelDetails>
 				</ExpansionPanel>
@@ -692,7 +693,7 @@ class FAQPagePanelsBase extends React.Component {
 					</ExpansionPanelSummary>
 					<ExpansionPanelDetails>
 						<Typography>
-						While we do everything that we can to build the most trusted community of pubs to book, we rely on the community of users to help us by being proactive and always report any suspicious activity on our platform. We also have <a href="https://info.whichost.com/eng/legal#guidelines-section" target="_blank">Community Guidelines</a> in that outlines this in more detail.
+							While we do everything that we can to build the most trusted community of pubs to book, we rely on the community of users to help us by being proactive and always report any suspicious activity on our platform. We also have <NamedLink name="CommunityGuidelinesPage" target="_blank">Community Guidelines</NamedLink> in that outlines this in more detail.
 						</Typography>
 					</ExpansionPanelDetails>
 				</ExpansionPanel>
@@ -702,7 +703,7 @@ class FAQPagePanelsBase extends React.Component {
 					</ExpansionPanelSummary>
 					<ExpansionPanelDetails>
 						<Typography>
-						Yes, we ask that you never take communication outside of our platform messaging and never give your contact information prior to entering a Booking Agreement. We also have <a href="https://info.whichost.com/eng/legal#guidelines-section" target="_blank">Community Guidelines</a> in place that outlines this in more detail.
+						Yes, we ask that you never take communication outside of our platform messaging and never give your contact information prior to entering a Booking Agreement. We also have <NamedLink name="CommunityGuidelinesPage" target="_blank">Community Guidelines</NamedLink> in place that outlines this in more detail.
 						</Typography>
 					</ExpansionPanelDetails>
 				</ExpansionPanel>
@@ -712,7 +713,7 @@ class FAQPagePanelsBase extends React.Component {
 					</ExpansionPanelSummary>
 					<ExpansionPanelDetails>
 						<Typography>
-						Please, feel free to contact us at <a href="mailto:support@whichost.com?subject=Help Center Question" target="_blank">support@whichost.com</a>. We'll be happy to answer all of your questions.
+							Please, feel free to <NamedLink name="ContactUsPage">contact us</NamedLink>. We'll be happy to answer all of your questions.
 						</Typography>
 					</ExpansionPanelDetails>
 				</ExpansionPanel>

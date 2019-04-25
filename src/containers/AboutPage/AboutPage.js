@@ -1,4 +1,5 @@
 import React from 'react';
+import { FormattedMessage } from 'react-intl';
 import config from '../../config';
 import { twitterPageURL } from '../../util/urlHelpers';
 import { StaticPage, TopbarContainer } from '../../containers';
@@ -9,6 +10,7 @@ import {
   LayoutWrapperFooter,
   Footer,
   ExternalLink,
+	NamedLink
 } from '../../components';
 
 import css from './AboutPage.css';
@@ -49,7 +51,7 @@ const AboutPage = () => {
               </h2>
 
               <p>
-                These Community Guidelines are part of and use words and phrases that are identified in our Terms of Service (Services Agreement). If you have any questions about these Community Guidelines or if you believe that a user has violated these Community Guidelines, please email us immediately at <a href="mailto:support@whichost.com">support@whichost.com</a>.
+								These Community Guidelines are part of and use words and phrases that are identified in our Terms of Service (Services Agreement). If you have any questions about these Community Guidelines or if you believe that a user has violated these Community Guidelines, please email us immediately <NamedLink name="ContactUsPage">here</NamedLink> or at <a href="mailto:support@whichost.com">support@whichost.com</a>.
               </p>
 			  
 			  <h2 className={css.usersMust}>
