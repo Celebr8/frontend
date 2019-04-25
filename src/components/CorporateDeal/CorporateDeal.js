@@ -65,9 +65,9 @@ const CorporateDeal  = props => {
 				<p>If providing employees with great benefits is very important for your organisation, contact us and we will be more than happy to have a chat and provide you with detailed information about our Whichost Employees Benefit and how to implement it.</p>
 				<div className={css.btnGroup + ' ' + css.containerButton}>
 					<section className={css.centerButtons}>
-                        <form action="mailto:corporate@whichost.com?subject=Whichost Employee Benefit" method="get" target="_blank">
+                        <a href="mailto:corporate@whichost.com?subject=Whichost Employee Benefit">
                             <button type="submit">Email us</button>
-                        </form>
+                        </a>
 						<form action="https://info.whichost.com/eng/book-a-call" method="get" target="_blank">
                             <button type="submit">Request a Callback</button>
                         </form>
