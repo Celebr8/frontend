@@ -236,7 +236,8 @@ class FAQPagePanelsBase extends React.Component {
 					<ExpansionPanelDetails>
 						<Typography>
 						Adding your pub to Whichost is easy and only takes a few minutes. Once you’ve created a Whichost account, simply click the “+ Add my pub” at the top right.
-						Please note that all listings are subject to review by our team to ensure the safety of our community. If you need help with your listing, please <NamedLink name="ContactUsPage">click here</NamedLink>or email us at <a href="mailto:support@whichost.com?subject=How do I list my pub inquiry" target="_blank">support@whichost.com</a>.
+						Please note that all listings are subject to review by our team to ensure the safety of our community. If you need help with your listing, please <NamedLink name="ContactUsPage">click here</NamedLink> or email us at <a href="mailto:support@whichost.com?subject=How do I list my pub inquiry" target="_blank">support@whichost.com</a>.
+						 
 						</Typography>
 					</ExpansionPanelDetails>
 				</ExpansionPanel>
