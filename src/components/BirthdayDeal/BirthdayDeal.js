@@ -95,7 +95,7 @@ const BirthdayDeal  = props => {
 				<p>Don't hesitate to contact us via the highlighted options below. As we don't sleep at all, we'll get back to you very soon.</p>
 				<div className={css.btnGroup + ' ' + css.containerButton}>
 					<section className={css.centerButtons}>
-						<NamedLink name="Contact us">
+						<NamedLink name="ContactUsPage">
 							<button type="submit">Contact us</button>
 						</NamedLink>
 					</section>
@@ -215,11 +215,6 @@ const BirthdayDeal  = props => {
 								</li>
 								<li>The review must be submitted within one week of making use of the booking.</li>
 								<li>All One4all Gift Cards are sent electronically to the user’s email address in their Whichost account.</li>
-							</ol>
-						</li>
-						<li>All One4all Gift Cards are provided in British Pound Sterling (‎£) and are valid for Amazon UK (www.amazon.co.uk).
-							<ol>
-								<li>At the day of issuing the One4all Gift Card, we will convert your total award, from Euros (€) into British Pound Sterling (‎£) using the conversion rate provided by Google.</li>
 							</ol>
 						</li>
 						<li>This Whichost benefit does not accumulate with any other deals, promotions or benefits that Whichost may provide at any time.</li>
