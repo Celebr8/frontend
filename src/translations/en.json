@@ -750,7 +750,7 @@
   "StripePaymentForm.birthday": "Birthday party",
   "StripePaymentForm.timeHeading": "Party time",
   "StripePaymentForm.timeLabel": "When will the party start?",
-  "StripePaymentForm.timeErrorTooEarly": "You can only throw a party before 12PM.",
+  "StripePaymentForm.timeErrorTooEarly": "You can only throw a party after 12PM.",
   "StripePaymentForm.stripe.api_connection_error": "Could not connect to Stripe API.",
   "StripePaymentForm.stripe.api_error": "Error in Stripe API.",
   "StripePaymentForm.stripe.authentication_error": "Could not authenticate with Stripe.",
