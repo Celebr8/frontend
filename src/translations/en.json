@@ -345,6 +345,8 @@
   "InboxPage.occasionBirthday": "This is a birthday party!",
   "LandingPage.schemaDescription": "Book your party using Whichost or increase your pub's exposure.",
   "LandingPage.schemaTitle": "Celebrate Anywhere | {siteTitle}",
+  "LegalsPages.privacyTabTitle": "Privacy policy",
+  "LegalsPages.tosTabTitle": "Terms of Service",
   "ListingCard.hostedBy": "Hosted by {authorName}.",
   "ListingCard.perUnit": "per night",
   "ListingCard.unsupportedPrice": "({currency})",
