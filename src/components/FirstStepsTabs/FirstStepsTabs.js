@@ -60,7 +60,6 @@ const ItemOnePleaseChangeMyName = () => (
     <h2>Contact us. We're here to help.</h2>
     <p>If you're ready to start saving time but you still have questions that are not covered by our <a href="https://www.whichost.com/help/faq" target="_blank">help center</a>, we invite you to <a href="https://www.whichost.com/help/contact-us" target="_blank">contact us</a> and we'll assist you personally.</p>
     <br/>
-    <p><i>Enjoy the rest of the day!<br/>The Whichost team!</i></p>
 	</TabContainer>
 )
 
@@ -95,7 +94,6 @@ const ItemTwoPleaseChangeMyName = () => (
   <h2>Contact us. We're here to help.</h2>
   <p>If you're ready to start but you still have questions that are not covered by our <a href="https://www.whichost.com/help/faq" target="_blank">help center</a>, we invite you to <a href="https://www.whichost.com/help/contact-us" target="_blank">contact us</a> and we'll assist you personally.</p>
   <br/>
-  <p><i>Enjoy the rest of the day!<br/>The Whichost team!</i></p>
   </TabContainer>
 )
 
