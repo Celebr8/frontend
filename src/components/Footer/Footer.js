@@ -220,7 +220,8 @@ const Footer = props => {
 
             </div>
             <div className={css.searchesExtra}>
-							<NamedLink name="LandingPage" className={css.organizationCopyrightMobile}>
+							<NamedLink name="LandingPage" 
+								className={css.organizationCopyrightMobile + ' ' + css.registrationMobile}>
 								<FormattedMessage id="Footer.copyright" />
 							</NamedLink>
 						</div>
