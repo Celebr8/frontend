@@ -16,6 +16,7 @@ import {
 	Footer,
 	Page,
 	UserNav,
+	NamedLink
 } from '../../components';
 import { PayoutDetailsForm } from '../../forms';
 import { TopbarContainer } from '../../containers';
@@ -66,16 +67,25 @@ export const PayoutPreferencesPageComponent = props => {
 	const title = intl.formatMessage({ id: 'PayoutPreferencesPage.title' });
 	const formDisabled = !currentUserLoaded || stripeConnected || payoutDetailsSaved;
 
-	let message = <FormattedMessage id="PayoutPreferencesPage.loadingData" />;
+	let message = 
+		<FormattedMessage id="PayoutPreferencesPage.loadingData" />;
 
 	if (currentUserLoaded && payoutDetailsSaved) {
-		message = <FormattedMessage id="PayoutPreferencesPage.payoutDetailsSaved" />;
-	} else if (currentUserLoaded && stripeConnected) {
-		const url = 'mailto:support@whichost.com?subject=Payment%20Information%20Change&body=Please%20update%20the%20payment%20information%20to%20the%20following%20IBAN:%0A%0AThe%20name%20of%20the%20pub%20listed%20is:%0A%0AThank%20you.%20%0A';
 
-		const link = <a href={url}>
+		const link = <NamedLink name="ContactUsPage" target="_blank">
+				<FormattedMessage id="PayoutPreferencesPage.payoutDetailsSavedLink" />
+		</NamedLink>
+
+		message = <Fragment>
+				<FormattedMessage id="PayoutPreferencesPage.payoutDetailsSaved" />
+					{link}
+		</Fragment>
+
+	} else if (currentUserLoaded && stripeConnected) {
+
+		const link = <NamedLink name="ContactUsPage" target="_blank">
 			<FormattedMessage id="PayoutPreferencesPage.stripeAlreadyConnectedLink" />
-		</a>
+		</NamedLink>
 
 			message = <Fragment>
 				<FormattedMessage id="PayoutPreferencesPage.stripeAlreadyConnected" />

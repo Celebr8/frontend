@@ -140,11 +140,13 @@ const TopbarDesktop = props => {
           <FormattedMessage id="TopbarDesktop.createListing" />
         </span>
       </NamedLink>
-			<a className={css.helpCenterLink} target="_blank" href="https://info.whichost.com/eng/faq">
+			<NamedLink className={css.helpCenterLink} 
+				target="_blank" 
+				name="FAQPage">
         <span className={css.helpCenter}>
           <FormattedMessage id="TopbarDesktop.helpCenter" />
         </span>
-      </a>
+      </NamedLink>
       {inboxLink}
       {profileMenu}
       {signupLink}

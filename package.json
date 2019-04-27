@@ -6,6 +6,7 @@
   "dependencies": {
     "@mapbox/polyline": "^1.0.0",
     "@material-ui/core": "^3.9.2",
+    "@material-ui/icons": "^3.0.2",
     "array-includes": "^3.0.3",
     "array.prototype.find": "^2.0.4",
     "autosize": "^4.0.0",
@@ -25,6 +26,7 @@
     "final-form-arrays": "^1.1.0",
     "helmet": "^3.15.0",
     "lodash": "^4.17.11",
+    "mailgun.js": "^2.0.1",
     "mapbox-gl-multitouch": "^1.0.3",
     "moment": "^2.22.2",
     "object.entries": "^1.0.4",
@@ -44,6 +46,7 @@
     "react-helmet": "^5.2.0",
     "react-intl": "^2.7.2",
     "react-moment-proptypes": "^1.6.0",
+    "react-recaptcha-google": "^1.1.1",
     "react-redux": "^5.1.1",
     "react-router-dom": "^4.3.0",
     "redux": "^4.0.1",
