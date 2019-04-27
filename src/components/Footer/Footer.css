@@ -51,8 +51,14 @@
 }
  
 
+.someLinks {
+
+	display: inline;
+
+}
+
 /* Mobile only social media links */
-.someLiksMobile {
+.someLinksMobile {
   margin-bottom: 24px;
 
   @media (--viewportMedium) {
@@ -343,22 +349,35 @@
   }
 }
 
+.registrationMobile {
+
+  @apply --marketplaceTinyFontStyles;
+	order: 10;
+
+  @media (--viewportMedium) {
+    display: none;
+  }
+
+}
 .organizationCopyrightMobile {
   /* Font */
-  @apply --marketplaceTinyFontStyles;
+  @apply --marketplaceTinyFontStyles; 
   color: var(--matterColorAnti);
   transition: var(--transitionStyleButton);
 
   /* Tell parent component how much space this one prefers */
   flex-basis: 172px;
 
-  margin-top: 0;
+  margin-top: 8px;
   margin-bottom: 0;
 
   &:hover {
     color: var(--marketplaceColor);
     text-decoration: none;
   }
+
+	text-size: 10px;
+
 }
 
 .tosAndPrivacyMobile {
