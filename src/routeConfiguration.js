@@ -10,6 +10,7 @@ import {
   CommunityGuidelinesPage,
   ContactDetailsPage,
   CookiePolicyPage,
+  LegalsDealsPage,
   PrivacyPolicyPage,
   TermsOfServicePage,
 	
@@ -296,6 +297,11 @@ const routeConfiguration = () => {
 			path: '/deals/corporate-deal',
       name: 'CorporateDealPage',
       component: props => <CorporateDealPage {...props} />,
+    },
+    {
+			path: '/legal/benefits',
+      name: 'LegalsDealsPage',
+      component: props => <LegalsDealsPage {...props} />,
     },
     {
 			path: '/legal/terms-of-service',
