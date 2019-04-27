@@ -42,8 +42,8 @@ class ContactUsFormComponent extends Component {
   render() {
     const recaptchaToken = this.state.recaptchaToken;
 
-		const onSubmit = (values) => this.props.onSubmit({...values, recaptchaToken})
-		const finalFormProps = {...this.props, onSubmit}
+    const onSubmit = values => this.props.onSubmit({ ...values, recaptchaToken });
+    const finalFormProps = { ...this.props, onSubmit };
 
     return (
       <Fragment>
@@ -98,6 +98,8 @@ class ContactUsFormComponent extends Component {
 
             // phone
 
+            const askPhone = false;
+
             const phoneLabel = intl.formatMessage({
               id: 'ContactUsForm.phoneLabel',
             });
@@ -151,7 +153,9 @@ class ContactUsFormComponent extends Component {
             ) : null;
 
             const submitInProgress = sendingInProgress;
-						const submitDisabled = invalid || submitInProgress;
+            const submitDisabled = invalid || submitInProgress;
+
+            const If = props => (props.if ? props.children : null);
 
             return (
               <Form
@@ -171,14 +175,16 @@ class ContactUsFormComponent extends Component {
                     validate={validators.composeValidators(emailRequired, emailValid)}
                   />
 
-                  <FieldPhoneNumberInput
-                    className={css.phone}
-                    name="phoneNumber"
-                    id={formId ? `${formId}.phoneNumber` : 'phoneNumber'}
-                    label={phoneLabel}
-                    placeholder={phonePlaceholder}
-                    validate={phoneRequired}
-                  />
+                  <If if={askPhone}>
+                    <FieldPhoneNumberInput
+                      className={css.phone}
+                      name="phoneNumber"
+                      id={formId ? `${formId}.phoneNumber` : 'phoneNumber'}
+                      label={phoneLabel}
+                      placeholder={phonePlaceholder}
+                      validate={phoneRequired}
+                    />
+                  </If>
 
                   <FieldTextInput
                     className={css.subject}
@@ -204,7 +210,7 @@ class ContactUsFormComponent extends Component {
                     className={css.submitButton}
                     type="submit"
                     inProgress={submitInProgress}
-										disabled={submitDisabled}
+                    disabled={submitDisabled}
                   >
                     <FormattedMessage id="ContactUsForm.sendMessage" />
                   </PrimaryButton>
