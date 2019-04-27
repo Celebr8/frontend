@@ -217,8 +217,13 @@ const Footer = props => {
                   {mainLocationsData.map(location => renderFavoriteLocation(location))}
                 </li>
               </ul>
+
             </div>
-            <div className={css.searchesExtra} />
+            <div className={css.searchesExtra}>
+							<NamedLink name="LandingPage" className={css.organizationCopyrightMobile}>
+								<FormattedMessage id="Footer.copyright" />
+							</NamedLink>
+						</div>
           </div>
           <div className={css.extraLinks}>
             <div className={css.legalMatters}>
@@ -251,10 +256,6 @@ const Footer = props => {
             </div>
           </div>
           <div className={css.copyrightAndTermsMobile}>
-            <NamedLink name="LandingPage" className={css.organizationCopyrightMobile}>
-              <FormattedMessage id="Footer.copyright" />
-              <br />
-            </NamedLink>
             <div className={css.tosAndPrivacyMobile}>
 							
               <NamedLink name="AboutPage" className={css.privacy}>
