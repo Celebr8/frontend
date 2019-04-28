@@ -12,5 +12,12 @@ export const legalsTabs = (intl, selected) => [
 		linkProps: {
 			name: 'TermsOfServicePage',
 		},
+	},
+	{
+		text: intl.formatMessage({ id: 'LegalsPages.communityGuidelinesTabTitle'}),
+		selected: (selected == 'CommunityGuidelinesPage'),
+		linkProps: {
+			name: 'CommunityGuidelinesPage',
+		},
 	}
 ]
