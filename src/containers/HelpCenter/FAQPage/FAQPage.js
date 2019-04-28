@@ -158,7 +158,7 @@ class FAQPagePanelsBase extends React.Component {
                 <li>The customers internal account will be updated with the No-Show;</li>
                 <li>Once a customer accumulates 4 (four) No-Shows, their account is suspended.</li>
               </ol>
-              <NamedLink name="ContactUsPage">Report a No-Show</NamedLink>
+              <a href="https://docs.google.com/forms/d/1jZ1aH21YDcqelSC3F7628ZWxvOZR2QPacA5lRV8O70c/edit">Report a No-Show</a>
             </Typography>
           </ExpansionPanelDetails>
         </ExpansionPanel>
@@ -566,7 +566,7 @@ class FAQPagePanelsBase extends React.Component {
               We do advise users to cancel as soon as possible to not affect your operation.
               <br />
               <br /> If a customer booked your space b ut they didn't showed up, we reccomend you to{' '}
-              <NamedLink name="ContactUsPage">Report a No-Show.</NamedLink>
+              <a href="https://docs.google.com/forms/d/1jZ1aH21YDcqelSC3F7628ZWxvOZR2QPacA5lRV8O70c/edit">Report a No-Show.</a>
             </Typography>
           </ExpansionPanelDetails>
         </ExpansionPanel>
