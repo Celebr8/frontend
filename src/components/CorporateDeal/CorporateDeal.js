@@ -32,7 +32,7 @@ const CorporateDeal  = props => {
             <p>
             The value of the gift card depends on the size of the party: from “Up to 30 people” to “201+”, and on the day that it’s held. Celebrations held between Mondays and Wednesdays have a higher value. This is a physical gift card, so we will ask for an address to deliver it.
             <br/><br/>
-            <b>We will add €10 to the gift card if they can’t find the pub that they want and they recommend it to us, so they can celebrate there.</b>
+            <b>We will add €10 to the gift card if they can’t find the pub they want and they recommend it to us, so they can celebrate there.</b>
             </p>
           </div>
           <div className={css.step}>

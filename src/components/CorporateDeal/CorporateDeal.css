@@ -11,6 +11,7 @@
     padding-top: 0px;
     text-align: center;
     color: #ff3f00;
+    font-weight: 300;
 
     @media (--viewportMedium) {
       margin: 24px 0 24px 0;

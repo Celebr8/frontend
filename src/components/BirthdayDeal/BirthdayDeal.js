@@ -29,7 +29,7 @@ const BirthdayDeal  = props => {
 				<p>
 				The value of the gift card depends on the size of your birthday: from “Up to 30 people” to “201+”, and on the day that it’s held. Birthdays held between Mondays and Wednesdays have a higher value. This is a physical gift card, so we will ask you for an address to deliver it.
 				<br/><br/>
-				<b>We will add €10 to the gift card if you can’t find the pub that you want and you recommend it to us so you can celebrate there.</b>
+				<b>We will add €10 to the gift card if you can’t find the pub you want and you recommend it to us, so you can celebrate there.</b>
 				</p>
 			</div>
 
