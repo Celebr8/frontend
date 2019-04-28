@@ -52,9 +52,6 @@ const CorporateDealPageComponent = props => {
 				</LayoutWrapperHero>
         <LayoutWrapperMain>
           <div className={css.content}>
-            <h1 className={css.heading}>
-              <FormattedMessage id="CorporateDealPage.heading" />
-            </h1>
             <CorporateDeal />
           </div>
         </LayoutWrapperMain>
