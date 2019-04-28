@@ -33,14 +33,14 @@ const PubFeesTab = () => (
   <h2>FOR LISTINGS MANAGED BY THE PUB</h2>
   <p>In the case of listings managed by the pub we have two price tables. One for parties from Thursdays to Sundays, and another one for parties between Mondays to Wednesdays. Why? Because we understand that parties from Mondays to Wednesdays have a much higher value for pubs and their bottom-line.</p>
   <br/><b>Parties from Thursdays to Sundays</b>
-  <br/>Up to 30 people: € 35.00
+  <br/>Up to 30 people: € 50.00
   <br/>31 to 50 people: € 90.00
   <br/>51 to 100 people: € 170.00
-  <br/>101 to 200 people: € 300.00
+  <br/>101 to 200 people: € 330.00
   <br/>201 and more people: € 480.00
 
   <br/><br/><b>Parties from Mondays to Wednesdays</b>
-  <br/>Up to 30 people: € 40.00
+  <br/>Up to 30 people: € 55.00
   <br/>31 to 50 people: € 100.00
   <br/>51 to 100 people: € 190.00
   <br/>101 to 200 people: € 380.00
@@ -49,7 +49,7 @@ const PubFeesTab = () => (
   <h2>FOR LISTINGS MANAGED BY WHICHOST</h2>
   <p>A listing being managed by Whichost means that we are the middle-man. Not only we are doing the job of being the point of contact between the pub and their customers, but we are also managing the listing itself. The price per party is higher and we do not take into consideration the day of the week.</p>
   <br/><b>Parties from Mondays to Sundays</b>
-  <br/>Up to 30 people: € 40.00
+  <br/>Up to 30 people: € 55.00
   <br/>31 to 50 people: € 100.00
   <br/>51 to 100 people: € 190.00
   <br/>101 to 200 people: € 380.00
