@@ -119,3 +119,16 @@
   display: inline-block;
   border-radius: 3px;
 }
+
+.recommendDealWrapper {
+
+	flex-direction: row;
+
+}
+
+.recommendDeal {
+
+	font-weight: var(--fontWeightBold);
+	margin: 0 12% 0 12%;
+
+}
