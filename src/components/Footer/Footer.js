@@ -257,7 +257,7 @@ const Footer = props => {
                   Legal
                 </NamedLink>
 								{separator}
-								{version}
+								<FormattedMessage id="Footer.version" /> {version}
               </div>
             </div>
           </div>
