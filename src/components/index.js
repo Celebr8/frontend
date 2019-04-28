@@ -9,6 +9,7 @@ export { default as Discussion } from './Discussion/Discussion';
 export { default as Deals } from './Deals/Deals';
 export { default as BirthdayDeal } from './BirthdayDeal/BirthdayDeal';
 export { default as CorporateDeal } from './CorporateDeal/CorporateDeal';
+export { default as RecommendDeal } from './RecommendDeal/RecommendDeal';
 export { default as EditListingDescriptionPanel } from './EditListingDescriptionPanel/EditListingDescriptionPanel';
 export { default as EditListingFeaturesPanel } from './EditListingFeaturesPanel/EditListingFeaturesPanel';
 export { default as EditListingCapacityPanel } from './EditListingCapacityPanel/EditListingCapacityPanel';
