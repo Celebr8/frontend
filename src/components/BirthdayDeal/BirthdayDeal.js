@@ -118,11 +118,6 @@ const BirthdayDeal  = props => {
 							<ol>
 								<li>A refund goes back to the same payment method used to request the booking;</li>
 								<li>A refund might take between 7-15 business days. The speed depends entirely on your financial institution;</li>
-								<li>The refund benefit is only valid for listings that are managed by Whichost.
-									<ol>
-										<li>You can find this information at the bottom of the description of the listing. If it's managed by Whichost it will say: <b>“This listing is managed by Whichost.”</b></li>
-									</ol>
-								</li>
 							</ol>
 
 						</li>
