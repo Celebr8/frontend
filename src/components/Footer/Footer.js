@@ -19,6 +19,7 @@ import { mainLocationsData, locationToURI } from '../../locals';
 
 const renderSocialMediaLinks = intl => {
 
+
   const { siteFacebookPage, siteInstagramPage, siteTwitterHandle } = config;
   const siteTwitterPage = twitterPageURL(siteTwitterHandle);
 
@@ -77,6 +78,8 @@ const Footer = props => {
   const socialMediaLinks = renderSocialMediaLinks(intl);
   const classes = classNames(rootClassName || css.root, className);
   const separator = <Fragment>&nbsp;&nbsp;|&nbsp;&nbsp;</Fragment>;
+
+	const version = config.version;
 
   return (
     <div className={classes}>
@@ -253,6 +256,8 @@ const Footer = props => {
                 <NamedLink name="TermsOfServicePage" className={css.legalLink}>
                   Legal
                 </NamedLink>
+								{separator}
+								{version}
               </div>
             </div>
           </div>
