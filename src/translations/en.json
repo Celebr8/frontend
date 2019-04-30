@@ -396,7 +396,7 @@
   "LandingPage.schemaTitle": "Celebrate Anywhere | {siteTitle}",
 
   "LegalsDealsPage.schemaTitle": "Benefits T&C",
-  "LegalsDealsPage.heading": "Benefits",
+  "LegalsDealsPage.heading": "Benefits T&C",
 
   "LegalsPages.privacyTabTitle": "Privacy policy",
   "LegalsPages.tosTabTitle": "Terms of Service",
@@ -484,7 +484,7 @@
   "ManageListingsPage.title": "Manage listings",
   "ManageListingsPage.youHaveListings": "You have {count} {count, plural, one {listing} other {listings}}",
   "ManageListingsPage.yourListings": "Your listings",
-	
+
   "MapPriceMarker.unsupportedPrice": "({currency})",
 
   "Modal.close": "CLOSE",
@@ -510,7 +510,7 @@
   "NotFoundPage.title": "Page not found",
 
   "NonDiscriminationPolicyPage.heading": "Inclusion Policy",
-	
+
   "Page.schemaDescription": "Book your party using Whichost or increase your pub's exposure.",
   "Page.schemaTitle": "Celebrate Anywhere!  | {siteTitle}",
 
@@ -743,7 +743,7 @@
   "SearchFiltersPanel.resetAll": "Reset all",
 
   "SearchMapInfoCard.noImage": "No image",
-	
+
   "SearchPage.schemaDescription": "Showing search results",
   "SearchPage.schemaMapSearch": "map search",
   "SearchPage.schemaTitle": "Search results for {searchAddress} | {siteTitle}",
