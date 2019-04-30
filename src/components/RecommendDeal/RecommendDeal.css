@@ -7,8 +7,11 @@
   }
   & h2 {
     /* Adjust heading margins to work with the reduced body font size */
-    margin: 23px 0 19px 0;
-    padding-top: 25px;
+    margin: 0px 0 19px 0;
+    padding-top: 0px;
+    text-align: center;
+    color: #ff3f00;
+    font-weight: 300;
 
     @media (--viewportMedium) {
       margin: 24px 0 24px 0;
@@ -102,78 +105,27 @@ ol li ul li:first-child {
   padding-top: 10px;
 }
 
-/** ACCORDION **/
-
-.accordionContent {
-
-
-
-}
-
 /** DEALS PAGE **/
 
 .container {
 	width: 100%;
+  margin-top: -100px;
+
+  @media (max-width: 1022px) {
+    margin-top: 0px;
+  }
 }
 
-.boxes .boxLeft img{
-	width: 45%;
-	float: left;
-	margin-right: 15px;
-}
-
-.boxLeft {
-
-}
-
-.boxes .boxRight img{
-	width: 45%;
-	float: right;
-	margin-left: 15px;
-}
-
-.boxRight {
-
-}
-
-.boxes{
-  margin-top:50px;
-  border: 0px solid #ff3f00;
-  border-radius: 0px;
-  overflow-y: auto;
-}
-
-.boxRight h3, .boxRight p, .boxRight a {
-	padding-left: 0;
-}
-
-.boxes h3 {
-	margin-top: 0px;
-	padding-bottom: 5px;
-	color: #ff3f00;
-	border-bottom: 1px solid #ff3f00;
-}
-
-.boxes p {
-	margin-top: 0px;
-	margin-bottom: 5px;
-}
-
-img {
-	border-radius: 4px;
-}
 
 .readMore {
 	padding-top: 10px;
 	font-size: 14px;
-	font-weight: bold;
+  text-align: center;
 }
 
 .readMore a {
-	font-size: 14px;
-	font-weight: bold;
-    color: #000;
-    text-transform: uppercase;
+	font-size: 12px;
+    color: #808080;
     text-decoration: none;
 }
 
@@ -221,7 +173,7 @@ img {
   margin-left: 50px;
   cursor: pointer; /* Pointer/hand icon */
   float: left; /* Float the buttons side by side */
-  width: 240px;
+  width: 340px;
 
 }
 
@@ -251,7 +203,8 @@ img {
 }
 
 .getInTouch {
-	margin-top: 75px;
+	margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 .getInTouch h3 {
@@ -263,14 +216,6 @@ img {
 .getInTouch p {
 	text-align: center;
 	padding-bottom: 5px;
-}
-
-.termsAndConditionsAccordion {
-	padding-top: 50px;
-}
-
-.examplesAccordion {
-
 }
 
 @media (max-width: 768px) {
@@ -293,108 +238,7 @@ img {
 	  margin-left: 0;
 	  width: 100%;
 	  }
-
-	.btnGroup button:first-child{
-	  margin-bottom: 15px;
-	  }
  }
-
-/* Accordion */
-
-details {
-  width: 100%;
-  min-height: 5px;
-  max-width: 700px;
-  padding: 15px 70px 15px 15px;
-  margin: 0 auto;
-  margin-top: 80px;
-  position: relative;
-  font-size: 22px;
-  border: 1px double #ff3f00;
-  border-radius: 4px;
-  box-sizing: border-box;
-  transition: all .3s;
-}
-
-details + details {
-  margin-top: 20px;
-}
-
-details[open] {
-  min-height: 50px;
-  background-color: #transparent;
-  color: #ff3f00;
-}
-
-details p {
-  color: #4a4a4a;
-  font-weight: 300;
-}
-
-summary {
-  font-weight: 500;
-  cursor: pointer;
-}
-
-/* removed outline as for codepen only
-  don't remove focus on elements
-  it's bad accessibility
-  don't be _that_ guy
-*/
-summary:focus {
-  outline: none;
-}
-
-summary::-webkit-details-marker {
-  display: none
-}
-
-summary::after {
-  padding: 20px;
-  position: absolute;
-  top: 50%;
-  right: 0;
-  color: #ff3f00;
-  font-family: "Font Awesome 5 Free";
-  font-size: 20px;
-  font-style: normal;
-  font-variant-caps: normal;
-  font-variant-ligatures: normal;
-  font-weight: 900;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  content: "+";
-  transform: translateY(-50%);
-  transition: .3s ease;
-}
-
-details[open] summary::after {
-  content: "-";
-  font-size: 30px;
-  top: 0;
-  transform: translateY(0);
-  transition: .3s ease;
-}
-
-details[open] summary:hover::after {
-  animation: pulse 1s ease;
-}
-
-@keyframes pulse {
-  25% {
-    transform: scale(1.1);
-  }
-  50% {
-    transform: scale(1);
-  }
-  75% {
-    transform: scale(1.1);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-
 
 /* TABLE */
 
@@ -422,6 +266,18 @@ tbody tr {
 	height: 0!important;
 }
 
+th {
+  padding: 4px 2px 4px 2px!important;
+}
+
+th:first-child {
+  padding: 4px 2px 4px 20px!important;
+}
+
+tbody tr td {
+  padding: 4px 2px 4px 2px!important;
+}
+
 @media (max-width: 768px) {
   thead th,
   tbody th,
@@ -432,3 +288,36 @@ tbody tr {
     padding: 4px 2px 4px 2px!important;
   }
  }
+
+/* STEPS */
+.steps {
+  display: flex;
+  flex-direction: column;
+
+  @media (--viewportMedium) {
+    flex-direction: row;
+  }
+}
+
+.step {
+  @media (--viewportMedium) {
+    width: 50%;
+    margin-right: 40px;
+  }
+}
+
+.step:last-of-type {
+  @media (--viewportMedium) {
+    margin-right: 0;
+  }
+}
+
+.stepTitle {
+  margin-top: 18px;
+  margin-bottom: 18px;
+
+  @media (--viewportMedium) {
+    margin-top: 21px;
+    margin-bottom: 18px;
+  }
+}

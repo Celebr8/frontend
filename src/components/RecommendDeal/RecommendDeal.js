@@ -28,32 +28,25 @@ const RecommendDeal  = props => {
 		<div className={classes}>
 		<h2>Earn a gift card to use with over 2,000 shops in Ireland!
 		<br/>
-		Get up to €240 when celebrating your birthday.</h2>
+		Get €15 for recommending a pub and celebrating there.</h2>
 		<section className={css.getInTouch}>
 			<div className={css.btnGroup + ' ' + css.containerButton}>
 					<section className={css.centerButtons}>
-          	<a href="https://docs.google.com/forms/d/e/1FAIpQLSfr2dEghUT1VF1i9BWPsvZIJpnHe2FPVmCuoHJaAR3AXDe_GA/viewform"><button type="submit">Find a pub for your birthday</button></a>
+          	<a href="https://docs.google.com/forms/d/e/1FAIpQLSfr2dEghUT1VF1i9BWPsvZIJpnHe2FPVmCuoHJaAR3AXDe_GA/viewform" target="_blank"><button type="submit">Recommend a pub</button></a>
 					</section>
 				</div>
 			</section>
 		<div className={css.steps}>
-			<div className={css.step}>
+			<div>
 				<p>
-				The value of the gift card depends on the size of your birthday: from “Up to 30 people” to “201+”, and on the day that it’s held. Birthdays held between Mondays and Wednesdays have a higher value. This is a physical gift card, so we will ask you for an address to deliver it.
-				<br/><br/>
-				<b>We will add €10 to the gift card if you can’t find the pub you want and you recommend it to us, so you can celebrate there.</b>
+				When you recommend us a pub, we will get in touch with the pub and let them know you want to book your celebration with them.
+				We will issue the gift card after you’ve held your party with them. This is a physical gift card, so we will ask for an address to deliver it.
 				</p>
 			</div>
-
-			<div className={css.step}>
-				<PricingTable />
-			</div>
-
-
 		</div>
 		</div>
 		<div className={css.readMore}>
-		<a href="#" target="_blank">Birthday Gift Terms & Conditions</a>
+		<a href="#" target="_blank">Recommend Reward Terms & Conditions</a>
 		</div>
 		</div>
 
