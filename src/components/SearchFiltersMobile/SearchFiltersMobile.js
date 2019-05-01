@@ -14,6 +14,7 @@ import {
   PriceFilter,
   SelectSingleFilterPlain,
   SelectMultipleFilterPlain,
+  NamedLink,
 } from '../../components';
 import { propTypes } from '../../util/types';
 import css from './SearchFiltersMobile.css';
@@ -148,13 +149,29 @@ class SearchFiltersMobileComponent extends Component {
       onMapIconClick,
       onManageDisableScrolling,
       selectedFiltersCount,
-			amenitiesFilter,
-			groupSizeFilter,
-			regularlyOpenOnFilter,
+      amenitiesFilter,
+      groupSizeFilter,
+      regularlyOpenOnFilter,
       intl,
     } = this.props;
 
     const classes = classNames(rootClassName || css.root, className);
+
+    /*
+     * This implement the redirection toward Recommend Deal page
+     */
+    const recommendDealActive = true;
+
+    const RecommendDeal = props =>
+      recommendDealActive && props.show ? (
+        <p className={css.recommendDeal}>
+          <FormattedMessage id="SearchFilters.recommendDealLabel" />
+          &nbsp;
+          <NamedLink name="RecommendDealPage">
+            <FormattedMessage id="SearchFilters.recommendDealLink" />
+          </NamedLink>
+        </p>
+      ) : null;
 
     const resultsFound = (
       <FormattedMessage id="SearchFilters.foundResults" values={{ count: resultsCount }} />
@@ -180,7 +197,7 @@ class SearchFiltersMobileComponent extends Component {
         </SecondaryButton>
       );
 
-		// Amenities
+    // Amenities
 
     const amenitiesLabel = intl.formatMessage({ id: 'SearchFiltersMobile.amenitiesLabel' });
 
@@ -198,11 +215,11 @@ class SearchFiltersMobileComponent extends Component {
       />
     ) : null;
 
-		// Group size
+    // Group size
 
-		const groupSizeLabel = intl.formatMessage({
-			id: 'SearchFilters.groupSizeLabel',
-		});
+    const groupSizeLabel = intl.formatMessage({
+      id: 'SearchFilters.groupSizeLabel',
+    });
 
     const initialGroupSize = groupSizeFilter ? this.initialValue(groupSizeFilter.paramName) : null;
 
@@ -217,13 +234,15 @@ class SearchFiltersMobileComponent extends Component {
       />
     ) : null;
 
-		// Reguraly open on
+    // Reguraly open on
 
-		const regularlyOpenOnLabel = intl.formatMessage({
-			id: 'SearchFilters.regularlyOpenOnLabel',
-		});
+    const regularlyOpenOnLabel = intl.formatMessage({
+      id: 'SearchFilters.regularlyOpenOnLabel',
+    });
 
-    const initialReguralyOpenOn = regularlyOpenOnFilter ? this.initialValue(regularlyOpenOnFilter.paramName) : null;
+    const initialReguralyOpenOn = regularlyOpenOnFilter
+      ? this.initialValue(regularlyOpenOnFilter.paramName)
+      : null;
 
     const regularlyOpenOnFilterElement = regularlyOpenOnFilter ? (
       <SelectSingleFilterPlain
@@ -237,45 +256,52 @@ class SearchFiltersMobileComponent extends Component {
     ) : null;
 
     return (
-      <div className={classes}>
-        <div className={css.searchResultSummary}>
-          {listingsAreLoaded && resultsCount > 0 ? resultsFound : null}
-          {listingsAreLoaded && resultsCount === 0 ? noResults : null}
-          {searchInProgress ? loadingResults : null}
-        </div>
-        <div className={css.buttons}>
-          {filtersButton}
-          <div className={css.mapIcon} onClick={onMapIconClick}>
-            <FormattedMessage id="SearchFilters.openMapView" className={css.mapIconText} />
-          </div>
-        </div>
-        <ModalInMobile
-          id="SearchFiltersMobile.filters"
-          isModalOpenOnMobile={this.state.isFiltersOpenOnMobile}
-          onClose={this.cancelFilters}
-          showAsModalMaxWidth={showAsModalMaxWidth}
-          onManageDisableScrolling={onManageDisableScrolling}
-          containerClassName={css.modalContainer}
-          closeButtonMessage={modalCloseButtonMessage}
-        >
-          <div className={css.modalHeadingWrapper}>
-            <span className={css.modalHeading}>{filtersHeading}</span>
-            <button className={css.resetAllButton} onClick={e => this.resetAll(e)}>
-              <FormattedMessage id={'SearchFiltersMobile.resetAll'} />
-            </button>
-          </div>
-          <div className={css.filtersWrapper}>
-            {amenitiesFilterElement}
-            {regularlyOpenOnFilterElement}
-            {groupSizeFilterElement}
-          </div>
-          <div className={css.showListingsContainer}>
-            <Button className={css.showListingsButton} onClick={this.closeFilters}>
-              {showListingsLabel}
-            </Button>
-          </div>
-        </ModalInMobile>
-      </div>
+			<div className={css.recommendDealWrapper}>
+				<div className={classes}>
+					<div className={css.searchResultSummary}>
+						{listingsAreLoaded && resultsCount > 0 ? resultsFound : null}
+						{listingsAreLoaded && resultsCount === 0 ? noResults : null}
+						{searchInProgress ? loadingResults : null}
+					</div>
+
+					<div className={css.buttons}>
+						{filtersButton}
+						<div className={css.mapIcon} onClick={onMapIconClick}>
+							<FormattedMessage id="SearchFilters.openMapView" className={css.mapIconText} />
+						</div>
+					</div>
+					<ModalInMobile
+						id="SearchFiltersMobile.filters"
+						isModalOpenOnMobile={this.state.isFiltersOpenOnMobile}
+						onClose={this.cancelFilters}
+						showAsModalMaxWidth={showAsModalMaxWidth}
+						onManageDisableScrolling={onManageDisableScrolling}
+						containerClassName={css.modalContainer}
+						closeButtonMessage={modalCloseButtonMessage}
+					>
+						<div className={css.modalHeadingWrapper}>
+							<span className={css.modalHeading}>{filtersHeading}</span>
+							<button className={css.resetAllButton} onClick={e => this.resetAll(e)}>
+								<FormattedMessage id={'SearchFiltersMobile.resetAll'} />
+							</button>
+						</div>
+						<div className={css.filtersWrapper}>
+							{amenitiesFilterElement}
+							{regularlyOpenOnFilterElement}
+							{groupSizeFilterElement}
+						</div>
+						<div className={css.showListingsContainer}>
+							<Button className={css.showListingsButton} onClick={this.closeFilters}>
+								{showListingsLabel}
+							</Button>
+						</div>
+					</ModalInMobile>
+
+				</div>
+				<div>
+					<RecommendDeal show={resultsCount === 0} />
+				</div>
+			</div>
     );
   }
 }

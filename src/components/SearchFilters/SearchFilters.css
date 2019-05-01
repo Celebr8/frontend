@@ -104,3 +104,18 @@
     border: 1px solid var(--marketplaceColorDark);
   }
 }
+
+.recommendDeal {
+
+	margin-top: 2em;
+	margin-left: 12.5%;
+	width: 66%;
+	font-weight: var(--fontWeightSemiBold);
+
+}
+
+.recommendDealWrapper {
+
+	flex-direction: row;
+
+}
