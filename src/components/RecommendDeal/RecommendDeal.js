@@ -46,7 +46,7 @@ const RecommendDeal  = props => {
 		</div>
 		</div>
 		<div className={css.readMore}>
-		<a href="https://www.whichost.com/legal/#recommend_reward" target="_blank">Recommend Reward Terms & Conditions</a>
+		<a href="https://www.whichost.com/legal/benefits#recommend_reward" target="_blank">Recommend Reward Terms & Conditions</a>
 		</div>
 		</div>
 
