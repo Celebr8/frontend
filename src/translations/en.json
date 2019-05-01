@@ -89,7 +89,7 @@
   "CheckoutPage.speculateFailedMessage": "Oops, something went wrong. Please refresh the page and try again.",
   "CheckoutPage.speculateTransactionError": "Failed to fetch breakdown information.",
   "CheckoutPage.title": "Book {listingTitle}",
-
+  "CommunityGuidelinesPage.heading": "Community Guidelines",
   "ContactUsPage.schemaTitle": "Contact us",
   "ContactUsPage.title": "Contact us",
   "ContactUsPage.sendingSuccess": "Your mail have been sent. We will get back to you as soon as possible",
@@ -148,24 +148,19 @@
   "DateInput.closeDatePicker": "Close",
   "DateInput.defaultPlaceholder": "Date input",
   "DateInput.screenReaderInputMessage": "Date input",
-  "DealsPage.heading": "How it works",
   "DealsPage.title": "At Whichost, it's all about you!",
   "DealsPage.heading": "How it works",
   "DealsPage.schemaTitle": "Deals page",
   "DealsPage.dealsTabTitle": "What's this?",
-  "DealsPage.birthdayDealTabTitle": "Birthday Deal",
-  "DealsPage.corporateDealTabTitle": "Employees Benefit",
 
-  "BirthdayDealPage.heading": "Birthday Deal",
-
-  "DealsPage.dealsTabTitle": "What's this?",
-  "DealsPage.birthdayDealTabTitle": "Birthday deal",
-  "DealsPage.corporateDealTabTitle": "Employee benefit",
-
-  "BirthdayDealPage.heading": "Birthday deal",
-
-  "CorporateDealPage.heading": "Employees Benefit",
-
+  "DealsPage.birthdayDealTabTitle": "Birthday Gift",
+  "DealsPage.corporateDealTabTitle": "Corporate Benefit",
+  "DealsPage.recommendDealTabTitle": "Recommend Reward",
+  
+  "BirthdayDealPage.heading": "Birthday Gift",
+  "CorporateDealPage.heading": "Corporate Benefit",
+  "RecommendDealPage.heading": "Recommend Reward",
+  
   "EditListingDescriptionForm.listingTypeLabel": "Space type",
   "EditListingDescriptionForm.listingTypePlaceholder": "Choose the type of space for your listing (common or private)",
   "EditListingDescriptionForm.listingTypeRequired": "You need to select a type for your space.",
@@ -292,8 +287,8 @@
   "EnquiryForm.sendEnquiryError": "Whoops, something went wrong. Please try again.",
   "EnquiryForm.submitButtonText": "Send enquiry",
 
-  "FAQPage.title": "Frequently Asked Questions (FAQ)",
-  "FAQPage.schemaTitle": "Frequently Asked Questions (FAQ)",
+  "FAQPage.title": "Frequently Asked Questions",
+  "FAQPage.schemaTitle": "Frequently Asked Questions",
 
   "FeesPage.title": "Fees",
   "FeesPage.schemaTitle": "Fees",
@@ -334,7 +329,6 @@
   "Footer.": "Privacy",
   "Footer.about": "About",
   "Footer.careersPage": "We're hiring",
-  "Footer.about": "About",
   "Footer.contact": "Contact",
   "Footer.privacyPolicy": "Privacy policy",
   "Footer.searchCork": "Pubs in Cork",
@@ -349,10 +343,10 @@
   "Footer.toCommunityGuidelines": "Community Guidelines",
   "Footer.toContactPage": "Contact",
   "Footer.toFAQPage": "FAQ",
-  "Footer.toCommunityGuidelines": "Community guidelines",
   "Footer.toPricing": "Pricing",
   "Footer.toHelpPage": "Help centre",
   "Footer.toNewListingPage": "Add your pub",
+  "Footer.version": "Version",
 
   "GuidebookForProvidersPage.title": "Guidebook for Publicans",
   "GuidebookForProvidersPage.schemaTitle": "Guidebook for Publicans",
@@ -401,6 +395,8 @@
   "LegalsPages.privacyTabTitle": "Privacy policy",
   "LegalsPages.tosTabTitle": "Terms of Service",
   "LegalsPages.legalsDealsTabTitle": "Benefits",
+
+  "LegalsPages.communityGuidelinesTabTitle": "Community Guidelines",
 
   "ListingCard.hostedBy": "Hosted by {authorName}.",
   "ListingCard.perUnit": "per night",
@@ -717,6 +713,9 @@
 
   "Reviews.bannedUserDisplayName": "Banned user",
 
+  "SearchFilters.recommendDealLabel": "Earn a gift card to use over 2.000 shops! Get 15€ for recommending a pub and celebrate there.",
+  "SearchFilters.recommendDealLink": "Learn More…",
+
   "SearchFilters.amenitiesLabel": "Amenities",
   "SearchFilters.regularlyOpenOnLabel": "Regularly open on",
   "SearchFilters.groupSizeLabel": "Group size",
@@ -726,8 +725,8 @@
   "SearchFilters.loadingResults": "Loading search results…",
   "SearchFilters.loadingResultsMobile": "Loading…",
   "SearchFilters.moreFiltersButton": "{count, plural, =0 {More filters} other {More filters • #}}",
-  "SearchFilters.noResults": "Could not find any listings.",
-  "SearchFilters.noResultsMobile": "No results.",
+  "SearchFilters.noResults": "Whoops! No pubs listed here yet, but you can still celebrate.",
+  "SearchFilters.noResultsMobile": "No pubs listed here.",
   "SearchFilters.openMapView": "Map",
 
   "SearchFiltersMobile.amenitiesLabel": "Amenities",

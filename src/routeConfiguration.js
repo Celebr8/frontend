@@ -19,6 +19,7 @@ import {
   DealsPage,
   BirthdayDealPage,
   CorporateDealPage,
+	RecommendDealPage,
 
 	// Pricing
 
@@ -302,6 +303,12 @@ const routeConfiguration = () => {
 			path: '/legal/benefits',
       name: 'LegalsDealsPage',
       component: props => <LegalsDealsPage {...props} />,
+    },
+    {
+			path: '/deals/recommend-gift',
+      name: 'RecommendDealPage',
+      component: props => <RecommendDealPage {...props} />,
+
     },
     {
 			path: '/legal/terms-of-service',

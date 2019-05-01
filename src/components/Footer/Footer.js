@@ -19,6 +19,7 @@ import { mainLocationsData, locationToURI } from '../../locals';
 
 const renderSocialMediaLinks = intl => {
 
+
   const { siteFacebookPage, siteInstagramPage, siteTwitterHandle } = config;
   const siteTwitterPage = twitterPageURL(siteTwitterHandle);
 
@@ -77,6 +78,8 @@ const Footer = props => {
   const socialMediaLinks = renderSocialMediaLinks(intl);
   const classes = classNames(rootClassName || css.root, className);
   const separator = <Fragment>&nbsp;&nbsp;|&nbsp;&nbsp;</Fragment>;
+
+	const version = config.version;
 
   return (
     <div className={classes}>
@@ -184,7 +187,7 @@ const Footer = props => {
                     Invite a friend
                   </a>
                 </li>
-                <li key="recommandAPub" className={css.listItem}>
+                <li key="recommendAPub" className={css.listItem}>
                   <a
                     href="https://docs.google.com/forms/d/e/1FAIpQLSejVl35N8A1lu_W99QkvovqLXn1ODOKBp35NZ524XHJnpdOeg/viewform"
                     target="_blank"
@@ -217,8 +220,14 @@ const Footer = props => {
                   {mainLocationsData.map(location => renderFavoriteLocation(location))}
                 </li>
               </ul>
+
             </div>
-            <div className={css.searchesExtra} />
+            <div className={css.searchesExtra}>
+							<NamedLink name="LandingPage" 
+								className={css.organizationCopyrightMobile + ' ' + css.registrationMobile}>
+								<FormattedMessage id="Footer.copyright" />
+							</NamedLink>
+						</div>
           </div>
           <div className={css.extraLinks}>
             <div className={css.legalMatters}>
@@ -247,14 +256,12 @@ const Footer = props => {
                 <NamedLink name="TermsOfServicePage" className={css.legalLink}>
                   Legal
                 </NamedLink>
+								{separator}
+								<FormattedMessage id="Footer.version" /> {version}
               </div>
             </div>
           </div>
           <div className={css.copyrightAndTermsMobile}>
-            <NamedLink name="LandingPage" className={css.organizationCopyrightMobile}>
-              <FormattedMessage id="Footer.copyright" />
-              <br />
-            </NamedLink>
             <div className={css.tosAndPrivacyMobile}>
 							
               <NamedLink name="AboutPage" className={css.privacy}>

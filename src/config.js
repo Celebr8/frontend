@@ -3,10 +3,14 @@ import defaultLocationSearches from './default-location-searches';
 
 import dotenv from 'dotenv';
 
+import packageNpmConfig from './package.alias';
+
 dotenv.config();
 
 const env = process.env.REACT_APP_ENV;
 const dev = process.env.REACT_APP_ENV === 'development';
+
+const version = packageNpmConfig.version;
 
 // If you want to change the language, remember to also change the
 // locale data and the messages in the app.js file.
@@ -386,6 +390,7 @@ const config = {
   usingSSL,
   maps,
   custom,
+	version
 };
 
 export default config;
