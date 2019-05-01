@@ -18,7 +18,7 @@ const BirthdayDeal = props => {
 		<div className={css.container}>
 		<div className={classes}>
 		<h2>Earn a gift card to use with over 2,000 shops in Ireland!</h2>
-		
+
 		<p>Get up to €240 when celebrating your birthday.</p>
 		<section className={css.getInTouch}>
 			<div className={css.btnGroup + ' ' + css.containerButton}>
@@ -46,7 +46,7 @@ const BirthdayDeal = props => {
 		</div>
 		</div>
 		<div className={css.readMore}>
-		<a href="#" target="_blank">Birthday Gift Terms &amp; Conditions</a>
+		<a href="https://www.whichost.com/legal/benefits" target="_blank">Birthday Gift Terms &amp; Conditions</a>
 		</div>
 		</div>
 

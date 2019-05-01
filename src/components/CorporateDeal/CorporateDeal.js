@@ -44,7 +44,7 @@ const CorporateDeal = props => {
         </div>
       </div>
       <div className={css.readMore}>
-      <a href="#" target="_blank">Corporate Benefit Terms & Conditions</a>
+      <a href="https://www.whichost.com/legal/benefits#corporate_benefit" target="_blank">Corporate Benefit Terms & Conditions</a>
       </div>
     </div>
   );
