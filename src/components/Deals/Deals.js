@@ -14,9 +14,9 @@ const Deals = props => {
 	return (
         <section>
 		<h1>Part of our culture is giving back</h1>
-        <p> On this page you will find all the ways in which we'll give back to our community and customers.</p>
-        <p>Take a look at the menu and you'll see our active deals for you as a loyal customer. We call them <b>"The Whichost Deals"</b>.</p>
-				<p>Click for example on <b>"Birthday deal"</b>, read through the details and don't hesitate to <u><NamedLink name="ContactUsPage">write us a message</NamedLink></u>, in case you have further questions. You can also <u><a href="https://calendly.com/whichost/30min" target="_blank">request a callback</a></u> and we'll get back to you over the phone.</p>
+        <p>On this page you will find all the ways in which we are give back to our community.</p>
+        <p>Take a look at the menu on the left and you'll see our active deals for you as a loyal customer. We call them <b>"The Whichost Deals"</b>.</p>
+				<p>Click yourself through our <b>"Birthday Gift"</b>, <b>"Corporate Benefit"</b> or the <b>"Recommend Reward"</b> to see which one suits you best. Don't hesitate to <u><a href="https://www.whichost.com/help/contact-us" target="_blank">write us a message</a></u>, in case you have further questions. You can also <u><a href="https://calendly.com/whichost/30min" target="_blank">request a callback</a></u> and we'll get back to you over the phone.</p>
         <br></br>
         <h3>Have fun!</h3>
         </section>
