@@ -128,7 +128,7 @@
 
 .recommendDeal {
 
-	font-weight: var(--fontWeightBold);
+	color: var(--marketplaceColor);
 	margin: 0 12% 0 12%;
 
 }
