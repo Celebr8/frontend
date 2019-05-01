@@ -14,6 +14,13 @@ export const dealsTabs = (intl, selected) => [
       },
     },
     {
+      text: intl.formatMessage({ id: 'DealsPage.recommendDealTabTitle' }),
+      selected: selected == 'RecommendDealPage',
+      linkProps: {
+        name: 'RecommendDealPage',
+      },
+    },
+    {
       text: intl.formatMessage({ id: 'DealsPage.corporateDealTabTitle' }),
       selected: selected == 'CorporateDealPage',
       linkProps: {
