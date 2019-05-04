@@ -132,7 +132,8 @@ const bookingData = (unitType, tx, isOrder, intl) => {
   const endDateRaw = dateFromAPIToLocalNoon(end);
   const isDaily = unitType === LINE_ITEM_DAY;
   const isUnits = unitType === LINE_ITEM_UNITS;
-  const isSingleDay = isDaily && daysBetween(startDate, endDateRaw) === 1;
+	// const isSingleDay = isDaily && daysBetween(startDate, endDateRaw) === 1;
+	const isSingleDay = true;
   const bookingStart = formatDate(intl, startDate);
 
   // Shift the exclusive API end date with daily bookings
