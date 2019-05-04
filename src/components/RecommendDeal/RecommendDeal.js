@@ -24,15 +24,31 @@ const RecommendDeal  = props => {
 	// prettier-ignore
 	return (
 
+		<div className={css.container}>
 		<div className={classes}>
-
-			<section className={css.container}>
-
-				<PricingTable />
-
+		<h2>Earn a gift card to use with over 2,000 shops in Ireland!
+		<br/>
+		Get €15 for recommending a pub and celebrating there.</h2>
+		<section className={css.getInTouch}>
+			<div className={css.btnGroup + ' ' + css.containerButton}>
+					<section className={css.centerButtons}>
+          	<a href="https://docs.google.com/forms/d/e/1FAIpQLSfr2dEghUT1VF1i9BWPsvZIJpnHe2FPVmCuoHJaAR3AXDe_GA/viewform" target="_blank"><button type="submit">Recommend a pub</button></a>
+					</section>
+				</div>
 			</section>
-
-	</div>
+		<div className={css.steps}>
+			<div>
+				<p>
+				When you recommend us a pub, we will get in touch with the pub and let them know you want to book your celebration with them.
+				We will issue the gift card after you’ve held your party with them. This is a physical gift card, so we will ask for an address to deliver it.
+				</p>
+			</div>
+		</div>
+		</div>
+		<div className={css.readMore}>
+		<a href="https://www.whichost.com/legal/benefits#recommend_reward" target="_blank">Recommend Reward Terms & Conditions</a>
+		</div>
+		</div>
 
 
 

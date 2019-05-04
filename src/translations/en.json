@@ -17,6 +17,7 @@
   "ActivityFeed.transitionExpire": "Booking request expired. { displayName } did not reply on time.",
   "ActivityFeed.transitionRequest": "{ displayName } requested to book { listingTitle }.",
   "ActivityFeed.transitionReview": "{ displayName } left a review for you. { reviewLink }",
+
   "AuthenticationPage.emailAlreadyInUse": "An account with this email address already exists. Try logging in instead.",
   "AuthenticationPage.fixEmail": "Whoops, typo in your email? {fixEmailLink}.",
   "AuthenticationPage.fixEmailLinkText": "Fix it",
@@ -36,7 +37,9 @@
   "AuthenticationPage.verifyEmailClose": "LATER",
   "AuthenticationPage.verifyEmailText": "Thanks for signing up! There's one quick step left. To be able to contact you, we need you to verify your email address. Please click the link we sent to {email}.",
   "AuthenticationPage.verifyEmailTitle": "{name}, check your inbox to verify your email",
+
   "Avatar.bannedUserDisplayName": "Banned user",
+
   "BookingBreakdown.bookingPeriod": "{bookingStart}",
   "BookingBreakdown.commission": "Whichost fee *",
   "BookingBreakdown.commissionFeeNote": "* The fee helps us run the platform and provide the best possible service to you!",
@@ -56,6 +59,7 @@
   "BookingBreakdown.refundProviderFee": "Refund Whichost fee",
   "BookingBreakdown.subTotal": "Subtotal",
   "BookingBreakdown.total": "Total price",
+
   "BookingDatesForm.bookingStartTitle": "Party date",
   "BookingDatesForm.listingCurrencyInvalid": "Oops, the currency of the listing doesn't match the currency of the marketplace.",
   "BookingDatesForm.listingPriceMissing": "Oops, this listing has no price!",
@@ -66,8 +70,10 @@
   "BookingDatesForm.requiredDate": "Oops, make sure your date is correct!",
   "BookingDatesForm.timeSlotsError": "Loading listing availability failed. Please refresh the page.",
   "BookingDatesForm.youWontBeChargedInfo": "You won't be charged yet",
+
   "CareersPage.schemaTitle": "We're hiring!",
   "CareersPage.title": "We're hiring!",
+
   "CheckoutPage.bookingTimeNotAvailableMessage": "Unfortunately, the requested time is already booked.",
   "CheckoutPage.errorlistingLinkText": "the pub page",
   "CheckoutPage.goToLandingPage": "Go to homepage",
@@ -102,6 +108,7 @@
   "ContactUsForm.subjectLabel": "Subject",
   "ContactUsForm.subjectRequired": "A subject is required",
   "ContactUsForm.subjectPlaceholder": "Subject",
+
   "ContactDetailsForm.confirmChangesInfo": "To change your email address, please enter your current password.",
   "ContactDetailsForm.confirmChangesTitle": "Confirm your changes",
   "ContactDetailsForm.emailInvalid": "A valid email address is required",
@@ -126,14 +133,17 @@
   "ContactDetailsForm.resendEmailVerificationText": "Resend verification email.",
   "ContactDetailsForm.saveChanges": "Save changes",
   "ContactDetailsForm.tooManyVerificationRequests": "Too many email verification requests sent.",
+
   "ContactDetailsPage.contactDetailsTabTitle": "Contact details",
   "ContactDetailsPage.heading": "Contact details",
   "ContactDetailsPage.passwordTabTitle": "Password",
   "ContactDetailsPage.paymentsTabTitle": "Payments",
   "ContactDetailsPage.title": "Contact details",
+
   "CookieConsent.continue": "Continue",
   "CookieConsent.cookieLink": "cookies",
   "CookieConsent.message": "Welcome to Whichost, friend! We use {cookieLink} to enhance your browsing experience.",
+
   "DateInput.clearDate": "Clear Date",
   "DateInput.closeDatePicker": "Close",
   "DateInput.defaultPlaceholder": "Date input",
@@ -142,10 +152,15 @@
   "DealsPage.heading": "How it works",
   "DealsPage.schemaTitle": "Deals page",
   "DealsPage.dealsTabTitle": "What's this?",
+
   "DealsPage.birthdayDealTabTitle": "Birthday Gift",
   "DealsPage.corporateDealTabTitle": "Corporate Benefit",
-	"BirthdayDealPage.heading": "Birthday Gift",
+  "DealsPage.recommendDealTabTitle": "Recommend Reward",
+  
+  "BirthdayDealPage.heading": "Birthday Gift",
   "CorporateDealPage.heading": "Corporate Benefit",
+  "RecommendDealPage.heading": "Recommend Reward",
+  
   "EditListingDescriptionForm.listingTypeLabel": "Space type",
   "EditListingDescriptionForm.listingTypePlaceholder": "Choose the type of space for your listing (common or private)",
   "EditListingDescriptionForm.listingTypeRequired": "You need to select a type for your space.",
@@ -161,18 +176,22 @@
   "EditListingDescriptionForm.updateFailed": "Failed to update listing. Please try again.",
   "EditListingDescriptionPanel.createListingTitle": "Add your pub",
   "EditListingDescriptionPanel.title": "Edit details of {listingTitle}",
+
   "EditListingFeaturesForm.showListingFailed": "Fetching listing data failed",
   "EditListingFeaturesForm.updateFailed": "Failed to update listing. Please try again.",
   "EditListingFeaturesPanel.createListingTitle": "What amenities does your pub have?",
   "EditListingFeaturesPanel.title": "Edit the amenities of {listingTitle}",
+
   "EditListingCapacityPanel.createListingTitle": "What capacites does your pub have?",
   "EditListingCapacityPanel.title": "Edit the capacity of {listingTitle}",
+
   "EditListingRegularlyOpenOnPanel.createListingTitle": "What days are you regularly open?",
   "EditListingRegularlyOpenOnPanel.title": "Edit the days during which {listingTitle} is regularly open",
   "EditListingCapacityForm.showListingFailed": "Fetching listing data failed",
   "EditListingCapacityForm.updateFailed": "Failed to update listing. Please try again.",
   "EditListingRegularlyOpenOnForm.showListingFailed": "Fetching listing data failed",
   "EditListingRegularlyOpenOnForm.updateFailed": "Failed to update listing. Please try again.",
+
   "EditListingLocationForm.address": "Address",
   "EditListingLocationForm.addressNotRecognized": "We didn't recognize this location. Please try another location.",
   "EditListingLocationForm.addressPlaceholder": "123 Example Street",
@@ -183,9 +202,11 @@
   "EditListingLocationForm.updateFailed": "Failed to update listing. Please try again.",
   "EditListingLocationPanel.createListingTitle": "Where's your pub?",
   "EditListingLocationPanel.title": "Edit the location of {listingTitle}",
+
   "EditListingPage.loadingListingData": "Loading listing data…",
   "EditListingPage.titleCreateListing": "Create a listing",
   "EditListingPage.titleEditListing": "Edit listing",
+
   "EditListingPhotosForm.addImagesTip": "Tip: Choose the top 2-3 photos of your pub from different angles in a good light that really show the space.",
   "EditListingPhotosForm.bankAccountNumberRequired": "You need to add a bank account number.",
   "EditListingPhotosForm.chooseImage": "+ Choose an image…",
@@ -197,25 +218,30 @@
   "EditListingPhotosForm.savedImageAltText": "Saved listing image",
   "EditListingPhotosForm.showListingFailed": "Fetching listing data failed",
   "EditListingPhotosForm.updateFailed": "Failed to update listing. Please try again.",
+
   "EditListingPhotosPanel.createListingTitle": "Add a few photos",
   "EditListingPhotosPanel.payoutModalInfo": "Since this was the first listing you created, we need to know bit more about you in order to send you money. We only ask these once.",
   "EditListingPhotosPanel.payoutModalTitleOneMoreThing": "One more thing:",
   "EditListingPhotosPanel.payoutModalTitlePayoutPreferences": "Payout preferences",
   "EditListingPhotosPanel.title": "Edit the photos of {listingTitle}",
+
   "EditListingPoliciesForm.rulesLabel": "Pub rules",
   "EditListingPoliciesForm.rulesPlaceholder": "Describe the no-nos",
   "EditListingPoliciesForm.showListingFailed": "Fetching listing data failed",
   "EditListingPoliciesForm.updateFailed": "Failed to update listing. Please try again.",
   "EditListingPoliciesPanel.createListingTitle": "Time to set some ground rules for the partiers.",
   "EditListingPoliciesPanel.title": "Edit the rules of {listingTitle}",
+
   "EditListingPricingForm.priceInputPlaceholder": "Choose your price…",
   "EditListingPricingForm.pricePerUnit": "Price per booking in euros (minimum €9.00)",
   "EditListingPricingForm.priceRequired": "You need to add a valid price.",
   "EditListingPricingForm.priceTooLow": "Price should be at least {minPrice}.",
   "EditListingPricingForm.showListingFailed": "Fetching listing data failed",
   "EditListingPricingForm.updateFailed": "Failed to update listing. Please try again.",
+
   "EditListingPricingPanel.createListingTitle": "How much does it cost?",
   "EditListingPricingPanel.listingPriceCurrencyInvalid": "Listing currency is different from the marketplace currency. You cannot edit the price.",
+
   "EditListingPricingPanel.title": "Edit the pricing of {listingTitle}",
   "EditListingWizard.saveEditDescription": "Save description",
   "EditListingWizard.saveEditFeatures": "Save amenities",
@@ -233,6 +259,7 @@
   "EditListingWizard.saveNewPhotos": "Publish listing",
   "EditListingWizard.saveNewPolicies": "Next: Location",
   "EditListingWizard.saveNewPricing": "Next: Photos",
+
   "EditListingWizard.tabLabelDescription": "Description",
   "EditListingWizard.tabLabelFeatures": "Amenities",
   "EditListingWizard.tabLabelCapacity": "Capacity",
@@ -241,6 +268,7 @@
   "EditListingWizard.tabLabelPhotos": "Photos",
   "EditListingWizard.tabLabelPolicy": "Pub rules",
   "EditListingWizard.tabLabelPricing": "Pricing",
+
   "EmailVerificationForm.finishAccountSetup": "We will need to send you email notifications. To allow this, please verify your email address {email}.",
   "EmailVerificationForm.successButtonText": "Continue exploring",
   "EmailVerificationForm.successText": "Everything looks good. Time to get out there – have a great day.",
@@ -251,23 +279,29 @@
   "EmailVerificationForm.verifying": "Verifying…",
   "EmailVerificationPage.loadingUserInformation": "Loading user information…",
   "EmailVerificationPage.title": "Verify your email address",
+
   "EnquiryForm.heading": "Enquire about {listingTitle}",
   "EnquiryForm.messageLabel": "Message to {authorDisplayName}",
   "EnquiryForm.messagePlaceholder": "Hello {authorDisplayName}! I'm looking forward to…",
   "EnquiryForm.messageRequired": "A message is required",
   "EnquiryForm.sendEnquiryError": "Whoops, something went wrong. Please try again.",
   "EnquiryForm.submitButtonText": "Send enquiry",
+
   "FAQPage.title": "Frequently Asked Questions",
   "FAQPage.schemaTitle": "Frequently Asked Questions",
+
   "FeesPage.title": "Fees",
   "FeesPage.schemaTitle": "Fees",
+
   "FieldBoolean.no": "No",
   "FieldBoolean.yes": "Yes",
+
   "FieldDateInput.clearDate": "Clear Date",
   "FieldDateInput.closeDatePicker": "Close",
   "FieldDateInput.invalidDate": "The date is not valid",
   "FieldDateInput.placeholderText": "Add party date",
   "FieldDateInput.screenReaderInputMessage": "Date input",
+
   "FieldDateRangeInput.clearDate": "Clear Date",
   "FieldDateRangeInput.closeDatePicker": "Close",
   "FieldDateRangeInput.endDatePlaceholderText": "Add end date",
@@ -275,15 +309,18 @@
   "FieldDateRangeInput.invalidStartDate": "The start date is not valid",
   "FieldDateRangeInput.screenReaderInputMessage": "Date input",
   "FieldDateRangeInput.startDatePlaceholderText": "Add start date",
+
   "FieldReviewRating.star1": "Bad experience - 1 star",
   "FieldReviewRating.star2": "Not so nice - 2 stars",
   "FieldReviewRating.star3": "OK - 3 stars",
   "FieldReviewRating.star4": "Good - 4 stars",
   "FieldReviewRating.star5": "Awesome - 5 stars",
-  "Footer.copyright": "© Whichost 2019. Whichost Ltd is registered in Ireland. Reg. No. 624254.",
-  "Footer.copyrightMobile": "© Whichost 2019.",
+
   "FirstStepsPage.title": "Steps to make your life easyer!",
   "FirstStepsPage.schemaTitle": "Steps to make your life easyer!",
+
+  "Footer.copyright": "© Whichost 2019. Whichost Ltd is registered in Ireland. Reg. No. 624254.",
+  "Footer.copyrightMobile": "© Whichost 2019.",
   "Footer.goToFacebook": "Go to Facebook page",
   "Footer.goToInstagram": "Go to Instagram page",
   "Footer.goToTwitter": "Go to Twitter page",
@@ -310,16 +347,20 @@
   "Footer.toHelpPage": "Help centre",
   "Footer.toNewListingPage": "Add your pub",
   "Footer.version": "Version",
+
   "GuidebookForProvidersPage.title": "Guidebook for Publicans",
   "GuidebookForProvidersPage.schemaTitle": "Guidebook for Publicans",
+
   "HelpCenter.ContactUsTabTitle": "Contact us",
   "HelpCenter.FAQTabTitle": "FAQ",
   "HelpCenter.FeesTabTitle": "Fees",
   "HelpCenter.DealsTabTitle": "Deals",
   "HelpCenter.FirstStepsTabTitle": "First steps",
   "HelpCenter.GuidebookForProvidersTabTitle": "Guidebook for providers",
+
   "ImageCarousel.imageAltText": "Listing image {index}/{count}",
   "ImageFromFile.couldNotReadFile": "Could not read file",
+
   "InboxPage.bannedUserDisplayName": "Banned user",
   "InboxPage.fetchFailed": "Could not load all messages. Please try again.",
   "InboxPage.noOrdersFound": "You haven't made any bookings.",
@@ -344,17 +385,26 @@
   "InboxPage.time": "Time",
   "InboxPage.timeAt": "at",
   "InboxPage.occasionBirthday": "This is a birthday party!",
+
   "LandingPage.schemaDescription": "Book your party using Whichost or increase your pub's exposure.",
   "LandingPage.schemaTitle": "Celebrate Anywhere | {siteTitle}",
+
+  "LegalsDealsPage.schemaTitle": "Benefits T&C",
+  "LegalsDealsPage.heading": "Benefits T&C",
+
   "LegalsPages.privacyTabTitle": "Privacy policy",
   "LegalsPages.tosTabTitle": "Terms of Service",
+  "LegalsPages.legalsDealsTabTitle": "Benefits",
+
   "LegalsPages.communityGuidelinesTabTitle": "Community Guidelines",
+
   "ListingCard.hostedBy": "Hosted by {authorName}.",
   "ListingCard.perUnit": "per night",
   "ListingCard.unsupportedPrice": "({currency})",
   "ListingCard.unsupportedPriceTitle": "Unsupported currency ({currency})",
   "ListingCard.privateSpace": "Private space",
   "ListingCard.commonSpace": "Common space",
+
   "ListingPage.bannedUserDisplayName": "Banned user",
   "ListingPage.bookingHelp": "Start by choosing your dates.",
   "ListingPage.bookingHelpClosedListing": "Sorry, this listing has been closed.",
@@ -391,8 +441,10 @@
   "ListingPage.schemaTitle": "{title} - {price} | {siteTitle}",
   "ListingPage.viewImagesButton": "View photos ({count})",
   "ListingPage.yourHostHeading": "Your host",
+
   "LocationAutocompleteInput.currentLocation": "Current location",
   "LocationSearchForm.placeholder": "Enter location",
+
   "LoginForm.emailInvalid": "A valid email address is required",
   "LoginForm.emailLabel": "Email",
   "LoginForm.birthday": "Birthday",
@@ -404,6 +456,7 @@
   "LoginForm.passwordLabel": "Password",
   "LoginForm.passwordPlaceholder": "Enter your password…",
   "LoginForm.passwordRequired": "This field is required",
+
   "ManageListingCard.actionFailed": "Whoops, something went wrong. Please refresh the page and try again.",
   "ManageListingCard.closeListing": "Close listing",
   "ManageListingCard.closedListing": "This listing is closed and not visible on the marketplace.",
@@ -418,6 +471,7 @@
   "ManageListingCard.unsupportedPrice": "({currency})",
   "ManageListingCard.unsupportedPriceTitle": "Unsupported currency ({currency})",
   "ManageListingCard.viewListing": "View listing",
+
   "ManageListingsPage.accountSettings": "Account settings",
   "ManageListingsPage.loadingOwnListings": "Loading listings…",
   "ManageListingsPage.noResults": "You don't have any listings.",
@@ -426,9 +480,12 @@
   "ManageListingsPage.title": "Manage listings",
   "ManageListingsPage.youHaveListings": "You have {count} {count, plural, one {listing} other {listings}}",
   "ManageListingsPage.yourListings": "Your listings",
+
   "MapPriceMarker.unsupportedPrice": "({currency})",
+
   "Modal.close": "CLOSE",
   "Modal.closeModal": "Close modal",
+
   "ModalMissingInformation.checkInbox": "Please check your inbox and verify your email address {email}",
   "ModalMissingInformation.closeVerifyEmailReminder": "Later",
   "ModalMissingInformation.fixEmail": "Whoops, typo in your email? {fixEmailLink}",
@@ -443,15 +500,20 @@
   "ModalMissingInformation.sendingEmail": "Sending verification email…",
   "ModalMissingInformation.verifyEmailText": "We are currently unable to send you email notifications if other Whichost users contact you because you haven't verified your email address.",
   "ModalMissingInformation.verifyEmailTitle": "Please verify your email address",
+
   "NotFoundPage.description": "We can't find the page or pub you're looking for. Make sure you've typed in the URL correctly or try searching Whichost.",
   "NotFoundPage.heading": "Sorry, we couldn't find that page.",
   "NotFoundPage.title": "Page not found",
+
   "NonDiscriminationPolicyPage.heading": "Inclusion Policy",
+
   "Page.schemaDescription": "Book your party using Whichost or increase your pub's exposure.",
   "Page.schemaTitle": "Celebrate Anywhere!  | {siteTitle}",
+
   "PaginationLinks.next": "Next page",
   "PaginationLinks.previous": "Previous page",
   "PaginationLinks.toPage": "Go to page {page}",
+
   "PasswordChangeForm.confirmChangesInfo": "To change your password, please enter your current password.",
   "PasswordChangeForm.confirmChangesTitle": "Confirm your changes",
   "PasswordChangeForm.genericFailure": "Whoops, something went wrong. Please refresh the page and try again.",
@@ -465,11 +527,13 @@
   "PasswordChangeForm.passwordTooLong": "The password should be at most {maxLength} characters",
   "PasswordChangeForm.passwordTooShort": "The password should be at least {minLength} characters",
   "PasswordChangeForm.saveChanges": "Save changes",
+
   "PasswordChangePage.contactDetailsTabTitle": "Contact details",
   "PasswordChangePage.heading": "Password settings",
   "PasswordChangePage.passwordTabTitle": "Password",
   "PasswordChangePage.paymentsTabTitle": "Payments",
   "PasswordChangePage.title": "Password",
+
   "PasswordRecoveryForm.emailInvalid": "A valid email address is required",
   "PasswordRecoveryForm.emailLabel": "Email",
   "PasswordRecoveryForm.emailNotFound": "Hmm. We didn't find an account with that email address. Please double-check the address and try again.",
@@ -493,12 +557,14 @@
   "PasswordRecoveryPage.resendEmailLinkText": "Send another email.",
   "PasswordRecoveryPage.resendingEmailInfo": "Resending instructions…",
   "PasswordRecoveryPage.title": "Request a new password",
+
   "PasswordResetForm.passwordLabel": "Your new password",
   "PasswordResetForm.passwordPlaceholder": "Enter your new password…",
   "PasswordResetForm.passwordRequired": "This field is required",
   "PasswordResetForm.passwordTooLong": "Password should be at most {maxLength} characters",
   "PasswordResetForm.passwordTooShort": "Password should be at least {minLength} characters",
   "PasswordResetForm.submitButtonText": "Reset password",
+
   "PasswordResetPage.helpText": "Please provide a new password.",
   "PasswordResetPage.invalidUrlParams": "Oops, it looks like the password reset link is broken. Try again by clicking on the link in the received email, or request a new link from the {recoveryLink}.",
   "PasswordResetPage.loginButtonText": "Log in",
@@ -508,6 +574,7 @@
   "PasswordResetPage.recoveryLinkText": "password recovery page",
   "PasswordResetPage.resetFailed": "Reset failed. Please try again.",
   "PasswordResetPage.title": "Reset password",
+
   "PayoutDetailsForm.addressTitle": "Address",
   "PayoutDetailsForm.bankDetails": "Bank details",
   "PayoutDetailsForm.birthdayDatePlaceholder": "dd",
@@ -560,6 +627,7 @@
   "PayoutDetailsForm.stripeToSText": "By saving details, you agree to the {stripeConnectedAccountTermsLink}",
   "PayoutDetailsForm.submitButtonText": "Save details & publish listing",
   "PayoutDetailsForm.title": "One more thing: payout preferences",
+
   "PayoutPreferencesPage.contactDetailsTabTitle": "Contact details",
   "PayoutPreferencesPage.heading": "Payment settings",
   "PayoutPreferencesPage.loadingData": "Loading data…",
@@ -572,18 +640,22 @@
   "PayoutPreferencesPage.stripeNotConnected": "Payment information not saved. Please fill in the form to accept payments from your listings.",
   "PayoutPreferencesPage.submitButtonText": "Save details",
   "PayoutPreferencesPage.title": "Payment settings",
+
   "PriceFilter.clear": "Clear",
   "PriceFilter.label": "Price",
+
   "PriceFilter.labelSelectedPlain": "Price: {minPrice} - {maxPrice}",
   "PriceFilter.labelSelectedButton": "{minPrice} - {maxPrice}",
   "PriceFilterForm.cancel": "Cancel",
   "PriceFilterForm.clear": "Clear",
   "PriceFilterForm.label": "Price range:",
   "PriceFilterForm.submit": "Apply",
+
   "PrivacyPolicyPage.heading": "Privacy Policy",
   "PrivacyPolicyPage.privacyTabTitle": "Privacy Policy",
   "PrivacyPolicyPage.schemaTitle": "Privacy Policy | {siteTitle}",
   "PrivacyPolicyPage.tosTabTitle": "Terms of Service",
+
   "ProfilePage.desktopHeading": "Hello, I'm {name}.",
   "ProfilePage.editProfileLinkDesktop": "Edit profile",
   "ProfilePage.editProfileLinkMobile": "Edit",
@@ -595,6 +667,7 @@
   "ProfilePage.reviewsOfCustomerTitle": "Reviews from Hosts ({count})",
   "ProfilePage.reviewsOfProviderTitle": "Reviews from Guests ({count})",
   "ProfilePage.schemaTitle": "{name} | {siteTitle}",
+
   "ProfileSettingsForm.addYourProfilePicture": "+ Add your profile picture…",
   "ProfileSettingsForm.addYourProfilePictureMobile": "+ Add",
   "ProfileSettingsForm.bioHeading": "Your profile bio",
@@ -622,7 +695,9 @@
   "ProfileSettingsPage.heading": "Profile settings",
   "ProfileSettingsPage.title": "Profile settings",
   "ProfileSettingsPage.viewProfileLink": "View your profile",
+
   "ResponsiveImage.noImage": "No image",
+
   "ReviewForm.reviewContentLabel": "Leave a review",
   "ReviewForm.reviewContentPlaceholder": "Descripe your experience...",
   "ReviewForm.reviewContentRequired": "You need to add a message to leave a review.",
@@ -631,12 +706,15 @@
   "ReviewForm.reviewSubmit": "Publish review",
   "ReviewForm.reviewSubmitAlreadySent": "Review already sent. Please refresh the page.",
   "ReviewForm.reviewSubmitFailed": "Failed to sent a review. Please try again.",
+
   "ReviewModal.description": "Reviews are an important part of the Whichost community. Please share what went well and what could have been improved.",
   "ReviewModal.later": "Later",
   "ReviewModal.title": "Leave a review for {revieweeName}",
+
   "Reviews.bannedUserDisplayName": "Banned user",
-  "SearchFilters.recommendDealLabel": "Earn a gift card to use over 2.000 shops! Get 15€ for recommending a pub and celebrate there.",
+  "SearchFilters.recommendDealLabel": "Earn a gift card to use over 2.000 shops! Get €15 for recommending a pub and celebrate there.",
   "SearchFilters.recommendDealLink": "Learn More…",
+
   "SearchFilters.amenitiesLabel": "Amenities",
   "SearchFilters.regularlyOpenOnLabel": "Regularly open on",
   "SearchFilters.groupSizeLabel": "Group size",
@@ -649,6 +727,7 @@
   "SearchFilters.noResults": "Whoops! No pubs listed here yet, but you can still celebrate.",
   "SearchFilters.noResultsMobile": "No pubs listed here.",
   "SearchFilters.openMapView": "Map",
+
   "SearchFiltersMobile.amenitiesLabel": "Amenities",
   "SearchFiltersMobile.regularlyOpenOnLabel": "Reguraly open on",
   "SearchFiltersMobile.groupSizeLabel": "Group size",
@@ -656,21 +735,27 @@
   "SearchFiltersMobile.heading": "Filter pubs",
   "SearchFiltersMobile.resetAll": "Reset all",
   "SearchFiltersMobile.showListings": "Show {count, number} {count, plural, one {pubs} other {pubs}}",
+
   "SearchFiltersPanel.apply": "Apply",
   "SearchFiltersPanel.cancel": "Cancel",
   "SearchFiltersPanel.resetAll": "Reset all",
+
   "SearchMapInfoCard.noImage": "No image",
+
   "SearchPage.schemaDescription": "Showing search results",
   "SearchPage.schemaMapSearch": "map search",
   "SearchPage.schemaTitle": "Search results for {searchAddress} | {siteTitle}",
   "SearchPage.searchError": "Search failed. Please try again.",
+
   "SearchResultsPanel.nextPage": "Next page",
   "SearchResultsPanel.previousPage": "Previous page",
+
   "SectionHero.browseButton": "Browse pubs",
   "SectionHero.temporaryOffer": "Booking for your birthday? ",
   "SectionHero.temporaryOfferLink": "We have a gift for you!",
   "SectionHero.subTitle": "Find and book pubs for your parties and celebrations.",
   "SectionHero.title": "Celebrate Anywhere!",
+
   "SectionHowItWorks.createListingLink": "PS. You can also add your pub on Whichost in just a few clicks! Click here to get started.",
   "SectionHowItWorks.part1Text": "Start by searching for a location. Once you find a pub you like, request a booking and make a secure payment right away.",
   "SectionHowItWorks.part1Title": "1. Browse and book",

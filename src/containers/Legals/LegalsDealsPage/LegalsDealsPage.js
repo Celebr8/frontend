@@ -5,32 +5,29 @@ import { connect } from 'react-redux';
 import { injectIntl, intlShape, FormattedMessage } from 'react-intl';
 import { isScrollingDisabled } from '../../../ducks/UI.duck';
 import { TopbarContainer } from '../../../containers';
-
-import { dealsTabs } from '../tabs'
-
 import {
   Page,
-  LayoutSideNavigationWithHero,
+  LayoutSideNavigation,
   LayoutWrapperMain,
   LayoutWrapperSideNav,
-  LayoutWrapperHero,
   LayoutWrapperTopbar,
   LayoutWrapperFooter,
-  Footer,
-	Deals,
-	RecommendDeal
+	Footer,
+	LegalsDeals
 } from '../../../components';
+
 import config from '../../../config';
+import { legalsTabs } from '../tabs';
 
-import css from './RecommendDealPage.css';
+import css from './LegalsDealsPage.css';
 
-const RecommendDealPageComponent = props => {
+const LegalsDealsPageComponent = props => {
   const { scrollingDisabled, intl } = props;
 
-	const tabs = dealsTabs(intl, 'RecommendDealPage');
+	const tabs = legalsTabs(intl, 'LegalsDealsPage');
 
 	const siteTitle = config.siteTitle;
-  const schemaTitle = intl.formatMessage({ id: 'DealsPage.schemaTitle' }, { siteTitle });
+  const schemaTitle = intl.formatMessage({ id: 'LegalsDealsPage.schemaTitle' }, { siteTitle });
   const schema = {
     '@context': 'http://schema.org',
     '@type': 'WebPage',
@@ -38,34 +35,30 @@ const RecommendDealPageComponent = props => {
   };
   return (
     <Page title={schemaTitle} scrollingDisabled={scrollingDisabled} schema={schema}>
-      <LayoutSideNavigationWithHero>
+      <LayoutSideNavigation>
         <LayoutWrapperTopbar>
-          <TopbarContainer currentPage="RecommendDealPage" />
+          <TopbarContainer currentPage="LegalsDealsPage" />
         </LayoutWrapperTopbar>
-				<LayoutWrapperHero className={css.hero}>
-					<div className={css.heroContent}>
-						<h1 className={css.heroMainTitle}>
-							<FormattedMessage id="DealsPage.title" />
-						</h1>
-					</div>
-				</LayoutWrapperHero>
         <LayoutWrapperSideNav tabs={tabs} />
         <LayoutWrapperMain>
           <div className={css.content}>
-            <RecommendDeal />
+            <h1 className={css.heading}>
+              <FormattedMessage id="LegalsDealsPage.heading" />
+            </h1>
+            <LegalsDeals />
           </div>
         </LayoutWrapperMain>
         <LayoutWrapperFooter>
           <Footer />
         </LayoutWrapperFooter>
-      </LayoutSideNavigationWithHero>
+      </LayoutSideNavigation>
     </Page>
   );
 };
 
 const { bool } = PropTypes;
 
-RecommendDealPageComponent.propTypes = {
+LegalsDealsPageComponent.propTypes = {
   scrollingDisabled: bool.isRequired,
 
   // from injectIntl
@@ -78,9 +71,9 @@ const mapStateToProps = state => {
   };
 };
 
-const RecommendDealPage = compose(
+const LegalsDealsPage = compose(
   connect(mapStateToProps),
   injectIntl
-)(RecommendDealPageComponent);
+)(LegalsDealsPageComponent);
 
-export default RecommendDealPage;;
+export default LegalsDealsPage;
