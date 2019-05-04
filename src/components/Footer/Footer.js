@@ -187,7 +187,7 @@ const Footer = props => {
                     Invite a friend
                   </a>
                 </li>
-                <li key="recommendAPub" className={css.listItem}>
+                <li key="recommandAPub" className={css.listItem}>
                   <a
                     href="https://docs.google.com/forms/d/e/1FAIpQLSejVl35N8A1lu_W99QkvovqLXn1ODOKBp35NZ524XHJnpdOeg/viewform"
                     target="_blank"
