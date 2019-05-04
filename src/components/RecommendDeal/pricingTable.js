@@ -17,7 +17,7 @@ export const PricingTable = (props) => (
 			</TableRow>
 		</TableHead>
 		<TableBody>
-			<TableRow key="UNIQUE_ID1">
+			<TableRow key="UNIQUE_ID">
 				<TableCell component="th" scope="row">
 					Up to 30
 				</TableCell>
