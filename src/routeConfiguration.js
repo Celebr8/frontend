@@ -10,7 +10,6 @@ import {
   CommunityGuidelinesPage,
   ContactDetailsPage,
   CookiePolicyPage,
-  LegalsDealsPage,
   PrivacyPolicyPage,
   TermsOfServicePage,
 	
@@ -19,7 +18,6 @@ import {
   DealsPage,
   BirthdayDealPage,
   CorporateDealPage,
-	RecommendDealPage,
 
 	// Pricing
 
@@ -298,17 +296,6 @@ const routeConfiguration = () => {
 			path: '/deals/corporate-deal',
       name: 'CorporateDealPage',
       component: props => <CorporateDealPage {...props} />,
-    },
-    {
-			path: '/legal/benefits',
-      name: 'LegalsDealsPage',
-      component: props => <LegalsDealsPage {...props} />,
-    },
-    {
-			path: '/deals/recommend-gift',
-      name: 'RecommendDealPage',
-      component: props => <RecommendDealPage {...props} />,
-
     },
     {
 			path: '/legal/terms-of-service',

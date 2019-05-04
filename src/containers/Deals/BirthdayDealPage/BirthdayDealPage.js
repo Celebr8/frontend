@@ -52,6 +52,9 @@ const BirthdayDealPageComponent = props => {
         <LayoutWrapperSideNav tabs={tabs} />
         <LayoutWrapperMain>
           <div className={css.content}>
+            <h1 className={css.heading}>
+              <FormattedMessage id="BirthdayDealPage.heading" />
+            </h1>
             <BirthdayDeal />
           </div>
         </LayoutWrapperMain>
