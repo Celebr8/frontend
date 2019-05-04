@@ -26,7 +26,7 @@ const CorporateDeal = props => {
 				<section className={css.getInTouch}>
 					<div className={css.btnGroup + ' ' + css.containerButton}>
 						<section className={css.centerButtons}>
-							<a href="https://www.whichost.com/help/contact-us"><button type="submit">Contact us for more info</button></a>
+							<NamedLink name="ContactUsPage"><button type="submit">Contact us for more info</button></NamedLink>
 						</section>
 					</div>
 				</section>
@@ -44,7 +44,7 @@ const CorporateDeal = props => {
 				</div>
 			</div>
 			<div className={css.readMore}>
-				<NamedLink name="LegalsDealsPage#corporate_benefit">Corporate Benefit Terms &amp; Conditions</NamedLink>
+				<NamedLink name="LegalsDealsPage" anchor="corporate_benefit">Corporate Benefit Terms &amp; Conditions</NamedLink>
 			</div>
 		</div>
 	);
