@@ -23,7 +23,7 @@ import css from './DealsHelpPage.css';
 const DealsHelpPageComponent = props => {
 	const { scrollingDisabled, intl } = props;
 
-	const tabs = helpCenterTabs(intl, 'DealsPage');
+	const tabs = helpCenterTabs(intl, 'DealsHelpPage');
 
 	const siteTitle = config.siteTitle;
 	const schemaTitle = intl.formatMessage({ id: 'DealsPage.schemaTitle' }, { siteTitle });
