@@ -165,10 +165,8 @@ class SearchFiltersMobileComponent extends Component {
     const RecommendDeal = props =>
       recommendDealActive && props.show ? (
         <p className={css.recommendDeal}>
-          <FormattedMessage id="SearchFilters.recommendDealLabel" />
-          &nbsp;
           <NamedLink name="RecommendDealPage">
-            <FormattedMessage id="SearchFilters.recommendDealLink" />
+            <FormattedMessage id="SearchFilters.recommendDealLabel" />
           </NamedLink>
         </p>
       ) : null;
