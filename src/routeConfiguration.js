@@ -285,17 +285,17 @@ const routeConfiguration = () => {
       loadData: PayoutPreferencesPage.loadData,
     },
     {
-      path: '/deals',
+      path: '/benefits',
       name: 'DealsPage',
       component: props => <DealsPage {...props} />,
     },
     {
-			path: '/deals/birthday-deal',
+			path: '/benefits/birthday-gift',
       name: 'BirthdayDealPage',
       component: props => <BirthdayDealPage {...props} />,
     },
     {
-			path: '/deals/corporate-deal',
+			path: '/benefits/corporate-benefit',
       name: 'CorporateDealPage',
       component: props => <CorporateDealPage {...props} />,
     },
@@ -305,7 +305,7 @@ const routeConfiguration = () => {
       component: props => <LegalsDealsPage {...props} />,
     },
     {
-			path: '/deals/recommend-gift',
+			path: '/benefits/recommend-gift',
       name: 'RecommendDealPage',
       component: props => <RecommendDealPage {...props} />,
 
@@ -351,7 +351,7 @@ const routeConfiguration = () => {
       component: props => <ContactUsPage {...props} />,
     },
     {
-			path: '/help/deals',
+			path: '/help/benefits',
       name: 'DealsHelpPage',
       component: props => <DealsHelpPage {...props} />,
     },

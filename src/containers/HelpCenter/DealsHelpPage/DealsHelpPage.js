@@ -7,6 +7,7 @@ import { isScrollingDisabled } from '../../../ducks/UI.duck';
 import { TopbarContainer } from '../../../containers';
 import { helpCenterTabs } from '../tabs'
 import {
+	NamedLink,
 	Page,
 	LayoutSideNavigationWithHero,
 	LayoutWrapperMain,
@@ -49,12 +50,12 @@ const DealsHelpPageComponent = props => {
 				<LayoutWrapperMain>
 					<h2>Part of our culture is giving back</h2>
 					<p>At Whichost we spent days and nights contemplating about how we can further benefit the community. We turn general ideas into presentations and finally into actions. <i>We also turn coffee beans into sleepless nights</i>.</p>
-					<p>We asked people like you for feedback and we had numerous brainstormings with Publicans. The results are fantastic! We call them <a href="https://www.whichost.com/deals" target="_blank">"The Whichost Deals"</a>.</p>
-					<p>At the moment we have two active deals for our members. Both are linked to attractive rewards and you can read more on the following deals pages. You can either benefit of our <a href="https://www.whichost.com/birthday-deal" target="_blank">Birthday Deal</a> or you can reward your employees and colleagues with our <a href="https://www.whichost.com/employees-benefit" target="_blank">Corporate Benefit</a>.</p>
+					<p>We asked people like you for feedback and we had numerous brainstormings with Publicans. The results are fantastic! We call them <NamedLink name="DealsPage"> "The Whichost Benefits"</NamedLink>.</p>
+					<p>At the moment we have three active benefits for our members. Both are linked to attractive rewards and you can read more on the following benefits pages. You can either benefit of our <NamedLink name="BirthdayDealPage">Birthday Gift</NamedLink> or you can reward your employees and colleagues with our <NamedLink name="CorporateDealPage">Corporate Benefit</NamedLink>.</p>
 					<p>What are you waiting for? <a href="https://www.whichost.com/s?address=Ireland&bounds=55.36%2C-5.911%2C51.427%2C-10.382&origin=53.357%2C-7.756" target="_blank">Browse pubs</a> and book now!</p>
 					<br/>
 					<h2>Contact us. We're here to help.</h2>
-			    <p>If you still have questions that are not covered by our <a href="https://www.whichost.com/help/faq" target="_blank">help center</a>, we invite you to <a href="https://www.whichost.com/help/contact-us" target="_blank">contact us</a> and we'll assist you personally.</p>
+			    <p>If you still have questions that are not covered by our <NamedLink name="FAQPage">help center</NamedLink>, we invite you to <NamedLink name="ContactUsPage">contact us</NamedLink> and we'll assist you personally.</p>
 			    <br/>
 				</LayoutWrapperMain>
 				<LayoutWrapperFooter>

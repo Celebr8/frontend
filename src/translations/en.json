@@ -150,7 +150,7 @@
   "DateInput.screenReaderInputMessage": "Date input",
   "DealsPage.title": "At Whichost, it's all about you!",
   "DealsPage.heading": "How it works",
-  "DealsPage.schemaTitle": "Deals page",
+  "DealsPage.schemaTitle": "Benefits page",
   "DealsPage.dealsTabTitle": "What's this?",
 
   "DealsPage.birthdayDealTabTitle": "Birthday Gift",
@@ -339,7 +339,7 @@
   "Footer.terms": "Terms",
   "Footer.termsOfUse": "Terms of Service",
   "Footer.toAboutPage": "About us",
-  "Footer.toDealsPage": "Deals for you",
+  "Footer.toDealsPage": "Benefits for you",
   "Footer.toCommunityGuidelines": "Community Guidelines",
   "Footer.toContactPage": "Contact",
   "Footer.toFAQPage": "FAQ",
@@ -354,7 +354,7 @@
   "HelpCenter.ContactUsTabTitle": "Contact us",
   "HelpCenter.FAQTabTitle": "FAQ",
   "HelpCenter.FeesTabTitle": "Fees",
-  "HelpCenter.DealsTabTitle": "Deals",
+  "HelpCenter.DealsTabTitle": "Benefits",
   "HelpCenter.FirstStepsTabTitle": "First steps",
   "HelpCenter.GuidebookForProvidersTabTitle": "Guidebook for publicans",
 
