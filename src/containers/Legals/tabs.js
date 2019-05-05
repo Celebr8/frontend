@@ -25,6 +25,6 @@ export const legalsTabs = (intl, selected) => [
 		selected: (selected == 'CommunityGuidelinesPage'),
 		linkProps: {
 			name: 'CommunityGuidelinesPage',
-		},
+		}
 	}
 ]

@@ -712,7 +712,7 @@
   "ReviewModal.title": "Leave a review for {revieweeName}",
 
   "Reviews.bannedUserDisplayName": "Banned user",
-  "SearchFilters.recommendDealLabel": "Earn a gift card to use over 2.000 shops! Get €15 for recommending a pub and celebrate there.",
+  "SearchFilters.recommendDealLabel": "Click here to earn a gift card for over 2.000 shops! Get €15 for recommending a pub and celebrate there.",
   "SearchFilters.recommendDealLink": "Learn More…",
 
   "SearchFilters.amenitiesLabel": "Amenities",
@@ -725,7 +725,7 @@
   "SearchFilters.loadingResultsMobile": "Loading…",
   "SearchFilters.moreFiltersButton": "{count, plural, =0 {More filters} other {More filters • #}}",
   "SearchFilters.noResults": "Whoops! No pubs listed here yet, but you can still celebrate.",
-  "SearchFilters.noResultsMobile": "No pubs listed here.",
+  "SearchFilters.noResultsMobile": "Whoops! No pubs here yet.",
   "SearchFilters.openMapView": "Map",
 
   "SearchFiltersMobile.amenitiesLabel": "Amenities",
