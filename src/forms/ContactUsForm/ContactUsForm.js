@@ -7,7 +7,13 @@ import isEqual from 'lodash/isEqual';
 import classNames from 'classnames';
 import { propTypes } from '../../util/types';
 import * as validators from '../../util/validators';
-import { FieldPhoneNumberInput, Form, PrimaryButton, FieldTextInput } from '../../components';
+import {
+  FieldPhoneNumberInput,
+  FieldTextInput,
+  FieldSelect,
+  Form,
+  PrimaryButton,
+} from '../../components';
 
 import { ReCaptcha } from 'react-recaptcha-google';
 
@@ -69,11 +75,10 @@ class ContactUsFormComponent extends Component {
               invalid,
               sendingInProgress,
               sendingError,
+              values,
             } = fieldRenderProps;
 
-            const { email, phoneNumber, message, subject, recaptchaToken } = fieldRenderProps;
-
-            const values = { email, phoneNumber, message, subject, recaptchaToken };
+            const { email, phoneNumber, message, subject, enquiry, recaptchaToken } = values;
 
             // email
 
@@ -97,8 +102,6 @@ class ContactUsFormComponent extends Component {
             const emailValid = validators.emailFormatValid(emailInvalidMessage);
 
             // phone
-
-            const askPhone = false;
 
             const phoneLabel = intl.formatMessage({
               id: 'ContactUsForm.phoneLabel',
@@ -146,6 +149,34 @@ class ContactUsFormComponent extends Component {
 
             const subjectRequired = validators.required(subjectRequiredMessage);
 
+            // Enquiry
+
+            const enquiryLabel = intl.formatMessage({
+              id: 'ContactUsForm.enquiryLabel',
+            });
+
+            const enquiryRequiredMessage = intl.formatMessage({
+              id: 'ContactUsForm.enquiryRequired',
+            });
+
+            const enquiryRequired = validators.required(enquiryRequiredMessage);
+
+						// Position
+						
+            const positionLabel = intl.formatMessage({
+              id: 'ContactUsForm.positionLabel',
+            });
+
+            const positionRequiredMessage = intl.formatMessage({
+              id: 'ContactUsForm.positionRequired',
+            });
+
+            const positionRequired = validators.required(positionRequiredMessage);
+
+						// ... 
+						
+						const askPhone = enquiry == 'claim';
+
             const classes = classNames(rootClassName || css.root, className);
 
             const sendingErrorRendered = sendingError ? (
@@ -166,6 +197,21 @@ class ContactUsFormComponent extends Component {
                 }}
               >
                 <div className={css.contactUsSection}>
+                  <FieldSelect
+                    name="enquiry"
+                    name="enquiry"
+                    id={formId ? `${formId}.enquiry` : 'enquiry'}
+                    label={enquiryLabel}
+                    validate={enquiryRequired}
+                  >
+                    <option value="general">General Enquiry</option>
+                    <option value="booking">Booking a pub</option>
+                    <option value="listing">Listing a space</option>
+                    <option value="claim">Claiming a listing</option>
+                    <option value="changePaymentInfo">Change payement informations</option>
+                    <option value="corporate">Corporate Benefits Enquiries</option>
+                  </FieldSelect>
+
                   <FieldTextInput
                     type="email"
                     name="email"
@@ -186,14 +232,29 @@ class ContactUsFormComponent extends Component {
                     />
                   </If>
 
-                  <FieldTextInput
-                    className={css.subject}
-                    name="subject"
-                    id={formId ? `${formId}.subject` : 'subject'}
-                    label={subjectLabel}
-                    placeholder={subjectPlaceholder}
-                    validate={subjectRequired}
-                  />
+                  <If if={enquiry != 'claim'}>
+                    <FieldTextInput
+                      className={css.subject}
+                      name="subject"
+                      id={formId ? `${formId}.subject` : 'subject'}
+                      label={subjectLabel}
+                      placeholder={subjectPlaceholder}
+                      validate={subjectRequired}
+                    />
+                  </If>
+
+                  <If if={enquiry == 'claim'}>
+                    <FieldSelect
+                      name="position"
+                      name="position"
+                      id={formId ? `${formId}.position` : 'position'}
+                      label={positionLabel}
+                      validate={positionRequired}
+                    >
+                      <option value="owner">Owner</option>
+                      <option value="manager">Manager</option>
+                    </FieldSelect>
+                  </If>
 
                   <FieldTextInput
                     type="textarea"
