@@ -17,7 +17,7 @@ const BirthdayDeal = props => {
 	return (
 		<div className={css.container}>
 			<div className={classes}>
-				<h2>Earn a gift card to use with over 2,000 shops in Ireland!<br />
+				<h2>Earn a gift card to use with over 2,000 shops in Ireland &amp; the UK!<br />
 
 				Get up to €240 when celebrating your birthday.</h2>
 

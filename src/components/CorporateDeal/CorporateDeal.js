@@ -20,7 +20,7 @@ const CorporateDeal = props => {
 
     <div className={css.container}>
       <div className={classes}>
-      <h2>Give your employees a gift card to use with over 2,000 shops in Ireland!
+      <h2>Give your employees a gift card to use with over 2,000 shops in Ireland &amp; the UK!
       <br/>
       They get up to €310 with every celebration.</h2>
         <section className={css.getInTouch}>
