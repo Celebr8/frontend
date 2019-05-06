@@ -26,7 +26,6 @@ const RecommendDeal = props => {
 		<div className={css.container}>
 			<div className={classes}>
 				<h2>Earn a gift card to use with over 2,000 shops in Ireland &amp; the UK!
-					<br/>
 					Get €15 for recommending a pub and celebrating there.</h2>
 				<section className={css.getInTouch}>
 					<div className={css.btnGroup + ' ' + css.containerButton}>
