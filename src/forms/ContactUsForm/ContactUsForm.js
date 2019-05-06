@@ -8,6 +8,7 @@ import classNames from 'classnames';
 import { propTypes } from '../../util/types';
 import * as validators from '../../util/validators';
 import {
+	FieldCheckboxGroup,
   FieldPhoneNumberInput,
   FieldTextInput,
   FieldSelect,
@@ -99,7 +100,9 @@ class ContactUsFormComponent extends Component {
             const emailInvalidMessage = intl.formatMessage({
               id: 'ContactUsForm.emailInvalid',
             });
+
             const emailValid = validators.emailFormatValid(emailInvalidMessage);
+
 
             // phone
 
@@ -117,6 +120,7 @@ class ContactUsFormComponent extends Component {
 
             const phoneRequired = validators.required(phoneRequiredMessage);
 
+
             // message
 
             const messageLabel = intl.formatMessage({
@@ -132,6 +136,7 @@ class ContactUsFormComponent extends Component {
             });
 
             const messageRequired = validators.required(messageRequiredMessage);
+
 
             // Subject
 
@@ -149,6 +154,7 @@ class ContactUsFormComponent extends Component {
 
             const subjectRequired = validators.required(subjectRequiredMessage);
 
+
             // Enquiry
 
             const enquiryLabel = intl.formatMessage({
@@ -161,7 +167,8 @@ class ContactUsFormComponent extends Component {
 
             const enquiryRequired = validators.required(enquiryRequiredMessage);
 
-						// Position
+
+						// Position (if the enquiry is about claiming a pub)
 						
             const positionLabel = intl.formatMessage({
               id: 'ContactUsForm.positionLabel',
@@ -172,6 +179,60 @@ class ContactUsFormComponent extends Component {
             });
 
             const positionRequired = validators.required(positionRequiredMessage);
+
+
+						// Listing name (if the enquiry is about claiming a pub)
+						
+            const listingNameLabel = intl.formatMessage({
+              id: 'ContactUsForm.listingNameLabel',
+            });
+
+            const listingNameRequiredMessage = intl.formatMessage({
+              id: 'ContactUsForm.listingNameRequired',
+            });
+
+            const listingNamePlaceholder = intl.formatMessage({
+              id: 'ContactUsForm.listingNamePlaceholder',
+            });
+
+            const listingNameRequired = validators.required(listingNameRequiredMessage);
+
+
+						// Social Medias
+						
+            const socialMediasLabel = intl.formatMessage({
+              id: 'ContactUsForm.socialMediasLabel',
+            });
+
+            const socialMediasRequiredMessage = intl.formatMessage({
+              id: 'ContactUsForm.socialMediasRequired',
+            });
+
+            const socialMediasPlaceholder = intl.formatMessage({
+              id: 'ContactUsForm.socialMediasPlaceholder',
+            });
+
+            const socialMediasRequired = validators.required(socialMediasRequiredMessage);
+
+						const socialMediasOptions = [
+							{
+								key: 'website',
+								label: 'Website'
+							},
+							{
+								key: 'facebook',
+								label: 'Facebook Page'
+							},
+							{
+								key: 'twitter',
+								label: 'Twitter'
+							},
+							{
+								key: 'instagram',
+								label: 'Instagram'
+							},
+						]
+
 
 						// ... 
 						
@@ -244,8 +305,15 @@ class ContactUsFormComponent extends Component {
                   </If>
 
                   <If if={enquiry == 'claim'}>
+										<FieldTextInput
+											name="listingName"
+											id={formId ? `${formId}.listingName` : 'listingName'}
+											label={listingNameLabel}
+											placeholder={listingNamePlaceholder}
+											validate={listingNameRequired}
+										/>
+
                     <FieldSelect
-                      name="position"
                       name="position"
                       id={formId ? `${formId}.position` : 'position'}
                       label={positionLabel}
@@ -254,6 +322,15 @@ class ContactUsFormComponent extends Component {
                       <option value="owner">Owner</option>
                       <option value="manager">Manager</option>
                     </FieldSelect>
+
+										<FieldCheckboxGroup 
+											name="socialMedias"
+                    	id={formId ? `${formId}.socialMedias` : 'socialMedias'}
+                      label={socialMediasLabel}
+                      validate={socialMediasRequired}
+											options={socialMediasOptions}
+										/>
+
                   </If>
 
                   <FieldTextInput
@@ -264,6 +341,7 @@ class ContactUsFormComponent extends Component {
                     placeholder={messagePlaceholder}
                     validate={messageRequired}
                   />
+
                 </div>
 
                 <div className={css.bottomWrapper}>
