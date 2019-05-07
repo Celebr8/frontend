@@ -25,6 +25,7 @@
     "final-form": "^4.11.0",
     "final-form-arrays": "^1.1.0",
     "helmet": "^3.15.0",
+    "ibantools": "^2.1.0",
     "lodash": "^4.17.11",
     "mailgun.js": "^2.0.1",
     "mapbox-gl-multitouch": "^1.0.3",

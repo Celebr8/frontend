@@ -4,11 +4,14 @@ import { compose } from 'redux';
 import { FormattedMessage, injectIntl, intlShape } from 'react-intl';
 import { Form as FinalForm } from 'react-final-form';
 import isEqual from 'lodash/isEqual';
+import * as ibantools from 'ibantools';
 import classNames from 'classnames';
 import { propTypes } from '../../util/types';
 import * as validators from '../../util/validators';
+import arrayMutators from 'final-form-arrays';
 import {
-	FieldCheckboxGroup,
+  FieldCheckbox,
+  FieldCheckboxGroup,
   FieldPhoneNumberInput,
   FieldTextInput,
   FieldSelect,
@@ -50,7 +53,11 @@ class ContactUsFormComponent extends Component {
     const recaptchaToken = this.state.recaptchaToken;
 
     const onSubmit = values => this.props.onSubmit({ ...values, recaptchaToken });
-    const finalFormProps = { ...this.props, onSubmit };
+    const finalFormProps = {
+      ...this.props,
+      ...arrayMutators,
+      onSubmit,
+    };
 
     return (
       <Fragment>
@@ -74,12 +81,21 @@ class ContactUsFormComponent extends Component {
               handleSubmit,
               intl,
               invalid,
+              pristine,
               sendingInProgress,
               sendingError,
               values,
             } = fieldRenderProps;
 
-            const { email, phoneNumber, message, subject, enquiry, recaptchaToken } = values;
+            const {
+              email,
+              phoneNumber,
+              message,
+              subject,
+              enquiry,
+              recaptchaToken,
+              termsAndConditions,
+            } = values;
 
             // email
 
@@ -103,7 +119,6 @@ class ContactUsFormComponent extends Component {
 
             const emailValid = validators.emailFormatValid(emailInvalidMessage);
 
-
             // phone
 
             const phoneLabel = intl.formatMessage({
@@ -119,7 +134,6 @@ class ContactUsFormComponent extends Component {
             });
 
             const phoneRequired = validators.required(phoneRequiredMessage);
-
 
             // message
 
@@ -137,7 +151,6 @@ class ContactUsFormComponent extends Component {
 
             const messageRequired = validators.required(messageRequiredMessage);
 
-
             // Subject
 
             const subjectLabel = intl.formatMessage({
@@ -154,7 +167,6 @@ class ContactUsFormComponent extends Component {
 
             const subjectRequired = validators.required(subjectRequiredMessage);
 
-
             // Enquiry
 
             const enquiryLabel = intl.formatMessage({
@@ -167,9 +179,8 @@ class ContactUsFormComponent extends Component {
 
             const enquiryRequired = validators.required(enquiryRequiredMessage);
 
+            // Position (if the enquiry is about claiming a pub)
 
-						// Position (if the enquiry is about claiming a pub)
-						
             const positionLabel = intl.formatMessage({
               id: 'ContactUsForm.positionLabel',
             });
@@ -180,9 +191,8 @@ class ContactUsFormComponent extends Component {
 
             const positionRequired = validators.required(positionRequiredMessage);
 
+            // Listing name (if the enquiry is about claiming a pub)
 
-						// Listing name (if the enquiry is about claiming a pub)
-						
             const listingNameLabel = intl.formatMessage({
               id: 'ContactUsForm.listingNameLabel',
             });
@@ -197,9 +207,8 @@ class ContactUsFormComponent extends Component {
 
             const listingNameRequired = validators.required(listingNameRequiredMessage);
 
+            // Social Medias
 
-						// Social Medias
-						
             const socialMediasLabel = intl.formatMessage({
               id: 'ContactUsForm.socialMediasLabel',
             });
@@ -214,29 +223,73 @@ class ContactUsFormComponent extends Component {
 
             const socialMediasRequired = validators.required(socialMediasRequiredMessage);
 
-						const socialMediasOptions = [
-							{
-								key: 'website',
-								label: 'Website'
-							},
-							{
-								key: 'facebook',
-								label: 'Facebook Page'
-							},
-							{
-								key: 'twitter',
-								label: 'Twitter'
-							},
-							{
-								key: 'instagram',
-								label: 'Instagram'
-							},
-						]
+            const socialMediasOptions = [
+              {
+                key: 'website',
+                label: 'Website',
+              },
+              {
+                key: 'facebook',
+                label: 'Facebook Page',
+              },
+              {
+                key: 'twitter',
+                label: 'Twitter',
+              },
+              {
+                key: 'instagram',
+                label: 'Instagram',
+              },
+            ];
 
+            // termsAndConditionsLabel
 
-						// ... 
-						
-						const askPhone = enquiry == 'claim';
+            const termsAndConditionsLabel = intl.formatMessage({
+              id: 'ContactUsForm.termsAndConditionsLabel',
+            });
+
+            const termsAndConditionsRequired = intl.formatMessage({
+              id: 'ContactUsForm.termsAndConditionsLabel',
+            });
+
+            const termsAndConditionsValidate = value => {
+              console.log(value);
+              return value && value.length && values[0] == 'agreed' ? null : 'Hello';
+              return null;
+            };
+
+            // IBAN
+
+            const ibanLabel = intl.formatMessage({
+              id: 'ContactUsForm.ibanLabel',
+            });
+
+            const ibanRequiredMessage = intl.formatMessage({
+              id: 'ContactUsForm.ibanRequired',
+            });
+
+            const ibanInvalidMessage = intl.formatMessage({
+              id: 'ContactUsForm.ibanInvalid',
+            });
+
+            const ibanRequired = validators.required(listingNameRequiredMessage);
+            const ibanInvalid = iban => {
+              return ibantools.isValidIBAN(ibantools.electronicFormatIBAN(iban))
+                ? null
+                : ibanInvalidMessage;
+            };
+
+            const ibanValidator = validators.composeValidators(ibanRequired, ibanInvalid);
+
+            const ibanPlaceholder = intl.formatMessage({
+              id: 'ContactUsForm.ibanPlaceholder',
+            });
+
+            const ibanParser = iban => ibantools.friendlyFormatIBAN(iban);
+
+            // ...
+
+            const askPhone = enquiry == 'claim';
 
             const classes = classNames(rootClassName || css.root, className);
 
@@ -247,12 +300,110 @@ class ContactUsFormComponent extends Component {
             const submitInProgress = sendingInProgress;
             const submitDisabled = invalid || submitInProgress;
 
-            const If = props => (props.if ? props.children : null);
+            const phoneField = askPhone ? (
+              <FieldPhoneNumberInput
+                className={css.phone}
+                name="phoneNumber"
+                key="phoneNumber"
+                id={formId ? `${formId}.phoneNumber` : 'phoneNumber'}
+                label={phoneLabel}
+                placeholder={phonePlaceholder}
+                validate={phoneRequired}
+              />
+            ) : null;
+
+            const listingNameField = (
+              <FieldTextInput
+                name="listingName"
+                id={formId ? `${formId}.listingName` : 'listingName'}
+                label={listingNameLabel}
+                placeholder={listingNamePlaceholder}
+                validate={listingNameRequired}
+              />
+            );
+
+            const claimFields =
+              enquiry == 'claim' ? (
+                <Fragment>
+                  {listingNameField}
+                  <FieldSelect
+                    name="position"
+                    id={formId ? `${formId}.position` : 'position'}
+                    label={positionLabel}
+                    validate={positionRequired}
+                  >
+                    <option value="" />
+                    <option value="owner">Owner</option>
+                    <option value="manager">Manager</option>
+                  </FieldSelect>
+
+                  <FieldCheckboxGroup
+                    name="socialMedias"
+                    id={formId ? `${formId}.socialMedias` : 'socialMedias'}
+                    label={socialMediasLabel}
+                    options={socialMediasOptions}
+                  />
+
+                  <FieldCheckboxGroup
+                    name="termsAndConditions"
+                    id={formId ? `${formId}.termsAndConditions` : 'termsAndConditions'}
+                    label={termsAndConditionsLabel}
+                    options={[{ key: 'agreed', label: 'I agree' }]}
+                  />
+                  {pristine && !termsAndConditions && termsAndConditionsRequired}
+                </Fragment>
+              ) : null;
+
+            const subjectField =
+              enquiry != 'claim' ? (
+                <FieldTextInput
+                  key="subject"
+                  className={css.subject}
+                  name="subject"
+                  id={formId ? `${formId}.subject` : 'subject'}
+                  label={subjectLabel}
+                  placeholder={subjectPlaceholder}
+                  validate={subjectRequired}
+                />
+              ) : null;
+
+            const payementInfoFields =
+              enquiry == 'changePaymentInfo' ? (
+                <Fragment>
+                  {listingNameField}
+                  <FieldTextInput
+                    key="iban"
+                    className={css.iban}
+                    name="iban"
+                    id={formId ? `${formId}.iban` : 'iban'}
+                    label={ibanLabel}
+                    placeholder={ibanPlaceholder}
+                    validate={ibanValidator}
+                    format={ibanParser}
+                  />
+                </Fragment>
+              ) : null;
 
             return (
               <Form
+                key={formId}
                 className={classes}
                 onSubmit={e => {
+                  const { enquiry, position, listingName, socialMedias, iban } = values;
+
+                  const extraValues = {
+                    enquiry,
+                    position,
+                    listingName,
+                    socialMedias,
+                    iban,
+                  };
+                  const completeMessage = extraValues.keys.reduce(
+                    (acc, key) => acc + `\n${key} : ${values[key]}`,
+                    ''
+                  );
+                  // this.submittedValues = { ...values, message: completeMessage};
+                  console.log('completeMessage', completeMessage);
                   this.submittedValues = values;
                   handleSubmit(e);
                 }}
@@ -260,10 +411,9 @@ class ContactUsFormComponent extends Component {
                 <div className={css.contactUsSection}>
                   <FieldSelect
                     name="enquiry"
-                    name="enquiry"
+                    key="enquiry"
                     id={formId ? `${formId}.enquiry` : 'enquiry'}
                     label={enquiryLabel}
-                    validate={enquiryRequired}
                   >
                     <option value="general">General Enquiry</option>
                     <option value="booking">Booking a pub</option>
@@ -276,62 +426,19 @@ class ContactUsFormComponent extends Component {
                   <FieldTextInput
                     type="email"
                     name="email"
+                    key="email"
                     id={formId ? `${formId}.email` : 'email'}
                     label={emailLabel}
                     placeholder={emailPlaceholder}
                     validate={validators.composeValidators(emailRequired, emailValid)}
                   />
 
-                  <If if={askPhone}>
-                    <FieldPhoneNumberInput
-                      className={css.phone}
-                      name="phoneNumber"
-                      id={formId ? `${formId}.phoneNumber` : 'phoneNumber'}
-                      label={phoneLabel}
-                      placeholder={phonePlaceholder}
-                      validate={phoneRequired}
-                    />
-                  </If>
+                  {phoneField}
+                  {subjectField}
 
-                  <If if={enquiry != 'claim'}>
-                    <FieldTextInput
-                      className={css.subject}
-                      name="subject"
-                      id={formId ? `${formId}.subject` : 'subject'}
-                      label={subjectLabel}
-                      placeholder={subjectPlaceholder}
-                      validate={subjectRequired}
-                    />
-                  </If>
+                  {claimFields}
 
-                  <If if={enquiry == 'claim'}>
-										<FieldTextInput
-											name="listingName"
-											id={formId ? `${formId}.listingName` : 'listingName'}
-											label={listingNameLabel}
-											placeholder={listingNamePlaceholder}
-											validate={listingNameRequired}
-										/>
-
-                    <FieldSelect
-                      name="position"
-                      id={formId ? `${formId}.position` : 'position'}
-                      label={positionLabel}
-                      validate={positionRequired}
-                    >
-                      <option value="owner">Owner</option>
-                      <option value="manager">Manager</option>
-                    </FieldSelect>
-
-										<FieldCheckboxGroup 
-											name="socialMedias"
-                    	id={formId ? `${formId}.socialMedias` : 'socialMedias'}
-                      label={socialMediasLabel}
-                      validate={socialMediasRequired}
-											options={socialMediasOptions}
-										/>
-
-                  </If>
+                  {payementInfoFields}
 
                   <FieldTextInput
                     type="textarea"
@@ -339,9 +446,8 @@ class ContactUsFormComponent extends Component {
                     id={formId ? `${formId}.message` : 'message'}
                     label={messageLabel}
                     placeholder={messagePlaceholder}
-                    validate={messageRequired}
+                    validate={validators.requiredFieldArrayCheckbox('this is required')}
                   />
-
                 </div>
 
                 <div className={css.bottomWrapper}>
