@@ -835,6 +835,8 @@
   "StripePaymentForm.messageOptionalText": "• optional",
   "StripePaymentForm.messagePlaceholder": "Hello {name}! I'm looking forward to…",
   "StripePaymentForm.paymentHeading": "Payment",
+  "StripePaymentForm.happyBirtdayLabel": "Happy Birthday! We have a gift for you.",
+  "StripePaymentForm.happyBirtdayLink": "Click here!",
   "StripePaymentForm.occasionHeading": "Occasion",
   "StripePaymentForm.occasionLabel": "What's the occasion?",
   "StripePaymentForm.justBecause": "Just because",
