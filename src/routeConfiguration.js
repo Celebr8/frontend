@@ -10,6 +10,7 @@ import {
   CommunityGuidelinesPage,
   ContactDetailsPage,
   CookiePolicyPage,
+  LegalsDealsPage,
   PrivacyPolicyPage,
   TermsOfServicePage,
 	
@@ -18,6 +19,7 @@ import {
   DealsPage,
   BirthdayDealPage,
   CorporateDealPage,
+	RecommendDealPage,
 
 	// Pricing
 
@@ -283,19 +285,30 @@ const routeConfiguration = () => {
       loadData: PayoutPreferencesPage.loadData,
     },
     {
-      path: '/deals',
+      path: '/benefits',
       name: 'DealsPage',
       component: props => <DealsPage {...props} />,
     },
     {
-			path: '/deals/birthday-deal',
+			path: '/benefits/birthday-gift',
       name: 'BirthdayDealPage',
       component: props => <BirthdayDealPage {...props} />,
     },
     {
-			path: '/deals/corporate-deal',
+			path: '/benefits/corporate-benefit',
       name: 'CorporateDealPage',
       component: props => <CorporateDealPage {...props} />,
+    },
+    {
+			path: '/legal/benefits',
+      name: 'LegalsDealsPage',
+      component: props => <LegalsDealsPage {...props} />,
+    },
+    {
+			path: '/benefits/recommend-gift',
+      name: 'RecommendDealPage',
+      component: props => <RecommendDealPage {...props} />,
+
     },
     {
 			path: '/legal/terms-of-service',
@@ -338,7 +351,7 @@ const routeConfiguration = () => {
       component: props => <ContactUsPage {...props} />,
     },
     {
-			path: '/help/deals',
+			path: '/help/benefits',
       name: 'DealsHelpPage',
       component: props => <DealsHelpPage {...props} />,
     },

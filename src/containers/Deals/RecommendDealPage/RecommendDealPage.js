@@ -18,16 +18,16 @@ import {
   LayoutWrapperFooter,
   Footer,
 	Deals,
-	CorporateDeal
+	RecommendDeal
 } from '../../../components';
 import config from '../../../config';
 
-import css from './CorporateDealPage.css';
+import css from './RecommendDealPage.css';
 
-const CorporateDealPageComponent = props => {
+const RecommendDealPageComponent = props => {
   const { scrollingDisabled, intl } = props;
 
-	const tabs = dealsTabs(intl, 'CorporateDealPage');
+	const tabs = dealsTabs(intl, 'RecommendDealPage');
 
 	const siteTitle = config.siteTitle;
   const schemaTitle = intl.formatMessage({ id: 'DealsPage.schemaTitle' }, { siteTitle });
@@ -40,9 +40,8 @@ const CorporateDealPageComponent = props => {
     <Page title={schemaTitle} scrollingDisabled={scrollingDisabled} schema={schema}>
       <LayoutSideNavigationWithHero>
         <LayoutWrapperTopbar>
-          <TopbarContainer currentPage="CorporateDealPage" />
+          <TopbarContainer currentPage="RecommendDealPage" />
         </LayoutWrapperTopbar>
-        <LayoutWrapperSideNav tabs={tabs} />
 				<LayoutWrapperHero className={css.hero}>
 					<div className={css.heroContent}>
 						<h1 className={css.heroMainTitle}>
@@ -50,9 +49,10 @@ const CorporateDealPageComponent = props => {
 						</h1>
 					</div>
 				</LayoutWrapperHero>
+        <LayoutWrapperSideNav tabs={tabs} />
         <LayoutWrapperMain>
           <div className={css.content}>
-            <CorporateDeal />
+            <RecommendDeal />
           </div>
         </LayoutWrapperMain>
         <LayoutWrapperFooter>
@@ -65,7 +65,7 @@ const CorporateDealPageComponent = props => {
 
 const { bool } = PropTypes;
 
-CorporateDealPageComponent.propTypes = {
+RecommendDealPageComponent.propTypes = {
   scrollingDisabled: bool.isRequired,
 
   // from injectIntl
@@ -78,9 +78,9 @@ const mapStateToProps = state => {
   };
 };
 
-const CorporateDealPage = compose(
+const RecommendDealPage = compose(
   connect(mapStateToProps),
   injectIntl
-)(CorporateDealPageComponent);
+)(RecommendDealPageComponent);
 
-export default CorporateDealPage;;
+export default RecommendDealPage;;

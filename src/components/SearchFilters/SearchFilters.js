@@ -6,7 +6,8 @@ import classNames from 'classnames';
 import { withRouter } from 'react-router-dom';
 import omit from 'lodash/omit';
 
-import { SelectSingleFilter, SelectMultipleFilter, PriceFilter } from '../../components';
+import { SelectSingleFilter, SelectMultipleFilter, PriceFilter, NamedLink } from '../../components';
+
 import routeConfiguration from '../../routeConfiguration';
 import { createResourceLocatorString } from '../../util/routes';
 import { propTypes } from '../../util/types';
@@ -56,6 +57,11 @@ const SearchFiltersComponent = props => {
     history,
     intl,
   } = props;
+
+  /*
+   * This implement the redirection toward Recommend Deal page
+   */
+  const recommendDealActive = true;
 
   const hasNoResult = listingsAreLoaded && resultsCount === 0;
   const classes = classNames(rootClassName || css.root, { [css.longInfo]: hasNoResult }, className);
@@ -121,7 +127,6 @@ const SearchFiltersComponent = props => {
     history.push(createResourceLocatorString('SearchPage', routeConfiguration(), {}, queryParams));
   };
 
-
   const amenitiesFilterElement = amenitiesFilter ? (
     <SelectMultipleFilter
       id={'SearchFilters.amenitiesFilter'}
@@ -135,7 +140,7 @@ const SearchFiltersComponent = props => {
     />
   ) : null;
 
-  const regularlyOpenOnFilterElement = regularlyOpenOnFilter? (
+  const regularlyOpenOnFilterElement = regularlyOpenOnFilter ? (
     <SelectSingleFilter
       urlParam={regularlyOpenOnFilter.paramName}
       label={regularlyOpenOnLabel}
@@ -146,7 +151,7 @@ const SearchFiltersComponent = props => {
     />
   ) : null;
 
-  const groupSizeFilterElement = groupSizeFilter? (
+  const groupSizeFilterElement = groupSizeFilter ? (
     <SelectSingleFilter
       urlParam={groupSizeFilter.paramName}
       label={groupSizeLabel}
@@ -157,7 +162,7 @@ const SearchFiltersComponent = props => {
     />
   ) : null;
 
-  const listingTypeElement = listingTypeFilter? (
+  const listingTypeElement = listingTypeFilter ? (
     <SelectSingleFilter
       urlParam={listingTypeFilter.paramName}
       label={listingTypeLabel}
@@ -205,7 +210,9 @@ const SearchFiltersComponent = props => {
 
       {hasNoResult ? (
         <div className={css.noSearchResults}>
-          <FormattedMessage id="SearchFilters.noResults" />
+          <p>
+            <FormattedMessage id="SearchFilters.noResults" />
+          </p>
         </div>
       ) : null}
 
