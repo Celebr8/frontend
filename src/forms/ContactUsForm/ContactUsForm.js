@@ -252,12 +252,6 @@ class ContactUsFormComponent extends Component {
               id: 'ContactUsForm.termsAndConditionsLabel',
             });
 
-            const termsAndConditionsValidate = value => {
-              console.log(value);
-              return value && value.length && values[0] == 'agreed' ? null : 'Hello';
-              return null;
-            };
-
             // IBAN
 
             const ibanLabel = intl.formatMessage({
@@ -286,6 +280,52 @@ class ContactUsFormComponent extends Component {
             });
 
             const ibanParser = iban => ibantools.friendlyFormatIBAN(iban);
+
+            // Organisation
+
+            const organisationLabel = intl.formatMessage({
+              id: 'ContactUsForm.organisationLabel',
+            });
+
+            const organisationRequiredMessage = intl.formatMessage({
+              id: 'ContactUsForm.organisationRequired',
+            });
+
+            const organisationPlaceholder = intl.formatMessage({
+              id: 'ContactUsForm.organisationPlaceholder',
+            });
+
+            const organisationRequired = validators.required(organisationRequiredMessage);
+
+            // Number of employees
+
+            const organisationSizeLabel = intl.formatMessage({
+              id: 'contactusform.organisationSizeLabel',
+            });
+
+            const organisationSizeRequiredMessage = intl.formatMessage({
+              id: 'contactusform.organisationSizeRequired',
+            });
+
+            const organisationSizeRequired = validators.required(organisationSizeRequiredMessage);
+
+            // Website
+
+            const organisationWebsiteLabel = intl.formatMessage({
+              id: 'contactusform.organisationWebsiteLabel',
+            });
+
+            const organisationWebsiteRequiredMessage = intl.formatMessage({
+              id: 'contactusform.organisationWebsiteRequired',
+            });
+
+            const organisationWebsitePlaceholder = intl.formatMessage({
+              id: 'ContactUsForm.organisationWebsitePlaceholder',
+            });
+
+            const organisationWebsiteRequired = validators.required(
+              organisationWebsiteRequiredMessage
+            );
 
             // ...
 
@@ -384,12 +424,61 @@ class ContactUsFormComponent extends Component {
                 </Fragment>
               ) : null;
 
+            const corporateDealFields = (
+              <Fragment>
+                <FieldTextInput
+                  key="organisation"
+                  className={css.organisation}
+                  name="organisation"
+                  id={formId ? `${formId}.organisation` : 'organisation'}
+                  label={organisationLabel}
+                  placeholder={organisationPlaceholder}
+                  validate={organisationRequired}
+                />
+                <FieldSelect
+                  name="organisationSize"
+                  key="organisationSize"
+                  id={formId ? `${formId}.organisationSize` : 'organisationSize'}
+                  label={organisationSizeLabel}
+                >
+                  <option value="A">Self-employed</option>
+                  <option value="B">1-10 employees</option>
+                  <option value="C">11-50 employees</option>
+                  <option value="D">51-200 employees</option>
+                  <option value="E">201-500 employees</option>
+                  <option value="F">501-1000 employees</option>
+                  <option value="G">1001-5000 employees</option>
+                  <option value="H">5001-10,000 employees</option>
+                  <option value="I">10,001+ employees</option>
+                </FieldSelect>
+
+                <FieldTextInput
+                  key="organisationWebsite"
+                  className={css.organisationWebsite}
+                  name="organisationWebsite"
+                  id={formId ? `${formId}.organisationWebsite` : 'organisationWebsite'}
+                  label={organisationWebsiteLabel}
+                  placeholder={organisationWebsitePlaceholder}
+                  validate={organisationWebsiteRequired}
+                />
+              </Fragment>
+            );
+
             return (
               <Form
                 key={formId}
                 className={classes}
                 onSubmit={e => {
-                  const { enquiry, position, listingName, socialMedias, iban } = values;
+                  const {
+                    enquiry,
+                    position,
+                    listingName,
+                    socialMedias,
+                    iban,
+										organisation,
+										organisationSize,
+										organisationWebsite
+                  } = values;
 
                   const extraValues = {
                     enquiry,
@@ -397,6 +486,9 @@ class ContactUsFormComponent extends Component {
                     listingName,
                     socialMedias,
                     iban,
+										organisation,
+										organisationSize,
+										organisationWebsite
                   };
                   const completeMessage = extraValues.keys.reduce(
                     (acc, key) => acc + `\n${key} : ${values[key]}`,
@@ -439,6 +531,8 @@ class ContactUsFormComponent extends Component {
                   {claimFields}
 
                   {payementInfoFields}
+
+                  {corporateDealFields}
 
                   <FieldTextInput
                     type="textarea"
