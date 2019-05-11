@@ -7,6 +7,7 @@ import isEqual from 'lodash/isEqual';
 import * as ibantools from 'ibantools';
 import classNames from 'classnames';
 import { propTypes } from '../../util/types';
+import { ensureCurrentUser } from '../../util/data';
 import * as validators from '../../util/validators';
 import arrayMutators from 'final-form-arrays';
 import {
@@ -77,6 +78,7 @@ class ContactUsFormComponent extends Component {
             const {
               rootClassName,
               className,
+              currentUser,
               formId,
               handleSubmit,
               intl,
@@ -86,6 +88,10 @@ class ContactUsFormComponent extends Component {
               sendingError,
               values,
             } = fieldRenderProps;
+
+            const user = ensureCurrentUser(currentUser);
+
+            console.log('user', user);
 
             const {
               email,
@@ -424,45 +430,58 @@ class ContactUsFormComponent extends Component {
                 </Fragment>
               ) : null;
 
-            const corporateDealFields = (
-              <Fragment>
-                <FieldTextInput
-                  key="organisation"
-                  className={css.organisation}
-                  name="organisation"
-                  id={formId ? `${formId}.organisation` : 'organisation'}
-                  label={organisationLabel}
-                  placeholder={organisationPlaceholder}
-                  validate={organisationRequired}
-                />
-                <FieldSelect
-                  name="organisationSize"
-                  key="organisationSize"
-                  id={formId ? `${formId}.organisationSize` : 'organisationSize'}
-                  label={organisationSizeLabel}
-                >
-                  <option value="A">Self-employed</option>
-                  <option value="B">1-10 employees</option>
-                  <option value="C">11-50 employees</option>
-                  <option value="D">51-200 employees</option>
-                  <option value="E">201-500 employees</option>
-                  <option value="F">501-1000 employees</option>
-                  <option value="G">1001-5000 employees</option>
-                  <option value="H">5001-10,000 employees</option>
-                  <option value="I">10,001+ employees</option>
-                </FieldSelect>
+            const corporateDealFields =
+              enquiry == 'corporate' ? (
+                <Fragment>
+                  <FieldTextInput
+                    key="organisation"
+                    className={css.organisation}
+                    name="organisation"
+                    id={formId ? `${formId}.organisation` : 'organisation'}
+                    label={organisationLabel}
+                    placeholder={organisationPlaceholder}
+                    validate={organisationRequired}
+                  />
+                  <FieldSelect
+                    name="organisationSize"
+                    key="organisationSize"
+                    id={formId ? `${formId}.organisationSize` : 'organisationSize'}
+                    label={organisationSizeLabel}
+                  >
+                    <option value="A">Self-employed</option>
+                    <option value="B">1-10 employees</option>
+                    <option value="C">11-50 employees</option>
+                    <option value="D">51-200 employees</option>
+                    <option value="E">201-500 employees</option>
+                    <option value="F">501-1000 employees</option>
+                    <option value="G">1001-5000 employees</option>
+                    <option value="H">5001-10,000 employees</option>
+                    <option value="I">10,001+ employees</option>
+                  </FieldSelect>
 
-                <FieldTextInput
-                  key="organisationWebsite"
-                  className={css.organisationWebsite}
-                  name="organisationWebsite"
-                  id={formId ? `${formId}.organisationWebsite` : 'organisationWebsite'}
-                  label={organisationWebsiteLabel}
-                  placeholder={organisationWebsitePlaceholder}
-                  validate={organisationWebsiteRequired}
-                />
-              </Fragment>
-            );
+                  <FieldTextInput
+                    key="organisationWebsite"
+                    className={css.organisationWebsite}
+                    name="organisationWebsite"
+                    id={formId ? `${formId}.organisationWebsite` : 'organisationWebsite'}
+                    label={organisationWebsiteLabel}
+                    placeholder={organisationWebsitePlaceholder}
+                    validate={organisationWebsiteRequired}
+                  />
+                </Fragment>
+              ) : null;
+
+            const emailField = user.id == null? (
+              <FieldTextInput
+                type="email"
+                name="email"
+                key="email"
+                id={formId ? `${formId}.email` : 'email'}
+                label={emailLabel}
+                placeholder={emailPlaceholder}
+                validate={validators.composeValidators(emailRequired, emailValid)}
+              />
+            ) : null;
 
             return (
               <Form
@@ -475,9 +494,9 @@ class ContactUsFormComponent extends Component {
                     listingName,
                     socialMedias,
                     iban,
-										organisation,
-										organisationSize,
-										organisationWebsite
+                    organisation,
+                    organisationSize,
+                    organisationWebsite,
                   } = values;
 
                   const extraValues = {
@@ -486,16 +505,17 @@ class ContactUsFormComponent extends Component {
                     listingName,
                     socialMedias,
                     iban,
-										organisation,
-										organisationSize,
-										organisationWebsite
+                    organisation,
+                    organisationSize,
+                    organisationWebsite,
                   };
+
                   const completeMessage = extraValues.keys.reduce(
                     (acc, key) => acc + `\n${key} : ${values[key]}`,
                     ''
                   );
+
                   // this.submittedValues = { ...values, message: completeMessage};
-                  console.log('completeMessage', completeMessage);
                   this.submittedValues = values;
                   handleSubmit(e);
                 }}
@@ -515,16 +535,7 @@ class ContactUsFormComponent extends Component {
                     <option value="corporate">Corporate Benefits Enquiries</option>
                   </FieldSelect>
 
-                  <FieldTextInput
-                    type="email"
-                    name="email"
-                    key="email"
-                    id={formId ? `${formId}.email` : 'email'}
-                    label={emailLabel}
-                    placeholder={emailPlaceholder}
-                    validate={validators.composeValidators(emailRequired, emailValid)}
-                  />
-
+                  {emailField}
                   {phoneField}
                   {subjectField}
 

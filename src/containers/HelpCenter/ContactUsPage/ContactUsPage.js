@@ -32,6 +32,7 @@ import css from './ContactUsPage.css';
 const ContactUsPageComponent = props => {
 	console.log('rendering ContactUsPageComponent')
   const {
+		currentUser,
     scrollingDisabled,
     intl,
     onSendMessage,
@@ -64,6 +65,7 @@ const ContactUsPageComponent = props => {
       onSubmit={values => onSendMessage(values)}
       sendingInProgress={sendingInProgress}
       sendingError={sendingError}
+			currentUser={currentUser}
     />
   );
 
@@ -114,7 +116,8 @@ const mapStateToProps = state => {
     scrollingDisabled: isScrollingDisabled(state),
     sendingError: state.ContactUsPage.sendingError,
     sendingInProgress: state.ContactUsPage.sendingInProgress,
-    sendingSuccess: state.ContactUsPage.sendingSuccess,
+		sendingSuccess: state.ContactUsPage.sendingSuccess,
+		currentUser: state.user.currentUser,
   };
 };
 
