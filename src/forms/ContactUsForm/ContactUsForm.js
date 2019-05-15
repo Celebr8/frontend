@@ -488,34 +488,6 @@ class ContactUsFormComponent extends Component {
                 key={formId}
                 className={classes}
                 onSubmit={e => {
-                  const {
-                    enquiry,
-                    position,
-                    listingName,
-                    socialMedias,
-                    iban,
-                    organisation,
-                    organisationSize,
-                    organisationWebsite,
-                  } = values;
-
-                  const extraValues = {
-                    enquiry,
-                    position,
-                    listingName,
-                    socialMedias,
-                    iban,
-                    organisation,
-                    organisationSize,
-                    organisationWebsite,
-                  };
-
-                  const completeMessage = extraValues.keys.reduce(
-                    (acc, key) => acc + `\n${key} : ${values[key]}`,
-                    ''
-                  );
-
-                  // this.submittedValues = { ...values, message: completeMessage};
                   this.submittedValues = values;
                   handleSubmit(e);
                 }}

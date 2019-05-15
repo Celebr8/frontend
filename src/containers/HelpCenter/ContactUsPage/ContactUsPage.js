@@ -30,7 +30,6 @@ import { sendContactUsMessage } from './ContactUsPage.duck';
 import css from './ContactUsPage.css';
 
 const ContactUsPageComponent = props => {
-	console.log('rendering ContactUsPageComponent')
   const {
 		currentUser,
     scrollingDisabled,
