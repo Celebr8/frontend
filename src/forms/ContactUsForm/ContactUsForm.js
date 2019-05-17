@@ -240,9 +240,12 @@ class ContactUsFormComponent extends Component {
 
             // termsAndConditionsLabel
 
-            const termsAndConditionsRequired = intl.formatMessage({
+            const termsAndConditionsRequiredMessage = intl.formatMessage({
               id: 'ContactUsForm.termsAndConditionsRequired',
             });
+						
+						const termsAndConditionsRequired = (values) => 
+							(values && values.length == 0)? termsAndConditionsRequiredMessage: null;	
 
             // IBAN
 
@@ -384,10 +387,12 @@ class ContactUsFormComponent extends Component {
                     , together with our{' '}
                     <NamedLink name="PrivacyPolicyPage">Privacy Policy</NamedLink>.
                   </p>
+
                   <FieldCheckboxGroup
                     name="termsAndConditions"
                     id={formId ? `${formId}.termsAndConditions` : 'termsAndConditions'}
                     options={[{ key: 'agreed', label: 'I agree' }]}
+										validate={termsAndConditionsRequired}
                   />
                   {pristine && !termsAndConditions && termsAndConditionsRequired}
                 </Fragment>
@@ -519,7 +524,7 @@ class ContactUsFormComponent extends Component {
                     id={formId ? `${formId}.message` : 'message'}
                     label={messageLabel}
                     placeholder={messagePlaceholder}
-                    validate={validators.requiredFieldArrayCheckbox('this is required')}
+                    validate={messageRequired}
                   />
                 </div>
 

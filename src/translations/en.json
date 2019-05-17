@@ -100,6 +100,7 @@
   "ContactUsForm.emailPlaceholder": "your.email@domain.com",
   "ContactUsForm.enquiryLabel": "What are you enquiring about?",
   "ContactUsForm.enquiryRequiredMessage": "Please state the object of your enquiry",
+  "ContactUsForm.termsAndConditionsRequired": "You have to accept the terms and conditions to continue.",
   "ContactUsForm.listingNameLabel": "What's the name of the listing?",
   "ContactUsForm.listingNameRequired": "The name of the listing is required",
   "ContactUsForm.listingNamePlaceholder": "Name of the listing",
