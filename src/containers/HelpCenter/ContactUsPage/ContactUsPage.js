@@ -31,14 +31,17 @@ import css from './ContactUsPage.css';
 
 const ContactUsPageComponent = props => {
   const {
-		currentUser,
+    currentUser,
     scrollingDisabled,
     intl,
     onSendMessage,
     sendingInProgress,
     sendingSuccess,
     sendingError,
+    enquiry,
   } = props;
+
+  console.log('enquiry', enquiry);
 
   const tabs = helpCenterTabs(intl, 'ContactUsPage');
 
@@ -64,13 +67,17 @@ const ContactUsPageComponent = props => {
       onSubmit={values => onSendMessage(values)}
       sendingInProgress={sendingInProgress}
       sendingError={sendingError}
-			currentUser={currentUser}
+      currentUser={currentUser}
+      enquiry={enquiry}
     />
   );
 
   const sendingSuccessLabel = intl.formatMessage({ id: 'ContactUsPage.sendingSuccess' });
 
-  const sendingErrorLabel = intl.formatMessage({ id: 'ContactUsPage.sendingError' }, {sendingError});
+  const sendingErrorLabel = intl.formatMessage(
+    { id: 'ContactUsPage.sendingError' },
+    { sendingError }
+  );
 
   const content = sendingSuccess
     ? sendingSuccessLabel
@@ -115,8 +122,8 @@ const mapStateToProps = state => {
     scrollingDisabled: isScrollingDisabled(state),
     sendingError: state.ContactUsPage.sendingError,
     sendingInProgress: state.ContactUsPage.sendingInProgress,
-		sendingSuccess: state.ContactUsPage.sendingSuccess,
-		currentUser: state.user.currentUser,
+    sendingSuccess: state.ContactUsPage.sendingSuccess,
+    currentUser: state.user.currentUser,
   };
 };
 

@@ -91,17 +91,16 @@ class ContactUsFormComponent extends Component {
 
             const user = ensureCurrentUser(currentUser);
 
-            console.log('user', user);
-
             const {
               email,
               phoneNumber,
               message,
               subject,
-              enquiry,
               recaptchaToken,
               termsAndConditions,
             } = values;
+
+						const enquiry = fieldRenderProps.enquiry ? fieldRenderProps.enquiry : values.enquiry;
 
             // email
 
@@ -498,6 +497,8 @@ class ContactUsFormComponent extends Component {
                     key="enquiry"
                     id={formId ? `${formId}.enquiry` : 'enquiry'}
                     label={enquiryLabel}
+										defaultValue="claim"
+										disabled={finalFormProps.enquiry !== undefined}
                   >
                     <option value="general">General Enquiry</option>
                     <option value="booking">Booking a pub</option>
