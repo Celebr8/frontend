@@ -11,6 +11,7 @@ import { ensureCurrentUser } from '../../util/data';
 import * as validators from '../../util/validators';
 import arrayMutators from 'final-form-arrays';
 import {
+  NamedLink,
   FieldCheckbox,
   FieldCheckboxGroup,
   FieldPhoneNumberInput,
@@ -100,7 +101,7 @@ class ContactUsFormComponent extends Component {
               termsAndConditions,
             } = values;
 
-						const enquiry = fieldRenderProps.enquiry ? fieldRenderProps.enquiry : values.enquiry;
+            const enquiry = fieldRenderProps.enquiry ? fieldRenderProps.enquiry : values.enquiry;
 
             // email
 
@@ -179,7 +180,7 @@ class ContactUsFormComponent extends Component {
             });
 
             const enquiryRequiredMessage = intl.formatMessage({
-              id: 'ContactUsForm.enquiryRequired',
+              id: 'ContactUsForm.enquiryRequiredMessage',
             });
 
             const enquiryRequired = validators.required(enquiryRequiredMessage);
@@ -218,16 +219,6 @@ class ContactUsFormComponent extends Component {
               id: 'ContactUsForm.socialMediasLabel',
             });
 
-            const socialMediasRequiredMessage = intl.formatMessage({
-              id: 'ContactUsForm.socialMediasRequired',
-            });
-
-            const socialMediasPlaceholder = intl.formatMessage({
-              id: 'ContactUsForm.socialMediasPlaceholder',
-            });
-
-            const socialMediasRequired = validators.required(socialMediasRequiredMessage);
-
             const socialMediasOptions = [
               {
                 key: 'website',
@@ -249,12 +240,8 @@ class ContactUsFormComponent extends Component {
 
             // termsAndConditionsLabel
 
-            const termsAndConditionsLabel = intl.formatMessage({
-              id: 'ContactUsForm.termsAndConditionsLabel',
-            });
-
             const termsAndConditionsRequired = intl.formatMessage({
-              id: 'ContactUsForm.termsAndConditionsLabel',
+              id: 'ContactUsForm.termsAndConditionsRequired',
             });
 
             // IBAN
@@ -305,11 +292,11 @@ class ContactUsFormComponent extends Component {
             // Number of employees
 
             const organisationSizeLabel = intl.formatMessage({
-              id: 'contactusform.organisationSizeLabel',
+              id: 'ContactUsForm.organisationSizeLabel',
             });
 
             const organisationSizeRequiredMessage = intl.formatMessage({
-              id: 'contactusform.organisationSizeRequired',
+              id: 'ContactUsForm.organisationSizeRequired',
             });
 
             const organisationSizeRequired = validators.required(organisationSizeRequiredMessage);
@@ -317,11 +304,11 @@ class ContactUsFormComponent extends Component {
             // Website
 
             const organisationWebsiteLabel = intl.formatMessage({
-              id: 'contactusform.organisationWebsiteLabel',
+              id: 'ContactUsForm.organisationWebsiteLabel',
             });
 
             const organisationWebsiteRequiredMessage = intl.formatMessage({
-              id: 'contactusform.organisationWebsiteRequired',
+              id: 'ContactUsForm.organisationWebsiteRequired',
             });
 
             const organisationWebsitePlaceholder = intl.formatMessage({
@@ -389,10 +376,17 @@ class ContactUsFormComponent extends Component {
                     options={socialMediasOptions}
                   />
 
+                  <p>
+                    To claim your listing you must agree to our{' '}
+                    <NamedLink name="TermsOfServicePage">
+                      Terms &amp; Conditions of Service
+                    </NamedLink>
+                    , together with our{' '}
+                    <NamedLink name="PrivacyPolicyPage">Privacy Policy</NamedLink>.
+                  </p>
                   <FieldCheckboxGroup
                     name="termsAndConditions"
                     id={formId ? `${formId}.termsAndConditions` : 'termsAndConditions'}
-                    label={termsAndConditionsLabel}
                     options={[{ key: 'agreed', label: 'I agree' }]}
                   />
                   {pristine && !termsAndConditions && termsAndConditionsRequired}
@@ -470,17 +464,18 @@ class ContactUsFormComponent extends Component {
                 </Fragment>
               ) : null;
 
-            const emailField = user.id == null? (
-              <FieldTextInput
-                type="email"
-                name="email"
-                key="email"
-                id={formId ? `${formId}.email` : 'email'}
-                label={emailLabel}
-                placeholder={emailPlaceholder}
-                validate={validators.composeValidators(emailRequired, emailValid)}
-              />
-            ) : null;
+            const emailField =
+              user.id == null ? (
+                <FieldTextInput
+                  type="email"
+                  name="email"
+                  key="email"
+                  id={formId ? `${formId}.email` : 'email'}
+                  label={emailLabel}
+                  placeholder={emailPlaceholder}
+                  validate={validators.composeValidators(emailRequired, emailValid)}
+                />
+              ) : null;
 
             return (
               <Form
@@ -497,8 +492,8 @@ class ContactUsFormComponent extends Component {
                     key="enquiry"
                     id={formId ? `${formId}.enquiry` : 'enquiry'}
                     label={enquiryLabel}
-										defaultValue="claim"
-										disabled={finalFormProps.enquiry !== undefined}
+                    defaultValue="claim"
+                    disabled={finalFormProps.enquiry !== undefined}
                   >
                     <option value="general">General Enquiry</option>
                     <option value="booking">Booking a pub</option>
