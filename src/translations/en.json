@@ -150,7 +150,7 @@
   "DateInput.screenReaderInputMessage": "Date input",
   "DealsPage.title": "At Whichost, it's all about you!",
   "DealsPage.heading": "How it works",
-  "DealsPage.schemaTitle": "Benefits page",
+  "DealsPage.schemaTitle": "Benefits page  | {siteTitle}",
   "DealsPage.dealsTabTitle": "What's this?",
 
   "DealsPage.birthdayDealTabTitle": "Birthday Gift",
