@@ -1,10 +1,7 @@
 {
   "name": "Sharetribe Flex Template Demo",
   "description": "Sharetribe Flex Template Demo - Saunatime!",
-  "keywords": [
-    "node", 
-    "react"
-  ],
+  "keywords": ["node", "react"],
   "repository": "https://github.com/sharetribe/flex-template-web/",
   "env": {
     "REACT_APP_SHARETRIBE_SDK_CLIENT_ID": {
@@ -15,7 +12,7 @@
     },
     "REACT_APP_SHARETRIBE_MARKETPLACE_CURRENCY": {
       "description": "The currency used in the Marketplace as ISO 4217 currency code. For example: USD, EUR, CAD, AUD, etc.",
-      "value": "USD"
+      "value": "EUR"
     },
     "REACT_APP_CANONICAL_ROOT_URL": {
       "description": "Canonical root url of the marketplace. E.g. https://the-name-of-your-app.herokuapp.com or your actual domain. This is needed for social media sharing and SEO optimization."
@@ -39,6 +36,15 @@
     "REACT_APP_CSP": {
       "description": "See: Content Security Policy (CSP) documentation https://github.com/sharetribe/flex-template-web/blob/master/docs/content-security-policy.md",
       "value": "report"
+    },
+
+    "REACT_APP_RECAPTCHA_SITE_KEY": {
+      "description": "API public key for Recaptcha",
+      "value": "6LevSp8UAAAAAOeXKcO4fhqAAkgyUjRENdEepTye"
+    },
+    "REACT_APP_SERVICE_MESSAGE_URL" : {
+      "description": "URL to reach when trying to send an email",
+      "value": "https://whichost-service-message.herokuapp.com/message"
     }
   }
 }
