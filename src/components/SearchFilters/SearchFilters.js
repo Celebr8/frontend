@@ -196,6 +196,7 @@ const SearchFiltersComponent = props => {
       options={amenitiesFilter.options}
       initialValues={initialAmenities}
       contentPlacementOffset={FILTER_DROPDOWN_OFFSET}
+			showAsPopup
     />
   ) : null;
 
@@ -207,6 +208,7 @@ const SearchFiltersComponent = props => {
       options={regularlyOpenOnFilter.options}
       initialValue={initialRegularlyOpenOn}
       contentPlacementOffset={FILTER_DROPDOWN_OFFSET}
+			showAsPopup
     />
   ) : null;
 
@@ -218,6 +220,7 @@ const SearchFiltersComponent = props => {
       options={groupSizeFilter.options}
       initialValue={initialGroupSize}
       contentPlacementOffset={FILTER_DROPDOWN_OFFSET}
+			showAsPopup
     />
   ) : null;
 
@@ -229,6 +232,7 @@ const SearchFiltersComponent = props => {
       options={listingTypeFilter.options}
       initialValue={initialListingType}
       contentPlacementOffset={FILTER_DROPDOWN_OFFSET}
+			showAsPopup
     />
   ) : null;
 
