@@ -20,7 +20,7 @@ const CorporateDeal = props => {
 
     <div className={css.container}>
       <div className={classes}>
-				<h2>Give your employees a gift card to use with over 2,000 shops in Ireland &amp; the UK! <br />They get up to €310 with every celebration.</h2>
+				<h2>Give your employees a gift card to use with over 2,000 shops in Ireland &amp; the UK! <br />They get up to €310 with each of their celebrations.</h2>
 				<section className={css.getInTouch}>
 					<div className={css.btnGroup + ' ' + css.containerButton}>
 						<section className={css.centerButtons}>
@@ -31,9 +31,11 @@ const CorporateDeal = props => {
 				<div className={css.steps}>
 					<div className={css.step}>
 						<p>
-							The value of the gift card depends on the size of the party: from “Up to 30 people” to “201+”, and on the day that it’s held. Celebrations held between Mondays and Wednesdays have a higher value. This is a physical gift card, so we will ask for an address to deliver it.
+							The value of the gift card depends on the size of the party: from “Up to 30 people” to “201+”, and on the day that it’s held. Celebrations held between Mondays and Wednesdays have a higher value. This is a physical gift card, so we will need an address to deliver it.
 							<br/><br/>
-							<b>We will add €10 to the gift card if they can’t find the pub they want and they recommend it to us, so they can celebrate there.</b>
+              How much will this benefit cost to your organisation? Nothing, because giving back is in our culture!
+              <br/><br/>
+							<b>We will add €10 to the gift card if your employees can’t find the pub they want and they recommend it to us, so they can celebrate there.</b>
 						</p>
 					</div>
 					<div className={css.step}>
