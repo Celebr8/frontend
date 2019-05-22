@@ -8,7 +8,7 @@ import {
   fakeIntl,
 } from '../../util/test-data';
 import { renderShallow } from '../../util/test-helpers';
-import { TRANSITION_REQUEST } from '../../util/types';
+import { TRANSITION_REQUEST } from '../../util/transaction';
 import { TransactionPageComponent } from './TransactionPage';
 
 const noop = () => null;
@@ -16,12 +16,16 @@ const noop = () => null;
 describe('TransactionPage - Sale', () => {
   it('matches snapshot', () => {
     const txId = 'tx-sale-1';
+    const start = new Date(Date.UTC(2017, 5, 10));
+    const end = new Date(Date.UTC(2017, 5, 13));
     const transaction = createTransaction({
       id: txId,
       lastTransition: TRANSITION_REQUEST,
       booking: createBooking('booking1', {
-        start: new Date(Date.UTC(2017, 5, 10)),
-        end: new Date(Date.UTC(2017, 5, 13)),
+        start,
+        end,
+        displayStart: start,
+        displayEnd: end,
       }),
       listing: createListing('listing1'),
       customer: createUser('customer1'),
@@ -38,6 +42,7 @@ describe('TransactionPage - Sale', () => {
       onAcceptSale: noop,
       onDeclineSale: noop,
       scrollingDisabled: false,
+      callSetInitialValues: noop,
       transaction,
       totalMessages: 0,
       totalMessagePages: 0,
@@ -48,6 +53,15 @@ describe('TransactionPage - Sale', () => {
       onSendMessage: noop,
       onResetForm: noop,
       intl: fakeIntl,
+
+      location: {
+        pathname: `/sale/${txId}/details`,
+        search: '',
+        hash: '',
+      },
+      history: {
+        push: () => console.log('HistoryPush called'),
+      },
     };
 
     const tree = renderShallow(<TransactionPageComponent {...props} />);
@@ -58,12 +72,17 @@ describe('TransactionPage - Sale', () => {
 describe('TransactionPage - Order', () => {
   it('matches snapshot', () => {
     const txId = 'tx-order-1';
+    const start = new Date(Date.UTC(2017, 5, 10));
+    const end = new Date(Date.UTC(2017, 5, 13));
+
     const transaction = createTransaction({
       id: txId,
       lastTransition: TRANSITION_REQUEST,
       booking: createBooking('booking1', {
-        start: new Date(Date.UTC(2017, 5, 10)),
-        end: new Date(Date.UTC(2017, 5, 13)),
+        start,
+        end,
+        displayStart: start,
+        displayEnd: end,
       }),
       listing: createListing('listing1'),
       customer: createUser('customer1'),
@@ -82,6 +101,7 @@ describe('TransactionPage - Order', () => {
       fetchMessagesInProgress: false,
       sendMessageInProgress: false,
       scrollingDisabled: false,
+      callSetInitialValues: noop,
       transaction,
       onShowMoreMessages: noop,
       onSendMessage: noop,
@@ -92,6 +112,15 @@ describe('TransactionPage - Order', () => {
       declineInProgress: false,
       onAcceptSale: noop,
       onDeclineSale: noop,
+
+      location: {
+        pathname: `/order/${txId}/details`,
+        search: '',
+        hash: '',
+      },
+      history: {
+        push: () => console.log('HistoryPush called'),
+      },
     };
 
     const tree = renderShallow(<TransactionPageComponent {...props} />);

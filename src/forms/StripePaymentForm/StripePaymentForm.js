@@ -1,6 +1,12 @@
+/**
+ * Note: This form is using card from Stripe Elements https://stripe.com/docs/stripe-js#elements
+ * Card is not a Final Form field so it's not available trough Final Form.
+ * It's also handled separately in handleSubmit function.
+ */
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage, injectIntl, intlShape } from 'react-intl';
+import { Form as FinalForm } from 'react-final-form';
 import classNames from 'classnames';
 import {
   Form,
@@ -8,10 +14,11 @@ import {
   ExpandingTextarea,
   FieldTextInput,
   FieldSelect,
-	NamedLink
+  NamedLink,
 } from '../../components';
 import * as log from '../../util/log';
 import config from '../../config';
+import { propTypes } from '../../util/types';
 
 import css from './StripePaymentForm.css';
 
@@ -106,32 +113,38 @@ class StripePaymentForm extends Component {
     this.state = initialState;
     this.handleCardValueChange = this.handleCardValueChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.paymentForm = this.paymentForm.bind(this);
   }
+
   componentDidMount() {
     if (!window.Stripe) {
       throw new Error('Stripe must be loaded for StripePaymentForm');
     }
-    this.stripe = window.Stripe(config.stripe.publishableKey);
-    const elements = this.stripe.elements(stripeElementsOptions);
-    this.card = elements.create('card', { style: cardStyles });
-    this.card.mount(this.cardContainer);
-    this.card.addEventListener('change', this.handleCardValueChange);
 
-    // EventListener is the only way to simulate breakpoints with Stripe.
-    window.addEventListener('resize', () => {
-      if (window.innerWidth < 1024) {
-        this.card.update({ style: { base: { fontSize: '18px', lineHeight: '24px' } } });
-      } else {
-        this.card.update({ style: { base: { fontSize: '20px', lineHeight: '32px' } } });
-      }
-    });
+    if (config.stripe.publishableKey) {
+      this.stripe = window.Stripe(config.stripe.publishableKey);
+      const elements = this.stripe.elements(stripeElementsOptions);
+      this.card = elements.create('card', { style: cardStyles });
+      this.card.mount(this.cardContainer);
+      this.card.addEventListener('change', this.handleCardValueChange);
+      // EventListener is the only way to simulate breakpoints with Stripe.
+      window.addEventListener('resize', () => {
+        if (window.innerWidth < 1024) {
+          this.card.update({ style: { base: { fontSize: '18px', lineHeight: '24px' } } });
+        } else {
+          this.card.update({ style: { base: { fontSize: '20px', lineHeight: '32px' } } });
+        }
+      });
+    }
   }
+
   componentWillUnmount() {
     if (this.card) {
       this.card.removeEventListener('change', this.handleCardValueChange);
       this.card.unmount();
     }
   }
+
   handleCardValueChange(event) {
     const { intl, onChange } = this.props;
     const { error, complete } = event;
@@ -152,22 +165,14 @@ class StripePaymentForm extends Component {
     });
   }
 
-  handleSubmit(event) {
-    event.preventDefault();
+  handleSubmit(values) {
+    const { intl, onSubmit, stripePaymentTokenInProgress, stripePaymentToken } = this.props;
+    const initialMessage = values.initialMessage ? values.initialMessage.trim() : null;
 
-    if (this.state.submitting || !this.state.cardValueValid) {
+    if (stripePaymentTokenInProgress || !this.state.cardValueValid) {
       // Already submitting or card value incomplete/invalid
       return;
     }
-
-    const { intl, onSubmit } = this.props;
-
-    const values = {
-      message: this.state.message.trim(),
-      attendance: this.state.attendance,
-      occasion: this.state.occasion,
-      time: this.state.time,
-    };
 
     if (this.state.token) {
       // Token already fetched for the current card value
@@ -203,12 +208,22 @@ class StripePaymentForm extends Component {
           stripeErrorType: e.type,
           stripeErrorCode: e.code,
         });
-
-        this.setState({
-          submitting: false,
-          error: stripeErrorTranslation(intl, e),
-        });
       });
+
+    if (stripePaymentToken) {
+      // Token already fetched for the current card value
+      onSubmit({ token: stripePaymentToken.id, message: initialMessage });
+      return;
+    }
+
+    const params = {
+      stripe: this.stripe,
+      card: this.card,
+    };
+
+    this.props.onCreateStripePaymentToken(params).then(() => {
+      onSubmit({ token: this.props.stripePaymentToken.id, message: initialMessage });
+    });
   }
 
   validAttendance(attendance) {
@@ -231,35 +246,42 @@ class StripePaymentForm extends Component {
     else return null;
   }
 
-  render() {
+  paymentForm(formRenderProps) {
     const {
       className,
       rootClassName,
       inProgress,
       formId,
       paymentInfo,
-      onChange,
       authorDisplayName,
+      showInitialMessageInput,
       intl,
-    } = this.props;
-    const submitInProgress = this.state.submitting || inProgress;
+			onChange,
+      stripePaymentTokenInProgress,
+      stripePaymentTokenError,
+      invalid,
+      handleSubmit,
+    } = formRenderProps;
+
+    const submitInProgress = stripePaymentTokenInProgress || inProgress;
     const submitDisabled =
       !this.state.cardValueValid ||
+      submitInProgress ||
       this.validAttendance(this.state.attendance) ||
-      this.validTime(this.state.time) ||
-      submitInProgress;
+      this.validTime(this.state.time);
     const classes = classNames(rootClassName || css.root, className);
     const cardClasses = classNames(css.card, {
       [css.cardSuccess]: this.state.cardValueValid,
-      [css.cardError]: this.state.error && !submitInProgress,
+      [css.cardError]: stripePaymentTokenError && !submitInProgress,
     });
 
     const happyBirtdayLabel = (
       <Fragment>
-        <FormattedMessage id="StripePaymentForm.happyBirtdayLabel" />&nbsp;
-				<NamedLink name="BirthdayDealPage" target="_blank">
-					<FormattedMessage id="StripePaymentForm.happyBirtdayLink" />
-				</NamedLink>
+        <FormattedMessage id="StripePaymentForm.happyBirtdayLabel" />
+        &nbsp;
+        <NamedLink name="BirthdayDealPage" target="_blank">
+          <FormattedMessage id="StripePaymentForm.happyBirtdayLink" />
+        </NamedLink>
       </Fragment>
     );
 
@@ -314,10 +336,13 @@ class StripePaymentForm extends Component {
       });
     };
 
-    const messageOptionalText = (
-      <span className={css.messageOptional}>
-        <FormattedMessage id="StripePaymentForm.messageOptionalText" />
-      </span>
+    const messageOptionalText = intl.formatMessage({
+      id: 'StripePaymentForm.messageOptionalText',
+    });
+
+    const initialMessageLabel = intl.formatMessage(
+      { id: 'StripePaymentForm.messageLabel' },
+      { messageOptionalText: messageOptionalText }
     );
 
     return (
@@ -450,6 +475,11 @@ class StripePaymentForm extends Component {
       </Form>
     );
   }
+
+  render() {
+    const { onSubmit, ...rest } = this.props;
+    return <FinalForm onSubmit={this.handleSubmit} {...rest} render={this.paymentForm} />;
+  }
 }
 
 StripePaymentForm.defaultProps = {
@@ -457,9 +487,13 @@ StripePaymentForm.defaultProps = {
   rootClassName: null,
   inProgress: false,
   onChange: () => null,
+  showInitialMessageInput: true,
+  stripePaymentToken: null,
+  stripePaymentTokenInProgress: false,
+  stripePaymentTokenError: null,
 };
 
-const { bool, func, string } = PropTypes;
+const { bool, func, string, object } = PropTypes;
 
 StripePaymentForm.propTypes = {
   className: string,
@@ -471,6 +505,11 @@ StripePaymentForm.propTypes = {
   onChange: func,
   paymentInfo: string.isRequired,
   authorDisplayName: string.isRequired,
+  showInitialMessageInput: bool,
+  onCreateStripePaymentToken: func.isRequired,
+  stripePaymentTokenInProgress: bool,
+  stripePaymentTokenError: propTypes.error,
+  stripePaymentToken: object,
 };
 
 export default injectIntl(StripePaymentForm);

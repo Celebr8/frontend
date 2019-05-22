@@ -3,7 +3,7 @@ import { string, func } from 'prop-types';
 import { FormattedMessage, intlShape, injectIntl } from 'react-intl';
 import classNames from 'classnames';
 import { lazyLoadWithDimensions } from '../../util/contextHelpers';
-import { propTypes } from '../../util/types';
+import { LINE_ITEM_DAY, LINE_ITEM_NIGHT, propTypes } from '../../util/types';
 import { formatMoney } from '../../util/currency';
 import { ensureListing, ensureUser } from '../../util/data';
 import { richText } from '../../util/richText';
@@ -58,6 +58,16 @@ export const ListingCardComponent = props => {
 
   const { formattedPrice, priceTitle } = priceData(price, intl);
 
+  const unitType = config.bookingUnitType;
+  const isNightly = unitType === LINE_ITEM_NIGHT;
+  const isDaily = unitType === LINE_ITEM_DAY;
+
+  const unitTranslationKey = isNightly
+    ? 'ListingCard.perNight'
+    : isDaily
+    ? 'ListingCard.perDay'
+    : 'ListingCard.perUnit';
+
   return (
     <NamedLink className={classes} name="ListingPage" params={{ id, slug }}>
       <div
@@ -84,11 +94,7 @@ export const ListingCardComponent = props => {
             })}
           </div>
           <div className={css.authorInfo}>
-            <FormattedMessage
-              className={css.authorName}
-              id="ListingCard.hostedBy"
-              values={{ authorName }}
-            />
+            <FormattedMessage id="ListingCard.hostedBy" values={{ authorName }} />
           </div>
           <div className={css.listingTypeInfo}>
             <FormattedMessage

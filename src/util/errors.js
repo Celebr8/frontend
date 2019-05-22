@@ -18,7 +18,6 @@ import {
   ERROR_CODE_CHARGE_ZERO_PAYIN,
   ERROR_CODE_EMAIL_TAKEN,
   ERROR_CODE_EMAIL_NOT_FOUND,
-  ERROR_CODE_EMAIL_NOT_VERIFIED,
   ERROR_CODE_TOO_MANY_VERIFICATION_REQUESTS,
   ERROR_CODE_UPLOAD_OVER_LIMIT,
   ERROR_CODE_MISSING_STRIPE_ACCOUNT,
@@ -80,13 +79,6 @@ export const isUploadImageOverLimitError = error =>
  */
 export const isPasswordRecoveryEmailNotFoundError = error =>
   hasErrorWithCode(error, ERROR_CODE_EMAIL_NOT_FOUND);
-
-/**
- * Check if the given API error (from `sdk.passwordReset.request()`)
- * is due to the email not being verified, preventing the reset.
- */
-export const isPasswordRecoveryEmailNotVerifiedError = error =>
-  hasErrorWithCode(error, ERROR_CODE_EMAIL_NOT_VERIFIED);
 
 /**
  * Check if the given API error (from `sdk.transaction.initiate()` or
@@ -199,7 +191,7 @@ export const isChangePasswordWrongPassword = error => error && error.status === 
 
 /**
  * Check if the given API error (from
- * 'sdk.currentUser.createStripeAccount(payoutDetails)') is due to
+ * 'sdk.stripeAccount.create(payoutDetails)') is due to
  * invalid postal code in the given country.
  */
 export const isStripeInvalidPostalCode = error => {
@@ -209,6 +201,14 @@ export const isStripeInvalidPostalCode = error => {
     // case, so we have to recognize it from the message.
     const msg = apiError.meta && apiError.meta.stripeMessage ? apiError.meta.stripeMessage : '';
     return msgRe.test(msg);
+  });
+};
+
+export const isStripeError = error => {
+  return errorAPIErrors(error).some(apiError => {
+    // Stripe doesn't seem to give an error code for this specific
+    // case, so we have to recognize it from the message.
+    return !!(apiError.meta && apiError.meta.stripeMessage);
   });
 };
 

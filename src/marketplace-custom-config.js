@@ -149,5 +149,4 @@ export const listingTypes = [
 		label: "Private space"
 	},
 
-
 ]
