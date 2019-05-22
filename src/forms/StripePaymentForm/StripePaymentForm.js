@@ -8,6 +8,7 @@ import {
   ExpandingTextarea,
   FieldTextInput,
   FieldSelect,
+	NamedLink
 } from '../../components';
 import * as log from '../../util/log';
 import config from '../../config';
@@ -223,13 +224,11 @@ class StripePaymentForm extends Component {
   }
 
   validTime(time) {
-
-		if(moment(time, 'HH:mm').hour() < 12)
-			return this.props.intl.formatMessage({
-				id: `StripePaymentForm.timeErrorTooEarly`	
-			})
-		else return null
-
+    if (moment(time, 'HH:mm').hour() < 12)
+      return this.props.intl.formatMessage({
+        id: `StripePaymentForm.timeErrorTooEarly`,
+      });
+    else return null;
   }
 
   render() {
@@ -245,15 +244,24 @@ class StripePaymentForm extends Component {
     } = this.props;
     const submitInProgress = this.state.submitting || inProgress;
     const submitDisabled =
-			!this.state.cardValueValid || 
-			this.validAttendance(this.state.attendance) || 
-			this.validTime(this.state.time) ||
-			submitInProgress;
+      !this.state.cardValueValid ||
+      this.validAttendance(this.state.attendance) ||
+      this.validTime(this.state.time) ||
+      submitInProgress;
     const classes = classNames(rootClassName || css.root, className);
     const cardClasses = classNames(css.card, {
       [css.cardSuccess]: this.state.cardValueValid,
       [css.cardError]: this.state.error && !submitInProgress,
     });
+
+    const happyBirtdayLabel = (
+      <Fragment>
+        <FormattedMessage id="StripePaymentForm.happyBirtdayLabel" />&nbsp;
+				<NamedLink name="BirthdayDealPage" target="_blank">
+					<FormattedMessage id="StripePaymentForm.happyBirtdayLink" />
+				</NamedLink>
+      </Fragment>
+    );
 
     const messagePlaceholder = intl.formatMessage(
       { id: 'StripePaymentForm.messagePlaceholder' },
@@ -361,23 +369,21 @@ class StripePaymentForm extends Component {
             <FormattedMessage id="StripePaymentForm.timeLabel" />
           </label>
 
-					<span 
-						className={css.time}
-					>
-						<TextField
-							id="time"
-							type="time"
-							defaultValue="20:30"
-							InputLabelProps={{
-								shrink: true,
-							}}
-							value={this.state.time}
-							onChange={handleTimeChange}
-							inputProps={{
-								step: 900, // 15 min
-							}}
-						/>
-					</span>
+          <span className={css.time}>
+            <TextField
+              id="time"
+              type="time"
+              defaultValue="20:30"
+              InputLabelProps={{
+                shrink: true,
+              }}
+              value={this.state.time}
+              onChange={handleTimeChange}
+              inputProps={{
+                step: 900, // 15 min
+              }}
+            />
+          </span>
 
           <p className={css.validTime}>{this.validTime(this.state.time)}</p>
         </Fragment>
@@ -404,6 +410,9 @@ class StripePaymentForm extends Component {
               {intl.formatMessage({ id: 'StripePaymentForm.birthday' })}
             </option>
           </select>
+          <p>
+            {this.state.occasion == 'birthday' ? happyBirtdayLabel : <Fragment>&nbsp;</Fragment>}
+          </p>
         </Fragment>
         <Fragment>
           <h3 className={css.attendanceHeading}>
@@ -426,7 +435,6 @@ class StripePaymentForm extends Component {
           </span>
 
           <p className={css.validAttendance}>{this.validAttendance(this.state.attendance)}</p>
-
         </Fragment>
         <div className={css.submitContainer}>
           <p className={css.paymentInfo}>{paymentInfo}</p>
