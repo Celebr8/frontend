@@ -71,7 +71,7 @@
   "BookingDatesForm.timeSlotsError": "Loading listing availability failed. Please refresh the page.",
   "BookingDatesForm.youWontBeChargedInfo": "You won't be charged yet",
 
-  "CareersPage.schemaTitle": "We're hiring!",
+  "CareersPage.schemaTitle": "We're hiring! | {siteTitle}",
   "CareersPage.title": "We're hiring!",
 
   "CheckoutPage.bookingTimeNotAvailableMessage": "Unfortunately, the requested time is already booked.",
@@ -90,7 +90,7 @@
   "CheckoutPage.speculateTransactionError": "Failed to fetch breakdown information.",
   "CheckoutPage.title": "Book {listingTitle}",
   "CommunityGuidelinesPage.heading": "Community Guidelines",
-  "ContactUsPage.schemaTitle": "Contact us",
+  "ContactUsPage.schemaTitle": "Contact us | {siteTitle}",
   "ContactUsPage.title": "Contact us",
   "ContactUsPage.sendingSuccess": "Your mail have been sent. We will get back to you as soon as possible",
   "ContactUsPage.sendingError": "An error occured: {sendingError}",
@@ -171,7 +171,7 @@
   "DateInput.screenReaderInputMessage": "Date input",
   "DealsPage.title": "At Whichost, it's all about you!",
   "DealsPage.heading": "How it works",
-  "DealsPage.schemaTitle": "Benefits page",
+  "DealsPage.schemaTitle": "Benefits page | {siteTitle}",
   "DealsPage.dealsTabTitle": "What's this?",
 
   "DealsPage.birthdayDealTabTitle": "Birthday Gift",
@@ -309,10 +309,10 @@
   "EnquiryForm.submitButtonText": "Send enquiry",
 
   "FAQPage.title": "Frequently Asked Questions",
-  "FAQPage.schemaTitle": "Frequently Asked Questions",
+  "FAQPage.schemaTitle": "Frequently Asked Questions | {siteTitle}",
 
   "FeesPage.title": "Fees",
-  "FeesPage.schemaTitle": "Fees",
+  "FeesPage.schemaTitle": "Fees | {siteTitle}",
 
   "FieldBoolean.no": "No",
   "FieldBoolean.yes": "Yes",
@@ -338,7 +338,7 @@
   "FieldReviewRating.star5": "Awesome - 5 stars",
 
   "FirstStepsPage.title": "Steps to make your life easyer!",
-  "FirstStepsPage.schemaTitle": "Steps to make your life easyer!",
+  "FirstStepsPage.schemaTitle": "Steps to make your life easier! | {siteTitle}",
 
   "Footer.copyright": "© Whichost 2019. Whichost Ltd is registered in Ireland. Reg. No. 624254.",
   "Footer.copyrightMobile": "© Whichost 2019.",
@@ -370,7 +370,7 @@
   "Footer.version": "Version",
 
   "GuidebookForProvidersPage.title": "Guidebook for Publicans",
-  "GuidebookForProvidersPage.schemaTitle": "Guidebook for Publicans",
+  "GuidebookForProvidersPage.schemaTitle": "Guidebook for Publicans | {siteTitle}",
 
   "HelpCenter.ContactUsTabTitle": "Contact us",
   "HelpCenter.FAQTabTitle": "FAQ",
@@ -410,7 +410,7 @@
   "LandingPage.schemaDescription": "Book your party using Whichost or increase your pub's exposure.",
   "LandingPage.schemaTitle": "Celebrate Anywhere | {siteTitle}",
 
-  "LegalsDealsPage.schemaTitle": "Benefits T&C",
+  "LegalsDealsPage.schemaTitle": "Benefits T&C | {siteTitle}",
   "LegalsDealsPage.heading": "Benefits T&C",
 
   "LegalsPages.privacyTabTitle": "Privacy policy",
