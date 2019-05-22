@@ -71,7 +71,7 @@
   "BookingDatesForm.timeSlotsError": "Loading listing availability failed. Please refresh the page.",
   "BookingDatesForm.youWontBeChargedInfo": "You won't be charged yet",
 
-  "CareersPage.schemaTitle": "We're hiring!",
+  "CareersPage.schemaTitle": "We're hiring! | {siteTitle}",
   "CareersPage.title": "We're hiring!",
 
   "CheckoutPage.bookingTimeNotAvailableMessage": "Unfortunately, the requested time is already booked.",
@@ -90,7 +90,7 @@
   "CheckoutPage.speculateTransactionError": "Failed to fetch breakdown information.",
   "CheckoutPage.title": "Book {listingTitle}",
   "CommunityGuidelinesPage.heading": "Community Guidelines",
-  "ContactUsPage.schemaTitle": "Contact us",
+  "ContactUsPage.schemaTitle": "Contact us | {siteTitle}",
   "ContactUsPage.title": "Contact us",
   "ContactUsPage.sendingSuccess": "Your mail have been sent. We will get back to you as soon as possible",
   "ContactUsPage.sendingError": "An error occured: {sendingError}",
@@ -98,17 +98,38 @@
   "ContactUsForm.emailRequired": "An email address is required",
   "ContactUsForm.emailInvalid": "A valid email address is required",
   "ContactUsForm.emailPlaceholder": "your.email@domain.com",
+  "ContactUsForm.enquiryLabel": "What are you enquiring about?",
+  "ContactUsForm.enquiryRequiredMessage": "Please state the object of your enquiry",
+  "ContactUsForm.termsAndConditionsRequired": "You have to accept the terms and conditions to continue.",
+  "ContactUsForm.listingNameLabel": "What's the name of the listing?",
+  "ContactUsForm.listingNameRequired": "The name of the listing is required",
+  "ContactUsForm.listingNamePlaceholder": "Name of the listing",
+  "ContactUsForm.positionLabel": "What's your position?",
+  "ContactUsForm.positionRequired": "Your position is required",
   "ContactUsForm.phoneLabel": "Your phone number",
   "ContactUsForm.phoneRequired": "A phone number is required",
   "ContactUsForm.phonePlaceholder": "(0xx) xxx xxxx",
   "ContactUsForm.messageLabel": "Your message",
   "ContactUsForm.messageRequired": "Your message is required",
   "ContactUsForm.messagePlaceholder": "Please enter your message here. We'll contact you as soon as possible.",
+  "ContactUsForm.socialMediasLabel": "Does your business have an account on the following plateform?",
+  "ContactUsForm.ibanLabel": "What is your IBAN?",
+  "ContactUsForm.ibanRequired": "Your IBAN is required",
+  "ContactUsForm.ibanInvalid": "This IBAN is invalid",
+  "ContactUsForm.ibanPlaceholder": "IE29 AIBK 9311 5212 3456 78",
   "ContactUsForm.sendMessage": "Send",
   "ContactUsForm.subjectLabel": "Subject",
   "ContactUsForm.subjectRequired": "A subject is required",
   "ContactUsForm.subjectPlaceholder": "Subject",
-
+  "ContactUsForm.organisationLabel": "Name of your organisation",
+  "ContactUsForm.organisationRequired": "The name of your organisation is required",
+  "ContactUsForm.organisationPlaceholder": "Name of your organisation",
+  "ContactUsForm.organisationSizeLabel": "How many people do you employ?",
+  "ContactUsForm.organisationSizeRequired": "Number of employees required",
+  "ContactUsForm.organisationWebsiteLabel": "What's your website?",
+  "ContactUsForm.organisationWebsiteRequired": "Your website is required",
+  "ContactUsForm.organisationWebsitePlaceholder": "http://mypub.ie",
+  "ContactUsForm.termsAndConditionsRequired": "You have to accept the terms and conditions",
   "ContactDetailsForm.confirmChangesInfo": "To change your email address, please enter your current password.",
   "ContactDetailsForm.confirmChangesTitle": "Confirm your changes",
   "ContactDetailsForm.emailInvalid": "A valid email address is required",
@@ -150,7 +171,7 @@
   "DateInput.screenReaderInputMessage": "Date input",
   "DealsPage.title": "At Whichost, it's all about you!",
   "DealsPage.heading": "How it works",
-  "DealsPage.schemaTitle": "Benefits page",
+  "DealsPage.schemaTitle": "Benefits page | {siteTitle}",
   "DealsPage.dealsTabTitle": "What's this?",
 
   "DealsPage.birthdayDealTabTitle": "Birthday Gift",
@@ -288,10 +309,10 @@
   "EnquiryForm.submitButtonText": "Send enquiry",
 
   "FAQPage.title": "Frequently Asked Questions",
-  "FAQPage.schemaTitle": "Frequently Asked Questions",
+  "FAQPage.schemaTitle": "Frequently Asked Questions | {siteTitle}",
 
   "FeesPage.title": "Fees",
-  "FeesPage.schemaTitle": "Fees",
+  "FeesPage.schemaTitle": "Fees | {siteTitle}",
 
   "FieldBoolean.no": "No",
   "FieldBoolean.yes": "Yes",
@@ -317,7 +338,7 @@
   "FieldReviewRating.star5": "Awesome - 5 stars",
 
   "FirstStepsPage.title": "Steps to make your life easyer!",
-  "FirstStepsPage.schemaTitle": "Steps to make your life easyer!",
+  "FirstStepsPage.schemaTitle": "Steps to make your life easier! | {siteTitle}",
 
   "Footer.copyright": "© Whichost 2019. Whichost Ltd is registered in Ireland. Reg. No. 624254.",
   "Footer.copyrightMobile": "© Whichost 2019.",
@@ -349,7 +370,7 @@
   "Footer.version": "Version",
 
   "GuidebookForProvidersPage.title": "Guidebook for Publicans",
-  "GuidebookForProvidersPage.schemaTitle": "Guidebook for Publicans",
+  "GuidebookForProvidersPage.schemaTitle": "Guidebook for Publicans | {siteTitle}",
 
   "HelpCenter.ContactUsTabTitle": "Contact us",
   "HelpCenter.FAQTabTitle": "FAQ",
@@ -389,7 +410,7 @@
   "LandingPage.schemaDescription": "Book your party using Whichost or increase your pub's exposure.",
   "LandingPage.schemaTitle": "Celebrate Anywhere | {siteTitle}",
 
-  "LegalsDealsPage.schemaTitle": "Benefits T&C",
+  "LegalsDealsPage.schemaTitle": "Benefits T&C | {siteTitle}",
   "LegalsDealsPage.heading": "Benefits T&C",
 
   "LegalsPages.privacyTabTitle": "Privacy policy",
@@ -752,8 +773,7 @@
 
   "SectionHero.browseButton": "Find a pub",
   "SectionHero.temporaryOffer": "Booking for your birthday? ",
-  "SectionHero.temporaryOfferLink": "We have a gift for you!",
-  "SectionHero.subTitle": "Easily find and book pubs for your parties and celebrations.",
+  "SectionHero.temporaryOfferLink": "Get a gift card of up to €240!",
   "SectionHero.title": "Celebrate Anywhere!",
 
   "SectionHowItWorks.createListingLink": "PS. You can also add your pub on Whichost in just a few clicks! Click here to get started.",
@@ -835,6 +855,8 @@
   "StripePaymentForm.messageOptionalText": "• optional",
   "StripePaymentForm.messagePlaceholder": "Hello {name}! I'm looking forward to…",
   "StripePaymentForm.paymentHeading": "Payment",
+  "StripePaymentForm.happyBirtdayLabel": "Happy Birthday! We have a gift for you.",
+  "StripePaymentForm.happyBirtdayLink": "Click here!",
   "StripePaymentForm.occasionHeading": "Occasion",
   "StripePaymentForm.occasionLabel": "What's the occasion?",
   "StripePaymentForm.justBecause": "Just because",
