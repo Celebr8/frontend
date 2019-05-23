@@ -243,9 +243,9 @@ class ContactUsFormComponent extends Component {
             const termsAndConditionsRequiredMessage = intl.formatMessage({
               id: 'ContactUsForm.termsAndConditionsRequired',
             });
-						
-						const termsAndConditionsRequired = (values) => 
-							(values && values.length == 0)? termsAndConditionsRequiredMessage: null;	
+
+            const termsAndConditionsRequired = values =>
+              values && values.length == 0 ? termsAndConditionsRequiredMessage : null;
 
             // IBAN
 
@@ -392,7 +392,7 @@ class ContactUsFormComponent extends Component {
                     name="termsAndConditions"
                     id={formId ? `${formId}.termsAndConditions` : 'termsAndConditions'}
                     options={[{ key: 'agreed', label: 'I agree' }]}
-										validate={termsAndConditionsRequired}
+                    validate={termsAndConditionsRequired}
                   />
                   {pristine && !termsAndConditions && termsAndConditionsRequired}
                 </Fragment>
@@ -487,7 +487,10 @@ class ContactUsFormComponent extends Component {
                 key={formId}
                 className={classes}
                 onSubmit={e => {
-                  this.submittedValues = values;
+                  const valuesWithEmail = user.id
+                    ? { ...values, email: user.attributes.email }
+                    : values;
+                  this.submittedValues = valuesWithEmail;
                   handleSubmit(e);
                 }}
               >
