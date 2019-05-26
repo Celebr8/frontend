@@ -83,7 +83,7 @@ export const PayoutPreferencesPageComponent = props => {
 
 	} else if (currentUserLoaded && stripeConnected) {
 
-		const link = <NamedLink name="ContactUsPage" target="_blank">
+		const link = <NamedLink name="ContactUsPageEnquiry" params={{enquiry: "changePaymentInfo"}} target="_blank">
 			<FormattedMessage id="PayoutPreferencesPage.stripeAlreadyConnectedLink" />
 		</NamedLink>
 
