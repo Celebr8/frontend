@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
+import { NamedLink } from '../../components';
+
 import css from './PrivacyPolicy.css';
 
 const PrivacyPolicy = props => {
@@ -22,7 +24,7 @@ const PrivacyPolicy = props => {
       </p>
       
       <p>
-      If you have questions about this Privacy Policy or our use of personal information, please email us at <a href="mailto:support@whichost.com">support@whichost.com</a>. Your use of the website or Services constitutes your acceptance of our use of your personal information as described in this Privacy Policy.
+				If you have questions about this Privacy Policy or our use of personal information, please <NamedLink name="ContactUsPageEnquiry" params={{enquiry: "privacy"}}>contact us</NamedLink>. Your use of the website or Services constitutes your acceptance of our use of your personal information as described in this Privacy Policy.
       </p>
 
       <h2>COLLECTION OF INFORMATION</h2>
@@ -33,8 +35,7 @@ const PrivacyPolicy = props => {
 
       <h3>Not for use for people under the age of 18 years old</h3>
       <p>
-        The Services are not intended for people under 18 years of age. If you are under 18, do not use or provide any personal information on or through the Services or about yourself to us. If you believe that we might have personal information from or about a child under 18, please email us at <a href="mailto:support@whichost.com">support@whichost.com</a>.
-      </p>
+				The Services are not intended for people under 18 years of age. If you are under 18, do not use or provide any personal information on or through the Services or about yourself to us. If you believe that we might have personal information from or about a child under 18, please <NamedLink name="ContactUsPageEnquiry" params={{enquiry: "privacy"}}>contact us</NamedLink>.</p>
 
       <h3>Information we collect automatically when you use our services</h3>
       <p>
@@ -97,7 +98,7 @@ Whichost takes reasonable measures to help protect personal information from los
 		<h2>YOUR CHOICES</h2>
 		<h3>Account information</h3>
 		<p>
-You may update, correct or delete personal information at any time by emailing us at <a href="mailto:support@whichost.com">support@whichost.com</a>. If you wish to delete or deactivate your account, you can do so by emailing us, but we may retain certain personal information as required by law or for legitimate business purposes. We may also retain cached or archived copies of your personal information until purged during our normal course of business.
+			You may update, correct or delete personal information at any time by <NamedLink name="ContactUsPageEnquiry" params={{enquiry: "privacy"}}>clicking here</NamedLink>. If you wish to delete or deactivate your account, you can do so by emailing us, but we may retain certain personal information as required by law or for legitimate business purposes. We may also retain cached or archived copies of your personal information until purged during our normal course of business.
 		</p>
 		<h3>Cookies</h3>
 		<p>
@@ -105,11 +106,11 @@ Most web browsers are set to accept cookies by default. If you prefer, you can u
 		</p>
 		<h3>Promotional communications</h3>
 		<p>
-You may opt out of receiving promotional communications from Whichost by following the unsubscribe instructions in those communications or by emailing us at <a href="mailto:support@whichost.com">support@whichost.com</a>. If you opt out, we may still send you non-promotional communications, including those about your account or transactions.
+			You may opt out of receiving promotional communications from Whichost by following the unsubscribe instructions in those communications or by <NamedLink name="ContactUsPageEnquiry" params={{enquiry: 'privacy'}}>clicking here</NamedLink>. If you opt out, we may still send you non-promotional communications, including those about your account or transactions.
 		</p>
 		<h3>Contact information</h3>
 		<p>
-Please email us at <a href="mailto:support@whichost.com">support@whichost.com</a> with any questions or comments about this Privacy Policy.
+			Please <NamedLink name="ContactUsPageEnquiry" params={{enquiry: "privacy"}}>contact us</NamedLink> with any questions or comments about this Privacy Policy.
 		</p>
     </div>
   );

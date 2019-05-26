@@ -351,34 +351,9 @@ const routeConfiguration = () => {
       component: props => <ContactUsPage {...props} />,
     },
     {
-			path: '/contact-us/general',
-      name: 'ContactUsPage',
-      component: props => <ContactUsPage enquiry="general" {...props} />,
-    },
-    {
-			path: '/contact-us/booking',
-      name: 'ContactUsPage',
-      component: props => <ContactUsPage enquiry="booking" {...props} />,
-    },
-    {
-			path: '/contact-us/listing',
-      name: 'ContactUsPage',
-      component: props => <ContactUsPage enquiry="listing" {...props} />,
-    },
-    {
-			path: '/contact-us/claim',
-      name: 'ContactUsPage',
-      component: props => <ContactUsPage enquiry="claim" {...props} />,
-    },
-    {
-			path: '/contact-us/changePaymentInfo',
-      name: 'ContactUsPage',
-      component: props => <ContactUsPage enquiry="changePaymentInfo" {...props} />,
-    },
-    {
-			path: '/contact-us/corporate',
-      name: 'ContactUsPage',
-      component: props => <ContactUsPage enquiry="corporate" {...props} />,
+			path: '/contact-us/:enquiry',
+      name: 'ContactUsPageEnquiry',
+      component: props => <ContactUsPage {...props} />,
     },
     {
 			path: '/help/benefits',

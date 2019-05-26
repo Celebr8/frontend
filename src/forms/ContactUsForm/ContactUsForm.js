@@ -507,6 +507,7 @@ class ContactUsFormComponent extends Component {
                     <option value="booking">Booking a pub</option>
                     <option value="listing">Listing a space</option>
                     <option value="claim">Claiming a listing</option>
+                    <option value="privacy">Privacy Enquiry</option>
                     <option value="changePaymentInfo">Change payement informations</option>
                     <option value="corporate">Corporate Benefits Enquiries</option>
                   </FieldSelect>
