@@ -6,6 +6,8 @@ import {
   maxLength,
   moneySubUnitAmountAtLeast,
   composeValidators,
+  validBusinessURL,
+  validHKID,
 } from './validators';
 
 const { Money } = sdkTypes;
@@ -149,6 +151,35 @@ describe('validators', () => {
       expect(moneySubUnitAmountAtLeast('fail', 50)(new Money(100, 'USD'))).toBeUndefined();
     });
   });
+  describe('validBusinessURL()', () => {
+    it('should fail on example.com', () => {
+      expect(validBusinessURL('fail')('example.com')).toEqual('fail');
+    });
+    it('should fail on http://example.com', () => {
+      expect(validBusinessURL('fail')('http://example.com')).toEqual('fail');
+    });
+    it('should fail on localhost', () => {
+      expect(validBusinessURL('fail')('localhost/')).toEqual('fail');
+    });
+    it('should fail on http://localhost', () => {
+      expect(validBusinessURL('fail')('http://localhost/')).toEqual('fail');
+    });
+    it('should fail on localhost:3000', () => {
+      expect(validBusinessURL('fail')('localhost:3000')).toEqual('fail');
+    });
+    it('should fail on <localhosttunnel.com>', () => {
+      expect(validBusinessURL('fail')('<localhosttunnel.com>')).toEqual('fail');
+    });
+    it('should allow on localhosttunnel.com', () => {
+      expect(validBusinessURL('fail')('localhosttunnel.com')).toBeUndefined();
+    });
+    it('should allow on http://localhosttunnel.com', () => {
+      expect(validBusinessURL('fail')('http://localhosttunnel.com')).toBeUndefined();
+    });
+    it('should allow on https://localhosttunnel.com', () => {
+      expect(validBusinessURL('fail')('https://localhosttunnel.com')).toBeUndefined();
+    });
+  });
   describe('composeValidators()', () => {
     const validateLength = composeValidators(minLength('minLength', 4), maxLength('maxLength', 6));
 
@@ -182,6 +213,35 @@ describe('validators', () => {
         required('required')
       );
       expect(validateLength('')).toEqual('minLength');
+    });
+  });
+  describe('validHKID()', () => {
+    it('should fail on too short HKID', () => {
+      expect(validHKID('fail')('AB987')).toEqual('fail');
+    });
+    it('should fail if value is in wrong format: no letters', () => {
+      expect(validHKID('fail')('13278240')).toEqual('fail');
+    });
+    it('should fail if value is in wrong format: too many letters', () => {
+      expect(validHKID('fail')('ABE9876543')).toEqual('fail');
+    });
+    it('should fail if value is in wrong format: too many numbers', () => {
+      expect(validHKID('fail')('E13278240')).toEqual('fail');
+    });
+    it('should fail if check digit is wrong', () => {
+      expect(validHKID('fail')('E327824(3)')).toEqual('fail');
+    });
+    it('should allow string of nine digits with all zeros', () => {
+      expect(validHKID('pass')('000000000')).toBeUndefined();
+    });
+    it('should allow string with valid HKID using two letters', () => {
+      expect(validHKID('pass')('AB9876543')).toBeUndefined();
+    });
+    it('should allow string with valid HKID using one letter', () => {
+      expect(validHKID('pass')('E3278240')).toBeUndefined();
+    });
+    it('should allow string with valid HKID using brackets in check digit', () => {
+      expect(validHKID('pass')('E327824(0)')).toBeUndefined();
     });
   });
 });

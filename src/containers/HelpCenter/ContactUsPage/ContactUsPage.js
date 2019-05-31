@@ -30,15 +30,18 @@ import { sendContactUsMessage } from './ContactUsPage.duck';
 import css from './ContactUsPage.css';
 
 const ContactUsPageComponent = props => {
-	console.log('rendering ContactUsPageComponent')
   const {
+    currentUser,
     scrollingDisabled,
     intl,
     onSendMessage,
     sendingInProgress,
     sendingSuccess,
     sendingError,
+    enquiry,
   } = props;
+
+  console.log('enquiry', enquiry);
 
   const tabs = helpCenterTabs(intl, 'ContactUsPage');
 
@@ -64,12 +67,17 @@ const ContactUsPageComponent = props => {
       onSubmit={values => onSendMessage(values)}
       sendingInProgress={sendingInProgress}
       sendingError={sendingError}
+      currentUser={currentUser}
+      enquiry={enquiry}
     />
   );
 
   const sendingSuccessLabel = intl.formatMessage({ id: 'ContactUsPage.sendingSuccess' });
 
-  const sendingErrorLabel = intl.formatMessage({ id: 'ContactUsPage.sendingError' }, {sendingError});
+  const sendingErrorLabel = intl.formatMessage(
+    { id: 'ContactUsPage.sendingError' },
+    { sendingError }
+  );
 
   const content = sendingSuccess
     ? sendingSuccessLabel
@@ -115,6 +123,7 @@ const mapStateToProps = state => {
     sendingError: state.ContactUsPage.sendingError,
     sendingInProgress: state.ContactUsPage.sendingInProgress,
     sendingSuccess: state.ContactUsPage.sendingSuccess,
+    currentUser: state.user.currentUser,
   };
 };
 

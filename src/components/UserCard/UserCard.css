@@ -60,6 +60,7 @@
 }
 
 .showMore {
+  @apply --marketplaceLinkStyles;
   @apply --marketplaceH4FontStyles;
   margin: 0 0 0 5px;
 }
@@ -117,6 +118,7 @@
 }
 
 .contact {
+  @apply --marketplaceLinkStyles;
   @apply --marketplaceH4FontStyles;
   	margin: 0;
     padding: 1px 6px 1px 6px;

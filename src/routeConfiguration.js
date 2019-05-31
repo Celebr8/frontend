@@ -228,7 +228,7 @@ const routeConfiguration = () => {
       auth: true,
       authPage: 'LoginPage',
       component: props => <TransactionPage {...props} transactionRole="customer" />,
-      loadData: TransactionPage.loadData,
+      loadData: params => TransactionPage.loadData({ ...params, transactionRole: 'customer' }),
       setInitialValues: TransactionPage.setInitialValues,
     },
     {
@@ -244,7 +244,7 @@ const routeConfiguration = () => {
       auth: true,
       authPage: 'LoginPage',
       component: props => <TransactionPage {...props} transactionRole="provider" />,
-      loadData: TransactionPage.loadData,
+      loadData: params => TransactionPage.loadData({ ...params, transactionRole: 'provider' }),
     },
     {
       path: '/listings',
@@ -346,9 +346,39 @@ const routeConfiguration = () => {
       component: props => <ListMySpacePage {...props} />,
     },
     {
-			path: '/help/contact-us',
+			path: '/contact-us',
       name: 'ContactUsPage',
       component: props => <ContactUsPage {...props} />,
+    },
+    {
+			path: '/contact-us/general',
+      name: 'ContactUsPage',
+      component: props => <ContactUsPage enquiry="general" {...props} />,
+    },
+    {
+			path: '/contact-us/booking',
+      name: 'ContactUsPage',
+      component: props => <ContactUsPage enquiry="booking" {...props} />,
+    },
+    {
+			path: '/contact-us/listing',
+      name: 'ContactUsPage',
+      component: props => <ContactUsPage enquiry="listing" {...props} />,
+    },
+    {
+			path: '/contact-us/claim',
+      name: 'ContactUsPage',
+      component: props => <ContactUsPage enquiry="claim" {...props} />,
+    },
+    {
+			path: '/contact-us/changePaymentInfo',
+      name: 'ContactUsPage',
+      component: props => <ContactUsPage enquiry="changePaymentInfo" {...props} />,
+    },
+    {
+			path: '/contact-us/corporate',
+      name: 'ContactUsPage',
+      component: props => <ContactUsPage enquiry="corporate" {...props} />,
     },
     {
 			path: '/help/benefits',

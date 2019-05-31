@@ -85,7 +85,7 @@ class BirthdayInputComponent extends Component {
   }
   componentWillMount() {
     const value = this.props.value;
-    value !== undefined ? this.setState({ selected: value }) : null;
+    return value !== undefined ? this.setState({ selected: value }) : null;
   }
 
   componentWillReceiveProps(newProps) {
@@ -146,6 +146,7 @@ class BirthdayInputComponent extends Component {
         <div className={css.selectWrapper}>
           {dateLabel}
           <select
+            autoComplete="bday-day"
             disabled={disabled}
             id={dateId}
             value={selectedValue(this.state.selected.day)}
@@ -156,7 +157,9 @@ class BirthdayInputComponent extends Component {
             onBlur={() => this.handleSelectBlur()}
             onChange={e => this.handleSelectChange('day', e.target.value)}
           >
-            <option disabled>{datePlaceholder}</option>
+            <option disabled value="">
+              {datePlaceholder}
+            </option>
             {days.map(d => (
               <option key={d} value={d}>
                 {pad(d)}
@@ -167,6 +170,7 @@ class BirthdayInputComponent extends Component {
         <div className={css.selectWrapper}>
           {monthLabel}
           <select
+            autoComplete="bday-month"
             disabled={disabled}
             id={monthId}
             value={selectedValue(this.state.selected.month)}
@@ -177,7 +181,9 @@ class BirthdayInputComponent extends Component {
             onBlur={() => this.handleSelectBlur()}
             onChange={e => this.handleSelectChange('month', e.target.value)}
           >
-            <option disabled>{monthPlaceholder}</option>
+            <option disabled value="">
+              {monthPlaceholder}
+            </option>
             {months.map(m => (
               <option key={m} value={m}>
                 {pad(m)}
@@ -188,6 +194,7 @@ class BirthdayInputComponent extends Component {
         <div className={css.selectWrapper}>
           {yearLabel}
           <select
+            autoComplete="bday-year"
             disabled={disabled}
             id={yearId}
             value={selectedValue(this.state.selected.year)}
@@ -198,7 +205,9 @@ class BirthdayInputComponent extends Component {
             onBlur={() => this.handleSelectBlur()}
             onChange={e => this.handleSelectChange('year', e.target.value)}
           >
-            <option disabled>{yearPlaceholder}</option>
+            <option disabled value="">
+              {yearPlaceholder}
+            </option>
             {years.map(y => (
               <option key={y} value={y}>
                 {y}
