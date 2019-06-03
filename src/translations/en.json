@@ -177,11 +177,11 @@
   "DealsPage.birthdayDealTabTitle": "Birthday Gift",
   "DealsPage.corporateDealTabTitle": "Corporate Benefit",
   "DealsPage.recommendDealTabTitle": "Recommend Reward",
-  
+
   "BirthdayDealPage.heading": "Birthday Gift",
   "CorporateDealPage.heading": "Corporate Benefit",
   "RecommendDealPage.heading": "Recommend Reward",
-  
+
   "EditListingDescriptionForm.listingTypeLabel": "Space type",
   "EditListingDescriptionForm.listingTypePlaceholder": "Choose the type of space for your listing (common or private)",
   "EditListingDescriptionForm.listingTypeRequired": "You need to select a type for your space.",
@@ -847,7 +847,7 @@
   "StripePaymentForm.attendanceErrorTooMuch": "That's too much people. Please enquire support.",
   "StripePaymentForm.creditCardDetails": "Credit card details",
   "StripePaymentForm.expectedHour": "When will you arrive?",
-  "StripePaymentForm.expectedAttendance": "How much people are coming?",
+  "StripePaymentForm.expectedAttendance": "How many people are coming?",
   "StripePaymentForm.genericError": "Could not handle payment data. Please try again.",
   "StripePaymentForm.hourHeading": "Hour of arrival",
   "StripePaymentForm.messageHeading": "Message",
