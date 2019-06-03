@@ -6,7 +6,7 @@ import { injectIntl, intlShape, FormattedMessage } from 'react-intl';
 import { ensureCurrentUser } from '../../util/data';
 import { propTypes } from '../../util/types';
 import { isScrollingDisabled } from '../../ducks/UI.duck';
-import { stripeAccountClearError } from '../../ducks/user.duck';
+import { stripeAccountClearError } from '../../ducks/stripe.duck';
 import {
 	LayoutSideNavigation,
 	LayoutWrapperMain,
@@ -83,7 +83,7 @@ export const PayoutPreferencesPageComponent = props => {
 
 	} else if (currentUserLoaded && stripeConnected) {
 
-		const link = <NamedLink name="ContactUsPage" target="_blank">
+		const link = <NamedLink name="ContactUsPageEnquiry" params={{enquiry: "changePaymentInfo"}} target="_blank">
 			<FormattedMessage id="PayoutPreferencesPage.stripeAlreadyConnectedLink" />
 		</NamedLink>
 
@@ -163,15 +163,16 @@ PayoutPreferencesPageComponent.propTypes = {
 };
 
 const mapStateToProps = state => {
-	const { createStripeAccountError, currentUser } = state.user;
-	const { payoutDetailsSaveInProgress, payoutDetailsSaved } = state.PayoutPreferencesPage;
-	return {
-		currentUser,
-		createStripeAccountError,
-		payoutDetailsSaveInProgress,
-		payoutDetailsSaved,
-		scrollingDisabled: isScrollingDisabled(state),
-	};
+  const { createStripeAccountError } = state.stripe;
+  const { currentUser } = state.user;
+  const { payoutDetailsSaveInProgress, payoutDetailsSaved } = state.PayoutPreferencesPage;
+  return {
+    currentUser,
+    createStripeAccountError,
+    payoutDetailsSaveInProgress,
+    payoutDetailsSaved,
+    scrollingDisabled: isScrollingDisabled(state),
+  };
 };
 
 const mapDispatchToProps = dispatch => ({

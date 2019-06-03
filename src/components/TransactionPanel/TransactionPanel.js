@@ -1,29 +1,88 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { injectIntl, intlShape, FormattedMessage } from 'react-intl';
+import { injectIntl, intlShape } from 'react-intl';
 import classNames from 'classnames';
-import { txIsEnquired, txIsRequested, propTypes } from '../../util/types';
-import { ensureListing, ensureTransaction, ensureUser } from '../../util/data';
+import {
+  txIsAccepted,
+  txIsCanceled,
+  txIsDeclined,
+  txIsEnquired,
+  txIsRequested,
+  txHasBeenDelivered,
+} from '../../util/transaction';
+import { LINE_ITEM_NIGHT, LINE_ITEM_DAY, propTypes } from '../../util/types';
+import {
+  ensureListing,
+  ensureTransaction,
+  ensureUser,
+  userDisplayNameAsString,
+} from '../../util/data';
 import { isMobileSafari } from '../../util/userAgent';
-import { AvatarMedium, AvatarLarge, ResponsiveImage, ReviewModal } from '../../components';
+import { formatMoney } from '../../util/currency';
+import { AvatarLarge, BookingPanel, ReviewModal, UserDisplayName } from '../../components';
 import { SendMessageForm } from '../../forms';
+import config from '../../config';
 
 // These are internal components that make this file more readable.
+// Those come from the merge
+//
+// OrderActionButtonMaybe,
+// TransactionPageTitle,
+// TransactionPageMessage,
+// 
+
+import AddressLinkMaybe from './AddressLinkMaybe';
+import BreakdownMaybe from './BreakdownMaybe';
+import DetailCardHeadingsMaybe from './DetailCardHeadingsMaybe';
+import DetailCardImage from './DetailCardImage';
+import FeedSection from './FeedSection';
+import SaleActionButtonsMaybe from './SaleActionButtonsMaybe';
 import {
-  AddressLinkMaybe,
-  BreakdownMaybe,
-  FeedSection,
-  OrderActionButtonMaybe,
-  SaleActionButtonsMaybe,
-  TransactionPageTitle,
-  TransactionPageMessage,
-  displayNames,
+
 	OrderAttendance,
 	OrderOccasion,
 	OrderTime
-} from './TransactionPanel.helpers';
+
+} from './TransactionPanel.helpers'
+
+import PanelHeading, {
+  HEADING_ENQUIRED,
+  HEADING_REQUESTED,
+  HEADING_ACCEPTED,
+  HEADING_DECLINED,
+  HEADING_CANCELED,
+  HEADING_DELIVERED,
+} from './PanelHeading';
 
 import css from './TransactionPanel.css';
+
+// Helper function to get display names for different roles
+const displayNames = (currentUser, currentProvider, currentCustomer, intl) => {
+  const authorDisplayName = <UserDisplayName user={currentProvider} intl={intl} />;
+  const customerDisplayName = <UserDisplayName user={currentCustomer} intl={intl} />;
+
+  let otherUserDisplayName = '';
+  let otherUserDisplayNameString = '';
+  const currentUserIsCustomer =
+    currentUser.id && currentCustomer.id && currentUser.id.uuid === currentCustomer.id.uuid;
+  const currentUserIsProvider =
+    currentUser.id && currentProvider.id && currentUser.id.uuid === currentProvider.id.uuid;
+
+  if (currentUserIsCustomer) {
+    otherUserDisplayName = authorDisplayName;
+    otherUserDisplayNameString = userDisplayNameAsString(currentProvider, '');
+  } else if (currentUserIsProvider) {
+    otherUserDisplayName = customerDisplayName;
+    otherUserDisplayNameString = userDisplayNameAsString(currentCustomer, '');
+  }
+
+  return {
+    authorDisplayName,
+    customerDisplayName,
+    otherUserDisplayName,
+    otherUserDisplayNameString,
+  };
+};
 
 export class TransactionPanelComponent extends Component {
   constructor(props) {
@@ -131,6 +190,9 @@ export class TransactionPanelComponent extends Component {
       declineInProgress,
       acceptSaleError,
       declineSaleError,
+      onSubmitBookingRequest,
+      timeSlots,
+      fetchTimeSlotsError,
     } = this.props;
 
     const currentTransaction = ensureTransaction(transaction);
@@ -142,73 +204,110 @@ export class TransactionPanelComponent extends Component {
 
     const listingLoaded = !!currentListing.id;
     const listingDeleted = listingLoaded && currentListing.attributes.deleted;
-    const customerLoaded = !!currentCustomer.id;
-    const isCustomerBanned = customerLoaded && currentCustomer.attributes.banned;
-    const canShowSaleButtons = isProvider && txIsRequested(currentTransaction) && !isCustomerBanned;
+    const iscustomerLoaded = !!currentCustomer.id;
+    const isCustomerBanned = iscustomerLoaded && currentCustomer.attributes.banned;
+    const isCustomerDeleted = iscustomerLoaded && currentCustomer.attributes.deleted;
     const isProviderLoaded = !!currentProvider.id;
     const isProviderBanned = isProviderLoaded && currentProvider.attributes.banned;
-    const canShowBookButton = isCustomer && txIsEnquired(currentTransaction) && !isProviderBanned;
+    const isProviderDeleted = isProviderLoaded && currentProvider.attributes.deleted;
 
-    const bannedUserDisplayName = intl.formatMessage({
-      id: 'TransactionPanel.bannedUserDisplayName',
-    });
+    const stateDataFn = tx => {
+      if (txIsEnquired(tx)) {
+        return {
+          headingState: HEADING_ENQUIRED,
+          showBookingPanel: isCustomer && !isProviderBanned,
+        };
+      } else if (txIsRequested(tx)) {
+        return {
+          headingState: HEADING_REQUESTED,
+          showDetailCardHeadings: isCustomer,
+          showSaleButtons: isProvider && !isCustomerBanned,
+        };
+      } else if (txIsAccepted(tx)) {
+        return {
+          headingState: HEADING_ACCEPTED,
+          showDetailCardHeadings: isCustomer,
+          showAddress: isCustomer,
+        };
+      } else if (txIsDeclined(tx)) {
+        return {
+          headingState: HEADING_DECLINED,
+          showDetailCardHeadings: isCustomer,
+        };
+      } else if (txIsCanceled(tx)) {
+        return {
+          headingState: HEADING_CANCELED,
+          showDetailCardHeadings: isCustomer,
+        };
+      } else if (txHasBeenDelivered(tx)) {
+        return {
+          headingState: HEADING_DELIVERED,
+          showDetailCardHeadings: isCustomer,
+          showAddress: isCustomer,
+        };
+      } else {
+        return { headingState: 'unknown' };
+      }
+    };
+    const stateData = stateDataFn(currentTransaction);
+
     const deletedListingTitle = intl.formatMessage({
       id: 'TransactionPanel.deletedListingTitle',
     });
 
-    const { authorDisplayName, customerDisplayName, otherUserDisplayName } = displayNames(
-      currentUser,
-      currentProvider,
-      currentCustomer,
-      bannedUserDisplayName
-    );
+    const {
+      authorDisplayName,
+      customerDisplayName,
+      otherUserDisplayName,
+      otherUserDisplayNameString,
+    } = displayNames(currentUser, currentProvider, currentCustomer, intl);
 
+    const { publicData, geolocation } = currentListing.attributes;
+    const location = publicData && publicData.location ? publicData.location : {};
     const listingTitle = currentListing.attributes.deleted
       ? deletedListingTitle
       : currentListing.attributes.title;
 
+    const unitType = config.bookingUnitType;
+    const isNightly = unitType === LINE_ITEM_NIGHT;
+    const isDaily = unitType === LINE_ITEM_DAY;
+
+    const unitTranslationKey = isNightly
+      ? 'TransactionPanel.perNight'
+      : isDaily
+      ? 'TransactionPanel.perDay'
+      : 'TransactionPanel.perUnit';
+
+    const price = currentListing.attributes.price;
+    const bookingSubTitle = price
+      ? `${formatMoney(intl, price)} ${intl.formatMessage({ id: unitTranslationKey })}`
+      : '';
+
     const firstImage =
       currentListing.images && currentListing.images.length > 0 ? currentListing.images[0] : null;
 
-    const actionButtonClasses = classNames(css.actionButtons);
-    const canShowActionButtons = canShowBookButton || canShowSaleButtons;
+    const saleButtons = (
+      <SaleActionButtonsMaybe
+        showButtons={stateData.showSaleButtons}
+        acceptInProgress={acceptInProgress}
+        declineInProgress={declineInProgress}
+        acceptSaleError={acceptSaleError}
+        declineSaleError={declineSaleError}
+        onAcceptSale={() => onAcceptSale(currentTransaction.id)}
+        onDeclineSale={() => onDeclineSale(currentTransaction.id)}
+      />
+    );
 
-    let actionButtons = null;
-    if (canShowSaleButtons) {
-      actionButtons = (
-        <SaleActionButtonsMaybe
-          rootClassName={actionButtonClasses}
-          canShowButtons={canShowSaleButtons}
-          transaction={currentTransaction}
-          acceptInProgress={acceptInProgress}
-          declineInProgress={declineInProgress}
-          acceptSaleError={acceptSaleError}
-          declineSaleError={declineSaleError}
-          onAcceptSale={onAcceptSale}
-          onDeclineSale={onDeclineSale}
-        />
-      );
-    } else if (canShowBookButton) {
-      actionButtons = (
-        <OrderActionButtonMaybe
-          rootClassName={actionButtonClasses}
-          canShowButtons={canShowBookButton}
-          listing={currentListing}
-        />
-      );
-    }
+    const showSendMessageForm =
+      !isCustomerBanned && !isCustomerDeleted && !isProviderBanned && !isProviderDeleted;
 
     const sendMessagePlaceholder = intl.formatMessage(
       { id: 'TransactionPanel.sendMessagePlaceholder' },
-      { name: otherUserDisplayName }
+      { name: otherUserDisplayNameString }
     );
 
-    const sendMessageFormClasses = classNames(css.sendMessageForm);
-
-    const showInfoMessage = listingDeleted || (!listingDeleted && txIsRequested(transaction)); // !!orderInfoMessage;
-
-    const feedContainerClasses = classNames(css.feedContainer, {
-      [css.feedContainerWithInfoAbove]: showInfoMessage,
+    const sendingMessageNotAllowed = intl.formatMessage({
+      id: 'TransactionPanel.sendingMessageNotAllowed',
     });
 
     const classes = classNames(rootClassName || css.root, className);
@@ -217,39 +316,29 @@ export class TransactionPanelComponent extends Component {
       <div className={classes}>
         <div className={css.container}>
           <div className={css.txInfo}>
-            <div className={css.imageWrapperMobile}>
-              <div className={css.aspectWrapper}>
-                <ResponsiveImage
-                  rootClassName={css.rootForImage}
-                  alt={listingTitle}
-                  image={firstImage}
-                  variants={['landscape-crop', 'landscape-crop2x']}
-                />
-              </div>
-            </div>
-            <div className={classNames(css.avatarWrapperMobile, css.avatarMobile)}>
-              <AvatarMedium user={currentProvider} />
-            </div>
+            <DetailCardImage
+              rootClassName={css.imageWrapperMobile}
+              avatarWrapperClassName={css.avatarWrapperMobile}
+              listingTitle={listingTitle}
+              image={firstImage}
+              provider={currentProvider}
+              isCustomer={isCustomer}
+            />
             {isProvider ? (
               <div className={css.avatarWrapperProviderDesktop}>
                 <AvatarLarge user={currentCustomer} className={css.avatarDesktop} />
               </div>
             ) : null}
 
-            <TransactionPageTitle
-              transaction={currentTransaction}
-              customerDisplayName={customerDisplayName}
-              currentListing={currentListing}
-              listingTitle={listingTitle}
+            <PanelHeading
+              panelHeadingState={stateData.headingState}
               transactionRole={transactionRole}
-            />
-            <TransactionPageMessage
-              transaction={currentTransaction}
-              authorDisplayName={authorDisplayName}
-              customerDisplayName={customerDisplayName}
-              listingDeleted={listingDeleted}
+              providerName={authorDisplayName}
+              customerName={customerDisplayName}
               isCustomerBanned={isCustomerBanned}
-              transactionRole={transactionRole}
+              listingId={currentListing.id && currentListing.id.uuid}
+              listingTitle={listingTitle}
+              listingDeleted={listingDeleted}
             />
 						<OrderAttendance 
 							transaction={currentTransaction}
@@ -264,18 +353,17 @@ export class TransactionPanelComponent extends Component {
 						/>
 
             <div className={css.bookingDetailsMobile}>
-              <div className={css.addressMobileWrapper}>
-                <AddressLinkMaybe
-                  transaction={currentTransaction}
-                  transactionRole={transactionRole}
-                  currentListing={currentListing}
-                />
-              </div>
+              <AddressLinkMaybe
+                rootClassName={css.addressMobile}
+                location={location}
+                geolocation={geolocation}
+                showAddress={stateData.showAddress}
+              />
               <BreakdownMaybe transaction={currentTransaction} transactionRole={transactionRole} />
             </div>
 
             <FeedSection
-              rootClassName={feedContainerClasses}
+              rootClassName={css.feedContainer}
               currentTransaction={currentTransaction}
               currentUser={currentUser}
               fetchMessagesError={fetchMessagesError}
@@ -284,69 +372,70 @@ export class TransactionPanelComponent extends Component {
               messages={messages}
               oldestMessagePageFetched={oldestMessagePageFetched}
               onOpenReviewModal={this.onOpenReviewModal}
-              onShowMoreMessages={onShowMoreMessages}
+              onShowMoreMessages={() => onShowMoreMessages(currentTransaction.id)}
               totalMessagePages={totalMessagePages}
             />
+            {showSendMessageForm ? (
+              <SendMessageForm
+                form={this.sendMessageFormName}
+                rootClassName={css.sendMessageForm}
+                messagePlaceholder={sendMessagePlaceholder}
+                inProgress={sendMessageInProgress}
+                sendMessageError={sendMessageError}
+                onFocus={this.onSendMessageFormFocus}
+                onBlur={this.onSendMessageFormBlur}
+                onSubmit={this.onMessageSubmit}
+              />
+            ) : (
+              <div className={css.sendingMessageNotAllowed}>{sendingMessageNotAllowed}</div>
+            )}
 
-            <SendMessageForm
-              form={this.sendMessageFormName}
-              rootClassName={sendMessageFormClasses}
-              messagePlaceholder={sendMessagePlaceholder}
-              inProgress={sendMessageInProgress}
-              sendMessageError={sendMessageError}
-              onFocus={this.onSendMessageFormFocus}
-              onBlur={this.onSendMessageFormBlur}
-              onSubmit={this.onMessageSubmit}
-            />
-            {canShowActionButtons ? (
-              <div className={css.mobileActionButtons}>{actionButtons}</div>
+            {stateData.showSaleButtons ? (
+              <div className={css.mobileActionButtons}>{saleButtons}</div>
             ) : null}
           </div>
 
           <div className={css.asideDesktop}>
             <div className={css.detailCard}>
-              <div className={css.detailCardImageWrapper}>
-                <div className={css.aspectWrapper}>
-                  <ResponsiveImage
-                    rootClassName={css.rootForImage}
-                    alt={listingTitle}
-                    image={firstImage}
-                    variants={['landscape-crop', 'landscape-crop2x']}
-                  />
-                </div>
-              </div>
-              {isCustomer ? (
-                <div className={css.avatarWrapperCustomerDesktop}>
-                  <AvatarMedium user={currentProvider} />
-                </div>
+              <DetailCardImage
+                avatarWrapperClassName={css.avatarWrapperDesktop}
+                listingTitle={listingTitle}
+                image={firstImage}
+                provider={currentProvider}
+                isCustomer={isCustomer}
+              />
+
+              <DetailCardHeadingsMaybe
+                showDetailCardHeadings={stateData.showDetailCardHeadings}
+                listingTitle={listingTitle}
+                subTitle={bookingSubTitle}
+                location={location}
+                geolocation={geolocation}
+                showAddress={stateData.showAddress}
+              />
+              {stateData.showBookingPanel ? (
+                <BookingPanel
+                  className={css.bookingPanel}
+                  titleClassName={css.bookingTitle}
+                  isOwnListing={false}
+                  listing={currentListing}
+                  title={listingTitle}
+                  subTitle={bookingSubTitle}
+                  authorDisplayName={authorDisplayName}
+                  onSubmit={onSubmitBookingRequest}
+                  onManageDisableScrolling={onManageDisableScrolling}
+                  timeSlots={timeSlots}
+                  fetchTimeSlotsError={fetchTimeSlotsError}
+                />
               ) : null}
-              {isCustomer ? (
-                <div className={css.detailCardHeadings}>
-                  <h2 className={css.detailCardTitle}>{listingTitle}</h2>
-                  <p className={css.detailCardSubtitle}>
-                    <FormattedMessage
-                      id="TransactionPanel.hostedBy"
-                      values={{ name: authorDisplayName }}
-                    />
-                  </p>
-                  <AddressLinkMaybe
-                    transaction={currentTransaction}
-                    transactionRole={transactionRole}
-                    currentListing={currentListing}
-                  />
-                </div>
-              ) : (
-                <div className={css.detailCardHeadingsProvider}>
-                  <AddressLinkMaybe
-                    transaction={currentTransaction}
-                    transactionRole={transactionRole}
-                    currentListing={currentListing}
-                  />
-                </div>
-              )}
-              <BreakdownMaybe transaction={currentTransaction} transactionRole={transactionRole} />
-              {canShowActionButtons ? (
-                <div className={css.desktopActionButtons}>{actionButtons}</div>
+              <BreakdownMaybe
+                className={css.breakdownContainer}
+                transaction={currentTransaction}
+                transactionRole={transactionRole}
+              />
+
+              {stateData.showSaleButtons ? (
+                <div className={css.desktopActionButtons}>{saleButtons}</div>
               ) : null}
             </div>
           </div>
@@ -377,6 +466,8 @@ TransactionPanelComponent.defaultProps = {
   initialMessageFailed: null,
   sendMessageError: null,
   sendReviewError: null,
+  timeSlots: null,
+  fetchTimeSlotsError: null,
 };
 
 const { arrayOf, bool, func, number, string } = PropTypes;
@@ -401,6 +492,9 @@ TransactionPanelComponent.propTypes = {
   onShowMoreMessages: func.isRequired,
   onSendMessage: func.isRequired,
   onSendReview: func.isRequired,
+  onSubmitBookingRequest: func.isRequired,
+  timeSlots: arrayOf(propTypes.timeSlot),
+  fetchTimeSlotsError: propTypes.error,
 
   // Sale related props
   onAcceptSale: func.isRequired,

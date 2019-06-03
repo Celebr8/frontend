@@ -10,6 +10,7 @@ import {
 import { ensureListing } from '../../util/data';
 import { createResourceLocatorString } from '../../util/routes';
 import {
+  EditListingAvailabilityPanel,
   EditListingDescriptionPanel,
   EditListingFeaturesPanel,
   EditListingCapacityPanel,
@@ -22,6 +23,7 @@ import {
 
 import css from './EditListingWizard.css';
 
+export const AVAILABILITY = 'availability';
 export const DESCRIPTION = 'description';
 export const FEATURES = 'features';
 export const CAPACITY = 'capacity';
@@ -34,8 +36,16 @@ export const PHOTOS = 'photos';
 
 // EditListingWizardTab component supports these tabs
 export const SUPPORTED_TABS = [
-	DESCRIPTION, FEATURES, CAPACITY, REGULARLY_OPEN_ON, 
-	POLICY, LOCATION, PRICING, PHOTOS];
+  DESCRIPTION,
+  FEATURES,
+	CAPACITY,
+	REGULARLY_OPEN_ON,
+  POLICY,
+  LOCATION,
+  PRICING,
+  AVAILABILITY,
+  PHOTOS,
+];
 
 const pathParamsToNextTab = (params, tab, marketplaceTabs) => {
   const nextTabIndex = marketplaceTabs.findIndex(s => s === tab) + 1;
@@ -78,6 +88,7 @@ const EditListingWizardTab = props => {
     newListingPublished,
     history,
     images,
+    availability,
     listing,
     handleCreateFlowTabScrolling,
     handlePublishListing,
@@ -250,6 +261,21 @@ const EditListingWizardTab = props => {
         />
       );
     }
+    case AVAILABILITY: {
+      const submitButtonTranslationKey = isNewListingFlow
+        ? 'EditListingWizard.saveNewAvailability'
+        : 'EditListingWizard.saveEditAvailability';
+      return (
+        <EditListingAvailabilityPanel
+          {...panelProps(AVAILABILITY)}
+          availability={availability}
+          submitButtonText={intl.formatMessage({ id: submitButtonTranslationKey })}
+          onSubmit={values => {
+            onCompleteEditListingWizardTab(tab, values);
+          }}
+        />
+      );
+    }
     case PHOTOS: {
       const submitButtonTranslationKey = isNewListingFlow
         ? 'EditListingWizard.saveNewPhotos'
@@ -305,6 +331,7 @@ EditListingWizardTab.propTypes = {
     replace: func.isRequired,
   }).isRequired,
   images: array.isRequired,
+  availability: object.isRequired,
 
   // We cannot use propTypes.listing since the listing might be a draft.
   listing: shape({

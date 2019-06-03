@@ -23,12 +23,3 @@ export default mainLocationsData.map( (location) => ({
 	}
 }))
 
-// export default [
-// 	{
-// 		id: 'default-helsinki',
-// 		predictionPlace: {
-// 			address: 'Helsinki, Finland',
-// 			origin: new LatLng(60.16985, 24.93837),
-// 			bounds: new LatLngBounds(new LatLng(60.29783, 25.25448), new LatLng(59.92248, 24.78287)),
-// 		},
-// 	},

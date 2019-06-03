@@ -74,15 +74,21 @@ export const sendContactUsMessageError = error => ({
 export const sendContactUsMessage = params => (dispatch, getState, sdk) => {
   dispatch(sendContactUsMessageRequest());
 
+  const message = Object.keys(params).reduce(
+    (message, key) => `${message}\n\n${key} ${params[key]}`,
+    params.message
+  );
+
   const data = {
     email: params.email,
     phoneNumber: params.phoneNumber,
     subject: params.subject,
-    message: params.message,
+    message,
     recaptchaToken: params.recaptchaToken,
   };
 
-	console.log(config.serviceMessageUrl)
+  console.log('data', data);
+
   return fetch(config.serviceMessageUrl, {
     method: 'post',
     body: JSON.stringify(data),

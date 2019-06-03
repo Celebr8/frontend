@@ -22,8 +22,8 @@
   /* Full screen Background image located in root-folder/src/assets */
   --backgroundImage: {
     /* Gradient direction and overlaying the black color on top of the image for better readability */
-    background: linear-gradient(-45deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6)),
-      url('../../assets/Site background 500 dark.png');
+    background: linear-gradient(-45deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)),
+      url('../../assets/background-women-darker-1440.png');
 
     /* Add loading color for the div */
     background-color: var(--matterColor);
@@ -32,7 +32,7 @@
     background-size: cover;
 
     /* Align the image within the container */
-    background-position: center center;
+    background-position: bottom bottom;
 
     @media (--viewportLarge) {
       /* border-radius: 40px; */
@@ -569,6 +569,8 @@
 
 /* ================ Custom media queries ================ */
 
+@custom-media --viewportSmall (min-width: 550px);
 @custom-media --viewportMedium (min-width: 768px);
 @custom-media --viewportLarge (min-width: 1024px);
+@custom-media --viewportLargeWithPaddings (min-width: 1128px);
 @custom-media --viewportXLarge (min-width: 1921px);

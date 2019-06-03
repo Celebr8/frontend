@@ -228,7 +228,7 @@ const routeConfiguration = () => {
       auth: true,
       authPage: 'LoginPage',
       component: props => <TransactionPage {...props} transactionRole="customer" />,
-      loadData: TransactionPage.loadData,
+      loadData: params => TransactionPage.loadData({ ...params, transactionRole: 'customer' }),
       setInitialValues: TransactionPage.setInitialValues,
     },
     {
@@ -244,7 +244,7 @@ const routeConfiguration = () => {
       auth: true,
       authPage: 'LoginPage',
       component: props => <TransactionPage {...props} transactionRole="provider" />,
-      loadData: TransactionPage.loadData,
+      loadData: params => TransactionPage.loadData({ ...params, transactionRole: 'provider' }),
     },
     {
       path: '/listings',
@@ -346,8 +346,13 @@ const routeConfiguration = () => {
       component: props => <ListMySpacePage {...props} />,
     },
     {
-			path: '/help/contact-us',
+			path: '/contact-us',
       name: 'ContactUsPage',
+      component: props => <ContactUsPage {...props} />,
+    },
+    {
+			path: '/contact-us/:enquiry',
+      name: 'ContactUsPageEnquiry',
       component: props => <ContactUsPage {...props} />,
     },
     {

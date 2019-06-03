@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import css from './Accordion.css';
 
-export class Accordion extends Component {
+export default class Accordion extends Component {
 
 	constructor(props) {
 
