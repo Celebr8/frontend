@@ -20,22 +20,22 @@ const CorporateDeal = props => {
 
     <div className={css.container}>
       <div className={classes}>
-				<h2>Give your employees a gift card to use with over 2,000 shops in Ireland &amp; the UK! <br />They get up to €310 with each of their celebrations.</h2>
+				<h2>Earn a gift card to use with over 2,000 shops in Ireland &amp; the UK! <br />Get up to €310 with each of your celebrations.</h2>
 				<section className={css.getInTouch}>
 					<div className={css.btnGroup + ' ' + css.containerButton}>
 						<section className={css.centerButtons}>
-							<NamedLink name="ContactUsPage"><button type="submit">Contact us for more info</button></NamedLink>
+							<a href="https://www.whichost.com/s?address=Ireland&bounds=55.36%2C-5.911%2C51.427%2C-10.382&origin=53.357%2C-7.756"><button type="submit">Find a pub for your celebration</button></a>
 						</section>
 					</div>
 				</section>
 				<div className={css.steps}>
 					<div className={css.step}>
 						<p>
-							The value of the gift card depends on the size of the party: from “Up to 30 people” to “201+”, and on the day that it’s held. Celebrations held between Mondays and Wednesdays have a higher value. This is a physical gift card, so we will need an address to deliver it.
-							<br/><br/>
-              How much will this benefit cost to your organisation? Nothing, because giving back is in our culture!
+              <b>Use your organisation email in your Whichost account, and that's it! You are ready to enjoy our Corporate Benefit.</b>
               <br/><br/>
-							<b>We will add €10 to the gift card if your employees can’t find the pub they want and they recommend it to us, so they can celebrate there.</b>
+							The value of the gift card depends on the size of the party: from “Up to 30 people” to “201+”, and on the day that it’s held. Celebrations held between Mondays and Wednesdays have a higher value. This is a physical gift card, so we will ask for an address to deliver it.
+							<br/><br/>
+							<b>We will add €10 to the gift card if you can’t find the pub you want and you recommend it to us, so you can celebrate there.</b>
 						</p>
 					</div>
 					<div className={css.step}>
