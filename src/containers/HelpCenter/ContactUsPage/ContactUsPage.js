@@ -60,11 +60,14 @@ const ContactUsPageComponent = props => {
     name: schemaTitle,
   };
 
+	const injectUserEmail = (values, user) => 
+		user.id? {...values, email: user.attributes.email} : values;	
+
   const contactUsForm = (
     <ContactUsForm
       className={css.form}
       initialValues={initialValues}
-      onSubmit={values => onSendMessage(values)}
+      onSubmit={values => onSendMessage(injectUserEmail(values, currentUser))}
       sendingInProgress={sendingInProgress}
       sendingError={sendingError}
       currentUser={currentUser}

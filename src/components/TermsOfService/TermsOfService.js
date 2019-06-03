@@ -27,7 +27,7 @@ Importantly, this Usage Agreement contains waivers of class actions and jury tri
         This Whichost Services Agreement (“Agreement”) is a contract between Whichost Ltd. (“Whichost” or “we”) and the person(s) that are registered with Whichost (“user” or “you”). This Agreement describes the terms and conditions that apply to your use of the Whichost marketplace to book or list pubs or other pub services through our website or apps, and governs your pub for other users, and establishes the obligations owed between you and Whichost, and between you and other users.
 		</p>
 		<p>
-Throughout this Agreement, the term “Service” means the service allowing you to book pubs or offer your pub and pub services to others through our website or apps (the “Platform”). The term Service does not include any services provided by third parties. The terms “Customer” and “Pub” refer to the party Booking or Listing a Pub, respectively.
+Throughout this Agreement, the term “Service” means the service allowing you to book pubs or offer your pub and pub services to others through our website or apps (the “Platform”). It also means the service allowing you to benefit from the usage of our website or apps (the “Platform”), including benefits such as the Birthday Gift, the Corporate Benefit and the Recommend Reward, but not limited to them. The term Service does not include any services provided by third parties. The terms “Customer” and “Pub” refer to the party Booking or Listing a Pub, respectively.
 		</p>
 		<p>
 A “Pub” is the physical space or pub that is made available to a Customer to use during specific times, and subject to specific Fees and any site-specific terms or limitations. A Pub may “List” a Pub by providing certain details about the Pub including availability, pricing, and terms or limitations of use; this posting about a Pub is called a “Listing.”
@@ -62,7 +62,10 @@ If you have questions about this Agreement, please contact us at <a href="mailto
       <p>
         Whichost provides you access to Services through the Platform. You may access the Platform through our website or apps. You may use the Service to List Pubs, Book Pubs as a Customer, communicate with other users and access your Account.
 		</p>
-		<p>
+  <p>
+        You may also be permitted to make use of the Whichost Benefits, such as the <a href="https://www.whichost.com/benefits/birthday-gift">Birthday Gift</a>, the <a href="https://www.whichost.com/benefits/corporate-benefit">Corporate Benefit</a> and the <a href="https://www.whichost.com/benefits/recommend-gift">Recommend Reward</a>, and other benefits that Whichost may implement in the future. You agree that your acceptance of this Whichost Terms of Service is also an acceptance of the terms and conditions that govern each of Whichost Benefits. 
+		</p>
+          <p>
 You may also be permitted to Book Pub Services (“Pub Services”) through third-party service providers or through the Pub, which may require you to agree to additional terms or conditions. These Pub Services may include Audio Engineering, Production, or other Services that can take place in the Pubs. This is however not the main marketplace Service provided by Whichost.
 		</p>
 		<p>

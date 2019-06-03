@@ -243,9 +243,9 @@ class ContactUsFormComponent extends Component {
             const termsAndConditionsRequiredMessage = intl.formatMessage({
               id: 'ContactUsForm.termsAndConditionsRequired',
             });
-						
-						const termsAndConditionsRequired = (values) => 
-							(values && values.length == 0)? termsAndConditionsRequiredMessage: null;	
+
+            const termsAndConditionsRequired = values =>
+              values && values.length == 0 ? termsAndConditionsRequiredMessage : null;
 
             // IBAN
 
@@ -392,7 +392,7 @@ class ContactUsFormComponent extends Component {
                     name="termsAndConditions"
                     id={formId ? `${formId}.termsAndConditions` : 'termsAndConditions'}
                     options={[{ key: 'agreed', label: 'I agree' }]}
-										validate={termsAndConditionsRequired}
+                    validate={termsAndConditionsRequired}
                   />
                   {pristine && !termsAndConditions && termsAndConditionsRequired}
                 </Fragment>
@@ -487,7 +487,10 @@ class ContactUsFormComponent extends Component {
                 key={formId}
                 className={classes}
                 onSubmit={e => {
-                  this.submittedValues = values;
+                  const valuesWithEmail = user.id
+                    ? { ...values, email: user.attributes.email }
+                    : values;
+                  this.submittedValues = valuesWithEmail;
                   handleSubmit(e);
                 }}
               >
@@ -504,6 +507,7 @@ class ContactUsFormComponent extends Component {
                     <option value="booking">Booking a pub</option>
                     <option value="listing">Listing a space</option>
                     <option value="claim">Claiming a listing</option>
+                    <option value="privacy">Privacy Enquiry</option>
                     <option value="changePaymentInfo">Change payement informations</option>
                     <option value="corporate">Corporate Benefits Enquiries</option>
                   </FieldSelect>

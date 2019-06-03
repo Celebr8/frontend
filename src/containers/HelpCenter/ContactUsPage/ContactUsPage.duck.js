@@ -87,7 +87,8 @@ export const sendContactUsMessage = params => (dispatch, getState, sdk) => {
     recaptchaToken: params.recaptchaToken,
   };
 
-  console.log(config.serviceMessageUrl);
+  console.log('data', data);
+
   return fetch(config.serviceMessageUrl, {
     method: 'post',
     body: JSON.stringify(data),

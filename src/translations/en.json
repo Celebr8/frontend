@@ -68,7 +68,7 @@
   "BookingDatesForm.requiredDate": "Oops, make sure your date is correct!",
   "BookingDatesForm.timeSlotsError": "Loading listing availability failed. Please refresh the page.",
   "BookingDatesForm.youWontBeChargedInfo": "You won't be charged yet",
-  "CareersPage.schemaTitle": "We're hiring!",
+  "CareersPage.schemaTitle": "We're hiring! | {siteTitle}",
   "CareersPage.title": "We're hiring!",
   "BookingDateRangeFilter.labelPlain": "Dates",
   "BookingDateRangeFilter.labelPopup": "Dates",
@@ -100,7 +100,7 @@
   "CheckoutPage.speculateTransactionError": "Failed to fetch breakdown information.",
   "CheckoutPage.title": "Book {listingTitle}",
   "CommunityGuidelinesPage.heading": "Community Guidelines",
-  "ContactUsPage.schemaTitle": "Contact us",
+  "ContactUsPage.schemaTitle": "Contact us | {siteTitle}",
   "ContactUsPage.title": "Contact us",
   "ContactUsPage.sendingSuccess": "Your mail have been sent. We will get back to you as soon as possible",
   "ContactUsPage.sendingError": "An error occured: {sendingError}",
@@ -178,14 +178,16 @@
   "DateInput.screenReaderInputMessage": "Date input",
   "DealsPage.title": "At Whichost, it's all about you!",
   "DealsPage.heading": "How it works",
-  "DealsPage.schemaTitle": "Benefits page",
+  "DealsPage.schemaTitle": "Benefits page | {siteTitle}",
   "DealsPage.dealsTabTitle": "What's this?",
   "DealsPage.birthdayDealTabTitle": "Birthday Gift",
   "DealsPage.corporateDealTabTitle": "Corporate Benefit",
   "DealsPage.recommendDealTabTitle": "Recommend Reward",
   "BirthdayDealPage.heading": "Birthday Gift",
+
   "CorporateDealPage.heading": "Corporate Benefit",
   "RecommendDealPage.heading": "Recommend Reward",
+  
   "EditListingDescriptionForm.listingTypeLabel": "Space type",
   "EditListingDescriptionForm.listingTypePlaceholder": "Choose the type of space for your listing (common or private)",
   "EditListingDescriptionForm.listingTypeRequired": "You need to select a type for your space.",
@@ -326,10 +328,10 @@
   "EnquiryForm.submitButtonText": "Send enquiry",
 
   "FAQPage.title": "Frequently Asked Questions",
-  "FAQPage.schemaTitle": "Frequently Asked Questions",
+  "FAQPage.schemaTitle": "Frequently Asked Questions | {siteTitle}",
 
   "FeesPage.title": "Fees",
-  "FeesPage.schemaTitle": "Fees",
+  "FeesPage.schemaTitle": "Fees | {siteTitle}",
 
   "FieldBoolean.no": "No",
   "FieldBoolean.yes": "Yes",
@@ -355,7 +357,7 @@
   "FieldReviewRating.star5": "Awesome - 5 stars",
 
   "FirstStepsPage.title": "Steps to make your life easyer!",
-  "FirstStepsPage.schemaTitle": "Steps to make your life easyer!",
+  "FirstStepsPage.schemaTitle": "Steps to make your life easier! | {siteTitle}",
 
   "Footer.copyright": "© Whichost 2019. Whichost Ltd is registered in Ireland. Reg. No. 624254.",
   "Footer.copyrightMobile": "© Whichost 2019.",
@@ -367,7 +369,7 @@
   "Footer.goToFacebook": "Go to Facebook page",
   "Footer.goToInstagram": "Go to Instagram page",
   "Footer.goToTwitter": "Go to Twitter page",
-  "Footer.organizationDescription": "Find and book pubs for your parties and celebrations.",
+  "Footer.organizationDescription": "Easily find and book pubs for your parties and celebrations.",
   "Footer.privacy": "Privacy",
   "Footer.": "Privacy",
   "Footer.about": "About",
@@ -392,7 +394,7 @@
   "Footer.version": "Version",
 
   "GuidebookForProvidersPage.title": "Guidebook for Publicans",
-  "GuidebookForProvidersPage.schemaTitle": "Guidebook for Publicans",
+  "GuidebookForProvidersPage.schemaTitle": "Guidebook for Publicans | {siteTitle}",
 
   "HelpCenter.ContactUsTabTitle": "Contact us",
   "HelpCenter.FAQTabTitle": "FAQ",
@@ -432,7 +434,7 @@
   "LandingPage.schemaDescription": "Book your party using Whichost or increase your pub's exposure.",
   "LandingPage.schemaTitle": "Celebrate Anywhere | {siteTitle}",
 
-  "LegalsDealsPage.schemaTitle": "Benefits T&C",
+  "LegalsDealsPage.schemaTitle": "Benefits T&C | {siteTitle}",
   "LegalsDealsPage.heading": "Benefits T&C",
 
   "LegalsPages.privacyTabTitle": "Privacy policy",
@@ -898,9 +900,9 @@
 
   "SectionHero.browseButton": "Find a pub",
   "SectionHero.temporaryOffer": "Booking for your birthday? ",
-  "SectionHero.temporaryOfferLink": "We have a gift for you!",
-  "SectionHero.subTitle": "Find and book pubs for your parties and celebrations.",
+  "SectionHero.temporaryOfferLink": "Get a gift card of up to €240!",
   "SectionHero.title": "Celebrate Anywhere!",
+  "SectionHero.subTitle": "Easily find and book pubs to host your parties and celebrations.",
 
   "SectionHowItWorks.createListingLink": "PS. You can also add your pub on Whichost in just a few clicks! Click here to get started.",
   "SectionHowItWorks.part1Text": "Start by searching for a location. Once you find a pub you like, request a booking and make a secure payment right away.",
@@ -985,7 +987,7 @@
   "StripePaymentForm.attendanceErrorTooMuch": "That's too much people. Please enquire support.",
   "StripePaymentForm.creditCardDetails": "Credit card details",
   "StripePaymentForm.expectedHour": "When will you arrive?",
-  "StripePaymentForm.expectedAttendance": "How much people are coming?",
+  "StripePaymentForm.expectedAttendance": "How many people are coming?",
   "StripePaymentForm.genericError": "Could not handle payment data. Please try again.",
   "StripePaymentForm.hourHeading": "Hour of arrival",
   "StripePaymentForm.messageHeading": "Message",

@@ -158,7 +158,9 @@ class FAQPagePanelsBase extends React.Component {
                 <li>The customers internal account will be updated with the No-Show;</li>
                 <li>Once a customer accumulates 4 (four) No-Shows, their account is suspended.</li>
               </ol>
-              <a href="https://docs.google.com/forms/d/1jZ1aH21YDcqelSC3F7628ZWxvOZR2QPacA5lRV8O70c/edit">Report a No-Show</a>
+              <a href="https://docs.google.com/forms/d/1jZ1aH21YDcqelSC3F7628ZWxvOZR2QPacA5lRV8O70c/edit">
+                Report a No-Show
+              </a>
             </Typography>
           </ExpansionPanelDetails>
         </ExpansionPanel>
@@ -267,8 +269,11 @@ class FAQPagePanelsBase extends React.Component {
               <a href="mailto:support@whichost.com?subject=Help Center Question" target="_blank">
                 support@whichost.com
               </a>{' '}
-              or by clicking <NamedLink name="ContactUsPage">here</NamedLink>. We'll be happy to
-              answer all of your questions.
+              or by clicking{' '}
+              <NamedLink name="ContactUsPage" enquiry="general">
+                here
+              </NamedLink>
+              . We'll be happy to answer all of your questions.
             </Typography>
           </ExpansionPanelDetails>
         </ExpansionPanel>
@@ -328,7 +333,10 @@ class FAQPagePanelsBase extends React.Component {
               a Whichost account, simply click the “+ Add my pub” at the top right. Please note that
               all listings are subject to review by our team to ensure the safety of our community.
               If you need help with your listing, please{' '}
-              <NamedLink name="ContactUsPage">click here</NamedLink> or email us at{' '}
+              <NamedLink name="ContactUsPageEnquiry" params={{ enquiry: 'listing' }}>
+                click here
+              </NamedLink>{' '}
+              or email us at{' '}
               <a
                 href="mailto:support@whichost.com?subject=How do I list my pub inquiry"
                 target="_blank"
@@ -512,7 +520,11 @@ class FAQPagePanelsBase extends React.Component {
               <br />
               <br />
               In the case that you don't have quality images of your space(s) and need help with it,
-              please contact us <NamedLink name="ContactUsPage">here</NamedLink> or at{' '}
+              please contact us{' '}
+              <NamedLink name="ContactUsPageEnquiry" params={{ enquiry: 'listing' }}>
+                here
+              </NamedLink>{' '}
+              or at{' '}
               <a href="mailto:support@whichost.com" target="_blank">
                 support@whichost.com
               </a>{' '}
@@ -566,7 +578,9 @@ class FAQPagePanelsBase extends React.Component {
               We do advise users to cancel as soon as possible to not affect your operation.
               <br />
               <br /> If a customer booked your space b ut they didn't showed up, we reccomend you to{' '}
-              <a href="https://docs.google.com/forms/d/1jZ1aH21YDcqelSC3F7628ZWxvOZR2QPacA5lRV8O70c/edit">Report a No-Show.</a>
+              <a href="https://docs.google.com/forms/d/1jZ1aH21YDcqelSC3F7628ZWxvOZR2QPacA5lRV8O70c/edit">
+                Report a No-Show.
+              </a>
             </Typography>
           </ExpansionPanelDetails>
         </ExpansionPanel>
@@ -655,13 +669,10 @@ class FAQPagePanelsBase extends React.Component {
                 </li>
               </ol>
               If at any time you need help with this, please{' '}
-              <NamedLink name="ContactUsPage">click here</NamedLink> or email us at{' '}
-              <a
-                href="mailto:support@whichost.com?subject=Adding my payout information"
-                target="_blank"
-              >
-                support@whichost.com
-              </a>
+              <NamedLink name="ContactUsPageEnquiry" params={{ enquiry: 'changePaymentInfo' }}>
+                click here
+              </NamedLink>
+              .
             </Typography>
           </ExpansionPanelDetails>
         </ExpansionPanel>
@@ -757,10 +768,7 @@ class FAQPagePanelsBase extends React.Component {
           <ExpansionPanelDetails>
             <Typography>
               Currently, it is not possible to edit or delete reviews. If there is an issue with a
-              review, you can email us at{' '}
-              <a href="mailto:support@whichost.com?subject=Review Dispute inquiry" target="_blank">
-                support@whichost.com
-              </a>{' '}
+              review, you can contact us <NamedLink name="ContactUsPage">here</NamedLink>
               and we'll be happy to help.
             </Typography>
           </ExpansionPanelDetails>
@@ -812,14 +820,8 @@ class FAQPagePanelsBase extends React.Component {
               <br />
               If you want your customers to be able to book your additional services (like finger
               food or drink vouchers) directly during the initial booking process, please send us a
-              feedback at{' '}
-              <a
-                href="mailto:feedback@whichost.com?subject=Additional Services Feedback"
-                target="_blank"
-              >
-                feedback@whichost.com
-              </a>
-              . We appreciate every piece of feedback that we receive from you!
+              feedback <NamedLink name="ContactUsPage">here</NamedLink>. We appreciate every piece
+              of feedback that we receive from you!
             </Typography>
           </ExpansionPanelDetails>
         </ExpansionPanel>
@@ -848,15 +850,8 @@ class FAQPagePanelsBase extends React.Component {
             <Typography>
               We let pubs exchange messages with customers and bookings directly to communicate
               availability, changes in dates, booking modifications, and also cancellations. In the
-              event that this can not be agreed upon directly with a customer and pub, you can email
-              us at{' '}
-              <a
-                href="mailto:support@whichost.com?subject=Cancellation Policy Request"
-                target="_blank"
-              >
-                support@whichost.com
-              </a>{' '}
-              directly.
+              event that this can not be agreed upon directly with a customer and pub, you can{' '}
+              <NamedLink name="ContactUsPage">contact us</NamedLink>
             </Typography>
           </ExpansionPanelDetails>
         </ExpansionPanel>
@@ -876,11 +871,7 @@ class FAQPagePanelsBase extends React.Component {
               then quicker for following transfers. This process is handled by Stripe. Rest assured
               that once you accept a booking request, the person that booked your pub has been
               charged for the booking and paid for it. If you have any questions about this at any
-              time, please email us at{' '}
-              <a href="mailto:support@whichost.com?subject=Payout Inquiry" target="_blank">
-                support@whichost.com
-              </a>
-              .
+              time, please <NamedLink name="ContactUsPage">contact us</NamedLink>.
             </Typography>
           </ExpansionPanelDetails>
         </ExpansionPanel>
@@ -906,11 +897,8 @@ class FAQPagePanelsBase extends React.Component {
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <Typography>
-              Please, feel free to contact us at{' '}
-              <a href="mailto:support@whichost.com?subject=Help Center Question" target="_blank">
-                support@whichost.com
-              </a>
-              . We'll be happy to answer all of your questions.
+              Please, feel free to contact us <NamedLink name="ContactUsPage">here</NamedLink>.
+              We'll be happy to answer all of your questions.
             </Typography>
           </ExpansionPanelDetails>
         </ExpansionPanel>
@@ -1127,11 +1115,8 @@ class FAQPagePanelsBase extends React.Component {
           <ExpansionPanelDetails>
             <Typography>
               Currently, it is not possible to edit or delete reviews. If there is an issue with a
-              review, you can email us at{' '}
-              <a href="mailto:support@whichost.com?subject=Review Dispute inquiry" target="_blank">
-                support@whichost.com
-              </a>{' '}
-              and we'll be happy to help.
+              review, you can email us <NamedLink name="ContactUsPage">here</NamedLink> and we'll be
+              happy to help.
             </Typography>
           </ExpansionPanelDetails>
         </ExpansionPanel>
@@ -1238,7 +1223,7 @@ class FAQPagePanelsBase extends React.Component {
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <Typography>
-							Please, feel free to contact us <NamedLink name="ContactUsPage">here</NamedLink> at{' '}
+              Please, feel free to contact us <NamedLink name="ContactUsPage">here</NamedLink> at{' '}
               <a href="mailto:support@whichost.com?subject=Help Center Question" target="_blank">
                 support@whichost.com
               </a>
@@ -1296,13 +1281,8 @@ class FAQPagePanelsBase extends React.Component {
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <Typography>
-              We are really sorry to hear that you want to delete your account. Please contact us at{' '}
-              <a
-                href="mailto:support@whichost.com?subject=Account Deletion Request"
-                target="_blank"
-              >
-                support@whichost.com
-              </a>{' '}
+              We are really sorry to hear that you want to delete your account. Please contact us{' '}
+              <NamedLink name="ContactUsPage">here</NamedLink>
               and we will assist you with the deletion.
             </Typography>
           </ExpansionPanelDetails>

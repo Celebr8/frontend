@@ -53,6 +53,14 @@
 		"REACT_APP_SERVICE_MESSAGE_URL": {
 			"value": "https://whichost-service-message.herokuapp.com/message",
 			"description": "URL of message microservice"
-		}
+		},
+    "REACT_APP_RECAPTCHA_SITE_KEY": {
+      "description": "API public key for Recaptcha",
+      "value": "6LevSp8UAAAAAOeXKcO4fhqAAkgyUjRENdEepTye"
+    },
+    "REACT_APP_SERVICE_MESSAGE_URL" : {
+      "description": "URL to reach when trying to send an email",
+      "value": "https://whichost-service-message.herokuapp.com/message"
+    }
   }
 }
