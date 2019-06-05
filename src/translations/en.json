@@ -441,6 +441,8 @@
   "LegalsPages.communityGuidelinesTabTitle": "Community Guidelines",
 
   "ListingCard.hostedBy": "Hosted by {authorName}.",
+  "ListingCard.commonSpace": "Common space",
+  "ListingCard.privateSpace": "Private space",
   "ListingCard.unsupportedPrice": "({currency})",
   "ListingCard.unsupportedPriceTitle": "Unsupported currency ({currency})",
   "ListingPage.bookingSubTitle": "Start by choosing your dates.",
