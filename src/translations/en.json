@@ -40,7 +40,7 @@
   "Avatar.bannedUserDisplayName": "Banned user",
   "BookingBreakdown.bookingPeriod": "{bookingStart}",
   "BookingBreakdown.commission": "Whichost fee *",
-  "BookingBreakdown.commissionFeeNote": "* The fee helps us run the platform and provide the best possible service to you!",
+  "BookingBreakdown.commissionFeeNote": "* 100% of the user fees are donated! They are consolidated every three months and donated to a local non-profit organisation.",
   "BookingBreakdown.dayCount": "{count, number} {count, plural, one {day} other {days}}",
   "BookingBreakdown.nightCount": "{count, number} {count, plural, one {night} other {nights}}",
   "BookingBreakdown.pricePerDay": "Price per day",
