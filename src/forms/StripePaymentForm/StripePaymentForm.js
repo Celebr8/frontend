@@ -96,7 +96,7 @@ const initialState = {
   token: null,
   message: '',
   attendance: 10,
-  time: '20:30',
+  time: moment('20:30', "hh:mm"),
 };
 
 /**
@@ -240,7 +240,7 @@ class StripePaymentForm extends Component {
   }
 
   validTime(time) {
-    if (moment(time, 'HH:mm').hour() < 12)
+    if (time.hour() < 12)
       return this.props.intl.formatMessage({
         id: `StripePaymentForm.timeErrorTooEarly`,
       });
@@ -319,8 +319,7 @@ class StripePaymentForm extends Component {
         });
     };
 
-    const handleTimeChange = e => {
-      const time = e.target.value;
+    const handleTimeChange = time => {
       this.setState(prevState => {
         const newState = { ...prevState, time };
         onChange(newState);
