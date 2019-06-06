@@ -20,11 +20,12 @@ import * as log from '../../util/log';
 import config from '../../config';
 import { propTypes } from '../../util/types';
 
+import moment from 'moment';
+
 import css from './StripePaymentForm.css';
 
-import TextField from '@material-ui/core/TextField';
-
-import * as moment from 'moment';
+import MomentUtils from '@date-io/moment';
+import { MuiPickersUtilsProvider, TimePicker } from '@material-ui/pickers';
 
 /**
  * Translate a Stripe API error object.
@@ -95,7 +96,7 @@ const initialState = {
   token: null,
   message: '',
   attendance: 10,
-  time: '20:30',
+  time: moment('20:30', "hh:mm"),
 };
 
 /**
@@ -239,7 +240,7 @@ class StripePaymentForm extends Component {
   }
 
   validTime(time) {
-    if (moment(time, 'HH:mm').hour() < 12)
+    if (time.hour() < 12)
       return this.props.intl.formatMessage({
         id: `StripePaymentForm.timeErrorTooEarly`,
       });
@@ -256,7 +257,7 @@ class StripePaymentForm extends Component {
       authorDisplayName,
       showInitialMessageInput,
       intl,
-			onChange,
+      onChange,
       stripePaymentTokenInProgress,
       stripePaymentTokenError,
       invalid,
@@ -318,8 +319,7 @@ class StripePaymentForm extends Component {
         });
     };
 
-    const handleTimeChange = e => {
-      const time = e.target.value;
+    const handleTimeChange = time => {
       this.setState(prevState => {
         const newState = { ...prevState, time };
         onChange(newState);
@@ -395,19 +395,9 @@ class StripePaymentForm extends Component {
           </label>
 
           <span className={css.time}>
-            <TextField
-              id="time"
-              type="time"
-              defaultValue="20:30"
-              InputLabelProps={{
-                shrink: true,
-              }}
-              value={this.state.time}
-              onChange={handleTimeChange}
-              inputProps={{
-                step: 900, // 15 min
-              }}
-            />
+            <MuiPickersUtilsProvider utils={MomentUtils}>
+              <TimePicker value={this.state.time} onChange={handleTimeChange} />
+            </MuiPickersUtilsProvider>
           </span>
 
           <p className={css.validTime}>{this.validTime(this.state.time)}</p>
@@ -511,5 +501,17 @@ StripePaymentForm.propTypes = {
   stripePaymentTokenError: propTypes.error,
   stripePaymentToken: object,
 };
+
+// <TextField
+//   id="time"
+//   type="time"
+//   defaultValue="20:30"
+//   InputLabelProps={{
+//     shrink: true,
+//   }}
+//   inputProps={{
+//     step: 900, // 15 min
+//   }}
+// />
 
 export default injectIntl(StripePaymentForm);

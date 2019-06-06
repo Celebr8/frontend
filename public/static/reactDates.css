@@ -377,7 +377,8 @@
 }
 .CalendarMonth_table {
   border-collapse: collapse;
-  border-spacing: 0
+  border-spacing: 0;
+  margin-top: 5px;
 }
 .CalendarMonth_verticalSpacing {
   border-collapse: separate
