@@ -1,19 +1,18 @@
-import React from 'react';
-import { compose } from 'redux';
-import { withRouter } from 'react-router-dom';
-import { intlShape, injectIntl } from 'react-intl';
-import { arrayOf, bool, func, node, oneOfType, shape, string } from 'prop-types';
-import { FormattedMessage } from 'react-intl';
 import classNames from 'classnames';
 import omit from 'lodash/omit';
-import { propTypes, LISTING_STATE_CLOSED, LINE_ITEM_NIGHT, LINE_ITEM_DAY } from '../../util/types';
-import { formatMoney } from '../../util/currency';
-import { parse, stringify } from '../../util/urlHelpers';
+import { arrayOf, bool, func, node, oneOfType, shape, string } from 'prop-types';
+import React from 'react';
+import { FormattedMessage, injectIntl, intlShape } from 'react-intl';
+import { withRouter } from 'react-router-dom';
+import { compose } from 'redux';
+import { Button, ModalInMobile } from '../../components';
 import config from '../../config';
-import { ModalInMobile, Button } from '../../components';
 import { BookingDatesForm } from '../../forms';
-
+import { formatMoney } from '../../util/currency';
+import { LINE_ITEM_DAY, LINE_ITEM_NIGHT, LISTING_STATE_CLOSED, propTypes } from '../../util/types';
+import { parse, stringify } from '../../util/urlHelpers';
 import css from './BookingPanel.css';
+
 
 // This defines when ModalInMobile shows content as Modal
 const MODAL_BREAKPOINT = 1023;
@@ -134,7 +133,7 @@ const BookingPanel = props => {
             {formattedPrice}
           </div>
           <div className={css.perUnit}>
-            <FormattedMessage id={unitTranslationKey} />
+            <FormattedMessage id="BookingPanel.deposit"  />
           </div>
         </div>
 
