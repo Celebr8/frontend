@@ -395,11 +395,12 @@ export class CheckoutPageComponent extends Component {
     const topbar = (
       <div className={css.topbar}>
         <NamedLink className={css.home} name="LandingPage">
-          <Logo
+          {// Mobile logo component ignoring css  - fix needed
+          /*<Logo
             className={css.logoMobile}
             title={intl.formatMessage({ id: 'CheckoutPage.goToLandingPage' })}
             format="mobile"
-          />
+          />*/}
           <Logo
             className={css.logoDesktop}
             alt={intl.formatMessage({ id: 'CheckoutPage.goToLandingPage' })}

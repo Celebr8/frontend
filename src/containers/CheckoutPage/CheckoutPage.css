@@ -50,9 +50,9 @@
     padding: calc((var(--topbarHeightDesktop) - var(--CheckoutPage_logoHeightDesktop)) / 2) 36px;
   }
 }
-
+/***  Responive mobile <Logo> component in CheckoutPage.js ignoring this css block ***
 .logoMobile {
-  display: block;
+  display: none;
 
   & path {
     fill: var(--marketplaceColor);
@@ -62,9 +62,9 @@
     display: none;
   }
 }
-
+*/
 .logoDesktop {
-  display: none;
+  display: block;
   width: auto;
   height: 27px;
 
