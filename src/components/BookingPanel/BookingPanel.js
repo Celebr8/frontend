@@ -134,7 +134,8 @@ const BookingPanel = props => {
             {formattedPrice}
           </div>
           <div className={css.perUnit}>
-            <FormattedMessage id={unitTranslationKey} />
+            {/* <FormattedMessage id={unitTranslationKey} /> */}
+            Deposit
           </div>
         </div>
 
