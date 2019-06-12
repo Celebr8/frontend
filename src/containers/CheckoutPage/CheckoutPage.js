@@ -1,47 +1,27 @@
-import React, { Component } from 'react';
-import { bool, func, instanceOf, object, shape, string } from 'prop-types';
-import { compose } from 'redux';
-import { connect } from 'react-redux';
-import { FormattedMessage, injectIntl, intlShape } from 'react-intl';
-import { withRouter } from 'react-router-dom';
 import classNames from 'classnames';
-import routeConfiguration from '../../routeConfiguration';
-import { pathByRouteName, findRouteByRouteName } from '../../util/routes';
-import { propTypes, LINE_ITEM_NIGHT, LINE_ITEM_DAY } from '../../util/types';
-import { ensureListing, ensureUser, ensureTransaction, ensureBooking } from '../../util/data';
-import { dateFromLocalToAPI } from '../../util/dates';
-import { createSlug } from '../../util/urlHelpers';
-import {
-  isTransactionInitiateAmountTooLowError,
-  isTransactionInitiateListingNotFoundError,
-  isTransactionInitiateMissingStripeAccountError,
-  isTransactionInitiateBookingTimeNotAvailableError,
-  isTransactionZeroPaymentError,
-  transactionInitiateOrderStripeErrors,
-} from '../../util/errors';
-import { formatMoney } from '../../util/currency';
-import {
-  AvatarMedium,
-  BookingBreakdown,
-  Logo,
-  NamedLink,
-  NamedRedirect,
-  Page,
-  ResponsiveImage,
-} from '../../components';
-import { StripePaymentForm } from '../../forms';
-import { isScrollingDisabled } from '../../ducks/UI.duck';
-import {
-  initiateOrder,
-  initiateOrderAfterEnquiry,
-  setInitialValues,
-  speculateTransaction,
-} from './CheckoutPage.duck';
-import { createStripePaymentToken } from '../../ducks/stripe.duck.js';
+import { bool, func, instanceOf, object, shape, string } from 'prop-types';
+import React, { Component } from 'react';
+import { FormattedMessage, injectIntl, intlShape } from 'react-intl';
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
+import { compose } from 'redux';
+import { AvatarMedium, BookingBreakdown, Logo, NamedLink, NamedRedirect, Page, ResponsiveImage } from '../../components';
 import config from '../../config';
-
-import { storeData, storedData, clearData } from './CheckoutPageSessionHelpers';
+import { createStripePaymentToken } from '../../ducks/stripe.duck.js';
+import { isScrollingDisabled } from '../../ducks/UI.duck';
+import { StripePaymentForm } from '../../forms';
+import routeConfiguration from '../../routeConfiguration';
+import { formatMoney } from '../../util/currency';
+import { ensureBooking, ensureListing, ensureTransaction, ensureUser } from '../../util/data';
+import { dateFromLocalToAPI } from '../../util/dates';
+import { isTransactionInitiateAmountTooLowError, isTransactionInitiateBookingTimeNotAvailableError, isTransactionInitiateListingNotFoundError, isTransactionInitiateMissingStripeAccountError, isTransactionZeroPaymentError, transactionInitiateOrderStripeErrors } from '../../util/errors';
+import { findRouteByRouteName, pathByRouteName } from '../../util/routes';
+import { LINE_ITEM_DAY, LINE_ITEM_NIGHT, propTypes } from '../../util/types';
+import { createSlug } from '../../util/urlHelpers';
 import css from './CheckoutPage.css';
+import { initiateOrder, initiateOrderAfterEnquiry, setInitialValues, speculateTransaction } from './CheckoutPage.duck';
+import { clearData, storeData, storedData } from './CheckoutPageSessionHelpers';
+
 
 const STORAGE_KEY = 'CheckoutPage';
 
@@ -413,15 +393,9 @@ export class CheckoutPageComponent extends Component {
     const isNightly = unitType === LINE_ITEM_NIGHT;
     const isDaily = unitType === LINE_ITEM_DAY;
 
-    const unitTranslationKey = isNightly
-      ? 'CheckoutPage.perNight'
-      : isDaily
-      ? 'CheckoutPage.perDay'
-      : 'CheckoutPage.perUnit';
-
     const price = currentListing.attributes.price;
     const formattedPrice = formatMoney(intl, price);
-    const detailsSubTitle = `${formattedPrice} ${intl.formatMessage({ id: unitTranslationKey })}`;
+    const detailsSubTitle = `${formattedPrice} ${intl.formatMessage({ id: 'CheckoutPage.deposit' })}`;
 
     const showInitialMessageInput = !enquiredTransaction;
 
