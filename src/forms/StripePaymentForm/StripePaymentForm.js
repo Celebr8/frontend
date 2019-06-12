@@ -166,7 +166,18 @@ class StripePaymentForm extends Component {
     });
   }
 
-  handleSubmit(values) {
+  handleSubmit(event) {
+
+		event.preventDefault()
+
+		const values = {
+			time: this.state.time,
+			attendance: this.state.attendance,
+			message: this.state.message
+		}
+
+		// WHERE ARE THE VALUES??
+		
     const { intl, onSubmit, stripePaymentTokenInProgress, stripePaymentToken } = this.props;
     const initialMessage = values.initialMessage ? values.initialMessage.trim() : null;
 
