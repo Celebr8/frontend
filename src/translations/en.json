@@ -95,6 +95,7 @@
   "CheckoutPage.perDay": "per day",
   "CheckoutPage.perNight": "per night",
   "CheckoutPage.perUnit": "per unit",
+  "CheckoutPage.deposit": "deposit",
   "CheckoutPage.priceBreakdownTitle": "Booking breakdown",
   "CheckoutPage.providerStripeAccountMissingError": "The listing author has not added their payment information and the listing cannot be booked at the moment.",
   "CheckoutPage.speculateFailedMessage": "Oops, something went wrong. Please refresh the page and try again.",
