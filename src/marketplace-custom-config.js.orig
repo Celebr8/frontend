@@ -91,8 +91,6 @@ export const regularlyOpenOn = [
 		label: "Sundays"
 	},
 ];
-
-<<<<<<< HEAD
 export const groupSize = [
 	{
 		key: "1-10",
@@ -152,17 +150,3 @@ export const listingTypes = [
 
 
 ]
-=======
-// Price filter configuration
-// Note: unlike most prices this is not handled in subunits
-export const priceFilterConfig = {
-  min: 0,
-  max: 1000,
-  step: 5,
-};
-
-// Activate booking dates filter on search page
-export const dateRangeFilterConfig = {
-  active: true,
-};
->>>>>>> upstream/master

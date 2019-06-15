@@ -1,14 +1,14 @@
-import React from 'react';
-import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import PropTypes from 'prop-types';
+import React from 'react';
 import { FormattedMessage } from 'react-intl';
-
-import { LISTING_STATE_DRAFT } from '../../util/types';
-import { ensureListing } from '../../util/data';
-import { EditListingCapacityForm } from '../../forms';
 import { ListingLink } from '../../components';
-
+import { EditListingCapacityForm } from '../../forms';
+import { ensureListing } from '../../util/data';
+import { LISTING_STATE_DRAFT } from '../../util/types';
 import css from './EditListingCapacityPanel.css';
+
+
 
 const GROUPSIZE_NAME = 'groupSize';
 
@@ -45,6 +45,9 @@ const EditListingCapacityPanel = props => {
   return (
     <div className={classes}>
       <h1 className={css.title}>{panelTitle}</h1>
+      <p>
+            Here you can choose the size party your venue can host.
+        </p>
       <EditListingCapacityForm
         className={css.form}
         name={GROUPSIZE_NAME}
