@@ -101,6 +101,7 @@ export const EditListingCapacityFormComponent = props => (
                 min={10}
                 max={250}
                 valueLabelDisplay="on"
+                name={name}
             />
 
           {/* <FieldCheckboxGroup
