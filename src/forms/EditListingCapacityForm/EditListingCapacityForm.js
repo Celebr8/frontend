@@ -6,8 +6,7 @@ import React from 'react';
 import { Form as FinalForm } from 'react-final-form';
 import { FormattedMessage, injectIntl, intlShape } from 'react-intl';
 import { compose } from 'redux';
-import { Button, FieldCheckboxGroup, Form } from '../../components';
-import config from '../../config';
+import { Button, Form } from '../../components';
 import { propTypes } from '../../util/types';
 import css from './EditListingCapacityForm.css';
 
@@ -15,6 +14,7 @@ const CapacitySlider = withStyles({
     root: {
       height: 3,
       padding: '13px 0',
+      color: '#EC5027'
     },
     thumb: {
       height: 24,
@@ -30,6 +30,9 @@ const CapacitySlider = withStyles({
         marginLeft: 1,
         marginRight: 1,
       },
+      '&:focus,&:hover,&$active': {
+        boxShadow: 'none'
+      }
     },
     active: {
       color: '#EC5027'
@@ -44,7 +47,6 @@ const CapacitySlider = withStyles({
     },
     rail: {
       color: '#ccc',
-      opacity: 1,
       height: 8,
       borderRadius: 4,
     },
@@ -93,15 +95,20 @@ export const EditListingCapacityFormComponent = props => (
 
           <CapacitySlider
                 aria-label="Capacity slider"
-                defaultValue={[30, 50]}
+                defaultValue={[30, 80]}
+                valueLabelDisplay="auto"
+                step={10}
+                min={10}
+                max={250}
+                valueLabelDisplay="on"
             />
 
-          <FieldCheckboxGroup
+          {/* <FieldCheckboxGroup
             className={css.capacity}
             id={name}
             name={name}
             options={config.custom.groupSize}
-          />
+          /> */}
 
           <Button
             className={css.submitButton}
