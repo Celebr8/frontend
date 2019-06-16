@@ -15,6 +15,14 @@
   --LocationAutocompleteInput_sidePaddingDesktop: 36px;
 }
 
+.inputSuccess {
+  border-bottom-color: var(--successColor);
+}
+
+.inputError {
+  border-bottom-color: var(--failColor);
+}
+
 .root {
   position: relative;
   display: flex;
@@ -24,7 +32,6 @@
   display: flex;
   width: 24px;
   align-self: stretch;
-  border-bottom: 2px solid var(--marketplaceColor);
   background-color: var(--matterColorLight);
 }
 
@@ -50,6 +57,7 @@
   flex-grow: 1;
   height: var(--LocationAutocompleteInput_inputHeight);
   padding-left: 10px;
+	padding-bottom: 0px;
   margin: 0;
   line-height: unset;
   border-bottom-width: 2px;
@@ -61,9 +69,9 @@
 
   &:hover,
   &:focus {
-    border-bottom-color: var(--marketplaceColor);
     outline: none;
   }
+
 }
 
 /*

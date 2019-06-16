@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { compose } from 'redux';
 import { FormattedMessage, injectIntl, intlShape } from 'react-intl';
-import { Form as FinalForm } from 'react-final-form';
+import { Form as FinalForm, Field } from 'react-final-form';
 import isEqual from 'lodash/isEqual';
 import * as ibantools from 'ibantools';
 import classNames from 'classnames';
@@ -18,6 +18,7 @@ import {
   FieldTextInput,
   FieldSelect,
   Form,
+  LocationAutocompleteInputField,
   PrimaryButton,
 } from '../../components';
 
@@ -32,6 +33,7 @@ class ContactUsFormComponent extends Component {
     super(props);
     this.state = {
       recaptchaToken: null,
+      location: null,
     };
 
     this.onLoadRecaptcha = this.onLoadRecaptcha.bind(this);
@@ -89,6 +91,8 @@ class ContactUsFormComponent extends Component {
               sendingError,
               values,
             } = fieldRenderProps;
+
+            const { formatMessage } = this.props.intl;
 
             const user = ensureCurrentUser(currentUser);
 
@@ -322,6 +326,53 @@ class ContactUsFormComponent extends Component {
               organisationWebsiteRequiredMessage
             );
 
+            // ListingName
+
+            const pubNameLabel = intl.formatMessage({
+              id: 'ContactUsForm.pubNameLabel',
+            });
+
+            const pubNameRequiredMessage = intl.formatMessage({
+              id: 'ContactUsForm.pubNameRequired',
+            });
+
+            const pubNamePlaceholder = intl.formatMessage({
+              id: 'ContactUsForm.pubNamePlaceholder',
+            });
+
+            const pubNameRequired = validators.required(pubNameRequiredMessage);
+
+            // Location
+
+            const locationLabel = intl.formatMessage({
+              id: 'ContactUsForm.locationLabel',
+            });
+
+            const locationRequiredMessage = intl.formatMessage({
+              id: 'ContactUsForm.locationRequired',
+            });
+
+            const locationRequired = value => {
+              const location = value ? value.selectedPlace : value;
+
+              this.setState({ ...this.state, location });
+              console.log('locationRequired');
+              console.log('this.state', this.state);
+              return this.state.location ? null : locationRequiredMessage;
+            };
+
+            // Occasion
+
+            const occasionLabel = intl.formatMessage({
+              id: 'ContactUsForm.occasionLabel',
+            });
+
+            const occasionRequiredMessage = intl.formatMessage({
+              id: 'ContactUsForm.occasionRequiredMessage',
+            });
+
+            const occasionRequired = validators.required(occasionRequiredMessage);
+
             // ...
 
             const askPhone = enquiry == 'claim';
@@ -333,7 +384,10 @@ class ContactUsFormComponent extends Component {
             ) : null;
 
             const submitInProgress = sendingInProgress;
-            const submitDisabled = invalid || submitInProgress;
+            console.log('this.state', this.state);
+            console.log('invalid', invalid);
+            const submitDisabled = !this.state.location || invalid || submitInProgress;
+            console.log('submitDisabled', submitDisabled);
 
             const phoneField = askPhone ? (
               <FieldPhoneNumberInput
@@ -482,6 +536,44 @@ class ContactUsFormComponent extends Component {
                 />
               ) : null;
 
+            const recommandPubFields =
+              enquiry == 'recommandPub' ? (
+                <Fragment>
+                  <FieldTextInput
+                    type="text"
+                    name="pubName"
+                    key="pubName"
+                    id={formId ? `${formId}.pubName` : 'pubName'}
+                    label={pubNameLabel}
+                    placeholder={pubNamePlaceholder}
+                    validate={pubNameRequired}
+                  />
+
+                  <label htmlFor="location">
+                    <FormattedMessage id="ContactUsForm.locationLabel" />
+                  </label>
+                  <LocationAutocompleteInputField
+                    name="location"
+                    format={null}
+                    id={formId ? `${formId}.location` : 'location'}
+                    validate={locationRequired}
+                  />
+
+                  <FieldSelect
+                    name="occasion"
+                    key="occasion"
+                    id={formId ? `${formId}.occasion` : 'occasion'}
+                    label={occasionLabel}
+                    defaultValue="justBecause"
+                  >
+                    <option value="justBecause">Just because :)</option>
+                    <option value="birthdayDeal">To make use of the Birthday Gift</option>
+                    <option value="corporateDeal">To make use of the Corporate Benefit</option>
+                    <option value="recommandDeal">To make use of the Recommend Reward</option>
+                  </FieldSelect>
+                </Fragment>
+              ) : null;
+
             return (
               <Form
                 key={formId}
@@ -491,6 +583,7 @@ class ContactUsFormComponent extends Component {
                     ? { ...values, email: user.attributes.email }
                     : values;
                   this.submittedValues = valuesWithEmail;
+                  console.log('this.submittedValues', this.submittedValues);
                   handleSubmit(e);
                 }}
               >
@@ -510,6 +603,7 @@ class ContactUsFormComponent extends Component {
                     <option value="privacy">Privacy Enquiry</option>
                     <option value="changePaymentInfo">Change payement informations</option>
                     <option value="corporate">Corporate Benefits Enquiries</option>
+                    <option value="recommandPub">Recommand a pub</option>
                   </FieldSelect>
 
                   {emailField}
@@ -521,6 +615,7 @@ class ContactUsFormComponent extends Component {
                   {payementInfoFields}
 
                   {corporateDealFields}
+                  {recommandPubFields}
 
                   <FieldTextInput
                     type="textarea"
