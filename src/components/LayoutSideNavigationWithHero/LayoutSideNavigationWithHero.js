@@ -4,18 +4,12 @@
  * SideNavWrapper will be shown aside on Desktop layout and
  * as a sub bar under Topbar on mobile screens.
  */
-import React from 'react';
-import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import {
-  LayoutWrapperTopbar,
-  LayoutWrapperSideNav,
-  LayoutWrapperMain,
-  LayoutWrapperHero,
-  LayoutWrapperFooter,
-} from '../../components';
-
+import PropTypes from 'prop-types';
+import React from 'react';
+import { LayoutWrapperFooter, LayoutWrapperHero, LayoutWrapperMain, LayoutWrapperSideNav, LayoutWrapperTopbar } from '../../components';
 import css from './LayoutSideNavigationWithHero.css';
+
 
 const prepareChildren = children => {
   const childrenCount = React.Children.count(children);
@@ -30,6 +24,8 @@ const prepareChildren = children => {
   const childrenMap = {};
 
   React.Children.forEach(children, child => {
+      console.log(children);
+      
     if (child.type === LayoutWrapperTopbar) {
       childrenMap.layoutWrapperTopbar = child;
     } else if (child.type === LayoutWrapperSideNav) {

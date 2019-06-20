@@ -1,9 +1,9 @@
-import React from 'react';
-import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import PropTypes from 'prop-types';
+import React from 'react';
 import { NamedLink } from '../../components';
-
 import css from './TabNav.css';
+
 
 const Tab = props => {
   const { className, id, disabled, text, selected, linkProps } = props;

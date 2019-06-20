@@ -1,63 +1,20 @@
 import React from 'react';
-import {
-  AboutPage,
-  AuthenticationPage,
-  CareersPage,
-  CheckoutPage,
-
-	// Legals
-
-  CommunityGuidelinesPage,
-  ContactDetailsPage,
-  CookiePolicyPage,
-  LegalsDealsPage,
-  PrivacyPolicyPage,
-  TermsOfServicePage,
-	
-	// Deals
-
-  DealsPage,
-  BirthdayDealPage,
-  CorporateDealPage,
-	RecommendDealPage,
-
-	// Pricing
-
-	BookAPartyPage,
-	ListMySpacePage,
-
-	// Help Center
-
-	ContactUsPage,
-	DealsHelpPage,
-	FAQPage,
-	FeesPage,
-	FirstStepsPage,
-	GuidebookForProvidersPage,
-	
-  EditListingPage,
-  EmailVerificationPage,
-  InboxPage,
-  LandingPage,
-  ListingPage,
-  ManageListingsPage,
-  NotFoundPage,
-  NonDiscriminationPolicyPage,
-  PasswordChangePage,
-  PasswordRecoveryPage,
-  PasswordResetPage,
-  PayoutPreferencesPage,
-  ProfilePage,
-  ProfileSettingsPage,
-  SearchPage,
-  StyleguidePage,
-  TransactionPage,
-} from './containers';
-
 // routeConfiguration needs to initialize containers first
 // Otherwise, components will import form container eventually and
 // at that point css bundling / imports will happen in wrong order.
 import { NamedRedirect } from './components';
+import {
+AboutPage, AuthenticationPage, BirthdayDealPage,
+    // Pricing
+    BookAPartyPage, CareersPage, CheckoutPage,
+    // Legals
+    CommunityGuidelinesPage, ContactDetailsPage,
+    // Help Center
+    ContactUsPage, CookiePolicyPage, CorporateDealPage, DealsHelpPage,
+    // Deals
+    DealsPage, EditListingPage, EmailVerificationPage, FAQPage, FeesPage, FirstStepsPage, GuidebookForProvidersPage, InboxPage, LandingPage, LegalsDealsPage, ListingPage, ListMySpacePage, ManageListingsPage, NonDiscriminationPolicyPage, NotFoundPage, PasswordChangePage, PasswordRecoveryPage, PasswordResetPage, PayoutPreferencesPage, PrivacyPolicyPage, ProfilePage, ProfileSettingsPage, RecommendDealPage, SearchPage, StyleguidePage, TermsOfServicePage, TransactionPage, UserFeeDonationPage
+} from './containers';
+
 
 export const ACCOUNT_SETTINGS_PAGES = [
   'ContactDetailsPage',
@@ -298,6 +255,11 @@ const routeConfiguration = () => {
 			path: '/benefits/corporate-benefit',
       name: 'CorporateDealPage',
       component: props => <CorporateDealPage {...props} />,
+    },
+    {
+        path: '/benefits/user-fee-donations',
+        name: 'UserFeeDonationPage',
+        component: props => <UserFeeDonationPage {...props} />,
     },
     {
 			path: '/legal/benefits',

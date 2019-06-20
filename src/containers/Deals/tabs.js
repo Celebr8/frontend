@@ -7,6 +7,13 @@ export const dealsTabs = (intl, selected) => [
       },
     },
     {
+        text: intl.formatMessage({ id: 'DealsPage.userFeeDonationTabTitle' }),
+        selected: selected == 'UserFeeDonationPage',
+        linkProps: {
+          name: 'UserFeeDonationPage',
+        },
+      },
+    {
       text: intl.formatMessage({ id: 'DealsPage.birthdayDealTabTitle' }),
       selected: selected == 'BirthdayDealPage',
       linkProps: {
