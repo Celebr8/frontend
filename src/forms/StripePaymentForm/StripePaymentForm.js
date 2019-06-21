@@ -172,11 +172,10 @@ class StripePaymentForm extends Component {
 		const values = {
 			time: this.state.time,
 			attendance: this.state.attendance,
-			message: this.state.message
+			message: this.state.message,
+			occasion: this.state.occasion
 		}
 
-		// WHERE ARE THE VALUES??
-		
     const { intl, onSubmit, stripePaymentTokenInProgress, stripePaymentToken } = this.props;
     const initialMessage = values.initialMessage ? values.initialMessage.trim() : null;
 

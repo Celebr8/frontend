@@ -95,6 +95,7 @@
   "CheckoutPage.perDay": "per day",
   "CheckoutPage.perNight": "per night",
   "CheckoutPage.perUnit": "per unit",
+  "CheckoutPage.deposit": "deposit",
   "CheckoutPage.priceBreakdownTitle": "Booking breakdown",
   "CheckoutPage.providerStripeAccountMissingError": "The listing author has not added their payment information and the listing cannot be booked at the moment.",
   "CheckoutPage.speculateFailedMessage": "Oops, something went wrong. Please refresh the page and try again.",
@@ -891,6 +892,8 @@
 
   "SearchResultsPanel.nextPage": "Next page",
   "SearchResultsPanel.previousPage": "Previous page",
+  "SearchResultsPanel.endTitle": "Can't find your favourite pub? Not to worry.",
+  "SearchResultsPanel.endMessage": "Recommend your favourite pub and celebrate there, and we will give you a €15 gift card that you can use in over 2,000 shops in Ireland & the UK. ",
 
   "SectionHero.browseButton": "Find a pub",
   "SectionHero.temporaryOffer": "Booking for your birthday? ",
