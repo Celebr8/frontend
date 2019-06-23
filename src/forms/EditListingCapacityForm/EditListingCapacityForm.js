@@ -55,22 +55,22 @@ const CapacitySlider = withStyles({
 export const EditListingCapacityFormComponent = props => (
   <FinalForm
     {...props}
-    render={fieldRenderProps => {
+    render= {fieldRenderProps => {
       const {
         className,
         disabled,
         handleSubmit,
-        intl,
-				name,
+        name,
         invalid,
         pristine,
         saveActionMsg,
         updated,
         updateInProgress,
         fetchErrors,
+        initalSliderValue,
+        action
       } = fieldRenderProps;
-
-
+      
       const { updateListingError, showListingsError } = fetchErrors || {};
       const errorMessage = updateListingError ? (
         <p className={css.error}>
@@ -87,6 +87,10 @@ export const EditListingCapacityFormComponent = props => (
       const submitReady = updated && pristine;
       const submitInProgress = updateInProgress;
       const submitDisabled = invalid || disabled || submitInProgress;
+      
+      const handleChange = (event, newValue) =>{
+        action(newValue);
+      };
 
       return (
         <Form className={classes} onSubmit={handleSubmit}>
@@ -95,21 +99,15 @@ export const EditListingCapacityFormComponent = props => (
 
           <CapacitySlider
                 aria-label="Capacity slider"
-                defaultValue={[30, 80]}
+                defaultValue={initalSliderValue}
                 valueLabelDisplay="auto"
+                name={name}
                 step={10}
                 min={10}
                 max={250}
                 valueLabelDisplay="on"
-                name={name}
+                onChange={handleChange}
             />
-
-          {/* <FieldCheckboxGroup
-            className={css.capacity}
-            id={name}
-            name={name}
-            options={config.custom.groupSize}
-          /> */}
 
           <Button
             className={css.submitButton}
