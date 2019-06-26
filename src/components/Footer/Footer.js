@@ -1,21 +1,14 @@
-import React, { Fragment } from 'react';
-import { string } from 'prop-types';
-import { FormattedMessage, injectIntl, intlShape } from 'react-intl';
 import classNames from 'classnames';
-import { twitterPageURL } from '../../util/urlHelpers';
+import { string } from 'prop-types';
+import React, { Fragment } from 'react';
+import { FormattedMessage, injectIntl, intlShape } from 'react-intl';
+import { ExternalLink, IconSocialMediaFacebook, IconSocialMediaInstagram, IconSocialMediaTwitter, Logo, NamedLink } from '../../components';
 import config from '../../config';
-import {
-  IconSocialMediaFacebook,
-  IconSocialMediaInstagram,
-  IconSocialMediaTwitter,
-  Logo,
-  ExternalLink,
-  NamedLink,
-} from '../../components';
-
+import { locationToURI, mainLocationsData } from '../../locals';
+import { twitterPageURL } from '../../util/urlHelpers';
 import css from './Footer.css';
 
-import { mainLocationsData, locationToURI } from '../../locals';
+
 
 const renderSocialMediaLinks = intl => {
 
@@ -172,11 +165,6 @@ const Footer = props => {
               <ul className={css.list}>
                 <li key="whichost" className={css.listWhichost}>
                   Whichost
-                </li>
-                <li className={css.listItem}>
-                  <NamedLink name="CareersPage" className={css.link}>
-                    <FormattedMessage id="Footer.careersPage" />
-                  </NamedLink>
                 </li>
                 <li key="inviteAFriend" className={css.listItem}>
                   <a
