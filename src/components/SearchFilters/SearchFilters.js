@@ -1,19 +1,13 @@
-import React from 'react';
-import { compose } from 'redux';
-import { object, string, bool, number, func, shape } from 'prop-types';
-import { injectIntl, intlShape, FormattedMessage } from 'react-intl';
 import classNames from 'classnames';
-import { withRouter } from 'react-router-dom';
 import omit from 'lodash/omit';
-
-import {
-  BookingDateRangeFilter,
-  SelectSingleFilter,
-  SelectMultipleFilter,
-  PriceFilter,
-	NamedLink
-} from '../../components';
-
+import { bool, func, number, object, shape, string } from 'prop-types';
+import React from 'react';
+import { FormattedMessage, injectIntl, intlShape } from 'react-intl';
+import { withRouter } from 'react-router-dom';
+import { compose } from 'redux';
+import emptySearchImage from '../../assets/empty.svg';
+import { BookingDateRangeFilter, PriceFilter, SelectMultipleFilter, SelectSingleFilter } from '../../components';
+import config from '../../config';
 import routeConfiguration from '../../routeConfiguration';
 import { parseDateFromISO8601, stringifyDateToISO8601 } from '../../util/dates';
 import { createResourceLocatorString } from '../../util/routes';
@@ -61,6 +55,7 @@ const initialDateRangeValue = (queryParams, paramName) => {
 };
 
 const SearchFiltersComponent = props => {
+
   const {
     rootClassName,
     className,
@@ -85,6 +80,9 @@ const SearchFiltersComponent = props => {
    * This implement the redirection toward Recommend Deal page
    */
   const recommendDealActive = true;
+
+  const searchRes = props.urlQueryParams.address.split(', ');
+  const town = searchRes[0];
 
   const hasNoResult = listingsAreLoaded && resultsCount === 0;
   const classes = classNames(rootClassName || css.root, { [css.longInfo]: hasNoResult }, className);
@@ -290,9 +288,21 @@ const SearchFiltersComponent = props => {
 
       {hasNoResult ? (
         <div className={css.noSearchResults}>
-          <p>
-            <FormattedMessage id="SearchFilters.noResults" />
-          </p>
+          <p>Whoops! No pubs listed in {town} yet.</p>
+          <img width="300" src={`${config.canonicalRootURL}${emptySearchImage}`}/>
+          <div className={css.guideWrap}>
+
+            <h3><FormattedMessage id="SearchFilters.noResultsGuideTitle"/></h3>
+            
+            <ol style={{marginBottom: '1rem'}}>
+              <li><a style={{textDecoration: 'underline'}} href={"https://www.google.ie/maps/search/pubs+in+" + town} target="_blank">Find a pub in {town}</a></li>
+              <li><FormattedMessage id="SearchFilters.noResultsStep2"/></li>
+              <li><FormattedMessage id="SearchFilters.noResultsReward"/></li>
+            </ol>
+
+            <a className={css.findOutMore} href="/benefits/recommend-gift">Find out more</a>
+
+          </div>
         </div>
       ) : null}
 
