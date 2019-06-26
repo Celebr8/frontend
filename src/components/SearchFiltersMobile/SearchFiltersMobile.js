@@ -1,24 +1,15 @@
-import React, { Component } from 'react';
-import { object, string, bool, number, func, shape, array } from 'prop-types';
 import classNames from 'classnames';
+import omit from 'lodash/omit';
+import { array, bool, func, number, object, shape, string } from 'prop-types';
+import React, { Component } from 'react';
 import { FormattedMessage, injectIntl, intlShape } from 'react-intl';
 import { withRouter } from 'react-router-dom';
-import omit from 'lodash/omit';
-
+import { Button, ModalInMobile, NamedLink, SelectMultipleFilter, SelectSingleFilter } from '../../components';
 import routeConfiguration from '../../routeConfiguration';
-import { parseDateFromISO8601, stringifyDateToISO8601 } from '../../util/dates';
 import { createResourceLocatorString } from '../../util/routes';
-import {
-  ModalInMobile,
-  Button,
-  PriceFilter,
-  NamedLink,
-  SelectSingleFilter,
-  SelectMultipleFilter,
-  BookingDateRangeFilter,
-} from '../../components';
 import { propTypes } from '../../util/types';
 import css from './SearchFiltersMobile.css';
+
 
 const RADIX = 10;
 
@@ -163,7 +154,7 @@ class SearchFiltersMobileComponent extends Component {
     /*
      * This implement the redirection toward Recommend Deal page
      */
-    const recommendDealActive = true;
+    const recommendDealActive = false;
 
     const RecommendDeal = props =>
       recommendDealActive && props.show ? (
