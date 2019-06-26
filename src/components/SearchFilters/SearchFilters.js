@@ -290,17 +290,13 @@ const SearchFiltersComponent = props => {
           <p>Whoops! No pubs listed in {town} yet.</p>
           <img width="300" src={emptySearchImage}/>
           <div className={css.guideWrap}>
-
             <h3><FormattedMessage id="SearchFilters.noResultsGuideTitle"/></h3>
-            
             <ol style={{marginBottom: '1rem'}}>
               <li><a style={{textDecoration: 'underline'}} href={"https://www.google.ie/maps/search/pubs+in+" + town} target="_blank">Find a pub in {town}</a></li>
               <li><FormattedMessage id="SearchFilters.noResultsStep2"/></li>
               <li><FormattedMessage id="SearchFilters.noResultsReward"/></li>
             </ol>
-
             <a className={css.findOutMore} href="/benefits/recommend-gift">Find out more</a>
-
           </div>
         </div>
       ) : null}
