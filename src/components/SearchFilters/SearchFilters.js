@@ -7,7 +7,6 @@ import { withRouter } from 'react-router-dom';
 import { compose } from 'redux';
 import emptySearchImage from '../../assets/empty.svg';
 import { BookingDateRangeFilter, PriceFilter, SelectMultipleFilter, SelectSingleFilter } from '../../components';
-import config from '../../config';
 import routeConfiguration from '../../routeConfiguration';
 import { parseDateFromISO8601, stringifyDateToISO8601 } from '../../util/dates';
 import { createResourceLocatorString } from '../../util/routes';
@@ -289,7 +288,7 @@ const SearchFiltersComponent = props => {
       {hasNoResult ? (
         <div className={css.noSearchResults}>
           <p>Whoops! No pubs listed in {town} yet.</p>
-          <img width="300" src={`${config.canonicalRootURL}${emptySearchImage}`}/>
+          <img width="300" src={emptySearchImage}/>
           <div className={css.guideWrap}>
 
             <h3><FormattedMessage id="SearchFilters.noResultsGuideTitle"/></h3>
