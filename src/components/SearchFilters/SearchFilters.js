@@ -292,7 +292,7 @@ const SearchFiltersComponent = props => {
           <div className={css.guideWrap}>
             <h3><FormattedMessage id="SearchFilters.noResultsGuideTitle"/></h3>
             <ol style={{marginBottom: '1rem'}}>
-              <li><a style={{textDecoration: 'underline'}} href={"https://www.google.ie/maps/search/pubs+in+" + town} target="_blank">Find a pub in {town}</a></li>
+              <li><a style={{textDecoration: 'underline'}} href={"https://www.google.ie/maps/search/pubs+in+" + town} target="_blank">Here’s a list of pubs in {town}</a></li>
               <li><FormattedMessage id="SearchFilters.noResultsStep2"/></li>
               <li><FormattedMessage id="SearchFilters.noResultsReward"/></li>
             </ol>
