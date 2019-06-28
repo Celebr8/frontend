@@ -2,20 +2,20 @@
   "plugins": ["prettier", "react"],
   "extends": [
     "airbnb",
-    "eslint-config-airbnb",
     "prettier",
     "prettier/react",
     "plugin:react/recommended",
     "plugin:prettier/recommended",
+    "eslint-config-airbnb",
     "eslint-config-prettier"
   ],
   "root": true,
   "parserOptions": {
     "parser": "babel-eslint",
-    "ecmaVersion": 6,
     "sourceType": "module",
     "allowImportExportEverywhere": true,
-    "ecmaFeatures": {
+  "ecmaVersion": 6,
+  "ecmaFeatures": {
       "jsx": true,
       "modules": true,
       "experimentalObjectRestSpread": true
@@ -108,6 +108,7 @@
     "react/jsx-boolean-value": "warn",
     "react/no-unescaped-entities": "warn",
     "react/jsx-no-target-blank" : "warn",
+    "react/jsx-one-expression-per-line": "warn",
     "no-else-return": "warn",
     "no-multi-assign": "warn",
     "import/no-cycle": "warn",
