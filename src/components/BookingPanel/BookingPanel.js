@@ -13,7 +13,6 @@ import { LINE_ITEM_DAY, LINE_ITEM_NIGHT, LISTING_STATE_CLOSED, propTypes } from 
 import { parse, stringify } from '../../util/urlHelpers';
 import css from './BookingPanel.css';
 
-
 // This defines when ModalInMobile shows content as Modal
 const MODAL_BREAKPOINT = 1023;
 
@@ -133,7 +132,7 @@ const BookingPanel = props => {
             {formattedPrice}
           </div>
           <div className={css.perUnit}>
-            <FormattedMessage id="BookingPanel.deposit"  />
+            <FormattedMessage id="BookingPanel.deposit" />
           </div>
         </div>
 

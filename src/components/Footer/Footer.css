@@ -54,12 +54,9 @@
     padding: 0;
   }
 }
- 
 
 .someLinks {
-
-	display: inline;
-
+  display: inline;
 }
 
 /* Mobile only social media links */
@@ -312,8 +309,8 @@
 }
 
 .tosAndPrivacy {
-	color: #b2b2b2;
-	font-size: 13px;
+  color: #b2b2b2;
+  font-size: 13px;
   margin-top: 0;
   margin-bottom: 0;
   text-transform: uppercase;
@@ -366,18 +363,16 @@
 }
 
 .registrationMobile {
-
   @apply --marketplaceTinyFontStyles;
-	order: 10;
+  order: 10;
 
   @media (--viewportMedium) {
     display: none;
   }
-
 }
 .organizationCopyrightMobile {
   /* Font */
-  @apply --marketplaceTinyFontStyles; 
+  @apply --marketplaceTinyFontStyles;
   color: var(--matterColorAnti);
   transition: var(--transitionStyleButton);
 
@@ -392,8 +387,7 @@
     text-decoration: none;
   }
 
-	text-size: 10px;
-
+  text-size: 10px;
 }
 
 .tosAndPrivacyMobile {

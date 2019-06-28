@@ -34,8 +34,7 @@ export class BookingDatesFormComponent extends Component {
   // default handleSubmit function.
   handleFormSubmit(e) {
     const { date } = e.bookingDates || {};
-    if (date) 
-      this.props.onSubmit(e);
+    if (date) this.props.onSubmit(e);
   }
 
   render() {
@@ -99,17 +98,17 @@ export class BookingDatesFormComponent extends Component {
           // This is the place to collect breakdown estimation data. See the
           // EstimatedBreakdownMaybe component to change the calculations
           // for customized payment processes.
-          const bookingData =
-            startDate ? {
-                  unitType,
-                  unitPrice,
-                  startDate,
+          const bookingData = startDate
+            ? {
+                unitType,
+                unitPrice,
+                startDate,
 
-                  // NOTE: If unitType is `line-item/units`, a new picker
-                  // for the quantity should be added to the form.
-                  quantity: 1,
-                }
-              : null;
+                // NOTE: If unitType is `line-item/units`, a new picker
+                // for the quantity should be added to the form.
+                quantity: 1,
+              }
+            : null;
           const bookingInfo = bookingData ? (
             <div className={css.priceBreakdownContainer}>
               <h3 className={css.priceBreakdownTitle}>
@@ -131,8 +130,7 @@ export class BookingDatesFormComponent extends Component {
             .startOf('day')
             .add(1, 'days')
             .toDate();
-          const DatePlaceholderText =
-            DatePlaceholder || intl.formatDate(today, dateFormatOptions);
+          const DatePlaceholderText = DatePlaceholder || intl.formatDate(today, dateFormatOptions);
           const submitButtonClasses = classNames(
             submitButtonWrapperClassName || css.submitButtonWrapper
           );
@@ -149,9 +147,7 @@ export class BookingDatesFormComponent extends Component {
                 format={null}
                 timeSlots={timeSlots}
                 useMobileMargins
-                validate={
-                  required(requiredMessage)
-                }
+                validate={required(requiredMessage)}
               />
               {bookingInfo}
               <p className={css.smallPrint}>

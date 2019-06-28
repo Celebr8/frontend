@@ -60,21 +60,18 @@ const MIN_LENGTH_FOR_LONG_WORDS_IN_TITLE = 16;
 
 const { UUID } = sdkTypes;
 
-const freeTimeSlots = (now) => 
-	[...Array(89).keys()].map( (i) =>
-		({
-			type: 'timeSlot',
-			attributes: {
-				type: 'time-slot/day',
-				start: moment(now).add(i, 'days'),
-				end: moment(now).add(i+1, 'days')
-			},
-			id: {
-				uuid: 'dummy'	
-			}
-		})	
-	);
-
+const freeTimeSlots = now =>
+  [...Array(89).keys()].map(i => ({
+    type: 'timeSlot',
+    attributes: {
+      type: 'time-slot/day',
+      start: moment(now).add(i, 'days'),
+      end: moment(now).add(i + 1, 'days'),
+    },
+    id: {
+      uuid: 'dummy',
+    },
+  }));
 
 const priceData = (price, intl) => {
   if (price && price.currency === config.currency) {
@@ -116,14 +113,14 @@ export class ListingPageComponent extends Component {
 
     const { bookingDates, ...bookingData } = values;
 
-		const bookingEnd = moment(bookingDates.date).add(1,'days'); 
+    const bookingEnd = moment(bookingDates.date).add(1, 'days');
 
     const initialValues = {
       listing,
       bookingData,
       bookingDates: {
         bookingStart: bookingDates.date,
-				bookingEnd: bookingEnd
+        bookingEnd: bookingEnd,
       },
     };
 
@@ -389,9 +386,7 @@ export class ListingPageComponent extends Component {
         </span>
       ) : null;
 
-		const timeSlotsAdjusted = publicData.type == 'common' ? 
-			freeTimeSlots() :
-			timeSlots;
+    const timeSlotsAdjusted = publicData.type == 'common' ? freeTimeSlots() : timeSlots;
 
     return (
       <Page
@@ -446,7 +441,7 @@ export class ListingPageComponent extends Component {
                     options={amenitiesConfig}
                     selectedOptions={publicData.amenities}
                   />
-									<SectionGroupSize
+                  <SectionGroupSize
                     options={config.custom.groupSize}
                     publicData={publicData}
                     selectedOptions={publicData.groupSize}
@@ -457,9 +452,7 @@ export class ListingPageComponent extends Component {
                     selectedOptions={publicData.regularlyOpenOn}
                   />
 
-                  <SectionType
-                    listingType={publicData.type}
-                  />
+                  <SectionType listingType={publicData.type} />
                   <SectionFeaturesMaybe options={amenitiesConfig} publicData={publicData} />
                   <SectionRulesMaybe publicData={publicData} />
                   <SectionMapMaybe

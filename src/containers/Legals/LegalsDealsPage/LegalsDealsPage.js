@@ -12,8 +12,8 @@ import {
   LayoutWrapperSideNav,
   LayoutWrapperTopbar,
   LayoutWrapperFooter,
-	Footer,
-	LegalsDeals
+  Footer,
+  LegalsDeals,
 } from '../../../components';
 
 import config from '../../../config';
@@ -24,9 +24,9 @@ import css from './LegalsDealsPage.css';
 const LegalsDealsPageComponent = props => {
   const { scrollingDisabled, intl } = props;
 
-	const tabs = legalsTabs(intl, 'LegalsDealsPage');
+  const tabs = legalsTabs(intl, 'LegalsDealsPage');
 
-	const siteTitle = config.siteTitle;
+  const siteTitle = config.siteTitle;
   const schemaTitle = intl.formatMessage({ id: 'LegalsDealsPage.schemaTitle' }, { siteTitle });
   const schema = {
     '@context': 'http://schema.org',

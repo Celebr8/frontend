@@ -6,7 +6,7 @@ import { injectIntl, intlShape, FormattedMessage } from 'react-intl';
 import { isScrollingDisabled } from '../../../ducks/UI.duck';
 import { TopbarContainer } from '../../../containers';
 
-import { dealsTabs } from '../tabs'
+import { dealsTabs } from '../tabs';
 
 import {
   Page,
@@ -17,8 +17,8 @@ import {
   LayoutWrapperTopbar,
   LayoutWrapperFooter,
   Footer,
-	Deals,
-	CorporateDeal
+  Deals,
+  CorporateDeal,
 } from '../../../components';
 import config from '../../../config';
 
@@ -27,9 +27,9 @@ import css from './CorporateDealPage.css';
 const CorporateDealPageComponent = props => {
   const { scrollingDisabled, intl } = props;
 
-	const tabs = dealsTabs(intl, 'CorporateDealPage');
+  const tabs = dealsTabs(intl, 'CorporateDealPage');
 
-	const siteTitle = config.siteTitle;
+  const siteTitle = config.siteTitle;
   const schemaTitle = intl.formatMessage({ id: 'DealsPage.schemaTitle' }, { siteTitle });
   const schema = {
     '@context': 'http://schema.org',
@@ -43,13 +43,13 @@ const CorporateDealPageComponent = props => {
           <TopbarContainer currentPage="CorporateDealPage" />
         </LayoutWrapperTopbar>
         <LayoutWrapperSideNav tabs={tabs} />
-				<LayoutWrapperHero className={css.hero}>
-					<div className={css.heroContent}>
-						<h1 className={css.heroMainTitle}>
-							<FormattedMessage id="DealsPage.title" />
-						</h1>
-					</div>
-				</LayoutWrapperHero>
+        <LayoutWrapperHero className={css.hero}>
+          <div className={css.heroContent}>
+            <h1 className={css.heroMainTitle}>
+              <FormattedMessage id="DealsPage.title" />
+            </h1>
+          </div>
+        </LayoutWrapperHero>
         <LayoutWrapperMain>
           <div className={css.content}>
             <CorporateDeal />
@@ -83,4 +83,4 @@ const CorporateDealPage = compose(
   injectIntl
 )(CorporateDealPageComponent);
 
-export default CorporateDealPage;;
+export default CorporateDealPage;

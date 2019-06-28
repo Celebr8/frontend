@@ -49,10 +49,10 @@
   /* Used with inline CSS SVGs */
   --marketplaceColorEncoded: %23ff3f00;
 
-  --successColor: #7FB800;
-  --successColorDark: #74A500;
+  --successColor: #7fb800;
+  --successColorDark: #74a500;
   --failColor: #ff3f00;
-  --attentionColor: #0C2D54;
+  --attentionColor: #0c2d54;
   --bannedColorLight: var(--marketplaceColorLight);
   --bannedColorDark: var(--marketplaceColor);
 

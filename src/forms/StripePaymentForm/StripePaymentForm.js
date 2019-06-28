@@ -166,15 +166,14 @@ class StripePaymentForm extends Component {
   }
 
   handleSubmit(event) {
+    event.preventDefault();
 
-		event.preventDefault()
-
-		const values = {
-			time: this.state.time,
-			attendance: this.state.attendance,
-			message: this.state.message,
-			occasion: this.state.occasion
-		}
+    const values = {
+      time: this.state.time,
+      attendance: this.state.attendance,
+      message: this.state.message,
+      occasion: this.state.occasion,
+    };
 
     const { intl, onSubmit, stripePaymentTokenInProgress, stripePaymentToken } = this.props;
     const initialMessage = values.initialMessage ? values.initialMessage.trim() : null;
@@ -266,7 +265,7 @@ class StripePaymentForm extends Component {
       authorDisplayName,
       showInitialMessageInput,
       intl,
-			onChange,
+      onChange,
       stripePaymentTokenInProgress,
       stripePaymentTokenError,
       invalid,

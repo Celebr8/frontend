@@ -145,8 +145,8 @@ const bookingData = (unitType, tx, isOrder, intl) => {
   const endDateRaw = dateFromAPIToLocalNoon(displayEnd || end);
   const isDaily = unitType === LINE_ITEM_DAY;
   const isUnits = unitType === LINE_ITEM_UNITS;
-	// const isSingleDay = isDaily && daysBetween(startDate, endDateRaw) === 1;
-	const isSingleDay = true;
+  // const isSingleDay = isDaily && daysBetween(startDate, endDateRaw) === 1;
+  const isSingleDay = true;
   const bookingStart = formatDate(intl, startDate);
 
   // Shift the exclusive API end date with daily bookings
@@ -158,9 +158,9 @@ const bookingData = (unitType, tx, isOrder, intl) => {
       : endDateRaw;
   const bookingEnd = formatDate(intl, endDate);
   const bookingPrice = isOrder ? tx.attributes.payinTotal : tx.attributes.payoutTotal;
-	const attendance = tx.attributes.protectedData.attendance;;
-	const occasion = tx.attributes.protectedData.occasion;;
-	const time = tx.attributes.protectedData.time;;
+  const attendance = tx.attributes.protectedData.attendance;
+  const occasion = tx.attributes.protectedData.occasion;
+  const time = tx.attributes.protectedData.time;
   const price = formatMoney(intl, bookingPrice);
   return { bookingStart, bookingEnd, price, isSingleDay, attendance, occasion, time };
 };
@@ -174,33 +174,31 @@ const BookingInfoMaybe = props => {
     return null;
   }
 
-	const { 
-		bookingStart,
-		bookingEnd,
-		price, 
-		isSingleDay, 
-		attendance, 
-		occasion, 
-		time 
-	} = bookingData(unitType, tx, isOrder, intl);
+  const { bookingStart, bookingEnd, price, isSingleDay, attendance, occasion, time } = bookingData(
+    unitType,
+    tx,
+    isOrder,
+    intl
+  );
 
   const dateInfo = isSingleDay ? bookingStart.short : `${bookingStart.short} - ${bookingEnd.short}`;
 
-	const occasionFormatted = occasion == 'birthday' ?
-		(<p>
-			<FormattedMessage id="InboxPage.occasionBirthday" />
-		</p>)
-		: null;
+  const occasionFormatted =
+    occasion == 'birthday' ? (
+      <p>
+        <FormattedMessage id="InboxPage.occasionBirthday" />
+      </p>
+    ) : null;
 
   return (
     <div className={classNames(css.bookingInfo, bookingClassName)}>
-			<p>
-				<FormattedMessage id="InboxPage.bookingFor" />
-				{attendance} 
- 	    	<FormattedMessage id="InboxPage.attendanceUnit" />
-			</p>
-			{occasionFormatted}
-			{dateInfo} <FormattedMessage id="InboxPage.timeAt" /> {time}
+      <p>
+        <FormattedMessage id="InboxPage.bookingFor" />
+        {attendance}
+        <FormattedMessage id="InboxPage.attendanceUnit" />
+      </p>
+      {occasionFormatted}
+      {dateInfo} <FormattedMessage id="InboxPage.timeAt" /> {time}
       <span className={css.itemPrice}>{price}</span>
     </div>
   );

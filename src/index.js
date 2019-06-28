@@ -34,7 +34,6 @@ import { LoggingAnalyticsHandler, GoogleAnalyticsHandler } from './analytics/han
 
 import './marketplaceIndex.css';
 
-
 const { BigDecimal } = sdkTypes;
 
 const render = (store, shouldHydrate) => {

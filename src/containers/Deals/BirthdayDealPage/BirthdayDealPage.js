@@ -6,7 +6,7 @@ import { injectIntl, intlShape, FormattedMessage } from 'react-intl';
 import { isScrollingDisabled } from '../../../ducks/UI.duck';
 import { TopbarContainer } from '../../../containers';
 
-import { dealsTabs } from '../tabs'
+import { dealsTabs } from '../tabs';
 
 import {
   Page,
@@ -17,8 +17,8 @@ import {
   LayoutWrapperTopbar,
   LayoutWrapperFooter,
   Footer,
-	Deals,
-	BirthdayDeal
+  Deals,
+  BirthdayDeal,
 } from '../../../components';
 import config from '../../../config';
 
@@ -27,9 +27,9 @@ import css from './BirthdayDealPage.css';
 const BirthdayDealPageComponent = props => {
   const { scrollingDisabled, intl } = props;
 
-	const tabs = dealsTabs(intl, 'BirthdayDealPage');
+  const tabs = dealsTabs(intl, 'BirthdayDealPage');
 
-	const siteTitle = config.siteTitle;
+  const siteTitle = config.siteTitle;
   const schemaTitle = intl.formatMessage({ id: 'DealsPage.schemaTitle' }, { siteTitle });
   const schema = {
     '@context': 'http://schema.org',
@@ -42,13 +42,13 @@ const BirthdayDealPageComponent = props => {
         <LayoutWrapperTopbar>
           <TopbarContainer currentPage="BirthdayDealPage" />
         </LayoutWrapperTopbar>
-				<LayoutWrapperHero className={css.hero}>
-					<div className={css.heroContent}>
-						<h1 className={css.heroMainTitle}>
-							<FormattedMessage id="DealsPage.title" />
-						</h1>
-					</div>
-				</LayoutWrapperHero>
+        <LayoutWrapperHero className={css.hero}>
+          <div className={css.heroContent}>
+            <h1 className={css.heroMainTitle}>
+              <FormattedMessage id="DealsPage.title" />
+            </h1>
+          </div>
+        </LayoutWrapperHero>
         <LayoutWrapperSideNav tabs={tabs} />
         <LayoutWrapperMain>
           <div className={css.content}>
@@ -83,4 +83,4 @@ const BirthdayDealPage = compose(
   injectIntl
 )(BirthdayDealPageComponent);
 
-export default BirthdayDealPage;;
+export default BirthdayDealPage;

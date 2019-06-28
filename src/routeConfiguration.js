@@ -5,36 +5,31 @@ import {
   CareersPage,
   CheckoutPage,
 
-	// Legals
-
+  // Legals
   CommunityGuidelinesPage,
   ContactDetailsPage,
   CookiePolicyPage,
   LegalsDealsPage,
   PrivacyPolicyPage,
   TermsOfServicePage,
-	
-	// Deals
 
+  // Deals
   DealsPage,
   BirthdayDealPage,
   CorporateDealPage,
-	RecommendDealPage,
+  RecommendDealPage,
 
-	// Pricing
+  // Pricing
+  BookAPartyPage,
+  ListMySpacePage,
 
-	BookAPartyPage,
-	ListMySpacePage,
-
-	// Help Center
-
-	ContactUsPage,
-	DealsHelpPage,
-	FAQPage,
-	FeesPage,
-	FirstStepsPage,
-	GuidebookForProvidersPage,
-	
+  // Help Center
+  ContactUsPage,
+  DealsHelpPage,
+  FAQPage,
+  FeesPage,
+  FirstStepsPage,
+  GuidebookForProvidersPage,
   EditListingPage,
   EmailVerificationPage,
   InboxPage,
@@ -290,108 +285,107 @@ const routeConfiguration = () => {
       component: props => <DealsPage {...props} />,
     },
     {
-			path: '/benefits/birthday-gift',
+      path: '/benefits/birthday-gift',
       name: 'BirthdayDealPage',
       component: props => <BirthdayDealPage {...props} />,
     },
     {
-			path: '/benefits/corporate-benefit',
+      path: '/benefits/corporate-benefit',
       name: 'CorporateDealPage',
       component: props => <CorporateDealPage {...props} />,
     },
     {
-			path: '/legal/benefits',
+      path: '/legal/benefits',
       name: 'LegalsDealsPage',
       component: props => <LegalsDealsPage {...props} />,
     },
     {
-			path: '/benefits/recommend-gift',
+      path: '/benefits/recommend-gift',
       name: 'RecommendDealPage',
       component: props => <RecommendDealPage {...props} />,
-
     },
     {
-			path: '/legal/terms-of-service',
+      path: '/legal/terms-of-service',
       name: 'TermsOfServicePage',
       component: props => <TermsOfServicePage {...props} />,
     },
     {
-			path: '/legal/privacy-policy',
+      path: '/legal/privacy-policy',
       name: 'PrivacyPolicyPage',
       component: props => <PrivacyPolicyPage {...props} />,
     },
     {
-			path: '/legals/inclusion',
+      path: '/legals/inclusion',
       name: 'NonDiscriminationPolicyPage',
       component: props => <NonDiscriminationPolicyPage {...props} />,
     },
     {
-			path: '/legal/cookie-policy',
+      path: '/legal/cookie-policy',
       name: 'CookiePolicyPage',
       component: props => <CookiePolicyPage {...props} />,
     },
     {
-			path: '/legal/community-guidelines',
+      path: '/legal/community-guidelines',
       name: 'CommunityGuidelinesPage',
       component: props => <CommunityGuidelinesPage {...props} />,
     },
     {
-			path: '/pricing/book-a-party',
+      path: '/pricing/book-a-party',
       name: 'BookAPartyPage',
       component: props => <BookAPartyPage {...props} />,
     },
     {
-			path: '/pricing/list-my-space',
+      path: '/pricing/list-my-space',
       name: 'ListMySpacePage',
       component: props => <ListMySpacePage {...props} />,
     },
     {
-			path: '/contact-us',
+      path: '/contact-us',
       name: 'ContactUsPage',
       component: props => <ContactUsPage {...props} />,
     },
     {
-			path: '/contact-us/:enquiry',
+      path: '/contact-us/:enquiry',
       name: 'ContactUsPageEnquiry',
       component: props => <ContactUsPage {...props} />,
     },
     {
-			path: '/help/benefits',
+      path: '/help/benefits',
       name: 'DealsHelpPage',
       component: props => <DealsHelpPage {...props} />,
     },
     {
-			path: '/help/FAQ',
+      path: '/help/FAQ',
       name: 'FAQPage',
       component: props => <FAQPage {...props} />,
     },
     {
-			path: '/help/fees',
+      path: '/help/fees',
       name: 'FeesPage',
       component: props => <FeesPage {...props} />,
     },
     {
-			path: '/help/first-step',
+      path: '/help/first-step',
       name: 'FirstStepsPage',
       component: props => <FirstStepsPage {...props} />,
     },
     {
-			path: '/help/providers-guidebook',
+      path: '/help/providers-guidebook',
       name: 'GuidebookForProvidersPage',
       component: props => <GuidebookForProvidersPage {...props} />,
     },
     {
-			path: '/help/contact-us',
+      path: '/help/contact-us',
       name: 'ContactUsPage',
       component: props => <ContactUsPage {...props} />,
     },
     {
-			path: '/legals/privacy-policy',
+      path: '/legals/privacy-policy',
       name: 'PrivacyPolicyPage',
       component: props => <PrivacyPolicyPage {...props} />,
     },
     {
-			path: '/legals/privacy-policy',
+      path: '/legals/privacy-policy',
       name: 'PrivacyPolicyPage',
       component: props => <PrivacyPolicyPage {...props} />,
     },

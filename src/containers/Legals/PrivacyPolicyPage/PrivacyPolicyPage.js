@@ -22,12 +22,11 @@ import { legalsTabs } from '../tabs';
 import css from './PrivacyPolicyPage.css';
 
 const PrivacyPolicyPageComponent = props => {
-
   const { scrollingDisabled, intl } = props;
 
-	const tabs = legalsTabs(intl, 'PrivacyPolicyPage');
+  const tabs = legalsTabs(intl, 'PrivacyPolicyPage');
 
-	const siteTitle = config.siteTitle;
+  const siteTitle = config.siteTitle;
   const schemaTitle = intl.formatMessage({ id: 'TermsOfServicePage.schemaTitle' }, { siteTitle });
   const schema = {
     '@context': 'http://schema.org',

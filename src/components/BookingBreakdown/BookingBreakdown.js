@@ -39,7 +39,7 @@ export const BookingBreakdownComponent = props => {
   });
 
   const classes = classNames(rootClassName || css.root, className);
-	/*
+  /*
 
 			<LineItemProviderCommissionMaybe
         transaction={transaction}
@@ -80,7 +80,6 @@ export const BookingBreakdownComponent = props => {
         isCustomer={isCustomer}
         intl={intl}
       />
-
 
       <hr className={css.totalDivider} />
       <LineItemTotalPrice transaction={transaction} isProvider={isProvider} intl={intl} />

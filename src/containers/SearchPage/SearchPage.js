@@ -150,7 +150,7 @@ export class SearchPageComponent extends Component {
 
     const filters = this.filters();
 
-		console.log(filters);
+    console.log(filters);
 
     // urlQueryParams doesn't contain page specific url params
     // like mapSearch, page or origin (origin depends on config.sortSearchByDistance)
@@ -263,7 +263,7 @@ SearchPageComponent.defaultProps = {
   groupSize: config.custom.groupSize,
   amenities: config.custom.amenities,
   regularlyOpenOn: config.custom.regularlyOpenOn,
-	listingTypes: config.custom.listingTypes,
+  listingTypes: config.custom.listingTypes,
   activeListingId: null,
 };
 

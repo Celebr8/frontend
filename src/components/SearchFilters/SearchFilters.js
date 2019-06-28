@@ -11,7 +11,7 @@ import {
   SelectSingleFilter,
   SelectMultipleFilter,
   PriceFilter,
-	NamedLink
+  NamedLink,
 } from '../../components';
 
 import routeConfiguration from '../../routeConfiguration';
@@ -129,7 +129,6 @@ const SearchFiltersComponent = props => {
     ? initialPriceRangeValue(urlQueryParams, priceFilter.paramName)
     : null;
 
-
   const handleSelectOptions = (urlParam, options) => {
     const queryParams =
       options && options.length > 0
@@ -196,7 +195,7 @@ const SearchFiltersComponent = props => {
       options={amenitiesFilter.options}
       initialValues={initialAmenities}
       contentPlacementOffset={FILTER_DROPDOWN_OFFSET}
-			showAsPopup
+      showAsPopup
     />
   ) : null;
 
@@ -208,7 +207,7 @@ const SearchFiltersComponent = props => {
       options={regularlyOpenOnFilter.options}
       initialValue={initialRegularlyOpenOn}
       contentPlacementOffset={FILTER_DROPDOWN_OFFSET}
-			showAsPopup
+      showAsPopup
     />
   ) : null;
 
@@ -220,7 +219,7 @@ const SearchFiltersComponent = props => {
       options={groupSizeFilter.options}
       initialValue={initialGroupSize}
       contentPlacementOffset={FILTER_DROPDOWN_OFFSET}
-			showAsPopup
+      showAsPopup
     />
   ) : null;
 
@@ -232,7 +231,7 @@ const SearchFiltersComponent = props => {
       options={listingTypeFilter.options}
       initialValue={initialListingType}
       contentPlacementOffset={FILTER_DROPDOWN_OFFSET}
-			showAsPopup
+      showAsPopup
     />
   ) : null;
 

@@ -106,16 +106,12 @@
 }
 
 .recommendDeal {
-
-	margin-top: 2em;
-	margin-left: 12.5%;
-	width: 66%;
-	font-weight: var(--fontWeightSemiBold);
-
+  margin-top: 2em;
+  margin-left: 12.5%;
+  width: 66%;
+  font-weight: var(--fontWeightSemiBold);
 }
 
 .recommendDealWrapper {
-
-	flex-direction: row;
-
+  flex-direction: row;
 }

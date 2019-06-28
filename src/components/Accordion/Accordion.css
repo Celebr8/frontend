@@ -1,19 +1,13 @@
 .header {
-
-	border: 2px solid grey;
-	padding-left: 1em;
-
+  border: 2px solid grey;
+  padding-left: 1em;
 }
 
 .content {
+  padding-left: 1em;
 
-	padding-left: 1em;
-
-	border: 2px solid grey;
-
+  border: 2px solid grey;
 }
 
 .wrapper {
-
-
 }
