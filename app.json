@@ -20,7 +20,8 @@
       "value": "EUR"
     },
     "REACT_APP_CANONICAL_ROOT_URL": {
-      "description": "Canonical root url of the marketplace. E.g. https://the-name-of-your-app.herokuapp.com or your actual domain. This is needed for social media sharing and SEO optimization."
+      "description": "Canonical root url of the marketplace. E.g. https://the-name-of-your-app.herokuapp.com or your actual domain. This is needed for social media sharing and SEO optimization.",
+			"value": "http://whichost.com"
     },
     "NODE_ENV": {
       "description": "Node env. Use 'development' for development and 'production' for production.",
@@ -62,5 +63,14 @@
       "description": "URL to reach when trying to send an email",
       "value": "https://whichost-service-message.herokuapp.com/message"
     }
+  },
+	{
+  "environments": {
+    "test": {
+      "scripts": {
+        "test": "npm test"
+      }
+    }
   }
+}
 }
