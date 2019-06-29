@@ -112,6 +112,7 @@
     "react/no-array-index-key": "warn",
     "react/sort-comp": "warn",
     "react/button-has-type": "warn",
+    "react/jsx-tag-spacing": "warn",
     "react/jsx-boolean-value": "warn",
     "react/no-unescaped-entities": "warn",
     "react/jsx-no-target-blank" : "warn",
