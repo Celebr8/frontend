@@ -115,6 +115,7 @@
     "react/jsx-tag-spacing": "warn",
     "react/jsx-boolean-value": "warn",
     "react/no-unescaped-entities": "warn",
+    "react/self-closing-comp": "warn",
     "react/jsx-no-target-blank" : "warn",
     "react/jsx-one-expression-per-line": "warn",
     "react/no-unknown-property": "warn",
