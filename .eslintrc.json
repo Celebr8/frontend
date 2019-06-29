@@ -58,6 +58,7 @@
     "no-unused-expressions": "warn",
     "no-restricted-syntax": "warn",
     "class-methods-use-this": "warn",
+    "array-callback-return": "warn",
     "react/prop-types": "warn",
     "no-console": "off",
     "no-plusplus": "warn",
