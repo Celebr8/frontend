@@ -1,23 +1,14 @@
-import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { compose } from 'redux';
+import React from 'react';
+import { FormattedMessage, injectIntl, intlShape } from 'react-intl';
 import { connect } from 'react-redux';
-import { injectIntl, intlShape, FormattedMessage } from 'react-intl';
-import { isScrollingDisabled } from '../../ducks/UI.duck';
-import { TopbarContainer } from '../../containers';
-import {
-	Page,
-	LayoutSingleColumnWithHero,
-	LayoutWrapperMain,
-	LayoutWrapperHero,
-	LayoutWrapperTopbar,
-	LayoutWrapperFooter,
-	Footer,
-	FAQ
-} from '../../components';
+import { compose } from 'redux';
+import { Footer, LayoutSingleColumnWithHero, LayoutWrapperFooter, LayoutWrapperHero, LayoutWrapperMain, LayoutWrapperTopbar, Page } from '../../components';
 import config from '../../config';
-
+import { TopbarContainer } from '../../containers';
+import { isScrollingDisabled } from '../../ducks/UI.duck';
 import css from './CareersPage.css';
+
 
 const CareersPageComponent = props => {
 
@@ -45,12 +36,12 @@ const CareersPageComponent = props => {
 				</LayoutWrapperHero>
 				<LayoutWrapperMain>
 				<section>
-					<h1>Shape the future of Whichost</h1>
-						<b>Position:</b> Frontend Engineer (Co-Founder)
+                    <h1>Shape the future of Whichost</h1>
+						{/* <b>Position:</b> Frontend Engineer (Co-Founder)
 						<br/>
 						<b>Department:</b> Founding team
 						<br/>
-						<b>Location:</b> Cork / Ireland
+						<b>Location:</b> Cork / Ireland */}
 				</section>
 				<section>
 					<br/>
@@ -66,7 +57,7 @@ const CareersPageComponent = props => {
 						<li><b>Carlos R.:</b> Industrial Engineer with 4 startups under his belt. Founded Whichost in November 2017. <a href="https://angel.co/carloswhichost" target="_blank">AngelList profile</a></li>
 					</ol>
 				</section>
-				<section>
+				{/* <section>
 					<br/>
 					<h2>Specs</h2>
 					<p>The outcome of starting a company as an entrepreneur is not binary. Building a startup is a long-term game with tons of hard work required from lots of people and the right things happening at right time hence most of the short-term thinking/judgements do not apply.</p>
@@ -114,7 +105,7 @@ const CareersPageComponent = props => {
 							</section>
 						</div>
 					</section>
-				</section>
+				</section> */}
 				</LayoutWrapperMain>
 				<LayoutWrapperFooter>
 					<Footer />
