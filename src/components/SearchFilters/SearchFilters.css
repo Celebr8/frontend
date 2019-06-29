@@ -33,6 +33,8 @@
 .noSearchResults {
   @apply --marketplaceH4FontStyles;
 
+  text-align: center;
+
   /* Reserves 48px of vertical space */
   line-height: 20px;
   margin-top: 16px;
@@ -115,7 +117,30 @@
 }
 
 .recommendDealWrapper {
-
 	flex-direction: row;
-
 }
+
+.guideWrap{
+  margin: 5rem auto;
+  max-width: 600px;
+  text-align: left;
+}
+
+.findOutMore {
+  cursor: pointer;
+  padding: 9px 16px 10px 16px;
+  border-radius: 4px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: #fff;
+  background: var(--marketplaceColor);
+  border: 1px solid var(--marketplaceColor);
+}
+
+.findOutMore:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--marketplaceColorDark);
+  text-decoration: none;
+}
+

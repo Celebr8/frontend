@@ -64,7 +64,6 @@
       "value": "https://whichost-service-message.herokuapp.com/message"
     }
   },
-	{
   "environments": {
     "test": {
       "scripts": {
@@ -72,5 +71,4 @@
       }
     }
   }
-}
 }
