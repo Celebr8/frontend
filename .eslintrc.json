@@ -83,6 +83,7 @@
     "no-unneeded-ternary": "off",
     "no-irregular-whitespace": "off",
     "no-useless-escape": "off",
+    "no-extra-boolean-cast": "warn",
     "import/no-useless-path-segments": "off",
     "import/named": "off",
     "import/extensions": "warn",
