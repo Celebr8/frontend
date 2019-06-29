@@ -28,13 +28,6 @@ export const EditListingRegularlyOpenOnFormComponent = props => (
         fetchErrors,
       } = fieldRenderProps;
 
-      const rulesLabelMessage = intl.formatMessage({
-        id: 'EditListingRegularlyOpenOnForm.rulesLabel',
-      });
-      const rulesPlaceholderMessage = intl.formatMessage({
-        id: 'EditListingRegularlyOpenOnForm.rulesPlaceholder',
-      });
-
       const { updateListingError, showListingsError } = fetchErrors || {};
       const errorMessage = updateListingError ? (
         <p className={css.error}>

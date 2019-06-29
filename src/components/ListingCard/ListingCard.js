@@ -54,19 +54,11 @@ export const ListingCardComponent = props => {
   const firstImage =
     currentListing.images && currentListing.images.length > 0 ? currentListing.images[0] : null;
 
-	const listingTypeTranslation = listingType == 'common'? 'ListingCard.commonSpace' : 'ListingCard.privateSpace';
-
-  const { formattedPrice, priceTitle } = priceData(price, intl);
+	const listingTypeTranslation = listingType === 'common'? 'ListingCard.commonSpace' : 'ListingCard.privateSpace';
 
   const unitType = config.bookingUnitType;
   const isNightly = unitType === LINE_ITEM_NIGHT;
   const isDaily = unitType === LINE_ITEM_DAY;
-
-  const unitTranslationKey = isNightly
-    ? 'ListingCard.perNight'
-    : isDaily
-    ? 'ListingCard.perDay'
-    : 'ListingCard.perUnit';
 
   return (
     <NamedLink className={classes} name="ListingPage" params={{ id, slug }}>

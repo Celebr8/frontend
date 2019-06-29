@@ -1,6 +1,5 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
@@ -19,13 +18,8 @@ TabContainer.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-const styles = {
-  root: {
-    flexGrow: 1,
-  },
-};
 
-const ItemOnePleaseChangeMyName = () => (
+const  = () => (
 	<TabContainer>
   <h2>We know more about you than you think.</h2>
   <p>Don't worry. We're to busy and we're serious enough not to stalk you, but here's what we definitely know:
@@ -44,22 +38,20 @@ const ItemOnePleaseChangeMyName = () => (
       <li>Create a profile by clicking on <a href="https://www.whichost.com/signup" target="_blank">Sign up</a>;</li>
       <li>Enter the needed information and click on the button "Sign up";</li>
       <li>Check your emails and click on the verification link to verify your account. We want to be sure you've entered the correct email addres;</li>
-      <li><a href="https://www.whichost.com/s?address=Ireland&bounds=55.36%2C-5.911%2C51.427%2C-10.382&origin=53.357%2C-7.756" target="_blank">Browse pubs</a> to find the perfect pub for your occasion;</li>
+      <li><a href="https://www.whichost.com/s?address=Ireland&bounds=55.36%2C-5.911%2C51.427%2C-10.382&origin=53.357%2C-7.756">Browse pubs</a> to find the perfect pub for your occasion;</li>
       <li>Read the details of the pub listing and contact the pub over the highlighted "Contact" button underneath the title of the listing, in case you have querstions for the publican, before you book;</li>
       <li>When you're ready to book, click on "Request to book" on the listing page;</li>
       <li>Done;</li>
-      <li><i>(optional)</i><a href="https://www.whichost.com/help/contact-us" target="_blank"> Contact us</a> in case you have further questions.</li>
+			<li><i>(optional)</i>
+				<NamedName name="ContactUsPage">Contact us</NamedName> in case you have further questions.</li>
     </ol>
-    <br/>
     <h2>Is your birthday coming up?</h2>
-    <p>Happy birthday! We have a great gift for you! Check out our <a href="https://www.whichost.com/birthday-deal" target="_blank">Birthday Deal</a> page and have a great time on us! <i>(T&Cs apply)</i></p>
-    <br/>
+    <p>Happy birthday! We have a great gift for you! Check out our <NamedLink name="BirthdayDealPage">Birthday Deal</NamedLink> page and have a great time on us! <i>(T&Cs apply)</i></p>
     <h2>Are you part of a corporation? Reward your colleagues!</h2>
-    <p>We have a great deal for your corporation! Check out our <a href="https://www.whichost.com/employees-benefit" target="_blank">Corporate Benefit</a> page and reward your employees and colleagues now! <i>(T&Cs apply)</i></p>
-    <br/>
+    <p>We have a great deal for your corporation! Check out our <NamedLink name="CorporateDealPage">Corporate Benefit</NamedLink> page and reward your employees and colleagues now! <i>(T&Cs apply)</i></p>
     <h2>Contact us. We're here to help.</h2>
-    <p>If you're ready to start saving time but you still have questions that are not covered by our <a href="https://www.whichost.com/help/faq" target="_blank">help center</a>, we invite you to <a href="https://www.whichost.com/help/contact-us" target="_blank">contact us</a> and we'll assist you personally.</p>
-    <br/>
+		<p>If you're ready to start saving time but you still have questions that are not
+			covered by our <NamedLink name="FAQPage">help center</NamedLink>, we invite you to <NamedLink name="ContactUsPage">contact us</NamedLink> and we'll assist you personally.</p>
 	</TabContainer>
 )
 
@@ -73,11 +65,11 @@ const ItemTwoPleaseChangeMyName = () => (
       <li>Create a profile by clicking on <a href="https://www.whichost.com/signup" target="_blank">Sign up</a>;</li>
       <li>Enter the needed information and click on the button "Sign up";</li>
       <li>Check your emails and click on the verification link to verify your account. We want to be sure you've entered the correct email addres;</li>
-      <li>Click on <a href="https://www.whichost.com/l/new" target="_blank">+ Add your pub</a>;</li>
+      <li>Click on <a href="https://www.whichost.com/l/new">+ Add your pub</a>;</li>
       <li>Add content to your new listing by following the steps on the page;</li>
       <li>Share your new listing on social media platforms by using the link in the browser;</li>
       <li>Done;</li>
-      <li><i>(optional)</i><a href="https://www.whichost.com/help/contact-us" target="_blank"> Contact us</a> in case you have further questions.</li>
+      <li><i>(optional)</i><NamedLink name="ContactUsPage"> Contact us</NamedLink> in case you have further questions.</li>
     </ol>
   </p>
   <br/>
@@ -92,7 +84,7 @@ const ItemTwoPleaseChangeMyName = () => (
   </p>
   <br/>
   <h2>Contact us. We're here to help.</h2>
-  <p>If you're ready to start but you still have questions that are not covered by our <a href="https://www.whichost.com/help/faq" target="_blank">help center</a>, we invite you to <a href="https://www.whichost.com/help/contact-us" target="_blank">contact us</a> and we'll assist you personally.</p>
+  <p>If you're ready to start but you still have questions that are not covered by our <NamedLink name="FAQPage">help center</NamedLink>, we invite you to <NamedLink name="ContactUsPages">contact us</NamedLink> and we'll assist you personally.</p>
   <br/>
   </TabContainer>
 )
@@ -119,8 +111,8 @@ class FirstStepsTabs extends React.Component {
     const { classes } = this.props;
 
 		const tabs = {
-			0: <ItemOnePleaseChangeMyName />,
-			1: <ItemTwoPleaseChangeMyName />
+			0: <forUser />,
+			1: <forProvider />
 		}
 
 		const selectedTab = tabs[this.state.value];

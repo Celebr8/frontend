@@ -389,7 +389,7 @@ export class ListingPageComponent extends Component {
         </span>
       ) : null;
 
-		const timeSlotsAdjusted = publicData.type == 'common' ? 
+		const timeSlotsAdjusted = publicData.type === 'common' ? 
 			freeTimeSlots() :
 			timeSlots;
 

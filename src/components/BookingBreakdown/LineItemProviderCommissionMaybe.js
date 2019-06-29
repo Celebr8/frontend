@@ -23,15 +23,9 @@ const isValidCommission = commissionLineItem => {
 const LineItemProviderCommissionMaybe = props => {
   const { transaction, isProvider, intl } = props;
 
-	console.log('finding providerCommissionLineItem')
-	console.log(transaction)
-
   const providerCommissionLineItem = transaction.attributes.lineItems.find(
     item => item.code === LINE_ITEM_PROVIDER_COMMISSION && !item.reversal
   );
-
-	console.log('what I found')
-	console.log(providerCommissionLineItem)
 
   // If commission is passed it will be shown as a fee already reduces from the total price
   let commissionItem = null;
@@ -39,7 +33,6 @@ const LineItemProviderCommissionMaybe = props => {
   if (isProvider) {
     if (!isValidCommission(providerCommissionLineItem)) {
       // eslint-disable-next-line no-console
-      console.error('invalid commission line item:', providerCommissionLineItem);
       throw new Error('Commission should be present and the value should be zero or negative');
     }
 

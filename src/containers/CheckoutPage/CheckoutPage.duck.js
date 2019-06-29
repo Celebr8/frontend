@@ -9,7 +9,7 @@ import { fetchCurrentUserHasOrdersSuccess } from '../../ducks/user.duck';
 // ================ Process alias ================ //
 
 const processAliasDecide = (listingType) => 
-	listingType == 'common' ? 
+	listingType === 'common' ? 
 		config.bookingProcessAliasCommon : 
 		config.bookingProcessAliasPrivate;
 

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { array, bool, func, number, oneOf, object, shape, string } from 'prop-types';
+import { array, bool, func, oneOf, object, shape, string } from 'prop-types';
 import { injectIntl, intlShape } from 'react-intl';
 import { connect } from 'react-redux';
 import { compose } from 'redux';

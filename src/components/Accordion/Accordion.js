@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 
 import css from './Accordion.css';
 
@@ -26,7 +25,7 @@ export default class Accordion extends Component {
 
 		const {
 			toggle,
-			props: { children, title },
+			props,
 			state: { opened }
 		} = this;
 

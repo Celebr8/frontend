@@ -139,9 +139,6 @@ export class CheckoutPageComponent extends Component {
       dispatch,
     } = this.props;
 
-		// The transaction type have to be known here, to be passed to sendOrderRequest
-
-		const listingType = this.state.pageData.listing.attributes.publicData.type || 'common';
 
     // Create order aka transaction
     // NOTE: if unit type is line-item/units, quantity needs to be added.
@@ -391,8 +388,6 @@ export class CheckoutPageComponent extends Component {
     );
 
     const unitType = config.bookingUnitType;
-    const isNightly = unitType === LINE_ITEM_NIGHT;
-    const isDaily = unitType === LINE_ITEM_DAY;
 
     const price = currentListing.attributes.price;
     const formattedPrice = formatMoney(intl, price);

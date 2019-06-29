@@ -1,12 +1,11 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
-import { PropertyGroup } from '../../components';
 
 import css from './ListingPage.css';
 
 const SectionType = props => {
   const { listingType } = props;
-	const listingTypeFormatted = listingType == 'common' ? 
+	const listingTypeFormatted = listingType === 'common' ? 
 		<FormattedMessage id="ListingPage.listingTypeCommon" /> :
 		<FormattedMessage id="ListingPage.listingTypePrivate" />;
 		

@@ -1,6 +1,5 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
@@ -17,12 +16,6 @@ function TabContainer(props) {
 
 TabContainer.propTypes = {
   children: PropTypes.node.isRequired,
-};
-
-const styles = {
-  root: {
-    flexGrow: 1,
-  },
 };
 
 const PubFeesTab = () => (
@@ -93,7 +86,6 @@ class FeesTabs extends React.Component {
 	}
 
   render() {
-    const { classes } = this.props;
 
 		const tabs = {
 			0: <PubFeesTab />,

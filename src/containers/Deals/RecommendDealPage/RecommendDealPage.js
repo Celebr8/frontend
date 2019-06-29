@@ -17,7 +17,6 @@ import {
   LayoutWrapperTopbar,
   LayoutWrapperFooter,
   Footer,
-	Deals,
 	RecommendDeal
 } from '../../../components';
 import config from '../../../config';

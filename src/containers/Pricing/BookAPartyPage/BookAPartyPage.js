@@ -3,14 +3,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
-import { injectIntl, intlShape, FormattedMessage } from 'react-intl';
+import { injectIntl, intlShape } from 'react-intl';
 import { isScrollingDisabled } from '../../../ducks/UI.duck';
 import { TopbarContainer } from '../../../containers';
 import {
 	Page,
 	LayoutSingleColumn,
 	LayoutWrapperMain,
-	LayoutWrapperSideNav,
 	LayoutWrapperTopbar,
 	LayoutWrapperFooter,
 	Footer,

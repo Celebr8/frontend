@@ -4,13 +4,16 @@ import { array, bool, func, number, object, objectOf, string } from 'prop-types'
 import React, { Component } from 'react';
 import { FormattedMessage } from 'react-intl';
 import infoIcon from '../../assets/info-circle.svg';
-import { SearchFilters, SearchFiltersMobile, SearchFiltersPanel, SearchResultsPanel } from '../../components';
+import {
+  SearchFilters,
+  SearchFiltersMobile,
+  SearchFiltersPanel,
+  SearchResultsPanel,
+} from '../../components';
 import config from '../../config';
 import { propTypes } from '../../util/types';
 import css from './SearchPage.css';
 import { validFilterParams } from './SearchPage.helpers';
-
-
 
 class MainPanel extends Component {
   constructor(props) {
@@ -130,16 +133,20 @@ class MainPanel extends Component {
               setActiveListing={onActivateListing}
             />
             <div className={css.search_end_message}>
-                <img className={css.search_end_message__icon} src={`${config.canonicalRootURL}${infoIcon}`}/>
-                <div>
-                    <div className={css.search_end_message__title} >
-                        <FormattedMessage id="SearchResultsPanel.endTitle" />
-                    </div>
-                    <div className={css.search_end_message__text} >
-                        <FormattedMessage id="SearchResultsPanel.endMessage" />
-                        <a href="/benefits/recommend-gift">Find out more</a>
-                    </div>
+              <img
+                alt="Nothing more"
+                className={css.search_end_message__icon}
+                src={`${config.canonicalRootURL}${infoIcon}`}
+              />
+              <div>
+                <div className={css.search_end_message__title}>
+                  <FormattedMessage id="SearchResultsPanel.endTitle" />
                 </div>
+                <div className={css.search_end_message__text}>
+                  <FormattedMessage id="SearchResultsPanel.endMessage" />
+                  <a href="/benefits/recommend-gift">Find out more</a>
+                </div>
+              </div>
             </div>
           </div>
         )}

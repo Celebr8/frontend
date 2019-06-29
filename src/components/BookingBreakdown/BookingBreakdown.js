@@ -16,10 +16,8 @@ import LineItemUnitPriceMaybe from './LineItemUnitPriceMaybe';
 import LineItemBookingPeriod from './LineItemBookingPeriod';
 import LineItemUnitsMaybe from './LineItemUnitsMaybe';
 import LineItemSubTotalMaybe from './LineItemSubTotalMaybe';
-import LineItemCustomerCommissionMaybe from './LineItemCustomerCommissionMaybe';
 import LineItemCustomerCommissionRefundMaybe from './LineItemCustomerCommissionRefundMaybe';
 import LineItemProviderCommissionMaybe from './LineItemProviderCommissionMaybe';
-import LineItemProviderCommissionRefundMaybe from './LineItemProviderCommissionRefundMaybe';
 import LineItemRefundMaybe from './LineItemRefundMaybe';
 import LineItemTotalPrice from './LineItemTotalPrice';
 import LineItemUnknownItemsMaybe from './LineItemUnknownItemsMaybe';
@@ -39,20 +37,6 @@ export const BookingBreakdownComponent = props => {
   });
 
   const classes = classNames(rootClassName || css.root, className);
-	/*
-
-			<LineItemProviderCommissionMaybe
-        transaction={transaction}
-        isProvider={isProvider}
-        intl={intl}
-      />
-      <LineItemProviderCommissionRefundMaybe
-        transaction={transaction}
-        isProvider={isProvider}
-        intl={intl}
-      />
-
-	*/
 
   return (
     <div className={classes}>

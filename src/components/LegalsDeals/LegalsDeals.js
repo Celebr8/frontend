@@ -41,7 +41,7 @@ const LegalsDeals = props => {
 				<li>201+ people - € 200.00</li>
 			</ul>
 			<ol>
-				<li>Whichost will add an extra €10.00 to the One4all Gift Card if the user has the party at a pub that they recommended to us*. The user can recommend a pub at any time by <a href="https://docs.google.com/forms/d/e/1FAIpQLSfr2dEghUT1VF1i9BWPsvZIJpnHe2FPVmCuoHJaAR3AXDe_GA/viewform" target="_blank">clicking here</a>.
+				<li>Whichost will add an extra €10.00 to the One4all Gift Card if the user has the party at a pub that they recommended to us*. The user can recommend a pub at any time by <NamedLink name="ContactUsPage" params={{enquiry: 'recommandAPub'}}>clicking here</NamedLink>.
 					<ol>
 						<li>This is valid for recommendations of pubs not already listed on Whichost.</li>
 						<li>The user that recommended the pub must be the same one that books it through Whichost and celebrates their party there.</li>
@@ -161,7 +161,7 @@ const LegalsDeals = props => {
 			</ul>
 
 			<ol>
-				<li>Whichost will add an extra €10.00 to the One4all Gift Card if you have the party at a pub that you recommended to us*. You can recommend a pub at any time by <a href="https://docs.google.com/forms/d/e/1FAIpQLSfr2dEghUT1VF1i9BWPsvZIJpnHe2FPVmCuoHJaAR3AXDe_GA/viewform" target="_blank">clicking here</a>.
+				<li>Whichost will add an extra €10.00 to the One4all Gift Card if you have the party at a pub that you recommended to us*. You can recommend a pub at any time by <NamedLink name="ContactUsPage" params={{ enquiry: 'recommandAPub' }}>clicking here</a>.
 					<ol>
 						<li>This is valid for recommendations of pubs not already listed on Whichost.</li>
 						<li>The person that recommended the pub must be the same one that books it through Whichost and celebrates their party there.</li>
@@ -210,7 +210,7 @@ const LegalsDeals = props => {
 			</ul>
 
 			<ol>
-				<li>Whichost will add an extra €10.00 to the One4all Gift Card if you have the party at a pub that you recommended to us*. You can recommend a pub at any time by <a href="https://docs.google.com/forms/d/e/1FAIpQLSfr2dEghUT1VF1i9BWPsvZIJpnHe2FPVmCuoHJaAR3AXDe_GA/viewform" target="_blank">clicking here</a>.
+				<li>Whichost will add an extra €10.00 to the One4all Gift Card if you have the party at a pub that you recommended to us*. You can recommend a pub at any time by <NamedLink name="ContactUsPage" name={{enquiry: 'recommandAPub'}}>clicking here</NamedLink>.
 					<ol>
 						<li>This is valid for recommendations of pubs not already listed on Whichost.</li>
 						<li>The person that recommended the pub must be the same one that books it through Whichost and celebrates their party there.</li>
@@ -256,7 +256,7 @@ const LegalsDeals = props => {
 			<p>
       <ol>
         <li>The Whichost Recommend Reward is currently available only for Ireland and the UK.</li>
-        <li>By having the party through Whichost at a pub that you recommend us, you will get a One4all Gift Card for the value of €15 which you can use in over 2,000 shops. You can recommend a pub at any time by <a href="https://docs.google.com/forms/d/e/1FAIpQLSfr2dEghUT1VF1i9BWPsvZIJpnHe2FPVmCuoHJaAR3AXDe_GA/viewform" target="_blank">clicking here</a>.
+        <li>By having the party through Whichost at a pub that you recommend us, you will get a One4all Gift Card for the value of €15 which you can use in over 2,000 shops. You can recommend a pub at any time by <NamedLink name="ContactUsPage" params={{enquiry: 'recommandAPub'}}>clicking here</NamedLink>.
           <ol>
             <li>This is valid for recommendations of pubs not already listed on Whichost.</li>
             <li>The person that recommended the pub must be the same one that books it through Whichost and celebrates their party there.</li>

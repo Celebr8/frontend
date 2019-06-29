@@ -112,6 +112,7 @@ const Footer = props => {
                   <a
                     href="https://docs.google.com/forms/d/e/1FAIpQLSfIG7NR-ixq6CFydZ_955OyNyhI1-1iS4UfkRdV7knFxnFlqA/viewform"
                     target="_blank"
+										rel="noopener noreferrer"
                     className={css.link}
                   >
                     Invite a friend
@@ -154,6 +155,7 @@ const Footer = props => {
                   <NamedLink
                     name="GuidebookForProvidersPage"
                     target="_blank"
+										rel="noopener noreferrer"
                     className={css.link}
                   >
                     Guidebook
@@ -170,22 +172,22 @@ const Footer = props => {
                   <a
                     href="https://docs.google.com/forms/d/e/1FAIpQLSfIG7NR-ixq6CFydZ_955OyNyhI1-1iS4UfkRdV7knFxnFlqA/viewform"
                     target="_blank"
+										rel="noopener noreferrer"
                     className={css.link}
                   >
                     Invite a friend
                   </a>
                 </li>
                 <li key="recommendAPub" className={css.listItem}>
-                  <a
-                    href="https://docs.google.com/forms/d/e/1FAIpQLSejVl35N8A1lu_W99QkvovqLXn1ODOKBp35NZ524XHJnpdOeg/viewform"
-                    target="_blank"
-                    className={css.link}
+                  <NamedLink
+										name="ContactUsPage" 
+										params={{enquiry: 'recommandAPub'}}
                   >
                     Recommend a pub
-                  </a>
+                  </NamedLink>
                 </li>
                 <li key="guidelines" className={css.listItem}>
-                  <NamedLink name="CommunityGuidelinesPage" target="_blank" className={css.link}>
+                  <NamedLink name="CommunityGuidelinesPage" className={css.link}>
                     <FormattedMessage id="Footer.toCommunityGuidelines" />
                   </NamedLink>
                 </li>

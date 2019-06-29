@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 import config from '../../config';
-import IconLogo from './IconLogo';
 import LogoImage from './whichost-logo.png';
 import LogoImageMobile from './whichost-logo-mobile.png';
 import css from './Logo.css';
@@ -16,7 +15,7 @@ const Logo = props => {
     return <img className={className} src={LogoImage} alt={config.siteTitle} {...rest} />;
   }
 
-	return <img src={LogoImageMobile} classname={mobileClasses} {...rest} /> 
+	return <img src={LogoImageMobile} alt={config.siteTitle} classname={mobileClasses} {...rest} /> 
 };
 
 const { oneOf, string } = PropTypes;

@@ -450,7 +450,6 @@ class LocationAutocompleteInputImpl extends Component {
       inputClassName,
       predictionsClassName,
       predictionsAttributionClassName,
-      validClassName,
       placeholder,
       input,
       meta,

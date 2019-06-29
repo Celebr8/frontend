@@ -21,12 +21,6 @@ const SectionHeading = props => {
   const isNightly = unitType === LINE_ITEM_NIGHT;
   const isDaily = unitType === LINE_ITEM_DAY;
 
-  const unitTranslationKey = isNightly
-    ? 'ListingPage.perNight'
-    : isDaily
-    ? 'ListingPage.perDay'
-    : 'ListingPage.perUnit';
-
   return (
     <div className={css.sectionHeading}>
       <div className={css.desktopPriceContainer}>

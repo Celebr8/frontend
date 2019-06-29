@@ -20,7 +20,6 @@ import {
   LayoutWrapperTopbar,
   LayoutWrapperFooter,
   Footer,
-  ContactUs,
 } from '../../../components';
 
 import config from '../../../config';

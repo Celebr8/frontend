@@ -12,8 +12,6 @@ import {
   Form,
   PrimaryButton,
   ExpandingTextarea,
-  FieldTextInput,
-  FieldSelect,
   NamedLink,
 } from '../../components';
 import * as log from '../../util/log';
@@ -264,7 +262,6 @@ class StripePaymentForm extends Component {
       formId,
       paymentInfo,
       authorDisplayName,
-      showInitialMessageInput,
       intl,
 			onChange,
       stripePaymentTokenInProgress,

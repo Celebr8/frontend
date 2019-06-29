@@ -5,8 +5,7 @@ import { Form as FinalForm } from 'react-final-form';
 import { FormattedMessage, intlShape, injectIntl } from 'react-intl';
 import classNames from 'classnames';
 import moment from 'moment';
-import { required, bookingDatesRequired, composeValidators } from '../../util/validators';
-import { START_DATE, END_DATE } from '../../util/dates';
+import { required } from '../../util/validators';
 import { propTypes } from '../../util/types';
 import config from '../../config';
 import { Form, PrimaryButton, FieldDateInput } from '../../components';
@@ -86,9 +85,6 @@ export class BookingDatesFormComponent extends Component {
             id: 'BookingDatesForm.bookingStartTitle',
           });
           const requiredMessage = intl.formatMessage({ id: 'BookingDatesForm.requiredDate' });
-          const dateErrorMessage = intl.formatMessage({
-            id: 'FieldDateInput.invalidDate',
-          });
 
           const timeSlotsError = fetchTimeSlotsError ? (
             <p className={css.timeSlotsError}>
@@ -127,10 +123,6 @@ export class BookingDatesFormComponent extends Component {
 
           const now = moment();
           const today = now.startOf('day').toDate();
-          const tomorrow = now
-            .startOf('day')
-            .add(1, 'days')
-            .toDate();
           const DatePlaceholderText =
             DatePlaceholder || intl.formatDate(today, dateFormatOptions);
           const submitButtonClasses = classNames(

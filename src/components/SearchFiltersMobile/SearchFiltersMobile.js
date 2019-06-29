@@ -145,7 +145,6 @@ class SearchFiltersMobileComponent extends Component {
       amenitiesFilter,
       groupSizeFilter,
       regularlyOpenOnFilter,
-      priceFilter,
       intl,
     } = this.props;
 

@@ -1,5 +1,4 @@
 import React from 'react';
-import { FormattedMessage } from 'react-intl';
 import config from '../../config';
 import { twitterPageURL } from '../../util/urlHelpers';
 import { StaticPage, TopbarContainer } from '../../containers';
@@ -38,7 +37,7 @@ const AboutPage = () => {
 
         <LayoutWrapperMain className={css.staticPageWrapper}>
           <h1 className={css.pageTitle}>About our Whichost Community</h1>
-          <img className={css.coverImage} src={image} alt="Whichost image celebrate anywhere." />
+          <img className={css.coverImage} src={image} alt="Whichost celebrate anywhere." />
 
           <div className={css.contentWrapper}>
             <div className={css.contentSide}>

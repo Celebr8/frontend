@@ -52,9 +52,9 @@ const CareersPageComponent = props => {
 					<p>Your responsibilities will be define together with the team, once you are selected!</p>
 					<br/>
 					<ol><p>Meet the Whichost team:</p>
-						<li><b>Loic C.:</b> Frontend Engineer with a major in Psychology. Joined Whichost in November 2018. <a href="https://angel.co/loic-coenen" target="_blank">AngelList profile</a></li>
-						<li><b>Radu S.:</b> Electrical Engineer with 3 startups under his belt. Joined Whichost in July 2018. <a href="https://angel.co/radu-sighencea" target="_blank">AngelList profile</a></li>
-						<li><b>Carlos R.:</b> Industrial Engineer with 4 startups under his belt. Founded Whichost in November 2017. <a href="https://angel.co/carloswhichost" target="_blank">AngelList profile</a></li>
+						<li><b>Loic C.:</b> Frontend Engineer with a major in Psychology. Joined Whichost in November 2018. <a href="https://angel.co/loic-coenen" target="_blank" rel="noopener noreferrer">AngelList profile</a></li>
+						<li><b>Radu S.:</b> Electrical Engineer with 3 startups under his belt. Joined Whichost in July 2018. <a href="https://angel.co/radu-sighencea" target="_blank" rel="noopener noreferrer">AngelList profile</a></li>
+						<li><b>Carlos R.:</b> Industrial Engineer with 4 startups under his belt. Founded Whichost in November 2017. <a href="https://angel.co/carloswhichost" target="_blank" rel="noopener noreferrer">AngelList profile</a></li>
 					</ol>
 				</section>
 				{/* <section>

@@ -27,9 +27,6 @@ import EditListingWizardTab, {
 } from './EditListingWizardTab';
 import css from './EditListingWizard.css';
 
-// Show availability calendar only if environment variable availabilityEnabled is true
-const availabilityMaybe = config.enableAvailability ? [AVAILABILITY] : [];
-
 // TODO: PHOTOS panel needs to be the last one since it currently contains PayoutDetailsForm modal
 // All the other panels can be reordered.
 export const TABS = [DESCRIPTION, FEATURES, CAPACITY, REGULARLY_OPEN_ON, POLICY, LOCATION, PRICING, PHOTOS];

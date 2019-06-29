@@ -27,8 +27,6 @@ class LocationAutocompleteInputComponent extends Component {
       </label>
     ) : null;
 
-    const hasError = !!(touched && invalid && error);
-
     return (
       <div className={rootClassName}>
         {labelInfo}
