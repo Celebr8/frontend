@@ -84,6 +84,7 @@
     "no-irregular-whitespace": "off",
     "no-useless-escape": "off",
     "no-extra-boolean-cast": "warn",
+    "no-case-declarations": "warn",
     "import/no-useless-path-segments": "off",
     "import/named": "off",
     "import/extensions": "warn",
