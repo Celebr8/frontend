@@ -1,5 +1,4 @@
 {
-  "plugins": ["prettier", "react"],
   "extends": [
     "airbnb",
     "prettier",
@@ -10,16 +9,25 @@
     "eslint-config-prettier"
   ],
   "root": true,
+  "parser": "babel-eslint",
   "parserOptions": {
-    "parser": "babel-eslint",
     "sourceType": "module",
     "allowImportExportEverywhere": true,
-  "ecmaVersion": 6,
+  "ecmaVersion": 9,
   "ecmaFeatures": {
       "jsx": true,
       "modules": true,
       "experimentalObjectRestSpread": true
     }
+  },
+  "plugins": [
+    "prettier",
+    "react",
+    "babel",
+    "import"
+  ],
+  "settings": {
+    "import/parser": "babel-eslint"
   },
   "env": {
     "browser": true,
