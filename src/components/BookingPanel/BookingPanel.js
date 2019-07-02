@@ -9,7 +9,7 @@ import { Button, ModalInMobile } from '../../components';
 import config from '../../config';
 import { BookingDatesForm } from '../../forms';
 import { formatMoney } from '../../util/currency';
-import { LINE_ITEM_DAY, LINE_ITEM_NIGHT, LISTING_STATE_CLOSED, propTypes } from '../../util/types';
+import { LISTING_STATE_CLOSED, propTypes } from '../../util/types';
 import { parse, stringify } from '../../util/urlHelpers';
 import css from './BookingPanel.css';
 
@@ -79,9 +79,6 @@ const BookingPanel = props => {
     : showClosedListingHelpText
     ? intl.formatMessage({ id: 'BookingPanel.subTitleClosedListing' })
     : null;
-
-  const isNightly = unitType === LINE_ITEM_NIGHT;
-  const isDaily = unitType === LINE_ITEM_DAY;
 
   const classes = classNames(rootClassName || css.root, className);
   const titleClasses = classNames(titleClassName || css.bookingTitle);

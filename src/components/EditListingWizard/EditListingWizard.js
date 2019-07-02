@@ -3,7 +3,6 @@ import { array, bool, func, number, object, oneOf, shape, string } from 'prop-ty
 import { compose } from 'redux';
 import { FormattedMessage, injectIntl, intlShape } from 'react-intl';
 import classNames from 'classnames';
-import config from '../../config';
 import { withViewport } from '../../util/contextHelpers';
 import {
   LISTING_PAGE_PARAM_TYPE_DRAFT,

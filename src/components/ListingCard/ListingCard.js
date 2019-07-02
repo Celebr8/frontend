@@ -3,36 +3,15 @@ import { string, func } from 'prop-types';
 import { FormattedMessage, intlShape, injectIntl } from 'react-intl';
 import classNames from 'classnames';
 import { lazyLoadWithDimensions } from '../../util/contextHelpers';
-import { LINE_ITEM_DAY, LINE_ITEM_NIGHT, propTypes } from '../../util/types';
-import { formatMoney } from '../../util/currency';
+import { propTypes } from '../../util/types';
 import { ensureListing, ensureUser } from '../../util/data';
 import { richText } from '../../util/richText';
 import { createSlug } from '../../util/urlHelpers';
-import config from '../../config';
 import { NamedLink, ResponsiveImage } from '../../components';
 
 import css from './ListingCard.css';
 
 const MIN_LENGTH_FOR_LONG_WORDS = 10;
-
-const priceData = (price, intl) => {
-  if (price && price.currency === config.currency) {
-    const formattedPrice = formatMoney(intl, price);
-    return { formattedPrice, priceTitle: formattedPrice };
-  } else if (price) {
-    return {
-      formattedPrice: intl.formatMessage(
-        { id: 'ListingCard.unsupportedPrice' },
-        { currency: price.currency }
-      ),
-      priceTitle: intl.formatMessage(
-        { id: 'ListingCard.unsupportedPriceTitle' },
-        { currency: price.currency }
-      ),
-    };
-  }
-  return {};
-};
 
 class ListingImage extends Component {
   render() {
@@ -42,11 +21,11 @@ class ListingImage extends Component {
 const LazyImage = lazyLoadWithDimensions(ListingImage, { loadAfterInitialRendering: 3000 });
 
 export const ListingCardComponent = props => {
-  const { className, rootClassName, intl, listing, renderSizes, setActiveListing } = props;
+  const { className, rootClassName, listing, renderSizes, setActiveListing } = props;
   const classes = classNames(rootClassName || css.root, className);
   const currentListing = ensureListing(listing);
   const id = currentListing.id.uuid;
-  const { title = '', price } = currentListing.attributes;
+  const { title = '' } = currentListing.attributes;
   const listingType = currentListing.attributes.publicData.type;
   const slug = createSlug(title);
   const author = ensureUser(listing.author);
@@ -56,10 +35,6 @@ export const ListingCardComponent = props => {
 
   const listingTypeTranslation =
     listingType === 'common' ? 'ListingCard.commonSpace' : 'ListingCard.privateSpace';
-
-  const unitType = config.bookingUnitType;
-  const isNightly = unitType === LINE_ITEM_NIGHT;
-  const isDaily = unitType === LINE_ITEM_DAY;
 
   return (
     <NamedLink className={classes} name="ListingPage" params={{ id, slug }}>

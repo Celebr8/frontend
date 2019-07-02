@@ -18,7 +18,6 @@ export default class Accordion extends Component {
   render() {
     const {
       toggle,
-      props,
       state: { opened },
     } = this;
 

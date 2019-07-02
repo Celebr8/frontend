@@ -260,8 +260,6 @@ class StripePaymentForm extends Component {
       onChange,
       stripePaymentTokenInProgress,
       stripePaymentTokenError,
-      invalid,
-      handleSubmit,
     } = formRenderProps;
 
     const submitInProgress = stripePaymentTokenInProgress || inProgress;
@@ -340,11 +338,6 @@ class StripePaymentForm extends Component {
     const messageOptionalText = intl.formatMessage({
       id: 'StripePaymentForm.messageOptionalText',
     });
-
-    const initialMessageLabel = intl.formatMessage(
-      { id: 'StripePaymentForm.messageLabel' },
-      { messageOptionalText: messageOptionalText }
-    );
 
     return (
       <Form className={classes} onSubmit={this.handleSubmit}>
@@ -437,7 +430,7 @@ class StripePaymentForm extends Component {
             </option>
           </select>
           <p>
-            {this.state.occasion == 'birthday' ? happyBirtdayLabel : <Fragment>&nbsp;</Fragment>}
+            {this.state.occasion === 'birthday' ? happyBirtdayLabel : <Fragment>&nbsp;</Fragment>}
           </p>
         </Fragment>
         <Fragment>

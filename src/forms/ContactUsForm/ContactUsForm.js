@@ -45,8 +45,7 @@ class ContactUsFormComponent extends Component {
   }
 
   verifyCallback(recaptchaToken) {
-    // Here you will get the final recaptchaToken!!!
-    const state = { ...state, recaptchaToken };
+    const state = { ...this.state, recaptchaToken };
     this.setState(state);
   }
 
@@ -168,12 +167,6 @@ class ContactUsFormComponent extends Component {
             const enquiryLabel = intl.formatMessage({
               id: 'ContactUsForm.enquiryLabel',
             });
-
-            const enquiryRequiredMessage = intl.formatMessage({
-              id: 'ContactUsForm.enquiryRequiredMessage',
-            });
-
-            const enquiryRequired = validators.required(enquiryRequiredMessage);
 
             // Position (if the enquiry is about claiming a pub)
 
@@ -420,12 +413,12 @@ class ContactUsFormComponent extends Component {
                     options={[{ key: 'agreed', label: 'I agree' }]}
                     validate={termsAndConditionsRequired}
                   />
-                  {pristine && !termsAndConditions && termsAndConditionsRequired}
+                  {pristine && !values.termsAndConditions && termsAndConditionsRequired}
                 </Fragment>
               ) : null;
 
             const subjectField =
-              enquiry != 'claim' ? (
+              enquiry !== 'claim' ? (
                 <FieldTextInput
                   key="subject"
                   className={css.subject}

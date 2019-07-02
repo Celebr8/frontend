@@ -4,6 +4,8 @@ import classNames from 'classnames';
 
 import css from './LegalsDeals.css';
 
+import { NamedLink } from '..';
+
 const LegalsDeals = props => {
   const { rootClassName, className } = props;
   const classes = classNames(rootClassName || css.root, className);
@@ -212,7 +214,7 @@ const LegalsDeals = props => {
 			</ul>
 
 			<ol>
-				<li>Whichost will add an extra €10.00 to the One4all Gift Card if you have the party at a pub that you recommended to us*. You can recommend a pub at any time by <NamedLink name="ContactUsPage" name={{enquiry: 'recommandAPub'}}>clicking here</NamedLink>.
+				<li>Whichost will add an extra €10.00 to the One4all Gift Card if you have the party at a pub that you recommended to us*. You can recommend a pub at any time by <NamedLink name="ContactUsPage" params={{enquiry: 'recommandAPub'}}>clicking here</NamedLink>.
 					<ol>
 						<li>This is valid for recommendations of pubs not already listed on Whichost.</li>
 						<li>The person that recommended the pub must be the same one that books it through Whichost and celebrates their party there.</li>

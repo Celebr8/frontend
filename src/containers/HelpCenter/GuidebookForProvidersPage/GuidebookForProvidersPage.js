@@ -15,6 +15,7 @@ import {
   LayoutWrapperTopbar,
   LayoutWrapperFooter,
   Footer,
+	NamedLink
 } from '../../../components';
 import config from '../../../config';
 

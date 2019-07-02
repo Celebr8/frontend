@@ -4,16 +4,11 @@ import classNames from 'classnames';
 
 import { NamedLink } from '..';
 
-import { PricingTable } from './pricingTable';
-
 import css from './RecommendDeal.css';
 
 const RecommendDeal = props => {
   const { rootClassName, className } = props;
   const classes = classNames(rootClassName || css.root, className);
-
-  const termsAndConditionsTitle = <h2>Terms and conditions</h2>;
-  const examplesTitle = <h2>Examples</h2>;
 
   // prettier-ignore
   return (

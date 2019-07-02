@@ -5,6 +5,8 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 
+import { NamedLink } from '../';
+
 function TabContainer(props) {
   return (
     <Typography component="div" style={{ padding: 8 * 3 }}>
@@ -41,7 +43,7 @@ const forUser = () => (
     <ol>
       <li>
         Create a profile by clicking on{' '}
-        <a href="https://www.whichost.com/signup" target="_blank">
+        <a href="https://www.whichost.com/signup">
           Sign up
         </a>
         ;
@@ -66,7 +68,7 @@ const forUser = () => (
       <li>Done;</li>
       <li>
         <i>(optional)</i>
-        <NamedName name="ContactUsPage">Contact us</NamedName> in case you have further questions.
+        <NamedLink name="ContactUsPage">Contact us</NamedLink> in case you have further questions.
       </li>
     </ol>
     <h2>Is your birthday coming up?</h2>
@@ -105,7 +107,7 @@ const forProvider = () => (
       <ol>
         <li>
           Create a profile by clicking on{' '}
-          <a href="https://www.whichost.com/signup" target="_blank">
+          <a href="https://www.whichost.com/signup">
             Sign up
           </a>
           ;
@@ -175,7 +177,6 @@ class FirstStepsTabs extends React.Component {
   }
 
   render() {
-    const { classes } = this.props;
 
     const tabs = {
       0: <forUser />,

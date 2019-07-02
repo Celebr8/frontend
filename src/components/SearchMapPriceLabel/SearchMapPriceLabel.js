@@ -3,9 +3,7 @@ import PropTypes from 'prop-types';
 import { injectIntl, intlShape } from 'react-intl';
 import classNames from 'classnames';
 import { propTypes } from '../../util/types';
-import { formatMoney } from '../../util/currency';
 import { ensureListing } from '../../util/data';
-import config from '../../config';
 
 import WhichostCarret from './whichost-carret.png';
 
@@ -25,9 +23,8 @@ class SearchMapPriceLabel extends Component {
   }
 
   render() {
-    const { className, rootClassName, intl, listing, onListingClicked, isActive } = this.props;
+    const { className, rootClassName, listing, onListingClicked} = this.props;
     const currentListing = ensureListing(listing);
-    const { price } = currentListing.attributes;
 
     // Create formatted price if currency is known or alternatively show just the unknown currency.
 

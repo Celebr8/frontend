@@ -17,8 +17,8 @@ import LineItemBookingPeriod from './LineItemBookingPeriod';
 import LineItemUnitsMaybe from './LineItemUnitsMaybe';
 import LineItemSubTotalMaybe from './LineItemSubTotalMaybe';
 import LineItemCustomerCommissionRefundMaybe from './LineItemCustomerCommissionRefundMaybe';
-import LineItemProviderCommissionMaybe from './LineItemProviderCommissionMaybe';
 import LineItemRefundMaybe from './LineItemRefundMaybe';
+import LineItemCustomerCommissionMaybe from './LineItemCustomerCommissionRefundMaybe';
 import LineItemTotalPrice from './LineItemTotalPrice';
 import LineItemUnknownItemsMaybe from './LineItemUnknownItemsMaybe';
 

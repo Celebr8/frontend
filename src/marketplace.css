@@ -12,6 +12,19 @@
     since browsers support CSS Properties already.
  */
 
+  --SectionHero_desktopTitleMaxWidth: 625px;
+
+  --SectionHero_animation: {
+    animation-name: animationTitle;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-out;
+    -webkit-animation-fill-mode: forwards;
+
+    visibility: hidden;
+    opacity: 1;
+    position: relative;
+  }
+
   /**
    * Font variables are separated to different file so that the amount of font styling rules
    * doesn't overflow this one.

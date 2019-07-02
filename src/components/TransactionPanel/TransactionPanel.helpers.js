@@ -1,6 +1,5 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
-import classNames from 'classnames';
 
 export const OrderAttendance = props => {
   const { transaction } = props;
@@ -32,7 +31,7 @@ export const OrderOccasion = props => {
 
   const occasion = transaction.attributes.protectedData.occasion;
 
-  return occasion == 'birthday' ? (
+  return occasion === 'birthday' ? (
     <p>
       <FormattedMessage id="InboxPage.occasionBirthday" />
     </p>

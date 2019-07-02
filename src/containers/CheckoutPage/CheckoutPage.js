@@ -31,7 +31,7 @@ import {
   transactionInitiateOrderStripeErrors,
 } from '../../util/errors';
 import { findRouteByRouteName, pathByRouteName } from '../../util/routes';
-import { LINE_ITEM_DAY, LINE_ITEM_NIGHT, propTypes } from '../../util/types';
+import { propTypes } from '../../util/types';
 import { createSlug } from '../../util/urlHelpers';
 import css from './CheckoutPage.css';
 import {
@@ -407,8 +407,6 @@ export class CheckoutPageComponent extends Component {
       </div>
     );
 
-    const unitType = config.bookingUnitType;
-
     const price = currentListing.attributes.price;
     const formattedPrice = formatMoney(intl, price);
     const detailsSubTitle = `${formattedPrice} ${intl.formatMessage({
@@ -605,8 +603,6 @@ const mapDispatchToProps = dispatch => ({
   dispatch,
   sendOrderRequest: (params, initialMessage, listingType) =>
     dispatch(initiateOrder(params, initialMessage, listingType)),
-  fetchSpeculatedTransaction: (params, listingType) =>
-    dispatch(speculateTransaction(params, listingType)),
   sendOrderRequestAfterEnquiry: (transactionId, params) =>
     dispatch(initiateOrderAfterEnquiry(transactionId, params)),
   fetchSpeculatedTransaction: params => dispatch(speculateTransaction(params)),

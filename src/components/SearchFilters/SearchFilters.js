@@ -300,7 +300,7 @@ const SearchFiltersComponent = props => {
                   style={{ textDecoration: 'underline' }}
                   href={'https://www.google.ie/maps/search/pubs+in+' + town}
                   target="_blank"
-                  ref="noopener noreferrer"
+                  rel="noopener noreferrer"
                 >
                   Here’s a list of pubs in {town}
                 </a>

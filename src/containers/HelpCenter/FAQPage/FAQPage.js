@@ -358,8 +358,7 @@ class FAQPagePanelsBase extends React.Component {
                 </NamedLink>{' '}
                 or email us at{' '}
                 <a
-                  href="mailto:support@whichost.com?subject=How do I list my pub inquiry"
-                  target="_blank"
+									href="mailto:support@whichost.com?subject=How%20do%20I%20list%20my%20pub%20inquiry"
                 >
                   support@whichost.com
                 </a>
@@ -445,7 +444,7 @@ class FAQPagePanelsBase extends React.Component {
           <ExpansionPanelDetails>
             <Typography>
               We currently don't charge anything to list your pub on Whichost. It's completely free.{' '}
-              <NamedLink name="NewListingPage" target="_blank">
+              <NamedLink name="NewListingPage">
                 List your pub now
               </NamedLink>
             </Typography>
@@ -460,7 +459,7 @@ class FAQPagePanelsBase extends React.Component {
           <ExpansionPanelDetails>
             <Typography>
               We charge a small amount in form of a deposit. It's only fair.{' '}
-              <NamedLink name="FeesPage" target="_blank">
+              <NamedLink name="FeesPage">
                 Learn more about our fees.
               </NamedLink>
             </Typography>
@@ -488,18 +487,18 @@ class FAQPagePanelsBase extends React.Component {
                 support the site, community, and offer the level of service and commitment that we
                 do, please contact us <NamedLink name="ContactUsPage">here</NamedLink> or email us
                 at{' '}
-                <a href="mailto:support@whichost.com" target="_blank">
+                <a href="mailto:support@whichost.com">
                   support@whichost.com
                 </a>
                 . We will cancel your account for you if needed. We would also love to hear your
                 feedback (good and bad at{' '}
-                <a href="mailto:feedback@whichost.com" target="_blank">
+                <a href="mailto:feedback@whichost.com">
                   feedback@whichost.com
                 </a>
                 ), learn more about your pub's needs, and find the best way that Whichost can help
                 you.
               </p>
-              <NamedLink name="FeesPage" target="_blank">
+              <NamedLink name="FeesPage">
                 Learn more about our fees.
               </NamedLink>
             </Typography>
@@ -516,7 +515,7 @@ class FAQPagePanelsBase extends React.Component {
               <p>
                 Yes! You can add multiple spaces that you have at your pub. To create a listing for
                 one of your spaces just click on{' '}
-                <NamedLink name="NewListingPage" target="_blank">
+                <NamedLink name="NewListingPage">
                   "+Add your pub"
                 </NamedLink>{' '}
                 at the top right.
@@ -552,7 +551,7 @@ class FAQPagePanelsBase extends React.Component {
                   here
                 </NamedLink>{' '}
                 or at{' '}
-                <a href="mailto:support@whichost.com" target="_blank">
+                <a href="mailto:support@whichost.com">
                   support@whichost.com
                 </a>{' '}
                 and we'll put you in touch with a photographer.
@@ -1038,7 +1037,7 @@ class FAQPagePanelsBase extends React.Component {
                 dependant on your bank, but holds are typically released by the next business day.
                 Your card will not be charged for denied or expired bookings for any reason. If you
                 have any questions about this, please email us at{' '}
-                <a href="mailto:support@whichost.com?subject=Unauthorized Charge" target="_blank">
+                <a href="mailto:support@whichost.com?subject=Unauthorized%20Charge">
                   support@whichost.com
                 </a>
                 .
@@ -1063,8 +1062,7 @@ class FAQPagePanelsBase extends React.Component {
                 this in mind prior to submitting a booking request. If you require assistance with a
                 booking request, you can send us a message at any time at{' '}
                 <a
-                  href="mailto:support@whichost.com?subject=Booking Request Inquiry"
-                  target="_blank"
+                  href="mailto:support@whichost.com?subject=Booking%20Request%20Inquiry"
                 >
                   support@whichost.com
                 </a>
@@ -1252,7 +1250,7 @@ class FAQPagePanelsBase extends React.Component {
                 Yes, we ask that you never take communication outside of our platform messaging and
                 never give your contact information prior to entering a Booking Agreement. We also
                 have{' '}
-                <NamedLink name="CommunityGuidelinesPage" target="_blank">
+                <NamedLink name="CommunityGuidelinesPage">
                   Community Guidelines
                 </NamedLink>{' '}
                 in place that outlines this in more detail.
@@ -1334,7 +1332,7 @@ class FAQPagePanelsBase extends React.Component {
           <ExpansionPanelDetails>
             <Typography>
               Please, feel free to contact us <NamedLink name="ContactUsPage">here</NamedLink> at{' '}
-              <a href="mailto:support@whichost.com?subject=Help Center Question" target="_blank">
+              <a href="mailto:support@whichost.com?subject=Help%20Center%20Question">
                 support@whichost.com
               </a>
               . We'll be happy to answer all of your questions.
@@ -1407,8 +1405,7 @@ class FAQPagePanelsBase extends React.Component {
             <Typography>
               Please report any suspicious activity immediately by sending us an email at{' '}
               <a
-                href="mailto:support@whichost.com?subject=Suspicious Account Activity"
-                target="_blank"
+                href="mailto:support@whichost.com?subject=Suspicious%20Account%20Activity"
               >
                 support@whichost.com
               </a>
@@ -1427,7 +1424,6 @@ class FAQPagePanelsBase extends React.Component {
               Please report any suspicious activity or users immediately by sending us an email at{' '}
               <a
                 href="mailto:support@whichost.com?subject=User acting against Whichost policies"
-                target="_blank"
               >
                 support@whichost.com
               </a>
@@ -1444,7 +1440,7 @@ class FAQPagePanelsBase extends React.Component {
           <ExpansionPanelDetails>
             <Typography>
               Please, feel free to contact us at{' '}
-              <a href="mailto:support@whichost.com?subject=Help Center Question" target="_blank">
+              <a href="mailto:support@whichost.com?subject=Help%20Center%20Question">
                 support@whichost.com
               </a>
               . We'll be happy to answer all of your questions.

@@ -18,7 +18,6 @@ export const EditListingRegularlyOpenOnFormComponent = props => (
         className,
         disabled,
         handleSubmit,
-        intl,
         name,
         invalid,
         pristine,
