@@ -1315,11 +1315,13 @@ class FAQPagePanelsBase extends React.Component {
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <Typography>
-							<p>Your Booking Agreement through Whichost is an agreement for a customer to use the pub
-              as defined in the listing for the exact date, time period, and for that price. If you
-              have further pub requirements, please notify the booking request directly and ensure
-              they are aware of these prior to accepting the booking request, prior to the booking
-							time, and their arrival.</p>
+              <p>
+                Your Booking Agreement through Whichost is an agreement for a customer to use the
+                pub as defined in the listing for the exact date, time period, and for that price.
+                If you have further pub requirements, please notify the booking request directly and
+                ensure they are aware of these prior to accepting the booking request, prior to the
+                booking time, and their arrival.
+              </p>
             </Typography>
           </ExpansionPanelDetails>
         </ExpansionPanel>
@@ -1349,7 +1351,7 @@ class FAQPagePanelsBase extends React.Component {
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <Typography>
-							<p>You can create a user account in minutes doing the following:</p>
+              <p>You can create a user account in minutes doing the following:</p>
               <ol>
                 <li>Click “Sign up” at the top right</li>
                 <li>Enter your email address and create a secure password</li>
@@ -1366,7 +1368,7 @@ class FAQPagePanelsBase extends React.Component {
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <Typography>
-							<p>You can reply to messages and accept a booking request by doing the following:</p>
+              <p>You can reply to messages and accept a booking request by doing the following:</p>
               <ol>
                 <li>
                   When logged into your Whichost account, click on “Inbox” in the top right

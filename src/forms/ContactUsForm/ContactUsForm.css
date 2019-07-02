@@ -92,9 +92,7 @@
 }
 
 .sendingError {
-
-	color: var(--failColor);
-
+  color: var(--failColor);
 }
 
 .helperLink {

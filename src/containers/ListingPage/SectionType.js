@@ -5,18 +5,21 @@ import css from './ListingPage.css';
 
 const SectionType = props => {
   const { listingType } = props;
-	const listingTypeFormatted = listingType === 'common' ? 
-		<FormattedMessage id="ListingPage.listingTypeCommon" /> :
-		<FormattedMessage id="ListingPage.listingTypePrivate" />;
-		
+  const listingTypeFormatted =
+    listingType === 'common' ? (
+      <FormattedMessage id="ListingPage.listingTypeCommon" />
+    ) : (
+      <FormattedMessage id="ListingPage.listingTypePrivate" />
+    );
+
   return (
-		<div className={css.sectionType}>
+    <div className={css.sectionType}>
       <h2 className={css.typeTitle}>
         <FormattedMessage id="ListingPage.listingTypeTitle" />
       </h2>
-			<p>{listingTypeFormatted}</p>
+      <p>{listingTypeFormatted}</p>
     </div>
   );
 };
 
-export default SectionType;;
+export default SectionType;

@@ -139,7 +139,7 @@ class BirthdayInputComponent extends Component {
     });
     const yearPlaceholder = intl.formatMessage({ id: 'PayoutDetailsForm.birthdayYearPlaceholder' });
 
-		console.log('Trying to retrieve `day` from this.state.selected', this.state)
+    console.log('Trying to retrieve `day` from this.state.selected', this.state);
 
     return (
       <div className={css.inputRoot}>

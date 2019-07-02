@@ -3,61 +3,108 @@ import React from 'react';
 import { FormattedMessage, injectIntl, intlShape } from 'react-intl';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
-import { Footer, LayoutSingleColumnWithHero, LayoutWrapperFooter, LayoutWrapperHero, LayoutWrapperMain, LayoutWrapperTopbar, Page } from '../../components';
+import {
+  Footer,
+  LayoutSingleColumnWithHero,
+  LayoutWrapperFooter,
+  LayoutWrapperHero,
+  LayoutWrapperMain,
+  LayoutWrapperTopbar,
+  Page,
+} from '../../components';
 import config from '../../config';
 import { TopbarContainer } from '../../containers';
 import { isScrollingDisabled } from '../../ducks/UI.duck';
 import css from './CareersPage.css';
 
-
 const CareersPageComponent = props => {
+  const { scrollingDisabled, intl } = props;
 
-	const { scrollingDisabled, intl } = props;
-
-	const siteTitle = config.siteTitle;
-	const schemaTitle = intl.formatMessage({ id: 'CareersPage.schemaTitle' }, { siteTitle });
-	const schema = {
-		'@context': 'http://schema.org',
-		'@type': 'WebPage',
-		name: schemaTitle,
-	};
-	return (
-		<Page title={schemaTitle} scrollingDisabled={scrollingDisabled} schema={schema}>
-			<LayoutSingleColumnWithHero>
-				<LayoutWrapperTopbar>
-					<TopbarContainer currentPage="CareersPage" />
-				</LayoutWrapperTopbar>
-				<LayoutWrapperHero className={css.hero}>
-					<div className={css.heroContent}>
-						<h3 className={css.heroMainTitle}>
-							<FormattedMessage id="CareersPage.title" />
-						</h3>
-					</div>
-				</LayoutWrapperHero>
-				<LayoutWrapperMain>
-				<section>
-                    <h1>Shape the future of Whichost</h1>
-						{/* <b>Position:</b> Frontend Engineer (Co-Founder)
+  const siteTitle = config.siteTitle;
+  const schemaTitle = intl.formatMessage({ id: 'CareersPage.schemaTitle' }, { siteTitle });
+  const schema = {
+    '@context': 'http://schema.org',
+    '@type': 'WebPage',
+    name: schemaTitle,
+  };
+  return (
+    <Page title={schemaTitle} scrollingDisabled={scrollingDisabled} schema={schema}>
+      <LayoutSingleColumnWithHero>
+        <LayoutWrapperTopbar>
+          <TopbarContainer currentPage="CareersPage" />
+        </LayoutWrapperTopbar>
+        <LayoutWrapperHero className={css.hero}>
+          <div className={css.heroContent}>
+            <h3 className={css.heroMainTitle}>
+              <FormattedMessage id="CareersPage.title" />
+            </h3>
+          </div>
+        </LayoutWrapperHero>
+        <LayoutWrapperMain>
+          <section>
+            <h1>Shape the future of Whichost</h1>
+            {/* <b>Position:</b> Frontend Engineer (Co-Founder)
 						<br/>
 						<b>Department:</b> Founding team
 						<br/>
 						<b>Location:</b> Cork / Ireland */}
-				</section>
-				<section>
-					<br/>
-					<h2>About the company</h2>
-					<p> At Whichost, we aim to leave this world better than we found it. To achieve this we work with talented people and go above and beyond for our users. <b>We are an early stage startup with initial revenue</b> and a self-funded business with no investors or outside influences except one: our users and what's best for them. We are a startup of execution, full of triers and doers: we try things, we make mistakes, and we learn from them.</p>
-					<p>Starting this company in Cork is an amazing journey to be a part of. As an early stage startup we don't have fancy offices. However, we do work in fancy coffee shops.</p>
-					<p>We are seeking a Frontend Engineer Co-founder for our company to accelerate the improvement of our platform, so you won’t have to start from zero! You will be assigned significant equity participation in the company. You will not be required to leave your day job (if you have one) for the time being until we have enough revenue or resources to pay ourselves a living wage. You will also not be required to relocate to Cork in case you are located in a different location. However, after 6 PM we do live and breathe Whichost, including weekends and holidays (keeping a healthy balance with our personal lives).</p>
-					<p>Your responsibilities will be define together with the team, once you are selected!</p>
-					<br/>
-					<ol><p>Meet the Whichost team:</p>
-						<li><b>Loic C.:</b> Frontend Engineer with a major in Psychology. Joined Whichost in November 2018. <a href="https://angel.co/loic-coenen" target="_blank" rel="noopener noreferrer">AngelList profile</a></li>
-						<li><b>Radu S.:</b> Electrical Engineer with 3 startups under his belt. Joined Whichost in July 2018. <a href="https://angel.co/radu-sighencea" target="_blank" rel="noopener noreferrer">AngelList profile</a></li>
-						<li><b>Carlos R.:</b> Industrial Engineer with 4 startups under his belt. Founded Whichost in November 2017. <a href="https://angel.co/carloswhichost" target="_blank" rel="noopener noreferrer">AngelList profile</a></li>
-					</ol>
-				</section>
-				{/* <section>
+          </section>
+          <section>
+            <br />
+            <h2>About the company</h2>
+            <p>
+              {' '}
+              At Whichost, we aim to leave this world better than we found it. To achieve this we
+              work with talented people and go above and beyond for our users.{' '}
+              <b>We are an early stage startup with initial revenue</b> and a self-funded business
+              with no investors or outside influences except one: our users and what's best for
+              them. We are a startup of execution, full of triers and doers: we try things, we make
+              mistakes, and we learn from them.
+            </p>
+            <p>
+              Starting this company in Cork is an amazing journey to be a part of. As an early stage
+              startup we don't have fancy offices. However, we do work in fancy coffee shops.
+            </p>
+            <p>
+              We are seeking a Frontend Engineer Co-founder for our company to accelerate the
+              improvement of our platform, so you won’t have to start from zero! You will be
+              assigned significant equity participation in the company. You will not be required to
+              leave your day job (if you have one) for the time being until we have enough revenue
+              or resources to pay ourselves a living wage. You will also not be required to relocate
+              to Cork in case you are located in a different location. However, after 6 PM we do
+              live and breathe Whichost, including weekends and holidays (keeping a healthy balance
+              with our personal lives).
+            </p>
+            <p>
+              Your responsibilities will be define together with the team, once you are selected!
+            </p>
+            <br />
+            <ol>
+              <p>Meet the Whichost team:</p>
+              <li>
+                <b>Loic C.:</b> Frontend Engineer with a major in Psychology. Joined Whichost in
+                November 2018.{' '}
+                <a href="https://angel.co/loic-coenen" target="_blank" rel="noopener noreferrer">
+                  AngelList profile
+                </a>
+              </li>
+              <li>
+                <b>Radu S.:</b> Electrical Engineer with 3 startups under his belt. Joined Whichost
+                in July 2018.{' '}
+                <a href="https://angel.co/radu-sighencea" target="_blank" rel="noopener noreferrer">
+                  AngelList profile
+                </a>
+              </li>
+              <li>
+                <b>Carlos R.:</b> Industrial Engineer with 4 startups under his belt. Founded
+                Whichost in November 2017.{' '}
+                <a href="https://angel.co/carloswhichost" target="_blank" rel="noopener noreferrer">
+                  AngelList profile
+                </a>
+              </li>
+            </ol>
+          </section>
+          {/* <section>
 					<br/>
 					<h2>Specs</h2>
 					<p>The outcome of starting a company as an entrepreneur is not binary. Building a startup is a long-term game with tons of hard work required from lots of people and the right things happening at right time hence most of the short-term thinking/judgements do not apply.</p>
@@ -106,33 +153,33 @@ const CareersPageComponent = props => {
 						</div>
 					</section>
 				</section> */}
-				</LayoutWrapperMain>
-				<LayoutWrapperFooter>
-					<Footer />
-				</LayoutWrapperFooter>
-			</LayoutSingleColumnWithHero>
-		</Page>
-	);
+        </LayoutWrapperMain>
+        <LayoutWrapperFooter>
+          <Footer />
+        </LayoutWrapperFooter>
+      </LayoutSingleColumnWithHero>
+    </Page>
+  );
 };
 
 const { bool } = PropTypes;
 
 CareersPageComponent.propTypes = {
-	scrollingDisabled: bool.isRequired,
+  scrollingDisabled: bool.isRequired,
 
-	// from injectIntl
-	intl: intlShape.isRequired,
+  // from injectIntl
+  intl: intlShape.isRequired,
 };
 
 const mapStateToProps = state => {
-	return {
-		scrollingDisabled: isScrollingDisabled(state),
-	};
+  return {
+    scrollingDisabled: isScrollingDisabled(state),
+  };
 };
 
 const CareersPage = compose(
-	connect(mapStateToProps),
-	injectIntl
+  connect(mapStateToProps),
+  injectIntl
 )(CareersPageComponent);
 
-export default CareersPage;;
+export default CareersPage;

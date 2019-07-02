@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 const IconLogo = props => {
   const { className } = props;
 
-	/*eslint-disable */
+  /*eslint-disable */
 
   return (
     <svg width="100%" height="100%" viewBox="0 0 66 79">
@@ -27,8 +27,7 @@ const IconLogo = props => {
     </svg>
   );
 
-	/*eslint-enable */
-
+  /*eslint-enable */
 };
 
 const { string } = PropTypes;

@@ -65,7 +65,6 @@ export const BookingBreakdownComponent = props => {
         intl={intl}
       />
 
-
       <hr className={css.totalDivider} />
       <LineItemTotalPrice transaction={transaction} isProvider={isProvider} intl={intl} />
       {hasCommissionLineItem ? (

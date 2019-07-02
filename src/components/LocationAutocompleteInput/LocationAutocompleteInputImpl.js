@@ -458,7 +458,7 @@ class LocationAutocompleteInputImpl extends Component {
     const { name, onFocus } = input;
     const { search } = currentValue(this.props);
     const { touched, valid } = meta || {};
-		console.log('valid', valid)
+    console.log('valid', valid);
     const isValid = valid && touched;
     const predictions = this.currentPredictions();
 
@@ -469,8 +469,11 @@ class LocationAutocompleteInputImpl extends Component {
 
     const rootClass = classNames(rootClassName || css.root, className);
     const iconClass = classNames(iconClassName || css.icon);
-    const inputClass = classNames(inputClassName || css.input, isValid? css.inputSuccess : css.inputError);
-		console.log('inputClass',inputClass )	
+    const inputClass = classNames(
+      inputClassName || css.input,
+      isValid ? css.inputSuccess : css.inputError
+    );
+    console.log('inputClass', inputClass);
     const predictionsClass = classNames(predictionsClassName);
 
     // Only render predictions when the input has focus. For

@@ -47,14 +47,15 @@ export const ListingCardComponent = props => {
   const currentListing = ensureListing(listing);
   const id = currentListing.id.uuid;
   const { title = '', price } = currentListing.attributes;
-	const listingType = currentListing.attributes.publicData.type;
+  const listingType = currentListing.attributes.publicData.type;
   const slug = createSlug(title);
   const author = ensureUser(listing.author);
   const authorName = author.attributes.profile.displayName;
   const firstImage =
     currentListing.images && currentListing.images.length > 0 ? currentListing.images[0] : null;
 
-	const listingTypeTranslation = listingType === 'common'? 'ListingCard.commonSpace' : 'ListingCard.privateSpace';
+  const listingTypeTranslation =
+    listingType === 'common' ? 'ListingCard.commonSpace' : 'ListingCard.privateSpace';
 
   const unitType = config.bookingUnitType;
   const isNightly = unitType === LINE_ITEM_NIGHT;

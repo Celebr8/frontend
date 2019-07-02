@@ -8,10 +8,8 @@ import { fetchCurrentUserHasOrdersSuccess } from '../../ducks/user.duck';
 
 // ================ Process alias ================ //
 
-const processAliasDecide = (listingType) => 
-	listingType === 'common' ? 
-		config.bookingProcessAliasCommon : 
-		config.bookingProcessAliasPrivate;
+const processAliasDecide = listingType =>
+  listingType === 'common' ? config.bookingProcessAliasCommon : config.bookingProcessAliasPrivate;
 
 // ================ Action types ================ //
 
@@ -114,10 +112,14 @@ export const speculateTransactionError = e => ({
 
 /* ================ Thunks ================ */
 
-export const initiateOrder = (orderParams, initialMessage, listingType) => (dispatch, getState, sdk) => {
+export const initiateOrder = (orderParams, initialMessage, listingType) => (
+  dispatch,
+  getState,
+  sdk
+) => {
   dispatch(initiateOrderRequest());
 
-	// Transition have to react to the listing type passed downstream from CheckoutPage
+  // Transition have to react to the listing type passed downstream from CheckoutPage
   const bodyParams = {
     transition: TRANSITION_REQUEST,
     processAlias: processAliasDecide(listingType),
@@ -206,12 +208,10 @@ export const initiateOrderAfterEnquiry = (transactionId, orderParams) => (
  * the price with the chosen information.
  */
 export const speculateTransaction = (params, listingType) => (dispatch, getState, sdk) => {
-
   dispatch(speculateTransactionRequest());
 
   const bodyParams = {
-
-		processAlias: processAliasDecide(listingType),
+    processAlias: processAliasDecide(listingType),
     transition: TRANSITION_REQUEST,
     params: {
       ...params,

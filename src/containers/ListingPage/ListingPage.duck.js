@@ -190,7 +190,7 @@ export const fetchReviews = listingId => (dispatch, getState, sdk) => {
 
 const timeSlotsRequest = params => (dispatch, getState, sdk) => {
   return sdk.timeslots.query(params).then(response => {
-		console.log('answer recieved from ', response)
+    console.log('answer recieved from ', response);
     return denormalisedResponseEntities(response);
   });
 };

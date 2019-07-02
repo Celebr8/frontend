@@ -27,10 +27,7 @@ const BookingPeriod = props => {
             <FormattedDate value={startDate} {...dateFormatOptions} />
           </span>
         ),
-        bookingEnd: (
-          <span className={css.nowrap}>
-          </span>
-        ),
+        bookingEnd: <span className={css.nowrap}></span>,
       }}
     />
   );

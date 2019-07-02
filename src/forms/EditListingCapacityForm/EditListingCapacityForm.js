@@ -18,7 +18,7 @@ export const EditListingCapacityFormComponent = props => (
         className,
         disabled,
         handleSubmit,
-				name,
+        name,
         invalid,
         pristine,
         saveActionMsg,
@@ -26,7 +26,6 @@ export const EditListingCapacityFormComponent = props => (
         updateInProgress,
         fetchErrors,
       } = fieldRenderProps;
-
 
       const { updateListingError, showListingsError } = fetchErrors || {};
       const errorMessage = updateListingError ? (

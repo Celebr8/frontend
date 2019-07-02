@@ -9,7 +9,7 @@ import {
   LayoutWrapperFooter,
   Footer,
   ExternalLink,
-	NamedLink
+  NamedLink,
 } from '../../components';
 
 import css from './AboutPage.css';

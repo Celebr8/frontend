@@ -330,7 +330,6 @@ class ContactUsFormComponent extends Component {
 
             // Location
 
-
             const locationRequiredMessage = intl.formatMessage({
               id: 'ContactUsForm.locationRequired',
             });
@@ -472,7 +471,7 @@ class ContactUsFormComponent extends Component {
                     key="organisationSize"
                     id={formId ? `${formId}.organisationSize` : 'organisationSize'}
                     label={organisationSizeLabel}
-										validate={organisationSizeRequired}
+                    validate={organisationSizeRequired}
                   >
                     <option value="A">Self-employed</option>
                     <option value="B">1-10 employees</option>

@@ -11,7 +11,7 @@ const SectionHero = props => {
   const { rootClassName, className } = props;
 
   const classes = classNames(rootClassName || css.root, className);
-	
+
   return (
     <div className={classes}>
       <div className={css.heroContent}>
@@ -22,18 +22,15 @@ const SectionHero = props => {
           <FormattedMessage id="SectionHero.subTitle" />
         </h2>
         <h2 className={css.temporaryOffer}>
-          <FormattedMessage id="SectionHero.temporaryOffer" /> 
-					<NamedLink 
-						name="BirthdayDealPage"
-						className={css.temporaryOfferLink}	
-					>
-						<FormattedMessage id="SectionHero.temporaryOfferLink" /> 
-					</NamedLink>
+          <FormattedMessage id="SectionHero.temporaryOffer" />
+          <NamedLink name="BirthdayDealPage" className={css.temporaryOfferLink}>
+            <FormattedMessage id="SectionHero.temporaryOfferLink" />
+          </NamedLink>
         </h2>
         <NamedLink
           name="SearchPage"
           to={{
-            search: locationToURI(mainCountry)
+            search: locationToURI(mainCountry),
           }}
           className={css.heroButton}
         >

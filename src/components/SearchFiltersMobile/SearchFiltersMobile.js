@@ -4,12 +4,17 @@ import { array, bool, func, number, object, shape, string } from 'prop-types';
 import React, { Component } from 'react';
 import { FormattedMessage, injectIntl, intlShape } from 'react-intl';
 import { withRouter } from 'react-router-dom';
-import { Button, ModalInMobile, NamedLink, SelectMultipleFilter, SelectSingleFilter } from '../../components';
+import {
+  Button,
+  ModalInMobile,
+  NamedLink,
+  SelectMultipleFilter,
+  SelectSingleFilter,
+} from '../../components';
 import routeConfiguration from '../../routeConfiguration';
 import { createResourceLocatorString } from '../../util/routes';
 import { propTypes } from '../../util/types';
 import css from './SearchFiltersMobile.css';
-
 
 const RADIX = 10;
 
@@ -92,7 +97,6 @@ class SearchFiltersMobileComponent extends Component {
 
     history.push(createResourceLocatorString('SearchPage', routeConfiguration(), {}, queryParams));
   }
-
 
   // Reset all filter query parameters
   resetAll(e) {

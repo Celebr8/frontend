@@ -2,17 +2,20 @@ import classNames from 'classnames';
 import { string } from 'prop-types';
 import React, { Fragment } from 'react';
 import { FormattedMessage, injectIntl, intlShape } from 'react-intl';
-import { ExternalLink, IconSocialMediaFacebook, IconSocialMediaInstagram, IconSocialMediaTwitter, Logo, NamedLink } from '../../components';
+import {
+  ExternalLink,
+  IconSocialMediaFacebook,
+  IconSocialMediaInstagram,
+  IconSocialMediaTwitter,
+  Logo,
+  NamedLink,
+} from '../../components';
 import config from '../../config';
 import { locationToURI, mainLocationsData } from '../../locals';
 import { twitterPageURL } from '../../util/urlHelpers';
 import css from './Footer.css';
 
-
-
 const renderSocialMediaLinks = intl => {
-
-
   const { siteFacebookPage, siteInstagramPage, siteTwitterHandle } = config;
   const siteTwitterPage = twitterPageURL(siteTwitterHandle);
 
@@ -49,7 +52,6 @@ const renderSocialMediaLinks = intl => {
   ) : null;
 
   return [fbLink, twitterLink, instragramLink].filter(v => v != null);
-
 };
 
 const renderFavoriteLocation = location => (
@@ -72,7 +74,7 @@ const Footer = props => {
   const classes = classNames(rootClassName || css.root, className);
   const separator = <Fragment>&nbsp;&nbsp;|&nbsp;&nbsp;</Fragment>;
 
-	const version = config.version;
+  const version = config.version;
 
   return (
     <div className={classes}>
@@ -104,7 +106,7 @@ const Footer = props => {
                   </NamedLink>
                 </li>
                 <li className={css.listItem}>
-									<NamedLink name="SignupPage" className={css.link}>
+                  <NamedLink name="SignupPage" className={css.link}>
                     Sign up
                   </NamedLink>
                 </li>
@@ -112,7 +114,7 @@ const Footer = props => {
                   <a
                     href="https://docs.google.com/forms/d/e/1FAIpQLSfIG7NR-ixq6CFydZ_955OyNyhI1-1iS4UfkRdV7knFxnFlqA/viewform"
                     target="_blank"
-										rel="noopener noreferrer"
+                    rel="noopener noreferrer"
                     className={css.link}
                   >
                     Invite a friend
@@ -155,7 +157,7 @@ const Footer = props => {
                   <NamedLink
                     name="GuidebookForProvidersPage"
                     target="_blank"
-										rel="noopener noreferrer"
+                    rel="noopener noreferrer"
                     className={css.link}
                   >
                     Guidebook
@@ -172,17 +174,14 @@ const Footer = props => {
                   <a
                     href="https://docs.google.com/forms/d/e/1FAIpQLSfIG7NR-ixq6CFydZ_955OyNyhI1-1iS4UfkRdV7knFxnFlqA/viewform"
                     target="_blank"
-										rel="noopener noreferrer"
+                    rel="noopener noreferrer"
                     className={css.link}
                   >
                     Invite a friend
                   </a>
                 </li>
                 <li key="recommendAPub" className={css.listItem}>
-                  <NamedLink
-										name="ContactUsPage" 
-										params={{enquiry: 'recommandAPub'}}
-                  >
+                  <NamedLink name="ContactUsPage" params={{ enquiry: 'recommandAPub' }}>
                     Recommend a pub
                   </NamedLink>
                 </li>
@@ -210,58 +209,51 @@ const Footer = props => {
                   {mainLocationsData.map(location => renderFavoriteLocation(location))}
                 </li>
               </ul>
-
             </div>
             <div className={css.searchesExtra}>
-							<NamedLink name="LandingPage" 
-								className={css.organizationCopyrightMobile + ' ' + css.registrationMobile}>
-								<FormattedMessage id="Footer.copyright" />
-							</NamedLink>
-						</div>
+              <NamedLink
+                name="LandingPage"
+                className={css.organizationCopyrightMobile + ' ' + css.registrationMobile}
+              >
+                <FormattedMessage id="Footer.copyright" />
+              </NamedLink>
+            </div>
           </div>
           <div className={css.extraLinks}>
             <div className={css.legalMatters}>
               <div className={css.tosAndPrivacy}>
                 <div className={css.someLinks}>{socialMediaLinks}</div>
-
                 <NamedLink name="AboutPage" className={css.legalLink}>
                   <FormattedMessage id="Footer.toAboutPage" />
                 </NamedLink>
-								{separator}
-                <NamedLink
-                  name="ContactUsPage"
-                  className={css.legalLink}
-                >
+                {separator}
+                <NamedLink name="ContactUsPage" className={css.legalLink}>
                   Contact
                 </NamedLink>
-								{separator}
+                {separator}
                 <NamedLink name="TermsOfServicePage" className={css.legalLink}>
                   <FormattedMessage id="Footer.termsOfUse" />
                 </NamedLink>
-								{separator}
+                {separator}
                 <NamedLink name="PrivacyPolicyPage" className={css.legalLink}>
                   <FormattedMessage id="Footer.privacyPolicy" />
                 </NamedLink>
-								{separator}
+                {separator}
                 <NamedLink name="TermsOfServicePage" className={css.legalLink}>
                   Legal
                 </NamedLink>
-								{separator}
-								<FormattedMessage id="Footer.version" /> {version}
+                {separator}
+                <FormattedMessage id="Footer.version" /> {version}
               </div>
             </div>
           </div>
           <div className={css.copyrightAndTermsMobile}>
             <div className={css.tosAndPrivacyMobile}>
-							
               <NamedLink name="AboutPage" className={css.privacy}>
                 <FormattedMessage id="Footer.about" />
               </NamedLink>
 
-              <NamedLink 
-                name="ContactUsPage"
-                className={css.privacy}
-              >
+              <NamedLink name="ContactUsPage" className={css.privacy}>
                 Contact
               </NamedLink>
 

@@ -15,7 +15,7 @@ const Logo = props => {
     return <img className={className} src={LogoImage} alt={config.siteTitle} {...rest} />;
   }
 
-	return <img src={LogoImageMobile} alt={config.siteTitle} classname={mobileClasses} {...rest} /> 
+  return <img src={LogoImageMobile} alt={config.siteTitle} classname={mobileClasses} {...rest} />;
 };
 
 const { oneOf, string } = PropTypes;

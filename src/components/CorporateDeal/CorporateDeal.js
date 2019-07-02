@@ -10,11 +10,11 @@ import { PricingTable } from './pricingTable';
 import css from './CorporateDeal.css';
 
 const CorporateDeal = props => {
-	const { rootClassName, className } = props;
-	const classes = classNames(rootClassName || css.root, className);
+  const { rootClassName, className } = props;
+  const classes = classNames(rootClassName || css.root, className);
 
-	// prettier-ignore
-	return (
+  // prettier-ignore
+  return (
 
     <div className={css.container}>
       <div className={classes}>
@@ -49,15 +49,15 @@ const CorporateDeal = props => {
 };
 
 CorporateDeal.defaultProps = {
-	rootClassName: null,
-	className: null,
+  rootClassName: null,
+  className: null,
 };
 
 const { string } = PropTypes;
 
 CorporateDeal.propTypes = {
-	rootClassName: string,
-	className: string,
+  rootClassName: string,
+  className: string,
 };
 
 export default CorporateDeal;

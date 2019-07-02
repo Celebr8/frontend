@@ -1,7 +1,6 @@
 @import '../../marketplace.css';
 
 .root {
-
   @apply --backgroundImage;
   display: flex;
   flex-direction: column;
@@ -10,4 +9,3 @@
 
   /* Text positioning is done with paddings */
 }
-

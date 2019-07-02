@@ -18,8 +18,8 @@ import EditListingWizardTab, {
   AVAILABILITY,
   DESCRIPTION,
   FEATURES,
-	CAPACITY,
-	REGULARLY_OPEN_ON,
+  CAPACITY,
+  REGULARLY_OPEN_ON,
   POLICY,
   LOCATION,
   PRICING,
@@ -29,7 +29,16 @@ import css from './EditListingWizard.css';
 
 // TODO: PHOTOS panel needs to be the last one since it currently contains PayoutDetailsForm modal
 // All the other panels can be reordered.
-export const TABS = [DESCRIPTION, FEATURES, CAPACITY, REGULARLY_OPEN_ON, POLICY, LOCATION, PRICING, PHOTOS];
+export const TABS = [
+  DESCRIPTION,
+  FEATURES,
+  CAPACITY,
+  REGULARLY_OPEN_ON,
+  POLICY,
+  LOCATION,
+  PRICING,
+  PHOTOS,
+];
 
 // Tabs are horizontal in small screens
 const MAX_HORIZONTAL_NAV_SCREEN_WIDTH = 1023;
@@ -156,7 +165,7 @@ class EditListingWizard extends Component {
   handlePublishListing(id) {
     const { onPublishListingDraft, currentUser } = this.props;
     const stripeConnected =
-			currentUser && currentUser.stripeAccount && !!currentUser.stripeAccount.id; // Not sure about the merge here
+      currentUser && currentUser.stripeAccount && !!currentUser.stripeAccount.id; // Not sure about the merge here
     if (stripeConnected) {
       onPublishListingDraft(id);
     } else {

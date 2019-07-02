@@ -36,8 +36,8 @@ class SearchMapPriceLabel extends Component {
     return (
       <button className={classes} onClick={() => onListingClicked(currentListing)}>
         <div className={css.whichostIcon}>
-					<img src={WhichostCarret} alt="Whichost icon" />
-				</div>
+          <img src={WhichostCarret} alt="Whichost icon" />
+        </div>
       </button>
     );
   }
