@@ -1,10 +1,10 @@
-import React from 'react';
-
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
+import React from 'react';
+
 
 
 export const PricingTable = (props) => (
@@ -12,8 +12,9 @@ export const PricingTable = (props) => (
 		<TableHead>
 			<TableRow>
 				<TableCell>Party size<br/>(People)</TableCell>
-				<TableCell align="center">Gift card value<br/>MO - WE</TableCell>
-				<TableCell align="center">Gift card value<br/>TH - SU</TableCell>
+				<TableCell align="center">Gift card value<br/>Mon - Wed</TableCell>
+				<TableCell align="center">Gift card value<br/>Thur - Sun</TableCell>
+				<TableCell align="center">Recommend<br/>reward</TableCell>
 			</TableRow>
 		</TableHead>
 		<TableBody>
@@ -23,6 +24,7 @@ export const PricingTable = (props) => (
 				</TableCell>
 				<TableCell align="center">€ 25.00</TableCell>
 				<TableCell align="center">€ 15.00</TableCell>
+				<TableCell align="center">€ 15.00</TableCell>
 			</TableRow>
 			<TableRow key="UNIQUE_ID2">
 				<TableCell component="th" scope="row">
@@ -30,6 +32,7 @@ export const PricingTable = (props) => (
 				</TableCell>
 				<TableCell align="center">€ 45.00</TableCell>
 				<TableCell align="center">€ 35.00</TableCell>
+				<TableCell align="center">€ 20.00</TableCell>
 			</TableRow>
 			<TableRow key="UNIQUE_ID3">
 				<TableCell component="th" scope="row">
@@ -37,6 +40,7 @@ export const PricingTable = (props) => (
 				</TableCell>
 				<TableCell align="center">€ 75.00</TableCell>
 				<TableCell align="center">€ 60.00</TableCell>
+				<TableCell align="center">€ 35.00</TableCell>
 			</TableRow>
 			<TableRow key="UNIQUE_ID4">
 				<TableCell component="th" scope="row">
@@ -44,6 +48,7 @@ export const PricingTable = (props) => (
 				</TableCell>
 				<TableCell align="center">€ 130.00</TableCell>
 				<TableCell align="center">€ 115.00</TableCell>
+				<TableCell align="center">€ 60.00</TableCell>
 			</TableRow>
 			<TableRow key="UNIQUE_ID5">
 				<TableCell component="th" scope="row">
@@ -51,6 +56,7 @@ export const PricingTable = (props) => (
 				</TableCell>
 				<TableCell align="center">€ 230.00</TableCell>
 				<TableCell align="center">€ 200.00</TableCell>
+				<TableCell align="center">€ 100.00</TableCell>
 			</TableRow>
 
 		</TableBody>

@@ -106,10 +106,8 @@ ol li ul li:first-child {
 }
 
 /** DEALS PAGE **/
-
 .container {
 	width: 100%;
-  margin-top: -100px;
 
   @media (max-width: 1022px) {
     margin-top: 0px;
@@ -242,53 +240,6 @@ ol li ul li:first-child {
 
 /* TABLE */
 
-table {
-	font-family: 'Lato';
-	border: 1px double #ff3f00;
-	border-radius: 4px;
-	margin-top: 25px;
-}
-
-thead {
-	background-color: #ff3f00;
-	line-height: 15px;
-}
-
-thead th {
-	color: #fff!important;
-}
-
-thead tr {
-	height: 5px!important;
-}
-
-tbody tr {
-	height: 0!important;
-}
-
-th {
-  padding: 4px 2px 4px 2px!important;
-}
-
-th:first-child {
-  padding: 4px 2px 4px 20px!important;
-}
-
-tbody tr td {
-  padding: 4px 2px 4px 2px!important;
-}
-
-@media (max-width: 768px) {
-  thead th,
-  tbody th,
-  tbody tr th,
-  tbody tr td {
-    float: none;
-    text-align: center!important;
-    padding: 4px 2px 4px 2px!important;
-  }
- }
-
 /* STEPS */
 .steps {
   display: flex;
@@ -320,4 +271,11 @@ tbody tr td {
     margin-top: 21px;
     margin-bottom: 18px;
   }
+}
+
+thead{
+  background: #ff3f00;
+}
+thead tr th {
+  color: #fff
 }

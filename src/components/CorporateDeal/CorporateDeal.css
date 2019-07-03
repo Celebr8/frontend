@@ -109,7 +109,6 @@ ol li ul li:first-child {
 
 .container {
 	width: 100%;
-  margin-top: -100px;
 
   @media (max-width: 1022px) {
     margin-top: 0px;
@@ -245,7 +244,6 @@ ol li ul li:first-child {
 table {
 	font-family: 'Lato';
 	border: 1px double #ff3f00;
-	border-radius: 4px;
 	margin-top: 25px;
 }
 
@@ -255,7 +253,7 @@ thead {
 }
 
 thead th {
-	color: #fff!important;
+  color: #fff!important;
 }
 
 thead tr {
@@ -275,7 +273,12 @@ th:first-child {
 }
 
 tbody tr td {
-  padding: 4px 2px 4px 2px!important;
+  padding: 8px 4px!important;
+  border-top: none;
+}
+tbody tr td:last-child {
+  background: rgba(255, 63, 0, 0.05);
+  border-color: rgba(255, 63, 0, 0.188);
 }
 
 @media (max-width: 768px) {
@@ -285,7 +288,7 @@ tbody tr td {
   tbody tr td {
     float: none;
     text-align: center!important;
-    padding: 4px 2px 4px 2px!important;
+    padding: 5px 2px!important;
   }
  }
 
