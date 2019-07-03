@@ -1,17 +1,12 @@
-import React from 'react';
-import { FormattedMessage } from 'react-intl';
-import PropTypes from 'prop-types';
 import classNames from 'classnames';
-
+import PropTypes from 'prop-types';
+import React from 'react';
 import { NamedLink } from '..';
-
-import { PricingTable } from './pricingTable';
-
 import css from './RecommendDeal.css';
 
-import image1 from './img/birthday_deal_image_01.png';
-import image2 from './img/birthday_deal_image_02.png';
-import image3 from './img/birthday_deal_image_03.png';
+
+
+
 
 const RecommendDeal = props => {
   const { rootClassName, className } = props;
@@ -26,7 +21,7 @@ const RecommendDeal = props => {
 		<div className={css.container}>
 			<div className={classes}>
 				<h2>Earn a gift card to use with over 2,000 shops in Ireland &amp; the UK!<br />
-					Get €15 for recommending a pub and celebrating there.</h2>
+				Get up to €100 for recommending a pub and celebrating there.</h2>
 				<section className={css.getInTouch}>
 					<div className={css.btnGroup + ' ' + css.containerButton}>
 						<section className={css.centerButtons}>
@@ -37,8 +32,11 @@ const RecommendDeal = props => {
 				<div className={css.steps}>
 					<div>
 						<p>
-							When you recommend us a pub, we will get in touch with the pub and let them know you want to book your celebration with them.
-							We will issue the gift card after you’ve held your party with them. This is a physical gift card, so we will ask for an address to deliver it.
+						We are always adding pubs to our platform, so when you want to celebrate in a pub that we don't have, not to worry since you can still celebrate there.
+						</p>
+						<p>
+						When you recommend a pub, we will collect information on it so that the listing can be created and you can book your party there. We will issue the gift card after you’ve held your party with them. The value of it depends on the size of your party.<br />
+						This is a physical gift card, so we will ask for an address to deliver it.
 						</p>
 					</div>
 				</div>

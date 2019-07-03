@@ -109,7 +109,6 @@ ol li ul li:first-child {
 
 .container {
 	width: 100%;
-  margin-top: -100px;
 
   @media (max-width: 1022px) {
     margin-top: 0px;
@@ -241,7 +240,7 @@ ol li ul li:first-child {
  }
 
 /* TABLE */
-
+/* 
 table {
 	font-family: 'Lato';
 	border: 1px double #ff3f00;
@@ -287,7 +286,7 @@ tbody tr td {
     text-align: center!important;
     padding: 4px 2px 4px 2px!important;
   }
- }
+ } */
 
 /* STEPS */
 .steps {
