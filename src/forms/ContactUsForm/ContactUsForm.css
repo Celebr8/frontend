@@ -95,6 +95,10 @@
   color: var(--failColor);
 }
 
+.scheduleCallback {
+  background-color: var(--marketplaceColor);
+}
+
 .helperLink {
   color: var(--matterColor);
   border-bottom: solid 1px var(--matterColor);
