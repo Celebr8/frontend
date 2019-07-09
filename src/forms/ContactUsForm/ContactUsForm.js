@@ -601,6 +601,14 @@ class ContactUsFormComponent extends Component {
                   >
                     <FormattedMessage id="ContactUsForm.sendMessage" />
                   </PrimaryButton>
+                  <br/>
+                  <PrimaryButton
+                    className={css.scheduleCallback}
+                    type="submit"
+                    inProgress={submitInProgress}
+                  >
+                    <FormattedMessage id="ContactUsForm.scheduleCallback" />
+                  </PrimaryButton>
                 </div>
                 {sendingErrorRendered}
               </Form>
