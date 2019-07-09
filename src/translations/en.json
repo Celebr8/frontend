@@ -136,6 +136,7 @@
   "ContactUsForm.ibanInvalid": "This IBAN is invalid",
   "ContactUsForm.ibanPlaceholder": "IE29 AIBK 9311 5212 3456 78",
   "ContactUsForm.sendMessage": "Send",
+  "ContactUsForm.scheduleCallback": "Schedule a callback",
   "ContactUsForm.subjectLabel": "Subject",
   "ContactUsForm.subjectRequired": "A subject is required",
   "ContactUsForm.subjectPlaceholder": "Subject",
@@ -195,7 +196,7 @@
 
   "CorporateDealPage.heading": "Corporate Benefit",
   "RecommendDealPage.heading": "Recommend Reward",
-  
+
   "EditListingDescriptionForm.listingTypeLabel": "Space type",
   "EditListingDescriptionForm.listingTypePlaceholder": "Choose the type of space for your listing (common or private)",
   "EditListingDescriptionForm.listingTypeRequired": "You need to select a type for your space.",
