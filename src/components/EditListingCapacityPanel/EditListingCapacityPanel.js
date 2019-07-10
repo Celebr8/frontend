@@ -1,14 +1,14 @@
-import React from 'react';
-import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import PropTypes from 'prop-types';
+import React from 'react';
 import { FormattedMessage } from 'react-intl';
-
-import { LISTING_STATE_DRAFT } from '../../util/types';
-import { ensureListing } from '../../util/data';
-import { EditListingCapacityForm } from '../../forms';
 import { ListingLink } from '../../components';
-
+import { EditListingCapacityForm } from '../../forms';
+import { ensureListing } from '../../util/data';
+import { LISTING_STATE_DRAFT } from '../../util/types';
 import css from './EditListingCapacityPanel.css';
+
+
 
 const GROUPSIZE_NAME = 'groupSize';
 
@@ -22,7 +22,7 @@ const EditListingCapacityPanel = props => {
     submitButtonText,
     panelUpdated,
     updateInProgress,
-    errors,
+    errors
   } = props;
 
   const classes = classNames(rootClassName || css.root, className);
@@ -40,20 +40,26 @@ const EditListingCapacityPanel = props => {
   );
 
   const groupSize = publicData && publicData.groupSize;
-  const initialValues = { groupSize };
+
+  let sliderValue = [30, 80] && publicData.groupSize;
+  const getDataFromSlider = (dataFromChild) => {
+    sliderValue = dataFromChild;
+  }
 
   return (
     <div className={classes}>
       <h1 className={css.title}>{panelTitle}</h1>
+      <p style={{ marginTop: -10, marginBottom: 80 }} >
+        <FormattedMessage id="EditListingCapacityPanel.info" />
+      </p>
+      
       <EditListingCapacityForm
         className={css.form}
         name={GROUPSIZE_NAME}
-        initialValues={initialValues}
-        onSubmit={values => {
-          const { groupSize = [] } = values;
-
+        initalSliderValue={sliderValue}
+        onSubmit={ values => {
           const updatedValues = {
-            publicData: { groupSize },
+            publicData: { groupSize: sliderValue },
           };
           onSubmit(updatedValues);
         }}
@@ -62,6 +68,7 @@ const EditListingCapacityPanel = props => {
         updated={panelUpdated}
         updateInProgress={updateInProgress}
         fetchErrors={errors}
+        action={getDataFromSlider}
       />
     </div>
   );
