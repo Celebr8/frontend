@@ -8,6 +8,7 @@ import classNames from 'classnames';
 import { ensureCurrentUser } from '../../util/data';
 import * as validators from '../../util/validators';
 import arrayMutators from 'final-form-arrays';
+import OrDivider from '../../components/OrDivider/OrDivider';
 import {
   NamedLink,
   FieldCheckboxGroup,
@@ -601,10 +602,11 @@ class ContactUsFormComponent extends Component {
                   >
                     <FormattedMessage id="ContactUsForm.sendMessage" />
                   </PrimaryButton>
-                  <br/>
+                  <OrDivider />
                   <PrimaryButton
                     className={css.scheduleCallback}
                     type="submit"
+                    onClick={() => window.open('https://calendly.com/whichost/30min', '_blank')}
                     inProgress={submitInProgress}
                   >
                     <FormattedMessage id="ContactUsForm.scheduleCallback" />

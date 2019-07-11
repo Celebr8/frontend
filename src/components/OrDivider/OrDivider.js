@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import css from './OrDivider.css.css';
+import css from './OrDivider.css';
 
 class OrDivider extends Component {
   render() {
