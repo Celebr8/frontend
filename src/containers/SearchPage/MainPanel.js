@@ -3,9 +3,7 @@ import merge from 'lodash/merge';
 import { array, bool, func, number, object, objectOf, string } from 'prop-types';
 import React, { Component } from 'react';
 import { FormattedMessage } from 'react-intl';
-import infoIcon from '../../assets/info-circle.svg';
 import { SearchFilters, SearchFiltersMobile, SearchFiltersPanel, SearchResultsPanel } from '../../components';
-import config from '../../config';
 import { propTypes } from '../../util/types';
 import css from './SearchPage.css';
 import { validFilterParams } from './SearchPage.helpers';
@@ -129,7 +127,7 @@ class MainPanel extends Component {
               search={searchParamsForPagination}
               setActiveListing={onActivateListing}
             />
-            <div className={css.search_end_message}>
+            {/* <div className={css.search_end_message}>
                 <img className={css.search_end_message__icon} src={`${config.canonicalRootURL}${infoIcon}`}/>
                 <div>
                     <div className={css.search_end_message__title} >
@@ -140,7 +138,7 @@ class MainPanel extends Component {
                         <a href="/benefits/recommend-gift">Find out more</a>
                     </div>
                 </div>
-            </div>
+            </div> */}
           </div>
         )}
       </div>
