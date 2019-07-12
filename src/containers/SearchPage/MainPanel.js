@@ -132,7 +132,7 @@ class MainPanel extends Component {
               search={searchParamsForPagination}
               setActiveListing={onActivateListing}
             />
-            <div className={css.search_end_message}>
+            {/* <div className={css.search_end_message}>
               <img
                 alt="Nothing more"
                 className={css.search_end_message__icon}
@@ -147,7 +147,7 @@ class MainPanel extends Component {
                   <a href="/benefits/recommend-gift">Find out more</a>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
         )}
       </div>
