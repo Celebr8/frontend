@@ -3,12 +3,7 @@ import merge from 'lodash/merge';
 import { array, bool, func, number, object, objectOf, string } from 'prop-types';
 import React, { Component } from 'react';
 import { FormattedMessage } from 'react-intl';
-import {
-  SearchFilters,
-  SearchFiltersMobile,
-  SearchFiltersPanel,
-  SearchResultsPanel,
-} from '../../components';
+import { SearchFilters, SearchFiltersMobile, SearchFiltersPanel, SearchResultsPanel } from '../../components';
 import { propTypes } from '../../util/types';
 import css from './SearchPage.css';
 import { validFilterParams } from './SearchPage.helpers';
