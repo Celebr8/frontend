@@ -8,6 +8,7 @@ import { propTypes } from '../../util/types';
 import css from './SearchPage.css';
 import { validFilterParams } from './SearchPage.helpers';
 
+
 class MainPanel extends Component {
   constructor(props) {
     super(props);

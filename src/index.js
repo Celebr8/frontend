@@ -15,24 +15,22 @@
 // https://reactjs.org/docs/javascript-environment-requirements.html
 import 'core-js/es6/map';
 import 'core-js/es6/set';
+import Decimal from 'decimal.js';
 import 'raf/polyfill';
-
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Decimal from 'decimal.js';
-import { createInstance, types as sdkTypes } from './util/sdkLoader';
+import { GoogleAnalyticsHandler, LoggingAnalyticsHandler } from './analytics/handlers';
 import { ClientApp, renderApp } from './app';
-import configureStore from './store';
-import { matchPathname } from './util/routes';
-import * as sample from './util/sample';
 import config from './config';
 import { authInfo } from './ducks/Auth.duck';
 import { fetchCurrentUser } from './ducks/user.duck';
-import routeConfiguration from './routeConfiguration';
-import * as log from './util/log';
-import { LoggingAnalyticsHandler, GoogleAnalyticsHandler } from './analytics/handlers';
-
 import './marketplaceIndex.css';
+import routeConfiguration from './routeConfiguration';
+import configureStore from './store';
+import * as log from './util/log';
+import { matchPathname } from './util/routes';
+import * as sample from './util/sample';
+import { createInstance, types as sdkTypes } from './util/sdkLoader';
 
 const { BigDecimal } = sdkTypes;
 
@@ -122,3 +120,4 @@ export default renderApp;
 // matchPathname helps to figure out which route is called and if it has preloading needs
 // configureStore is used for creating initial store state for Redux after preloading
 export { matchPathname, configureStore, routeConfiguration, config };
+

@@ -203,3 +203,12 @@
   padding: 15px 24px 15px 24px;
   text-align: center;
 }
+
+.reviewWrap {
+  margin: 40px 0 40px 20px;
+}
+@media(min-width: 768px){
+  .reviewWrap {
+    margin: 40px 0 40px 0px;
+  }
+}
