@@ -49,15 +49,8 @@ const ReviewsComponent = props => {
   const { className, rootClassName, reviews, intl } = props;
   const classes = classNames(rootClassName || css.root, className);
 
-  const reviewCount = reviews.length ? (
-    <div className={css.reviewCountLable}>Reviews ({reviews.length})</div>
-  ) : (
-    ''
-  );
-
   return (
     <ul className={classes}>
-      {reviewCount}
       {reviews.map(r => {
         return (
           <li key={`Review_${r.id.uuid}`} className={css.reviewItem}>
