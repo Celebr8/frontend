@@ -5,8 +5,9 @@ import React from 'react';
 import { FormattedMessage, injectIntl, intlShape } from 'react-intl';
 import { withRouter } from 'react-router-dom';
 import { compose } from 'redux';
-import { Button, ModalInMobile, Reviews } from '../../components';
+import { Button, ModalInMobile } from '../../components';
 import config from '../../config';
+import SectionReview from '../../containers/ListingPage/SectionReviews';
 import { BookingDatesForm } from '../../forms';
 import { formatMoney } from '../../util/currency';
 import { LISTING_STATE_CLOSED, propTypes } from '../../util/types';
@@ -149,8 +150,7 @@ const BookingPanel = props => {
         )}
       </div>
       <div className={css.reviewWrap}>
-        {fetchReviewsError ? reviewsError : null}
-        <Reviews reviews={reviews} />
+        <SectionReview reviews={reviews} />
       </div>
     </div>
   );

@@ -30,6 +30,7 @@ import SectionHostMaybe from './SectionHostMaybe';
 import SectionImages from './SectionImages';
 import SectionMapMaybe from './SectionMapMaybe';
 import SectionRegularlyOpenOn from './SectionRegularlyOpenOn';
+import SectionReviews from './SectionReviews';
 import SectionRulesMaybe from './SectionRulesMaybe';
 import SectionType from './SectionType';
 
@@ -437,7 +438,7 @@ export class ListingPageComponent extends Component {
                     publicData={publicData}
                     listingId={currentListing.id}
                   />
-                  {/* <SectionReviews reviews={reviews} fetchReviewsError={fetchReviewsError} /> */}
+                  <SectionReviews reviews={reviews} fetchReviewsError={fetchReviewsError} />
                   <SectionHostMaybe
                     title={title}
                     listing={currentListing}
