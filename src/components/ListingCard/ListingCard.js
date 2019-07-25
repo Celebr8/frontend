@@ -1,16 +1,14 @@
-import React, { Component } from 'react';
-import { string, func } from 'prop-types';
-import { FormattedMessage, intlShape, injectIntl } from 'react-intl';
 import classNames from 'classnames';
+import { func, string } from 'prop-types';
+import React, { Component } from 'react';
+import { FormattedMessage, injectIntl, intlShape } from 'react-intl';
+import { NamedLink, ResponsiveImage, Reviews } from '../../components';
 import { lazyLoadWithDimensions } from '../../util/contextHelpers';
-import { propTypes } from '../../util/types';
 import { ensureListing, ensureUser } from '../../util/data';
 import { richText } from '../../util/richText';
+import { propTypes } from '../../util/types';
 import { createSlug } from '../../util/urlHelpers';
-import { NamedLink, ResponsiveImage } from '../../components';
-
 import css from './ListingCard.css';
-
 const MIN_LENGTH_FOR_LONG_WORDS = 10;
 
 class ListingImage extends Component {
@@ -21,7 +19,17 @@ class ListingImage extends Component {
 const LazyImage = lazyLoadWithDimensions(ListingImage, { loadAfterInitialRendering: 3000 });
 
 export const ListingCardComponent = props => {
-  const { className, rootClassName, listing, renderSizes, setActiveListing } = props;
+  const {
+    className,
+    rootClassName,
+    listing,
+    renderSizes,
+    setActiveListing,
+    reviews,
+    intl,
+    fetchReviewsError,
+  } = props;
+
   const classes = classNames(rootClassName || css.root, className);
   const currentListing = ensureListing(listing);
   const id = currentListing.id.uuid;
@@ -32,6 +40,12 @@ export const ListingCardComponent = props => {
   const authorName = author.attributes.profile.displayName;
   const firstImage =
     currentListing.images && currentListing.images.length > 0 ? currentListing.images[0] : null;
+
+  const reviewsError = (
+    <h2 className={css.errorText}>
+      <FormattedMessage id="ListingPage.reviewsError" />
+    </h2>
+  );
 
   const listingTypeTranslation =
     listingType === 'common' ? 'ListingCard.commonSpace' : 'ListingCard.privateSpace';
@@ -60,6 +74,10 @@ export const ListingCardComponent = props => {
               longWordMinLength: MIN_LENGTH_FOR_LONG_WORDS,
               longWordClass: css.longWord,
             })}
+          </div>
+          <div>
+            {fetchReviewsError ? reviewsError : null}
+            <Reviews reviews={reviews} />
           </div>
           <div className={css.authorInfo}>
             <FormattedMessage id="ListingCard.hostedBy" values={{ authorName }} />

@@ -1,10 +1,9 @@
+import classNames from 'classnames';
+import { arrayOf, string } from 'prop-types';
 import React from 'react';
 import { injectIntl, intlShape } from 'react-intl';
-import { arrayOf, string } from 'prop-types';
-import classNames from 'classnames';
 import { Avatar, ReviewRating, UserDisplayName } from '../../components';
 import { propTypes } from '../../util/types';
-
 import css from './Reviews.css';
 
 const Review = props => {
@@ -50,8 +49,15 @@ const ReviewsComponent = props => {
   const { className, rootClassName, reviews, intl } = props;
   const classes = classNames(rootClassName || css.root, className);
 
+  const reviewCount = reviews.length ? (
+    <div className={css.reviewCountLable}>Reviews ({reviews.length})</div>
+  ) : (
+    ''
+  );
+
   return (
     <ul className={classes}>
+      {reviewCount}
       {reviews.map(r => {
         return (
           <li key={`Review_${r.id.uuid}`} className={css.reviewItem}>

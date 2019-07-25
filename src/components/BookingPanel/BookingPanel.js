@@ -5,7 +5,7 @@ import React from 'react';
 import { FormattedMessage, injectIntl, intlShape } from 'react-intl';
 import { withRouter } from 'react-router-dom';
 import { compose } from 'redux';
-import { Button, ModalInMobile } from '../../components';
+import { Button, ModalInMobile, Reviews } from '../../components';
 import config from '../../config';
 import { BookingDatesForm } from '../../forms';
 import { formatMoney } from '../../util/currency';
@@ -64,7 +64,15 @@ const BookingPanel = props => {
     history,
     location,
     intl,
+    reviews,
+    fetchReviewsError,
   } = props;
+
+  const reviewsError = (
+    <h2 className={css.errorText}>
+      <FormattedMessage id="ListingPage.reviewsError" />
+    </h2>
+  );
 
   const price = listing.attributes.price;
   const hasListingState = !!listing.attributes.state;
@@ -139,6 +147,10 @@ const BookingPanel = props => {
             <FormattedMessage id="BookingPanel.closedListingButtonText" />
           </div>
         )}
+      </div>
+      <div className={css.reviewWrap}>
+        {fetchReviewsError ? reviewsError : null}
+        <Reviews reviews={reviews} />
       </div>
     </div>
   );
