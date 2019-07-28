@@ -862,7 +862,7 @@
   "SearchFilters.amenitiesLabel": "Amenities",
   "SearchFilters.regularlyOpenOnLabel": "Regularly open on",
   "SearchFilters.groupSizeLabel": "Group size",
-  "SearchFilters.listingTypeLabel": "Type",
+  "SearchFilters.listingTypeLabel": "Space type",
   "SearchFilters.filtersButtonLabel": "Filters",
   "SearchFilters.foundResults": "{count, number} {count, plural, one {result} other {results}}",
   "SearchFilters.loadingResults": "Loading search results…",
