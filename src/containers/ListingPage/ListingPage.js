@@ -14,6 +14,7 @@ import { isScrollingDisabled, manageDisableScrolling } from '../../ducks/UI.duck
 import routeConfiguration from '../../routeConfiguration';
 import { formatMoney } from '../../util/currency';
 import { ensureListing, ensureOwnListing, ensureUser, userDisplayNameAsString } from '../../util/data';
+import externalReviews from '../../util/externalReviews';
 import { richText } from '../../util/richText';
 import { createResourceLocatorString, findRouteByRouteName } from '../../util/routes';
 import { types as sdkTypes } from '../../util/sdkLoader';
@@ -33,6 +34,9 @@ import SectionRegularlyOpenOn from './SectionRegularlyOpenOn';
 import SectionReviews from './SectionReviews';
 import SectionRulesMaybe from './SectionRulesMaybe';
 import SectionType from './SectionType';
+let isExecuted = false;
+
+// console.log(externalReviews);
 
 const MIN_LENGTH_FOR_LONG_WORDS_IN_TITLE = 16;
 
@@ -179,6 +183,15 @@ export class ListingPageComponent extends Component {
     } = this.props;
 
     const listingId = new UUID(rawParams.id);
+
+    externalReviews.forEach(review => {
+      if (review.pub == listingId.uuid) {
+        reviews.push(review.data);
+      }
+    });
+
+    console.log(listingId.uuid);
+
     const isPendingApprovalVariant = rawParams.variant === LISTING_PAGE_PENDING_APPROVAL_VARIANT;
     const isDraftVariant = rawParams.variant === LISTING_PAGE_DRAFT_VARIANT;
     const currentListing =
