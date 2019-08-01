@@ -1,6 +1,5 @@
-[
-    {
-    "pub": "5c617390-b3ad-486f-9207-1ac926116b2b", 
+[{
+    "pub": "5c617390-e3ef-4cfd-9c64-49b42f4cf1bb", 
     "data": {
         "attributes": {
           "content": "Great pub test",
@@ -11,9 +10,6 @@
         },
         "author": {
           "attributes": {
-            "banned": false,
-            "createdAt": "Sun Nov 18 2018 15:42:36 GMT+0000 (Greenwich Mean Time)",
-            "deleted": false,
             "profile": {
               "abbreviatedName": "SK",
               "displayName": "Scott K"
@@ -24,7 +20,10 @@
             "uuid": "5c617390-0213-4548-b078-79103b57609f"
           }
         },
-        "id": {},
+        "id": {
+          "uuid": "5c617390-dbc6-4c44-bd55-5ba649a11111",
+          "_sdkType": "UUID"
+        },
         "type": "review"
       }
 },
@@ -32,17 +31,14 @@
     "pub": "5c617390-be3e-4bf8-9cdb-43f4cd8a2a10",
     "data": {
         "attributes": {
-          "content": "number 2",
+          "content": "Test",
           "createdAt": "Wed Nov 21 2018 17:55:45 GMT+0000 (Greenwich Mean Time)",
-          "rating": 1,
+          "rating": 4,
           "state": "public",
           "type": "ofProvider"
         },
         "author": {
           "attributes": {
-            "banned": false,
-            "createdAt": "Sun Jun 18 2018 15:42:36 GMT+0000 (Greenwich Mean Time)",
-            "deleted": false,
             "profile": {
               "abbreviatedName": "SK",
               "displayName": "Scott",
@@ -59,9 +55,46 @@
             "uuid": "5c617390-0213-4548-b078-79103b57609f"
           }
         },
-        "id": {},
+        "id": {
+          "uuid": "5c617390-dbc6-4c44-bd55-5ba649a22222",
+          "_sdkType": "UUID"
+        },
         "type": "review"
       }
+},
+{
+  "pub": "5c617390-be3e-4bf8-9cdb-43f4cd8a2a10",
+  "data": {
+      "attributes": {
+        "content": "We hand a great night",
+        "createdAt": "Wed Nov 23 2019 17:55:45 GMT+0000 (Greenwich Mean Time)",
+        "rating": 5,
+        "state": "public",
+        "type": "ofProvider"
+      },
+      "author": {
+        "attributes": {
+          "profile": {
+            "abbreviatedName": "SK",
+            "displayName": "Scott",
+            "bio": null
+          },
+          "profileImage": null,
+          "type": "user",
+          "id": {
+              "uuid": "5c617390-0213-4548-b078-79103b57609f"
+          }
+        },
+        "id": {
+          "_sdkType": "UUID",
+          "uuid": "5c617390-0213-4548-b078-79103b57609f"
+        }
+      },
+      "id": {
+        "uuid": "5c617390-dbc6-4c44-bd55-5ba649a22222",
+        "_sdkType": "UUID"
+      },
+      "type": "review"
+    }
 }
-
 ]
