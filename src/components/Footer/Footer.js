@@ -2,14 +2,7 @@ import classNames from 'classnames';
 import { string } from 'prop-types';
 import React, { Fragment } from 'react';
 import { FormattedMessage, injectIntl, intlShape } from 'react-intl';
-import {
-  ExternalLink,
-  IconSocialMediaFacebook,
-  IconSocialMediaInstagram,
-  IconSocialMediaTwitter,
-  Logo,
-  NamedLink,
-} from '../../components';
+import { ExternalLink, IconSocialMediaFacebook, IconSocialMediaInstagram, IconSocialMediaTwitter, Logo, NamedLink } from '../../components';
 import config from '../../config';
 import { locationToURI, mainLocationsData } from '../../locals';
 import { twitterPageURL } from '../../util/urlHelpers';
@@ -177,12 +170,12 @@ const Footer = props => {
                     rel="noopener noreferrer"
                     className={css.link}
                   >
-                    Invite a friend
+                    <FormattedMessage id="Footer.inviteAFriend" />
                   </a>
                 </li>
                 <li key="recommendAPub" className={css.listItem}>
-                  <NamedLink name="ContactUsPage" params={{ enquiry: 'recommandAPub' }}>
-                    Recommend a pub
+                  <NamedLink name="ContactUsPage" className={css.link}>
+                    <FormattedMessage id="Footer.toContactPage" />
                   </NamedLink>
                 </li>
                 <li key="guidelines" className={css.listItem}>
