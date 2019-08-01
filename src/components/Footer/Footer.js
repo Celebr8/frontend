@@ -47,8 +47,8 @@ const renderSocialMediaLinks = intl => {
   return [fbLink, twitterLink, instragramLink].filter(v => v != null);
 };
 
-const renderFavoriteLocation = location => (
-  <li>
+const renderFavoriteLocation = (location, i) => (
+  <div key={i}>
     <NamedLink
       name="SearchPage"
       to={{
@@ -58,7 +58,7 @@ const renderFavoriteLocation = location => (
     >
       <FormattedMessage id={`Footer.search${location.intl}`} />
     </NamedLink>
-  </li>
+  </div>
 );
 
 const Footer = props => {
@@ -199,7 +199,7 @@ const Footer = props => {
               <ul className={css.list}>
                 <li className={css.listSearches}>Top cities</li>
                 <li className={css.listItem}>
-                  {mainLocationsData.map(location => renderFavoriteLocation(location))}
+                  {mainLocationsData.map((location, i) => renderFavoriteLocation(location, i))}
                 </li>
               </ul>
             </div>

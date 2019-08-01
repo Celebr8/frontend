@@ -1,17 +1,13 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { FormattedMessage } from 'react-intl';
 import classNames from 'classnames';
-import { lazyLoadWithDimensions } from '../../util/contextHelpers';
-
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
+import { FormattedMessage } from 'react-intl';
 import { NamedLink } from '../../components';
-
+import { locationToURI, mainLocationsData } from '../../locals';
+import { lazyLoadWithDimensions } from '../../util/contextHelpers';
 import css from './SectionLocations.css';
-
-import { mainLocationsData, locationToURI } from '../../locals';
-
-const locationToLink = location =>
-  locationLink(location.address, location.img, locationToURI(location));
+const locationToLink = (location, i) =>
+  locationLink(location.address, location.img, locationToURI(location), i);
 
 class LocationImage extends Component {
   render() {
@@ -21,10 +17,10 @@ class LocationImage extends Component {
 }
 const LazyImage = lazyLoadWithDimensions(LocationImage);
 
-const locationLink = (name, image, searchQuery) => {
+const locationLink = (name, image, searchQuery, i) => {
   const nameText = <span className={css.locationName}>{name}</span>;
   return (
-    <NamedLink name="SearchPage" to={{ search: searchQuery }} className={css.location}>
+    <NamedLink key={i} name="SearchPage" to={{ search: searchQuery }} className={css.location}>
       <div className={css.imageWrapper}>
         <div className={css.aspectWrapper}>
           <LazyImage src={image} alt={name} className={css.locationImage} />
@@ -44,7 +40,7 @@ const SectionLocations = props => {
   const { rootClassName, className } = props;
 
   const classes = classNames(rootClassName || css.root, className);
-  const locations = mainLocationsData.map(location => locationToLink(location));
+  const locations = mainLocationsData.map((location, i) => locationToLink(location, i));
 
   return (
     <div className={classes}>
