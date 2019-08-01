@@ -179,7 +179,7 @@ export const fetchReviews = listingId => (dispatch, getState, sdk) => {
     .then(response => {
       const reviews = denormalisedResponseEntities(response);
       externalReviews.forEach(review => {
-        if (review.pub == listingId.uuid) {
+        if (review.pub === listingId.uuid) {
           reviews.push(review.data);
         }
       });

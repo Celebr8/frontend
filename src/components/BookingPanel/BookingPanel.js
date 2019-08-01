@@ -66,14 +66,7 @@ const BookingPanel = props => {
     location,
     intl,
     reviews,
-    fetchReviewsError,
   } = props;
-
-  const reviewsError = (
-    <h2 className={css.errorText}>
-      <FormattedMessage id="ListingPage.reviewsError" />
-    </h2>
-  );
 
   const price = listing.attributes.price;
   const hasListingState = !!listing.attributes.state;

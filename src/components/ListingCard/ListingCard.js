@@ -26,7 +26,6 @@ export const ListingCardComponent = props => {
     renderSizes,
     setActiveListing,
     reviews,
-    intl,
     fetchReviewsError,
   } = props;
 

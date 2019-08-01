@@ -1,5 +1,4 @@
 .orDivider {
-  @apply --marketplaceDefaultFontStyles;
   color: var(--matterColor);
   text-align: center;
   padding-top: 10px;
