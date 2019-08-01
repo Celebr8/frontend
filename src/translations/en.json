@@ -452,7 +452,7 @@
   "LegalsPages.communityGuidelinesTabTitle": "Community Guidelines",
 
   "ListingCard.hostedBy": "Hosted by {authorName}.",
-  "ListingCard.commonSpace": "Common space",
+  "ListingCard.commonSpace": "Shared space",
   "ListingCard.privateSpace": "Private space",
   "ListingCard.unsupportedPrice": "({currency})",
   "ListingCard.unsupportedPriceTitle": "Unsupported currency ({currency})",
@@ -471,7 +471,7 @@
   "ListingPage.regularlyOpenOnTitle": "Regularly open on",
   "ListingPage.groupSizeTitle": "Group size",
   "ListingPage.listingTypeTitle": "Listing type",
-  "ListingPage.listingTypeCommon": "Common space",
+  "ListingPage.listingTypeCommon": "Shared space",
   "ListingPage.listingTypePrivate": "Private space",
   "ListingPage.finishListing": "Finish listing",
   "ListingPage.hostedBy": "Hosted by {name}",
