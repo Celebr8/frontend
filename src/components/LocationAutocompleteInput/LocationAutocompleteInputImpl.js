@@ -1,17 +1,17 @@
-import React, { Component } from 'react';
-import { any, arrayOf, bool, func, number, shape, string, oneOfType, object } from 'prop-types';
-import { FormattedMessage } from 'react-intl';
 import classNames from 'classnames';
 import debounce from 'lodash/debounce';
+import { any, arrayOf, bool, func, number, object, oneOfType, shape, string } from 'prop-types';
+import React, { Component } from 'react';
+import { FormattedMessage } from 'react-intl';
 import { IconSpinner } from '../../components';
-import { propTypes } from '../../util/types';
 import config from '../../config';
-
-import IconHourGlass from './IconHourGlass';
+import { propTypes } from '../../util/types';
+import Geocoder, { CURRENT_LOCATION_ID, GeocoderAttribution } from './GeocoderGoogleMaps';
 import IconCurrentLocation from './IconCurrentLocation';
-import Geocoder, { GeocoderAttribution, CURRENT_LOCATION_ID } from './GeocoderGoogleMaps';
-
+import IconHourGlass from './IconHourGlass';
 import css from './LocationAutocompleteInput.css';
+
+
 
 // A list of default predictions that can be shown when the user
 // focuses on the autocomplete input without typing a search. This can
@@ -458,7 +458,6 @@ class LocationAutocompleteInputImpl extends Component {
     const { name, onFocus } = input;
     const { search } = currentValue(this.props);
     const { touched, valid } = meta || {};
-    console.log('valid', valid);
     const isValid = valid && touched;
     const predictions = this.currentPredictions();
 
@@ -473,7 +472,6 @@ class LocationAutocompleteInputImpl extends Component {
       inputClassName || css.input,
       isValid ? css.inputSuccess : css.inputError
     );
-    console.log('inputClass', inputClass);
     const predictionsClass = classNames(predictionsClassName);
 
     // Only render predictions when the input has focus. For

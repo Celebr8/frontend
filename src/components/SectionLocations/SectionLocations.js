@@ -1,15 +1,11 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { FormattedMessage } from 'react-intl';
 import classNames from 'classnames';
-import { lazyLoadWithDimensions } from '../../util/contextHelpers';
-
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
+import { FormattedMessage } from 'react-intl';
 import { NamedLink } from '../../components';
-
+import { locationToURI, mainLocationsData } from '../../locals';
+import { lazyLoadWithDimensions } from '../../util/contextHelpers';
 import css from './SectionLocations.css';
-
-import { mainLocationsData, locationToURI } from '../../locals';
-
 const locationToLink = location =>
   locationLink(location.address, location.img, locationToURI(location));
 
