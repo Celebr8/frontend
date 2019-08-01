@@ -1,10 +1,10 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Field } from 'react-final-form';
 import classNames from 'classnames';
+import PropTypes from 'prop-types';
+import React from 'react';
+import { Field } from 'react-final-form';
 import { ValidationError } from '../../components';
-
 import css from './FieldSelect.css';
+
 
 const FieldSelectComponent = props => {
   const { rootClassName, className, id, label, input, meta, children, ...rest } = props;
