@@ -33,9 +33,6 @@ import SectionRegularlyOpenOn from './SectionRegularlyOpenOn';
 import SectionReviews from './SectionReviews';
 import SectionRulesMaybe from './SectionRulesMaybe';
 import SectionType from './SectionType';
-
-// console.log(externalReviews);
-
 const MIN_LENGTH_FOR_LONG_WORDS_IN_TITLE = 16;
 
 const { UUID } = sdkTypes;
@@ -181,8 +178,6 @@ export class ListingPageComponent extends Component {
     } = this.props;
 
     const listingId = new UUID(rawParams.id);
-
-    console.log('Pub ID: ', listingId.uuid);
 
     const isPendingApprovalVariant = rawParams.variant === LISTING_PAGE_PENDING_APPROVAL_VARIANT;
     const isDraftVariant = rawParams.variant === LISTING_PAGE_DRAFT_VARIANT;

@@ -183,7 +183,6 @@ export const fetchReviews = listingId => (dispatch, getState, sdk) => {
           reviews.push(review.data);
         }
       });
-      console.log('Reviews', reviews);
       dispatch(fetchReviewsSuccess(reviews));
     })
     .catch(e => {

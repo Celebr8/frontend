@@ -1,29 +1,21 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { compose } from 'redux';
-import { FormattedMessage, intlShape, injectIntl } from 'react-intl';
-import pickBy from 'lodash/pickBy';
 import classNames from 'classnames';
+import pickBy from 'lodash/pickBy';
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
+import { FormattedMessage, injectIntl, intlShape } from 'react-intl';
+import { compose } from 'redux';
+import { Button, Logo, Modal, ModalMissingInformation, NamedLink, TopbarDesktop, TopbarMobileMenu } from '../../components';
 import config from '../../config';
+import { TopbarSearchForm } from '../../forms';
 import routeConfiguration from '../../routeConfiguration';
 import { withViewport } from '../../util/contextHelpers';
-import { parse, stringify } from '../../util/urlHelpers';
 import { createResourceLocatorString, pathByRouteName } from '../../util/routes';
 import { propTypes } from '../../util/types';
-import {
-  Button,
-  Logo,
-  Modal,
-  ModalMissingInformation,
-  NamedLink,
-  TopbarDesktop,
-  TopbarMobileMenu,
-} from '../../components';
-import { TopbarSearchForm } from '../../forms';
-
+import { parse, stringify } from '../../util/urlHelpers';
 import MenuIcon from './MenuIcon';
 import SearchIcon from './SearchIcon';
 import css from './Topbar.css';
+
 
 const MAX_MOBILE_SCREEN_WIDTH = 768;
 
@@ -121,8 +113,6 @@ class TopbarComponent extends Component {
       } else if (typeof window !== 'undefined') {
         window.location = path;
       }
-
-      console.log('logged out'); // eslint-disable-line
     });
   }
 
