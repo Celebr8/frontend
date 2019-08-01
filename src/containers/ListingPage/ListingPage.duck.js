@@ -1,17 +1,14 @@
 import pick from 'lodash/pick';
 import moment from 'moment';
 import config from '../../config';
-import { types as sdkTypes } from '../../util/sdkLoader';
-import { storableError } from '../../util/errors';
 import { addMarketplaceEntities } from '../../ducks/marketplaceData.duck';
-import { denormalisedResponseEntities } from '../../util/data';
-import { TRANSITION_ENQUIRE } from '../../util/transaction';
-import {
-  LISTING_PAGE_DRAFT_VARIANT,
-  LISTING_PAGE_PENDING_APPROVAL_VARIANT,
-} from '../../util/urlHelpers';
 import { fetchCurrentUser, fetchCurrentUserHasOrdersSuccess } from '../../ducks/user.duck';
-
+import { denormalisedResponseEntities } from '../../util/data';
+import { storableError } from '../../util/errors';
+import externalReviews from '../../util/externalReviews';
+import { types as sdkTypes } from '../../util/sdkLoader';
+import { TRANSITION_ENQUIRE } from '../../util/transaction';
+import { LISTING_PAGE_DRAFT_VARIANT, LISTING_PAGE_PENDING_APPROVAL_VARIANT } from '../../util/urlHelpers';
 const { UUID } = sdkTypes;
 
 // ================ Action types ================ //
@@ -181,6 +178,12 @@ export const fetchReviews = listingId => (dispatch, getState, sdk) => {
     })
     .then(response => {
       const reviews = denormalisedResponseEntities(response);
+      externalReviews.forEach(review => {
+        if (review.pub == listingId.uuid) {
+          reviews.push(review.data);
+        }
+      });
+      console.log('Reviews', reviews);
       dispatch(fetchReviewsSuccess(reviews));
     })
     .catch(e => {
@@ -190,7 +193,6 @@ export const fetchReviews = listingId => (dispatch, getState, sdk) => {
 
 const timeSlotsRequest = params => (dispatch, getState, sdk) => {
   return sdk.timeslots.query(params).then(response => {
-    console.log('answer recieved from ', response);
     return denormalisedResponseEntities(response);
   });
 };
