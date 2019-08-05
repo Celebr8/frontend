@@ -19,7 +19,7 @@ TabContainer.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-const forUser = () => (
+const ForUser = () => (
   <TabContainer>
     <h2>We know more about you than you think.</h2>
     <p>
@@ -92,7 +92,7 @@ const forUser = () => (
   </TabContainer>
 );
 
-const forProvider = () => (
+const ForProvider = () => (
   <TabContainer>
     <h2>Higher income, more exposure, returning customers.</h2>
     <p>
@@ -157,7 +157,7 @@ const forProvider = () => (
     <p>
       If you're ready to start but you still have questions that are not covered by our{' '}
       <NamedLink name="FAQPage">help center</NamedLink>, we invite you to{' '}
-      <NamedLink name="ContactUsPages">contact us</NamedLink> and we'll assist you personally.
+      <NamedLink name="ContactUsPage">contact us</NamedLink> and we'll assist you personally.
     </p>
     <br />
   </TabContainer>
@@ -179,8 +179,8 @@ class FirstStepsTabs extends React.Component {
   render() {
 
     const tabs = {
-      0: <forUser />,
-      1: <forProvider />,
+      0: <ForUser />,
+      1: <ForProvider />,
     };
 
     const selectedTab = tabs[this.state.value];
