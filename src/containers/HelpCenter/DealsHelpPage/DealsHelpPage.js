@@ -65,7 +65,7 @@ const DealsHelpPageComponent = props => {
             <NamedLink name="BirthdayDealPage">Birthday Gift</NamedLink>, you can reward your
             employees and colleagues with our{' '}
             <NamedLink name="CorporateDealPage">Corporate Benefit</NamedLink> or you can get a €15
-            gift card with our <NamedLink name="RecommandDealPage">Recommend Reward</NamedLink>.
+            gift card with our <NamedLink name="RecommendDealPage">Recommend Reward</NamedLink>.
           </p>
           <p>
             What are you waiting for?{' '}
