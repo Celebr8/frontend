@@ -65,7 +65,7 @@ const GuidebookForProvidersPageComponent = props => {
             listing(s).
           </p>
           <p>
-            On our <NamedLink href="FirstStepPage">First Steps</NamedLink> page you can read about
+            On our <NamedLink name="FirstStepsPage">First Steps</NamedLink> page you can read about
             the first steps you need to make, to start listing your pub on Whichost.
           </p>
           <br />
@@ -73,7 +73,7 @@ const GuidebookForProvidersPageComponent = props => {
           <p>
             If you still have questions that are not covered by our{' '}
             <NamedLink name="FAQPage">help center</NamedLink>, we invite you to{' '}
-            <NamedLink href="ContactUsPage">contact us</NamedLink> and we'll assist you personally.
+            <NamedLink name="ContactUsPage">contact us</NamedLink> and we'll assist you personally.
           </p>
           <br />
         </LayoutWrapperMain>
