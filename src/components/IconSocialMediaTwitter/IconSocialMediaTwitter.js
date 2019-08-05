@@ -5,13 +5,13 @@ import classNames from 'classnames';
 import css from './IconSocialMediaTwitter.css';
 
 const IconSocialMediaTwitter = props => {
-  const { rootClassName, className } = props;
+  const { rootClassName, className, height, width } = props;
   const classes = classNames(rootClassName || css.root, className);
   return (
     <svg
       className={classes}
-      width="16"
-      height="14"
+      width={ width || 16 }
+      height={ height || 14 }
       viewBox="0 0 16 14"
       xmlns="http://www.w3.org/2000/svg"
     >
