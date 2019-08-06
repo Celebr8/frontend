@@ -5,26 +5,26 @@
 
   margin-top: 0;
   max-width: 735px;
-
-  @media (--viewportMedium) {
-    margin-bottom: 23px;
-  }
 }
 
 .locations {
   display: flex;
   flex-direction: column;
-  margin-top: 32px;
 
   @media (--viewportMedium) {
     flex-direction: row;
-    margin-top: 57px;
+    flex-wrap: wrap;
+    justify-content: space-between;
   }
 }
 
 .location {
   width: 100%;
-  margin-top: 25px;
+  margin-top: 60px;
+
+  &:first-child {
+    margin-top: 10px;
+  }
 
   /* Remove link's hover effect */
   &:hover {
@@ -32,22 +32,19 @@
   }
 
   @media (--viewportMedium) {
-    margin-top: 0;
-  }
-}
-
-.location {
-  @media (--viewportMedium) {
-    margin-right: 40px;
+    margin: 0 -10px !important;
+    padding: 10px;
     margin-bottom: 0;
+    width: 50%;
+  }
+
+  @media (--viewportLarge) {
+    width: 25%;
+    margin: 10px -15px !important;
+    padding: 15px;
   }
 }
 
-.location:last-of-type {
-  @media (--viewportMedium) {
-    margin-right: 0;
-  }
-}
 
 /* A wrapper for a responsive image that holds it's aspect ratio */
 .imageWrapper {
@@ -64,10 +61,12 @@
 
 /* An image wrapper that defines the images aspect ratio */
 .aspectWrapper {
-  padding-bottom: calc(6 / 13 * 100%); /* 13:6 Aspect Ratio */
+  padding-bottom: calc(6 / 13 * 100%);
+  /* 13:6 Aspect Ratio */
 
   @media (--viewportMedium) {
-    padding-bottom: calc(2 / 3 * 100%); /* 3:2 Aspect Ratio */
+    padding-bottom: calc(2 / 3 * 100%);
+    /* 3:2 Aspect Ratio */
   }
 }
 
@@ -85,16 +84,14 @@
 }
 
 .linkText {
-  @apply --marketplaceH2FontStyles;
+  @apply --marketplaceH3FontStyles;
   color: var(--matterColor);
   margin-top: 15px;
   margin-bottom: 0;
-
-  @media (--viewportMedium) {
-    margin-top: 21px;
-  }
+  text-align: center
 }
 
 .locationName {
   color: var(--marketplaceColor);
+  /* border-bottom: 2px solid var(--marketplaceColor); */
 }

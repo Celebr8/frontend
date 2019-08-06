@@ -44,10 +44,21 @@ const SectionLocations = props => {
 
   return (
     <div className={classes}>
+      <div>
+        <h2 style={{ color: '#ff3f00' }}>Try something new!</h2>
+      </div>
       <div className={css.title}>
         <FormattedMessage id="SectionLocations.title" />
       </div>
       <div className={css.locations}>{locations}</div>
+      <div style={{ textAlign: 'center' }}>
+        <NamedLink name="SearchPage"></NamedLink>
+        <h2
+          style={{ borderBottom: '2px solid #EC5027', display: 'inline-block', marginTop: '4rem' }}
+        >
+          See all of our pubs on the map
+        </h2>
+      </div>
     </div>
   );
 };

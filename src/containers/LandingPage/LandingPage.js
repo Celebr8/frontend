@@ -1,26 +1,25 @@
-import React from 'react';
 import PropTypes from 'prop-types';
-import { compose } from 'redux';
+import React from 'react';
+import { injectIntl, intlShape } from 'react-intl';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import { injectIntl, intlShape } from 'react-intl';
-import { isScrollingDisabled } from '../../ducks/UI.duck';
-import config from '../../config';
+import { compose } from 'redux';
+import facebookImage from '../../assets/whichostFacebook-1200x630.png';
+import twitterImage from '../../assets/whichostTwitter-600x314.png';
 import {
+  Footer,
+  LayoutSingleColumn,
+  LayoutWrapperFooter,
+  LayoutWrapperMain,
+  LayoutWrapperTopbar,
   Page,
   SectionHero,
   SectionHowItWorks,
   SectionLocations,
-  LayoutSingleColumn,
-  LayoutWrapperTopbar,
-  LayoutWrapperMain,
-  LayoutWrapperFooter,
-  Footer,
 } from '../../components';
+import config from '../../config';
 import { TopbarContainer } from '../../containers';
-
-import facebookImage from '../../assets/whichostFacebook-1200x630.png';
-import twitterImage from '../../assets/whichostTwitter-600x314.png';
+import { isScrollingDisabled } from '../../ducks/UI.duck';
 import css from './LandingPage.css';
 
 export const LandingPageComponent = props => {
@@ -62,7 +61,7 @@ export const LandingPageComponent = props => {
             <SectionHero className={css.hero} history={history} location={location} />
           </div>
           <ul className={css.sections}>
-            <li className={css.section}>
+            <li className={css.section} style={{ backgroundColor: 'rgba(236, 80, 39, 0.03)' }}>
               <div className={css.sectionContentFirstChild}>
                 <SectionLocations />
               </div>
