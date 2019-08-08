@@ -917,6 +917,7 @@
   "SectionHowItWorks.titleLineTwo": "(or how Whichost works).",
   "SectionLocations.listingsInLocation": "Pubs in {location}",
   "SectionLocations.title": "Explore local, typical pubs in Ireland",
+  "SectionLocations.morePubs": "See all of our pubs on the map",
   "SelectMultipleFilter.labelSelected": "{labelText} • {count}",
   "SelectMultipleFilterPlainForm.labelSelected": "{labelText} • {count}",
   "SelectSingleFilter.popupClear": "Clear",

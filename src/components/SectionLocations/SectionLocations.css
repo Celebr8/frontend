@@ -95,3 +95,14 @@
   color: var(--marketplaceColor);
   /* border-bottom: 2px solid var(--marketplaceColor); */
 }
+
+.mapLink {
+  @apply --marketplaceH2FontStyles;
+  border-bottom: 2px solid var(--marketplaceColor);
+  color: var(--matterColor);
+
+  &:hover {
+    text-decoration: none;
+    color: var(--marketplaceColor);
+  }
+}

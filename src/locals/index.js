@@ -42,8 +42,8 @@ export const mainLocationsData = [
   {
     address: 'Waterford',
     img: waterfordImage,
-    bounds: ['53.3109', '-8.9588', '53.253', '-9.237719'],
-    origin: ['53.2748', '-9.0488'],
+    bounds: ['52.39279019', '-6.9583489', '52.14361021', '-7.31111303'],
+    origin: ['52.0902', '-6.3249'],
     intl: 'Waterford',
   },
 ];
