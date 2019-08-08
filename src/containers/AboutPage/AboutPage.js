@@ -1,19 +1,17 @@
 import React from 'react';
-import { FormattedMessage, FormattedHTMLMessage } from 'react-intl';
-import { StaticPage, TopbarContainer } from '../../containers';
+import { FormattedHTMLMessage, FormattedMessage } from 'react-intl';
 import {
-  LayoutSingleColumn,
-  LayoutWrapperTopbar,
-  LayoutWrapperMain,
-  LayoutWrapperFooter,
   Footer,
+  LayoutSingleColumn,
+  LayoutWrapperFooter,
+  LayoutWrapperMain,
+  LayoutWrapperTopbar,
   SectionHero,
 } from '../../components';
-
+import { StaticPage, TopbarContainer } from '../../containers';
 import css from './AboutPage.css';
 
 const AboutPage = () => {
-
   // prettier-ignore
   return (
     <StaticPage
@@ -90,7 +88,7 @@ const AboutPage = () => {
                     <span className={css.teamMemberTagline}>"Live outside the comfort zone."</span>
                   </div>
                   <div className={css.teamMember}>
-                    <img className={css.teamMemberImage} src={require('./scott.jpeg')} alt="Scott" />
+                    <img className={css.teamMemberImage} src={require('./scott.jpg')} alt="Scott" />
                     <h3 className={css.teamMemberName}>Scott K.</h3>
                     <span className={css.teamMemberTitle}>
                       <FormattedMessage id="AboutPage.scottJobTitle" />
