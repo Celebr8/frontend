@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import { injectIntl, intlShape } from 'react-intl';
+import { injectIntl, intlShape, FormattedMessage } from 'react-intl';
 import { isScrollingDisabled } from '../../ducks/UI.duck';
 import config from '../../config';
 import {
@@ -18,6 +18,8 @@ import {
   Footer,
 } from '../../components';
 import { TopbarContainer } from '../../containers';
+import { mainCountry, locationToURI } from '../../locals';
+import { NamedLink } from '../../components';
 
 import facebookImage from '../../assets/whichostFacebook-1200x630.png';
 import twitterImage from '../../assets/whichostTwitter-600x314.png';
@@ -59,7 +61,30 @@ export const LandingPageComponent = props => {
         </LayoutWrapperTopbar>
         <LayoutWrapperMain>
           <div className={css.heroContainer}>
-            <SectionHero className={css.hero} history={history} location={location} />
+            <SectionHero
+              history={history}
+              location={location}
+              title={<FormattedMessage id="SectionHero.title" />}
+              subtitle={<FormattedMessage id="SectionHero.subTitle" />}
+            >
+              <div className={css.heroInner}>
+                <h2 className={css.temporaryOffer}>
+                  <FormattedMessage id="SectionHero.temporaryOffer" />
+                  <NamedLink name="BirthdayDealPage" className={css.temporaryOfferLink}>
+                    <FormattedMessage id="SectionHero.temporaryOfferLink" />
+                  </NamedLink>
+                </h2>
+                <NamedLink
+                  name="SearchPage"
+                  to={{
+                    search: locationToURI(mainCountry),
+                  }}
+                  className={css.heroButton}
+                >
+                  <FormattedMessage id="SectionHero.browseButton" />
+                </NamedLink>
+              </div>
+            </SectionHero>
           </div>
           <ul className={css.sections}>
             <li className={css.section}>
