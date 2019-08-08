@@ -95,7 +95,7 @@ const AboutPage = () => {
                     <span className={css.teamMemberTitle}>
                       <FormattedMessage id="AboutPage.scottJobTitle" />
                       </span>
-                    <span className={css.teamMemberTagline}>Something about the person</span>
+                    <span className={css.teamMemberTagline}>"In this world you make your own luck."</span>
                   </div>
                   <div className={css.teamMember}>
                     <img className={css.teamMemberImage} src={require('./dale.jpg')} alt="Dale" />
