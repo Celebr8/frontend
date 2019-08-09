@@ -2,8 +2,9 @@ import classNames from 'classnames';
 import { func, string } from 'prop-types';
 import React, { Component } from 'react';
 import { FormattedMessage, injectIntl, intlShape } from 'react-intl';
-import { NamedLink, ResponsiveImage, Reviews } from '../../components';
+import { NamedLink, ResponsiveImage, Reviews, ReviewRating } from '../../components';
 import { lazyLoadWithDimensions } from '../../util/contextHelpers';
+import ReviewData from '../../util/externalReviews';
 import { ensureListing, ensureUser } from '../../util/data';
 import { richText } from '../../util/richText';
 import { propTypes } from '../../util/types';
@@ -49,8 +50,30 @@ export const ListingCardComponent = props => {
   const listingTypeTranslation =
     listingType === 'common' ? 'ListingCard.commonSpace' : 'ListingCard.privateSpace';
 
+  let rating = [];
+  let ratingArray = [];
+  let reviewCount = 0;
+  let mode = 0;
+
+  function mostCommonNumber(numbers) {
+    let map = new Map()
+    for (let num of numbers) {
+        map.set(num, (map.get(num) || 0) + 1)
+    }
+
+    let mostCommonNumber = NaN
+    let maxCount = -1
+    for (let [num, count] of map.entries()) {
+        if (count > maxCount) {
+            maxCount = count
+            mostCommonNumber = num
+        }
+    }
+    return mostCommonNumber
+}
+
   return (
-    <NamedLink className={classes} name="ListingPage" params={{ id, slug }}>
+    <NamedLink className={classes} name="ListingPage" params={{ id, slug, rating, ratingArray, mode}}>
       <div
         className={css.threeToTwoWrapper}
         onMouseEnter={() => setActiveListing(currentListing.id)}
@@ -88,6 +111,15 @@ export const ListingCardComponent = props => {
               values={{ authorName }}
             />
           </div>
+          {ReviewData.map((review) => {
+            if (id === review.pub ) {              
+              rating = review.data.attributes.rating
+              ratingArray.push(rating);
+              mode = mostCommonNumber(ratingArray); 
+              reviewCount++;                         
+            } 
+          })}          
+          <ReviewRating rating={mode} /><h5>Count: {reviewCount} </h5>
         </div>
       </div>
     </NamedLink>
