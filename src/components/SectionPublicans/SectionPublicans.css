@@ -1,0 +1,49 @@
+@import '../../marketplace.css';
+
+.publicanWrap {
+  max-width: 600px;
+}
+
+.subTitle {
+  font-size: 2rem;
+  color: white;
+}
+
+.mainTitle {
+  color: white;
+  line-height: 1.15;
+  font-size: 5rem;
+}
+
+.buttonWrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.addYourPubButton {
+  @apply --marketplaceButtonStyles;
+  float: left;
+  margin-top: 20px;
+
+  @media (--viewportMedium) {
+    display: block;
+    width: 240px;
+    margin-right: 20px;
+  }
+}
+
+.secondaryButton {
+  @apply --marketplaceButtonStyles;
+  margin-top: 20px;
+  background-color: #4A4A4A;
+
+  @media (--viewportMedium) {
+    display: block;
+    width: 240px;
+    margin-right: 20px;
+  }
+
+  &:hover {
+    background-color: rgb(54, 54, 54);
+  }
+}
