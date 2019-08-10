@@ -10,6 +10,7 @@ import { ThemeProvider } from '@material-ui/styles';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
+import { Link } from 'react-router-dom';
 import css from './SectionDeals.css';
 
 const theme = createMuiTheme({
@@ -39,9 +40,11 @@ const SectionDeals = props => {
           </CardContent>
           <CardActions>
             <ThemeProvider theme={theme}>
-              <Button size="small" color="primary" style={{ cursor: 'pointer' }}>
-                Learn more
-              </Button>
+              <Link to="/benefits/birthday-gift">
+                <Button size="small" color="primary">
+                  Learn more
+                </Button>
+              </Link>
             </ThemeProvider>
           </CardActions>
         </Card>
@@ -57,9 +60,11 @@ const SectionDeals = props => {
           </CardContent>
           <CardActions>
             <ThemeProvider theme={theme}>
-              <Button size="small" color="primary">
-                Learn more
-              </Button>
+              <Link to="/benefits/corporate-benefit">
+                <Button size="small" color="primary">
+                  Learn more
+                </Button>
+              </Link>
             </ThemeProvider>
           </CardActions>
         </Card>
