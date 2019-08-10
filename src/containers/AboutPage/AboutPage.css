@@ -1,7 +1,18 @@
 @import '../../marketplace.css';
 
 .hero {
-  text-align: center;
+  flex-grow: 1;
+  justify-content: flex-end;
+  padding-bottom: 32px;
+
+  @media (--viewportMedium) {
+    padding-bottom: 50px;
+  }
+
+  @media (--viewportLarge) {
+    justify-content: center;
+    padding-top: 60px;
+  }
 }
 
 .sections {

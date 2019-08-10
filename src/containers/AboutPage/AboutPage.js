@@ -28,11 +28,13 @@ const AboutPage = () => {
           <TopbarContainer />
         </LayoutWrapperTopbar>
         <LayoutWrapperMain>
-          <SectionHero
-            className={css.hero}
-            title={<FormattedMessage id="AboutPage.heroTitle" />}
-            subtitle={<FormattedMessage id="AboutPage.heroSubtitle" />}
-          />
+          <div className={css.heroContainer}>
+            <SectionHero
+              className={css.hero}
+              title={<FormattedMessage id="AboutPage.heroTitle" />}
+              subtitle={<FormattedMessage id="AboutPage.heroSubtitle" />}
+            />
+          </div>
           <ul className={css.sections}>
             <li className={css.section}>
               <div className={css.sectionContent}>
