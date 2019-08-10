@@ -1,10 +1,16 @@
 import classNames from 'classnames';
 import { string } from 'prop-types';
-import React, { Fragment } from 'react';
+import React from 'react';
 import { FormattedMessage, injectIntl, intlShape } from 'react-intl';
-import { ExternalLink, IconSocialMediaFacebook, IconSocialMediaInstagram, IconSocialMediaTwitter, Logo, NamedLink } from '../../components';
+import {
+  ExternalLink,
+  IconSocialMediaFacebook,
+  IconSocialMediaInstagram,
+  IconSocialMediaTwitter,
+  Logo,
+  NamedLink,
+} from '../../components';
 import config from '../../config';
-import { locationToURI, mainLocationsData } from '../../locals';
 import { twitterPageURL } from '../../util/urlHelpers';
 import css from './Footer.css';
 
@@ -47,27 +53,10 @@ const renderSocialMediaLinks = intl => {
   return [fbLink, twitterLink, instragramLink].filter(v => v != null);
 };
 
-const renderFavoriteLocation = (location, i) => (
-  <div key={i}>
-    <NamedLink
-      name="SearchPage"
-      to={{
-        search: locationToURI(location),
-      }}
-      className={css.link}
-    >
-      <FormattedMessage id={`Footer.search${location.intl}`} />
-    </NamedLink>
-  </div>
-);
-
 const Footer = props => {
   const { rootClassName, className, intl } = props;
   const socialMediaLinks = renderSocialMediaLinks(intl);
   const classes = classNames(rootClassName || css.root, className);
-  const separator = <Fragment>&nbsp;&nbsp;|&nbsp;&nbsp;</Fragment>;
-
-  const version = config.version;
 
   return (
     <div className={classes}>
@@ -75,9 +64,7 @@ const Footer = props => {
         <div className={css.content}>
           <div className={css.firstSection}>
             <ul className={css.list}>
-              <li className={css.listTitle}>
-                Customers
-              </li>
+              <li className={css.listTitle}>Customers</li>
               <li className={css.listItem}>
                 <a
                   href="/s?address=Ireland&bounds=55.36%2C-5.911%2C51.427%2C-10.382&origin=53.357%2C-7.756"
@@ -103,24 +90,22 @@ const Footer = props => {
               </li>
             </ul>
             <ul className={css.list}>
-                <li className={css.listTitle}>
-                  Publicans
-                </li>
-                <li className={css.listItem}>
-                  <NamedLink name="NewListingPage" className={css.link}>
-                    <FormattedMessage id="Footer.toNewListingPage" />
-                  </NamedLink>
-                </li>
-                <li className={css.listItem}>
-                  <NamedLink
-                    name="GuidebookForProvidersPage"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={css.link}
-                  >
-                    Guidebook
-                  </NamedLink>
-                </li>
+              <li className={css.listTitle}>Publicans</li>
+              <li className={css.listItem}>
+                <NamedLink name="NewListingPage" className={css.link}>
+                  <FormattedMessage id="Footer.toNewListingPage" />
+                </NamedLink>
+              </li>
+              <li className={css.listItem}>
+                <NamedLink
+                  name="GuidebookForProvidersPage"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={css.link}
+                >
+                  Guidebook
+                </NamedLink>
+              </li>
             </ul>
             <ul className={css.list}>
               <li key="whichost" className={css.listTitle}>
@@ -142,7 +127,11 @@ const Footer = props => {
                 </NamedLink>
               </li>
               <li key="recommendAPub" className={css.listItem}>
-                <NamedLink name="ContactUsPage" className={css.link} params={{ enquiry: 'recommandAPub' }}>
+                <NamedLink
+                  name="ContactUsPage"
+                  className={css.link}
+                  params={{ enquiry: 'recommandAPub' }}
+                >
                   Recommend a pub
                 </NamedLink>
               </li>
@@ -182,7 +171,7 @@ const Footer = props => {
                 <NamedLink name="AboutPage" className={css.link}>
                   <FormattedMessage id="Footer.toAboutPage" />
                 </NamedLink>
-                </li>
+              </li>
               <li className={css.listItem}>
                 <NamedLink name="ContactUsPage" className={css.link}>
                   <FormattedMessage id="Footer.toContactPage" />
@@ -194,9 +183,7 @@ const Footer = props => {
             <div className={css.organizationCopyright}>
               <FormattedMessage id="Footer.copyright" />
             </div>
-            <div className={css.socialIcons}>
-              {socialMediaLinks}
-            </div>
+            <div className={css.socialIcons}>{socialMediaLinks}</div>
           </div>
         </div>
       </div>

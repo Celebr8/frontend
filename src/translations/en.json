@@ -757,7 +757,7 @@
   "PayoutDetailsForm.organizationTitlePlaceholder": "CEO, Manager, Partner",
   "PayoutDetailsForm.owner": "Owner (25% or more)",
   "PayoutDetailsForm.ownershipPercentageLabel": "Ownership percentage",
-  "PayoutDetailsForm.ownershipPercentagePlaceholder":"100",
+  "PayoutDetailsForm.ownershipPercentagePlaceholder": "100",
   "PayoutDetailsForm.personalDetailsAdditionalOwnerTitle": "Additional owner details",
   "PayoutDetailsForm.personalDetailsTitle": "Personal details",
   "PayoutDetailsForm.personalEmailLabel": "Email",
@@ -921,6 +921,11 @@
   "SectionHero.title": "Celebrate Anywhere!",
   "SectionHero.subTitle": "Easily find and book pubs to host your parties and celebrations.",
 
+  "SectionPublican.subTitle": "List your pub on Whichost to",
+  "SectionPublican.mainTitle": "Experience the Magic",
+  "SectionPublican.addPub": "Add your pub",
+  "SectionPublican.moreInfo": "Find out more",
+
   "SectionHowItWorks.createListingLink": "PS. You can also add your pub on Whichost in just a few clicks! Click here to get started.",
   "SectionHowItWorks.part1Text": "Start by searching for a location. Once you find a pub you like, request a booking and make a secure payment right away.",
   "SectionHowItWorks.part1Title": "1. Browse and book",
@@ -932,6 +937,7 @@
   "SectionHowItWorks.titleLineTwo": "(or how Whichost works).",
   "SectionLocations.listingsInLocation": "Pubs in {location}",
   "SectionLocations.title": "Explore local, typical pubs in Ireland",
+  "SectionLocations.morePubs": "See all of our pubs on the map",
   "SelectMultipleFilter.labelSelected": "{labelText} • {count}",
   "SelectMultipleFilterPlainForm.labelSelected": "{labelText} • {count}",
   "SelectSingleFilter.popupClear": "Clear",

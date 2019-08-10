@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { FormattedMessage } from 'react-intl';
 import { NamedLink } from '../../components';
-import { locationToURI, mainLocationsData } from '../../locals';
+import { locationToURI, mainCountry, mainLocationsData } from '../../locals';
 import { lazyLoadWithDimensions } from '../../util/contextHelpers';
 import css from './SectionLocations.css';
 const locationToLink = (location, i) =>
@@ -44,10 +44,22 @@ const SectionLocations = props => {
 
   return (
     <div className={classes}>
+      <div>
+        <h2 style={{ color: '#ff3f00' }}>Try something new!</h2>
+      </div>
       <div className={css.title}>
         <FormattedMessage id="SectionLocations.title" />
       </div>
       <div className={css.locations}>{locations}</div>
+      <div style={{ textAlign: 'center', marginTop: '4rem' }}>
+        <NamedLink
+          name="SearchPage"
+          to={{ search: locationToURI(mainCountry) }}
+          className={css.mapLink}
+        >
+          <FormattedMessage id="SectionLocations.morePubs" />
+        </NamedLink>
+      </div>
     </div>
   );
 };
