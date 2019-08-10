@@ -13,34 +13,6 @@
   --LandingPage_sectionMarginTop: 40px;
   --LandingPage_sectionMarginTopMedium: 60px;
   --LandingPage_sectionMarginTopLarge: 94px;
-
-  --LandingPage_desktopTitleMaxWidth: 625px;
-
-  --LandingPage_animation: {
-    animation-name: animationTitle;
-    animation-duration: 0.5s;
-    animation-timing-function: ease-out;
-    -webkit-animation-fill-mode: forwards;
-
-    visibility: hidden;
-    opacity: 1;
-    position: relative;
-  }
-}
-
-/* Animation for the hero elements */
-
-@keyframes animationTitle {
-  0% {
-    visibility: hidden;
-    opacity: 0;
-    top: -20px;
-  }
-  100% {
-    visibility: visible;
-    opacity: 1;
-    top: 0;
-  }
 }
 
 .root {}
@@ -69,8 +41,6 @@
   }
 }
 
-<<<<<<< HEAD
-=======
 .hero {
   flex-grow: 1;
   justify-content: flex-end;
@@ -86,7 +56,6 @@
   }
 }
 
->>>>>>> new-landing-page
 .sections {
   margin: 0;
   /* padding-top: 1px; */
@@ -145,47 +114,4 @@
 
 .lightOrange {
   background-color: 'rgba(236, 80, 39, 0.3)';
-}
-
-.temporaryOffer {
-  @apply --marketplaceBodyFontStyles;
-
-  color: var(--matterColorLight);
-  margin: 0 0 32px 0;
-
-  @apply --LandingPage_animation;
-  animation-delay: 0.65s;
-
-  @media (--viewportMedium) {
-    max-width: var(--LandingPage_desktopTitleMaxWidth);
-    margin: 0 0 25px 0;
-  }
-}
-
-.temporaryOffer span {
-  font-size: 18px;
-  font-weight: 200;
-}
-
-.temporaryOfferLink span {
-  font-size: 18px;
-  font-weight: 200;
-  color: white;
-  text-decoration: underline;
-}
-
-.temporaryOfferLink span:hover {
-  color: #ff3f00;
-}
-
-.heroButton {
-  @apply --marketplaceButtonStyles;
-  @apply --LandingPage_animation;
-
-  animation-delay: 0.8s;
-
-  @media (--viewportMedium) {
-    display: block;
-    width: 260px;
-  }
 }

@@ -8,13 +8,7 @@ import css from './SectionHero.css';
 
 
 const SectionHero = props => {
-  const {
-    rootClassName,
-    className,
-    title,
-    subtitle,
-    children
-  } = props;
+  const { rootClassName, className } = props;
 
   const classes = classNames(rootClassName || css.root, className);
 
@@ -22,7 +16,7 @@ const SectionHero = props => {
     <div className={classes}>
       <div className={css.heroContent}>
         <h1 className={css.heroMainTitle}>
-          { title }
+          <FormattedMessage id="SectionHero.title" />
         </h1>
         <h2 className={css.heroSubTitle}>
           <FormattedMessage id="SectionHero.subTitle" />

@@ -10,6 +10,8 @@
     since browsers support CSS Properties already.
  */
 
+  --SectionHero_desktopTitleMaxWidth: 625px;
+
   --SectionHero_animation: {
     animation-name: animationTitle;
     animation-duration: 0.5s;
@@ -44,19 +46,6 @@
   flex-direction: column;
   width: 100%;
   height: 100%;
-  flex-grow: 1;
-  justify-content: flex-end;
-  padding-top: 32px;
-  padding-bottom: 32px;
-
-  @media (--viewportMedium) {
-    padding-bottom: 83px;
-  }
-
-  @media (--viewportLarge) {
-    justify-content: center;
-    padding-top: 60px;
-  }
 
   /* Text positioning is done with paddings */
 }
@@ -89,6 +78,10 @@
 
   @apply --SectionHero_animation;
   animation-delay: 0.5s;
+
+  @media (--viewportMedium) {
+    max-width: var(--SectionHero_desktopTitleMaxWidth);
+  }
 }
 
 .heroSubTitle {

@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { FormattedMessage, injectIntl, intlShape } from 'react-intl';
+import { injectIntl, intlShape } from 'react-intl';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { compose } from 'redux';
@@ -12,7 +12,6 @@ import {
   LayoutWrapperFooter,
   LayoutWrapperMain,
   LayoutWrapperTopbar,
-  NamedLink,
   Page,
   SectionDeals,
   SectionHero,
@@ -23,7 +22,6 @@ import {
 import config from '../../config';
 import { TopbarContainer } from '../../containers';
 import { isScrollingDisabled } from '../../ducks/UI.duck';
-import { locationToURI, mainCountry } from '../../locals';
 import css from './LandingPage.css';
 
 export const LandingPageComponent = props => {
@@ -62,30 +60,7 @@ export const LandingPageComponent = props => {
         </LayoutWrapperTopbar>
         <LayoutWrapperMain>
           <div className={css.heroContainer}>
-            <SectionHero
-              history={history}
-              location={location}
-              title={<FormattedMessage id="SectionHero.title" />}
-              subtitle={<FormattedMessage id="SectionHero.subTitle" />}
-            >
-              <div className={css.heroInner}>
-                <h2 className={css.temporaryOffer}>
-                  <FormattedMessage id="SectionHero.temporaryOffer" />
-                  <NamedLink name="BirthdayDealPage" className={css.temporaryOfferLink}>
-                    <FormattedMessage id="SectionHero.temporaryOfferLink" />
-                  </NamedLink>
-                </h2>
-                <NamedLink
-                  name="SearchPage"
-                  to={{
-                    search: locationToURI(mainCountry),
-                  }}
-                  className={css.heroButton}
-                >
-                  <FormattedMessage id="SectionHero.browseButton" />
-                </NamedLink>
-              </div>
-            </SectionHero>
+            <SectionHero className={css.hero} history={history} location={location} />
           </div>
           <ul className={css.sections}>
             <li className={css.section} style={{ backgroundColor: 'rgba(236, 80, 39, 0.03)' }}>
