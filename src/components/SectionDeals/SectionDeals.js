@@ -40,7 +40,7 @@ const SectionDeals = props => {
           </CardContent>
           <CardActions>
             <ThemeProvider theme={theme}>
-              <Link to="/benefits/birthday-gift">
+              <Link to="/benefits/birthday-gift" style={{ textDecoration: 'none' }}>
                 <Button size="small" color="primary">
                   Learn more
                 </Button>
@@ -60,7 +60,7 @@ const SectionDeals = props => {
           </CardContent>
           <CardActions>
             <ThemeProvider theme={theme}>
-              <Link to="/benefits/corporate-benefit">
+              <Link to="/benefits/corporate-benefit" style={{ textDecoration: 'none' }}>
                 <Button size="small" color="primary">
                   Learn more
                 </Button>
