@@ -1,11 +1,11 @@
-import React from 'react';
-import { string } from 'prop-types';
-import { FormattedMessage } from 'react-intl';
 import classNames from 'classnames';
+import { string } from 'prop-types';
+import React from 'react';
+import { FormattedMessage } from 'react-intl';
 import { NamedLink } from '../../components';
-import { mainCountry, locationToURI } from '../../locals';
-
+import { locationToURI, mainCountry } from '../../locals';
 import css from './SectionHero.css';
+
 
 const SectionHero = props => {
   const { rootClassName, className } = props;
@@ -21,12 +21,12 @@ const SectionHero = props => {
         <h2 className={css.heroSubTitle}>
           <FormattedMessage id="SectionHero.subTitle" />
         </h2>
-        <h2 className={css.temporaryOffer}>
+        {/* <h2 className={css.temporaryOffer}>
           <FormattedMessage id="SectionHero.temporaryOffer" />
           <NamedLink name="BirthdayDealPage" className={css.temporaryOfferLink}>
             <FormattedMessage id="SectionHero.temporaryOfferLink" />
           </NamedLink>
-        </h2>
+        </h2> */}
         <NamedLink
           name="SearchPage"
           to={{

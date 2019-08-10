@@ -32,6 +32,7 @@
     opacity: 0;
     top: -20px;
   }
+
   100% {
     visibility: visible;
     opacity: 1;
@@ -73,6 +74,7 @@
 .heroMainTitle {
   @apply --marketplaceHeroTitleFontStyles;
   color: var(--matterColorLight);
+  text-shadow: 0 2px 6px rgba(24, 32, 67, 0.5);
 
   @apply --SectionHero_animation;
   animation-delay: 0.5s;
@@ -84,16 +86,18 @@
 
 .heroSubTitle {
   @apply --marketplaceBodyFontStyles;
-
   color: var(--matterColorLight);
   margin: 0 0 32px 0;
+  text-shadow: 0 1px 3px #182043;
 
   @apply --SectionHero_animation;
   animation-delay: 0.65s;
 
   @media (--viewportMedium) {
-    max-width: var(--SectionHero_desktopTitleMaxWidth);
-    margin: 0 0 15px 0;
+    font-size: 24px;
+    /* max-width: var(--SectionHero_desktopTitleMaxWidth); */
+    max-width: 450px;
+    margin: 0 0 40px 0;
   }
 }
 
@@ -102,6 +106,7 @@
 
   color: var(--matterColorLight);
   margin: 0 0 32px 0;
+  text-shadow: 0 1px 3px #182043;
 
   @apply --SectionHero_animation;
   animation-delay: 0.65s;

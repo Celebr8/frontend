@@ -1,11 +1,10 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { FormattedMessage } from 'react-intl';
 import classNames from 'classnames';
-
-import { NamedLink } from '../../components';
-
+import PropTypes from 'prop-types';
+import React from 'react';
+import { FormattedMessage } from 'react-intl';
 import css from './SectionHowItWorks.css';
+
+
 
 const SectionHowItWorks = props => {
   const { rootClassName, className } = props;
@@ -48,11 +47,11 @@ const SectionHowItWorks = props => {
         </div>
       </div>
 
-      <div className={css.createListingLink}>
+      {/* <div className={css.createListingLink}>
         <NamedLink name="NewListingPage">
           <FormattedMessage id="SectionHowItWorks.createListingLink" />
         </NamedLink>
-      </div>
+      </div> */}
     </div>
   );
 };

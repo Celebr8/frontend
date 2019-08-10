@@ -105,3 +105,13 @@
   composes: sectionContent;
   margin-top: 8vh;
 }
+
+
+.sectionPublican {
+  overflow: auto;
+  background-size: cover;
+}
+
+.lightOrange {
+  background-color: 'rgba(236, 80, 39, 0.3)';
+}

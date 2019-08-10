@@ -13,9 +13,11 @@ import {
   LayoutWrapperMain,
   LayoutWrapperTopbar,
   Page,
+  SectionDeals,
   SectionHero,
   SectionHowItWorks,
   SectionLocations,
+  SectionPublicans,
 } from '../../components';
 import config from '../../config';
 import { TopbarContainer } from '../../containers';
@@ -64,6 +66,19 @@ export const LandingPageComponent = props => {
             <li className={css.section} style={{ backgroundColor: 'rgba(236, 80, 39, 0.03)' }}>
               <div className={css.sectionContentFirstChild}>
                 <SectionLocations />
+              </div>
+            </li>
+            <li className={css.section}>
+              <div className={css.sectionContent}>
+                <SectionDeals />
+              </div>
+            </li>
+            <li
+              className={css.sectionPublican}
+              style={{ backgroundImage: `url(${require('./publican-bg.jpg')})` }}
+            >
+              <div className={css.sectionContent}>
+                <SectionPublicans />
               </div>
             </li>
             <li className={css.section}>

@@ -35,8 +35,7 @@
   /* Full screen Background image located in root-folder/src/assets */
   --backgroundImage: {
     /* Gradient direction and overlaying the black color on top of the image for better readability */
-    background: linear-gradient(-45deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)),
-      url('../../assets/background-women-darker-1440.png');
+    background: url('../../assets/confetti_party.jpg') left center;
 
     /* Add loading color for the div */
     background-color: var(--matterColor);
@@ -180,6 +179,7 @@
       /* TODO: Make sure button text aligns with the baseline */
     }
   }
+
   --marketplaceButtonStyles {
     @apply --marketplaceButtonFontStyles;
 
@@ -216,6 +216,7 @@
       text-decoration: none;
       box-shadow: var(--boxShadowButton);
     }
+
     &:disabled {
       background-color: var(--matterColorNegative);
       color: var(--matterColorLight);
@@ -227,6 +228,7 @@
       min-height: 65px;
     }
   }
+
   --marketplaceButtonStylesPrimary {
     @apply --marketplaceButtonStyles;
 
@@ -237,11 +239,13 @@
     &:focus {
       background-color: var(--successColorDark);
     }
+
     &:disabled {
       background-color: var(--matterColorNegative);
       color: var(--matterColorLight);
     }
   }
+
   --marketplaceButtonStylesSecondary {
     @apply --marketplaceButtonStyles;
 
@@ -261,6 +265,7 @@
       background-color: var(--matterColorLight);
       border-color: var(--matterColorAnti);
     }
+
     &:disabled {
       background-color: var(--matterColorNegative);
       color: var(--matterColorLight);
@@ -523,10 +528,12 @@
       box-shadow: none;
       text-decoration: none;
     }
+
     &:enabled:active {
       background-color: transparent;
       color: var(--matterColorDark);
     }
+
     &:disabled {
       background-color: transparent;
     }
