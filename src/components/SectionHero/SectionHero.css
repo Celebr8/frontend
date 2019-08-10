@@ -95,7 +95,6 @@
 
   @media (--viewportMedium) {
     font-size: 24px;
-    /* max-width: var(--SectionHero_desktopTitleMaxWidth); */
     max-width: 450px;
     margin: 0 0 40px 0;
   }
