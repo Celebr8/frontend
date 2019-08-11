@@ -1,67 +1,119 @@
 @import '../../marketplace.css';
 
-.pageTitle {
+.hero {
   text-align: center;
-  color: #ff3f00;
 }
 
-.staticPageWrapper {
-  width: calc(100% - 48px);
-  max-width: 1056px;
-  margin: 24px auto;
+.sections {
+  margin: 0;
+  padding-top: 1px;
+}
+
+.section {
+  overflow: auto;
+}
+
+.sectionContent {
+  border-bottom: 1px solid #ff3f00;
+  margin-left: 30px;
+  margin-right: 30px;
+  margin-bottom: 50px;
+  padding-bottom: 50px;
 
   @media (--viewportMedium) {
-    width: calc(100% - 72px);
-    margin: 72px auto;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+    padding-bottom: 50px;
+  }
+
+  @media (--viewportLarge) {
+    max-width: 1128px;
+  }
+
+  @media (--viewportXLarge) {
+    max-width: 1056px;
   }
 }
 
-.coverImage {
-  width: 100%;
-  height: 300px;
-  border-radius: 4px;
-  object-fit: cover;
-  margin: 32px 0 40px;
+.section:first-child .sectionContent {
+  margin-top: 80px;
+
+  @media (--viewportMedium) {
+    margin-top: 100px;
+  }
 }
 
-.contentWrapper {
+.section:last-child .sectionContent {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.sectionTitle {
+  color: #0d2c54;
+  font-size: 36px;
+  line-height: 36px;
+  text-align: center;
+}
+
+.sectionParagraph {
+  color: #0d2c54;
+  font-size: 20px;
+  line-height: 32px;
+  text-align: center;
+  margin: 25px auto;
+
+  @media (--viewportMedium) {
+    margin: 50px auto;
+  }
+}
+
+.team {
   display: flex;
+  justify-content: space-between;
   flex-wrap: wrap;
+}
+
+.teamMember {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  margin-top: 0;
+  margin-bottom: 50px;
+  text-align: center;
 
   @media (--viewportMedium) {
-    flex-wrap: nowrap;
+    flex-basis: 40%;
   }
 }
 
-.contentSide {
-  text-align: justify;
-  font-style: italic;
-
-  @media (--viewportMedium) {
-    width: 193px;
-    margin-right: 103px;
-    margin-top: 8px;
-  }
-}
-
-.contentMain {
-  text-align: justify;
+.teamMemberImage {
   width: 100%;
-
-  @media (--viewportMedium) {
-    max-width: 800px;
-  }
 }
 
-.subtitle {
-  @apply --marketplaceH3FontStyles;
-  margin-top: 48px;
-  margin-bottom: 24px;
+.teamMemberName {
+  color: #0d2c54;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 32px;
+  text-align: center;
+  margin-bottom: 0;
 }
 
-.usersMust {
-  @apply --marketplaceH2FontStyles;
-  margin-top: 48px;
-  margin-bottom: 24px;
-  color: #ff3f00;
+.teamMemberTitle {
+  color: #0d2c54;
+  font-size: 20px;
+  line-height: 32px;
+  text-align: center;
+  margin-top: 15px;
+}
+
+.teamMemberTagline {
+  color: #0d2c54;
+  font-size: 20px;
+  font-style: italic;
+  line-height: 32px;
+  text-align: center;
+  margin-top: 15px;
 }

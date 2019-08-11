@@ -569,7 +569,7 @@ class ContactUsFormComponent extends Component {
                     <option value="privacy">Privacy Enquiry</option>
                     <option value="changePaymentInfo">Change payement informations</option>
                     <option value="corporate">Corporate Benefits Enquiries</option>
-                    <option value="recommandPub">Recommand a pub</option>
+                    <option value="recommendPub">Recommend a pub</option>
                   </FieldSelect>
 
                   {emailField}
