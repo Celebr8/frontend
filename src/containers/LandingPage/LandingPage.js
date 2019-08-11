@@ -3,6 +3,7 @@ import React from 'react';
 import { injectIntl, intlShape } from 'react-intl';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
+import { FormattedMessage } from 'react-intl';
 import { compose } from 'redux';
 import facebookImage from '../../assets/whichostFacebook-1200x630.png';
 import twitterImage from '../../assets/whichostTwitter-600x314.png';
@@ -60,7 +61,8 @@ export const LandingPageComponent = props => {
         </LayoutWrapperTopbar>
         <LayoutWrapperMain>
           <div className={css.heroContainer}>
-            <SectionHero className={css.hero} history={history} location={location} />
+            <SectionHero className={css.hero} title={<FormattedMessage id="SectionHero.title" />}
+            subTitle={<FormattedMessage id="SectionHero.subTitle" />} history={history} location={location} />
           </div>
           <ul className={css.sections}>
             <li className={css.section} style={{ backgroundColor: 'rgba(236, 80, 39, 0.03)' }}>
