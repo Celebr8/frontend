@@ -10,6 +10,7 @@ import { richText } from '../../util/richText';
 import { propTypes } from '../../util/types';
 import { createSlug } from '../../util/urlHelpers';
 import css from './ListingCard.css';
+import color from '@material-ui/core/colors/lightBlue';
 const MIN_LENGTH_FOR_LONG_WORDS = 10;
 
 class ListingImage extends Component {
@@ -104,13 +105,6 @@ export const ListingCardComponent = props => {
           <div className={css.authorInfo}>
             <FormattedMessage id="ListingCard.hostedBy" values={{ authorName }} />
           </div>
-          <div className={css.listingTypeInfo}>
-            <FormattedMessage
-              className={css.listingType}
-              id={listingTypeTranslation}
-              values={{ authorName }}
-            />
-          </div>
           {ReviewData.map((review) => {
             if (id === review.pub ) {              
               rating = review.data.attributes.rating
@@ -118,8 +112,15 @@ export const ListingCardComponent = props => {
               mode = mostCommonNumber(ratingArray); 
               reviewCount++;                         
             } 
-          })}          
-          <ReviewRating rating={mode} /><h5>Count: {reviewCount} </h5>
+          })}  
+          <div className={css.listingTypeInfo}>
+            <FormattedMessage
+              className={css.listingType}
+              id={listingTypeTranslation}
+              values={{ authorName }}
+            />  
+          </div>   
+          <div id={css.reviewStars}><ReviewRating rating={mode} /><span id={css.reviewCount}>({reviewCount})</span> </div>                                                          
         </div>
       </div>
     </NamedLink>

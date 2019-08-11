@@ -95,6 +95,7 @@
   /* Font */
   @apply --marketplaceH3FontStyles;
   color: var(--matterColor);
+  background-color: transparent;
 
   /* Remove default margins from font */
   margin-top: 0;
@@ -111,9 +112,10 @@
   @apply --marketplaceTinyFontStyles;
   color: var(--matterColor);
 
-  /* Remove default margins from font */
+  /* Remove default margins from font : Hosted by-*/
   margin-top: 0;
   margin-bottom: 0;
+  background-color: transparent;
 
   @media (--viewportMedium) {
     margin-top: 0;
@@ -135,11 +137,32 @@
   color: #fff;
   border-radius: 4px;
 
+  position: flex;
+  /*
+  width: 40%;
+  height: 15%;
+  */
+
   @media (--viewportMedium) {
     margin-top: 0;
     margin-bottom: 0;
   }
 }
+
+#reviewStars {
+  display: inline;
+  background-color: transparent;
+ 
+}
+
+#reviewCount {
+  display:inline;
+  background: transparent;
+  padding-left: 10px;
+  padding-right: 0;
+  font-size: 20px;
+  color: #B2B2B2;
+} 
 
 .longWord {
   /* fallback option */
