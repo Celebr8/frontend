@@ -28,12 +28,14 @@ const AboutPage = () => {
           <TopbarContainer />
         </LayoutWrapperTopbar>
         <LayoutWrapperMain>
-          <div className={css.heroContainer}>
-            <SectionHero
-              className={css.hero}
-              title={<FormattedMessage id="AboutPage.heroTitle" />}
-              subtitle={<FormattedMessage id="AboutPage.heroSubtitle" />}
-            />
+        <div className={css.heroContainer}>
+          <SectionHero
+            className={css.hero}
+            title={<FormattedMessage id="AboutPage.heroTitle"/>}
+            hideButton={true}
+            subTitle={<FormattedMessage id="AboutPage.heroSubtitle"/>
+            }
+          />
           </div>
           <ul className={css.sections}>
             <li className={css.section}>
@@ -96,14 +98,6 @@ const AboutPage = () => {
                       <FormattedMessage id="AboutPage.scottJobTitle" />
                       </span>
                     <span className={css.teamMemberTagline}>"In this world you make your own luck."</span>
-                  </div>
-                  <div className={css.teamMember}>
-                    <img className={css.teamMemberImage} src={require('./dale.jpg')} alt="Dale" />
-                    <h3 className={css.teamMemberName}>Dale W.</h3>
-                    <span className={css.teamMemberTitle}>
-                      <FormattedMessage id="AboutPage.daleJobTitle" />
-                    </span>
-                    <span className={css.teamMemberTagline}>"Passionate about building products that improve lives."</span>
                   </div>
                 </div>
               </div>
