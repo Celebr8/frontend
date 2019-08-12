@@ -6,7 +6,7 @@
 
 .wrapper {
   background-color: var(--matterColorBright);
-  box-shadow: 0 -10px 10px #efefef9e;
+  box-shadow: 0 -25px 50px rgba(239, 239, 239, 0.5);
   padding: 40px 15px 40px 15px;
 
   @media (--viewportMedium) {
