@@ -28,46 +28,48 @@ const SectionDeals = props => {
   const classes = classNames(rootClassName || css.root, className);
 
   return (
-    <div className={css.dealsContainer}>
-      <div className={css.cardWrap}>
-        <Card>
-          <CardMedia className={[css.cardImage, css.birthdayGiftCard]} />
-          <CardContent>
-            <Typography gutterBottom variant="h5" component="h2">
-              Birthday Deal
-            </Typography>
-            <p>Get up to €330 when celebrating your birthday with Whichost.</p>
-          </CardContent>
-          <CardActions>
-            <ThemeProvider theme={theme}>
-              <Link to="/benefits/birthday-gift" style={{ textDecoration: 'none' }}>
-                <Button size="small" color="primary">
-                  Learn more
-                </Button>
-              </Link>
-            </ThemeProvider>
-          </CardActions>
-        </Card>
-      </div>
-      <div className={css.cardWrap}>
-        <Card>
-          <CardMedia className={[css.cardImage, css.employeeBenefitCard]} />
-          <CardContent>
-            <Typography gutterBottom variant="h5" component="h2">
-              Employee Benefit
-            </Typography>
-            <p>Get up to €400 with each of your celebrations.</p>
-          </CardContent>
-          <CardActions>
-            <ThemeProvider theme={theme}>
-              <Link to="/benefits/corporate-benefit" style={{ textDecoration: 'none' }}>
-                <Button size="small" color="primary">
-                  Learn more
-                </Button>
-              </Link>
-            </ThemeProvider>
-          </CardActions>
-        </Card>
+    <div className={classes}>
+      <div className={css.dealsContainer}>
+        <div className={css.cardWrap}>
+          <Card>
+            <CardMedia className={[css.cardImage, css.birthdayGiftCard]} />
+            <CardContent>
+              <Typography gutterBottom variant="h5" component="h2">
+                Birthday Deal
+              </Typography>
+              <p>Get up to €330 when celebrating your birthday with Whichost.</p>
+            </CardContent>
+            <CardActions>
+              <ThemeProvider theme={theme}>
+                <Link to="/benefits/birthday-gift" style={{ textDecoration: 'none' }}>
+                  <Button size="small" color="primary">
+                    Learn more
+                  </Button>
+                </Link>
+              </ThemeProvider>
+            </CardActions>
+          </Card>
+        </div>
+        <div className={css.cardWrap}>
+          <Card>
+            <CardMedia className={[css.cardImage, css.employeeBenefitCard]} />
+            <CardContent>
+              <Typography gutterBottom variant="h5" component="h2">
+                Employee Benefit
+              </Typography>
+              <p>Get up to €400 with each of your celebrations.</p>
+            </CardContent>
+            <CardActions>
+              <ThemeProvider theme={theme}>
+                <Link to="/benefits/corporate-benefit" style={{ textDecoration: 'none' }}>
+                  <Button size="small" color="primary">
+                    Learn more
+                  </Button>
+                </Link>
+              </ThemeProvider>
+            </CardActions>
+          </Card>
+        </div>
       </div>
     </div>
   );

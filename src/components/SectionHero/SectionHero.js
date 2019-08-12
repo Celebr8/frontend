@@ -6,7 +6,6 @@ import { NamedLink } from '../../components';
 import { locationToURI, mainCountry } from '../../locals';
 import css from './SectionHero.css';
 
-
 const SectionHero = props => {
   const { rootClassName, className } = props;
 
