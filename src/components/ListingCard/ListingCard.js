@@ -2,15 +2,14 @@ import classNames from 'classnames';
 import { func, string } from 'prop-types';
 import React, { Component } from 'react';
 import { FormattedMessage, injectIntl, intlShape } from 'react-intl';
-import { NamedLink, ResponsiveImage, Reviews, ReviewRating } from '../../components';
+import { NamedLink, ResponsiveImage, ReviewRating, Reviews } from '../../components';
 import { lazyLoadWithDimensions } from '../../util/contextHelpers';
-import ReviewData from '../../util/externalReviews';
 import { ensureListing, ensureUser } from '../../util/data';
+import ReviewData from '../../util/externalReviews';
 import { richText } from '../../util/richText';
 import { propTypes } from '../../util/types';
 import { createSlug } from '../../util/urlHelpers';
 import css from './ListingCard.css';
-import color from '@material-ui/core/colors/lightBlue';
 const MIN_LENGTH_FOR_LONG_WORDS = 10;
 
 class ListingImage extends Component {
@@ -57,24 +56,38 @@ export const ListingCardComponent = props => {
   let mode = 0;
 
   function mostCommonNumber(numbers) {
-    let map = new Map()
+    let map = new Map();
     for (let num of numbers) {
-        map.set(num, (map.get(num) || 0) + 1)
+      map.set(num, (map.get(num) || 0) + 1);
     }
 
-    let mostCommonNumber = NaN
-    let maxCount = -1
+    let mostCommonNumber = NaN;
+    let maxCount = -1;
     for (let [num, count] of map.entries()) {
-        if (count > maxCount) {
-            maxCount = count
-            mostCommonNumber = num
-        }
+      if (count > maxCount) {
+        maxCount = count;
+        mostCommonNumber = num;
+      }
     }
-    return mostCommonNumber
-}
+    return mostCommonNumber;
+  }
+
+  ReviewData.map(review => {
+    if (id === review.pub) {
+      rating = review.data.attributes.rating;
+      ratingArray.push(rating);
+      mode = mostCommonNumber(ratingArray);
+      reviewCount++;
+    }
+    return null;
+  });
 
   return (
-    <NamedLink className={classes} name="ListingPage" params={{ id, slug, rating, ratingArray, mode}}>
+    <NamedLink
+      className={classes}
+      name="ListingPage"
+      params={{ id, slug, rating, ratingArray, mode }}
+    >
       <div
         className={css.threeToTwoWrapper}
         onMouseEnter={() => setActiveListing(currentListing.id)}
@@ -93,10 +106,16 @@ export const ListingCardComponent = props => {
       <div className={css.info}>
         <div className={css.mainInfo}>
           <div className={css.title}>
-            {richText(title, {
-              longWordMinLength: MIN_LENGTH_FOR_LONG_WORDS,
-              longWordClass: css.longWord,
-            })}
+            <span>
+              {richText(title, {
+                longWordMinLength: MIN_LENGTH_FOR_LONG_WORDS,
+                longWordClass: css.longWord,
+              })}
+            </span>
+            <div id={css.reviewStars}>
+              <ReviewRating rating={mode} />
+              <span id={css.reviewCount}>({reviewCount})</span>{' '}
+            </div>
           </div>
           <div>
             {fetchReviewsError ? reviewsError : null}
@@ -105,22 +124,13 @@ export const ListingCardComponent = props => {
           <div className={css.authorInfo}>
             <FormattedMessage id="ListingCard.hostedBy" values={{ authorName }} />
           </div>
-          {ReviewData.map((review) => {
-            if (id === review.pub ) {              
-              rating = review.data.attributes.rating
-              ratingArray.push(rating);
-              mode = mostCommonNumber(ratingArray); 
-              reviewCount++;                         
-            } 
-          })}  
           <div className={css.listingTypeInfo}>
             <FormattedMessage
               className={css.listingType}
               id={listingTypeTranslation}
               values={{ authorName }}
-            />  
-          </div>   
-          <div id={css.reviewStars}><ReviewRating rating={mode} /><span id={css.reviewCount}>({reviewCount})</span> </div>                                                          
+            />
+          </div>
         </div>
       </div>
     </NamedLink>
