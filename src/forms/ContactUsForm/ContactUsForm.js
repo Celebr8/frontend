@@ -559,7 +559,7 @@ class ContactUsFormComponent extends Component {
                     key="enquiry"
                     id={formId ? `${formId}.enquiry` : 'enquiry'}
                     label={enquiryLabel}
-                    defaultValue="claim"
+                    defaultValue="general"
                     disabled={finalFormProps.enquiry !== undefined}
                   >
                     <option value="general">General Enquiry</option>
