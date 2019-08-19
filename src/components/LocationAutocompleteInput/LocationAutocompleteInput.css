@@ -40,7 +40,8 @@
 }
 
 .iconSvgGroup {
-  stroke: var(--marketplaceColor);
+  /* stroke: var(--marketplaceColor); */
+  stroke: #4A4A4A;
   stroke-width: 2.5px;
 
   @media (--viewportMedium) {
@@ -119,7 +120,8 @@ bottom of the container.
   & li {
     color: var(--matterColorLight);
     transition: var(--transitionStyleButton);
-    margin: 0; /* Remove the double white space */
+    margin: 0;
+    /* Remove the double white space */
 
     /* Assign enough vertical padding to make the element at least 44px high */
     padding: 9px var(--LocationAutocompleteInput_sidePadding);

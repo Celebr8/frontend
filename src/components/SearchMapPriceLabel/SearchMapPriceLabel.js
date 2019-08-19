@@ -1,13 +1,11 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { injectIntl, intlShape } from 'react-intl';
 import classNames from 'classnames';
-import { propTypes } from '../../util/types';
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
+import { injectIntl, intlShape } from 'react-intl';
 import { ensureListing } from '../../util/data';
-
-import WhichostCarret from './whichost-carret.png';
-
+import { propTypes } from '../../util/types';
 import css from './SearchMapPriceLabel.css';
+import WhichostCarret from './whichost-carret.png';
 
 class SearchMapPriceLabel extends Component {
   shouldComponentUpdate(nextProps) {
@@ -23,7 +21,7 @@ class SearchMapPriceLabel extends Component {
   }
 
   render() {
-    const { className, rootClassName, listing, onListingClicked} = this.props;
+    const { className, rootClassName, listing, onListingClicked } = this.props;
     const currentListing = ensureListing(listing);
 
     // Create formatted price if currency is known or alternatively show just the unknown currency.
@@ -33,7 +31,7 @@ class SearchMapPriceLabel extends Component {
     return (
       <button className={classes} onClick={() => onListingClicked(currentListing)}>
         <div className={css.whichostIcon}>
-          <img src={WhichostCarret} alt="Whichost icon" />
+          <img src={WhichostCarret} alt="Whichost icon" width="36" />
         </div>
       </button>
     );
