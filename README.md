@@ -1,5 +1,5 @@
 # Celebr8.co frontend
-This is the frontend of Whichost.com v2.0
+This is the frontend of Celebr8.co v2.7
 
 This is based on [the sharetribe Flex template](https://github.com/sharetribe/flex-template-web). 
 
