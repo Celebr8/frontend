@@ -106,7 +106,7 @@ bottom of the container.
   background-position: center;
 
   @media (--viewportMedium) {
-    background-position: center left var(--LocationAutocompleteInput_sidePaddingDesktop);
+    background-position: center left 48px;
   }
 }
 
@@ -129,13 +129,16 @@ bottom of the container.
     @media (--viewportMedium) {
       color: #4A4A4A;
       padding: 10px var(--LocationAutocompleteInput_sidePaddingDesktop);
+      padding-left: 43px;
       margin: 0;
+      border-left: 4px solid transparent;
     }
 
     &:hover,
     &.highlighted {
       cursor: pointer;
       border-left: 4px solid var(--marketplaceColor);
+      padding-left: 43px;
       border-top-right-radius: 20px;
       border-bottom-right-radius: 20px;
       color: #4A4A4A;
