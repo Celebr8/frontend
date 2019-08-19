@@ -145,14 +145,14 @@
   position: absolute;
   width: 100%;
   padding-bottom: var(--locationAutocompleteBottomPadding);
-  top: 50px;
+  top: 15px;
   left: 0;
-  background-color: var(--marketplaceColor);
-  border-bottom-left-radius: var(--borderRadius);
-  border-bottom-right-radius: var(--borderRadius);
-  box-shadow: var(--boxShadowPopup);
+  background-color: #fff;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  box-shadow: 0 6px 5px rgba(0, 0, 0, 0.1);
   z-index: calc(var(--zIndexPopup) + 1);
 
   margin-top: calc(var(--topbarHeightDesktop) - var(--TopbarSearchForm_inputHeight) + var(--TopbarSearchForm_bottomBorder));
-  max-width: 434px;
+  max-width: 500px;
 }

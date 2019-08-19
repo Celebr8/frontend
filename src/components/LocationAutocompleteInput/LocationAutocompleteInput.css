@@ -118,7 +118,7 @@ bottom of the container.
   padding: 14px 0;
 
   & li {
-    color: var(--matterColorLight);
+    color: #fff;
     transition: var(--transitionStyleButton);
     margin: 0;
     /* Remove the double white space */
@@ -127,7 +127,7 @@ bottom of the container.
     padding: 9px var(--LocationAutocompleteInput_sidePadding);
 
     @media (--viewportMedium) {
-      color: var(--matterColorLightTransparent);
+      color: #4A4A4A;
       padding: 10px var(--LocationAutocompleteInput_sidePaddingDesktop);
       margin: 0;
     }
@@ -135,10 +135,10 @@ bottom of the container.
     &:hover,
     &.highlighted {
       cursor: pointer;
-      border-left: 6px solid var(--matterColorLight);
+      border-left: 4px solid var(--marketplaceColor);
       border-top-right-radius: 20px;
       border-bottom-right-radius: 20px;
-      color: var(--matterColorLight);
+      color: #4A4A4A;
     }
   }
 }
