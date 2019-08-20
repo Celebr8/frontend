@@ -67,12 +67,12 @@ class FAQPagePanelsBase extends React.Component {
         <ExpansionPanel expanded={expanded === 'panel1'} onChange={this.handleChange('panel1')}>
           <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
             <Typography className={classes.headingNoDetails}>
-              <b>How does Whichost work?</b>
+              <b>How does Celebr8 work?</b>
             </Typography>
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <Typography>
-              Whichost is a marketplace for booking some of the most unique and amazing spaces for
+              Celebr8 is a marketplace for booking some of the most unique and amazing spaces for
               your parties and celebrations. We connect you with the businesses you love and new
               ones you might not have thought about previously. You can search for pubs, compare
               prices and amenities, request to book, and easily and securely pay through our
@@ -83,7 +83,7 @@ class FAQPagePanelsBase extends React.Component {
         <ExpansionPanel expanded={expanded === 'panel2'} onChange={this.handleChange('panel2')}>
           <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
             <Typography className={classes.headingNoDetails}>
-              <b>What does Whichost do?</b>
+              <b>What does Celebr8 do?</b>
             </Typography>
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
@@ -99,7 +99,7 @@ class FAQPagePanelsBase extends React.Component {
         <ExpansionPanel expanded={expanded === 'panel3'} onChange={this.handleChange('panel3')}>
           <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
             <Typography className={classes.headingNoDetails}>
-              <b>What if my business is not a pub? Can I list it on Whichost?</b>
+              <b>What if my business is not a pub? Can I list it on Celebr8?</b>
             </Typography>
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
@@ -114,12 +114,12 @@ class FAQPagePanelsBase extends React.Component {
         <ExpansionPanel expanded={expanded === 'panel4'} onChange={this.handleChange('panel4')}>
           <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
             <Typography className={classes.headingNoDetails}>
-              <b>How does the Whichost pricing work?</b>
+              <b>How does the Celebr8 pricing work?</b>
             </Typography>
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <Typography>
-              Whichost has a simple, straightforward pricing where you pay as you go. No setup,
+              Celebr8 has a simple, straightforward pricing where you pay as you go. No setup,
               monthly or hidden fees. You can review all the details in our{' '}
               <NamedLink name="FeesPage">Fees page</NamedLink>.
             </Typography>
@@ -202,12 +202,12 @@ class FAQPagePanelsBase extends React.Component {
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <Typography>
-              At Whichost we believe for-profit organisations not only have a responsibility to
+              At Celebr8 we believe for-profit organisations not only have a responsibility to
               provide value to society, but also a responsibility to give back so we can all live in
               a better world!
               <br />
               <br />
-              That's why at Whichost, every three months, we will take 6% of our revenue and donate
+              That's why at Celebr8, every three months, we will take 6% of our revenue and donate
               it to local non-profit organisations that are focused on making this world a better
               place.
             </Typography>
@@ -250,7 +250,7 @@ class FAQPagePanelsBase extends React.Component {
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <Typography>
-              Whichost is an open platform marketplace that aims to operate worldwide. However, at
+              Celebr8 is an open platform marketplace that aims to operate worldwide. However, at
               this stage, we will only operate in Ireland. We will make announcements as we open
               operations in more countries. We are a fresh bootstrap startup on a mission, located
               in Cork, Ireland.
@@ -282,21 +282,21 @@ class FAQPagePanelsBase extends React.Component {
         <ExpansionPanel expanded={expanded === 'panel13'} onChange={this.handleChange('panel13')}>
           <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
             <Typography className={classes.headingNoDetails}>
-              <b>Why should I list my pub on Whichost?</b>
+              <b>Why should I list my pub on Celebr8?</b>
             </Typography>
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <Typography>
               <ol>
                 <li>Get new customers from around the world.</li>
-                Whichost allows you to showcase your pub to the millions of locals and tourists that
+                Celebr8 allows you to showcase your pub to the millions of locals and tourists that
                 move through your country every year, in a way that you couldn’t before. Locals,
                 just as tourists, love to celebrate and they will need to find a place to do it. Why
                 not at your pub?
                 <br />
                 <br />
                 <li>Generate more revenue.</li>
-                Listing your pub on Whichost opens up a world of new opportunities for new customers
+                Listing your pub on Celebr8 opens up a world of new opportunities for new customers
                 and more parties, thus making you extra cash! You earn more money simply by hosting
                 more parties, at your pub, for locals and travellers from all over the world!
                 <br />
@@ -314,7 +314,7 @@ class FAQPagePanelsBase extends React.Component {
                 <br />
                 <li>Reason to update your pub (good excuse).</li>
                 There are always things you can do to spruce up your pub but sometimes the
-                motivation is too much of an ask. Becoming a host on Whichost gives you the excuse
+                motivation is too much of an ask. Becoming a host on Celebr8 gives you the excuse
                 to freshen up your pub. It gives you that extra push (and cash) to give the walls a
                 lick of paint or to revamp the furnishings.
               </ol>
@@ -324,13 +324,13 @@ class FAQPagePanelsBase extends React.Component {
         <ExpansionPanel expanded={expanded === 'panel14'} onChange={this.handleChange('panel14')}>
           <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
             <Typography className={classes.headingNoDetails}>
-              <b>How do I list my pub on Whichost?</b>
+              <b>How do I list my pub on Celebr8?</b>
             </Typography>
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <Typography>
-              Adding your pub to Whichost is easy and only takes a few minutes. Once you’ve created
-              a Whichost account, simply click the “+ Add my pub” at the top right. Please note that
+              Adding your pub to Celebr8 is easy and only takes a few minutes. Once you’ve created
+              a Celebr8 account, simply click the “+ Add my pub” at the top right. Please note that
               all listings are subject to review by our team to ensure the safety of our community.
               If you need help with your listing, please{' '}
               <NamedLink name="ContactUsPageEnquiry" params={{ enquiry: 'listing' }}>
@@ -421,7 +421,7 @@ class FAQPagePanelsBase extends React.Component {
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <Typography>
-              We currently don't charge anything to list your pub on Whichost. It's completely free.{' '}
+              We currently don't charge anything to list your pub on Celebr8. It's completely free.{' '}
               <NamedLink name="NewListingPage" target="_blank">
                 List your pub now
               </NamedLink>
@@ -451,16 +451,16 @@ class FAQPagePanelsBase extends React.Component {
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <Typography>
-              Whichost is a fresh and self-funded startup. Instead of starting a venture-backed
+              Celebr8 is a fresh and self-funded startup. Instead of starting a venture-backed
               startup that focuses on vanity metrics, revenue at all costs, and expectations of
-              investors, we’ve chosen to keep Whichost a self-funded company. We’ve raised € 0.00 to
+              investors, we’ve chosen to keep Celebr8 a self-funded company. We’ve raised € 0.00 to
               date and this is something that we're incredibly proud of. We would rather build a
-              platform that is so valuable that the community is willing to pay for Whichost, we can
+              platform that is so valuable that the community is willing to pay for Celebr8, we can
               reinvest revenue in the site, and we commit ourselves to building the best online
               community for pubs in the world.
               <br />
               <br />
-              If at any time you feel that Whichost's pricing is not worth the nominal fee to
+              If at any time you feel that Celebr8's pricing is not worth the nominal fee to
               support the site, community, and offer the level of service and commitment that we do,
               please contact us <NamedLink name="ContactUsPage">here</NamedLink> or email us at{' '}
               <a href="mailto:support@whichost.com" target="_blank">
@@ -471,7 +471,7 @@ class FAQPagePanelsBase extends React.Component {
               <a href="mailto:feedback@whichost.com" target="_blank">
                 feedback@whichost.com
               </a>
-              ), learn more about your pub's needs, and find the best way that Whichost can help
+              ), learn more about your pub's needs, and find the best way that Celebr8 can help
               you.
               <br />
               <br />
@@ -535,13 +535,13 @@ class FAQPagePanelsBase extends React.Component {
         <ExpansionPanel expanded={expanded === 'panel21'} onChange={this.handleChange('panel21')}>
           <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
             <Typography className={classes.headingNoDetails}>
-              <b>How do I price my pub on Whichost?</b>
+              <b>How do I price my pub on Celebr8?</b>
             </Typography>
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <Typography>
               We put pricing in the hands of pubs. You can price your pub at your discretion and
-              please take local rates, taxes, Whichost fees, and other fees into consideration when
+              please take local rates, taxes, Celebr8 fees, and other fees into consideration when
               listing your hourly rate. You can also make the booking at your pub free.
             </Typography>
           </ExpansionPanelDetails>
@@ -571,7 +571,7 @@ class FAQPagePanelsBase extends React.Component {
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <Typography>
-              At Whichost we do not have pre-designed cancellation policies since it is very common
+              At Celebr8 we do not have pre-designed cancellation policies since it is very common
               for users to cancel parties even the same day it was schedule to take place.
               <br />
               <br />
@@ -592,10 +592,10 @@ class FAQPagePanelsBase extends React.Component {
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <Typography>
-              Yes. Every listing inside Whichost has its own web address that you can copy and share
+              Yes. Every listing inside Celebr8 has its own web address that you can copy and share
               everywhere. To get your unique web address:
               <ol>
-                <li>Log in to your Whichost account;</li>
+                <li>Log in to your Celebr8 account;</li>
                 <li>
                   Hover over your profile image (top right corner) and click on "Your Listings" in
                   the menu that will appear;
@@ -652,11 +652,11 @@ class FAQPagePanelsBase extends React.Component {
           <ExpansionPanelDetails>
             <Typography>
               All accounts that have a pub listing must add payout information in order to receive
-              booking requests. Whichost uses Stripe to power payments. Adding your payout
+              booking requests. Celebr8 uses Stripe to power payments. Adding your payout
               information is easy and can be done in these steps:
               <ol>
                 <li>
-                  When logged into your Whichost account, click on the top right account avatar and
+                  When logged into your Celebr8 account, click on the top right account avatar and
                   then “Account settings” in the drop-down;
                 </li>
                 <li>
@@ -687,7 +687,7 @@ class FAQPagePanelsBase extends React.Component {
               You can easily accept a booking request by doing the following:
               <ol>
                 <li>
-                  When logged into your Whichost account, click on “Inbox” in the top right
+                  When logged into your Celebr8 account, click on “Inbox” in the top right
                   navigation;
                 </li>
                 <li>
@@ -722,12 +722,12 @@ class FAQPagePanelsBase extends React.Component {
         <ExpansionPanel expanded={expanded === 'panel29'} onChange={this.handleChange('panel29')}>
           <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
             <Typography className={classes.headingNoDetails}>
-              <b>Does Whichost screen customers?</b>
+              <b>Does Celebr8 screen customers?</b>
             </Typography>
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <Typography>
-              Whichost verifies some information about customers and hosts to help make the
+              Celebr8 verifies some information about customers and hosts to help make the
               community a safer place for everyone. As a host, for added security, you can also ask
               potential customers to provide an official ID.
             </Typography>
@@ -743,7 +743,7 @@ class FAQPagePanelsBase extends React.Component {
             <Typography>
               Trust between pubs and customers is essential. One way to build trust is with rates
               and comments to each other, after a transaction. This is how trust is built with
-              Whichost. After a booking is used, both the pub and the customer can review each
+              Celebr8. After a booking is used, both the pub and the customer can review each
               other. A review consists of:
               <ol>
                 <li>A positive or negative rating (thumbs up or down);</li>
@@ -835,7 +835,7 @@ class FAQPagePanelsBase extends React.Component {
             <Typography>
               We do not currently have a deposit option, but instead only offer full booking
               payments to be accepted on our platform. If you require a deposit, accept a booking
-              request, and do not use Whichost for the full payment of this, please note that this
+              request, and do not use Celebr8 for the full payment of this, please note that this
               is outside our Services Agreement and a Booking Agreement.
             </Typography>
           </ExpansionPanelDetails>
@@ -883,7 +883,7 @@ class FAQPagePanelsBase extends React.Component {
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <Typography>
-              You must also legally report income generated from Whichost to your business and it is
+              You must also legally report income generated from Celebr8 to your business and it is
               your responsibility to do so. If you are responsible for charging local taxes on
               services, you must also comply with these regulations.
             </Typography>
@@ -912,7 +912,7 @@ class FAQPagePanelsBase extends React.Component {
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <Typography>
-              Booking a pub is easy on Whichost and you can do so by creating a user account if you
+              Booking a pub is easy on Celebr8 and you can do so by creating a user account if you
               have not done so already. Once you do, you can then select a pub listing and click
               “Request to book”. On the next page, you will be able to enter a message to the pub
               regarding how you intend to use it, any specific details, requirements, or needs
@@ -1048,7 +1048,7 @@ class FAQPagePanelsBase extends React.Component {
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <Typography>
-              Whichost does not require an hourly minimum for pub listings, but we rather let pubs
+              Celebr8 does not require an hourly minimum for pub listings, but we rather let pubs
               individually indicate their hourly minimums directly on their listing. If they mention
               an hourly minimum in their description, please note that they might not accept your
               booking request if it does not comply with their hourly minimum.
@@ -1090,7 +1090,7 @@ class FAQPagePanelsBase extends React.Component {
             <Typography>
               Trust between customers and pubs is very important. One way to build trust is with
               rates and comments to each other, after a transaction. This is how trust is built with
-              Whichost. After a booking is used, both the customer and the pub can review each
+              Celebr8. After a booking is used, both the customer and the pub can review each
               other. A review consists of:
               <ol>
                 <li>A positive or negative rating (thumbs up or down);</li>
@@ -1123,7 +1123,7 @@ class FAQPagePanelsBase extends React.Component {
         <ExpansionPanel expanded={expanded === 'panel52'} onChange={this.handleChange('panel52')}>
           <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
             <Typography className={classes.headingNoDetails}>
-              <b>How can I be safe and cautious when using Whichost?</b>
+              <b>How can I be safe and cautious when using Celebr8?</b>
             </Typography>
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
@@ -1141,7 +1141,7 @@ class FAQPagePanelsBase extends React.Component {
         <ExpansionPanel expanded={expanded === 'panel53'} onChange={this.handleChange('panel53')}>
           <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
             <Typography className={classes.headingNoDetails}>
-              <b>Do I have to communicate on Whichost?</b>
+              <b>Do I have to communicate on Celebr8?</b>
             </Typography>
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
@@ -1187,12 +1187,12 @@ class FAQPagePanelsBase extends React.Component {
         <ExpansionPanel expanded={expanded === 'panel56'} onChange={this.handleChange('panel56')}>
           <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
             <Typography className={classes.headingNoDetails}>
-              <b>Does Whichost offer insurance?</b>
+              <b>Does Celebr8 offer insurance?</b>
             </Typography>
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <Typography>
-              No, Whichost does not offer insurance. We suggest that all pubs adequately ensure
+              No, Celebr8 does not offer insurance. We suggest that all pubs adequately ensure
               their pub, equipment, and premises.
             </Typography>
           </ExpansionPanelDetails>
@@ -1207,7 +1207,7 @@ class FAQPagePanelsBase extends React.Component {
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <Typography>
-              Your Booking Agreement through Whichost is an agreement for a customer to use the pub
+              Your Booking Agreement through Celebr8 is an agreement for a customer to use the pub
               as defined in the listing for the exact date, time period, and for that price. If you
               have further pub requirements, please notify the booking request directly and ensure
               they are aware of these prior to accepting the booking request, prior to the booking
@@ -1261,7 +1261,7 @@ class FAQPagePanelsBase extends React.Component {
               You can reply to messages and accept a booking request by doing the following:
               <ol>
                 <li>
-                  When logged into your Whichost account, click on “Inbox” in the top right
+                  When logged into your Celebr8 account, click on “Inbox” in the top right
                   navigation, within your profile picture.
                 </li>
                 <li>
@@ -1309,14 +1309,14 @@ class FAQPagePanelsBase extends React.Component {
         <ExpansionPanel expanded={expanded === 'panel63'} onChange={this.handleChange('panel63')}>
           <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
             <Typography className={classes.headingNoDetails}>
-              <b>How do I report other users for acting against Whichost policies?</b>
+              <b>How do I report other users for acting against Celebr8 policies?</b>
             </Typography>
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <Typography>
               Please report any suspicious activity or users immediately by sending us an email at{' '}
               <a
-                href="mailto:support@whichost.com?subject=User acting against Whichost policies"
+                href="mailto:support@whichost.com?subject=User acting against Celebr8 policies"
                 target="_blank"
               >
                 support@whichost.com
