@@ -171,7 +171,7 @@ const Footer = props => {
             <div className={css.infoLinks}>
               <ul className={css.list}>
                 <li key="whichost" className={css.listWhichost}>
-                  Whichost
+                  Celebr8
                 </li>
                 <li className={css.listItem}>
                   <NamedLink name="CareersPage" className={css.link}>
