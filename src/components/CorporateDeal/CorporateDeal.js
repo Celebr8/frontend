@@ -31,7 +31,7 @@ const CorporateDeal = props => {
 				<div className={css.steps}>
 					<div className={css.step}>
 						<p>
-              <b>Use your organisation email in your Whichost account, and that's it! You are ready to enjoy our Corporate Benefit.</b>
+              <b>Use your organisation email in your Celebr8 account, and that's it! You are ready to enjoy our Corporate Benefit.</b>
               <br/><br/>
 							The value of the gift card depends on the size of the party: from “Up to 30 people” to “201+”, and on the day that it’s held. Celebrations held between Mondays and Wednesdays have a higher value. This is a physical gift card, so we will ask for an address to deliver it.
 							<br/><br/>
