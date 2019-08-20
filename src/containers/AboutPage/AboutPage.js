@@ -27,7 +27,7 @@ const AboutPage = () => {
       schema={{
         '@context': 'http://schema.org',
         '@type': 'AboutPage',
-        description: 'About Whichost',
+        description: 'About Celebr8',
         name: 'About page',
       }}
     >
@@ -37,17 +37,17 @@ const AboutPage = () => {
         </LayoutWrapperTopbar>
 
         <LayoutWrapperMain className={css.staticPageWrapper}>
-          <h1 className={css.pageTitle}>About our Whichost Community</h1>
-          <img className={css.coverImage} src={image} alt="Whichost image celebrate anywhere." />
+          <h1 className={css.pageTitle}>About our Celebr8 Community</h1>
+          <img className={css.coverImage} src={image} alt="Celebr8 image celebrate anywhere." />
 
           <div className={css.contentWrapper}>
             <div className={css.contentSide}>
-              <p>Whichost is the easiest way for customers to book pubs to celebrate their parties. Find the best pubs, schedule time, and pay securely with a few clicks. We take care of the rest so you can focus on celebrating! </p>
+              <p>Celebr8 is the easiest way for customers to book pubs to celebrate their parties. Find the best pubs, schedule time, and pay securely with a few clicks. We take care of the rest so you can focus on celebrating! </p>
             </div>
 
             <div className={css.contentMain}>
               <h2>
-                Whichost is an online marketplace built on the foundation of trust, the best interest of the community, and thus we do have Community Guidelines that we’ve created and actively enforce. We take violations of these Community Guidelines seriously and may suspend or terminate an Account for ongoing or serious violations. Fraudulent or illegal activity may also be subject to legal action taken. We reserve the right to also edit or remove content on our site that violates these Community Guidelines or if we believe it adversely affects the integrity of the Whichost marketplace or its users.
+                Celebr8 is an online marketplace built on the foundation of trust, the best interest of the community, and thus we do have Community Guidelines that we’ve created and actively enforce. We take violations of these Community Guidelines seriously and may suspend or terminate an Account for ongoing or serious violations. Fraudulent or illegal activity may also be subject to legal action taken. We reserve the right to also edit or remove content on our site that violates these Community Guidelines or if we believe it adversely affects the integrity of the Celebr8 marketplace or its users.
               </h2>
 
               <p>
@@ -60,7 +60,7 @@ const AboutPage = () => {
               <h3 className={css.subtitle}>1. Comply with local laws, local zoning ordinances, and tax laws at all times.</h3>
 
               <p>
-                Whichost is not liable for ensuring compliance and it is the responsibility of pubs and each listing owner to ensure all local laws, zoning ordinance, and also tax compliance is met. You must also legally report income generated from Whichost to your business and it is your responsibility to do so. If you are responsible for charging local taxes on services, you must also comply with these regulations.
+                Celebr8 is not liable for ensuring compliance and it is the responsibility of pubs and each listing owner to ensure all local laws, zoning ordinance, and also tax compliance is met. You must also legally report income generated from Celebr8 to your business and it is your responsibility to do so. If you are responsible for charging local taxes on services, you must also comply with these regulations.
               </p>
 
               <h3 className={css.subtitle}>
@@ -73,7 +73,7 @@ const AboutPage = () => {
                 3. Only list and offer a pub that you are permitted to offer.
               </h3>
               <p>
-                Only list the pub that you are permitted to offer and have the authority to do so for. If you are subletting a space and are not permitted to then further offer it, do not offer it on Whichost without consent by the owner to do so. If it is discovered that you are offering a pub on Whichost that you do not have permission to offer, the listing will be immediately removed and your account is subject to be removed from our site.
+                Only list the pub that you are permitted to offer and have the authority to do so for. If you are subletting a space and are not permitted to then further offer it, do not offer it on Celebr8 without consent by the owner to do so. If it is discovered that you are offering a pub on Celebr8 that you do not have permission to offer, the listing will be immediately removed and your account is subject to be removed from our site.
                 </p>
                 
                 <h2 className={css.usersMust}>
@@ -84,7 +84,7 @@ const AboutPage = () => {
               </h3>
 
               <p>
-                All customers and those that have booked a pub through Whichost must only use the pub as described by the pub listing owner, and as agreed upon in the booking agreement. Pubs take pride in their space, the amenities, and their business and will be expecting the same professional respect and courtesy that they are providing.
+                All customers and those that have booked a pub through Celebr8 must only use the pub as described by the pub listing owner, and as agreed upon in the booking agreement. Pubs take pride in their space, the amenities, and their business and will be expecting the same professional respect and courtesy that they are providing.
               </p>
 
               <h3 className={css.subtitle}>
@@ -102,14 +102,14 @@ const AboutPage = () => {
               </h3>
 
               <p>
-                Whichost is not liable for ensuring compliance and it is the responsibility of pubs and each listing owner to ensure all local laws, zoning ordinance, and also tax compliance is met. You must also legally report income generated from Whichost to your business and it is your responsibility to do so. If you are responsible for charging local taxes on services, you must also comply with these regulations.
+                Celebr8 is not liable for ensuring compliance and it is the responsibility of pubs and each listing owner to ensure all local laws, zoning ordinance, and also tax compliance is met. You must also legally report income generated from Celebr8 to your business and it is your responsibility to do so. If you are responsible for charging local taxes on services, you must also comply with these regulations.
               </p>
 
               <h3 className={css.subtitle}>
-                2. Transact honestly and with the intended use of Whichost.
+                2. Transact honestly and with the intended use of Celebr8.
               </h3>
               <p>
-                Whichost is intended to be a marketplace for customers to book pubs and pubs to offer their spaces. Any transactions that are not intended for this purpose, are misrepresented, have fraudulent intent, or otherwise deemed harmful to either user will be immediately reviewed and if fraudulent, legal action will be taken by Whichost if deemed necessary. All users and transactions are also applicable to the Terms of Service that is agreed upon by using the platform.
+                Celebr8 is intended to be a marketplace for customers to book pubs and pubs to offer their spaces. Any transactions that are not intended for this purpose, are misrepresented, have fraudulent intent, or otherwise deemed harmful to either user will be immediately reviewed and if fraudulent, legal action will be taken by Celebr8 if deemed necessary. All users and transactions are also applicable to the Terms of Service that is agreed upon by using the platform.
               </p>
               <h3 className={css.subtitle}>
                 3. Respect others privacy and information.
