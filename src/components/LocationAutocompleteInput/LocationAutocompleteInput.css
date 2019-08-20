@@ -40,7 +40,8 @@
 }
 
 .iconSvgGroup {
-  stroke: var(--marketplaceColor);
+  /* stroke: var(--marketplaceColor); */
+  stroke: #4A4A4A;
   stroke-width: 2.5px;
 
   @media (--viewportMedium) {
@@ -105,7 +106,7 @@ bottom of the container.
   background-position: center;
 
   @media (--viewportMedium) {
-    background-position: center left var(--LocationAutocompleteInput_sidePaddingDesktop);
+    background-position: center left 48px;
   }
 }
 
@@ -117,26 +118,30 @@ bottom of the container.
   padding: 14px 0;
 
   & li {
-    color: var(--matterColorLight);
+    color: #fff;
     transition: var(--transitionStyleButton);
-    margin: 0; /* Remove the double white space */
+    margin: 0;
+    /* Remove the double white space */
 
     /* Assign enough vertical padding to make the element at least 44px high */
     padding: 9px var(--LocationAutocompleteInput_sidePadding);
 
     @media (--viewportMedium) {
-      color: var(--matterColorLightTransparent);
+      color: #4A4A4A;
       padding: 10px var(--LocationAutocompleteInput_sidePaddingDesktop);
+      padding-left: 43px;
       margin: 0;
+      border-left: 4px solid transparent;
     }
 
     &:hover,
     &.highlighted {
       cursor: pointer;
-      border-left: 6px solid var(--matterColorLight);
+      border-left: 4px solid var(--marketplaceColor);
+      padding-left: 43px;
       border-top-right-radius: 20px;
       border-bottom-right-radius: 20px;
-      color: var(--matterColorLight);
+      color: #4A4A4A;
     }
   }
 }
