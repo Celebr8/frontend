@@ -1,15 +1,15 @@
-import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { compose } from 'redux';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Switch, Route, withRouter } from 'react-router-dom';
-import { NotFoundPage } from './containers';
+import { Route, Switch, withRouter } from 'react-router-dom';
+import { compose } from 'redux';
 import { NamedRedirect } from './components';
+import { NotFoundPage } from './containers';
 import { locationChanged } from './ducks/Routing.duck';
-import { propTypes } from './util/types';
+import routeConfiguration from './routeConfiguration';
 import * as log from './util/log';
 import { canonicalRoutePath } from './util/routes';
-import routeConfiguration from './routeConfiguration';
+import { propTypes } from './util/types';
 
 const { arrayOf, bool, object, func, shape, string } = PropTypes;
 
@@ -28,8 +28,6 @@ const callLoadData = props => {
   if (shouldLoadData) {
     dispatch(loadData(match.params, location.search))
       .then(() => {
-        // eslint-disable-next-line no-console
-        console.log(`loadData success for ${name} route`);
       })
       .catch(e => {
         log.error(e, 'load-data-failed', { routeName: name });

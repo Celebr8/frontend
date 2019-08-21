@@ -2,6 +2,7 @@
 
 exports[`BookingDatesForm matches snapshot without selected dates 1`] = `
 <ReactFinalForm
+  DatePlaceholder={null}
   bookingDates={Object {}}
   dispatch={[Function]}
   endDatePlaceholder="tomorrow"

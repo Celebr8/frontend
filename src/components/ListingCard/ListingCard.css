@@ -26,8 +26,10 @@
 
 /* Firefox doesn't support image aspect ratio inside flexbox */
 .aspectWrapper {
-  padding-bottom: 66.6667%; /* 3:2 Aspect Ratio */
-  background: var(--matterColorNegative); /* Loading BG color */
+  padding-bottom: 66.6667%;
+  /* 3:2 Aspect Ratio */
+  background: var(--matterColorNegative);
+  /* Loading BG color */
 }
 
 .rootForImage {
@@ -89,12 +91,15 @@
 .mainInfo {
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
 .title {
   /* Font */
   @apply --marketplaceH3FontStyles;
   color: var(--matterColor);
+  background-color: transparent;
+  font-size: 19px;
 
   /* Remove default margins from font */
   margin-top: 0;
@@ -104,6 +109,9 @@
     margin-top: 0;
     margin-bottom: 0;
   }
+
+    display: flex;
+    justify-content: space-between;
 }
 
 .authorInfo {
@@ -111,9 +119,12 @@
   @apply --marketplaceTinyFontStyles;
   color: var(--matterColor);
 
-  /* Remove default margins from font */
+  /* Remove default margins from font : Hosted by-*/
   margin-top: 0;
   margin-bottom: 0;
+  background-color: transparent;
+  padding-bottom: 5px;
+  /* Padding between 'Hosted by' and 'Shared space */
 
   @media (--viewportMedium) {
     margin-top: 0;
@@ -129,16 +140,40 @@
   /* Remove default margins from font */
   margin-top: 0;
   margin-bottom: 0;
-  font-size: 16px;
-  background-color: #0D2C54;
-  padding: 2px 6px 4px 4px;
+  font-size: 12px;
+  text-transform: uppercase;
+  padding: 2px 4px;
   color: #fff;
-  border-radius: 4px;
+  border-radius: 3px;
+  background-color: #1c4375;
+  border: 1px solid #0d2c54;
+  position: flex;
 
   @media (--viewportMedium) {
     margin-top: 0;
     margin-bottom: 0;
   }
+}
+
+#reviewStars {
+  display: inline-block;
+  background-color: transparent;
+  transform: scale(0.7);
+  transform-origin: top right;
+  white-space: nowrap;  
+}
+#reviewStars svg {
+  margin-left: 4px;
+}
+
+#reviewCount {
+  display: inline-block;
+  background: transparent;
+  padding-left: 10px;
+  padding-right: 0;
+  font-size: 18px;
+  transform: translateY(2px);
+  color: #B2B2B2;
 }
 
 .longWord {

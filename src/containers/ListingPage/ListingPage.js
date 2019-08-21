@@ -1,80 +1,54 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
-import React, { Component } from 'react';
 import * as moment from 'moment';
-import { array, arrayOf, bool, func, shape, string, oneOf } from 'prop-types';
-import { FormattedMessage, intlShape, injectIntl } from 'react-intl';
-import { compose } from 'redux';
+import { array, arrayOf, bool, func, oneOf, shape, string } from 'prop-types';
+import React, { Component } from 'react';
+import { FormattedMessage, injectIntl, intlShape } from 'react-intl';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
+import { compose } from 'redux';
+import { BookingPanel, Footer, LayoutSingleColumn, LayoutWrapperFooter, LayoutWrapperMain, LayoutWrapperTopbar, NamedLink, NamedRedirect, Page } from '../../components';
 import config from '../../config';
-import routeConfiguration from '../../routeConfiguration';
-import { LISTING_STATE_PENDING_APPROVAL, LISTING_STATE_CLOSED, propTypes } from '../../util/types';
-import { types as sdkTypes } from '../../util/sdkLoader';
-import {
-  LISTING_PAGE_DRAFT_VARIANT,
-  LISTING_PAGE_PENDING_APPROVAL_VARIANT,
-  LISTING_PAGE_PARAM_TYPE_DRAFT,
-  LISTING_PAGE_PARAM_TYPE_EDIT,
-  createSlug,
-} from '../../util/urlHelpers';
-import { formatMoney } from '../../util/currency';
-import { createResourceLocatorString, findRouteByRouteName } from '../../util/routes';
-import {
-  ensureListing,
-  ensureOwnListing,
-  ensureUser,
-  userDisplayNameAsString,
-} from '../../util/data';
-import { richText } from '../../util/richText';
+import { NotFoundPage, TopbarContainer } from '../../containers';
 import { getMarketplaceEntities } from '../../ducks/marketplaceData.duck';
-import { manageDisableScrolling, isScrollingDisabled } from '../../ducks/UI.duck';
-import {
-  Page,
-  NamedLink,
-  NamedRedirect,
-  LayoutSingleColumn,
-  LayoutWrapperTopbar,
-  LayoutWrapperMain,
-  LayoutWrapperFooter,
-  Footer,
-  BookingPanel,
-} from '../../components';
-import { TopbarContainer, NotFoundPage } from '../../containers';
-
-import { sendEnquiry, loadData, setInitialValues } from './ListingPage.duck';
-import SectionImages from './SectionImages';
-import SectionAvatar from './SectionAvatar';
-import SectionHeading from './SectionHeading';
-import SectionDescriptionMaybe from './SectionDescriptionMaybe';
-import SectionGroupSize from './SectionGroupSize';
-import SectionRegularlyOpenOn from './SectionRegularlyOpenOn';
-import SectionType from './SectionType';
-import SectionFeaturesMaybe from './SectionFeaturesMaybe';
-import SectionReviews from './SectionReviews';
-import SectionHostMaybe from './SectionHostMaybe';
-import SectionRulesMaybe from './SectionRulesMaybe';
-import SectionMapMaybe from './SectionMapMaybe';
+import { isScrollingDisabled, manageDisableScrolling } from '../../ducks/UI.duck';
+import routeConfiguration from '../../routeConfiguration';
+import { formatMoney } from '../../util/currency';
+import { ensureListing, ensureOwnListing, ensureUser, userDisplayNameAsString } from '../../util/data';
+import { richText } from '../../util/richText';
+import { createResourceLocatorString, findRouteByRouteName } from '../../util/routes';
+import { types as sdkTypes } from '../../util/sdkLoader';
+import { LISTING_STATE_CLOSED, LISTING_STATE_PENDING_APPROVAL, propTypes } from '../../util/types';
+import { createSlug, LISTING_PAGE_DRAFT_VARIANT, LISTING_PAGE_PARAM_TYPE_DRAFT, LISTING_PAGE_PARAM_TYPE_EDIT, LISTING_PAGE_PENDING_APPROVAL_VARIANT } from '../../util/urlHelpers';
 import css from './ListingPage.css';
-
+import { loadData, sendEnquiry, setInitialValues } from './ListingPage.duck';
+import SectionAvatar from './SectionAvatar';
+import SectionDescriptionMaybe from './SectionDescriptionMaybe';
+import SectionFeaturesMaybe from './SectionFeaturesMaybe';
+import SectionGroupSize from './SectionGroupSize';
+import SectionHeading from './SectionHeading';
+import SectionHostMaybe from './SectionHostMaybe';
+import SectionImages from './SectionImages';
+import SectionMapMaybe from './SectionMapMaybe';
+import SectionRegularlyOpenOn from './SectionRegularlyOpenOn';
+import SectionReviews from './SectionReviews';
+import SectionRulesMaybe from './SectionRulesMaybe';
+import SectionType from './SectionType';
 const MIN_LENGTH_FOR_LONG_WORDS_IN_TITLE = 16;
 
 const { UUID } = sdkTypes;
 
-const freeTimeSlots = (now) => 
-	[...Array(89).keys()].map( (i) =>
-		({
-			type: 'timeSlot',
-			attributes: {
-				type: 'time-slot/day',
-				start: moment(now).add(i, 'days'),
-				end: moment(now).add(i+1, 'days')
-			},
-			id: {
-				uuid: 'dummy'	
-			}
-		})	
-	);
-
+const freeTimeSlots = now =>
+  [...Array(89).keys()].map(i => ({
+    type: 'timeSlot',
+    attributes: {
+      type: 'time-slot/day',
+      start: moment(now).add(i, 'days'),
+      end: moment(now).add(i + 1, 'days'),
+    },
+    id: {
+      uuid: 'dummy',
+    },
+  }));
 
 const priceData = (price, intl) => {
   if (price && price.currency === config.currency) {
@@ -116,14 +90,14 @@ export class ListingPageComponent extends Component {
 
     const { bookingDates, ...bookingData } = values;
 
-		const bookingEnd = moment(bookingDates.date).add(1,'days'); 
+    const bookingEnd = moment(bookingDates.date).add(1, 'days');
 
     const initialValues = {
       listing,
       bookingData,
       bookingDates: {
         bookingStart: bookingDates.date,
-				bookingEnd: bookingEnd
+        bookingEnd: bookingEnd,
       },
     };
 
@@ -204,6 +178,7 @@ export class ListingPageComponent extends Component {
     } = this.props;
 
     const listingId = new UUID(rawParams.id);
+
     const isPendingApprovalVariant = rawParams.variant === LISTING_PAGE_PENDING_APPROVAL_VARIANT;
     const isDraftVariant = rawParams.variant === LISTING_PAGE_DRAFT_VARIANT;
     const currentListing =
@@ -389,9 +364,7 @@ export class ListingPageComponent extends Component {
         </span>
       ) : null;
 
-		const timeSlotsAdjusted = publicData.type == 'common' ? 
-			freeTimeSlots() :
-			timeSlots;
+    const timeSlotsAdjusted = publicData.type === 'common' ? freeTimeSlots() : timeSlots;
 
     return (
       <Page
@@ -446,7 +419,7 @@ export class ListingPageComponent extends Component {
                     options={amenitiesConfig}
                     selectedOptions={publicData.amenities}
                   />
-									<SectionGroupSize
+                  <SectionGroupSize
                     options={config.custom.groupSize}
                     publicData={publicData}
                     selectedOptions={publicData.groupSize}
@@ -457,9 +430,7 @@ export class ListingPageComponent extends Component {
                     selectedOptions={publicData.regularlyOpenOn}
                   />
 
-                  <SectionType
-                    listingType={publicData.type}
-                  />
+                  <SectionType listingType={publicData.type} />
                   <SectionFeaturesMaybe options={amenitiesConfig} publicData={publicData} />
                   <SectionRulesMaybe publicData={publicData} />
                   <SectionMapMaybe
@@ -494,6 +465,7 @@ export class ListingPageComponent extends Component {
                   onManageDisableScrolling={onManageDisableScrolling}
                   timeSlots={timeSlotsAdjusted}
                   fetchTimeSlotsError={fetchTimeSlotsError}
+                  reviews={reviews}
                 />
               </div>
             </div>
