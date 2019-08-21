@@ -53,7 +53,7 @@
 
   "Avatar.bannedUserDisplayName": "Banned user",
   "BookingBreakdown.bookingPeriod": "{bookingStart}",
-  "BookingBreakdown.commission": "Whichost fee *",
+  "BookingBreakdown.commission": "Celebr8 fee *",
   "BookingBreakdown.commissionFeeNote": "* 100% of the user fees are donated! They are consolidated every three months and donated to a local non-profit organisation.",
   "BookingBreakdown.dayCount": "{count, number} {count, plural, one {day} other {days}}",
   "BookingBreakdown.nightCount": "{count, number} {count, plural, one {night} other {nights}}",
@@ -67,8 +67,8 @@
   "BookingBreakdown.quantity": "{quantity, number} {quantity, plural, one {person} other {persons}}",
   "BookingBreakdown.quantityUnit": "Number of persons",
   "BookingBreakdown.refund": "Refund",
-  "BookingBreakdown.refundCustomerFee": "Refund Whichost fee",
-  "BookingBreakdown.refundProviderFee": "Refund Whichost fee",
+  "BookingBreakdown.refundCustomerFee": "Refund Celebr8 fee",
+  "BookingBreakdown.refundProviderFee": "Refund Celebr8 fee",
   "BookingBreakdown.subTotal": "Subtotal",
   "BookingBreakdown.total": "Total price",
 
@@ -194,12 +194,12 @@
   "ContactDetailsPage.title": "Contact details",
   "CookieConsent.continue": "Continue",
   "CookieConsent.cookieLink": "cookies",
-  "CookieConsent.message": "Welcome to Whichost, friend! We use {cookieLink} to enhance your browsing experience.",
+  "CookieConsent.message": "Welcome to Celebr8, friend! We use {cookieLink} to enhance your browsing experience.",
   "DateInput.clearDate": "Clear Date",
   "DateInput.closeDatePicker": "Close",
   "DateInput.defaultPlaceholder": "Date input",
   "DateInput.screenReaderInputMessage": "Date input",
-  "DealsPage.title": "At Whichost, it's all about you!",
+  "DealsPage.title": "At Celebr8, it's all about you!",
   "DealsPage.heading": "How it works",
   "DealsPage.schemaTitle": "Benefits page | {siteTitle}",
   "DealsPage.dealsTabTitle": "What's this?",
@@ -241,6 +241,7 @@
 
   "EditListingCapacityPanel.createListingTitle": "What capacites does your pub have?",
   "EditListingCapacityPanel.title": "Edit the capacity of {listingTitle}",
+  "EditListingCapacityPanel.info": "Here you can choose the size party your venue can host.",
 
   "EditListingRegularlyOpenOnPanel.createListingTitle": "What days are you regularly open?",
   "EditListingRegularlyOpenOnPanel.title": "Edit the days during which {listingTitle} is regularly open",
@@ -381,8 +382,8 @@
   "FirstStepsPage.title": "Steps to make your life easier!",
   "FirstStepsPage.schemaTitle": "Steps to make your life easier! | {siteTitle}",
 
-  "Footer.copyright": "© 2019. Whichost Ltd. is registered in Ireland. Reg. No. 624254",
-  "Footer.copyrightMobile": "© Whichost 2019.",
+  "Footer.copyright": "© Celebr8 2019. Whichost Ltd is registered in Ireland. Reg. No. 624254.",
+  "Footer.copyrightMobile": "© Celebr8 2019.",
   "FilterForm.cancel": "Cancel",
   "FilterForm.clear": "Clear",
   "FilterForm.submit": "Apply",
@@ -453,7 +454,7 @@
   "InboxPage.timeAt": "at",
   "InboxPage.occasionBirthday": "This is a birthday party!",
 
-  "LandingPage.schemaDescription": "Book your party using Whichost or increase your pub's exposure.",
+  "LandingPage.schemaDescription": "Book your party using Celebr8 or increase your pub's exposure.",
   "LandingPage.schemaTitle": "Celebrate Anywhere | {siteTitle}",
 
   "LegalsDealsPage.schemaTitle": "Benefits T&C | {siteTitle}",
@@ -564,16 +565,16 @@
   "ModalMissingInformation.resendFailed": "Resending verification email failed. Please try again.",
   "ModalMissingInformation.resendFailedTooManyRequests": "Resending verification email failed. You already have too many verification emails sent.",
   "ModalMissingInformation.sendingEmail": "Sending verification email…",
-  "ModalMissingInformation.verifyEmailText": "We are currently unable to send you email notifications if other Whichost users contact you because you haven't verified your email address.",
+  "ModalMissingInformation.verifyEmailText": "We are currently unable to send you email notifications if other Celebr8 users contact you because you haven't verified your email address.",
   "ModalMissingInformation.verifyEmailTitle": "Please verify your email address",
 
-  "NotFoundPage.description": "We can't find the page or pub you're looking for. Make sure you've typed in the URL correctly or try searching Whichost.",
+  "NotFoundPage.description": "We can't find the page or pub you're looking for. Make sure you've typed in the URL correctly or try searching Celebr8.",
   "NotFoundPage.heading": "Sorry, we couldn't find that page.",
   "NotFoundPage.title": "Page not found",
 
   "NonDiscriminationPolicyPage.heading": "Inclusion Policy",
 
-  "Page.schemaDescription": "Book your party using Whichost or increase your pub's exposure.",
+  "Page.schemaDescription": "Book your party using Celebr8 or increase your pub's exposure.",
   "Page.schemaTitle": "Celebrate Anywhere!  | {siteTitle}",
 
   "PaginationLinks.next": "Next page",
@@ -610,7 +611,7 @@
   "PasswordRecoveryForm.sendInstructions": "Send instructions",
   "PasswordRecoveryPage.actionFailedMessage": "Something went wrong. Please refresh the page and try again.",
   "PasswordRecoveryPage.actionFailedTitle": "Whoops!",
-  "PasswordRecoveryPage.emailNotVerifiedContactAdmin": "To resolve the issue, please contact Whichost administrators.",
+  "PasswordRecoveryPage.emailNotVerifiedContactAdmin": "To resolve the issue, please contact Celebr8 administrators.",
   "PasswordRecoveryPage.emailNotVerifiedMessage": "Unfortunately, we cannot recover your password because your email address {initialEmailText} hasn't been verified.",
   "PasswordRecoveryPage.emailNotVerifiedTitle": "We have some bad news",
   "PasswordRecoveryPage.emailSubmittedMessage": "The instructions for resetting your password have been sent to {submittedEmailText}.",
@@ -830,7 +831,7 @@
   "ProfileSettingsForm.addYourProfilePicture": "+ Add your profile picture…",
   "ProfileSettingsForm.addYourProfilePictureMobile": "+ Add",
   "ProfileSettingsForm.bioHeading": "Your profile bio",
-  "ProfileSettingsForm.bioInfo": "Whichost is built on relationships. Help other people get to know you.",
+  "ProfileSettingsForm.bioInfo": "Celebr8 is built on relationships. Help other people get to know you.",
   "ProfileSettingsForm.bioLabel": "Bio",
   "ProfileSettingsForm.bioPlaceholder": "Tell us a little bit about yourself…",
   "ProfileSettingsForm.changeAvatar": "Change",
@@ -866,7 +867,7 @@
   "ReviewForm.reviewSubmitAlreadySent": "Review already sent. Please refresh the page.",
   "ReviewForm.reviewSubmitFailed": "Failed to sent a review. Please try again.",
 
-  "ReviewModal.description": "Reviews are an important part of the Whichost community. Please share what went well and what could have been improved.",
+  "ReviewModal.description": "Reviews are an important part of the Celebr8 community. Please share what went well and what could have been improved.",
   "ReviewModal.later": "Later",
   "ReviewModal.title": "Leave a review for {revieweeName}",
 
@@ -920,12 +921,12 @@
   "SectionHero.title": "Celebrate Anywhere!",
   "SectionHero.subTitle": "Easily find and book pubs to host your parties and celebrations.",
 
+
+  "SectionHowItWorks.createListingLink": "PS. You can also add your pub on Celebr8 in just a few clicks! Click here to get started.",
   "SectionPublican.subTitle": "List your pub on Whichost to",
   "SectionPublican.mainTitle": "Experience the Magic",
   "SectionPublican.addPub": "Add your pub",
   "SectionPublican.moreInfo": "Find out more",
-
-  "SectionHowItWorks.createListingLink": "PS. You can also add your pub on Whichost in just a few clicks! Click here to get started.",
   "SectionHowItWorks.part1Text": "Start by searching for a location. Once you find a pub you like, request a booking and make a secure payment right away.",
   "SectionHowItWorks.part1Title": "1. Browse and book",
   "SectionHowItWorks.part2Text": "Once the request has been accepted you can invite your friends and enjoy your party.",
@@ -933,7 +934,7 @@
   "SectionHowItWorks.part3Text": "After enjoying the experience, let others know by reviewing your host. Help others know where to go.",
   "SectionHowItWorks.part3Title": "3. Review the host",
   "SectionHowItWorks.titleLineOne": "How to have a blast",
-  "SectionHowItWorks.titleLineTwo": "(or how Whichost works).",
+  "SectionHowItWorks.titleLineTwo": "(or how Celebr8 works).",
   "SectionLocations.listingsInLocation": "Pubs in {location}",
   "SectionLocations.title": "Explore local, typical pubs in Ireland",
   "SectionLocations.morePubs": "See all of our pubs on the map",
@@ -1062,7 +1063,7 @@
   "TopbarDesktop.helpCenter": "Help",
   "TopbarDesktop.inbox": "Inbox",
   "TopbarDesktop.login": "Log in",
-  "TopbarDesktop.logo": "Whichost",
+  "TopbarDesktop.logo": "Celebr8",
   "TopbarDesktop.logout": "Log out",
   "TopbarDesktop.profileSettingsLink": "Profile settings",
   "TopbarDesktop.signup": "Sign up",
