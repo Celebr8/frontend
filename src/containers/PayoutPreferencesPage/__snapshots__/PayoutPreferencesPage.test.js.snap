@@ -74,10 +74,19 @@ exports[`PayoutPreferencesPage matches snapshot with Stripe connected 1`] = `
         </h1>
         <p>
           <FormattedMessage
-            id="PayoutPreferencesPage.stripeAlreadyConnected"
+            id="PayoutPreferencesPage.stripeNotConnected"
             values={Object {}}
           />
         </p>
+        <InjectIntl(PayoutDetailsFormComponent)
+          createStripeAccountError={null}
+          disabled={false}
+          inProgress={false}
+          onChange={[Function]}
+          onSubmit={[Function]}
+          ready={false}
+          submitButtonText="PayoutPreferencesPage.submitButtonText"
+        />
       </div>
     </LayoutWrapperMain>
     <LayoutWrapperFooter
@@ -170,12 +179,6 @@ exports[`PayoutPreferencesPage matches snapshot with Stripe not connected 1`] = 
         </p>
         <InjectIntl(PayoutDetailsFormComponent)
           createStripeAccountError={null}
-          currentUserId={
-            UUID {
-              "_sdkType": "UUID",
-              "uuid": "stripe-not-connected",
-            }
-          }
           disabled={false}
           inProgress={false}
           onChange={[Function]}
@@ -272,15 +275,18 @@ exports[`PayoutPreferencesPage matches snapshot with details submitted 1`] = `
             id="PayoutPreferencesPage.payoutDetailsSaved"
             values={Object {}}
           />
+          <NamedLink
+            name="ContactUsPage"
+            target="_blank"
+          >
+            <FormattedMessage
+              id="PayoutPreferencesPage.payoutDetailsSavedLink"
+              values={Object {}}
+            />
+          </NamedLink>
         </p>
         <InjectIntl(PayoutDetailsFormComponent)
           createStripeAccountError={null}
-          currentUserId={
-            UUID {
-              "_sdkType": "UUID",
-              "uuid": "stripe-connected",
-            }
-          }
           disabled={true}
           inProgress={false}
           onChange={[Function]}

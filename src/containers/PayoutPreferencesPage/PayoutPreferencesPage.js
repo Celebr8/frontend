@@ -8,15 +8,15 @@ import { propTypes } from '../../util/types';
 import { isScrollingDisabled } from '../../ducks/UI.duck';
 import { stripeAccountClearError } from '../../ducks/stripe.duck';
 import {
-	LayoutSideNavigation,
-	LayoutWrapperMain,
-	LayoutWrapperSideNav,
-	LayoutWrapperTopbar,
-	LayoutWrapperFooter,
-	Footer,
-	Page,
-	UserNav,
-	NamedLink
+  LayoutSideNavigation,
+  LayoutWrapperMain,
+  LayoutWrapperSideNav,
+  LayoutWrapperTopbar,
+  LayoutWrapperFooter,
+  Footer,
+  Page,
+  UserNav,
+  NamedLink,
 } from '../../components';
 import { PayoutDetailsForm } from '../../forms';
 import { TopbarContainer } from '../../containers';
@@ -25,141 +25,149 @@ import { savePayoutDetails, loadData } from './PayoutPreferencesPage.duck';
 import css from './PayoutPreferencesPage.css';
 
 export const PayoutPreferencesPageComponent = props => {
-	const {
-		currentUser,
-		scrollingDisabled,
-		createStripeAccountError,
-		onPayoutDetailsFormChange,
-		onPayoutDetailsFormSubmit,
-		payoutDetailsSaveInProgress,
-		payoutDetailsSaved,
-		intl,
-	} = props;
+  const {
+    currentUser,
+    scrollingDisabled,
+    createStripeAccountError,
+    onPayoutDetailsFormChange,
+    onPayoutDetailsFormSubmit,
+    payoutDetailsSaveInProgress,
+    payoutDetailsSaved,
+    intl,
+  } = props;
 
-	const ensuredCurrentUser = ensureCurrentUser(currentUser);
-	const currentUserLoaded = !!ensuredCurrentUser.id;
-	const { stripeConnected } = ensuredCurrentUser.attributes;
+  const ensuredCurrentUser = ensureCurrentUser(currentUser);
+  const currentUserLoaded = !!ensuredCurrentUser.id;
+  const { stripeConnected } = ensuredCurrentUser.attributes;
 
-	const tabs = [
-		{
-			text: <FormattedMessage id="PayoutPreferencesPage.contactDetailsTabTitle" />,
-			selected: false,
-			linkProps: {
-				name: 'ContactDetailsPage',
-			},
-		},
-		{
-			text: <FormattedMessage id="PayoutPreferencesPage.passwordTabTitle" />,
-			selected: false,
-			linkProps: {
-				name: 'PasswordChangePage',
-			},
-		},
-		{
-			text: <FormattedMessage id="PayoutPreferencesPage.paymentsTabTitle" />,
-			selected: true,
-			linkProps: {
-				name: 'PayoutPreferencesPage',
-			},
-		},
-	];
+  const tabs = [
+    {
+      text: <FormattedMessage id="PayoutPreferencesPage.contactDetailsTabTitle" />,
+      selected: false,
+      linkProps: {
+        name: 'ContactDetailsPage',
+      },
+    },
+    {
+      text: <FormattedMessage id="PayoutPreferencesPage.passwordTabTitle" />,
+      selected: false,
+      linkProps: {
+        name: 'PasswordChangePage',
+      },
+    },
+    {
+      text: <FormattedMessage id="PayoutPreferencesPage.paymentsTabTitle" />,
+      selected: true,
+      linkProps: {
+        name: 'PayoutPreferencesPage',
+      },
+    },
+  ];
 
-	const title = intl.formatMessage({ id: 'PayoutPreferencesPage.title' });
-	const formDisabled = !currentUserLoaded || stripeConnected || payoutDetailsSaved;
+  const title = intl.formatMessage({ id: 'PayoutPreferencesPage.title' });
+  const formDisabled = !currentUserLoaded || stripeConnected || payoutDetailsSaved;
 
-	let message = 
-		<FormattedMessage id="PayoutPreferencesPage.loadingData" />;
+  let message = <FormattedMessage id="PayoutPreferencesPage.loadingData" />;
 
-	if (currentUserLoaded && payoutDetailsSaved) {
+  if (currentUserLoaded && payoutDetailsSaved) {
+    const link = (
+      <NamedLink name="ContactUsPage" target="_blank">
+        <FormattedMessage id="PayoutPreferencesPage.payoutDetailsSavedLink" />
+      </NamedLink>
+    );
 
-		const link = <NamedLink name="ContactUsPage" target="_blank">
-				<FormattedMessage id="PayoutPreferencesPage.payoutDetailsSavedLink" />
-		</NamedLink>
+    message = (
+      <Fragment>
+        <FormattedMessage id="PayoutPreferencesPage.payoutDetailsSaved" />
+        {link}
+      </Fragment>
+    );
+  } else if (currentUserLoaded && stripeConnected) {
+    const link = (
+      <NamedLink
+        name="ContactUsPageEnquiry"
+        params={{ enquiry: 'changePaymentInfo' }}
+        target="_blank"
+      >
+        <FormattedMessage id="PayoutPreferencesPage.stripeAlreadyConnectedLink" />
+      </NamedLink>
+    );
 
-		message = <Fragment>
-				<FormattedMessage id="PayoutPreferencesPage.payoutDetailsSaved" />
-					{link}
-		</Fragment>
+    message = (
+      <Fragment>
+        <FormattedMessage id="PayoutPreferencesPage.stripeAlreadyConnected" />
+        {link}
+      </Fragment>
+    );
+  } else if (currentUserLoaded && !stripeConnected) {
+    message = <FormattedMessage id="PayoutPreferencesPage.stripeNotConnected" />;
+  }
 
-	} else if (currentUserLoaded && stripeConnected) {
+  const handlePayoutDetailsSubmit = values => {
+    const { fname: firstName, lname: lastName, ...rest } = values;
+    onPayoutDetailsFormSubmit({ firstName, lastName, ...rest });
+  };
 
-		const link = <NamedLink name="ContactUsPageEnquiry" params={{enquiry: "changePaymentInfo"}} target="_blank">
-			<FormattedMessage id="PayoutPreferencesPage.stripeAlreadyConnectedLink" />
-		</NamedLink>
+  const showForm =
+    currentUserLoaded && (payoutDetailsSaveInProgress || payoutDetailsSaved || !stripeConnected);
+  const form = showForm ? (
+    <PayoutDetailsForm
+      disabled={formDisabled}
+      inProgress={payoutDetailsSaveInProgress}
+      ready={payoutDetailsSaved}
+      submitButtonText={intl.formatMessage({ id: 'PayoutPreferencesPage.submitButtonText' })}
+      createStripeAccountError={createStripeAccountError}
+      onChange={onPayoutDetailsFormChange}
+      onSubmit={handlePayoutDetailsSubmit}
+    />
+  ) : null;
 
-			message = <Fragment>
-				<FormattedMessage id="PayoutPreferencesPage.stripeAlreadyConnected" />
-					{link}
-			</Fragment>
-	} else if (currentUserLoaded && !stripeConnected) {
-		message = <FormattedMessage id="PayoutPreferencesPage.stripeNotConnected" />;
-	}
-
-	const handlePayoutDetailsSubmit = values => {
-		const { fname: firstName, lname: lastName, ...rest } = values;
-		onPayoutDetailsFormSubmit({ firstName, lastName, ...rest });
-	};
-
-	const showForm =
-		currentUserLoaded && (payoutDetailsSaveInProgress || payoutDetailsSaved || !stripeConnected);
-	const form = showForm ? (
-		<PayoutDetailsForm
-			disabled={formDisabled}
-			inProgress={payoutDetailsSaveInProgress}
-			ready={payoutDetailsSaved}
-			submitButtonText={intl.formatMessage({ id: 'PayoutPreferencesPage.submitButtonText' })}
-			createStripeAccountError={createStripeAccountError}
-			onChange={onPayoutDetailsFormChange}
-			onSubmit={handlePayoutDetailsSubmit}
-		/>
-	) : null;
-
-	return (
-		<Page title={title} scrollingDisabled={scrollingDisabled}>
-			<LayoutSideNavigation>
-				<LayoutWrapperTopbar>
-					<TopbarContainer
-						currentPage="PayoutPreferencesPage"
-						desktopClassName={css.desktopTopbar}
-						mobileClassName={css.mobileTopbar}
-					/>
-					<UserNav selectedPageName="PayoutPreferencesPage" />
-				</LayoutWrapperTopbar>
-				<LayoutWrapperSideNav tabs={tabs} />
-				<LayoutWrapperMain>
-					<div className={css.content}>
-						<h1 className={css.title}>
-							<FormattedMessage id="PayoutPreferencesPage.heading" />
-						</h1>
-						<p>{message}</p>
-						{form}
-					</div>
-				</LayoutWrapperMain>
-				<LayoutWrapperFooter>
-					<Footer />
-				</LayoutWrapperFooter>
-			</LayoutSideNavigation>
-		</Page>
-	);
+  return (
+    <Page title={title} scrollingDisabled={scrollingDisabled}>
+      <LayoutSideNavigation>
+        <LayoutWrapperTopbar>
+          <TopbarContainer
+            currentPage="PayoutPreferencesPage"
+            desktopClassName={css.desktopTopbar}
+            mobileClassName={css.mobileTopbar}
+          />
+          <UserNav selectedPageName="PayoutPreferencesPage" />
+        </LayoutWrapperTopbar>
+        <LayoutWrapperSideNav tabs={tabs} />
+        <LayoutWrapperMain>
+          <div className={css.content}>
+            <h1 className={css.title}>
+              <FormattedMessage id="PayoutPreferencesPage.heading" />
+            </h1>
+            <p>{message}</p>
+            {form}
+          </div>
+        </LayoutWrapperMain>
+        <LayoutWrapperFooter>
+          <Footer />
+        </LayoutWrapperFooter>
+      </LayoutSideNavigation>
+    </Page>
+  );
 };
 
 PayoutPreferencesPageComponent.defaultProps = {
-	currentUser: null,
-	createStripeAccountError: null,
+  currentUser: null,
+  createStripeAccountError: null,
 };
 
 PayoutPreferencesPageComponent.propTypes = {
-	currentUser: propTypes.currentUser,
-	scrollingDisabled: bool.isRequired,
-	payoutDetailsSaveInProgress: bool.isRequired,
-	createStripeAccountError: propTypes.error,
-	payoutDetailsSaved: bool.isRequired,
+  currentUser: propTypes.currentUser,
+  scrollingDisabled: bool.isRequired,
+  payoutDetailsSaveInProgress: bool.isRequired,
+  createStripeAccountError: propTypes.error,
+  payoutDetailsSaved: bool.isRequired,
 
-	onPayoutDetailsFormChange: func.isRequired,
-	onPayoutDetailsFormSubmit: func.isRequired,
+  onPayoutDetailsFormChange: func.isRequired,
+  onPayoutDetailsFormSubmit: func.isRequired,
 
-	// from injectIntl
-	intl: intlShape.isRequired,
+  // from injectIntl
+  intl: intlShape.isRequired,
 };
 
 const mapStateToProps = state => {
@@ -176,16 +184,16 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => ({
-	onPayoutDetailsFormChange: () => dispatch(stripeAccountClearError()),
-	onPayoutDetailsFormSubmit: values => dispatch(savePayoutDetails(values)),
+  onPayoutDetailsFormChange: () => dispatch(stripeAccountClearError()),
+  onPayoutDetailsFormSubmit: values => dispatch(savePayoutDetails(values)),
 });
 
 const PayoutPreferencesPage = compose(
-	connect(
-		mapStateToProps,
-		mapDispatchToProps
-	),
-	injectIntl
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  ),
+  injectIntl
 )(PayoutPreferencesPageComponent);
 
 PayoutPreferencesPage.loadData = loadData;

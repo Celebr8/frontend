@@ -29,7 +29,7 @@ import config from '../../config';
 // OrderActionButtonMaybe,
 // TransactionPageTitle,
 // TransactionPageMessage,
-// 
+//
 
 import AddressLinkMaybe from './AddressLinkMaybe';
 import BreakdownMaybe from './BreakdownMaybe';
@@ -37,13 +37,7 @@ import DetailCardHeadingsMaybe from './DetailCardHeadingsMaybe';
 import DetailCardImage from './DetailCardImage';
 import FeedSection from './FeedSection';
 import SaleActionButtonsMaybe from './SaleActionButtonsMaybe';
-import {
-
-	OrderAttendance,
-	OrderOccasion,
-	OrderTime
-
-} from './TransactionPanel.helpers'
+import { OrderAttendance, OrderOccasion, OrderTime } from './TransactionPanel.helpers';
 
 import PanelHeading, {
   HEADING_ENQUIRED,
@@ -340,17 +334,11 @@ export class TransactionPanelComponent extends Component {
               listingTitle={listingTitle}
               listingDeleted={listingDeleted}
             />
-						<OrderAttendance 
-							transaction={currentTransaction}
-						/>
+            <OrderAttendance transaction={currentTransaction} />
 
-						<OrderOccasion 
-							transaction={currentTransaction}
-						/>
+            <OrderOccasion transaction={currentTransaction} />
 
-						<OrderTime 
-							transaction={currentTransaction}
-						/>
+            <OrderTime transaction={currentTransaction} />
 
             <div className={css.bookingDetailsMobile}>
               <AddressLinkMaybe

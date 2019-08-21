@@ -1,19 +1,17 @@
-import React from 'react';
-import { compose } from 'redux';
-import { object, string, bool, number, func, shape } from 'prop-types';
-import { injectIntl, intlShape, FormattedMessage } from 'react-intl';
 import classNames from 'classnames';
-import { withRouter } from 'react-router-dom';
 import omit from 'lodash/omit';
-
+import { bool, func, number, object, shape, string } from 'prop-types';
+import React from 'react';
+import { FormattedMessage, injectIntl, intlShape } from 'react-intl';
+import { withRouter } from 'react-router-dom';
+import { compose } from 'redux';
+import emptySearchImage from '../../assets/empty.svg';
 import {
   BookingDateRangeFilter,
-  SelectSingleFilter,
-  SelectMultipleFilter,
   PriceFilter,
-	NamedLink
+  SelectMultipleFilter,
+  SelectSingleFilter,
 } from '../../components';
-
 import routeConfiguration from '../../routeConfiguration';
 import { parseDateFromISO8601, stringifyDateToISO8601 } from '../../util/dates';
 import { createResourceLocatorString } from '../../util/routes';
@@ -84,7 +82,9 @@ const SearchFiltersComponent = props => {
   /*
    * This implement the redirection toward Recommend Deal page
    */
-  const recommendDealActive = true;
+
+  const searchRes = props.urlQueryParams.address.split(', ');
+  const town = searchRes[0];
 
   const hasNoResult = listingsAreLoaded && resultsCount === 0;
   const classes = classNames(rootClassName || css.root, { [css.longInfo]: hasNoResult }, className);
@@ -128,7 +128,6 @@ const SearchFiltersComponent = props => {
   const initialPriceRange = priceFilter
     ? initialPriceRangeValue(urlQueryParams, priceFilter.paramName)
     : null;
-
 
   const handleSelectOptions = (urlParam, options) => {
     const queryParams =
@@ -192,11 +191,10 @@ const SearchFiltersComponent = props => {
       urlParam={amenitiesFilter.paramName}
       label={amenitiesLabel}
       onSubmit={handleSelectOptions}
-      showAsPopup
       options={amenitiesFilter.options}
       initialValues={initialAmenities}
       contentPlacementOffset={FILTER_DROPDOWN_OFFSET}
-			showAsPopup
+      showAsPopup
     />
   ) : null;
 
@@ -208,7 +206,7 @@ const SearchFiltersComponent = props => {
       options={regularlyOpenOnFilter.options}
       initialValue={initialRegularlyOpenOn}
       contentPlacementOffset={FILTER_DROPDOWN_OFFSET}
-			showAsPopup
+      showAsPopup
     />
   ) : null;
 
@@ -220,7 +218,7 @@ const SearchFiltersComponent = props => {
       options={groupSizeFilter.options}
       initialValue={initialGroupSize}
       contentPlacementOffset={FILTER_DROPDOWN_OFFSET}
-			showAsPopup
+      showAsPopup
     />
   ) : null;
 
@@ -232,7 +230,7 @@ const SearchFiltersComponent = props => {
       options={listingTypeFilter.options}
       initialValue={initialListingType}
       contentPlacementOffset={FILTER_DROPDOWN_OFFSET}
-			showAsPopup
+      showAsPopup
     />
   ) : null;
 
@@ -290,9 +288,34 @@ const SearchFiltersComponent = props => {
 
       {hasNoResult ? (
         <div className={css.noSearchResults}>
-          <p>
-            <FormattedMessage id="SearchFilters.noResults" />
-          </p>
+          <p>Whoops! No pubs listed in {town} yet.</p>
+          <img width="300" alt="No pub found" src={emptySearchImage} />
+          <div className={css.guideWrap}>
+            <h3>
+              <FormattedMessage id="SearchFilters.noResultsGuideTitle" />
+            </h3>
+            <ol style={{ marginBottom: '1rem' }}>
+              <li>
+                <a
+                  style={{ textDecoration: 'underline' }}
+                  href={'https://www.google.ie/maps/search/pubs+in+' + town}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Here’s a list of pubs in {town}
+                </a>
+              </li>
+              <li>
+                <FormattedMessage id="SearchFilters.noResultsStep2" />
+              </li>
+              <li>
+                <FormattedMessage id="SearchFilters.noResultsReward" />
+              </li>
+            </ol>
+            <a className={css.findOutMore} href="/benefits/recommend-gift">
+              Find out more
+            </a>
+          </div>
         </div>
       ) : null}
 

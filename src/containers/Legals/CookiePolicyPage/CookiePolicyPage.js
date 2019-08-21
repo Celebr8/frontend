@@ -12,7 +12,7 @@ import {
   LayoutWrapperSideNav,
   LayoutWrapperTopbar,
   LayoutWrapperFooter,
-  Footer
+  Footer,
 } from '../../../components';
 import config from '../../../config';
 
@@ -35,7 +35,7 @@ const CookiePolicyPageComponent = props => {
       linkProps: {
         name: 'TermsOfServicePage',
       },
-    }
+    },
   ];
   const siteTitle = config.siteTitle;
   const schemaTitle = intl.formatMessage({ id: 'TermsOfServicePage.schemaTitle' }, { siteTitle });
@@ -56,7 +56,15 @@ const CookiePolicyPageComponent = props => {
             <h1 className={css.heading}>
               <FormattedMessage id="CookiePolicyPage.heading" />
             </h1>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ultricies mi a volutpat auctor. In ut egestas nunc. Donec pretium ex velit, non euismod nunc elementum sit amet. In vehicula cursus nibh sit amet maximus. Suspendisse vel tortor vitae sem aliquet dictum at at nibh. Integer libero velit, consequat ac quam a, vehicula rhoncus nisl. Curabitur vestibulum pellentesque dui, nec porta erat tempus vel. Aenean felis nunc, ullamcorper ac vestibulum nec, commodo at magna. Duis a libero in erat viverra malesuada. Proin eros mauris, tristique quis aliquam in, cursus et purus.</p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ultricies mi a volutpat
+              auctor. In ut egestas nunc. Donec pretium ex velit, non euismod nunc elementum sit
+              amet. In vehicula cursus nibh sit amet maximus. Suspendisse vel tortor vitae sem
+              aliquet dictum at at nibh. Integer libero velit, consequat ac quam a, vehicula rhoncus
+              nisl. Curabitur vestibulum pellentesque dui, nec porta erat tempus vel. Aenean felis
+              nunc, ullamcorper ac vestibulum nec, commodo at magna. Duis a libero in erat viverra
+              malesuada. Proin eros mauris, tristique quis aliquam in, cursus et purus.
+            </p>
           </div>
         </LayoutWrapperMain>
         <LayoutWrapperFooter>

@@ -1,17 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
 
-import css from './Deals.css';
-
-import { NamedLink } from '..';
+import { NamedLink } from '../';
 
 const Deals = props => {
-	const { rootClassName, className } = props;
-	const classes = classNames(rootClassName || css.root, className);
 
-	// prettier-ignore
-	return (
+  // prettier-ignore
+  return (
         <section>
 		<h1>Giving back is in our culture</h1>
         <p>On this page, you will find all the ways in which we are giving back to our community.</p>
@@ -24,15 +19,15 @@ const Deals = props => {
 };
 
 Deals.defaultProps = {
-	rootClassName: null,
-	className: null,
+  rootClassName: null,
+  className: null,
 };
 
 const { string } = PropTypes;
 
 Deals.propTypes = {
-	rootClassName: string,
-	className: string,
+  rootClassName: string,
+  className: string,
 };
 
 export default Deals;

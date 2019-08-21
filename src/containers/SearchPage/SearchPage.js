@@ -1,31 +1,25 @@
-import React, { Component } from 'react';
-import { array, bool, func, number, oneOf, object, shape, string } from 'prop-types';
-import { injectIntl, intlShape } from 'react-intl';
-import { connect } from 'react-redux';
-import { compose } from 'redux';
-import { withRouter } from 'react-router-dom';
+import classNames from 'classnames';
 import debounce from 'lodash/debounce';
 import unionWith from 'lodash/unionWith';
-import classNames from 'classnames';
+import { array, bool, func, object, oneOf, shape, string } from 'prop-types';
+import React, { Component } from 'react';
+import { injectIntl, intlShape } from 'react-intl';
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
+import { compose } from 'redux';
+import { ModalInMobile, Page, SearchMap } from '../../components';
 import config from '../../config';
+import { TopbarContainer } from '../../containers';
+import { getListingsById } from '../../ducks/marketplaceData.duck';
+import { isScrollingDisabled, manageDisableScrolling } from '../../ducks/UI.duck';
 import routeConfiguration from '../../routeConfiguration';
 import { createResourceLocatorString, pathByRouteName } from '../../util/routes';
-import { parse, stringify } from '../../util/urlHelpers';
 import { propTypes } from '../../util/types';
-import { getListingsById } from '../../ducks/marketplaceData.duck';
-import { manageDisableScrolling, isScrollingDisabled } from '../../ducks/UI.duck';
-import { SearchMap, ModalInMobile, Page } from '../../components';
-import { TopbarContainer } from '../../containers';
-
-import { searchListings, searchMapListings, setActiveListing } from './SearchPage.duck';
-import {
-  pickSearchParamsOnly,
-  validURLParamsForExtendedData,
-  validFilterParams,
-  createSearchResultSchema,
-} from './SearchPage.helpers';
+import { parse, stringify } from '../../util/urlHelpers';
 import MainPanel from './MainPanel';
 import css from './SearchPage.css';
+import { searchListings, searchMapListings, setActiveListing } from './SearchPage.duck';
+import { createSearchResultSchema, pickSearchParamsOnly, validFilterParams, validURLParamsForExtendedData } from './SearchPage.helpers';
 
 // Pagination page size might need to be dynamic on responsive page layouts
 // Current design has max 3 columns 12 is divisible by 2 and 3
@@ -127,6 +121,8 @@ export class SearchPageComponent extends Component {
     this.setState({ isMobileModalOpen: false });
   }
 
+  
+
   render() {
     const {
       intl,
@@ -148,9 +144,8 @@ export class SearchPageComponent extends Component {
       latlngBounds: ['bounds'],
     });
 
-    const filters = this.filters();
 
-		console.log(filters);
+    const filters = this.filters();
 
     // urlQueryParams doesn't contain page specific url params
     // like mapSearch, page or origin (origin depends on config.sortSearchByDistance)
@@ -263,7 +258,7 @@ SearchPageComponent.defaultProps = {
   groupSize: config.custom.groupSize,
   amenities: config.custom.amenities,
   regularlyOpenOn: config.custom.regularlyOpenOn,
-	listingTypes: config.custom.listingTypes,
+  listingTypes: config.custom.listingTypes,
   activeListingId: null,
 };
 
