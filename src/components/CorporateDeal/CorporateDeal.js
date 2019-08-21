@@ -1,5 +1,4 @@
 import React from 'react';
-import { FormattedMessage } from 'react-intl';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
@@ -9,14 +8,12 @@ import { PricingTable } from './pricingTable';
 
 import css from './CorporateDeal.css';
 
-import image1 from './img/employee_benefit_image_01.png';
-
 const CorporateDeal = props => {
-	const { rootClassName, className } = props;
-	const classes = classNames(rootClassName || css.root, className);
+  const { rootClassName, className } = props;
+  const classes = classNames(rootClassName || css.root, className);
 
-	// prettier-ignore
-	return (
+  // prettier-ignore
+  return (
 
     <div className={css.container}>
       <div className={classes}>
@@ -24,7 +21,7 @@ const CorporateDeal = props => {
 				<section className={css.getInTouch}>
 					<div className={css.btnGroup + ' ' + css.containerButton}>
 						<section className={css.centerButtons}>
-							<a href="https://www.whichost.com/s?address=Ireland&bounds=55.36%2C-5.911%2C51.427%2C-10.382&origin=53.357%2C-7.756"><button type="submit">Find a pub for your celebration</button></a>
+							<a href="/s?address=Ireland&bounds=55.36%2C-5.911%2C51.427%2C-10.382&origin=53.357%2C-7.756"><button type="submit">Find a pub for your celebration</button></a>
 						</section>
 					</div>
 				</section>
@@ -51,15 +48,15 @@ const CorporateDeal = props => {
 };
 
 CorporateDeal.defaultProps = {
-	rootClassName: null,
-	className: null,
+  rootClassName: null,
+  className: null,
 };
 
 const { string } = PropTypes;
 
 CorporateDeal.propTypes = {
-	rootClassName: string,
-	className: string,
+  rootClassName: string,
+  className: string,
 };
 
 export default CorporateDeal;

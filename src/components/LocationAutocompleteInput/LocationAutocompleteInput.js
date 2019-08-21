@@ -6,7 +6,6 @@ import LocationAutocompleteInputImpl from './LocationAutocompleteInputImpl.js';
 
 class LocationAutocompleteInputComponent extends Component {
   render() {
-
     /* eslint-disable no-unused-vars */
     const { rootClassName, labelClassName, ...restProps } = this.props;
     const { input, label, meta, valueFromForm, ...otherProps } = restProps;
@@ -19,15 +18,13 @@ class LocationAutocompleteInputComponent extends Component {
       label,
       meta,
       ...otherProps,
-      input: { ...input, value}
+      input: { ...input, value },
     };
     const labelInfo = label ? (
       <label className={labelClassName} htmlFor={input.name}>
         {label}
       </label>
     ) : null;
-
-    const hasError = !!(touched && invalid && error);
 
     return (
       <div className={rootClassName}>

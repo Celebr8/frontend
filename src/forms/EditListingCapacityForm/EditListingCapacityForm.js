@@ -70,7 +70,7 @@ export const EditListingCapacityFormComponent = props => (
         initalSliderValue,
         action
       } = fieldRenderProps;
-      
+
       const { updateListingError, showListingsError } = fetchErrors || {};
       const errorMessage = updateListingError ? (
         <p className={css.error}>
