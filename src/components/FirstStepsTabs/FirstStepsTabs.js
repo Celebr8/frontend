@@ -84,11 +84,42 @@ const ForUser = () => (
       employees and colleagues now! <i>(T&Cs apply)</i>
     </p>
     <h2>Contact us. We're here to help.</h2>
-    <p>
-      If you're ready to start saving time but you still have questions that are not covered by our{' '}
-      <NamedLink name="FAQPage">help center</NamedLink>, we invite you to{' '}
-      <NamedLink name="ContactUsPage">contact us</NamedLink> and we'll assist you personally.
-    </p>
+    <p>If you're ready to start saving time but you still have questions that are not covered by our <a href="https://www.whichost.com/help/faq" target="_blank">help center</a>, we invite you to <a href="https://www.whichost.com/help/contact-us" target="_blank">contact us</a> and we'll assist you personally.</p>
+    <br/>
+	</TabContainer>
+)
+
+const ItemTwoPleaseChangeMyName = () => (
+	<TabContainer>
+  <h2>Higher income, more exposure, returning customers.</h2>
+  <p>If you're aiming for a higher income and if you want to gain more exposure for your pub, you're in the right place. Keep your customers returning and strengthen your relationship with them by offering the option to easily find and book your pub online over Celebr8.co</p>
+  <p><b>Here's what you need to start a profitable Celebr8 business:</b></p>
+  <p>
+    <ol>
+      <li>Create a profile by clicking on <a href="https://www.whichost.com/signup" target="_blank">Sign up</a>;</li>
+      <li>Enter the needed information and click on the button "Sign up";</li>
+      <li>Check your emails and click on the verification link to verify your account. We want to be sure you've entered the correct email addres;</li>
+      <li>Click on <a href="https://www.whichost.com/l/new" target="_blank">+ Add your pub</a>;</li>
+      <li>Add content to your new listing by following the steps on the page;</li>
+      <li>Share your new listing on social media platforms by using the link in the browser;</li>
+      <li>Done;</li>
+      <li><i>(optional)</i><a href="https://www.whichost.com/help/contact-us" target="_blank"> Contact us</a> in case you have further questions.</li>
+    </ol>
+  </p>
+  <br/>
+  <h2>Why should you use Celebr8? Because it's a win-win-win.</h2>
+  <p>We are on a mission. We know that the pub industry is shrinking, we know that parties are becomming the bigest source of income, we know that party-people nowdays are mobile and preffer to book online and <b>Celebr8 is the solution:</b>
+  <br/><br/>
+    <ol>
+      <li><b>Your win:</b> You increase your income, gain more exposure and keep your customers returning;</li>
+      <li><b>Your customer's win:</b> They are happy to have the option to easily find and book your pub;</li>
+      <li><b>Celebr8's win:</b> We are happy to see the pub industry flowrish again.</li>
+    </ol>
+  </p>
+  <br/>
+  <h2>Contact us. We're here to help.</h2>
+  <p>If you're ready to start but you still have questions that are not covered by our <a href="https://www.whichost.com/help/faq" target="_blank">help center</a>, we invite you to <a href="https://www.whichost.com/help/contact-us" target="_blank">contact us</a> and we'll assist you personally.</p>
+  <br/>
   </TabContainer>
 );
 
