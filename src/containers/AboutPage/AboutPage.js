@@ -19,7 +19,7 @@ const AboutPage = () => {
       schema={{
         '@context': 'http://schema.org',
         '@type': 'AboutPage',
-        description: 'About Whichost',
+        description: 'About Celebr8',
         name: 'About page',
       }}
     >
@@ -27,6 +27,7 @@ const AboutPage = () => {
         <LayoutWrapperTopbar>
           <TopbarContainer />
         </LayoutWrapperTopbar>
+
         <LayoutWrapperMain>
         <div className={css.heroContainer}>
           <SectionHero
