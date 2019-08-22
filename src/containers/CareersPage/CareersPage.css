@@ -50,7 +50,6 @@
   }
 }
 
-
 /* Animation for the hero elements */
 
 @keyframes animationTitle {
@@ -65,7 +64,6 @@
     top: 0;
   }
 }
-
 
 .heroContent {
   margin: 0 24px 0 24px;
@@ -116,12 +114,12 @@
 }
 
 p {
-  line-height: 22px!important;
+  line-height: 22px !important;
 }
 
 /* BUTTONS */
 .containerButton {
-	margin-top: 25px;
+  margin-top: 25px;
 }
 
 .btnGroup button {
@@ -136,19 +134,16 @@ p {
   cursor: pointer; /* Pointer/hand icon */
   float: left; /* Float the buttons side by side */
   width: 180px;
-
 }
-
 
 .centerButtons {
-   display: flex;
-   justify-content: center;
+  display: flex;
+  justify-content: center;
 }
-
 
 /* Clear floats (clearfix hack) */
 .btnGroup:after {
-  content: "";
+  content: '';
   clear: both;
   display: table;
 }
@@ -165,26 +160,25 @@ p {
 }
 
 .getInTouch {
-	margin-top: 100px;
+  margin-top: 100px;
 }
 
 .getInTouch h3 {
-	text-align: center;
-	padding-bottom: 5px;
-	color: #ff3f00;
+  text-align: center;
+  padding-bottom: 5px;
+  color: #ff3f00;
 }
 
 .getInTouch p {
-	text-align: center;
-	padding-bottom: 5px;
+  text-align: center;
+  padding-bottom: 5px;
 }
 
 .termsAndConditionsAccordion {
-	padding-top: 50px;
+  padding-top: 50px;
 }
 
 .examplesAccordion {
-
 }
 
 @media (max-width: 768px) {
@@ -198,17 +192,17 @@ p {
   }
 
   .btnGroup .centerButtons {
-	  display: block;
-	}
+    display: block;
+  }
 
-	.btnGroup button{
-	  float:none;
-	  padding: 10px 0px;
-	  margin-left: 0;
-	  width: 100%;
-	  }
+  .btnGroup button {
+    float: none;
+    padding: 10px 0px;
+    margin-left: 0;
+    width: 100%;
+  }
 
-	.btnGroup button:first-child{
-	  margin-bottom: 15px;
-	  }
- }
+  .btnGroup button:first-child {
+    margin-bottom: 15px;
+  }
+}

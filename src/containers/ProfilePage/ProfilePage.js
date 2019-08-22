@@ -187,9 +187,9 @@ export class ProfilePageComponent extends Component {
           <FormattedMessage id="ProfilePage.desktopHeading" values={{ name: displayName }} />
         </h1>
         {hasBio ? <p className={css.bio}>{bio}</p> : null}
-				<p className={css.majority}><FormattedMessage 
-						id="ProfilePage.userMajority"
-					/></p>
+        <p className={css.majority}>
+          <FormattedMessage id="ProfilePage.userMajority" />
+        </p>
         {hasListings ? (
           <div className={listingsContainerClasses}>
             <h2 className={css.listingsTitle}>

@@ -18,8 +18,7 @@ export const EditListingRegularlyOpenOnFormComponent = props => (
         className,
         disabled,
         handleSubmit,
-        intl,
-				name,
+        name,
         invalid,
         pristine,
         saveActionMsg,
@@ -27,13 +26,6 @@ export const EditListingRegularlyOpenOnFormComponent = props => (
         updateInProgress,
         fetchErrors,
       } = fieldRenderProps;
-
-      const rulesLabelMessage = intl.formatMessage({
-        id: 'EditListingRegularlyOpenOnForm.rulesLabel',
-      });
-      const rulesPlaceholderMessage = intl.formatMessage({
-        id: 'EditListingRegularlyOpenOnForm.rulesPlaceholder',
-      });
 
       const { updateListingError, showListingsError } = fetchErrors || {};
       const errorMessage = updateListingError ? (

@@ -1,7 +1,6 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import { Reviews } from '../../components';
-
 import css from './ListingPage.css';
 
 const SectionReviews = props => {

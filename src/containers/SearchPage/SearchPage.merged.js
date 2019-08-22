@@ -52,7 +52,14 @@ export class SearchPageComponent extends Component {
   }
 
   filters() {
-    const { amenities, regularlyOpenOn, groupSize, listingTypes, priceFilterConfig, dateRangeFilterConfig} = this.props;
+    const {
+      amenities,
+      regularlyOpenOn,
+      groupSize,
+      listingTypes,
+      priceFilterConfig,
+      dateRangeFilterConfig,
+    } = this.props;
 
     // Note: "category" and "amenities" filters are not actually filtering anything by default.
     // Currently, if you want to use them, we need to manually configure them to be available
@@ -272,7 +279,7 @@ SearchPageComponent.defaultProps = {
   groupSize: config.custom.groupSize,
   amenities: config.custom.amenities,
   regularlyOpenOn: config.custom.regularlyOpenOn,
-	listingTypes: config.custom.listingTypes,
+  listingTypes: config.custom.listingTypes,
   priceFilterConfig: config.custom.priceFilterConfig,
   dateRangeFilterConfig: config.custom.dateRangeFilterConfig,
   activeListingId: null,

@@ -44,9 +44,11 @@ const TopbarMobileMenu = props => {
       </span>
     );
 
-		const helpCenterLink = (
-      <NamedLink name="FAQPage" target="_blank" className={css.link}>Help centre</NamedLink>
-		)
+    const helpCenterLink = (
+      <NamedLink name="FAQPage" target="_blank" className={css.link}>
+        Help centre
+      </NamedLink>
+    );
 
     return (
       <div className={css.root}>
@@ -58,16 +60,16 @@ const TopbarMobileMenu = props => {
             />
           </div>
         </div>
-				<div className={css.help}>
-					<div className={css.content}>
-						<div className={css.helpCenter}>
-							<FormattedMessage
-								id="TopbarMobileMenu.helpMenu"
-								values={{ lineBreak: <br />, helpCenterLink }}
-							/>
-						</div>
-					</div>
-				</div>
+        <div className={css.help}>
+          <div className={css.content}>
+            <div className={css.helpCenter}>
+              <FormattedMessage
+                id="TopbarMobileMenu.helpMenu"
+                values={{ lineBreak: <br />, helpCenterLink }}
+              />
+            </div>
+          </div>
+        </div>
         <div className={css.footer}>
           <NamedLink className={css.createNewListingLink} name="NewListingPage">
             <FormattedMessage id="TopbarMobileMenu.newListingLink" />
@@ -99,14 +101,11 @@ const TopbarMobileMenu = props => {
         <InlineTextButton rootClassName={css.logoutButton} onClick={onLogout}>
           <FormattedMessage id="TopbarMobileMenu.logoutLink" />
         </InlineTextButton>
-				<NamedLink 
-					className={css.navigationLink} 
-					target="_blank" 
-					name="FAQPage">
-					<span className={css.helpCenter}>
-						<FormattedMessage id="TopbarDesktop.helpCenter" />
-					</span>
-				</NamedLink>
+        <NamedLink className={css.navigationLink} target="_blank" name="FAQPage">
+          <span className={css.helpCenter}>
+            <FormattedMessage id="TopbarDesktop.helpCenter" />
+          </span>
+        </NamedLink>
         <NamedLink
           className={classNames(css.inbox, currentPageClass('InboxPage'))}
           name="InboxPage"
