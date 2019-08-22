@@ -201,7 +201,7 @@ const LegalsDeals = props => {
 				<li>The review must be submitted within one week of making use of the booking.</li>
 				<li>All One4all Gift Cards are sent electronically to you’s email address in your Celebr8 account.</li>
 			</ol>
-		</li>
+			
 		<li>By having the party through Celebr8 between Mondays and Wednesdays, and reviewing the pub, you will receive an One4all Gift Card of up to €300.00, depending on the size of the party as follows:
 			<ul>
 				<li>Up to 30 people - € 30.00</li>
