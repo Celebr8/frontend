@@ -90,7 +90,7 @@
   height: 100%;
   margin-right: 24px;
   border-left-style: solid;
-  border-left-width: 1px;
+  border-left-width: 0px;
   border-left-color: var(--matterColorNegative);
 
   @media (--viewportLarge) {
@@ -105,11 +105,19 @@
 }
 
 .topbarSearchWithLeftPadding {
-  padding-left: 24px;
-  height: var(--topbarHeightDesktop);
+  padding-left: 15px;
+  height: 45px;
+  margin-top: 14px;
+  align-items: center;
+  background: #fff;
+  margin-left: 4px;
+  border-radius: 3px;
+  box-shadow: 0 3px 9px rgba(0, 0, 0, 0.075);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  max-width: 500px;
 
   @media (--viewportLarge) {
-    padding-left: 34px;
+    padding-left: 15px;
   }
 }
 
@@ -216,6 +224,7 @@
     transform: scale(0);
     opacity: 0;
   }
+
   100% {
     transform: scale(1);
     opacity: 1;

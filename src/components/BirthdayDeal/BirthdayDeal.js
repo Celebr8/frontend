@@ -1,5 +1,4 @@
 import React from 'react';
-import { FormattedMessage } from 'react-intl';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
@@ -10,11 +9,11 @@ import { PricingTable } from './pricingTable';
 import css from './BirthdayDeal.css';
 
 const BirthdayDeal = props => {
-	const { rootClassName, className } = props;
-	const classes = classNames(rootClassName || css.root, className);
+  const { rootClassName, className } = props;
+  const classes = classNames(rootClassName || css.root, className);
 
-	// prettier-ignore
-	return (
+  // prettier-ignore
+  return (
 		<div className={css.container}>
 			<div className={classes}>
 				<h2>Earn a gift card to use with over 2,000 shops in Ireland &amp; the UK! <br />Get up to €240 when celebrating your birthday.</h2>
@@ -55,15 +54,15 @@ const BirthdayDeal = props => {
 };
 
 BirthdayDeal.defaultProps = {
-	rootClassName: null,
-	className: null,
+  rootClassName: null,
+  className: null,
 };
 
 const { string } = PropTypes;
 
 BirthdayDeal.propTypes = {
-	rootClassName: string,
-	className: string,
+  rootClassName: string,
+  className: string,
 };
 
 export default BirthdayDeal;

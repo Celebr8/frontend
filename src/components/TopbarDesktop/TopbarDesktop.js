@@ -140,9 +140,7 @@ const TopbarDesktop = props => {
           <FormattedMessage id="TopbarDesktop.createListing" />
         </span>
       </NamedLink>
-			<NamedLink className={css.helpCenterLink} 
-				target="_blank" 
-				name="FAQPage">
+      <NamedLink className={css.helpCenterLink} target="_blank" name="FAQPage">
         <span className={css.helpCenter}>
           <FormattedMessage id="TopbarDesktop.helpCenter" />
         </span>

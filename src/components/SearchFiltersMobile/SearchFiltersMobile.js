@@ -1,22 +1,18 @@
-import React, { Component } from 'react';
-import { object, string, bool, number, func, shape, array } from 'prop-types';
 import classNames from 'classnames';
+import omit from 'lodash/omit';
+import { array, bool, func, number, object, shape, string } from 'prop-types';
+import React, { Component } from 'react';
 import { FormattedMessage, injectIntl, intlShape } from 'react-intl';
 import { withRouter } from 'react-router-dom';
-import omit from 'lodash/omit';
-
-import routeConfiguration from '../../routeConfiguration';
-import { parseDateFromISO8601, stringifyDateToISO8601 } from '../../util/dates';
-import { createResourceLocatorString } from '../../util/routes';
 import {
-  ModalInMobile,
   Button,
-  PriceFilter,
+  ModalInMobile,
   NamedLink,
-  SelectSingleFilter,
   SelectMultipleFilter,
-  BookingDateRangeFilter,
+  SelectSingleFilter,
 } from '../../components';
+import routeConfiguration from '../../routeConfiguration';
+import { createResourceLocatorString } from '../../util/routes';
 import { propTypes } from '../../util/types';
 import css from './SearchFiltersMobile.css';
 
@@ -102,7 +98,6 @@ class SearchFiltersMobileComponent extends Component {
     history.push(createResourceLocatorString('SearchPage', routeConfiguration(), {}, queryParams));
   }
 
-
   // Reset all filter query parameters
   resetAll(e) {
     const { urlQueryParams, history, filterParamNames } = this.props;
@@ -154,7 +149,6 @@ class SearchFiltersMobileComponent extends Component {
       amenitiesFilter,
       groupSizeFilter,
       regularlyOpenOnFilter,
-      priceFilter,
       intl,
     } = this.props;
 
@@ -163,7 +157,7 @@ class SearchFiltersMobileComponent extends Component {
     /*
      * This implement the redirection toward Recommend Deal page
      */
-    const recommendDealActive = true;
+    const recommendDealActive = false;
 
     const RecommendDeal = props =>
       recommendDealActive && props.show ? (
