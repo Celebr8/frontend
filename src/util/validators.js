@@ -89,7 +89,7 @@ export const bookingDateRequired = inValidDateMessage => value => {
   return !dateIsValid ? inValidDateMessage : VALID;
 };
 
-export const bookingDatesRequired = (inValidStartDateMessage) => value => {
+export const bookingDatesRequired = inValidStartDateMessage => value => {
   const startDateIsValid = value && value.startDate instanceof Date;
 
   if (!startDateIsValid) {

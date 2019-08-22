@@ -1,10 +1,9 @@
+import classNames from 'classnames';
+import { arrayOf, string } from 'prop-types';
 import React from 'react';
 import { injectIntl, intlShape } from 'react-intl';
-import { arrayOf, string } from 'prop-types';
-import classNames from 'classnames';
 import { Avatar, ReviewRating, UserDisplayName } from '../../components';
 import { propTypes } from '../../util/types';
-
 import css from './Reviews.css';
 
 const Review = props => {

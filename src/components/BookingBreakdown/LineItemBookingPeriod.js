@@ -7,7 +7,7 @@ import { daysBetween, dateFromAPIToLocalNoon } from '../../util/dates';
 import css from './BookingBreakdown.css';
 
 const BookingPeriod = props => {
-  const { isSingleDay, startDate, endDate } = props;
+  const { isSingleDay, startDate } = props;
   const dateFormatOptions = {
     weekday: 'short',
     month: 'short',
@@ -27,10 +27,7 @@ const BookingPeriod = props => {
             <FormattedDate value={startDate} {...dateFormatOptions} />
           </span>
         ),
-        bookingEnd: (
-          <span className={css.nowrap}>
-          </span>
-        ),
+        bookingEnd: <span className={css.nowrap}></span>,
       }}
     />
   );

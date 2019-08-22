@@ -387,12 +387,12 @@
   @apply --marketplaceH4FontStyles;
   margin: 0;
   padding: 1px 6px 1px 6px;
-    border-radius: 4px;
-    border-color: #ff3f00;
-    border-width: 1px;
-    background: transparent;
-    border-style: solid;
-    text-decoration: none!important;
+  border-radius: 4px;
+  border-color: #ff3f00;
+  border-width: 1px;
+  background: transparent;
+  border-style: solid;
+  text-decoration: none !important;
 }
 
 .sectionDescription {
@@ -427,7 +427,6 @@
     margin-bottom: 52px;
   }
 }
-
 
 .featuresTitle {
   /* Font */
