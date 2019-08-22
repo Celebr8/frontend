@@ -20,7 +20,6 @@ import {
   LayoutWrapperTopbar,
   LayoutWrapperFooter,
   Footer,
-  ContactUs,
 } from '../../../components';
 
 import config from '../../../config';
@@ -60,8 +59,8 @@ const ContactUsPageComponent = props => {
     name: schemaTitle,
   };
 
-	const injectUserEmail = (values, user) => 
-		(user && user.id) ? {...values, email: user.attributes.email} : values;	
+  const injectUserEmail = (values, user) =>
+    user && user.id ? { ...values, email: user.attributes.email } : values;
 
   const contactUsForm = (
     <ContactUsForm

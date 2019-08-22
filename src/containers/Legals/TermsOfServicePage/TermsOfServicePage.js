@@ -24,9 +24,9 @@ import css from './TermsOfServicePage.css';
 const TermsOfServicePageComponent = props => {
   const { scrollingDisabled, intl } = props;
 
-	const tabs = legalsTabs(intl, 'TermsOfServicePage');
+  const tabs = legalsTabs(intl, 'TermsOfServicePage');
 
-	const siteTitle = config.siteTitle;
+  const siteTitle = config.siteTitle;
   const schemaTitle = intl.formatMessage({ id: 'TermsOfServicePage.schemaTitle' }, { siteTitle });
   const schema = {
     '@context': 'http://schema.org',

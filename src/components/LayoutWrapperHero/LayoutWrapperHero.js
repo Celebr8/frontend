@@ -11,11 +11,7 @@ const LayoutWrapperHero = props => {
   const { className, rootClassName, children } = props;
   const classes = classNames(rootClassName || css.root, className);
 
-  return (
-    <div className={classes}>
-      {children}
-    </div>
-  );
+  return <div className={classes}>{children}</div>;
 };
 
 LayoutWrapperHero.defaultProps = {

@@ -16,7 +16,7 @@ const PrivacyPolicy = props => {
       <p className={css.lastUpdated}>Last updated: April 14, 2018</p>
 
       <p>
-        This Privacy Policy explains how Whichost Ltd (“Whichost” or “we”) collects, uses, and shares personal information. As used in this Privacy Policy, “you” may refer to either a user of Whichost’s products or services (“Services”); or a person providing visiting our website, using our apps, or interacting with us. This Privacy Policy describes our use of information that identifies or might reasonably identify you (“personal information”).
+        This Privacy Policy explains how Whichost Ltd (“Celebr8” or “we”) collects, uses, and shares personal information. As used in this Privacy Policy, “you” may refer to either a user of Celebr8’s products or services (“Services”); or a person providing visiting our website, using our apps, or interacting with us. This Privacy Policy describes our use of information that identifies or might reasonably identify you (“personal information”).
       </p>
       
       <p>
@@ -62,14 +62,14 @@ const PrivacyPolicy = props => {
 			<li>Respond to your comments, questions, and requests, and provide customer service;</li>
 			<li>Provide, maintain, advertise, promote and improve our Services;</li>
 			<li>Facilitate communication among users of our Services;</li>
-			<li>Communicate with you about products, services, offers, promotions, and more about Whichost and others;</li>
+			<li>Communicate with you about products, services, offers, promotions, and more about Celebr8 and others;</li>
 			<li>Monitor and analyze trends, usage, and activities in connection with our Services; Personalize and improve our Services and provide content or features through the Service that match user profiles or interests;</li>
 			<li>Link or combine with information we get from others to help understand your needs and provide you with better service; and</li>
 			<li>Carry out any other purpose for which the information was collected.</li>
 		</ul>
 		</p>
 		<p>
-		Whichost is based in Ireland, and the information we collect is governed by Irish law and the laws of the other countries in which we operate. By accessing or using our Services or otherwise providing information to us, you understand and consent to the processing and transfer of information in Ireland and other countries for the purposes set out in this Privacy Policy.
+		Celebr8 is based in Ireland, and the information we collect is governed by Irish law and the laws of the other countries in which we operate. By accessing or using our Services or otherwise providing information to us, you understand and consent to the processing and transfer of information in Ireland and other countries for the purposes set out in this Privacy Policy.
 		</p>
 		<h3>Sharing of information</h3>
 		<p>
@@ -89,11 +89,11 @@ We may also anonymise or pseudonymise to remove any identifying attributes, or a
 		</p>
 		<h3>Analytics services provided by others</h3>
 		<p>
-We may allow others to provide analytics services. These entities may use cookies, web beacons, and other technologies to collect personal information use of our Services and other websites, including your IP address, web browser, pages viewed, time spent on pages, links clicked, and conversion information. Whichost and others may use this information to, among other things, analyse and track data, determine the popularity of certain content, and better understand user online activity.
+We may allow others to provide analytics services. These entities may use cookies, web beacons, and other technologies to collect personal information use of our Services and other websites, including your IP address, web browser, pages viewed, time spent on pages, links clicked, and conversion information. Celebr8 and others may use this information to, among other things, analyse and track data, determine the popularity of certain content, and better understand user online activity.
 		</p>
 		<h3>Security</h3>
 		<p>
-Whichost takes reasonable measures to help protect personal information from loss, theft, misuse, and unauthorised access, disclosure, alteration, and destruction.
+Celebr8 takes reasonable measures to help protect personal information from loss, theft, misuse, and unauthorised access, disclosure, alteration, and destruction.
 		</p>
 		<h2>YOUR CHOICES</h2>
 		<h3>Account information</h3>
@@ -106,7 +106,7 @@ Most web browsers are set to accept cookies by default. If you prefer, you can u
 		</p>
 		<h3>Promotional communications</h3>
 		<p>
-			You may opt out of receiving promotional communications from Whichost by following the unsubscribe instructions in those communications or by <NamedLink name="ContactUsPageEnquiry" params={{enquiry: 'privacy'}}>clicking here</NamedLink>. If you opt out, we may still send you non-promotional communications, including those about your account or transactions.
+			You may opt out of receiving promotional communications from Celebr8 by following the unsubscribe instructions in those communications or by <NamedLink name="ContactUsPageEnquiry" params={{enquiry: 'privacy'}}>clicking here</NamedLink>. If you opt out, we may still send you non-promotional communications, including those about your account or transactions.
 		</p>
 		<h3>Contact information</h3>
 		<p>

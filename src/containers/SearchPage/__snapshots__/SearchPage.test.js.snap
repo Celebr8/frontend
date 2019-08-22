@@ -53,32 +53,100 @@ exports[`SearchPageComponent matches snapshot 1`] = `
             ],
             "paramName": "pub_amenities",
           },
-          "categoryFilter": Object {
+          "groupSizeFilter": Object {
             "options": Array [
               Object {
-                "key": "cat1",
-                "label": "Cat 1",
+                "key": "1-10",
+                "label": "1-10",
               },
               Object {
-                "key": "cat2",
-                "label": "Cat 2",
+                "key": "11-20",
+                "label": "11-20",
+              },
+              Object {
+                "key": "21-30",
+                "label": "21-30",
+              },
+              Object {
+                "key": "31-40",
+                "label": "31-40",
+              },
+              Object {
+                "key": "41-50",
+                "label": "41-50",
+              },
+              Object {
+                "key": "51-60",
+                "label": "51-60",
+              },
+              Object {
+                "key": "61-70",
+                "label": "61-70",
+              },
+              Object {
+                "key": "71-80",
+                "label": "71-80",
+              },
+              Object {
+                "key": "81-90",
+                "label": "81-90",
+              },
+              Object {
+                "key": "91-100",
+                "label": "91-100",
+              },
+              Object {
+                "key": "More than 100",
+                "label": "More than 100",
               },
             ],
-            "paramName": "pub_category",
+            "paramName": "pub_groupSize",
           },
-          "dateRangeFilter": Object {
-            "config": Object {
-              "active": true,
-            },
-            "paramName": "dates",
+          "listingTypeFilter": Object {
+            "options": Array [
+              Object {
+                "key": "common",
+                "label": "Common space",
+              },
+              Object {
+                "key": "private",
+                "label": "Private space",
+              },
+            ],
+            "paramName": "pub_type",
           },
-          "priceFilter": Object {
-            "config": Object {
-              "max": 1000,
-              "min": 0,
-              "step": 5,
-            },
-            "paramName": "price",
+          "regularlyOpenOnFilter": Object {
+            "options": Array [
+              Object {
+                "key": "mondays",
+                "label": "Mondays",
+              },
+              Object {
+                "key": "tuesdays",
+                "label": "Tuesdays",
+              },
+              Object {
+                "key": "wednesdays",
+                "label": "Wednesdays",
+              },
+              Object {
+                "key": "thursdays",
+                "label": "Thursdays",
+              },
+              Object {
+                "key": "fridays",
+                "label": "Fridays",
+              },
+              Object {
+                "key": "saturdays",
+                "label": "Saturdays",
+              },
+              Object {
+                "key": "sundays",
+                "label": "Sundays",
+              },
+            ],
+            "paramName": "pub_regularlyOpenOn",
           },
         }
       }

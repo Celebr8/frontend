@@ -28,7 +28,7 @@
 
 .link {
   white-space: nowrap;
-  text-decoration: none!important;
+  text-decoration: none !important;
 }
 
 .mobileBio,
@@ -120,12 +120,12 @@
 .contact {
   @apply --marketplaceLinkStyles;
   @apply --marketplaceH4FontStyles;
-  	margin: 0;
-    padding: 1px 6px 1px 6px;
-    border-radius: 4px;
-    border-color: #ff3f00;
-    border-width: 1px;
-    background: transparent;
-    border-style: solid;
-    text-decoration: none!important;
+  margin: 0;
+  padding: 1px 6px 1px 6px;
+  border-radius: 4px;
+  border-color: #ff3f00;
+  border-width: 1px;
+  background: transparent;
+  border-style: solid;
+  text-decoration: none !important;
 }

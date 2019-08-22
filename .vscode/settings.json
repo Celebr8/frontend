@@ -1,0 +1,8 @@
+{
+  "files.exclude": {
+    "node_modules": true,
+    "CHANGELOG.md": true,
+    ".env-template": true,
+    ".auditrc": true
+  }
+}

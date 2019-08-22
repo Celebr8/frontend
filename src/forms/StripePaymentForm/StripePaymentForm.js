@@ -8,14 +8,7 @@ import PropTypes from 'prop-types';
 import { FormattedMessage, injectIntl, intlShape } from 'react-intl';
 import { Form as FinalForm } from 'react-final-form';
 import classNames from 'classnames';
-import {
-  Form,
-  PrimaryButton,
-  ExpandingTextarea,
-  FieldTextInput,
-  FieldSelect,
-  NamedLink,
-} from '../../components';
+import { Form, PrimaryButton, ExpandingTextarea, NamedLink } from '../../components';
 import * as log from '../../util/log';
 import config from '../../config';
 import { propTypes } from '../../util/types';
@@ -166,15 +159,14 @@ class StripePaymentForm extends Component {
   }
 
   handleSubmit(event) {
+    event.preventDefault();
 
-		event.preventDefault()
-
-		const values = {
-			time: this.state.time,
-			attendance: this.state.attendance,
-			message: this.state.message,
-			occasion: this.state.occasion
-		}
+    const values = {
+      time: this.state.time,
+      attendance: this.state.attendance,
+      message: this.state.message,
+      occasion: this.state.occasion,
+    };
 
     const { intl, onSubmit, stripePaymentTokenInProgress, stripePaymentToken } = this.props;
     const initialMessage = values.initialMessage ? values.initialMessage.trim() : null;
@@ -264,13 +256,10 @@ class StripePaymentForm extends Component {
       formId,
       paymentInfo,
       authorDisplayName,
-      showInitialMessageInput,
       intl,
-			onChange,
+      onChange,
       stripePaymentTokenInProgress,
       stripePaymentTokenError,
-      invalid,
-      handleSubmit,
     } = formRenderProps;
 
     const submitInProgress = stripePaymentTokenInProgress || inProgress;
@@ -349,11 +338,6 @@ class StripePaymentForm extends Component {
     const messageOptionalText = intl.formatMessage({
       id: 'StripePaymentForm.messageOptionalText',
     });
-
-    const initialMessageLabel = intl.formatMessage(
-      { id: 'StripePaymentForm.messageLabel' },
-      { messageOptionalText: messageOptionalText }
-    );
 
     return (
       <Form className={classes} onSubmit={this.handleSubmit}>
@@ -446,7 +430,7 @@ class StripePaymentForm extends Component {
             </option>
           </select>
           <p>
-            {this.state.occasion == 'birthday' ? happyBirtdayLabel : <Fragment>&nbsp;</Fragment>}
+            {this.state.occasion === 'birthday' ? happyBirtdayLabel : <Fragment>&nbsp;</Fragment>}
           </p>
         </Fragment>
         <Fragment>

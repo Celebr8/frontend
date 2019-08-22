@@ -23,7 +23,7 @@ import css from './NonDiscriminationPolicyPage.css';
 const NonDiscriminationPolicyPageComponent = props => {
   const { scrollingDisabled, intl } = props;
 
-	const tabs = legalsTabs(intl, 'PrivacyPolicyPage');
+  const tabs = legalsTabs(intl, 'PrivacyPolicyPage');
 
   const siteTitle = config.siteTitle;
 
@@ -58,33 +58,76 @@ const NonDiscriminationPolicyPageComponent = props => {
             <p><b>Race, Colour, Ethnicity, National Origin, Religion, Sexual Orientation, Gender Identity, or Marital Status</b></p>
             <p>Celebr8 pubs may not</p>
             <ol>
-              <li>Decline a customer based on race, colour, ethnicity, national origin, religion, sexual orientation, gender identity, or marital status.</li>
-              <li>Impose any different terms or conditions based on race, colour, ethnicity, national origin, religion, sexual orientation, gender identity, or marital status.</li>
-              <li>Post any listing or make any statement that discourages or indicates a preference for or against any customer on account of race, colour, ethnicity, national origin, religion, sexual orientation, gender identity, or marital status.</li>
+              <li>
+                Decline a customer based on race, colour, ethnicity, national origin, religion,
+                sexual orientation, gender identity, or marital status.
+              </li>
+              <li>
+                Impose any different terms or conditions based on race, colour, ethnicity, national
+                origin, religion, sexual orientation, gender identity, or marital status.
+              </li>
+              <li>
+                Post any listing or make any statement that discourages or indicates a preference
+                for or against any customer on account of race, colour, ethnicity, national origin,
+                religion, sexual orientation, gender identity, or marital status.
+              </li>
             </ol>
             <p><b>Gender</b></p>
             <p>Celebr8 pubs may not</p>
             <ol>
               <li>Decline to book to a customer based on gender.</li>
               <li>Impose any different terms or conditions based on gender.</li>
-              <li>Post any listing or make any statement that discourages or indicates a preference for or against any customer on account of gender.</li>
+              <li>
+                Post any listing or make any statement that discourages or indicates a preference
+                for or against any customer on account of gender.
+              </li>
             </ol>
             <p><b>Disability</b></p>
             <p>Celebr8 pubs may not</p>
             <ol>
               <li>Decline a customer based on any actual or perceived disability.</li>
-              <li>Impose any different terms or conditions based on the fact that the customer has a disability.</li>
-              <li>Substitute their own judgement about whether a space meets the needs of a customer with a disability for that of the prospective customer.</li>
-              <li>Inquire about the existence or severity of a customer’s disability, or the means used to accommodate any disability. If, however, a potential customer raises his or her disability, a pub may, and should, discuss with the potential customer whether the listing meets the potential customer’s needs.</li>
+              <li>
+                Impose any different terms or conditions based on the fact that the customer has a
+                disability.
+              </li>
+              <li>
+                Substitute their own judgement about whether a space meets the needs of a customer
+                with a disability for that of the prospective customer.
+              </li>
+              <li>
+                Inquire about the existence or severity of a customer’s disability, or the means
+                used to accommodate any disability. If, however, a potential customer raises his or
+                her disability, a pub may, and should, discuss with the potential customer whether
+                the listing meets the potential customer’s needs.
+              </li>
               <li>Prohibit or limit the use of mobility devices.</li>
               <li>Charge more in book or other fees for customers with disabilities.</li>
-              <li>Post any listing or make any statement that discourages or indicates a preference for or against any customer on account of the fact that the customer has a disability.</li>
-              <li>Refuse to communicate with customers through accessible means that are available, including relay operators (for people with hearing impairments) and e-mail (for people with vision impairments using screen readers).</li>
-              <li>Refuse to provide reasonable spaces, including flexibility when customers with disabilities request modest changes in your business rules, such as bringing an assistance animal that is necessary because of the disability, or using an available parking space near the unit. When a customer requests such a requirement, the pub and the customer should engage in a dialogue to explore mutually agreeable ways to ensure the space meets the customer’s needs.</li>
+              <li>
+                Post any listing or make any statement that discourages or indicates a preference
+                for or against any customer on account of the fact that the customer has a
+                disability.
+              </li>
+              <li>
+                Refuse to communicate with customers through accessible means that are available,
+                including relay operators (for people with hearing impairments) and e-mail (for
+                people with vision impairments using screen readers).
+              </li>
+              <li>
+                Refuse to provide reasonable spaces, including flexibility when customers with
+                disabilities request modest changes in your business rules, such as bringing an
+                assistance animal that is necessary because of the disability, or using an available
+                parking space near the unit. When a customer requests such a requirement, the pub
+                and the customer should engage in a dialogue to explore mutually agreeable ways to
+                ensure the space meets the customer’s needs.
+              </li>
             </ol>
             <p>Celebr8 pubs may</p>
             <ol>
-              <li>Provide factually accurate information about the space’s accessibility features (or lack of them), allowing for customers with disabilities to assess for themselves whether the unit is appropriate to their individual needs.</li>
+              <li>
+                Provide factually accurate information about the space’s accessibility features (or
+                lack of them), allowing for customers with disabilities to assess for themselves
+                whether the unit is appropriate to their individual needs.
+              </li>
             </ol>
             <h3>Personal prefferences</h3>
             <p>Celebr8 pubs may</p>
@@ -101,7 +144,6 @@ const NonDiscriminationPolicyPageComponent = props => {
             <p>If a particular listing contains language contrary to this inclusion policy, the pub will be asked to remove the language and affirm his or her understanding and intent to comply with this policy and its underlying principles. Celebr8 may also, in its discretion, take steps up to and including suspending the host from the Celebr8 platform.</p>
             <p>If the pub improperly rejects customers on the basis of protected class, or uses language demonstrating that his or her actions were motivated by factors prohibited by this policy, Celebr8 will take steps to enforce this policy, up to and including suspending the pub from the platform.</p>
             <p>As the Celebr8 community grows, we will continue to ensure that Celebr8’s policies and practices align with our most important goal: To ensure that customers and pubs feel welcome and respected in all of their interactions using the Celebr8 platform. The public, our community, and we ourselves, expect no less than this.</p>
-
           </div>
         </LayoutWrapperMain>
         <LayoutWrapperFooter>
