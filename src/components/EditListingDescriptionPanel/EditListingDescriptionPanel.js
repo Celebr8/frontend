@@ -45,8 +45,8 @@ const EditListingDescriptionPanel = props => {
         initialValues={{ title, description, type: publicData.type }}
         saveActionMsg={submitButtonText}
         onSubmit={values => {
-					console.log('onSubmit (EditListingDescriptionPanel)')
-					console.log('values', values)
+          console.log('onSubmit (EditListingDescriptionPanel)');
+          console.log('values', values);
           const { title, description, type } = values;
           const updateValues = {
             title: title.trim(),
@@ -54,7 +54,7 @@ const EditListingDescriptionPanel = props => {
             publicData: { type },
           };
 
-					console.log('onSubmit (EditListingDescriptionPanel)', values)
+          console.log('onSubmit (EditListingDescriptionPanel)', values);
 
           onSubmit(updateValues);
         }}

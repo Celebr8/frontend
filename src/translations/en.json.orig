@@ -490,7 +490,7 @@
   "ListingCard.unsupportedPrice": "({currency})",
   "ListingCard.unsupportedPriceTitle": "Unsupported currency ({currency})",
   "ListingCard.privateSpace": "Private space",
-  "ListingCard.commonSpace": "Common space",
+  "ListingCard.commonSpace": "Shared space",
 
   "ListingPage.bannedUserDisplayName": "Banned user",
   "ListingPage.bookingHelp": "Start by choosing your dates.",
@@ -521,7 +521,7 @@
   "ListingPage.regularlyOpenOnTitle": "Regularly open on",
   "ListingPage.groupSizeTitle": "Group size",
   "ListingPage.listingTypeTitle": "Listing type",
-  "ListingPage.listingTypeCommon": "Common space",
+  "ListingPage.listingTypeCommon": "Shared space",
   "ListingPage.listingTypePrivate": "Private space",
   "ListingPage.finishListing": "Finish listing",
   "ListingPage.hostedBy": "Hosted by {name}",

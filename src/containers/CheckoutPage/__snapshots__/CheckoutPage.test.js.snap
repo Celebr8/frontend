@@ -10,11 +10,6 @@ exports[`CheckoutPage matches snapshot 1`] = `
       name="LandingPage"
     >
       <Logo
-        className={null}
-        format="mobile"
-        title="CheckoutPage.goToLandingPage"
-      />
-      <Logo
         alt="CheckoutPage.goToLandingPage"
         className={null}
         format="desktop"
@@ -143,7 +138,7 @@ exports[`CheckoutPage matches snapshot 1`] = `
           listing1 title
         </h2>
         <p>
-          55 CheckoutPage.perNight
+          55 CheckoutPage.deposit
         </p>
       </div>
       <h3>

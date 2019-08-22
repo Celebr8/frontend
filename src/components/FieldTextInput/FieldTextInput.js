@@ -10,12 +10,11 @@ const CONTENT_MAX_LENGTH = 5000;
 
 class FieldTextInputComponent extends Component {
   render() {
-
     /* eslint-disable no-unused-vars */
     const {
       rootClassName,
       className,
-			use,
+      use,
       inputRootClass,
       customErrorText,
       id,
@@ -66,7 +65,7 @@ class FieldTextInputComponent extends Component {
     return (
       <div className={classes}>
         {label ? <label htmlFor={id}>{label}</label> : null}
-				{inputComponent}
+        {inputComponent}
         <ValidationError fieldMeta={fieldMeta} />
       </div>
     );
@@ -76,7 +75,7 @@ class FieldTextInputComponent extends Component {
 FieldTextInputComponent.defaultProps = {
   rootClassName: null,
   className: null,
-	use: undefined,
+  use: undefined,
   inputRootClass: null,
   onUnmount: null,
   customErrorText: null,
@@ -87,7 +86,7 @@ FieldTextInputComponent.defaultProps = {
 FieldTextInputComponent.propTypes = {
   rootClassName: string,
   className: string,
-	component: func,
+  component: func,
   inputRootClass: string,
 
   onUnmount: func,

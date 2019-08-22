@@ -16,7 +16,7 @@ import {
 import { LINE_ITEM_DAY, LINE_ITEM_UNITS, propTypes } from '../../util/types';
 import { formatMoney } from '../../util/currency';
 import { ensureCurrentUser } from '../../util/data';
-import { dateFromAPIToLocalNoon, daysBetween } from '../../util/dates';
+import { dateFromAPIToLocalNoon  } from '../../util/dates';
 import { getMarketplaceEntities } from '../../ducks/marketplaceData.duck';
 import { isScrollingDisabled } from '../../ducks/UI.duck';
 import {
@@ -185,7 +185,7 @@ const BookingInfoMaybe = props => {
   const dateInfo = isSingleDay ? bookingStart.short : `${bookingStart.short} - ${bookingEnd.short}`;
 
   const occasionFormatted =
-    occasion == 'birthday' ? (
+    occasion === 'birthday' ? (
       <p>
         <FormattedMessage id="InboxPage.occasionBirthday" />
       </p>

@@ -5,26 +5,26 @@ import { connect } from 'react-redux';
 import { injectIntl, intlShape, FormattedMessage } from 'react-intl';
 import { isScrollingDisabled } from '../../../ducks/UI.duck';
 import { TopbarContainer } from '../../../containers';
-import { helpCenterTabs } from '../tabs'
+import { helpCenterTabs } from '../tabs';
 import {
-	NamedLink,
-	Page,
-	LayoutSideNavigationWithHero,
-	LayoutWrapperMain,
-	LayoutWrapperHero,
-	LayoutWrapperSideNav,
-	LayoutWrapperTopbar,
-	LayoutWrapperFooter,
-	Footer
+  NamedLink,
+  Page,
+  LayoutSideNavigationWithHero,
+  LayoutWrapperMain,
+  LayoutWrapperHero,
+  LayoutWrapperSideNav,
+  LayoutWrapperTopbar,
+  LayoutWrapperFooter,
+  Footer,
 } from '../../../components';
 import config from '../../../config';
 
 import css from './DealsHelpPage.css';
 
 const DealsHelpPageComponent = props => {
-	const { scrollingDisabled, intl } = props;
+  const { scrollingDisabled, intl } = props;
 
-	const tabs = helpCenterTabs(intl, 'DealsHelpPage');
+  const tabs = helpCenterTabs(intl, 'DealsHelpPage');
 
 	const siteTitle = config.siteTitle;
 	const schemaTitle = intl.formatMessage({ id: 'DealsPage.schemaTitle' }, { siteTitle });
@@ -69,21 +69,21 @@ const DealsHelpPageComponent = props => {
 const { bool } = PropTypes;
 
 DealsHelpPageComponent.propTypes = {
-	scrollingDisabled: bool.isRequired,
+  scrollingDisabled: bool.isRequired,
 
-	// from injectIntl
-	intl: intlShape.isRequired,
+  // from injectIntl
+  intl: intlShape.isRequired,
 };
 
 const mapStateToProps = state => {
-	return {
-		scrollingDisabled: isScrollingDisabled(state),
-	};
+  return {
+    scrollingDisabled: isScrollingDisabled(state),
+  };
 };
 
 const DealsHelpPage = compose(
-	connect(mapStateToProps),
-	injectIntl
+  connect(mapStateToProps),
+  injectIntl
 )(DealsHelpPageComponent);
 
-export default DealsHelpPage;;
+export default DealsHelpPage;

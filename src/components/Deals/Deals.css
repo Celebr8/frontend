@@ -26,63 +26,64 @@
 .postTitle {
   padding: 0px 0px 15px 0px;
   margin: 0px;
-    font-weight: bold;
-    font-size: 200%;
-    color: #ff3f00;
+  font-weight: bold;
+  font-size: 200%;
+  color: #ff3f00;
 }
 
 .readMore {
-    font-weight: bold;
-    font-size: 90%;
-    text-transform: uppercase;
+  font-weight: bold;
+  font-size: 90%;
+  text-transform: uppercase;
 }
 
 .readMore a {
-    color: #000;
-    text-transform: uppercase;
-    text-decoration: none;
+  color: #000;
+  text-transform: uppercase;
+  text-decoration: none;
 }
 
 .readMore a:hover {
-    color: #ff3f00;
-    text-decoration: underline;
+  color: #ff3f00;
+  text-decoration: underline;
 }
-
 
 .image {
-  border-radius: 0px; 
-  padding-bottom:35%;
-  background-repeat:no-repeat;
-  background-size:cover;
-  background-position:center center;
-  position:center;
-  width:50%;
+  border-radius: 0px;
+  padding-bottom: 35%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  position: center;
+  width: 50%;
 }
 
-.desc, .image_left {
-  float:left;
-  display:block
+.desc,
+.image_left {
+  float: left;
+  display: block;
 }
 
 .imageRight {
-  float:right;
-  display:block
+  float: right;
+  display: block;
 }
 
 .desc {
-  width:50%;
-  text-align:left;
-  padding:15px 15px 15px 15px;
+  width: 50%;
+  text-align: left;
+  padding: 15px 15px 15px 15px;
   color: #424242;
 }
 
-@media (max-width:600px) {
-  .desc, .image {
-    float:none;
-    width:100%;
+@media (max-width: 600px) {
+  .desc,
+  .image {
+    float: none;
+    width: 100%;
   }
-}  
+}
 
 h1 {
-    color: #ff3f00;
+  color: #ff3f00;
 }

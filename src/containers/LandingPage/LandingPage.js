@@ -1,26 +1,28 @@
-import React from 'react';
 import PropTypes from 'prop-types';
-import { compose } from 'redux';
+import React from 'react';
+import { injectIntl, intlShape } from 'react-intl';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import { injectIntl, intlShape } from 'react-intl';
-import { isScrollingDisabled } from '../../ducks/UI.duck';
-import config from '../../config';
+import { FormattedMessage } from 'react-intl';
+import { compose } from 'redux';
+import facebookImage from '../../assets/whichostFacebook-1200x630.png';
+import twitterImage from '../../assets/whichostTwitter-600x314.png';
 import {
+  Footer,
+  LayoutSingleColumn,
+  LayoutWrapperFooter,
+  LayoutWrapperMain,
+  LayoutWrapperTopbar,
   Page,
+  SectionDeals,
   SectionHero,
   SectionHowItWorks,
   SectionLocations,
-  LayoutSingleColumn,
-  LayoutWrapperTopbar,
-  LayoutWrapperMain,
-  LayoutWrapperFooter,
-  Footer,
+  SectionPublicans,
 } from '../../components';
+import config from '../../config';
 import { TopbarContainer } from '../../containers';
-
-import facebookImage from '../../assets/whichostFacebook-1200x630.png';
-import twitterImage from '../../assets/whichostTwitter-600x314.png';
+import { isScrollingDisabled } from '../../ducks/UI.duck';
 import css from './LandingPage.css';
 
 export const LandingPageComponent = props => {
@@ -59,12 +61,26 @@ export const LandingPageComponent = props => {
         </LayoutWrapperTopbar>
         <LayoutWrapperMain>
           <div className={css.heroContainer}>
-            <SectionHero className={css.hero} history={history} location={location} />
+            <SectionHero className={css.hero} title={<FormattedMessage id="SectionHero.title" />}
+            subTitle={<FormattedMessage id="SectionHero.subTitle" />} history={history} location={location} />
           </div>
           <ul className={css.sections}>
-            <li className={css.section}>
+            <li className={css.section} style={{ backgroundColor: 'rgba(236, 80, 39, 0.03)' }}>
               <div className={css.sectionContentFirstChild}>
                 <SectionLocations />
+              </div>
+            </li>
+            <li className={css.section}>
+              <div className={css.sectionContent}>
+                <SectionDeals />
+              </div>
+            </li>
+            <li
+              className={css.sectionPublican}
+              style={{ backgroundImage: `url(${require('./publican-bg.jpg')})` }}
+            >
+              <div className={css.sectionContent}>
+                <SectionPublicans />
               </div>
             </li>
             <li className={css.section}>

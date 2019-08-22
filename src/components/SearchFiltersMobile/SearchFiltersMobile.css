@@ -134,14 +134,10 @@
 }
 
 .recommendDealWrapper {
-
-	flex-direction: row;
-
+  flex-direction: row;
 }
 
 .recommendDeal {
-
-	color: var(--marketplaceColor);
-	margin: 0 12% 0 12%;
-
+  color: var(--marketplaceColor);
+  margin: 0 12% 0 12%;
 }

@@ -99,3 +99,9 @@
     margin-right: 0;
   }
 }
+
+.reviewCountLable{
+  margin: 10px 0;
+  font-weight: 600;
+  color: #b2b2b2;
+}
