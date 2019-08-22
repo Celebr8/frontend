@@ -1,5 +1,5 @@
 import { withStyles } from '@material-ui/core/styles';
-import Slider from '@material-ui/lab/Slider';
+//import Slider from '@material-ui/lab/Slider';
 import classNames from 'classnames';
 import { bool, func, shape, string } from 'prop-types';
 import React from 'react';
@@ -50,7 +50,7 @@ const CapacitySlider = withStyles({
       height: 8,
       borderRadius: 4,
     },
-  })(Slider);
+  })//(Slider);
 
 export const EditListingCapacityFormComponent = props => (
   <FinalForm
@@ -70,7 +70,7 @@ export const EditListingCapacityFormComponent = props => (
         initalSliderValue,
         action
       } = fieldRenderProps;
-      
+
       const { updateListingError, showListingsError } = fetchErrors || {};
       const errorMessage = updateListingError ? (
         <p className={css.error}>

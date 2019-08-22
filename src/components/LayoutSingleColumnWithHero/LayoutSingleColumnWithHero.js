@@ -63,10 +63,8 @@ const LayoutSingleColumnWithHero = props => {
   return (
     <div className={classes}>
       {preparedChildren.layoutWrapperTopbar}
-			{preparedChildren.layoutWrapperHero}
-      <div className={containerClasses}>
-        {preparedChildren.layoutWrapperMain}
-      </div>
+      {preparedChildren.layoutWrapperHero}
+      <div className={containerClasses}>{preparedChildren.layoutWrapperMain}</div>
       {maybeFooter}
     </div>
   );

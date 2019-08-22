@@ -92,9 +92,11 @@
 }
 
 .sendingError {
+  color: var(--failColor);
+}
 
-	color: var(--failColor);
-
+.scheduleCallback {
+  background-color: var(--marketplaceColor);
 }
 
 .helperLink {

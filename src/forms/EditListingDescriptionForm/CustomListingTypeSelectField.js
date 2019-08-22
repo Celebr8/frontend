@@ -34,7 +34,7 @@ const CustomListingTypeSelectField = props => {
         </option>
       ))}
     </FieldSelect>
-  ) 
+  );
 };
 
 export default CustomListingTypeSelectField;

@@ -14,7 +14,7 @@ exports[`TopbarDesktop data matches snapshot 1`] = `
     <img
       alt="TopbarDesktop.logo"
       className={null}
-      src="saunatime-logo.png"
+      src="whichost-logo.png"
     />
   </a>
   <form
@@ -80,6 +80,19 @@ exports[`TopbarDesktop data matches snapshot 1`] = `
     <span>
       <span>
         TopbarDesktop.createListing
+      </span>
+    </span>
+  </a>
+  <a
+    className=""
+    href="/help/FAQ"
+    onClick={[Function]}
+    style={Object {}}
+    title={null}
+  >
+    <span>
+      <span>
+        TopbarDesktop.helpCenter
       </span>
     </span>
   </a>
