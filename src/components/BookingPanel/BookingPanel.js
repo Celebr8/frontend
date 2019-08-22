@@ -7,12 +7,12 @@ import { withRouter } from 'react-router-dom';
 import { compose } from 'redux';
 import { Button, ModalInMobile } from '../../components';
 import config from '../../config';
+import SectionReview from '../../containers/ListingPage/SectionReviews';
 import { BookingDatesForm } from '../../forms';
 import { formatMoney } from '../../util/currency';
-import { LINE_ITEM_DAY, LINE_ITEM_NIGHT, LISTING_STATE_CLOSED, propTypes } from '../../util/types';
+import { LISTING_STATE_CLOSED, propTypes } from '../../util/types';
 import { parse, stringify } from '../../util/urlHelpers';
 import css from './BookingPanel.css';
-
 
 // This defines when ModalInMobile shows content as Modal
 const MODAL_BREAKPOINT = 1023;
@@ -65,6 +65,7 @@ const BookingPanel = props => {
     history,
     location,
     intl,
+    reviews,
   } = props;
 
   const price = listing.attributes.price;
@@ -80,15 +81,6 @@ const BookingPanel = props => {
     : showClosedListingHelpText
     ? intl.formatMessage({ id: 'BookingPanel.subTitleClosedListing' })
     : null;
-
-  const isNightly = unitType === LINE_ITEM_NIGHT;
-  const isDaily = unitType === LINE_ITEM_DAY;
-
-  const unitTranslationKey = isNightly
-    ? 'BookingPanel.perNight'
-    : isDaily
-    ? 'BookingPanel.perDay'
-    : 'BookingPanel.perUnit';
 
   const classes = classNames(rootClassName || css.root, className);
   const titleClasses = classNames(titleClassName || css.bookingTitle);
@@ -133,7 +125,7 @@ const BookingPanel = props => {
             {formattedPrice}
           </div>
           <div className={css.perUnit}>
-            <FormattedMessage id="BookingPanel.deposit"  />
+            <FormattedMessage id="BookingPanel.deposit" />
           </div>
         </div>
 
@@ -149,6 +141,9 @@ const BookingPanel = props => {
             <FormattedMessage id="BookingPanel.closedListingButtonText" />
           </div>
         )}
+      </div>
+      <div className={css.reviewWrap}>
+        <SectionReview reviews={reviews} />
       </div>
     </div>
   );

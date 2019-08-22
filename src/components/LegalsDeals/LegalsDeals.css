@@ -25,13 +25,13 @@
     }
   }
   & ul {
-	  text-align: inherit;
-	  list-style-type: disc;
-	  padding-left: 25px;
+    text-align: inherit;
+    list-style-type: disc;
+    padding-left: 25px;
   }
   & ul li {
-	  font-size: 16px;
-	  line-height: 24px;
-	  letter-spacing: 0;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0;
   }
 }

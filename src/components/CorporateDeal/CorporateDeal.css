@@ -19,7 +19,7 @@
   }
 
   & span {
-	  color: #ff3f00;
+    color: #ff3f00;
   }
 
   & .lastUpdated {
@@ -33,13 +33,13 @@
     }
   }
   & ul {
-	  text-align: inherit;
-	  list-style-type: disc;
-	  padding-left: 25px;
+    text-align: inherit;
+    list-style-type: disc;
+    padding-left: 25px;
   }
   & ul li {
-	  line-height: 24px;
-	  letter-spacing: 0;
+    line-height: 24px;
+    letter-spacing: 0;
   }
 
   & .dealButton a {
@@ -49,7 +49,7 @@
     font-size: 22px;
     background-color: #0d2c54;
     padding: 4px 8px 6px 6px;
-    color: #fff!important;
+    color: #fff !important;
     border-radius: 4px;
     text-decoration: none;
 
@@ -72,7 +72,7 @@ ol {
 }
 
 ol > li {
-	font-size: 16px;
+  font-size: 16px;
   display: table;
   counter-increment: item;
   padding-bottom: 10px;
@@ -83,7 +83,7 @@ ol > li:first-child {
 }
 
 ol > li:before {
-  content: counters(item, ".") ". ";
+  content: counters(item, '.') '. ';
   display: table-cell;
   padding-right: 0.6em;
 }
@@ -93,7 +93,7 @@ li ol > li {
 }
 
 li ol > li:before {
-  content: counters(item, ".") ". ";
+  content: counters(item, '.') '. ';
 }
 
 ol li ul li,
@@ -108,7 +108,7 @@ ol li ul li:first-child {
 /** DEALS PAGE **/
 
 .container {
-	width: 100%;
+  width: 100%;
   margin-top: -100px;
 
   @media (max-width: 1022px) {
@@ -116,22 +116,21 @@ ol li ul li:first-child {
   }
 }
 
-
 .readMore {
-	padding-top: 10px;
-	font-size: 14px;
+  padding-top: 10px;
+  font-size: 14px;
   text-align: center;
 }
 
 .readMore a {
-	font-size: 12px;
-    color: #808080;
-    text-decoration: none;
-  }
+  font-size: 12px;
+  color: #808080;
+  text-decoration: none;
+}
 
 .readMore a:hover {
-    color: #ff3f00;
-    text-decoration: underline;
+  color: #ff3f00;
+  text-decoration: underline;
 }
 
 @media (max-width: 768px) {
@@ -150,16 +149,15 @@ ol li ul li:first-child {
   .boxRight h3,
   .boxLeft h3,
   .boxRight p {
-	  padding-top: 10px;
-	  margin-top: 10px;
+    padding-top: 10px;
+    margin-top: 10px;
   }
- }
-
+}
 
 /** BUTTONS **/
 
 .containerButton {
-	margin-top: 25px;
+  margin-top: 25px;
 }
 
 .btnGroup button {
@@ -174,19 +172,16 @@ ol li ul li:first-child {
   cursor: pointer; /* Pointer/hand icon */
   float: left; /* Float the buttons side by side */
   width: 340px;
-
 }
-
 
 .centerButtons {
-   display: flex;
-   justify-content: center;
+  display: flex;
+  justify-content: center;
 }
-
 
 /* Clear floats (clearfix hack) */
 .btnGroup:after {
-  content: "";
+  content: '';
   clear: both;
   display: table;
 }
@@ -203,19 +198,19 @@ ol li ul li:first-child {
 }
 
 .getInTouch {
-	margin-top: 50px;
+  margin-top: 50px;
   margin-bottom: 50px;
 }
 
 .getInTouch h3 {
-	text-align: center;
-	padding-bottom: 5px;
-	color: #ff3f00;
+  text-align: center;
+  padding-bottom: 5px;
+  color: #ff3f00;
 }
 
 .getInTouch p {
-	text-align: center;
-	padding-bottom: 5px;
+  text-align: center;
+  padding-bottom: 5px;
 }
 
 @media (max-width: 768px) {
@@ -229,53 +224,53 @@ ol li ul li:first-child {
   }
 
   .btnGroup .centerButtons {
-	  display: block;
-	}
+    display: block;
+  }
 
-	.btnGroup button{
-	  float:none;
-	  padding: 10px 0px;
-	  margin-left: 0;
-	  width: 100%;
-	  }
- }
+  .btnGroup button {
+    float: none;
+    padding: 10px 0px;
+    margin-left: 0;
+    width: 100%;
+  }
+}
 
 /* TABLE */
 
 table {
-	font-family: 'Lato';
-	border: 1px double #ff3f00;
-	border-radius: 4px;
-	margin-top: 25px;
+  font-family: 'Lato';
+  border: 1px double #ff3f00;
+  border-radius: 4px;
+  margin-top: 25px;
 }
 
 thead {
-	background-color: #ff3f00;
-	line-height: 15px;
+  background-color: #ff3f00;
+  line-height: 15px;
 }
 
 thead th {
-	color: #fff!important;
+  color: #fff !important;
 }
 
 thead tr {
-	height: 5px!important;
+  height: 5px !important;
 }
 
 tbody tr {
-	height: 0!important;
+  height: 0 !important;
 }
 
 th {
-  padding: 4px 2px 4px 2px!important;
+  padding: 4px 2px 4px 2px !important;
 }
 
 th:first-child {
-  padding: 4px 2px 4px 20px!important;
+  padding: 4px 2px 4px 20px !important;
 }
 
 tbody tr td {
-  padding: 4px 2px 4px 2px!important;
+  padding: 4px 2px 4px 2px !important;
 }
 
 @media (max-width: 768px) {
@@ -284,10 +279,10 @@ tbody tr td {
   tbody tr th,
   tbody tr td {
     float: none;
-    text-align: center!important;
-    padding: 4px 2px 4px 2px!important;
+    text-align: center !important;
+    padding: 4px 2px 4px 2px !important;
   }
- }
+}
 
 /* STEPS */
 .steps {

@@ -1,11 +1,12 @@
 {
-  "name": "Whichost frontend",
-  "description": "Whichost frontend",
+  "name": "Celebr8 frontend",
+  "description": "Celebr8 frontend",
   "keywords": [
     "node", 
     "react"
   ],
-  "repository": "https://github.com/whichost/frontend/",
+  "repository": "https://github.com/Celebr8/frontend/",
+
   "env": {
     "REACT_APP_SHARETRIBE_SDK_CLIENT_ID": {
       "description": "Client ID (API key). You will get this from the Sharetribe team.",
@@ -65,6 +66,13 @@
     "REACT_APP_SERVICE_MESSAGE_URL" : {
       "description": "URL to reach when trying to send an email",
       "value": "https://whichost-service-message.herokuapp.com/message"
+
+  "environments": {
+    "test": {
+      "scripts": {
+        "test": "npm test"
+      }
     }
   }
 }
+

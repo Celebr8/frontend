@@ -1,24 +1,14 @@
 import React from 'react';
-import { FormattedMessage } from 'react-intl';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 import { NamedLink } from '..';
 
-import { PricingTable } from './pricingTable';
-
 import css from './RecommendDeal.css';
-
-import image1 from './img/birthday_deal_image_01.png';
-import image2 from './img/birthday_deal_image_02.png';
-import image3 from './img/birthday_deal_image_03.png';
 
 const RecommendDeal = props => {
   const { rootClassName, className } = props;
   const classes = classNames(rootClassName || css.root, className);
-
-  const termsAndConditionsTitle = <h2>Terms and conditions</h2>;
-  const examplesTitle = <h2>Examples</h2>;
 
   // prettier-ignore
   return (
@@ -30,7 +20,9 @@ const RecommendDeal = props => {
 				<section className={css.getInTouch}>
 					<div className={css.btnGroup + ' ' + css.containerButton}>
 						<section className={css.centerButtons}>
-							<a href="https://docs.google.com/forms/d/e/1FAIpQLSfr2dEghUT1VF1i9BWPsvZIJpnHe2FPVmCuoHJaAR3AXDe_GA/viewform" target="_blank"><button type="submit">Recommend a pub</button></a>
+							<NamedLink name="ContactUsPage" params={{enquiry: 'recommandAPub'}}>
+								<button type="submit">Recommend a pub</button>
+							</NamedLink>
 						</section>
 					</div>
 				</section>

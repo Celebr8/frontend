@@ -78,6 +78,12 @@ exports[`ProfilePage matches snapshot 1`] = `
             }
           />
         </h1>
+        <p>
+          <FormattedMessage
+            id="ProfilePage.userMajority"
+            values={Object {}}
+          />
+        </p>
         <div>
           <ButtonTabNavHorizontal
             className={null}
