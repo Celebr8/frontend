@@ -62,157 +62,30 @@ const Footer = props => {
     <div className={classes}>
       <div className={css.wrapper}>
         <div className={css.content}>
-          <div className={css.someLinksMobile}>{socialMediaLinks}</div>
-          <div className={css.links}>
-            <div className={css.organization} id="organization">
-              <NamedLink name="LandingPage" className={css.logoLink}>
-                <Logo format="desktop" className={css.logo} />
-              </NamedLink>
-              <div className={css.organizationInfo}>
-                <p className={css.organizationDescription}>
-                  <FormattedMessage id="Footer.organizationDescription" />
-                </p>
-                <p className={css.organizationCopyright}>
-                  <NamedLink name="LandingPage" className={css.copyrightLink}>
-                    <FormattedMessage id="Footer.copyright" />
-                  </NamedLink>
-                </p>
-              </div>
-            </div>
-            <div className={css.infoLinks}>
-              <ul className={css.list}>
-                <li className={css.listCustomer}>Customer</li>
-                <li className={css.listItem}>
-                  <NamedLink name="LoginPage" className={css.link}>
-                    Log in
-                  </NamedLink>
-                </li>
-                <li className={css.listItem}>
-									<NamedLink name="SignupPage" className={css.link}>
-                    Sign up
-                  </NamedLink>
-                </li>
-                <li className={css.listItem}>
-                  <a
-                    href="https://docs.google.com/forms/d/e/1FAIpQLSfIG7NR-ixq6CFydZ_955OyNyhI1-1iS4UfkRdV7knFxnFlqA/viewform"
-                    target="_blank"
-                    className={css.link}
-                  >
-                    Invite a friend
-                  </a>
-                </li>
-                <li className={css.listItem}>
-                  <a
-                    href="/s?address=Ireland&bounds=55.36%2C-5.911%2C51.427%2C-10.382&origin=53.357%2C-7.756"
-                    className={css.link}
-                  >
-                    Find a pub
-                  </a>
-                </li>
-                <li className={css.listItem}>
-                  <NamedLink name="DealsPage" className={css.link}>
-                    <FormattedMessage id="Footer.toDealsPage" />
-                  </NamedLink>
-                </li>
-              </ul>
-            </div>
-            <div className={css.infoLinks}>
-              <ul className={css.list}>
-                <li className={css.listPublican}>Publican</li>
-                <li className={css.listItem}>
-                  <NamedLink name="LoginPage" className={css.link}>
-                    Log in
-                  </NamedLink>
-                </li>
-                <li className={css.listItem}>
-                  <NamedLink name="SignupPage" className={css.link}>
-                    Sign up
-                  </NamedLink>
-                </li>
-                <li className={css.listItem}>
-                  <NamedLink name="NewListingPage" className={css.link}>
-                    <FormattedMessage id="Footer.toNewListingPage" />
-                  </NamedLink>
-                </li>
-                <li className={css.listItem}>
-                  <NamedLink
-                    name="GuidebookForProvidersPage"
-                    target="_blank"
-                    className={css.link}
-                  >
-                    Guidebook
-                  </NamedLink>
-                </li>
-              </ul>
-            </div>
-            <div className={css.infoLinks}>
-              <ul className={css.list}>
-                <li key="whichost" className={css.listWhichost}>
-                  Celebr8
-                </li>
-                <li className={css.listItem}>
-                  <NamedLink name="CareersPage" className={css.link}>
-                    <FormattedMessage id="Footer.careersPage" />
-                  </NamedLink>
-                </li>
-                <li key="inviteAFriend" className={css.listItem}>
-                  <a
-                    href="https://docs.google.com/forms/d/e/1FAIpQLSfIG7NR-ixq6CFydZ_955OyNyhI1-1iS4UfkRdV7knFxnFlqA/viewform"
-                    target="_blank"
-                    className={css.link}
-                  >
-                    Invite a friend
-                  </a>
-                </li>
-                <li key="recommendAPub" className={css.listItem}>
-                  <a
-                    href="https://docs.google.com/forms/d/e/1FAIpQLSejVl35N8A1lu_W99QkvovqLXn1ODOKBp35NZ524XHJnpdOeg/viewform"
-                    target="_blank"
-                    className={css.link}
-                  >
-                    Recommend a pub
-                  </a>
-                </li>
-                <li key="guidelines" className={css.listItem}>
-                  <NamedLink name="CommunityGuidelinesPage" target="_blank" className={css.link}>
-                    <FormattedMessage id="Footer.toCommunityGuidelines" />
-                  </NamedLink>
-                </li>
-                <li key="helpCenter" className={css.listItem}>
-                  <NamedLink name="FAQPage" target="_blank" className={css.link}>
-                    <FormattedMessage id="Footer.toFAQPage" />
-                  </NamedLink>
-                </li>
-                <li key="fees" className={css.listItem}>
-                  <NamedLink name="FeesPage" target="_blank" className={css.link}>
-                    <FormattedMessage id="Footer.toPricing" />
-                  </NamedLink>
-                </li>
-              </ul>
-            </div>
-            <div className={css.searches}>
-              <ul className={css.list}>
-                <li className={css.listSearches}>Top cities</li>
-                <li className={css.listItem}>
-                  {mainLocationsData.map(location => renderFavoriteLocation(location))}
-                </li>
-              </ul>
-
-            </div>
-            <div className={css.searchesExtra}>
-							<NamedLink name="LandingPage" 
-								className={css.organizationCopyrightMobile + ' ' + css.registrationMobile}>
-								<FormattedMessage id="Footer.copyright" />
-							</NamedLink>
-						</div>
-          </div>
-          <div className={css.extraLinks}>
-            <div className={css.legalMatters}>
-              <div className={css.tosAndPrivacy}>
-                <div className={css.someLinks}>{socialMediaLinks}</div>
-
-                <NamedLink name="AboutPage" className={css.legalLink}>
-                  <FormattedMessage id="Footer.toAboutPage" />
+          <div className={css.firstSection}>
+            <ul className={css.list}>
+              <li className={css.listTitle}>Customers</li>
+              <li className={css.listItem}>
+                <a
+                  href="/s?address=Ireland&bounds=55.36%2C-5.911%2C51.427%2C-10.382&origin=53.357%2C-7.756"
+                  className={css.link}
+                >
+                  Find a pub
+                </a>
+              </li>
+              <li className={css.listItem}>
+                <a
+                  href="https://docs.google.com/forms/d/e/1FAIpQLSfIG7NR-ixq6CFydZ_955OyNyhI1-1iS4UfkRdV7knFxnFlqA/viewform"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={css.link}
+                >
+                  Invite a friend
+                </a>
+              </li>
+              <li className={css.listItem}>
+                <NamedLink name="DealsPage" className={css.link}>
+                  <FormattedMessage id="Footer.toDealsPage" />
                 </NamedLink>
               </li>
             </ul>
