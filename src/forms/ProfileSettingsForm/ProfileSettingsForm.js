@@ -9,11 +9,15 @@ import { ensureCurrentUser } from '../../util/data';
 import { propTypes } from '../../util/types';
 import * as validators from '../../util/validators';
 import { isUploadImageOverLimitError } from '../../util/errors';
-import { Form, Avatar, Button, 
-	ImageFromFile, 
-	IconSpinner, 
-	FieldTextInput, 
-	FieldBirthdayInput } from '../../components';
+import {
+  Form,
+  Avatar,
+  Button,
+  ImageFromFile,
+  IconSpinner,
+  FieldTextInput,
+  FieldBirthdayInput,
+} from '../../components';
 
 import css from './ProfileSettingsForm.css';
 
@@ -101,23 +105,23 @@ class ProfileSettingsFormComponent extends Component {
             id: 'ProfileSettingsForm.bioPlaceholder',
           });
 
-					// Birthday
+          // Birthday
           const birthdayLabel = intl.formatMessage({
             id: 'ProfileSettingsForm.birthdayLabel',
           });
 
-					const majorityRequiredMessage = intl.formatMessage({
-						id: 'ProfileSettingsForm.majorityRequiredMessage'		
-					})
+          const majorityRequiredMessage = intl.formatMessage({
+            id: 'ProfileSettingsForm.majorityRequiredMessage',
+          });
 
-					const birthdayRequiredMessage = intl.formatMessage({
-						id: 'ProfileSettingsForm.birthdayRequiredMessage'		
-					})
-					
-					const birthdayValidators = validators.composeValidators(
-						validators.required(birthdayRequiredMessage),
-						validators.ageAtLeast(majorityRequiredMessage, 18)
-					);
+          const birthdayRequiredMessage = intl.formatMessage({
+            id: 'ProfileSettingsForm.birthdayRequiredMessage',
+          });
+
+          const birthdayValidators = validators.composeValidators(
+            validators.required(birthdayRequiredMessage),
+            validators.ageAtLeast(majorityRequiredMessage, 18)
+          );
 
           const uploadingOverlay =
             uploadInProgress || this.state.uploadDelay ? (
@@ -312,12 +316,12 @@ class ProfileSettingsFormComponent extends Component {
                   <FormattedMessage id="ProfileSettingsForm.birthday" />
                 </h3>
                 <div>
-									<FieldBirthdayInput 
-										id="birthday"
-										name="birthday"
-										label={birthdayLabel}
-										validate={birthdayValidators}
-									/>
+                  <FieldBirthdayInput
+                    id="birthday"
+                    name="birthday"
+                    label={birthdayLabel}
+                    validate={birthdayValidators}
+                  />
                 </div>
               </div>
               <div className={classNames(css.sectionContainer, css.lastSection)}>
@@ -372,7 +376,7 @@ ProfileSettingsFormComponent.propTypes = {
   updateProfileReady: bool,
 
   // from injectIntl
-  intl: intlShape.isRequired
+  intl: intlShape.isRequired,
 };
 
 const ProfileSettingsForm = compose(injectIntl)(ProfileSettingsFormComponent);

@@ -1,0 +1,35 @@
+@import '../../marketplace.css';
+
+
+.dealsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 24px;
+
+  @media (--viewportMedium) {
+    margin: 0 -40px;
+  }
+}
+
+.cardWrap {
+  width: 100%;
+  padding: 20px 0;
+
+  @media (--viewportMedium) {
+    width: 50%;
+    padding: 0 40px;
+  }
+}
+
+.cardImage {
+  min-height: 200px;
+  background: grey
+}
+
+.birthdayGiftCard {
+  background: url('../../assets/birthday_deal.jpg');
+}
+
+.employeeBenefitCard {
+  background: url('../../assets/employee_benefit.jpg');
+}

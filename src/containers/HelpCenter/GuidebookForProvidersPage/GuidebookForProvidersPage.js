@@ -5,26 +5,26 @@ import { connect } from 'react-redux';
 import { injectIntl, intlShape, FormattedMessage } from 'react-intl';
 import { isScrollingDisabled } from '../../../ducks/UI.duck';
 import { TopbarContainer } from '../../../containers';
-import { helpCenterTabs } from '../tabs'
+import { helpCenterTabs } from '../tabs';
 import {
-	Page,
-	LayoutSideNavigationWithHero,
-	LayoutWrapperMain,
-	LayoutWrapperHero,
-	LayoutWrapperSideNav,
-	LayoutWrapperTopbar,
-	LayoutWrapperFooter,
-	Footer,
-	GuidebookForProviders
+  Page,
+  LayoutSideNavigationWithHero,
+  LayoutWrapperMain,
+  LayoutWrapperHero,
+  LayoutWrapperSideNav,
+  LayoutWrapperTopbar,
+  LayoutWrapperFooter,
+  Footer,
+	NamedLink
 } from '../../../components';
 import config from '../../../config';
 
 import css from './GuidebookForProvidersPage.css';
 
 const GuidebookForProvidersPageComponent = props => {
-	const { scrollingDisabled, intl } = props;
+  const { scrollingDisabled, intl } = props;
 
-	const tabs = helpCenterTabs(intl, 'GuidebookForProvidersPage');
+  const tabs = helpCenterTabs(intl, 'GuidebookForProvidersPage');
 
 	const siteTitle = config.siteTitle;
 	const schemaTitle = intl.formatMessage({ id: 'GuidebookForProvidersPage.schemaTitle' }, { siteTitle });
@@ -67,21 +67,21 @@ const GuidebookForProvidersPageComponent = props => {
 const { bool } = PropTypes;
 
 GuidebookForProvidersPageComponent.propTypes = {
-	scrollingDisabled: bool.isRequired,
+  scrollingDisabled: bool.isRequired,
 
-	// from injectIntl
-	intl: intlShape.isRequired,
+  // from injectIntl
+  intl: intlShape.isRequired,
 };
 
 const mapStateToProps = state => {
-	return {
-		scrollingDisabled: isScrollingDisabled(state),
-	};
+  return {
+    scrollingDisabled: isScrollingDisabled(state),
+  };
 };
 
 const GuidebookForProvidersPage = compose(
-	connect(mapStateToProps),
-	injectIntl
+  connect(mapStateToProps),
+  injectIntl
 )(GuidebookForProvidersPageComponent);
 
-export default GuidebookForProvidersPage;;
+export default GuidebookForProvidersPage;

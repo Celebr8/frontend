@@ -5,7 +5,15 @@ import { FormattedMessage, injectIntl, intlShape } from 'react-intl';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { compose } from 'redux';
-import { AvatarMedium, BookingBreakdown, Logo, NamedLink, NamedRedirect, Page, ResponsiveImage } from '../../components';
+import {
+  AvatarMedium,
+  BookingBreakdown,
+  Logo,
+  NamedLink,
+  NamedRedirect,
+  Page,
+  ResponsiveImage,
+} from '../../components';
 import config from '../../config';
 import { createStripePaymentToken } from '../../ducks/stripe.duck.js';
 import { isScrollingDisabled } from '../../ducks/UI.duck';
@@ -14,14 +22,25 @@ import routeConfiguration from '../../routeConfiguration';
 import { formatMoney } from '../../util/currency';
 import { ensureBooking, ensureListing, ensureTransaction, ensureUser } from '../../util/data';
 import { dateFromLocalToAPI } from '../../util/dates';
-import { isTransactionInitiateAmountTooLowError, isTransactionInitiateBookingTimeNotAvailableError, isTransactionInitiateListingNotFoundError, isTransactionInitiateMissingStripeAccountError, isTransactionZeroPaymentError, transactionInitiateOrderStripeErrors } from '../../util/errors';
+import {
+  isTransactionInitiateAmountTooLowError,
+  isTransactionInitiateBookingTimeNotAvailableError,
+  isTransactionInitiateListingNotFoundError,
+  isTransactionInitiateMissingStripeAccountError,
+  isTransactionZeroPaymentError,
+  transactionInitiateOrderStripeErrors,
+} from '../../util/errors';
 import { findRouteByRouteName, pathByRouteName } from '../../util/routes';
-import { LINE_ITEM_DAY, LINE_ITEM_NIGHT, propTypes } from '../../util/types';
+import { propTypes } from '../../util/types';
 import { createSlug } from '../../util/urlHelpers';
 import css from './CheckoutPage.css';
-import { initiateOrder, initiateOrderAfterEnquiry, setInitialValues, speculateTransaction } from './CheckoutPage.duck';
+import {
+  initiateOrder,
+  initiateOrderAfterEnquiry,
+  setInitialValues,
+  speculateTransaction,
+} from './CheckoutPage.duck';
 import { clearData, storeData, storedData } from './CheckoutPageSessionHelpers';
-
 
 const STORAGE_KEY = 'CheckoutPage';
 
@@ -109,20 +128,22 @@ export class CheckoutPageComponent extends Component {
       // NOTE: if unit type is line-item/units, quantity needs to be added.
       // The way to pass it to checkout page is through pageData.bookingData
 
-			const listingType = pageData.listing.attributes.publicData.type || 'common';
+      const listingType = pageData.listing.attributes.publicData.type || 'common';
 
-      fetchSpeculatedTransaction({
-        listingId,
-        bookingStart: bookingStartForAPI,
-        bookingEnd: bookingEndForAPI,
-      }, listingType);
+      fetchSpeculatedTransaction(
+        {
+          listingId,
+          bookingStart: bookingStartForAPI,
+          bookingEnd: bookingEndForAPI,
+        },
+        listingType
+      );
     }
 
     this.setState({ pageData: pageData || {}, dataLoaded: true });
   }
 
   handleSubmit(values) {
-
     if (this.state.submitting) {
       return;
     }
@@ -139,25 +160,19 @@ export class CheckoutPageComponent extends Component {
       dispatch,
     } = this.props;
 
-		// The transaction type have to be known here, to be passed to sendOrderRequest
-
-		const listingType = this.state.pageData.listing.attributes.publicData.type || 'common';
-
     // Create order aka transaction
     // NOTE: if unit type is line-item/units, quantity needs to be added.
     // The way to pass it to checkout page is through pageData.bookingData
     const requestParams = {
-
       listingId: this.state.pageData.listing.id,
       cardToken,
       bookingStart: speculatedTransaction.booking.attributes.start,
       bookingEnd: speculatedTransaction.booking.attributes.end,
-			protectedData: {
-				attendance: values.attendance,
-				occasion: values.occasion,
-				time: values.time
-			}
-
+      protectedData: {
+        attendance: values.attendance,
+        occasion: values.occasion,
+        time: values.time,
+      },
     };
 
     const enquiredTransaction = this.state.pageData.enquiredTransaction;
@@ -375,12 +390,14 @@ export class CheckoutPageComponent extends Component {
     const topbar = (
       <div className={css.topbar}>
         <NamedLink className={css.home} name="LandingPage">
-          {// Mobile logo component ignoring css  - fix needed
-          /*<Logo
+          {
+            // Mobile logo component ignoring css  - fix needed
+            /*<Logo
             className={css.logoMobile}
             title={intl.formatMessage({ id: 'CheckoutPage.goToLandingPage' })}
             format="mobile"
-          />*/}
+          />*/
+          }
           <Logo
             className={css.logoDesktop}
             alt={intl.formatMessage({ id: 'CheckoutPage.goToLandingPage' })}
@@ -390,13 +407,11 @@ export class CheckoutPageComponent extends Component {
       </div>
     );
 
-    const unitType = config.bookingUnitType;
-    const isNightly = unitType === LINE_ITEM_NIGHT;
-    const isDaily = unitType === LINE_ITEM_DAY;
-
     const price = currentListing.attributes.price;
     const formattedPrice = formatMoney(intl, price);
-    const detailsSubTitle = `${formattedPrice} ${intl.formatMessage({ id: 'CheckoutPage.deposit' })}`;
+    const detailsSubTitle = `${formattedPrice} ${intl.formatMessage({
+      id: 'CheckoutPage.deposit',
+    })}`;
 
     const showInitialMessageInput = !enquiredTransaction;
 
@@ -586,10 +601,10 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => ({
   dispatch,
-  sendOrderRequest: (params, initialMessage, listingType) => dispatch(initiateOrder(params, initialMessage, listingType)),
-  fetchSpeculatedTransaction: (params, listingType) => dispatch(speculateTransaction(params, listingType)),
+  sendOrderRequest: (params, initialMessage, listingType) =>
+    dispatch(initiateOrder(params, initialMessage, listingType)),
   sendOrderRequestAfterEnquiry: (transactionId, params) =>
-   dispatch(initiateOrderAfterEnquiry(transactionId, params)),
+    dispatch(initiateOrderAfterEnquiry(transactionId, params)),
   fetchSpeculatedTransaction: params => dispatch(speculateTransaction(params)),
   onCreateStripePaymentToken: params => dispatch(createStripePaymentToken(params)),
 });

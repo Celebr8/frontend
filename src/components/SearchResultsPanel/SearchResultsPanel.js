@@ -1,12 +1,21 @@
-import React from 'react';
-import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { propTypes } from '../../util/types';
+import PropTypes from 'prop-types';
+import React from 'react';
 import { ListingCard, PaginationLinks } from '../../components';
+import { propTypes } from '../../util/types';
 import css from './SearchResultsPanel.css';
 
 const SearchResultsPanel = props => {
-  const { className, rootClassName, listings, pagination, search, setActiveListing } = props;
+  const {
+    className,
+    rootClassName,
+    listings,
+    pagination,
+    search,
+    setActiveListing,
+    reviews,
+    fetchReviewsError,
+  } = props;
   const classes = classNames(rootClassName || css.root, className);
 
   const paginationLinks =
@@ -39,6 +48,8 @@ const SearchResultsPanel = props => {
             listing={l}
             renderSizes={cardRenderSizes}
             setActiveListing={setActiveListing}
+            reviews={reviews}
+            fetchReviewsError={fetchReviewsError}
           />
         ))}
         {props.children}
@@ -55,9 +66,11 @@ SearchResultsPanel.defaultProps = {
   pagination: null,
   rootClassName: null,
   search: null,
+  reviews: [],
+  fetchReviewsError: null,
 };
 
-const { array, node, object, string } = PropTypes;
+const { array, node, object, string, arrayOf } = PropTypes;
 
 SearchResultsPanel.propTypes = {
   children: node,
@@ -66,6 +79,8 @@ SearchResultsPanel.propTypes = {
   pagination: propTypes.pagination,
   rootClassName: string,
   search: object,
+  reviews: arrayOf(propTypes.review),
+  fetchReviewsError: propTypes.error,
 };
 
 export default SearchResultsPanel;
