@@ -109,7 +109,7 @@ const Footer = props => {
             </ul>
             <ul className={css.list}>
               <li key="whichost" className={css.listTitle}>
-                Whichost
+                Celebr8
               </li>
               <li key="fees" className={css.listItem}>
                 <NamedLink name="FeesPage" target="_blank" className={css.link}>
