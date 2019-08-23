@@ -37,7 +37,7 @@ const SectionDeals = props => {
               <Typography gutterBottom variant="h5" component="h2">
                 Birthday Deal
               </Typography>
-              <p>Get up to €330 when celebrating your birthday with Whichost.</p>
+              <p>Get up to €330 when celebrating your birthday with Celebr8.</p>
             </CardContent>
             <CardActions>
               <ThemeProvider theme={theme}>
