@@ -129,10 +129,10 @@ const ForProvider = () => (
     <p>
       If you're aiming for a higher income and if you want to gain more exposure for your pub,
       you're in the right place. Keep your customers returning and strengthen your relationship with
-      them by offering the option to easily find and book your pub online over Whichost.com
+      them by offering the option to easily find and book your pub online over Celebr8.co
     </p>
     <p>
-      <b>Here's what you need to start a profitable Whichost business:</b>
+      <b>Here's what you need to start a profitable Celebr8 business:</b>
     </p>
     <p>
       <ol>
@@ -162,11 +162,11 @@ const ForProvider = () => (
       </ol>
     </p>
     <br />
-    <h2>Why should you use Whichost? Because it's a win-win-win.</h2>
+    <h2>Why should you use Celebr8? Because it's a win-win-win.</h2>
     <p>
       We are on a mission. We know that the pub industry is shrinking, we know that parties are
       becomming the bigest source of income, we know that party-people nowdays are mobile and
-      preffer to book online and <b>Whichost is the solution:</b>
+      preffer to book online and <b>Celebr8 is the solution:</b>
       <br />
       <br />
       <ol>
@@ -179,7 +179,7 @@ const ForProvider = () => (
           pub;
         </li>
         <li>
-          <b>Whichost's win:</b> We are happy to see the pub industry flowrish again.
+          <b>Celebr8 wins:</b> We are happy to see the pub industry flowrish again.
         </li>
       </ol>
     </p>
