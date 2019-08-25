@@ -147,7 +147,8 @@ const CommunityGuidelinesPageComponent = props => {
               information of both the pubs and professionals that may be offering pub services. In
               some cases, pubs may require customers to sign a agreement at the pub prior to their
               booking. If there is ever an issue with privacy, pub security, or pub rules, please
-              send us an email immediately at support@celebr8.co.
+              send us an email immediately at{' '}
+              <a href="mailto:support@celebr8.co">support@celebr8.co</a>.
             </p>
           </div>
         </LayoutWrapperMain>
