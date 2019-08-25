@@ -62,7 +62,7 @@ const CommunityGuidelinesPageComponent = props => {
               in our Terms of Service (Services Agreement). If you have any questions about these
               Community Guidelines or if you believe that a user has violated these Community
               Guidelines, please email us immediately at{' '}
-              <a href="mailto:support@whichost.com">support@whichost.com</a>.
+              <a href="mailto:support@celebr8.co">support@celebr8.co</a>.
             </p>
 
             <h2>PUBS MUST:</h2>
@@ -147,7 +147,7 @@ const CommunityGuidelinesPageComponent = props => {
               information of both the pubs and professionals that may be offering pub services. In
               some cases, pubs may require customers to sign a agreement at the pub prior to their
               booking. If there is ever an issue with privacy, pub security, or pub rules, please
-              send us an email immediately at support@whichost.com.
+              send us an email immediately at support@celebr8.co.
             </p>
           </div>
         </LayoutWrapperMain>

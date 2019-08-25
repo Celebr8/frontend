@@ -106,7 +106,7 @@ class FAQPagePanelsBase extends React.Component {
               Our marketplace is a platform initially designed for pubs. However, we understand that
               some businesses may have a similar customer audience and business operation as pubs
               do. If you believe your business can be listed in our marketplace, please email us at
-              grow@whichost.com.
+              grow@celebr8.co.
             </Typography>
           </ExpansionPanelDetails>
         </ExpansionPanel>
@@ -281,8 +281,8 @@ class FAQPagePanelsBase extends React.Component {
             <Typography>
               <p>
                 Please, feel free to contact us at{' '}
-                <a href="mailto:support@whichost.com?subject=Help Center Question">
-                  support@whichost.com
+                <a href="mailto:support@celebr8.co?subject=Help Center Question">
+                  support@celebr8.co
                 </a>{' '}
                 or by clicking{' '}
                 <NamedLink name="ContactUsPage" enquiry="general">
@@ -357,10 +357,10 @@ class FAQPagePanelsBase extends React.Component {
               </NamedLink>{' '}
               or email us at{' '}
               <a
-                href="mailto:support@whichost.com?subject=How do I list my pub inquiry"
+                href="mailto:support@celebr8.co?subject=How do I list my pub inquiry"
                 target="_blank"
               >
-                support@whichost.com
+                support@celebr8.co
               </a>
               .
               </p>
@@ -486,13 +486,13 @@ class FAQPagePanelsBase extends React.Component {
               If at any time you feel that Celebr8's pricing is not worth the nominal fee to
               support the site, community, and offer the level of service and commitment that we do,
               please contact us <NamedLink name="ContactUsPage">here</NamedLink> or email us at{' '}
-              <a href="mailto:support@whichost.com" target="_blank">
-                support@whichost.com
+              <a href="mailto:support@celebr8.co" target="_blank">
+                support@celebr8.co
               </a>
               . We will cancel your account for you if needed. We would also love to hear your
               feedback (good and bad at{' '}
-              <a href="mailto:feedback@whichost.com" target="_blank">
-                feedback@whichost.com
+              <a href="mailto:feedback@celebr8.co" target="_blank">
+                feedback@celebr8.co
               </a>
               ), learn more about your pub's needs, and find the best way that Celebr8 can help
               you.
@@ -550,8 +550,8 @@ class FAQPagePanelsBase extends React.Component {
                   here
                 </NamedLink>{' '}
                 or at{' '}
-                <a href="mailto:support@whichost.com">
-                  support@whichost.com
+                <a href="mailto:support@celebr8.co">
+                  support@celebr8.co
                 </a>{' '}
                 and we'll put you in touch with a photographer.
               </p>
@@ -1036,8 +1036,8 @@ class FAQPagePanelsBase extends React.Component {
                 dependant on your bank, but holds are typically released by the next business day.
                 Your card will not be charged for denied or expired bookings for any reason. If you
                 have any questions about this, please email us at{' '}
-                <a href="mailto:support@whichost.com?subject=Unauthorized%20Charge">
-                  support@whichost.com
+                <a href="mailto:support@celebr8.co?subject=Unauthorized%20Charge">
+                  support@celebr8.co
                 </a>
                 .
               </p>
@@ -1061,9 +1061,9 @@ class FAQPagePanelsBase extends React.Component {
                 this in mind prior to submitting a booking request. If you require assistance with a
                 booking request, you can send us a message at any time at{' '}
                 <a
-                  href="mailto:support@whichost.com?subject=Booking%20Request%20Inquiry"
+                  href="mailto:support@celebr8.co?subject=Booking%20Request%20Inquiry"
                 >
-                  support@whichost.com
+                  support@celebr8.co
                 </a>
                 .
               </p>
@@ -1331,8 +1331,8 @@ class FAQPagePanelsBase extends React.Component {
           <ExpansionPanelDetails>
             <Typography>
               Please, feel free to contact us <NamedLink name="ContactUsPage">here</NamedLink> at{' '}
-              <a href="mailto:support@whichost.com?subject=Help%20Center%20Question">
-                support@whichost.com
+              <a href="mailto:support@celebr8.co?subject=Help%20Center%20Question">
+                support@celebr8.co
               </a>
               . We'll be happy to answer all of your questions.
             </Typography>
@@ -1404,9 +1404,9 @@ class FAQPagePanelsBase extends React.Component {
             <Typography>
               Please report any suspicious activity immediately by sending us an email at{' '}
               <a
-                href="mailto:support@whichost.com?subject=Suspicious%20Account%20Activity"
+                href="mailto:support@celebr8.co?subject=Suspicious%20Account%20Activity"
               >
-                support@whichost.com
+                support@celebr8.co
               </a>
               .
             </Typography>
@@ -1421,9 +1421,9 @@ class FAQPagePanelsBase extends React.Component {
           <ExpansionPanelDetails>
             <Typography>
               Please report any suspicious activity or users immediately by sending us an email at{' '}
-              <a href="mailto:support@whichost.com?subject=User acting against Celebr8 policies"
+              <a href="mailto:support@celebr8.co?subject=User acting against Celebr8 policies"
                 target="_blank">
-                support@whichost.com
+                support@celebr8.co
               </a>
               .
             </Typography>
@@ -1438,8 +1438,8 @@ class FAQPagePanelsBase extends React.Component {
           <ExpansionPanelDetails>
             <Typography>
               Please, feel free to contact us at{' '}
-              <a href="mailto:support@whichost.com?subject=Help%20Center%20Question">
-                support@whichost.com
+              <a href="mailto:support@celebr8.co?subject=Help%20Center%20Question">
+                support@celebr8.co
               </a>
               . We'll be happy to answer all of your questions.
             </Typography>
