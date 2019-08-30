@@ -3,15 +3,7 @@ import React from 'react';
 import { FormattedMessage, injectIntl, intlShape } from 'react-intl';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
-import {
-  Footer,
-  LayoutSingleColumnWithHero,
-  LayoutWrapperFooter,
-  LayoutWrapperHero,
-  LayoutWrapperMain,
-  LayoutWrapperTopbar,
-  Page,
-} from '../../components';
+import { Footer, LayoutSingleColumnWithHero, LayoutWrapperFooter, LayoutWrapperHero, LayoutWrapperMain, LayoutWrapperTopbar, Page } from '../../components';
 import config from '../../config';
 import { TopbarContainer } from '../../containers';
 import { isScrollingDisabled } from '../../ducks/UI.duck';
@@ -82,24 +74,29 @@ const CareersPageComponent = props => {
             <ol>
               <p>Meet the Whichost team:</p>
               <li>
-                <b>Loic C.:</b> Frontend Engineer with a major in Psychology. Joined Whichost in
-                November 2018.{' '}
-                <a href="https://angel.co/loic-coenen" target="_blank" rel="noopener noreferrer">
-                  AngelList profile
+                <b>Scott K.</b> Frontend Engineer. Joined Whichost in 2019. 
+                <a href="https://angel.co/scott-kennedy-14" target="_blank" rel="noopener noreferrer">
+                   AngelList profile
                 </a>
               </li>
               <li>
-                <b>Radu S.:</b> Electrical Engineer with 3 startups under his belt. Joined Whichost
-                in July 2018.{' '}
+                <b>Shane W.</b> Frontend Engineer. Joined Whichost in 2019. 
+                <a href="https://angel.co/shane-walsh-web" target="_blank" rel="noopener noreferrer">
+                   AngelList profile
+                </a>
+              </li>
+              <li>
+                <b>Radu S.</b> Electrical Engineer with 3 startups under his belt. Joined Whichost
+                in July 2018. 
                 <a href="https://angel.co/radu-sighencea" target="_blank" rel="noopener noreferrer">
-                  AngelList profile
+                   AngelList profile
                 </a>
               </li>
               <li>
-                <b>Carlos R.:</b> Industrial Engineer with 4 startups under his belt. Founded
-                Whichost in November 2017.{' '}
+                <b>Carlos R.</b> Industrial Engineer with 4 startups under his belt. Founded
+                Whichost in November 2017. 
                 <a href="https://angel.co/carloswhichost" target="_blank" rel="noopener noreferrer">
-                  AngelList profile
+                   AngelList profile
                 </a>
               </li>
             </ol>
