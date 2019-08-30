@@ -44,8 +44,13 @@
 }
 
 .home {
-  display: flex;
+  /* display: flex; */
   padding: calc((var(--topbarHeight) - var(--Topbar_logoHeight)) / 2) 24px;
+
+}
+
+.home img {
+  max-height: 32px;
 }
 
 .logoutButton {
