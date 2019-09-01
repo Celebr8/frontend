@@ -97,13 +97,13 @@ const streetAddress = '16-17 Oliver Plunkett St';
 const canonicalRootURL = process.env.REACT_APP_CANONICAL_ROOT_URL;
 
 // Site title is needed in meta tags (bots and social media sharing reads those)
-const siteTitle = 'Whichost';
+const siteTitle = 'Celebr8';
 
 // Twitter handle is needed in meta tags (twitter:site). Start it with '@' character
-const siteTwitterHandle = '@WhichostIE';
+const siteTwitterHandle = '@Celebr8Anywhere';
 
 // Instagram page is used in SEO schema (http://schema.org/Organization)
-const siteInstagramPage = 'https://www.instagram.com/whichost/';
+const siteInstagramPage = 'https://www.instagram.com/celebr8anywhere/';
 
 // Facebook page is used in SEO schema (http://schema.org/Organization)
 const siteFacebookPage = 'https://www.facebook.com/Whichost/';

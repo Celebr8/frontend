@@ -43,7 +43,7 @@ const ForUser = () => (
     <ol>
       <li>
         Create a profile by clicking on{' '}
-        <a href="https://www.whichost.com/signup">
+        <a href="https://www.celebr8.co/signup">
           Sign up
         </a>
         ;
@@ -54,7 +54,7 @@ const ForUser = () => (
         sure you've entered the correct email addres;
       </li>
       <li>
-        <a href="https://www.whichost.com/s?address=Ireland&bounds=55.36%2C-5.911%2C51.427%2C-10.382&origin=53.357%2C-7.756">
+        <a href="https://www.celebr8.co/s?address=Ireland&bounds=55.36%2C-5.911%2C51.427%2C-10.382&origin=53.357%2C-7.756">
           Browse pubs
         </a>{' '}
         to find the perfect pub for your occasion;
@@ -84,7 +84,7 @@ const ForUser = () => (
       employees and colleagues now! <i>(T&Cs apply)</i>
     </p>
     <h2>Contact us. We're here to help.</h2>
-    <p>If you're ready to start saving time but you still have questions that are not covered by our <a href="https://www.whichost.com/help/faq" target="_blank">help center</a>, we invite you to <a href="https://www.whichost.com/help/contact-us" target="_blank">contact us</a> and we'll assist you personally.</p>
+    <p>If you're ready to start saving time but you still have questions that are not covered by our <a href="https://www.celebr8.co/help/faq" target="_blank">help center</a>, we invite you to <a href="https://www.celebr8.co/help/contact-us" target="_blank">contact us</a> and we'll assist you personally.</p>
     <br/>
 	</TabContainer>
 )
@@ -96,14 +96,14 @@ const ItemTwoPleaseChangeMyName = () => (
   <p><b>Here's what you need to start a profitable Celebr8 business:</b></p>
   <p>
     <ol>
-      <li>Create a profile by clicking on <a href="https://www.whichost.com/signup" target="_blank">Sign up</a>;</li>
+      <li>Create a profile by clicking on <a href="https://www.celebr8.co/signup" target="_blank">Sign up</a>;</li>
       <li>Enter the needed information and click on the button "Sign up";</li>
       <li>Check your emails and click on the verification link to verify your account. We want to be sure you've entered the correct email addres;</li>
-      <li>Click on <a href="https://www.whichost.com/l/new" target="_blank">+ Add your pub</a>;</li>
+      <li>Click on <a href="https://www.celebr8.co/l/new" target="_blank">+ Add your pub</a>;</li>
       <li>Add content to your new listing by following the steps on the page;</li>
       <li>Share your new listing on social media platforms by using the link in the browser;</li>
       <li>Done;</li>
-      <li><i>(optional)</i><a href="https://www.whichost.com/help/contact-us" target="_blank"> Contact us</a> in case you have further questions.</li>
+      <li><i>(optional)</i><a href="https://www.celebr8.co/help/contact-us" target="_blank"> Contact us</a> in case you have further questions.</li>
     </ol>
   </p>
   <br/>
@@ -118,7 +118,7 @@ const ItemTwoPleaseChangeMyName = () => (
   </p>
   <br/>
   <h2>Contact us. We're here to help.</h2>
-  <p>If you're ready to start but you still have questions that are not covered by our <a href="https://www.whichost.com/help/faq" target="_blank">help center</a>, we invite you to <a href="https://www.whichost.com/help/contact-us" target="_blank">contact us</a> and we'll assist you personally.</p>
+  <p>If you're ready to start but you still have questions that are not covered by our <a href="https://www.celebr8.co/help/faq" target="_blank">help center</a>, we invite you to <a href="https://www.celebr8.co/help/contact-us" target="_blank">contact us</a> and we'll assist you personally.</p>
   <br/>
   </TabContainer>
 );
@@ -138,7 +138,7 @@ const ForProvider = () => (
       <ol>
         <li>
           Create a profile by clicking on{' '}
-          <a href="https://www.whichost.com/signup">
+          <a href="https://www.celebr8.co/signup">
             Sign up
           </a>
           ;
@@ -149,7 +149,7 @@ const ForProvider = () => (
           sure you've entered the correct email addres;
         </li>
         <li>
-          Click on <a href="https://www.whichost.com/l/new">+ Add your pub</a>;
+          Click on <a href="https://www.celebr8.co/l/new">+ Add your pub</a>;
         </li>
         <li>Add content to your new listing by following the steps on the page;</li>
         <li>Share your new listing on social media platforms by using the link in the browser;</li>
