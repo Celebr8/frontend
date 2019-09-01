@@ -606,7 +606,7 @@ class ContactUsFormComponent extends Component {
                   <PrimaryButton
                     className={css.scheduleCallback}
                     type="submit"
-                    onClick={() => window.open('https://calendly.com/whichost/30min', '_blank')}
+                    onClick={() => window.open('https://calendly.com/celebr8/30min', '_blank')}
                     inProgress={submitInProgress}
                   >
                     <FormattedMessage id="ContactUsForm.scheduleCallback" />

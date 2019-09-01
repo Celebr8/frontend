@@ -50,10 +50,10 @@ const GuidebookForProvidersPageComponent = props => {
 				<LayoutWrapperMain>
 					<h2>Guide Documentation for Publicans</h2>
 					<p>Using Celebr8 is very straightforward. However, if you ever need guidance you can <a href="https://docs.google.com/document/d/1KtFBwGkdd79Sabjt1s4PBzpKkZtY0rDy3Wqkq0k8ED8/edit" target="_blank">open the Celebr8 Guide for Publicans</a>. This document contains all the basic information you need to properly manage your listing(s).</p>
-					<p>On our <a href="https://www.whichost.com/help/first-step" target="_blank">First Steps</a> page you can read about the first steps you need to make, to start listing your pub on Celebr8.</p>
+					<p>On our <a href="https://www.celebr8.co/help/first-step" target="_blank">First Steps</a> page you can read about the first steps you need to make, to start listing your pub on Celebr8.</p>
 					<br/>
 					<h2>Contact us. We're here to help.</h2>
-			    <p>If you still have questions that are not covered by our <a href="https://www.whichost.com/help/faq" target="_blank">help center</a>, we invite you to <a href="https://www.whichost.com/help/contact-us" target="_blank">contact us</a> and we'll assist you personally.</p>
+			    <p>If you still have questions that are not covered by our <a href="https://www.celebr8.co/help/faq" target="_blank">help center</a>, we invite you to <a href="https://www.celebr8.co/help/contact-us" target="_blank">contact us</a> and we'll assist you personally.</p>
 			    <br/>
 				</LayoutWrapperMain>
 				<LayoutWrapperFooter>
