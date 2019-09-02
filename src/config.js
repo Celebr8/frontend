@@ -83,7 +83,7 @@ const sentryDsn = process.env.REACT_APP_SENTRY_DSN;
 // If webapp is using SSL (i.e. it's behind 'https' protocol)
 const usingSSL = process.env.REACT_APP_SHARETRIBE_USING_SSL === 'true';
 
-// reCaptcha google API key 
+// reCaptcha google API key
 const reCaptchaSiteKey = process.env.REACT_APP_RECAPTCHA_SITE_KEY;
 const serviceMessageUrl = process.env.REACT_APP_SERVICE_MESSAGE_URL;
 
@@ -97,16 +97,13 @@ const streetAddress = '16-17 Oliver Plunkett St';
 const canonicalRootURL = process.env.REACT_APP_CANONICAL_ROOT_URL;
 
 // Site title is needed in meta tags (bots and social media sharing reads those)
-const siteTitle = 'Whichost';
+const siteTitle = 'Celebr8';
 
 // Twitter handle is needed in meta tags (twitter:site). Start it with '@' character
-const siteTwitterHandle = '@WhichostIE';
+const siteTwitterHandle = '@Celebr8Anywhere';
 
 // Instagram page is used in SEO schema (http://schema.org/Organization)
-const siteInstagramPage = 'https://www.instagram.com/whichost/';
-
-// YouTube page is used in SEO schema (http://schema.org/Organization)
-const siteYouTubePage = null;
+const siteInstagramPage = 'https://www.instagram.com/celebr8anywhere/';
 
 // Facebook page is used in SEO schema (http://schema.org/Organization)
 const siteFacebookPage = 'https://www.facebook.com/Whichost/';
@@ -231,12 +228,12 @@ const config = {
   siteTwitterHandle,
   facebookAppId,
   sentryDsn,
-	reCaptchaSiteKey,
-	serviceMessageUrl,
+  reCaptchaSiteKey,
+  serviceMessageUrl,
   usingSSL,
   maps,
   custom,
-	version
+  version,
 };
 
 export default config;

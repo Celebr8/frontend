@@ -17,7 +17,7 @@ const SectionDescriptionMaybe = props => {
         {richText(description, {
           longWordMinLength: MIN_LENGTH_FOR_LONG_WORDS_IN_DESCRIPTION,
           longWordClass: css.longWord,
-					linkify: true
+          linkify: true,
         })}
       </p>
     </div>

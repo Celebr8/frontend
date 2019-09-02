@@ -66,7 +66,7 @@ const LayoutSideNavigationWithHero = props => {
   return (
     <div className={classes}>
       {preparedChildren.layoutWrapperTopbar}
-			{preparedChildren.layoutWrapperHero}
+      {preparedChildren.layoutWrapperHero}
       <div className={containerClasses}>
         {preparedChildren.layoutWrapperSideNav}
         {preparedChildren.layoutWrapperMain}

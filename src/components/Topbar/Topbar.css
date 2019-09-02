@@ -44,8 +44,13 @@
 }
 
 .home {
-  display: flex;
+  /* display: flex; */
   padding: calc((var(--topbarHeight) - var(--Topbar_logoHeight)) / 2) 24px;
+
+}
+
+.home img {
+  max-height: 32px;
 }
 
 .logoutButton {
@@ -70,11 +75,13 @@
   &:enabled {
     cursor: pointer;
   }
+
   &:enabled:hover,
   &:enabled:active {
     background-color: transparent;
     box-shadow: none;
   }
+
   &:disabled {
     background-color: transparent;
     cursor: auto;
@@ -85,6 +92,7 @@
   padding: 15px 24px;
   position: relative;
 }
+
 .searchMenu {
   padding: 12px 24px;
 }
@@ -124,6 +132,7 @@
     transform: scale(0);
     opacity: 0;
   }
+
   100% {
     transform: scale(1);
     opacity: 1;
@@ -142,6 +151,7 @@
 .rootMenuIcon {
   fill: var(--matterColor);
 }
+
 .rootSearchIcon {
   stroke: var(--matterColor);
 }

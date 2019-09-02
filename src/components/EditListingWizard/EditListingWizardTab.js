@@ -33,13 +33,12 @@ export const LOCATION = 'location';
 export const PRICING = 'pricing';
 export const PHOTOS = 'photos';
 
-
 // EditListingWizardTab component supports these tabs
 export const SUPPORTED_TABS = [
   DESCRIPTION,
   FEATURES,
-	CAPACITY,
-	REGULARLY_OPEN_ON,
+  CAPACITY,
+  REGULARLY_OPEN_ON,
   POLICY,
   LOCATION,
   PRICING,
@@ -114,7 +113,6 @@ const EditListingWizardTab = props => {
   };
 
   const onCompleteEditListingWizardTab = (tab, updateValues) => {
-
     // Normalize images for API call
     const { images: updatedImages, ...otherValues } = updateValues;
     const imageProperty =
@@ -122,7 +120,6 @@ const EditListingWizardTab = props => {
     const updateValuesWithImages = { ...otherValues, ...imageProperty };
 
     if (isNewListingFlow) {
-
       const onUpsertListingDraft = isNewURI
         ? (tab, updateValues) => onCreateListingDraft(updateValues)
         : onUpdateListing;

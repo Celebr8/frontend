@@ -47,7 +47,10 @@ class CookieConsent extends Component {
       return null;
     } else {
       const cookieLink = (
-				<ExternalLink href="https://www.whichost.com/legal/privacy-policy" className={css.cookieLink}>
+        <ExternalLink
+          href="https://www.celebr8.co/legal/privacy-policy"
+          className={css.cookieLink}
+        >
           <FormattedMessage id="CookieConsent.cookieLink" />
         </ExternalLink>
       );

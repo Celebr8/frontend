@@ -47,13 +47,13 @@ const CommunityGuidelinesPageComponent = props => {
               <FormattedMessage id="CommunityGuidelinesPage.heading" />
             </h1>
             <p>
-              Whichost is an online marketplace built on the foundation of trust, the best interest
+              Celebr8 is an online marketplace built on the foundation of trust, the best interest
               of the community, and thus we do have Community Guidelines that we’ve created and
               actively enforce. We take violations of these Community Guidelines seriously and may
               suspend or terminate an Account for ongoing or serious violations. Fraudulent or
               illegal activity may also be subject to legal action taken. We reserve the right to
               also edit or remove content on our site that violates these Community Guidelines or if
-              we believe it adversely affects the integrity of the Whichost marketplace or its
+              we believe it adversely affects the integrity of the Celebr8 marketplace or its
               users.
             </p>
 
@@ -62,16 +62,16 @@ const CommunityGuidelinesPageComponent = props => {
               in our Terms of Service (Services Agreement). If you have any questions about these
               Community Guidelines or if you believe that a user has violated these Community
               Guidelines, please email us immediately at{' '}
-              <a href="mailto:support@whichost.com">support@whichost.com</a>.
+              <a href="mailto:support@celebr8.co">support@celebr8.co</a>.
             </p>
 
             <h2>PUBS MUST:</h2>
             <h3>1. Comply with local laws, local zoning ordinances, and tax laws at all times.</h3>
 
             <p>
-              Whichost is not liable for ensuring compliance and it is the responsibility of pubs
+              Celebr8 is not liable for ensuring compliance and it is the responsibility of pubs
               and each listing owner to ensure all local laws, zoning ordinance, and also tax
-              compliance is met. You must also legally report income generated from Whichost to your
+              compliance is met. You must also legally report income generated from Celebr8 to your
               business and it is your responsibility to do so. If you are responsible for charging
               local taxes on services, you must also comply with these regulations.{' '}
             </p>
@@ -89,16 +89,16 @@ const CommunityGuidelinesPageComponent = props => {
             <p>
               Only list the pub that you are permitted to offer and have the authority to do so for.
               If you are subletting a space and are not permitted to then further offer it, do not
-              offer it on Whichost without consent by the owner to do so. If it is discovered that
-              you are offering a pub on Whichost that you do not have permission to offer, the
+              offer it on Celebr8 without consent by the owner to do so. If it is discovered that
+              you are offering a pub on Celebr8 that you do not have permission to offer, the
               listing will be immediately removed and your account is subject to be removed from our
               site.
             </p>
 
             <h3>4. Include booking payments as credit towards the bill of the parties.</h3>
             <p>
-              Most pubs already do this and Whichost will continue that tradition. All booking
-              payments must be used as credit towards the bill of the parties, and Whichost
+              Most pubs already do this and Celebr8 will continue that tradition. All booking
+              payments must be used as credit towards the bill of the parties, and Celebr8
               customers will except that.{' '}
             </p>
 
@@ -106,7 +106,7 @@ const CommunityGuidelinesPageComponent = props => {
             <h3>1. Comply with all pub rules, policies, and booking agreement.</h3>
 
             <p>
-              All customers and those that have booked a pub through Whichost must only use the pub
+              All customers and those that have booked a pub through Celebr8 must only use the pub
               as described by the pub listing owner, and as agreed upon in the booking agreement.
               Pubs take pride in their space, the amenities, and their business and will be
               expecting the same professional respect and courtesy that they are providing.
@@ -123,18 +123,18 @@ const CommunityGuidelinesPageComponent = props => {
 
             <h3>1. Communicate honestly with others.</h3>
             <p>
-              Whichost is a trusted marketplace and depends on the honesty, integrity, and best
+              Celebr8 is a trusted marketplace and depends on the honesty, integrity, and best
               interest of everyone that uses the platform. Only message others with the best intent
               in mind, do not make false claims, misrepresentations, do not engage in fraudulent
               activity, and do not willingly be deceitful.
             </p>
 
-            <h3>2. Transact honestly and with the intended use of Whichost.</h3>
+            <h3>2. Transact honestly and with the intended use of Celebr8.</h3>
             <p>
-              Whichost is intended to be a marketplace for customers to book pubs and pubs to offer
+              Celebr8 is intended to be a marketplace for customers to book pubs and pubs to offer
               their spaces. Any transactions that are not intended for this purpose, are
               misrepresented, have fraudulent intent, or otherwise deemed harmful to either user
-              will be immediately reviewed and if fraudulent, legal action will be taken by Whichost
+              will be immediately reviewed and if fraudulent, legal action will be taken by Celebr8
               if deemed necessary. All users and transactions are also applicable to the Terms of
               Service that is agreed upon by using the platform.
             </p>
@@ -147,7 +147,8 @@ const CommunityGuidelinesPageComponent = props => {
               information of both the pubs and professionals that may be offering pub services. In
               some cases, pubs may require customers to sign a agreement at the pub prior to their
               booking. If there is ever an issue with privacy, pub security, or pub rules, please
-              send us an email immediately at support@whichost.com.
+              send us an email immediately at{' '}
+              <a href="mailto:support@celebr8.co">support@celebr8.co</a>.
             </p>
           </div>
         </LayoutWrapperMain>

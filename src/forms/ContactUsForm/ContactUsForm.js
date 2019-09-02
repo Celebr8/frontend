@@ -2,17 +2,15 @@ import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { compose } from 'redux';
 import { FormattedMessage, injectIntl, intlShape } from 'react-intl';
-import { Form as FinalForm, Field } from 'react-final-form';
-import isEqual from 'lodash/isEqual';
+import { Form as FinalForm } from 'react-final-form';
 import * as ibantools from 'ibantools';
 import classNames from 'classnames';
-import { propTypes } from '../../util/types';
 import { ensureCurrentUser } from '../../util/data';
 import * as validators from '../../util/validators';
 import arrayMutators from 'final-form-arrays';
+import OrDivider from '../../components/OrDivider/OrDivider';
 import {
   NamedLink,
-  FieldCheckbox,
   FieldCheckboxGroup,
   FieldPhoneNumberInput,
   FieldTextInput,
@@ -48,8 +46,7 @@ class ContactUsFormComponent extends Component {
   }
 
   verifyCallback(recaptchaToken) {
-    // Here you will get the final recaptchaToken!!!
-    const state = { ...state, recaptchaToken };
+    const state = { ...this.state, recaptchaToken };
     this.setState(state);
   }
 
@@ -92,18 +89,7 @@ class ContactUsFormComponent extends Component {
               values,
             } = fieldRenderProps;
 
-            const { formatMessage } = this.props.intl;
-
             const user = ensureCurrentUser(currentUser);
-
-            const {
-              email,
-              phoneNumber,
-              message,
-              subject,
-              recaptchaToken,
-              termsAndConditions,
-            } = values;
 
             const enquiry = fieldRenderProps.enquiry ? fieldRenderProps.enquiry : values.enquiry;
 
@@ -183,12 +169,6 @@ class ContactUsFormComponent extends Component {
               id: 'ContactUsForm.enquiryLabel',
             });
 
-            const enquiryRequiredMessage = intl.formatMessage({
-              id: 'ContactUsForm.enquiryRequiredMessage',
-            });
-
-            const enquiryRequired = validators.required(enquiryRequiredMessage);
-
             // Position (if the enquiry is about claiming a pub)
 
             const positionLabel = intl.formatMessage({
@@ -249,7 +229,7 @@ class ContactUsFormComponent extends Component {
             });
 
             const termsAndConditionsRequired = values =>
-              values && values.length == 0 ? termsAndConditionsRequiredMessage : null;
+              values && values.length === 0 ? termsAndConditionsRequiredMessage : null;
 
             // IBAN
 
@@ -265,7 +245,7 @@ class ContactUsFormComponent extends Component {
               id: 'ContactUsForm.ibanInvalid',
             });
 
-            const ibanRequired = validators.required(listingNameRequiredMessage);
+            const ibanRequired = validators.required(ibanRequiredMessage);
             const ibanInvalid = iban => {
               return ibantools.isValidIBAN(ibantools.electronicFormatIBAN(iban))
                 ? null
@@ -344,10 +324,6 @@ class ContactUsFormComponent extends Component {
 
             // Location
 
-            const locationLabel = intl.formatMessage({
-              id: 'ContactUsForm.locationLabel',
-            });
-
             const locationRequiredMessage = intl.formatMessage({
               id: 'ContactUsForm.locationRequired',
             });
@@ -356,8 +332,6 @@ class ContactUsFormComponent extends Component {
               const location = value ? value.selectedPlace : value;
 
               this.setState({ ...this.state, location });
-              console.log('locationRequired');
-              console.log('this.state', this.state);
               return this.state.location ? null : locationRequiredMessage;
             };
 
@@ -367,15 +341,9 @@ class ContactUsFormComponent extends Component {
               id: 'ContactUsForm.occasionLabel',
             });
 
-            const occasionRequiredMessage = intl.formatMessage({
-              id: 'ContactUsForm.occasionRequiredMessage',
-            });
-
-            const occasionRequired = validators.required(occasionRequiredMessage);
-
             // ...
 
-            const askPhone = enquiry == 'claim';
+            const askPhone = enquiry === 'claim';
 
             const classes = classNames(rootClassName || css.root, className);
 
@@ -384,10 +352,8 @@ class ContactUsFormComponent extends Component {
             ) : null;
 
             const submitInProgress = sendingInProgress;
-            console.log('this.state', this.state);
-            console.log('invalid', invalid);
+
             const submitDisabled = !this.state.location || invalid || submitInProgress;
-            console.log('submitDisabled', submitDisabled);
 
             const phoneField = askPhone ? (
               <FieldPhoneNumberInput
@@ -412,7 +378,7 @@ class ContactUsFormComponent extends Component {
             );
 
             const claimFields =
-              enquiry == 'claim' ? (
+              enquiry === 'claim' ? (
                 <Fragment>
                   {listingNameField}
                   <FieldSelect
@@ -448,12 +414,12 @@ class ContactUsFormComponent extends Component {
                     options={[{ key: 'agreed', label: 'I agree' }]}
                     validate={termsAndConditionsRequired}
                   />
-                  {pristine && !termsAndConditions && termsAndConditionsRequired}
+                  {pristine && !values.termsAndConditions && termsAndConditionsRequired}
                 </Fragment>
               ) : null;
 
             const subjectField =
-              enquiry != 'claim' ? (
+              enquiry !== 'claim' ? (
                 <FieldTextInput
                   key="subject"
                   className={css.subject}
@@ -466,7 +432,7 @@ class ContactUsFormComponent extends Component {
               ) : null;
 
             const payementInfoFields =
-              enquiry == 'changePaymentInfo' ? (
+              enquiry === 'changePaymentInfo' ? (
                 <Fragment>
                   {listingNameField}
                   <FieldTextInput
@@ -483,7 +449,7 @@ class ContactUsFormComponent extends Component {
               ) : null;
 
             const corporateDealFields =
-              enquiry == 'corporate' ? (
+              enquiry === 'corporate' ? (
                 <Fragment>
                   <FieldTextInput
                     key="organisation"
@@ -499,6 +465,7 @@ class ContactUsFormComponent extends Component {
                     key="organisationSize"
                     id={formId ? `${formId}.organisationSize` : 'organisationSize'}
                     label={organisationSizeLabel}
+                    validate={organisationSizeRequired}
                   >
                     <option value="A">Self-employed</option>
                     <option value="B">1-10 employees</option>
@@ -524,7 +491,7 @@ class ContactUsFormComponent extends Component {
               ) : null;
 
             const emailField =
-              user.id == null ? (
+              user.id === null ? (
                 <FieldTextInput
                   type="email"
                   name="email"
@@ -537,7 +504,7 @@ class ContactUsFormComponent extends Component {
               ) : null;
 
             const recommandPubFields =
-              enquiry == 'recommandPub' ? (
+              enquiry === 'recommandPub' ? (
                 <Fragment>
                   <FieldTextInput
                     type="text"
@@ -583,7 +550,6 @@ class ContactUsFormComponent extends Component {
                     ? { ...values, email: user.attributes.email }
                     : values;
                   this.submittedValues = valuesWithEmail;
-                  console.log('this.submittedValues', this.submittedValues);
                   handleSubmit(e);
                 }}
               >
@@ -593,7 +559,7 @@ class ContactUsFormComponent extends Component {
                     key="enquiry"
                     id={formId ? `${formId}.enquiry` : 'enquiry'}
                     label={enquiryLabel}
-                    defaultValue="claim"
+                    defaultValue="general"
                     disabled={finalFormProps.enquiry !== undefined}
                   >
                     <option value="general">General Enquiry</option>
@@ -603,7 +569,7 @@ class ContactUsFormComponent extends Component {
                     <option value="privacy">Privacy Enquiry</option>
                     <option value="changePaymentInfo">Change payement informations</option>
                     <option value="corporate">Corporate Benefits Enquiries</option>
-                    <option value="recommandPub">Recommand a pub</option>
+                    <option value="recommendPub">Recommend a pub</option>
                   </FieldSelect>
 
                   {emailField}
@@ -636,6 +602,15 @@ class ContactUsFormComponent extends Component {
                   >
                     <FormattedMessage id="ContactUsForm.sendMessage" />
                   </PrimaryButton>
+                  <OrDivider />
+                  <PrimaryButton
+                    className={css.scheduleCallback}
+                    type="submit"
+                    onClick={() => window.open('https://calendly.com/celebr8/30min', '_blank')}
+                    inProgress={submitInProgress}
+                  >
+                    <FormattedMessage id="ContactUsForm.scheduleCallback" />
+                  </PrimaryButton>
                 </div>
                 {sendingErrorRendered}
               </Form>
@@ -658,7 +633,7 @@ ContactUsFormComponent.defaultProps = {
   subject: null,
 };
 
-const { bool, func, string } = PropTypes;
+const { bool, string } = PropTypes;
 
 ContactUsFormComponent.propTypes = {
   rootClassName: string,

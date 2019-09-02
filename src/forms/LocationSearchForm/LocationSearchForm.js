@@ -1,10 +1,9 @@
-import React from 'react';
-import { func, string } from 'prop-types';
-import { Form as FinalForm, Field } from 'react-final-form';
-import { intlShape, injectIntl } from 'react-intl';
 import classNames from 'classnames';
+import { func, string } from 'prop-types';
+import React from 'react';
+import { Field, Form as FinalForm } from 'react-final-form';
+import { injectIntl, intlShape } from 'react-intl';
 import { Form, LocationAutocompleteInput } from '../../components';
-
 import css from './LocationSearchForm.css';
 
 const LocationSearchFormComponent = props => {

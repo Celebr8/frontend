@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
@@ -15,7 +15,6 @@ import {
   LayoutWrapperTopbar,
   LayoutWrapperFooter,
   Footer,
-  FAQ,
   NamedLink,
 } from '../../../components';
 import config from '../../../config';
@@ -67,12 +66,12 @@ class FAQPagePanelsBase extends React.Component {
         <ExpansionPanel expanded={expanded === 'panel1'} onChange={this.handleChange('panel1')}>
           <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
             <Typography className={classes.headingNoDetails}>
-              <b>How does Whichost work?</b>
+              <b>How does Celebr8 work?</b>
             </Typography>
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <Typography>
-              Whichost is a marketplace for booking some of the most unique and amazing spaces for
+              Celebr8 is a marketplace for booking some of the most unique and amazing spaces for
               your parties and celebrations. We connect you with the businesses you love and new
               ones you might not have thought about previously. You can search for pubs, compare
               prices and amenities, request to book, and easily and securely pay through our
@@ -83,7 +82,7 @@ class FAQPagePanelsBase extends React.Component {
         <ExpansionPanel expanded={expanded === 'panel2'} onChange={this.handleChange('panel2')}>
           <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
             <Typography className={classes.headingNoDetails}>
-              <b>What does Whichost do?</b>
+              <b>What does Celebr8 do?</b>
             </Typography>
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
@@ -99,7 +98,7 @@ class FAQPagePanelsBase extends React.Component {
         <ExpansionPanel expanded={expanded === 'panel3'} onChange={this.handleChange('panel3')}>
           <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
             <Typography className={classes.headingNoDetails}>
-              <b>What if my business is not a pub? Can I list it on Whichost?</b>
+              <b>What if my business is not a pub? Can I list it on Celebr8?</b>
             </Typography>
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
@@ -107,21 +106,23 @@ class FAQPagePanelsBase extends React.Component {
               Our marketplace is a platform initially designed for pubs. However, we understand that
               some businesses may have a similar customer audience and business operation as pubs
               do. If you believe your business can be listed in our marketplace, please email us at
-              grow@whichost.com.
+              grow@celebr8.co.
             </Typography>
           </ExpansionPanelDetails>
         </ExpansionPanel>
         <ExpansionPanel expanded={expanded === 'panel4'} onChange={this.handleChange('panel4')}>
           <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
             <Typography className={classes.headingNoDetails}>
-              <b>How does the Whichost pricing work?</b>
+              <b>How does the Celebr8 pricing work?</b>
             </Typography>
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <Typography>
-              Whichost has a simple, straightforward pricing where you pay as you go. No setup,
+              <p>
+              Celebr8 has a simple, straightforward pricing where you pay as you go. No setup,
               monthly or hidden fees. You can review all the details in our{' '}
               <NamedLink name="FeesPage">Fees page</NamedLink>.
+              </p>
             </Typography>
           </ExpansionPanelDetails>
         </ExpansionPanel>
@@ -133,13 +134,15 @@ class FAQPagePanelsBase extends React.Component {
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <Typography>
-              We understand that for the longest time most parties have been booked without any
-              upfront payment. However, the users' behaviour is changing and more and more they are
-              getting used to having to pay upfront for all types of bookings. Charging upfront for
-              users to requesting a booking at your business makes them have skin on the game, which
-              will significantly reduce the probability of a no-show. As an idea, you can always
-              tell your customers that the money they pay for the booking will be used as credit for
-              their receipt.
+              <p>
+                We understand that for the longest time most parties have been booked without any
+                upfront payment. However, the users' behaviour is changing and more and more they
+                are getting used to having to pay upfront for all types of bookings. Charging
+                upfront for users to requesting a booking at your business makes them have skin on
+                the game, which will significantly reduce the probability of a no-show. As an idea,
+                you can always tell your customers that the money they pay for the booking will be
+                used as credit for their receipt.
+              </p>
             </Typography>
           </ExpansionPanelDetails>
         </ExpansionPanel>
@@ -151,7 +154,7 @@ class FAQPagePanelsBase extends React.Component {
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <Typography>
-              When you mark a booking as No-Show, three things will happen:
+              <p>When you mark a booking as No-Show, three things will happen:</p>
               <ol>
                 <li>We will refund you for that booking;</li>
                 <li>The customer will be notified of the No-Show;</li>
@@ -174,23 +177,26 @@ class FAQPagePanelsBase extends React.Component {
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <Typography>
-              In cases where you charge a booking fee depending on group size, we recommend you
-              having different listings since you can limit the number of people who can attend and
-              the price per hour, per listing.
-              <br />
-              <br />
-              So, in one listing you set the limit of the group size to the maximum number of people
-              where the booking fee is a set price. To give you an idea, let's say for example that
-              you usually charge a booking fee if the group size is more than 20 people. In this
-              first listing, you set the maximum group size limit to 20. Up to 20 people, you will
-              charge a minimum amount for the booking.
-              <br />
-              <br />
-              In the second listing, you set the minimum group size to 21 (because this is where you
-              start charging a different price for the booking) and the maximum depending on how
-              many people you can receive. Let's say for example your pub can receive 50 people. So
-              in this second listing, the group size limits are a minimum of 20 and a maximum of 50
-              people, and in this listing you set up a different booking fee.
+              <p>
+                In cases where you charge a booking fee depending on group size, we recommend you
+                having different listings since you can limit the number of people who can attend
+                and the price per hour, per listing.
+              </p>
+              <p>
+                So, in one listing you set the limit of the group size to the maximum number of
+                people where the booking fee is a set price. To give you an idea, let's say for
+                example that you usually charge a booking fee if the group size is more than 20
+                people. In this first listing, you set the maximum group size limit to 20. Up to 20
+                people, you will charge a minimum amount for the booking.
+              </p>
+              <p>
+                {' '}
+                In the second listing, you set the minimum group size to 21 (because this is where
+                you start charging a different price for the booking) and the maximum depending on
+                how many people you can receive. Let's say for example your pub can receive 50
+                people. So in this second listing, the group size limits are a minimum of 20 and a
+                maximum of 50 people, and in this listing you set up a different booking fee.
+              </p>
             </Typography>
           </ExpansionPanelDetails>
         </ExpansionPanel>
@@ -202,14 +208,16 @@ class FAQPagePanelsBase extends React.Component {
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <Typography>
-              At Whichost we believe for-profit organisations not only have a responsibility to
+              <p>
+              At Celebr8 we believe for-profit organisations not only have a responsibility to
               provide value to society, but also a responsibility to give back so we can all live in
               a better world!
-              <br />
-              <br />
-              That's why at Whichost, every three months, we will take 6% of our revenue and donate
+              </p>
+              <p>
+              That's why at Celebr8, every three months, we will take 6% of our revenue and donate
               it to local non-profit organisations that are focused on making this world a better
               place.
+              </p>             
             </Typography>
           </ExpansionPanelDetails>
         </ExpansionPanel>
@@ -221,10 +229,12 @@ class FAQPagePanelsBase extends React.Component {
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <Typography>
-              You can discover and browse pubs without creating an account. To message a pub,
-              request a booking, or list your pub you will be prompted to create a user account. All
-              user accounts require an email verification. You must also add further verification
-              and payment information when listing your pub.
+              <p>
+                You can discover and browse pubs without creating an account. To message a pub,
+                request a booking, or list your pub you will be prompted to create a user account.
+                All user accounts require an email verification. You must also add further
+                verification and payment information when listing your pub.
+              </p>
             </Typography>
           </ExpansionPanelDetails>
         </ExpansionPanel>
@@ -236,9 +246,11 @@ class FAQPagePanelsBase extends React.Component {
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <Typography>
-              The ideal image ratio should be 3:2, for example 750x500 pixels or 1500x1000 pixels.
-              You can use a basic image editor (like "Paint") or some online tools like "Cropp.me"
-              or "Cut My Pic".
+              <p>
+                The ideal image ratio should be 3:2, for example 750x500 pixels or 1500x1000 pixels.
+                You can use a basic image editor (like "Paint") or some online tools like "Cropp.me"
+                or "Cut My Pic".
+              </p>
             </Typography>
           </ExpansionPanelDetails>
         </ExpansionPanel>
@@ -250,10 +262,12 @@ class FAQPagePanelsBase extends React.Component {
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <Typography>
-              Whichost is an open platform marketplace that aims to operate worldwide. However, at
+              <p>
+              Celebr8 is an open platform marketplace that aims to operate worldwide. However, at
               this stage, we will only operate in Ireland. We will make announcements as we open
               operations in more countries. We are a fresh bootstrap startup on a mission, located
               in Cork, Ireland.
+              </p>
             </Typography>
           </ExpansionPanelDetails>
         </ExpansionPanel>
@@ -265,15 +279,17 @@ class FAQPagePanelsBase extends React.Component {
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <Typography>
-              Please, feel free to contact us at{' '}
-              <a href="mailto:support@whichost.com?subject=Help Center Question" target="_blank">
-                support@whichost.com
-              </a>{' '}
-              or by clicking{' '}
-              <NamedLink name="ContactUsPage" enquiry="general">
-                here
-              </NamedLink>
-              . We'll be happy to answer all of your questions.
+              <p>
+                Please, feel free to contact us at{' '}
+                <a href="mailto:support@celebr8.co?subject=Help Center Question">
+                  support@celebr8.co
+                </a>{' '}
+                or by clicking{' '}
+                <NamedLink name="ContactUsPage" enquiry="general">
+                  here
+                </NamedLink>
+                . We'll be happy to answer all of your questions.
+              </p>
             </Typography>
           </ExpansionPanelDetails>
         </ExpansionPanel>
@@ -282,41 +298,43 @@ class FAQPagePanelsBase extends React.Component {
         <ExpansionPanel expanded={expanded === 'panel13'} onChange={this.handleChange('panel13')}>
           <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
             <Typography className={classes.headingNoDetails}>
-              <b>Why should I list my pub on Whichost?</b>
+              <b>Why should I list my pub on Celebr8?</b>
             </Typography>
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <Typography>
               <ol>
                 <li>Get new customers from around the world.</li>
-                Whichost allows you to showcase your pub to the millions of locals and tourists that
+                <p>
+                Celebr8 allows you to showcase your pub to the millions of locals and tourists that
                 move through your country every year, in a way that you couldn’t before. Locals,
                 just as tourists, love to celebrate and they will need to find a place to do it. Why
                 not at your pub?
-                <br />
-                <br />
+                </p>
+                <p>
                 <li>Generate more revenue.</li>
-                Listing your pub on Whichost opens up a world of new opportunities for new customers
+                Listing your pub on Celebr8 opens up a world of new opportunities for new customers
                 and more parties, thus making you extra cash! You earn more money simply by hosting
                 more parties, at your pub, for locals and travellers from all over the world!
-                <br />
-                <br />
+                </p>
                 <li>Develop long-lasting relationships.</li>
-                It will be easier for your customers to stay in touch with you, no matter where in
-                the world they are. You will be able to build long-lasting relationships with them
-                and increase their potential for repeat bookings and recommendations.
-                <br />
-                <br />
+                <p>
+                  It will be easier for your customers to stay in touch with you, no matter where in
+                  the world they are. You will be able to build long-lasting relationships with them
+                  and increase their potential for repeat bookings and recommendations.
+                </p>
                 <li>Invest in something you couldn't afford before.</li>
-                As a result of generating more revenue by hosting more celebrations at your pub, you
-                can now invest in that new thing you’ve always dreamed of.
-                <br />
-                <br />
+                <p>
+                  As a result of generating more revenue by hosting more celebrations at your pub,
+                  you can now invest in that new thing you’ve always dreamed of.
+                </p>
                 <li>Reason to update your pub (good excuse).</li>
+                <p>
                 There are always things you can do to spruce up your pub but sometimes the
-                motivation is too much of an ask. Becoming a host on Whichost gives you the excuse
+                motivation is too much of an ask. Becoming a host on Celebr8 gives you the excuse
                 to freshen up your pub. It gives you that extra push (and cash) to give the walls a
                 lick of paint or to revamp the furnishings.
+                </p>
               </ol>
             </Typography>
           </ExpansionPanelDetails>
@@ -324,13 +342,14 @@ class FAQPagePanelsBase extends React.Component {
         <ExpansionPanel expanded={expanded === 'panel14'} onChange={this.handleChange('panel14')}>
           <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
             <Typography className={classes.headingNoDetails}>
-              <b>How do I list my pub on Whichost?</b>
+              <b>How do I list my pub on Celebr8?</b>
             </Typography>
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <Typography>
-              Adding your pub to Whichost is easy and only takes a few minutes. Once you’ve created
-              a Whichost account, simply click the “+ Add my pub” at the top right. Please note that
+              <p>
+              Adding your pub to Celebr8 is easy and only takes a few minutes. Once you’ve created
+              a Celebr8 account, simply click the “+ Add my pub” at the top right. Please note that
               all listings are subject to review by our team to ensure the safety of our community.
               If you need help with your listing, please{' '}
               <NamedLink name="ContactUsPageEnquiry" params={{ enquiry: 'listing' }}>
@@ -338,12 +357,13 @@ class FAQPagePanelsBase extends React.Component {
               </NamedLink>{' '}
               or email us at{' '}
               <a
-                href="mailto:support@whichost.com?subject=How do I list my pub inquiry"
+                href="mailto:support@celebr8.co?subject=How do I list my pub inquiry"
                 target="_blank"
               >
-                support@whichost.com
+                support@celebr8.co
               </a>
               .
+              </p>
             </Typography>
           </ExpansionPanelDetails>
         </ExpansionPanel>
@@ -355,60 +375,62 @@ class FAQPagePanelsBase extends React.Component {
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <Typography>
-              When listing your pub you first will be prompted to choose one of the two listing
-              types. Here are the main differences between them:
+              <p>
+                When listing your pub you first will be prompted to choose one of the two listing
+                types. Here are the main differences between them:
+              </p>
               <ol>
                 <li>Common Spaces</li>
-                This is the most common listing type. A common space is where you can have more than
-                one booking at the same time. Usually, common spaces are the common areas of your
-                pub.
-                <br />
-                <br />
-                With this type of listing:
-                <br />- you can set up a price per night
-                <br />- the calendar is available and
-                <br />- reviews are available.
-                <br />
-                <br />
-                When a customer requests a booking in your common space it's important for you to
-                keep an eye on the number of people coming, and the parties that you have already
-                accepted for the day requested. Setting up a price will reduce the number of
-                no-shows in your pub and increase the quality of customers. The minimum price you
-                can set up, regardless if you go with per night or per person, is €9.00. We always
-                recommend you indicating to your customers, in the description of your listing, that
-                the payment will be used as credit for their tab since this is a common practice and
-                most customers will expect that. You can list more than one common space if you need
-                to.
-                <br />
-                <br />
+                <p>
+                  This is the most common listing type. A common space is where you can have more
+                  than one booking at the same time. Usually, common spaces are the common areas of
+                  your pub.
+                </p>
+                <p>With this type of listing:</p>
+                <ul>
+                  <li>You can set up a price per night</li>
+                  <li>the calendar is available and</li>
+                  <li>- reviews are available.</li>
+                </ul>
+                <p>
+                  When a customer requests a booking in your common space it's important for you to
+                  keep an eye on the number of people coming, and the parties that you have already
+                  accepted for the day requested. Setting up a price will reduce the number of
+                  no-shows in your pub and increase the quality of customers. The minimum price you
+                  can set up, regardless if you go with per night or per person, is €9.00. We always
+                  recommend you indicating to your customers, in the description of your listing,
+                  that the payment will be used as credit for their tab since this is a common
+                  practice and most customers will expect that. You can list more than one common
+                  space if you need to.
+                </p>
                 <li>Private Spaces</li>
-                This listing type is for those spaces in your pub that customers can book to have
-                private parties. As the name indicates, they are private spaces so as soon as a
-                customer books it, that space will only available for that party and for that period
-                of time.
-                <br />
-                <br />
-                With this type of listing:
-                <br />- you can set up a price per night
-                <br />- the calendar is activated and
-                <br />- reviews are available.
-                <br />
-                <br />
-                You can clearly indicate the days of the week and times in which your private space
-                is available. As a customer requests a booking in your private space and you confirm
-                the booking, that night (or those hours) will be reserved, so no other customer will
-                be able to make a booking request for the same date and times.
-                <br />
-                <br />
-                Setting up a price will reduce the number of no-shows in your pub and increase the
-                quality of customers. The minimum price you can set up, regardless if you go with
-                per night or per hour, is €9.00. We always recommend you indicating to your
-                customers, in the description of your listing, that the payment will be used as
-                credit for their tab since this a common practice and most customers will expect
-                that.
-                <br />
-                <br />
-                You can list more than one private space if you need to.
+                <p>
+                  This listing type is for those spaces in your pub that customers can book to have
+                  private parties. As the name indicates, they are private spaces so as soon as a
+                  customer books it, that space will only available for that party and for that
+                  period of time.
+                </p>
+                <p>With this type of listing:</p>
+                <ul>
+                  <li>you can set up a price per night</li>
+                  <li>the calendar is activated and</li>
+                  <li>- reviews are available.</li>
+                </ul>
+                <p>
+                  You can clearly indicate the days of the week and times in which your private
+                  space is available. As a customer requests a booking in your private space and you
+                  confirm the booking, that night (or those hours) will be reserved, so no other
+                  customer will be able to make a booking request for the same date and times.
+                </p>
+                <p>
+                  Setting up a price will reduce the number of no-shows in your pub and increase the
+                  quality of customers. The minimum price you can set up, regardless if you go with
+                  per night or per hour, is €9.00. We always recommend you indicating to your
+                  customers, in the description of your listing, that the payment will be used as
+                  credit for their tab since this a common practice and most customers will expect
+                  that.
+                </p>
+                <p>You can list more than one private space if you need to.</p>
               </ol>
             </Typography>
           </ExpansionPanelDetails>
@@ -421,7 +443,7 @@ class FAQPagePanelsBase extends React.Component {
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <Typography>
-              We currently don't charge anything to list your pub on Whichost. It's completely free.{' '}
+              We currently don't charge anything to list your pub on Celebr8. It's completely free.{' '}
               <NamedLink name="NewListingPage" target="_blank">
                 List your pub now
               </NamedLink>
@@ -437,7 +459,7 @@ class FAQPagePanelsBase extends React.Component {
           <ExpansionPanelDetails>
             <Typography>
               We charge a small amount in form of a deposit. It's only fair.{' '}
-              <NamedLink name="FeesPage" target="_blank">
+              <NamedLink name="FeesPage">
                 Learn more about our fees.
               </NamedLink>
             </Typography>
@@ -451,30 +473,30 @@ class FAQPagePanelsBase extends React.Component {
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <Typography>
-              Whichost is a fresh and self-funded startup. Instead of starting a venture-backed
+              <p>
+              Celebr8 is a fresh and self-funded startup. Instead of starting a venture-backed
               startup that focuses on vanity metrics, revenue at all costs, and expectations of
-              investors, we’ve chosen to keep Whichost a self-funded company. We’ve raised € 0.00 to
+              investors, we’ve chosen to keep Celebr8 a self-funded company. We’ve raised € 0.00 to
               date and this is something that we're incredibly proud of. We would rather build a
-              platform that is so valuable that the community is willing to pay for Whichost, we can
+              platform that is so valuable that the community is willing to pay for Celebr8, we can
               reinvest revenue in the site, and we commit ourselves to building the best online
               community for pubs in the world.
-              <br />
-              <br />
-              If at any time you feel that Whichost's pricing is not worth the nominal fee to
+              </p>
+             <p>
+              If at any time you feel that Celebr8's pricing is not worth the nominal fee to
               support the site, community, and offer the level of service and commitment that we do,
               please contact us <NamedLink name="ContactUsPage">here</NamedLink> or email us at{' '}
-              <a href="mailto:support@whichost.com" target="_blank">
-                support@whichost.com
+              <a href="mailto:support@celebr8.co" target="_blank">
+                support@celebr8.co
               </a>
               . We will cancel your account for you if needed. We would also love to hear your
               feedback (good and bad at{' '}
-              <a href="mailto:feedback@whichost.com" target="_blank">
-                feedback@whichost.com
+              <a href="mailto:feedback@celebr8.co" target="_blank">
+                feedback@celebr8.co
               </a>
-              ), learn more about your pub's needs, and find the best way that Whichost can help
+              ), learn more about your pub's needs, and find the best way that Celebr8 can help
               you.
-              <br />
-              <br />
+              </p>
               <NamedLink name="FeesPage" target="_blank">
                 Learn more about our fees.
               </NamedLink>
@@ -489,12 +511,14 @@ class FAQPagePanelsBase extends React.Component {
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <Typography>
-              Yes! You can add multiple spaces that you have at your pub. To create a listing for
-              one of your spaces just click on{' '}
-              <NamedLink name="NewListingPage" target="_blank">
-                "+Add your pub"
-              </NamedLink>{' '}
-              at the top right.
+              <p>
+                Yes! You can add multiple spaces that you have at your pub. To create a listing for
+                one of your spaces just click on{' '}
+                <NamedLink name="NewListingPage">
+                  "+Add your pub"
+                </NamedLink>{' '}
+                at the top right.
+              </p>
             </Typography>
           </ExpansionPanelDetails>
         </ExpansionPanel>
@@ -506,43 +530,47 @@ class FAQPagePanelsBase extends React.Component {
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <Typography>
-              The ideal image ratio should be 3:2, for example 660x440 pixels or 1500x1000 pixels.
-              <br />
-              <br />
-              If the uploaded image ratio is within 20% of the 3:2 ratio, for example 680x440
-              pixels, it will be cropped to the target ratio (660x440 pixels) to avoid gray bars on
-              the sides. If the image is not even close to the target ratio (e.g. more than 20%
-              should be cropped), for example 1200x440 pixels, no cropping will happen at all.
-              <br />
-              <br />
-              You can use a basic image editor (like Paint) or some online tools like "Cropp.me" or
-              "Cut My Pic".
-              <br />
-              <br />
-              In the case that you don't have quality images of your space(s) and need help with it,
-              please contact us{' '}
-              <NamedLink name="ContactUsPageEnquiry" params={{ enquiry: 'listing' }}>
-                here
-              </NamedLink>{' '}
-              or at{' '}
-              <a href="mailto:support@whichost.com" target="_blank">
-                support@whichost.com
-              </a>{' '}
-              and we'll put you in touch with a photographer.
+              <p>
+                The ideal image ratio should be 3:2, for example 660x440 pixels or 1500x1000 pixels.
+              </p>
+              <p>
+                If the uploaded image ratio is within 20% of the 3:2 ratio, for example 680x440
+                pixels, it will be cropped to the target ratio (660x440 pixels) to avoid gray bars
+                on the sides. If the image is not even close to the target ratio (e.g. more than 20%
+                should be cropped), for example 1200x440 pixels, no cropping will happen at all.
+              </p>
+              <p>
+                You can use a basic image editor (like Paint) or some online tools like "Cropp.me"
+                or "Cut My Pic".
+              </p>
+              <p>
+                In the case that you don't have quality images of your space(s) and need help with
+                it, please contact us{' '}
+                <NamedLink name="ContactUsPageEnquiry" params={{ enquiry: 'listing' }}>
+                  here
+                </NamedLink>{' '}
+                or at{' '}
+                <a href="mailto:support@celebr8.co">
+                  support@celebr8.co
+                </a>{' '}
+                and we'll put you in touch with a photographer.
+              </p>
             </Typography>
           </ExpansionPanelDetails>
         </ExpansionPanel>
         <ExpansionPanel expanded={expanded === 'panel21'} onChange={this.handleChange('panel21')}>
           <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
             <Typography className={classes.headingNoDetails}>
-              <b>How do I price my pub on Whichost?</b>
+              <b>How do I price my pub on Celebr8?</b>
             </Typography>
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <Typography>
+              <p>
               We put pricing in the hands of pubs. You can price your pub at your discretion and
-              please take local rates, taxes, Whichost fees, and other fees into consideration when
+              please take local rates, taxes, Celebr8 fees, and other fees into consideration when
               listing your hourly rate. You can also make the booking at your pub free.
+              </p>
             </Typography>
           </ExpansionPanelDetails>
         </ExpansionPanel>
@@ -554,12 +582,14 @@ class FAQPagePanelsBase extends React.Component {
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <Typography>
-              Your listing description should be an accurate description of your space(s),
-              amenities, how it is typically used, and what customers can expect. The community
-              loves discovering new pubs and the more detailed and inspiring you can be, the more
-              booking requests you will receive. You can also mention and detail additional services
-              you offer. If you have particular pub policies, rules, expectations, booking terms,
-              etc please also include this in your listing.
+              <p>
+                Your listing description should be an accurate description of your space(s),
+                amenities, how it is typically used, and what customers can expect. The community
+                loves discovering new pubs and the more detailed and inspiring you can be, the more
+                booking requests you will receive. You can also mention and detail additional
+                services you offer. If you have particular pub policies, rules, expectations,
+                booking terms, etc please also include this in your listing.
+              </p>
             </Typography>
           </ExpansionPanelDetails>
         </ExpansionPanel>
@@ -571,16 +601,17 @@ class FAQPagePanelsBase extends React.Component {
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <Typography>
-              At Whichost we do not have pre-designed cancellation policies since it is very common
+              <p>
+              At Celebr8 we do not have pre-designed cancellation policies since it is very common
               for users to cancel parties even the same day it was schedule to take place.
-              <br />
-              <br />
               We do advise users to cancel as soon as possible to not affect your operation.
-              <br />
-              <br /> If a customer booked your space b ut they didn't showed up, we reccomend you to{' '}
-              <a href="https://docs.google.com/forms/d/1jZ1aH21YDcqelSC3F7628ZWxvOZR2QPacA5lRV8O70c/edit">
+             </p>
+              <p> 
+               If a customer booked your space b ut they didn't showed up, we reccomend you to{' '}
+                <a href="https://docs.google.com/forms/d/1jZ1aH21YDcqelSC3F7628ZWxvOZR2QPacA5lRV8O70c/edit">
                 Report a No-Show.
-              </a>
+                </a>
+              </p>
             </Typography>
           </ExpansionPanelDetails>
         </ExpansionPanel>
@@ -592,10 +623,12 @@ class FAQPagePanelsBase extends React.Component {
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <Typography>
-              Yes. Every listing inside Whichost has its own web address that you can copy and share
+              <p>
+              Yes. Every listing inside Celebr8 has its own web address that you can copy and share
               everywhere. To get your unique web address:
+              </p>
               <ol>
-                <li>Log in to your Whichost account;</li>
+                <li>Log in to your Celebr8 account;</li>
                 <li>
                   Hover over your profile image (top right corner) and click on "Your Listings" in
                   the menu that will appear;
@@ -606,8 +639,10 @@ class FAQPagePanelsBase extends React.Component {
                   of your web browser, inside the address field.
                 </li>
               </ol>
-              Now you can copy and share your unique listing web address everywhere. See below how
-              to use it to add a booking button to your Faceboogk Page.
+              <p>
+                Now you can copy and share your unique listing web address everywhere. See below how
+                to use it to add a booking button to your Facebook Page.
+              </p>
             </Typography>
           </ExpansionPanelDetails>
         </ExpansionPanel>
@@ -619,9 +654,11 @@ class FAQPagePanelsBase extends React.Component {
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <Typography>
-              To add a booking button to your Facebook page, you'll need to have admin, editor,
-              moderator or advertiser rights assigned on the Facebook page. To add a booking button
-              to your page:
+              <p>
+                To add a booking button to your Facebook page, you'll need to have admin, editor,
+                moderator or advertiser rights assigned on the Facebook page. To add a booking
+                button to your page:
+              </p>
               <ol>
                 <li>
                   Click + Add a Button below your Page's cover photo (or hover over your current
@@ -651,12 +688,14 @@ class FAQPagePanelsBase extends React.Component {
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <Typography>
+              <p>
               All accounts that have a pub listing must add payout information in order to receive
-              booking requests. Whichost uses Stripe to power payments. Adding your payout
+              booking requests. Celebr8 uses Stripe to power payments. Adding your payout
               information is easy and can be done in these steps:
+              </p>
               <ol>
                 <li>
-                  When logged into your Whichost account, click on the top right account avatar and
+                  When logged into your Celebr8 account, click on the top right account avatar and
                   then “Account settings” in the drop-down;
                 </li>
                 <li>
@@ -684,10 +723,10 @@ class FAQPagePanelsBase extends React.Component {
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <Typography>
-              You can easily accept a booking request by doing the following:
+              <p>You can easily accept a booking request by doing the following:</p>
               <ol>
                 <li>
-                  When logged into your Whichost account, click on “Inbox” in the top right
+                  When logged into your Celebr8 account, click on “Inbox” in the top right
                   navigation;
                 </li>
                 <li>
@@ -712,22 +751,25 @@ class FAQPagePanelsBase extends React.Component {
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <Typography>
-              You are not required to accept a request and you may decline any request. If you take
-              no action to accept or deny a request, the booking request will automatically expire
-              in 72 hours. If you missed the request by accident, you can message the customer
-              directly from their expired request and suggest that they make another request.
+              <p>
+                You are not required to accept a request and you may decline any request. If you
+                take no action to accept or deny a request, the booking request will automatically
+                expire in 72 hours. If you missed the request by accident, you can message the
+                customer directly from their expired request and suggest that they make another
+                request.
+              </p>
             </Typography>
           </ExpansionPanelDetails>
         </ExpansionPanel>
         <ExpansionPanel expanded={expanded === 'panel29'} onChange={this.handleChange('panel29')}>
           <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
             <Typography className={classes.headingNoDetails}>
-              <b>Does Whichost screen customers?</b>
+              <b>Does Celebr8 screen customers?</b>
             </Typography>
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <Typography>
-              Whichost verifies some information about customers and hosts to help make the
+              Celebr8 verifies some information about customers and hosts to help make the
               community a safer place for everyone. As a host, for added security, you can also ask
               potential customers to provide an official ID.
             </Typography>
@@ -741,21 +783,25 @@ class FAQPagePanelsBase extends React.Component {
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <Typography>
+              <p>
               Trust between pubs and customers is essential. One way to build trust is with rates
               and comments to each other, after a transaction. This is how trust is built with
-              Whichost. After a booking is used, both the pub and the customer can review each
+              Celebr8. After a booking is used, both the pub and the customer can review each
               other. A review consists of:
+              </p>
               <ol>
                 <li>A positive or negative rating (thumbs up or down);</li>
                 <li>A free-form text comment.</li>
               </ol>
-              If you want you can choose not to review the customer. However, you can't refuse a
-              review from the customer after a used booking. Reviews are visible to everyone on each
-              user's profile page. A pub’s rating (percentage of positive ratings and number of
-              ratings) is also shown on each listing page.
-              <br />
-              <br />
-              <i>Please note that reviews are only available for paid transactions.</i>
+              <p>
+                If you want you can choose not to review the customer. However, you can't refuse a
+                review from the customer after a used booking. Reviews are visible to everyone on
+                each user's profile page. A pub’s rating (percentage of positive ratings and number
+                of ratings) is also shown on each listing page.
+              </p>
+              <p>
+                <em>Please note that reviews are only available for paid transactions.</em>
+              </p>
             </Typography>
           </ExpansionPanelDetails>
         </ExpansionPanel>
@@ -767,9 +813,11 @@ class FAQPagePanelsBase extends React.Component {
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <Typography>
-              Currently, it is not possible to edit or delete reviews. If there is an issue with a
-              review, you can contact us <NamedLink name="ContactUsPage">here</NamedLink>
-              and we'll be happy to help.
+              <p>
+                Currently, it is not possible to edit or delete reviews. If there is an issue with a
+                review, you can contact us <NamedLink name="ContactUsPage">here</NamedLink>
+                and we'll be happy to help.
+              </p>
             </Typography>
           </ExpansionPanelDetails>
         </ExpansionPanel>
@@ -781,10 +829,12 @@ class FAQPagePanelsBase extends React.Component {
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <Typography>
-              You have 72 hours (3 days) to either accept or deny a booking request. After 72 hours,
-              the booking request will automatically expire. If you missed the request by accident,
-              you can message the customer directly from their expired request and suggest that they
-              make another request.
+              <p>
+                You have 72 hours (3 days) to either accept or deny a booking request. After 72
+                hours, the booking request will automatically expire. If you missed the request by
+                accident, you can message the customer directly from their expired request and
+                suggest that they make another request.
+              </p>
             </Typography>
           </ExpansionPanelDetails>
         </ExpansionPanel>
@@ -796,10 +846,12 @@ class FAQPagePanelsBase extends React.Component {
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <Typography>
-              Once a booking request is sent, the dates, amount, and details of the booking request
-              cannot be modified. This is a booking agreement, so please note that we require the
-              booking request to be resent with the accurate dates, time, price, and details per our
-              Terms of Service and Community Guidelines.
+              <p>
+                Once a booking request is sent, the dates, amount, and details of the booking
+                request cannot be modified. This is a booking agreement, so please note that we
+                require the booking request to be resent with the accurate dates, time, price, and
+                details per our Terms of Service and Community Guidelines.
+              </p>
             </Typography>
           </ExpansionPanelDetails>
         </ExpansionPanel>
@@ -811,17 +863,19 @@ class FAQPagePanelsBase extends React.Component {
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <Typography>
-              If you offer additional services that are not included in your listings price, you can
-              choose to mention them in your listing's description. This can be done during your
-              initial pub listing creation or by editing it at any time from your dashboard. Please
-              note that we do not offer additional services to be booked part of pub booking
-              currently on our platform and this is outside the Services Agreement.
-              <br />
-              <br />
-              If you want your customers to be able to book your additional services (like finger
-              food or drink vouchers) directly during the initial booking process, please send us a
-              feedback <NamedLink name="ContactUsPage">here</NamedLink>. We appreciate every piece
-              of feedback that we receive from you!
+              <p>
+                If you offer additional services that are not included in your listings price, you
+                can choose to mention them in your listing's description. This can be done during
+                your initial pub listing creation or by editing it at any time from your dashboard.
+                Please note that we do not offer additional services to be booked part of pub
+                booking currently on our platform and this is outside the Services Agreement.
+              </p>
+              <p>
+                If you want your customers to be able to book your additional services (like finger
+                food or drink vouchers) directly during the initial booking process, please send us
+                a feedback <NamedLink name="ContactUsPage">here</NamedLink>. We appreciate every
+                piece of feedback that we receive from you!
+              </p>
             </Typography>
           </ExpansionPanelDetails>
         </ExpansionPanel>
@@ -833,10 +887,12 @@ class FAQPagePanelsBase extends React.Component {
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <Typography>
+              <p>
               We do not currently have a deposit option, but instead only offer full booking
               payments to be accepted on our platform. If you require a deposit, accept a booking
-              request, and do not use Whichost for the full payment of this, please note that this
+              request, and do not use Celebr8 for the full payment of this, please note that this
               is outside our Services Agreement and a Booking Agreement.
+              </p>
             </Typography>
           </ExpansionPanelDetails>
         </ExpansionPanel>
@@ -848,30 +904,37 @@ class FAQPagePanelsBase extends React.Component {
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <Typography>
-              We let pubs exchange messages with customers and bookings directly to communicate
-              availability, changes in dates, booking modifications, and also cancellations. In the
-              event that this can not be agreed upon directly with a customer and pub, you can{' '}
-              <NamedLink name="ContactUsPage">contact us</NamedLink>
+              <p>
+                We let pubs exchange messages with customers and bookings directly to communicate
+                availability, changes in dates, booking modifications, and also cancellations. In
+                the event that this can not be agreed upon directly with a customer and pub, you can{' '}
+                <NamedLink name="ContactUsPage">contact us</NamedLink>
+              </p>
             </Typography>
           </ExpansionPanelDetails>
         </ExpansionPanel>
         <ExpansionPanel expanded={expanded === 'panel37'} onChange={this.handleChange('panel37')}>
           <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
             <Typography className={classes.headingNoDetails}>
-              <b>
-                I accepted a booking request. When will the money for the booking be in my account?
-              </b>
+              <p>
+                <b>
+                  I accepted a booking request. When will the money for the booking be in my
+                  account?
+                </b>
+              </p>
             </Typography>
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <Typography>
-              The amount that you made from the booking will appear in the bank account that you
-              entered in your payout information within a few business days following the booking
-              date. This time period is typically 7-10 business days for the first transfer and is
-              then quicker for following transfers. This process is handled by Stripe. Rest assured
-              that once you accept a booking request, the person that booked your pub has been
-              charged for the booking and paid for it. If you have any questions about this at any
-              time, please <NamedLink name="ContactUsPage">contact us</NamedLink>.
+              <p>
+                The amount that you made from the booking will appear in the bank account that you
+                entered in your payout information within a few business days following the booking
+                date. This time period is typically 7-10 business days for the first transfer and is
+                then quicker for following transfers. This process is handled by Stripe. Rest
+                assured that once you accept a booking request, the person that booked your pub has
+                been charged for the booking and paid for it. If you have any questions about this
+                at any time, please <NamedLink name="ContactUsPage">contact us</NamedLink>.
+              </p>
             </Typography>
           </ExpansionPanelDetails>
         </ExpansionPanel>
@@ -883,9 +946,11 @@ class FAQPagePanelsBase extends React.Component {
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <Typography>
-              You must also legally report income generated from Whichost to your business and it is
+              <p>
+              You must also legally report income generated from Celebr8 to your business and it is
               your responsibility to do so. If you are responsible for charging local taxes on
               services, you must also comply with these regulations.
+              </p>
             </Typography>
           </ExpansionPanelDetails>
         </ExpansionPanel>
@@ -897,8 +962,11 @@ class FAQPagePanelsBase extends React.Component {
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <Typography>
-              Please, feel free to contact us <NamedLink name="ContactUsPage">here</NamedLink>.
-              We'll be happy to answer all of your questions.
+              <p>
+                {' '}
+                Please, feel free to contact us <NamedLink name="ContactUsPage">here</NamedLink>.
+                We'll be happy to answer all of your questions.
+              </p>
             </Typography>
           </ExpansionPanelDetails>
         </ExpansionPanel>
@@ -912,17 +980,19 @@ class FAQPagePanelsBase extends React.Component {
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <Typography>
-              Booking a pub is easy on Whichost and you can do so by creating a user account if you
+              <p>
+              Booking a pub is easy on Celebr8 and you can do so by creating a user account if you
               have not done so already. Once you do, you can then select a pub listing and click
               “Request to book”. On the next page, you will be able to enter a message to the pub
               regarding how you intend to use it, any specific details, requirements, or needs
               regarding the booking request. You can enter your payment information and send the
               booking request to the pub.
-              <br />
-              <br />
+              </p>
+              <p>
               You will only be charged if the pub accepts your booking request within 72 hours (3
               days). If they do not accept or deny your booking request within 72 hours, it will
               automatically expire and you will not be charged.
+              </p>
             </Typography>
           </ExpansionPanelDetails>
         </ExpansionPanel>
@@ -937,34 +1007,40 @@ class FAQPagePanelsBase extends React.Component {
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <Typography>
-              If you are having trouble with a booking request, you can easily message the listing
-              owner directly from the pub listing. Please note that it is against our Community
-              Guidelines to send personal contact information or transact off our platform.
+              <p>
+                If you are having trouble with a booking request, you can easily message the listing
+                owner directly from the pub listing. Please note that it is against our Community
+                Guidelines to send personal contact information or transact off our platform.
+              </p>
             </Typography>
           </ExpansionPanelDetails>
         </ExpansionPanel>
         <ExpansionPanel expanded={expanded === 'panel42'} onChange={this.handleChange('panel42')}>
           <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
             <Typography className={classes.headingNoDetails}>
-              <b>
-                I made a booking request to a pub and I see a hold on my card even though the
-                request was just denied. Is this a charge?
-              </b>
+              <p>
+                <b>
+                  I made a booking request to a pub and I see a hold on my card even though the
+                  request was just denied. Is this a charge?
+                </b>
+              </p>
             </Typography>
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <Typography>
-              When you submit a booking request, a temporary hold is placed on your card until the
-              request is accepted, denied, or it expires. If the request is accepted, your card is
-              charged for the booking request amount. If the booking request is denied or expires,
-              your card is not charged and the amount is no longer held. This time period is
-              dependant on your bank, but holds are typically released by the next business day.
-              Your card will not be charged for denied or expired bookings for any reason. If you
-              have any questions about this, please email us at{' '}
-              <a href="mailto:support@whichost.com?subject=Unauthorized Charge" target="_blank">
-                support@whichost.com
-              </a>
-              .
+              <p>
+                When you submit a booking request, a temporary hold is placed on your card until the
+                request is accepted, denied, or it expires. If the request is accepted, your card is
+                charged for the booking request amount. If the booking request is denied or expires,
+                your card is not charged and the amount is no longer held. This time period is
+                dependant on your bank, but holds are typically released by the next business day.
+                Your card will not be charged for denied or expired bookings for any reason. If you
+                have any questions about this, please email us at{' '}
+                <a href="mailto:support@celebr8.co?subject=Unauthorized%20Charge">
+                  support@celebr8.co
+                </a>
+                .
+              </p>
             </Typography>
           </ExpansionPanelDetails>
         </ExpansionPanel>
@@ -976,17 +1052,21 @@ class FAQPagePanelsBase extends React.Component {
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <Typography>
-              A booking request is not binding, it is simply letting a pub know you intend to book.
-              A request becomes a binding Booking Agreement once accepted by the listing owner or
-              pub. If you sent a request by mistake, need to modify it, or cancel, we eencourage you
-              to immediately notify the pub using our messaging. Each pub listing enforces their own
-              cancellation policy identified on their listing, so please keep this in mind prior to
-              submitting a booking request. If you require assistance with a booking request, you
-              can send us a message at any time at{' '}
-              <a href="mailto:support@whichost.com?subject=Booking Request Inquiry" target="_blank">
-                support@whichost.com
-              </a>
-              .
+              <p>
+                A booking request is not binding, it is simply letting a pub know you intend to
+                book. A request becomes a binding Booking Agreement once accepted by the listing
+                owner or pub. If you sent a request by mistake, need to modify it, or cancel, we
+                eencourage you to immediately notify the pub using our messaging. Each pub listing
+                enforces their own cancellation policy identified on their listing, so please keep
+                this in mind prior to submitting a booking request. If you require assistance with a
+                booking request, you can send us a message at any time at{' '}
+                <a
+                  href="mailto:support@celebr8.co?subject=Booking%20Request%20Inquiry"
+                >
+                  support@celebr8.co
+                </a>
+                .
+              </p>
             </Typography>
           </ExpansionPanelDetails>
         </ExpansionPanel>
@@ -998,12 +1078,14 @@ class FAQPagePanelsBase extends React.Component {
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <Typography>
-              It's really simple! You can do it by sending a message to the pub and indicating that
-              you wish to cancel your booking!
-              <br />
-              <br />
-              Remember to cancel your booking if you cannot make it, this will give other customers
-              the opportunity to book at that pub last minute.
+              <p>
+                It's really simple! You can do it by sending a message to the pub and indicating
+                that you wish to cancel your booking!
+              </p>
+              <p>
+                Remember to cancel your booking if you cannot make it, this will give other
+                customers the opportunity to book at that pub last minute.
+              </p>
             </Typography>
           </ExpansionPanelDetails>
         </ExpansionPanel>
@@ -1015,14 +1097,16 @@ class FAQPagePanelsBase extends React.Component {
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <Typography>
-              You can send multiple requests, but we strongly recommend that you wait to hear back
-              from a pub once you send a request. If the request is urgent, you can contact the pubs
-              over the "Contact" button on the listing page underneath the title of the pub.
-              <br />
-              <br />
-              By contacting the pub over the "Contact" button, you can contact as many pubs as you
-              wish and you don't have to worry that you will end up with more than one booking,
-              since you're sending "just" contact inquiries and not booking requests.
+              <p>
+                You can send multiple requests, but we strongly recommend that you wait to hear back
+                from a pub once you send a request. If the request is urgent, you can contact the
+                pubs over the "Contact" button on the listing page underneath the title of the pub.
+              </p>
+              <p>
+                By contacting the pub over the "Contact" button, you can contact as many pubs as you
+                wish and you don't have to worry that you will end up with more than one booking,
+                since you're sending "just" contact inquiries and not booking requests.
+              </p>
             </Typography>
           </ExpansionPanelDetails>
         </ExpansionPanel>
@@ -1034,9 +1118,11 @@ class FAQPagePanelsBase extends React.Component {
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <Typography>
-              Pubs are typically very responsive and reply back as soon as they receive a booking
-              request. If you do not hear back from a pub regarding your request, you can also send
-              them a message regarding the booking request directly from their listing.
+              <p>
+                Pubs are typically very responsive and reply back as soon as they receive a booking
+                request. If you do not hear back from a pub regarding your request, you can also
+                send them a message regarding the booking request directly from their listing.
+              </p>
             </Typography>
           </ExpansionPanelDetails>
         </ExpansionPanel>
@@ -1048,10 +1134,12 @@ class FAQPagePanelsBase extends React.Component {
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <Typography>
-              Whichost does not require an hourly minimum for pub listings, but we rather let pubs
+              <p>
+              Celebr8 does not require an hourly minimum for pub listings, but we rather let pubs
               individually indicate their hourly minimums directly on their listing. If they mention
               an hourly minimum in their description, please note that they might not accept your
               booking request if it does not comply with their hourly minimum.
+              </p>
             </Typography>
           </ExpansionPanelDetails>
         </ExpansionPanel>
@@ -1063,8 +1151,11 @@ class FAQPagePanelsBase extends React.Component {
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <Typography>
-              Once a booking request has been sent it can not be modified. You can, however, message
-              the pub directly, request for them to cancel, and resubmit another booking request.
+              <p>
+                Once a booking request has been sent it can not be modified. You can, however,
+                message the pub directly, request for them to cancel, and resubmit another booking
+                request.
+              </p>
             </Typography>
           </ExpansionPanelDetails>
         </ExpansionPanel>
@@ -1088,21 +1179,25 @@ class FAQPagePanelsBase extends React.Component {
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <Typography>
+              <p>
               Trust between customers and pubs is very important. One way to build trust is with
               rates and comments to each other, after a transaction. This is how trust is built with
-              Whichost. After a booking is used, both the customer and the pub can review each
+              Celebr8. After a booking is used, both the customer and the pub can review each
               other. A review consists of:
+              </p>
               <ol>
                 <li>A positive or negative rating (thumbs up or down);</li>
                 <li>A free-form text comment.</li>
               </ol>
-              If you want you can choose not to review the pub. However, you can't refuse a review
-              from the pub after a used booking. Reviews are visible to everyone on each user's
-              profile page. As a side note, a pub’s rating (percentage of positive ratings and
-              number of ratings) is also shown on each listing page.
-              <br />
-              <br />
-              <i>Please note that reviews are only available for paid transactions.</i>
+              <p>
+                If you want you can choose not to review the pub. However, you can't refuse a review
+                from the pub after a used booking. Reviews are visible to everyone on each user's
+                profile page. As a side note, a pub’s rating (percentage of positive ratings and
+                number of ratings) is also shown on each listing page.
+              </p>
+              <p>
+                <i>Please note that reviews are only available for paid transactions.</i>
+              </p>
             </Typography>
           </ExpansionPanelDetails>
         </ExpansionPanel>
@@ -1114,45 +1209,51 @@ class FAQPagePanelsBase extends React.Component {
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <Typography>
-              Currently, it is not possible to edit or delete reviews. If there is an issue with a
-              review, you can email us <NamedLink name="ContactUsPage">here</NamedLink> and we'll be
-              happy to help.
+              <p>
+                Currently, it is not possible to edit or delete reviews. If there is an issue with a
+                review, you can email us <NamedLink name="ContactUsPage">here</NamedLink> and we'll
+                be happy to help.
+              </p>
             </Typography>
           </ExpansionPanelDetails>
         </ExpansionPanel>
         <ExpansionPanel expanded={expanded === 'panel52'} onChange={this.handleChange('panel52')}>
           <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
             <Typography className={classes.headingNoDetails}>
-              <b>How can I be safe and cautious when using Whichost?</b>
+              <b>How can I be safe and cautious when using Celebr8?</b>
             </Typography>
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <Typography>
-              While we do everything that we can to build the most trusted community of pubs to
-              book, we rely on the community of users to help us by being proactive and always
-              report any suspicious activity on our platform. We also have{' '}
-              <NamedLink name="CommunityGuidelinesPage" target="_blank">
-                Community Guidelines
-              </NamedLink>{' '}
-              in that outlines this in more detail.
+              <p>
+                While we do everything that we can to build the most trusted community of pubs to
+                book, we rely on the community of users to help us by being proactive and always
+                report any suspicious activity on our platform. We also have{' '}
+                <NamedLink name="CommunityGuidelinesPage" target="_blank">
+                  Community Guidelines
+                </NamedLink>{' '}
+                in that outlines this in more detail.
+              </p>
             </Typography>
           </ExpansionPanelDetails>
         </ExpansionPanel>
         <ExpansionPanel expanded={expanded === 'panel53'} onChange={this.handleChange('panel53')}>
           <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
             <Typography className={classes.headingNoDetails}>
-              <b>Do I have to communicate on Whichost?</b>
+              <b>Do I have to communicate on Celebr8?</b>
             </Typography>
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <Typography>
-              Yes, we ask that you never take communication outside of our platform messaging and
-              never give your contact information prior to entering a Booking Agreement. We also
-              have{' '}
-              <NamedLink name="CommunityGuidelinesPage" target="_blank">
-                Community Guidelines
-              </NamedLink>{' '}
-              in place that outlines this in more detail.
+              <p>
+                Yes, we ask that you never take communication outside of our platform messaging and
+                never give your contact information prior to entering a Booking Agreement. We also
+                have{' '}
+                <NamedLink name="CommunityGuidelinesPage">
+                  Community Guidelines
+                </NamedLink>{' '}
+                in place that outlines this in more detail.
+              </p>
             </Typography>
           </ExpansionPanelDetails>
         </ExpansionPanel>
@@ -1164,8 +1265,10 @@ class FAQPagePanelsBase extends React.Component {
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <Typography>
-              Please, feel free to <NamedLink name="ContactUsPage">contact us</NamedLink>. We'll be
-              happy to answer all of your questions.
+              <p>
+                Please, feel free to <NamedLink name="ContactUsPage">contact us</NamedLink>. We'll
+                be happy to answer all of your questions.
+              </p>
             </Typography>
           </ExpansionPanelDetails>
         </ExpansionPanel>
@@ -1179,20 +1282,22 @@ class FAQPagePanelsBase extends React.Component {
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <Typography>
-              Yes. However, it's not mandatory. We recommend you to have an insurance policy in
-              place for your pub, as we don't cover any damages at the moment.
+              <p>
+                Yes. However, it's not mandatory. We recommend you to have an insurance policy in
+                place for your pub, as we don't cover any damages at the moment.
+              </p>
             </Typography>
           </ExpansionPanelDetails>
         </ExpansionPanel>
         <ExpansionPanel expanded={expanded === 'panel56'} onChange={this.handleChange('panel56')}>
           <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
             <Typography className={classes.headingNoDetails}>
-              <b>Does Whichost offer insurance?</b>
+              <b>Does Celebr8 offer insurance?</b>
             </Typography>
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <Typography>
-              No, Whichost does not offer insurance. We suggest that all pubs adequately ensure
+              No, Celebr8 does not offer insurance. We suggest that all pubs adequately ensure
               their pub, equipment, and premises.
             </Typography>
           </ExpansionPanelDetails>
@@ -1207,11 +1312,13 @@ class FAQPagePanelsBase extends React.Component {
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <Typography>
-              Your Booking Agreement through Whichost is an agreement for a customer to use the pub
+              <p>
+              Your Booking Agreement through Celebr8 is an agreement for a customer to use the pub
               as defined in the listing for the exact date, time period, and for that price. If you
               have further pub requirements, please notify the booking request directly and ensure
               they are aware of these prior to accepting the booking request, prior to the booking
               time, and their arrival.
+              </p>
             </Typography>
           </ExpansionPanelDetails>
         </ExpansionPanel>
@@ -1224,8 +1331,8 @@ class FAQPagePanelsBase extends React.Component {
           <ExpansionPanelDetails>
             <Typography>
               Please, feel free to contact us <NamedLink name="ContactUsPage">here</NamedLink> at{' '}
-              <a href="mailto:support@whichost.com?subject=Help Center Question" target="_blank">
-                support@whichost.com
+              <a href="mailto:support@celebr8.co?subject=Help%20Center%20Question">
+                support@celebr8.co
               </a>
               . We'll be happy to answer all of your questions.
             </Typography>
@@ -1241,7 +1348,7 @@ class FAQPagePanelsBase extends React.Component {
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <Typography>
-              You can create a user account in minutes doing the following:
+              <p>You can create a user account in minutes doing the following:</p>
               <ol>
                 <li>Click “Sign up” at the top right</li>
                 <li>Enter your email address and create a secure password</li>
@@ -1258,10 +1365,10 @@ class FAQPagePanelsBase extends React.Component {
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <Typography>
-              You can reply to messages and accept a booking request by doing the following:
+              <p>You can reply to messages and accept a booking request by doing the following:</p>
               <ol>
                 <li>
-                  When logged into your Whichost account, click on “Inbox” in the top right
+                  When logged into your Celebr8 account, click on “Inbox” in the top right
                   navigation, within your profile picture.
                 </li>
                 <li>
@@ -1297,10 +1404,9 @@ class FAQPagePanelsBase extends React.Component {
             <Typography>
               Please report any suspicious activity immediately by sending us an email at{' '}
               <a
-                href="mailto:support@whichost.com?subject=Suspicious Account Activity"
-                target="_blank"
+                href="mailto:support@celebr8.co?subject=Suspicious%20Account%20Activity"
               >
-                support@whichost.com
+                support@celebr8.co
               </a>
               .
             </Typography>
@@ -1309,17 +1415,15 @@ class FAQPagePanelsBase extends React.Component {
         <ExpansionPanel expanded={expanded === 'panel63'} onChange={this.handleChange('panel63')}>
           <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
             <Typography className={classes.headingNoDetails}>
-              <b>How do I report other users for acting against Whichost policies?</b>
+              <b>How do I report other users for acting against Celebr8 policies?</b>
             </Typography>
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <Typography>
               Please report any suspicious activity or users immediately by sending us an email at{' '}
-              <a
-                href="mailto:support@whichost.com?subject=User acting against Whichost policies"
-                target="_blank"
-              >
-                support@whichost.com
+              <a href="mailto:support@celebr8.co?subject=User acting against Celebr8 policies"
+                target="_blank">
+                support@celebr8.co
               </a>
               .
             </Typography>
@@ -1334,8 +1438,8 @@ class FAQPagePanelsBase extends React.Component {
           <ExpansionPanelDetails>
             <Typography>
               Please, feel free to contact us at{' '}
-              <a href="mailto:support@whichost.com?subject=Help Center Question" target="_blank">
-                support@whichost.com
+              <a href="mailto:support@celebr8.co?subject=Help%20Center%20Question">
+                support@celebr8.co
               </a>
               . We'll be happy to answer all of your questions.
             </Typography>

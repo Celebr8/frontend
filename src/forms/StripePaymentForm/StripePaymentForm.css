@@ -37,8 +37,7 @@
 .messageHeading,
 .timeHeading,
 .occasionHeading,
-.attendanceHeading
-{
+.attendanceHeading {
   margin: 16px 0 14px 0;
   color: var(--matterColorAnti);
 
@@ -50,8 +49,7 @@
 .messageLabel,
 .timeLabel,
 .occasionLabel,
-.attendanceLabel 
-{
+.attendanceLabel {
   margin: 0 0 5px 0;
 
   @media (--viewportMedium) {
@@ -63,15 +61,13 @@
   color: var(--matterColorAnti);
 }
 
-
 .message,
 .time,
 .occasion,
-.attendance
-{
+.attendance {
   border-bottom-color: var(--matterColorAnti);
-	margin-top: 16px;
-	margin-bottom: 16px;
+  margin-top: 16px;
+  margin-bottom: 16px;
 }
 
 .submitContainer {
@@ -99,11 +95,10 @@
 .validTime,
 .validAttendance {
   color: var(--matterColorAnti);
-	font-size: 15px;
-	margin-bottom: 16px;
-	margin-top: 0px;
+  font-size: 15px;
+  margin-bottom: 16px;
+  margin-top: 0px;
 }
-
 
 .submitButton {
   margin-top: 22px;
