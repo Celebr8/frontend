@@ -106,7 +106,7 @@ const siteTwitterHandle = '@Celebr8Anywhere';
 const siteInstagramPage = 'https://www.instagram.com/celebr8anywhere/';
 
 // Facebook page is used in SEO schema (http://schema.org/Organization)
-const siteFacebookPage = 'https://www.facebook.com/Whichost/';
+const siteFacebookPage = 'https://www.facebook.com/celebr8anywhere/';
 
 // Facebook counts shares with app or page associated by this id
 // Currently it is unset, but you can read more about fb:app_id from
