@@ -304,3 +304,7 @@
   stroke: var(--matterColorLight);
   fill: var(--matterColorLight);
 }
+
+table {
+  margin-top: 8px !important;
+}
