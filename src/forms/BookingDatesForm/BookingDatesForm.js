@@ -1,17 +1,16 @@
-import React, { Component } from 'react';
-import { string, bool, arrayOf } from 'prop-types';
-import { compose } from 'redux';
-import { Form as FinalForm } from 'react-final-form';
-import { FormattedMessage, intlShape, injectIntl } from 'react-intl';
 import classNames from 'classnames';
 import moment from 'moment';
-import { required } from '../../util/validators';
-import { propTypes } from '../../util/types';
+import { arrayOf, bool, string } from 'prop-types';
+import React, { Component } from 'react';
+import { Form as FinalForm } from 'react-final-form';
+import { FormattedMessage, injectIntl, intlShape } from 'react-intl';
+import { compose } from 'redux';
+import { FieldDateInput, Form, PrimaryButton } from '../../components';
 import config from '../../config';
-import { Form, PrimaryButton, FieldDateInput } from '../../components';
-import EstimatedBreakdownMaybe from './EstimatedBreakdownMaybe';
-
+import { propTypes } from '../../util/types';
+import { required } from '../../util/validators';
 import css from './BookingDatesForm.css';
+import EstimatedBreakdownMaybe from './EstimatedBreakdownMaybe';
 
 export class BookingDatesFormComponent extends Component {
   constructor(props) {
