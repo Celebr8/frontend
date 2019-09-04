@@ -1,11 +1,11 @@
 @import '../../marketplace.css';
 
-.root {
-}
+.root {}
 
 .pageRoot {
   display: flex;
   padding-bottom: 90px;
+
   @media (--viewportLarge) {
     padding-bottom: 0;
   }
@@ -20,8 +20,7 @@
   margin: 24px;
 }
 
-.sectionImages {
-}
+.sectionImages {}
 
 .threeToTwoWrapper {
   /* Layout */
@@ -40,15 +39,19 @@
 
 /* Firefox doesn't support image aspect ratio inside flexbox */
 .aspectWrapper {
-  position: relative; /* allow positioning own listing action bar */
-  padding-bottom: 66.6667%; /* 3:2 Aspect Ratio */
-  background-color: var(--matterColorNegative); /* Loading BG color */
+  position: relative;
+  /* allow positioning own listing action bar */
+  padding-bottom: 66.6667%;
+  /* 3:2 Aspect Ratio */
+  background-color: var(--matterColorNegative);
+  /* Loading BG color */
 
   /* Image carousel can be opened from the image, therefore we should show a pointer */
   cursor: pointer;
 
   @media (--viewportMedium) {
-    padding-bottom: 0; /* No fixed aspect on desktop layouts */
+    padding-bottom: 0;
+    /* No fixed aspect on desktop layouts */
   }
 }
 
@@ -61,7 +64,8 @@
   width: calc(100% - 26px);
   color: var(--matterColorNegative);
   background-color: var(--matterColor);
-  z-index: 1; /* bring on top of mobile image */
+  z-index: 1;
+  /* bring on top of mobile image */
 
   /* Action bar prevents the image click events going to the parent and
    should not show a pointer */
@@ -231,6 +235,7 @@
 }
 
 .bookingPanel {
+
   @media (--viewportLarge) {
     display: block;
     margin-top: 95px;
@@ -271,12 +276,14 @@
   display: flex;
 
   @media (--viewportMedium) {
-    display: none; /* Hide the medium avatar from the bigger screens */
+    display: none;
+    /* Hide the medium avatar from the bigger screens */
   }
 }
 
 .avatarDesktop {
-  display: none; /* Hide the large avatar from the smaller screens */
+  display: none;
+  /* Hide the large avatar from the smaller screens */
 
   @media (--viewportMedium) {
     display: flex;
@@ -292,6 +299,7 @@
     margin-bottom: 53px;
   }
 }
+
 .desktopPriceContainer {
   display: none;
 
@@ -347,6 +355,7 @@
   width: 100%;
   margin-top: 0;
   margin-bottom: 0;
+
   @media (--viewportMedium) {
     margin-top: 0;
     margin-bottom: 5px;
@@ -412,6 +421,7 @@
 
   margin-top: 0;
   margin-bottom: 13px;
+
   @media (--viewportMedium) {
     margin-top: 0;
     margin-bottom: 20px;
@@ -435,6 +445,7 @@
 
   margin-top: 0;
   margin-bottom: 16px;
+
   @media (--viewportMedium) {
     margin-top: 0;
     margin-bottom: 20px;
@@ -458,6 +469,7 @@
 
   margin-top: 0;
   margin-bottom: 16px;
+
   @media (--viewportMedium) {
     margin-top: 0;
     margin-bottom: 20px;
@@ -481,6 +493,7 @@
 
   margin-top: 0;
   margin-bottom: 16px;
+
   @media (--viewportMedium) {
     margin-top: 0;
     margin-bottom: 20px;
@@ -504,11 +517,13 @@
 
   margin-top: 0;
   margin-bottom: 16px;
+
   @media (--viewportMedium) {
     margin-top: 0;
     margin-bottom: 20px;
   }
 }
+
 .description {
   margin-top: 0;
   margin-bottom: 0;
@@ -539,6 +554,7 @@
 
   margin-top: 0;
   margin-bottom: 20px;
+
   @media (--viewportMedium) {
     margin-top: 0;
     margin-bottom: 28px;
@@ -552,6 +568,7 @@
   @media (--viewportMedium) {
     padding: 0;
   }
+
   @media (--viewportLarge) {
     margin-bottom: 3px;
   }
@@ -566,6 +583,7 @@
   @media (--viewportMedium) {
     margin: 53px 0 27px 0;
   }
+
   @media (--viewportLarge) {
     margin: 50px 0 26px 0;
   }
@@ -579,6 +597,7 @@
   @media (--viewportMedium) {
     padding: 0;
   }
+
   @media (--viewportLarge) {
     margin-bottom: 3px;
   }
@@ -593,6 +612,7 @@
   @media (--viewportMedium) {
     margin: 53px 0 27px 0;
   }
+
   @media (--viewportLarge) {
     margin: 53px 0 27px 0;
   }

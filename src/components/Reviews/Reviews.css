@@ -85,7 +85,7 @@
   /* For aligning rating starts in the middle
    * of a paragraph line */
   display: inline-flex;
-  position: absolute;
+  /* position: absolute; */
   top: 4px;
   white-space: nowrap;
 }
@@ -100,7 +100,7 @@
   }
 }
 
-.reviewCountLable{
+.reviewCountLable {
   margin: 10px 0;
   font-weight: 600;
   color: #b2b2b2;
