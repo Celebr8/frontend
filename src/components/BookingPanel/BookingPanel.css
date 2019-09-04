@@ -47,6 +47,7 @@
   width: 100%;
   margin-top: 0;
   margin-bottom: 0;
+
   @media (--viewportMedium) {
     margin-top: 0;
     margin-bottom: 5px;
@@ -171,6 +172,7 @@
 
   margin-top: 0;
   margin-bottom: 0px;
+
   @media (--viewportMedium) {
     margin-top: 0;
     margin-bottom: 0;
@@ -184,6 +186,7 @@
 
   margin-top: 0;
   margin-bottom: 0px;
+
   @media (--viewportMedium) {
     margin-top: 0;
     margin-bottom: 0;
@@ -207,9 +210,11 @@
 .reviewWrap {
   display: none;
 }
-@media(min-width: 1024px){
+
+@media(min-width: 1024px) {
   .reviewWrap {
     margin: 40px 0 40px 0px;
     display: block;
+    padding-right: 8px;
   }
 }
