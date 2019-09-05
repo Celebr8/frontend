@@ -9,7 +9,6 @@ import { FormattedMessage, injectIntl, intlShape } from 'react-intl';
 import { Form as FinalForm } from 'react-final-form';
 import classNames from 'classnames';
 import { Form, PrimaryButton, ExpandingTextarea, NamedLink } from '../../components';
-import * as log from '../../util/log';
 import config from '../../config';
 import { propTypes } from '../../util/types';
 
@@ -160,6 +159,9 @@ class StripePaymentForm extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
+    // FWT v2.17.0 update
+    const { onSubmit, stripePaymentTokenInProgress, stripePaymentToken } = this.props;
+
 
     const values = {
       time: this.state.time,
@@ -168,7 +170,6 @@ class StripePaymentForm extends Component {
       occasion: this.state.occasion,
     };
 
-    const { intl, onSubmit, stripePaymentTokenInProgress, stripePaymentToken } = this.props;
     const initialMessage = values.initialMessage ? values.initialMessage.trim() : null;
 
     if (stripePaymentTokenInProgress || !this.state.cardValueValid) {
@@ -176,45 +177,9 @@ class StripePaymentForm extends Component {
       return;
     }
 
-    if (this.state.token) {
-      // Token already fetched for the current card value
-      onSubmit({
-        token: this.state.token,
-        ...values,
-      });
-      return;
-    }
-
-    this.setState({ submitting: true });
-
-    this.stripe
-      .createToken(this.card)
-      .then(result => {
-        const { error, token } = result;
-        if (error) {
-          this.setState({
-            submitting: false,
-            error: stripeErrorTranslation(intl, error),
-            token: null,
-          });
-        } else {
-          this.setState({ submitting: false, token: token.id });
-          onSubmit({
-            token: token.id,
-            ...values,
-          });
-        }
-      })
-      .catch(e => {
-        log.error(e, 'stripe-payment-form-submit-failed', {
-          stripeErrorType: e.type,
-          stripeErrorCode: e.code,
-        });
-      });
-
     if (stripePaymentToken) {
       // Token already fetched for the current card value
-      onSubmit({ token: stripePaymentToken.id, message: initialMessage });
+      onSubmit({ token: stripePaymentToken, message: this.state.message.trim() });
       return;
     }
 
@@ -224,10 +189,11 @@ class StripePaymentForm extends Component {
     };
 
     this.props.onCreateStripePaymentToken(params).then(() => {
-      onSubmit({ token: this.props.stripePaymentToken.id, message: initialMessage });
+      onSubmit({ token: this.props.stripePaymentToken.id, message: this.state.message.trim() });
     });
   }
 
+  // Celebr8 customisation 
   validAttendance(attendance) {
     if (attendance < 8)
       return this.props.intl.formatMessage({
@@ -355,8 +321,8 @@ class StripePaymentForm extends Component {
               this.cardContainer = el;
             }}
           />
-          {this.state.error && !submitInProgress ? (
-            <span style={{ color: 'red' }}>{this.state.error}</span>
+           {stripePaymentTokenError && !submitInProgress ? (
+          <span style={{ color: 'red' }}>{stripePaymentTokenError}</span>
           ) : null}
         </Fragment>
         <Fragment>
@@ -501,8 +467,8 @@ StripePaymentForm.propTypes = {
   authorDisplayName: string.isRequired,
   showInitialMessageInput: bool,
   onCreateStripePaymentToken: func.isRequired,
-  stripePaymentTokenInProgress: bool,
-  stripePaymentTokenError: propTypes.error,
+  stripePaymentTokenInProgress: bool.isRequired,
+  stripePaymentTokenError: bool.isRequired,
   stripePaymentToken: object,
 };
 
