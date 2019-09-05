@@ -537,17 +537,17 @@ export const createStripePaymentToken = params => dispatch => {
   // so that's why Stripe needs to be passed here and we can't create a new instance.
   const { stripe, card } = params;
 
-  dispatch(createPaymentTokenRequest());
+  dispatch(stripePaymentTokenCreateRequest());
 
   return stripe
     .createToken(card)
     .then(response => {
-      dispatch(createPaymentTokenSuccess(response.token));
+      dispatch(stripePaymentTokenCreateSuccess(response.token));
       return response;
     })
     .catch(err => {
       const e = storableError(err);
-      dispatch(createPaymentTokenError(e));
+      dispatch(stripeAccountCreateError(e));
       const stripeMessage = e.message;
       log.error(err, 'create-stripe-payment-token-failed', { stripeMessage });
       throw e;
