@@ -8,9 +8,10 @@ import PropTypes from 'prop-types';
 import { FormattedMessage, injectIntl, intlShape } from 'react-intl';
 import { Form as FinalForm } from 'react-final-form';
 import classNames from 'classnames';
-import { Form, PrimaryButton, ExpandingTextarea, NamedLink } from '../../components';
+//import { Form, PrimaryButton, ExpandingTextarea, NamedLink } from '../../components';
 import config from '../../config';
 import { propTypes } from '../../util/types';
+import { Form, PrimaryButton, FieldTextInput, NamedLink } from '../../components';
 
 import css from './StripePaymentForm.css';
 
@@ -85,7 +86,6 @@ const initialState = {
   submitting: false,
   cardValueValid: false,
   token: null,
-  message: '',
   attendance: 10,
   time: '20:30',
 };
@@ -157,20 +157,20 @@ class StripePaymentForm extends Component {
     });
   }
 
-  handleSubmit(event) {
-    event.preventDefault();
     // FWT v2.17.0 update
+    handleSubmit(values) {
+
     const { onSubmit, stripePaymentTokenInProgress, stripePaymentToken } = this.props;
-
-
+    const initialMessage = values.initialMessage ? values.initialMessage.trim() : null;
+/*
     const values = {
       time: this.state.time,
       attendance: this.state.attendance,
       message: this.state.message,
       occasion: this.state.occasion,
     };
-
-    const initialMessage = values.initialMessage ? values.initialMessage.trim() : null;
+*/
+    //const initialMessage = values.initialMessage ? values.initialMessage.trim() : null;
 
     if (stripePaymentTokenInProgress || !this.state.cardValueValid) {
       // Already submitting or card value incomplete/invalid
@@ -179,7 +179,7 @@ class StripePaymentForm extends Component {
 
     if (stripePaymentToken) {
       // Token already fetched for the current card value
-      onSubmit({ token: stripePaymentToken, message: this.state.message.trim() });
+      onSubmit({ token: stripePaymentToken.id, message: initialMessage });
       return;
     }
 
@@ -189,7 +189,7 @@ class StripePaymentForm extends Component {
     };
 
     this.props.onCreateStripePaymentToken(params).then(() => {
-      onSubmit({ token: this.props.stripePaymentToken.id, message: this.state.message.trim() });
+      onSubmit({ token: this.props.stripePaymentToken.id, message: initialMessage });
     });
   }
 
@@ -226,15 +226,21 @@ class StripePaymentForm extends Component {
       onChange,
       stripePaymentTokenInProgress,
       stripePaymentTokenError,
+      invalid,
+      handleSubmit,
     } = formRenderProps;
 
     const submitInProgress = stripePaymentTokenInProgress || inProgress;
+    const submitDisabled = invalid || !this.state.cardValueValid || submitInProgress;
+    /*
     const submitDisabled =
       !this.state.cardValueValid ||
       submitInProgress ||
       this.validAttendance(this.state.attendance) ||
       this.validTime(this.state.time);
+    */
     const classes = classNames(rootClassName || css.root, className);
+    
     const cardClasses = classNames(css.card, {
       [css.cardSuccess]: this.state.cardValueValid,
       [css.cardError]: stripePaymentTokenError && !submitInProgress,
@@ -255,7 +261,7 @@ class StripePaymentForm extends Component {
       { name: authorDisplayName }
     );
 
-    // Handle changes
+    /* Handle changes
 
     const handleMessageChange = e => {
       // A change in the message should call the onChange prop with
@@ -267,6 +273,7 @@ class StripePaymentForm extends Component {
         return newState;
       });
     };
+    */
 
     const handleAttendanceChange = e => {
       // A change in the message should call the onChange prop with
@@ -301,12 +308,18 @@ class StripePaymentForm extends Component {
       });
     };
 
+    // FWT v2.17.0 update
     const messageOptionalText = intl.formatMessage({
       id: 'StripePaymentForm.messageOptionalText',
     });
 
-    return (
-      <Form className={classes} onSubmit={this.handleSubmit}>
+    const initialMessageLabel = intl.formatMessage(
+      { id: 'StripePaymentForm.messageLabel' },
+      { messageOptionalText: messageOptionalText }
+    );
+
+    return config.stripe.publishableKey ? (
+      <Form className={classes} onSubmit={handleSubmit}>
         <Fragment>
           <h3 className={css.paymentHeading}>
             <FormattedMessage id="StripePaymentForm.paymentHeading" />
@@ -325,23 +338,19 @@ class StripePaymentForm extends Component {
           <span style={{ color: 'red' }}>{stripePaymentTokenError}</span>
           ) : null}
         </Fragment>
+
         <Fragment>
           <h3 className={css.messageHeading}>
             <FormattedMessage id="StripePaymentForm.messageHeading" />
           </h3>
-          <label className={css.messageLabel} htmlFor={`${formId}-message`}>
-            <FormattedMessage
-              id="StripePaymentForm.messageLabel"
-              values={{ messageOptionalText }}
-            />
-          </label>
 
-          <ExpandingTextarea
+          <FieldTextInput
+            type="textarea"
             id={`${formId}-message`}
-            className={css.message}
+            name="initialMessage"
+            label={initialMessageLabel}
             placeholder={messagePlaceholder}
-            value={this.state.message}
-            onChange={handleMessageChange}
+            className={css.message}
           />
         </Fragment>
 
@@ -433,6 +442,10 @@ class StripePaymentForm extends Component {
           </PrimaryButton>
         </div>
       </Form>
+      ) : (
+        <div className={css.missingStripeKey}>
+          <FormattedMessage id="StripePaymentForm.missingStripeKey" />
+        </div>
     );
   }
 
@@ -467,8 +480,8 @@ StripePaymentForm.propTypes = {
   authorDisplayName: string.isRequired,
   showInitialMessageInput: bool,
   onCreateStripePaymentToken: func.isRequired,
-  stripePaymentTokenInProgress: bool.isRequired,
-  stripePaymentTokenError: bool.isRequired,
+  stripePaymentTokenInProgress: bool,
+  stripePaymentTokenError: propTypes.error,
   stripePaymentToken: object,
 };
 
