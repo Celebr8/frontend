@@ -189,6 +189,7 @@ export const personCreateError = payload => ({
   error: true,
 });
 
+/*
 export const createPaymentTokenRequest = () => ({
   type: CREATE_PAYMENT_TOKEN_REQUEST,
 });
@@ -200,6 +201,23 @@ export const createPaymentTokenSuccess = payload => ({
 
 export const createPaymentTokenError = payload => ({
   type: CREATE_PAYMENT_TOKEN_ERROR,
+  payload,
+  error: true,
+});
+*/
+
+// Upadte 2.17.0
+export const stripePaymentTokenCreateRequest = () => ({
+  type: STRIPE_PAYMENT_TOKEN_CREATE_REQUEST,
+});
+
+export const stripePaymentTokenCreateSuccess = payload => ({
+  type: STRIPE_PAYMENT_TOKEN_CREATE_SUCCESS,
+  payload,
+});
+
+export const stripePaymentTokenCreateError = payload => ({
+  type: STRIPE_PAYMENT_TOKEN_CREATE_ERROR,
   payload,
   error: true,
 });
