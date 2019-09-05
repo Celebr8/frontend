@@ -22,6 +22,7 @@ export const CREATE_PAYMENT_TOKEN_REQUEST = 'app/stripe/CREATE_PAYMENT_TOKEN_REQ
 export const CREATE_PAYMENT_TOKEN_SUCCESS = 'app/stripe/CREATE_PAYMENT_TOKEN_SUCCESS';
 export const CREATE_PAYMENT_TOKEN_ERROR = 'app/stripe/CREATE_PAYMENT_TOKEN_ERROR';
 
+
 // ================ Reducer ================ //
 
 const initialState = {
@@ -100,7 +101,7 @@ export default function reducer(state = initialState, action = {}) {
             : p;
         }),
       };
-
+/*
     case CREATE_PAYMENT_TOKEN_REQUEST:
       return {
         ...state,
@@ -112,6 +113,19 @@ export default function reducer(state = initialState, action = {}) {
     case CREATE_PAYMENT_TOKEN_ERROR:
       console.error(payload);
       return { ...state, stripePaymentTokenError: payload, stripePaymentTokenInProgress: false };
+*/
+// v2.17.0 Update
+case CREATE_PAYMENT_TOKEN_REQUEST:
+  return {
+    ...state,
+    stripePaymentTokenError: null,
+    stripePaymentTokenInProgress: true,
+  };
+case CREATE_PAYMENT_TOKEN_SUCCESS:
+  return { ...state, stripePaymentTokenInProgress: false, stripePaymentToken: payload };
+case CREATE_PAYMENT_TOKEN_ERROR:
+  console.error(payload);
+  return { ...state, stripePaymentTokenError: payload, stripePaymentTokenInProgress: false };
 
     default:
       return state;
@@ -169,6 +183,24 @@ export const personCreateError = payload => ({
   error: true,
 });
 
+/*
+export const createPaymentTokenRequest = () => ({
+  type: CREATE_PAYMENT_TOKEN_REQUEST,
+});
+
+export const createPaymentTokenSuccess = payload => ({
+  type: CREATE_PAYMENT_TOKEN_SUCCESS,
+  payload,
+});
+
+export const createPaymentTokenError = payload => ({
+  type: CREATE_PAYMENT_TOKEN_ERROR,
+  payload,
+  error: true,
+});
+*/
+
+// Upadte 2.17.0
 export const createPaymentTokenRequest = () => ({
   type: CREATE_PAYMENT_TOKEN_REQUEST,
 });
@@ -509,7 +541,7 @@ export const createStripePaymentToken = params => dispatch => {
     })
     .catch(err => {
       const e = storableError(err);
-      dispatch(createPaymentTokenError(e));
+      dispatch(stripeAccountCreateError(e));
       const stripeMessage = e.message;
       log.error(err, 'create-stripe-payment-token-failed', { stripeMessage });
       throw e;

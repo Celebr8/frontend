@@ -25,6 +25,7 @@ import { dateFromLocalToAPI } from '../../util/dates';
 import {
   isTransactionInitiateAmountTooLowError,
   isTransactionInitiateBookingTimeNotAvailableError,
+  isTransactionChargeDisabledError,
   isTransactionInitiateListingNotFoundError,
   isTransactionInitiateMissingStripeAccountError,
   isTransactionZeroPaymentError,
@@ -315,6 +316,7 @@ export class CheckoutPageComponent extends Component {
     );
 
     const isAmountTooLowError = isTransactionInitiateAmountTooLowError(initiateOrderError);
+    const isChargeDisabledError = isTransactionChargeDisabledError(initiateOrderError);
     const isBookingTimeNotAvailableError = isTransactionInitiateBookingTimeNotAvailableError(
       initiateOrderError
     );
@@ -332,6 +334,12 @@ export class CheckoutPageComponent extends Component {
       initiateOrderErrorMessage = (
         <p className={css.orderError}>
           <FormattedMessage id="CheckoutPage.bookingTimeNotAvailableMessage" />
+        </p>
+      );
+    } else if (!listingNotFound && isChargeDisabledError) {
+      initiateOrderErrorMessage = (
+        <p className={css.orderError}>
+          <FormattedMessage id="CheckoutPage.chargeDisabledMessage" />
         </p>
       );
     } else if (!listingNotFound && stripeErrors && stripeErrors.length > 0) {
