@@ -128,6 +128,47 @@ const PanelHeading = props => {
           isCustomerBanned={isCustomerBanned}
         />
       );
+      
+      case HEADING_PAYMENT_PENDING:
+      return isCustomer ? (
+        <HeadingCustomer
+          className={titleClasses}
+          id="TransactionPanel.orderPaymentPendingTitle"
+          values={{ listingLink }}
+          listingDeleted={listingDeleted}
+        />
+      ) : (
+        <HeadingProvider
+          className={titleClasses}
+          id="TransactionPanel.salePaymentPendingTitle"
+          values={{ customerName, listingLink }}
+          isCustomerBanned={isCustomerBanned}
+        >
+          <p className={css.transactionInfoMessage}>
+            <FormattedMessage
+              id="TransactionPanel.salePaymentPendingInfo"
+              values={{ customerName }}
+            />
+          </p>
+        </HeadingProvider>
+      );
+    case HEADING_PAYMENT_EXPIRED:
+      return isCustomer ? (
+        <HeadingCustomer
+          className={titleClasses}
+          id="TransactionPanel.orderPaymentExpiredTitle"
+          values={{ listingLink }}
+          listingDeleted={listingDeleted}
+        />
+      ) : (
+        <HeadingProvider
+          className={titleClasses}
+          id="TransactionPanel.salePaymentExpiredTitle"
+          values={{ customerName, listingLink }}
+          isCustomerBanned={isCustomerBanned}
+        />
+      );
+
     case HEADING_REQUESTED:
       return isCustomer ? (
         <HeadingCustomerWithSubtitle
