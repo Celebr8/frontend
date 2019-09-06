@@ -41,6 +41,10 @@ import localeData from 'react-intl/locale-data/en';
 // If you are using a non-english locale, point `messagesInLocale` to correct .json file
 import messagesInLocale from './translations/fr.json';
 
+// Note that there is also translations in './translations/countryCodes.js' file
+// This file contains ISO 3166-1 alpha-2 country codes, country names and their translations in our default languages
+// This used to collect billing address in StripePaymentAddress on CheckoutPage
+
 // If translation key is missing from `messagesInLocale` (e.g. fr.json),
 // corresponding key will be added to messages from `defaultMessages` (en.json)
 // to prevent missing translation key errors.
