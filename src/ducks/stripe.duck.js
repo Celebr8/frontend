@@ -22,6 +22,8 @@ export const CREATE_PAYMENT_TOKEN_REQUEST = 'app/stripe/CREATE_PAYMENT_TOKEN_REQ
 export const CREATE_PAYMENT_TOKEN_SUCCESS = 'app/stripe/CREATE_PAYMENT_TOKEN_SUCCESS';
 export const CREATE_PAYMENT_TOKEN_ERROR = 'app/stripe/CREATE_PAYMENT_TOKEN_ERROR';
 
+export const CLEAR_PAYMENT_TOKEN = 'app/stripe/CLEAR_PAYMENT_TOKEN';
+
 
 // ================ Reducer ================ //
 
@@ -126,6 +128,8 @@ case CREATE_PAYMENT_TOKEN_SUCCESS:
 case CREATE_PAYMENT_TOKEN_ERROR:
   console.error(payload);
   return { ...state, stripePaymentTokenError: payload, stripePaymentTokenInProgress: false };
+case CLEAR_PAYMENT_TOKEN:
+  return { ...state, stripePaymentToken: null };
 
     default:
       return state;
@@ -214,6 +218,10 @@ export const createPaymentTokenError = payload => ({
   type: CREATE_PAYMENT_TOKEN_ERROR,
   payload,
   error: true,
+});
+
+export const clearPaymentToken = () => ({
+  type: CLEAR_PAYMENT_TOKEN,
 });
 
 // ================ Thunks ================ //
@@ -546,4 +554,8 @@ export const createStripePaymentToken = params => dispatch => {
       log.error(err, 'create-stripe-payment-token-failed', { stripeMessage });
       throw e;
     });
+};
+
+export const clearStripePaymentToken = () => dispatch => {
+  dispatch(clearPaymentToken());
 };
