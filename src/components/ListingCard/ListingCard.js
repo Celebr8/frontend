@@ -86,6 +86,7 @@ export const ListingCardComponent = props => {
     <NamedLink
       className={classes}
       name="ListingPage"
+      newTab={true}
       params={{ id, slug, rating, ratingArray, mode }}
     >
       <div
