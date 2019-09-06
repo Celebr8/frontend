@@ -2,7 +2,11 @@ import pick from 'lodash/pick';
 import config from '../../config';
 import { denormalisedResponseEntities } from '../../util/data';
 import { storableError } from '../../util/errors';
-import { TRANSITION_REQUEST, TRANSITION_REQUEST_AFTER_ENQUIRY } from '../../util/transaction';
+import {
+  TRANSITION_REQUEST_PAYMENT,
+  TRANSITION_REQUEST_PAYMENT_AFTER_ENQUIRY,
+  TRANSITION_CONFIRM_PAYMENT,
+} from '../../util/transaction';
 import * as log from '../../util/log';
 import { fetchCurrentUserHasOrdersSuccess } from '../../ducks/user.duck';
 
@@ -19,6 +23,10 @@ export const INITIATE_ORDER_REQUEST = 'app/CheckoutPage/INITIATE_ORDER_REQUEST';
 export const INITIATE_ORDER_SUCCESS = 'app/CheckoutPage/INITIATE_ORDER_SUCCESS';
 export const INITIATE_ORDER_ERROR = 'app/CheckoutPage/INITIATE_ORDER_ERROR';
 
+export const CONFIRM_PAYMENT_REQUEST = 'app/CheckoutPage/CONFIRM_PAYMENT_REQUEST';
+export const CONFIRM_PAYMENT_SUCCESS = 'app/CheckoutPage/CONFIRM_PAYMENT_SUCCESS';
+export const CONFIRM_PAYMENT_ERROR = 'app/CheckoutPage/CONFIRM_PAYMENT_ERROR';
+
 export const SPECULATE_TRANSACTION_REQUEST = 'app/ListingPage/SPECULATE_TRANSACTION_REQUEST';
 export const SPECULATE_TRANSACTION_SUCCESS = 'app/ListingPage/SPECULATE_TRANSACTION_SUCCESS';
 export const SPECULATE_TRANSACTION_ERROR = 'app/ListingPage/SPECULATE_TRANSACTION_ERROR';
@@ -32,8 +40,9 @@ const initialState = {
   speculateTransactionInProgress: false,
   speculateTransactionError: null,
   speculatedTransaction: null,
-  enquiredTransaction: null,
+  transaction: null,
   initiateOrderError: null,
+  confirmPaymentError: null,
 };
 
 export default function checkoutPageReducer(state = initialState, action = {}) {
@@ -66,10 +75,19 @@ export default function checkoutPageReducer(state = initialState, action = {}) {
     case INITIATE_ORDER_REQUEST:
       return { ...state, initiateOrderError: null };
     case INITIATE_ORDER_SUCCESS:
-      return state;
+      return { ...state, transaction: payload };
     case INITIATE_ORDER_ERROR:
       console.error(payload); // eslint-disable-line no-console
       return { ...state, initiateOrderError: payload };
+
+    case CONFIRM_PAYMENT_REQUEST:
+      return { ...state, confirmPaymentError: null };
+    case CONFIRM_PAYMENT_SUCCESS:
+      return state;
+    case CONFIRM_PAYMENT_ERROR:
+      console.error(payload); // eslint-disable-line no-console
+      return { ...state, confirmPaymentError: payload };
+
     default:
       return state;
   }
