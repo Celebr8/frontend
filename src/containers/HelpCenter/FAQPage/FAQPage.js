@@ -119,9 +119,9 @@ class FAQPagePanelsBase extends React.Component {
           <ExpansionPanelDetails>
             <Typography>
               <p>
-              Celebr8 has a simple, straightforward pricing where you pay as you go. No setup,
-              monthly or hidden fees. You can review all the details in our{' '}
-              <NamedLink name="FeesPage">Fees page</NamedLink>.
+                Celebr8 has a simple, straightforward pricing where you pay as you go. No setup,
+                monthly or hidden fees. You can review all the details in our{' '}
+                <NamedLink name="FeesPage">Fees page</NamedLink>.
               </p>
             </Typography>
           </ExpansionPanelDetails>
@@ -209,15 +209,15 @@ class FAQPagePanelsBase extends React.Component {
           <ExpansionPanelDetails>
             <Typography>
               <p>
-              At Celebr8 we believe for-profit organisations not only have a responsibility to
-              provide value to society, but also a responsibility to give back so we can all live in
-              a better world!
+                At Celebr8 we believe for-profit organisations not only have a responsibility to
+                provide value to society, but also a responsibility to give back so we can all live
+                in a better world!
               </p>
               <p>
-              That's why at Celebr8, every three months, we will take 6% of our revenue and donate
-              it to local non-profit organisations that are focused on making this world a better
-              place.
-              </p>             
+                That's why at Celebr8, every three months, we will take 6% of our revenue and donate
+                it to local non-profit organisations that are focused on making this world a better
+                place.
+              </p>
             </Typography>
           </ExpansionPanelDetails>
         </ExpansionPanel>
@@ -263,10 +263,10 @@ class FAQPagePanelsBase extends React.Component {
           <ExpansionPanelDetails>
             <Typography>
               <p>
-              Celebr8 is an open platform marketplace that aims to operate worldwide. However, at
-              this stage, we will only operate in Ireland. We will make announcements as we open
-              operations in more countries. We are a fresh bootstrap startup on a mission, located
-              in Cork, Ireland.
+                Celebr8 is an open platform marketplace that aims to operate worldwide. However, at
+                this stage, we will only operate in Ireland. We will make announcements as we open
+                operations in more countries. We are a fresh bootstrap startup on a mission, located
+                in Cork, Ireland.
               </p>
             </Typography>
           </ExpansionPanelDetails>
@@ -306,16 +306,17 @@ class FAQPagePanelsBase extends React.Component {
               <ol>
                 <li>Get new customers from around the world.</li>
                 <p>
-                Celebr8 allows you to showcase your pub to the millions of locals and tourists that
-                move through your country every year, in a way that you couldn’t before. Locals,
-                just as tourists, love to celebrate and they will need to find a place to do it. Why
-                not at your pub?
+                  Celebr8 allows you to showcase your pub to the millions of locals and tourists
+                  that move through your country every year, in a way that you couldn’t before.
+                  Locals, just as tourists, love to celebrate and they will need to find a place to
+                  do it. Why not at your pub?
                 </p>
                 <p>
-                <li>Generate more revenue.</li>
-                Listing your pub on Celebr8 opens up a world of new opportunities for new customers
-                and more parties, thus making you extra cash! You earn more money simply by hosting
-                more parties, at your pub, for locals and travellers from all over the world!
+                  <li>Generate more revenue.</li>
+                  Listing your pub on Celebr8 opens up a world of new opportunities for new
+                  customers and more parties, thus making you extra cash! You earn more money simply
+                  by hosting more parties, at your pub, for locals and travellers from all over the
+                  world!
                 </p>
                 <li>Develop long-lasting relationships.</li>
                 <p>
@@ -330,10 +331,10 @@ class FAQPagePanelsBase extends React.Component {
                 </p>
                 <li>Reason to update your pub (good excuse).</li>
                 <p>
-                There are always things you can do to spruce up your pub but sometimes the
-                motivation is too much of an ask. Becoming a host on Celebr8 gives you the excuse
-                to freshen up your pub. It gives you that extra push (and cash) to give the walls a
-                lick of paint or to revamp the furnishings.
+                  There are always things you can do to spruce up your pub but sometimes the
+                  motivation is too much of an ask. Becoming a host on Celebr8 gives you the excuse
+                  to freshen up your pub. It gives you that extra push (and cash) to give the walls
+                  a lick of paint or to revamp the furnishings.
                 </p>
               </ol>
             </Typography>
@@ -348,21 +349,18 @@ class FAQPagePanelsBase extends React.Component {
           <ExpansionPanelDetails>
             <Typography>
               <p>
-              Adding your pub to Celebr8 is easy and only takes a few minutes. Once you’ve created
-              a Celebr8 account, simply click the “+ Add my pub” at the top right. Please note that
-              all listings are subject to review by our team to ensure the safety of our community.
-              If you need help with your listing, please{' '}
-              <NamedLink name="ContactUsPageEnquiry" params={{ enquiry: 'listing' }}>
-                click here
-              </NamedLink>{' '}
-              or email us at{' '}
-              <a
-                href="mailto:support@celebr8.co?subject=How do I list my pub inquiry"
-                target="_blank"
-              >
-                support@celebr8.co
-              </a>
-              .
+                Adding your pub to Celebr8 is easy and only takes a few minutes. Once you’ve created
+                a Celebr8 account, simply click the “+ Add my pub” at the top right. Please note
+                that all listings are subject to review by our team to ensure the safety of our
+                community. If you need help with your listing, please{' '}
+                <NamedLink name="ContactUsPageEnquiry" params={{ enquiry: 'listing' }}>
+                  click here
+                </NamedLink>{' '}
+                or email us at{' '}
+                <a href="mailto:support@celebr8.co?subject=How do I list my pub inquiry" target="_blank" rel="noopener noreferrer">
+                  support@celebr8.co
+                </a>
+                .
               </p>
             </Typography>
           </ExpansionPanelDetails>
@@ -459,9 +457,7 @@ class FAQPagePanelsBase extends React.Component {
           <ExpansionPanelDetails>
             <Typography>
               We charge a small amount in form of a deposit. It's only fair.{' '}
-              <NamedLink name="FeesPage">
-                Learn more about our fees.
-              </NamedLink>
+              <NamedLink name="FeesPage">Learn more about our fees.</NamedLink>
             </Typography>
           </ExpansionPanelDetails>
         </ExpansionPanel>
@@ -474,28 +470,29 @@ class FAQPagePanelsBase extends React.Component {
           <ExpansionPanelDetails>
             <Typography>
               <p>
-              Celebr8 is a fresh and self-funded startup. Instead of starting a venture-backed
-              startup that focuses on vanity metrics, revenue at all costs, and expectations of
-              investors, we’ve chosen to keep Celebr8 a self-funded company. We’ve raised € 0.00 to
-              date and this is something that we're incredibly proud of. We would rather build a
-              platform that is so valuable that the community is willing to pay for Celebr8, we can
-              reinvest revenue in the site, and we commit ourselves to building the best online
-              community for pubs in the world.
+                Celebr8 is a fresh and self-funded startup. Instead of starting a venture-backed
+                startup that focuses on vanity metrics, revenue at all costs, and expectations of
+                investors, we’ve chosen to keep Celebr8 a self-funded company. We’ve raised € 0.00
+                to date and this is something that we're incredibly proud of. We would rather build
+                a platform that is so valuable that the community is willing to pay for Celebr8, we
+                can reinvest revenue in the site, and we commit ourselves to building the best
+                online community for pubs in the world.
               </p>
-             <p>
-              If at any time you feel that Celebr8's pricing is not worth the nominal fee to
-              support the site, community, and offer the level of service and commitment that we do,
-              please contact us <NamedLink name="ContactUsPage">here</NamedLink> or email us at{' '}
-              <a href="mailto:support@celebr8.co" target="_blank">
-                support@celebr8.co
-              </a>
-              . We will cancel your account for you if needed. We would also love to hear your
-              feedback (good and bad at{' '}
-              <a href="mailto:feedback@celebr8.co" target="_blank">
-                feedback@celebr8.co
-              </a>
-              ), learn more about your pub's needs, and find the best way that Celebr8 can help
-              you.
+              <p>
+                If at any time you feel that Celebr8's pricing is not worth the nominal fee to
+                support the site, community, and offer the level of service and commitment that we
+                do, please contact us <NamedLink name="ContactUsPage">here</NamedLink> or email us
+                at{' '}
+                <a href="mailto:support@celebr8.co" target="_blank" rel="noopener noreferrer">
+                  support@celebr8.co
+                </a>
+                . We will cancel your account for you if needed. We would also love to hear your
+                feedback (good and bad at{' '}
+                <a href="mailto:feedback@celebr8.co" target="_blank" rel="noopener noreferrer">
+                  feedback@celebr8.co
+                </a>
+                ), learn more about your pub's needs, and find the best way that Celebr8 can help
+                you.
               </p>
               <NamedLink name="FeesPage" target="_blank">
                 Learn more about our fees.
@@ -514,10 +511,7 @@ class FAQPagePanelsBase extends React.Component {
               <p>
                 Yes! You can add multiple spaces that you have at your pub. To create a listing for
                 one of your spaces just click on{' '}
-                <NamedLink name="NewListingPage">
-                  "+Add your pub"
-                </NamedLink>{' '}
-                at the top right.
+                <NamedLink name="NewListingPage">"+Add your pub"</NamedLink> at the top right.
               </p>
             </Typography>
           </ExpansionPanelDetails>
@@ -549,11 +543,8 @@ class FAQPagePanelsBase extends React.Component {
                 <NamedLink name="ContactUsPageEnquiry" params={{ enquiry: 'listing' }}>
                   here
                 </NamedLink>{' '}
-                or at{' '}
-                <a href="mailto:support@celebr8.co">
-                  support@celebr8.co
-                </a>{' '}
-                and we'll put you in touch with a photographer.
+                or at <a href="mailto:support@celebr8.co">support@celebr8.co</a> and we'll put you
+                in touch with a photographer.
               </p>
             </Typography>
           </ExpansionPanelDetails>
@@ -567,9 +558,9 @@ class FAQPagePanelsBase extends React.Component {
           <ExpansionPanelDetails>
             <Typography>
               <p>
-              We put pricing in the hands of pubs. You can price your pub at your discretion and
-              please take local rates, taxes, Celebr8 fees, and other fees into consideration when
-              listing your hourly rate. You can also make the booking at your pub free.
+                We put pricing in the hands of pubs. You can price your pub at your discretion and
+                please take local rates, taxes, Celebr8 fees, and other fees into consideration when
+                listing your hourly rate. You can also make the booking at your pub free.
               </p>
             </Typography>
           </ExpansionPanelDetails>
@@ -602,14 +593,14 @@ class FAQPagePanelsBase extends React.Component {
           <ExpansionPanelDetails>
             <Typography>
               <p>
-              At Celebr8 we do not have pre-designed cancellation policies since it is very common
-              for users to cancel parties even the same day it was schedule to take place.
-              We do advise users to cancel as soon as possible to not affect your operation.
-             </p>
-              <p> 
-               If a customer booked your space b ut they didn't showed up, we reccomend you to{' '}
+                At Celebr8 we do not have pre-designed cancellation policies since it is very common
+                for users to cancel parties even the same day it was schedule to take place. We do
+                advise users to cancel as soon as possible to not affect your operation.
+              </p>
+              <p>
+                If a customer booked your space b ut they didn't showed up, we reccomend you to{' '}
                 <a href="https://docs.google.com/forms/d/1jZ1aH21YDcqelSC3F7628ZWxvOZR2QPacA5lRV8O70c/edit">
-                Report a No-Show.
+                  Report a No-Show.
                 </a>
               </p>
             </Typography>
@@ -624,8 +615,8 @@ class FAQPagePanelsBase extends React.Component {
           <ExpansionPanelDetails>
             <Typography>
               <p>
-              Yes. Every listing inside Celebr8 has its own web address that you can copy and share
-              everywhere. To get your unique web address:
+                Yes. Every listing inside Celebr8 has its own web address that you can copy and
+                share everywhere. To get your unique web address:
               </p>
               <ol>
                 <li>Log in to your Celebr8 account;</li>
@@ -689,9 +680,9 @@ class FAQPagePanelsBase extends React.Component {
           <ExpansionPanelDetails>
             <Typography>
               <p>
-              All accounts that have a pub listing must add payout information in order to receive
-              booking requests. Celebr8 uses Stripe to power payments. Adding your payout
-              information is easy and can be done in these steps:
+                All accounts that have a pub listing must add payout information in order to receive
+                booking requests. Celebr8 uses Stripe to power payments. Adding your payout
+                information is easy and can be done in these steps:
               </p>
               <ol>
                 <li>
@@ -769,9 +760,9 @@ class FAQPagePanelsBase extends React.Component {
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <Typography>
-              Celebr8 verifies some information about customers and hosts to help make the
-              community a safer place for everyone. As a host, for added security, you can also ask
-              potential customers to provide an official ID.
+              Celebr8 verifies some information about customers and hosts to help make the community
+              a safer place for everyone. As a host, for added security, you can also ask potential
+              customers to provide an official ID.
             </Typography>
           </ExpansionPanelDetails>
         </ExpansionPanel>
@@ -784,10 +775,10 @@ class FAQPagePanelsBase extends React.Component {
           <ExpansionPanelDetails>
             <Typography>
               <p>
-              Trust between pubs and customers is essential. One way to build trust is with rates
-              and comments to each other, after a transaction. This is how trust is built with
-              Celebr8. After a booking is used, both the pub and the customer can review each
-              other. A review consists of:
+                Trust between pubs and customers is essential. One way to build trust is with rates
+                and comments to each other, after a transaction. This is how trust is built with
+                Celebr8. After a booking is used, both the pub and the customer can review each
+                other. A review consists of:
               </p>
               <ol>
                 <li>A positive or negative rating (thumbs up or down);</li>
@@ -888,10 +879,10 @@ class FAQPagePanelsBase extends React.Component {
           <ExpansionPanelDetails>
             <Typography>
               <p>
-              We do not currently have a deposit option, but instead only offer full booking
-              payments to be accepted on our platform. If you require a deposit, accept a booking
-              request, and do not use Celebr8 for the full payment of this, please note that this
-              is outside our Services Agreement and a Booking Agreement.
+                We do not currently have a deposit option, but instead only offer full booking
+                payments to be accepted on our platform. If you require a deposit, accept a booking
+                request, and do not use Celebr8 for the full payment of this, please note that this
+                is outside our Services Agreement and a Booking Agreement.
               </p>
             </Typography>
           </ExpansionPanelDetails>
@@ -947,9 +938,9 @@ class FAQPagePanelsBase extends React.Component {
           <ExpansionPanelDetails>
             <Typography>
               <p>
-              You must also legally report income generated from Celebr8 to your business and it is
-              your responsibility to do so. If you are responsible for charging local taxes on
-              services, you must also comply with these regulations.
+                You must also legally report income generated from Celebr8 to your business and it
+                is your responsibility to do so. If you are responsible for charging local taxes on
+                services, you must also comply with these regulations.
               </p>
             </Typography>
           </ExpansionPanelDetails>
@@ -981,17 +972,17 @@ class FAQPagePanelsBase extends React.Component {
           <ExpansionPanelDetails>
             <Typography>
               <p>
-              Booking a pub is easy on Celebr8 and you can do so by creating a user account if you
-              have not done so already. Once you do, you can then select a pub listing and click
-              “Request to book”. On the next page, you will be able to enter a message to the pub
-              regarding how you intend to use it, any specific details, requirements, or needs
-              regarding the booking request. You can enter your payment information and send the
-              booking request to the pub.
+                Booking a pub is easy on Celebr8 and you can do so by creating a user account if you
+                have not done so already. Once you do, you can then select a pub listing and click
+                “Request to book”. On the next page, you will be able to enter a message to the pub
+                regarding how you intend to use it, any specific details, requirements, or needs
+                regarding the booking request. You can enter your payment information and send the
+                booking request to the pub.
               </p>
               <p>
-              You will only be charged if the pub accepts your booking request within 72 hours (3
-              days). If they do not accept or deny your booking request within 72 hours, it will
-              automatically expire and you will not be charged.
+                You will only be charged if the pub accepts your booking request within 72 hours (3
+                days). If they do not accept or deny your booking request within 72 hours, it will
+                automatically expire and you will not be charged.
               </p>
             </Typography>
           </ExpansionPanelDetails>
@@ -1060,9 +1051,7 @@ class FAQPagePanelsBase extends React.Component {
                 enforces their own cancellation policy identified on their listing, so please keep
                 this in mind prior to submitting a booking request. If you require assistance with a
                 booking request, you can send us a message at any time at{' '}
-                <a
-                  href="mailto:support@celebr8.co?subject=Booking%20Request%20Inquiry"
-                >
+                <a href="mailto:support@celebr8.co?subject=Booking%20Request%20Inquiry">
                   support@celebr8.co
                 </a>
                 .
@@ -1135,10 +1124,10 @@ class FAQPagePanelsBase extends React.Component {
           <ExpansionPanelDetails>
             <Typography>
               <p>
-              Celebr8 does not require an hourly minimum for pub listings, but we rather let pubs
-              individually indicate their hourly minimums directly on their listing. If they mention
-              an hourly minimum in their description, please note that they might not accept your
-              booking request if it does not comply with their hourly minimum.
+                Celebr8 does not require an hourly minimum for pub listings, but we rather let pubs
+                individually indicate their hourly minimums directly on their listing. If they
+                mention an hourly minimum in their description, please note that they might not
+                accept your booking request if it does not comply with their hourly minimum.
               </p>
             </Typography>
           </ExpansionPanelDetails>
@@ -1180,10 +1169,10 @@ class FAQPagePanelsBase extends React.Component {
           <ExpansionPanelDetails>
             <Typography>
               <p>
-              Trust between customers and pubs is very important. One way to build trust is with
-              rates and comments to each other, after a transaction. This is how trust is built with
-              Celebr8. After a booking is used, both the customer and the pub can review each
-              other. A review consists of:
+                Trust between customers and pubs is very important. One way to build trust is with
+                rates and comments to each other, after a transaction. This is how trust is built
+                with Celebr8. After a booking is used, both the customer and the pub can review each
+                other. A review consists of:
               </p>
               <ol>
                 <li>A positive or negative rating (thumbs up or down);</li>
@@ -1248,11 +1237,8 @@ class FAQPagePanelsBase extends React.Component {
               <p>
                 Yes, we ask that you never take communication outside of our platform messaging and
                 never give your contact information prior to entering a Booking Agreement. We also
-                have{' '}
-                <NamedLink name="CommunityGuidelinesPage">
-                  Community Guidelines
-                </NamedLink>{' '}
-                in place that outlines this in more detail.
+                have <NamedLink name="CommunityGuidelinesPage">Community Guidelines</NamedLink> in
+                place that outlines this in more detail.
               </p>
             </Typography>
           </ExpansionPanelDetails>
@@ -1297,8 +1283,8 @@ class FAQPagePanelsBase extends React.Component {
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
             <Typography>
-              No, Celebr8 does not offer insurance. We suggest that all pubs adequately ensure
-              their pub, equipment, and premises.
+              No, Celebr8 does not offer insurance. We suggest that all pubs adequately ensure their
+              pub, equipment, and premises.
             </Typography>
           </ExpansionPanelDetails>
         </ExpansionPanel>
@@ -1313,11 +1299,11 @@ class FAQPagePanelsBase extends React.Component {
           <ExpansionPanelDetails>
             <Typography>
               <p>
-              Your Booking Agreement through Celebr8 is an agreement for a customer to use the pub
-              as defined in the listing for the exact date, time period, and for that price. If you
-              have further pub requirements, please notify the booking request directly and ensure
-              they are aware of these prior to accepting the booking request, prior to the booking
-              time, and their arrival.
+                Your Booking Agreement through Celebr8 is an agreement for a customer to use the pub
+                as defined in the listing for the exact date, time period, and for that price. If
+                you have further pub requirements, please notify the booking request directly and
+                ensure they are aware of these prior to accepting the booking request, prior to the
+                booking time, and their arrival.
               </p>
             </Typography>
           </ExpansionPanelDetails>
@@ -1403,9 +1389,7 @@ class FAQPagePanelsBase extends React.Component {
           <ExpansionPanelDetails>
             <Typography>
               Please report any suspicious activity immediately by sending us an email at{' '}
-              <a
-                href="mailto:support@celebr8.co?subject=Suspicious%20Account%20Activity"
-              >
+              <a href="mailto:support@celebr8.co?subject=Suspicious%20Account%20Activity">
                 support@celebr8.co
               </a>
               .
@@ -1421,8 +1405,10 @@ class FAQPagePanelsBase extends React.Component {
           <ExpansionPanelDetails>
             <Typography>
               Please report any suspicious activity or users immediately by sending us an email at{' '}
-              <a href="mailto:support@celebr8.co?subject=User acting against Celebr8 policies"
-                target="_blank">
+              <a
+                href="mailto:support@celebr8.co?subject=User acting against Celebr8 policies"
+                target="_blank" rel="noopener noreferrer"
+              >
                 support@celebr8.co
               </a>
               .
