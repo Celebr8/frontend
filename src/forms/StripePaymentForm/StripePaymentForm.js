@@ -260,11 +260,6 @@ class StripePaymentForm extends Component {
       </Fragment>
     );
 
-    const messagePlaceholder = intl.formatMessage(
-      { id: 'StripePaymentForm.messagePlaceholder' },
-      { name: authorDisplayName }
-    );
-
     const handleAttendanceChange = e => {
       // A change in the message should call the onChange prop with
       // the current token and the new message.
