@@ -27,7 +27,6 @@ import {
   ensureBooking,
 } from '../../util/data';
 import { dateFromLocalToAPI, minutesBetween } from '../../util/dates';
-import { dateFromLocalToAPI } from '../../util/dates';
 import { propTypes, LINE_ITEM_NIGHT, LINE_ITEM_DAY } from '../../util/types';
 import {
   isTransactionInitiateAmountTooLowError,
