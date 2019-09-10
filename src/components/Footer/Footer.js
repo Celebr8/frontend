@@ -15,12 +15,13 @@ import { twitterPageURL } from '../../util/urlHelpers';
 import css from './Footer.css';
 
 const renderSocialMediaLinks = intl => {
-  const { siteFacebookPage, siteInstagramPage, siteTwitterHandle } = config;
+  const { siteFacebookPage, siteInstagramPage, siteTwitterHandle} = config;
   const siteTwitterPage = twitterPageURL(siteTwitterHandle);
 
   const goToFb = intl.formatMessage({ id: 'Footer.goToFacebook' });
   const goToInsta = intl.formatMessage({ id: 'Footer.goToInstagram' });
   const goToTwitter = intl.formatMessage({ id: 'Footer.goToTwitter' });
+  //const goToBlog = intl.formatMessage({ id: 'Footer.goToBlog' });
 
   const fbLink = siteFacebookPage ? (
     <ExternalLink key="linkToFacebook" href={siteFacebookPage} className={css.icon} title={goToFb}>
@@ -50,6 +51,18 @@ const renderSocialMediaLinks = intl => {
     </ExternalLink>
   ) : null;
 
+ /* 
+  const blogLink = celebr8BlogPage ? (
+    <ExternalLink
+      key="linkToBlog"
+      href={celebr8BlogPage}
+      className={css.icon}
+      title={goToBlog}
+    >
+      <IconSocialMediaBlog width="30" height="30" />
+    </ExternalLink>
+  ) : null;
+*/
   return [fbLink, twitterLink, instragramLink].filter(v => v != null);
 };
 
@@ -134,6 +147,16 @@ const Footer = props => {
                 >
                   Recommend a pub
                 </NamedLink>
+              </li>
+              <li key="blog" className={css.listItem}>
+              <a
+                  href="http://www.blog.celebr8.co/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={css.link}
+                >
+                  Blog
+                </a>
               </li>
             </ul>
             <ul className={css.list}>

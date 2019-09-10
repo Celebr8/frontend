@@ -113,7 +113,7 @@ const siteFacebookPage = 'https://www.facebook.com/celebr8anywhere/';
 // https://developers.facebook.com/docs/sharing/webmasters#basic
 // You should create one to track social sharing in Facebook
 
-const celebr8Blog = 'http://www.blog.celebr8.co/';
+const celebr8BlogPage = 'http://www.blog.celebr8.co/';
 
 const facebookAppId = null;
 
@@ -229,7 +229,7 @@ const config = {
   siteFacebookPage,
   siteInstagramPage,
   siteTwitterHandle,
-  celebr8Blog,
+  celebr8BlogPage,
   facebookAppId,
   sentryDsn,
   reCaptchaSiteKey,
