@@ -206,6 +206,7 @@ class StripePaymentForm extends Component {
       formId,
       paymentInfo,
       authorDisplayName,
+      showInitialMessageInput,
       intl,
       onChange,
       initiateOrderError,
