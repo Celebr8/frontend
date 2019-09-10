@@ -37,7 +37,6 @@ import {
   isTransactionZeroPaymentError,
   transactionInitiateOrderStripeErrors,
 } from '../../util/errors';
-import { findRouteByRouteName, pathByRouteName } from '../../util/routes';
 import { propTypes } from '../../util/types';
 import { createSlug } from '../../util/urlHelpers';
 import { TRANSITION_ENQUIRE, txIsPaymentPending, txIsPaymentExpired } from '../../util/transaction';
