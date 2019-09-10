@@ -5,6 +5,7 @@ import { FormattedMessage, injectIntl, intlShape } from 'react-intl';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { compose } from 'redux';
+import config from '../../config';
 import {
   AvatarMedium,
   BookingBreakdown,
@@ -37,7 +38,6 @@ import {
   isTransactionZeroPaymentError,
   transactionInitiateOrderStripeErrors,
 } from '../../util/errors';
-import { propTypes } from '../../util/types';
 import { createSlug } from '../../util/urlHelpers';
 import { TRANSITION_ENQUIRE, txIsPaymentPending, txIsPaymentExpired } from '../../util/transaction';
 import css from './CheckoutPage.css';
