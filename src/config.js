@@ -38,8 +38,14 @@ const sortSearchByDistance = false;
 //
 // In a way, 'processAlias' defines which transaction process (or processes)
 // this particular web application is able to handle.
-const bookingProcessAliasPrivate = 'preauth-with-nightly-booking/release-1';
-const bookingProcessAliasCommon = 'preauth-nightly-common-spaces/release-1';
+
+// Prior to FWT v3.0.0
+//const bookingProcessAliasPrivate = 'preauth-with-nightly-booking/release-1';
+//const bookingProcessAliasCommon = 'preauth-nightly-common-spaces/release-1';
+
+// Updated for FWT v3.0.0
+const bookingProcessAliasPrivate = 'sca-preauth-with-nightly-booking/release-1';
+const bookingProcessAliasCommon = 'sca-preauth-nightly-common-spaces/release-1';
 
 // The transaction line item code for the main unit type in bookings.
 //
