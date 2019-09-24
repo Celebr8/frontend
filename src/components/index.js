@@ -153,6 +153,7 @@ export { default as SectionThumbnailLinks } from './SectionThumbnailLinks/Sectio
 export { default as SelectMultipleFilter } from './SelectMultipleFilter/SelectMultipleFilter';
 export { default as SelectSingleFilter } from './SelectSingleFilter/SelectSingleFilter';
 export { default as StripeBankAccountTokenInputField } from './StripeBankAccountTokenInputField/StripeBankAccountTokenInputField';
+export { default as StripePaymentAddress } from './StripePaymentAddress/StripePaymentAddress';
 // Tab navigation
 export { default as TabNav } from './TabNav/TabNav';
 export { ButtonTabNavHorizontal, LinkTabNavHorizontal } from './TabNavHorizontal/TabNavHorizontal';
