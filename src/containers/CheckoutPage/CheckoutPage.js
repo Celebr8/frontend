@@ -28,6 +28,7 @@ import {
   ensureBooking,
 } from '../../util/data';
 import { dateFromLocalToAPI, minutesBetween } from '../../util/dates';
+// eslint-disable-next-line
 import { propTypes, LINE_ITEM_NIGHT, LINE_ITEM_DAY } from '../../util/types';
 import {
   isTransactionInitiateAmountTooLowError,
