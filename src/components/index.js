@@ -70,6 +70,7 @@ export { default as Form } from './Form/Form';
 export { default as IconAdd } from './IconAdd/IconAdd';
 export { default as IconArrowHead } from './IconArrowHead/IconArrowHead';
 export { default as IconBannedUser } from './IconBannedUser/IconBannedUser';
+export { default as IconCard } from './IconCard/IconCard';
 export { default as IconCheckmark } from './IconCheckmark/IconCheckmark';
 export { default as IconClose } from './IconClose/IconClose';
 export { default as IconEmailAttention } from './IconEmailAttention/IconEmailAttention';
@@ -134,6 +135,7 @@ export { default as ResponsiveImage } from './ResponsiveImage/ResponsiveImage';
 export { default as ReviewModal } from './ReviewModal/ReviewModal';
 export { default as ReviewRating } from './ReviewRating/ReviewRating';
 export { default as Reviews } from './Reviews/Reviews';
+export { default as SavedCardDetails } from './SavedCardDetails/SavedCardDetails';
 export { default as SearchFilters } from './SearchFilters/SearchFilters';
 export { default as SearchFiltersMobile } from './SearchFiltersMobile/SearchFiltersMobile';
 export { default as SearchFiltersPanel } from './SearchFiltersPanel/SearchFiltersPanel';
@@ -151,6 +153,7 @@ export { default as SectionThumbnailLinks } from './SectionThumbnailLinks/Sectio
 export { default as SelectMultipleFilter } from './SelectMultipleFilter/SelectMultipleFilter';
 export { default as SelectSingleFilter } from './SelectSingleFilter/SelectSingleFilter';
 export { default as StripeBankAccountTokenInputField } from './StripeBankAccountTokenInputField/StripeBankAccountTokenInputField';
+export { default as StripePaymentAddress } from './StripePaymentAddress/StripePaymentAddress';
 // Tab navigation
 export { default as TabNav } from './TabNav/TabNav';
 export { ButtonTabNavHorizontal, LinkTabNavHorizontal } from './TabNavHorizontal/TabNavHorizontal';

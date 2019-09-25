@@ -2,14 +2,14 @@ export { default as BookingDatesForm } from './BookingDatesForm/BookingDatesForm
 export { default as ContactDetailsForm } from './ContactDetailsForm/ContactDetailsForm';
 export { default as ContactUsForm } from './ContactUsForm/ContactUsForm';
 export { default as EditListingAvailabilityForm } from './EditListingAvailabilityForm/EditListingAvailabilityForm';
+export { default as EditListingCapacityForm } from './EditListingCapacityForm/EditListingCapacityForm';
 export { default as EditListingDescriptionForm } from './EditListingDescriptionForm/EditListingDescriptionForm';
 export { default as EditListingFeaturesForm } from './EditListingFeaturesForm/EditListingFeaturesForm';
-export { default as EditListingCapacityForm } from './EditListingCapacityForm/EditListingCapacityForm';
-export { default as EditListingRegularlyOpenOnForm } from './EditListingRegularlyOpenOnForm/EditListingRegularlyOpenOnForm';
 export { default as EditListingLocationForm } from './EditListingLocationForm/EditListingLocationForm';
 export { default as EditListingPhotosForm } from './EditListingPhotosForm/EditListingPhotosForm';
 export { default as EditListingPoliciesForm } from './EditListingPoliciesForm/EditListingPoliciesForm';
 export { default as EditListingPricingForm } from './EditListingPricingForm/EditListingPricingForm';
+export { default as EditListingRegularlyOpenOnForm } from './EditListingRegularlyOpenOnForm/EditListingRegularlyOpenOnForm';
 export { default as EmailVerificationForm } from './EmailVerificationForm/EmailVerificationForm';
 export { default as EnquiryForm } from './EnquiryForm/EnquiryForm';
 export { default as FilterForm } from './FilterForm/FilterForm';
@@ -26,3 +26,5 @@ export { default as SendMessageForm } from './SendMessageForm/SendMessageForm';
 export { default as SignupForm } from './SignupForm/SignupForm';
 export { default as StripePaymentForm } from './StripePaymentForm/StripePaymentForm';
 export { default as TopbarSearchForm } from './TopbarSearchForm/TopbarSearchForm';
+
+
