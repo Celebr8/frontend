@@ -14,5 +14,14 @@ import stripe from './stripe.duck';
 import UI from './UI.duck';
 import user from './user.duck';
 
-export { Auth, EmailVerification, FlashNotification, LocationFilter, Routing, UI, marketplaceData, stripe, user, };
-
+export {
+  Auth,
+  EmailVerification,
+  FlashNotification,
+  LocationFilter,
+  Routing,
+  UI,
+  marketplaceData,
+  stripe,
+  user,
+};

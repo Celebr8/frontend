@@ -15,7 +15,8 @@
   --LandingPage_sectionMarginTopLarge: 94px;
 }
 
-.root {}
+.root {
+}
 
 /* heroContainer gives the height for SectionHero */
 /* Safari has a bug with vw padding inside flexbox. Therefore we need an extra div (container) */
@@ -105,7 +106,6 @@
   composes: sectionContent;
   margin-top: 8vh;
 }
-
 
 .sectionPublican {
   overflow: auto;

@@ -1,31 +1,30 @@
-import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { compose } from 'redux';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { injectIntl, intlShape, FormattedMessage } from 'react-intl';
-import { propTypes } from '../../util/types';
-import { parse } from '../../util/urlHelpers';
-import { isScrollingDisabled } from '../../ducks/UI.duck';
+import { compose } from 'redux';
 import {
+  Footer,
+  LayoutSingleColumn,
+  LayoutWrapperFooter,
+  LayoutWrapperMain,
+  LayoutWrapperTopbar,
   ManageListingCard,
   Page,
   PaginationLinks,
   UserNav,
-  LayoutSingleColumn,
-  LayoutWrapperTopbar,
-  LayoutWrapperMain,
-  LayoutWrapperFooter,
-  Footer,
 } from '../../components';
 import { TopbarContainer } from '../../containers';
-
+import { isScrollingDisabled } from '../../ducks/UI.duck';
+import { FormattedMessage, injectIntl, intlShape } from '../../util/reactIntl';
+import { propTypes } from '../../util/types';
+import { parse } from '../../util/urlHelpers';
+import css from './ManageListingsPage.css';
 import {
   closeListing,
-  openListing,
   getOwnListingsById,
+  openListing,
   queryOwnListings,
 } from './ManageListingsPage.duck';
-import css from './ManageListingsPage.css';
 
 // Pagination page size might need to be dynamic on responsive page layouts
 // Current design has max 3 columns 42 is divisible by 2 and 3

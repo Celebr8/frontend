@@ -4,25 +4,24 @@
  *
  * N.B. *isOutsideRange* in defaultProps is defining what dates are available to booking.
  */
-import React, { Component } from 'react';
-import { bool, func, instanceOf, oneOf, shape, string, arrayOf } from 'prop-types';
-import { DateRangePicker, isInclusivelyAfterDay, isInclusivelyBeforeDay } from 'react-dates';
-import { intlShape, injectIntl } from 'react-intl';
 import classNames from 'classnames';
 import moment from 'moment';
-import { START_DATE, END_DATE } from '../../util/dates';
-import { LINE_ITEM_DAY, propTypes } from '../../util/types';
+import { arrayOf, bool, func, instanceOf, oneOf, shape, string } from 'prop-types';
+import React, { Component } from 'react';
+import { DateRangePicker, isInclusivelyAfterDay, isInclusivelyBeforeDay } from 'react-dates';
+import { IconArrowHead } from '../../components';
 import config from '../../config';
+import { END_DATE, START_DATE } from '../../util/dates';
+import { injectIntl, intlShape } from '../../util/reactIntl';
+import { LINE_ITEM_DAY, propTypes } from '../../util/types';
+import css from './DateRangeInput.css';
 import {
+  apiEndDateToPickerDate,
+  isBlockedBetween,
   isDayBlockedFn,
   isOutsideRangeFn,
-  isBlockedBetween,
-  apiEndDateToPickerDate,
   pickerEndDateToApiDate,
 } from './DateRangeInput.helpers';
-
-import { IconArrowHead } from '../../components';
-import css from './DateRangeInput.css';
 
 export const HORIZONTAL_ORIENTATION = 'horizontal';
 export const ANCHOR_LEFT = 'left';

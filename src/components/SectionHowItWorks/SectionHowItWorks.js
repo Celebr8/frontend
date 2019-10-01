@@ -4,8 +4,6 @@ import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import css from './SectionHowItWorks.css';
 
-
-
 const SectionHowItWorks = props => {
   const { rootClassName, className } = props;
 

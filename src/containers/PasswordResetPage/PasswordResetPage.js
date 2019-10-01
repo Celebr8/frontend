@@ -1,28 +1,18 @@
-import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { compose } from 'redux';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import { FormattedMessage, injectIntl, intlShape } from 'react-intl';
+import { compose } from 'redux';
+import { Footer, IconKeys, IconKeysSuccess, LayoutSingleColumn, LayoutWrapperFooter, LayoutWrapperMain, LayoutWrapperTopbar, NamedLink, Page } from '../../components';
+import { TopbarContainer } from '../../containers';
+import { isScrollingDisabled } from '../../ducks/UI.duck';
+import { PasswordResetForm } from '../../forms';
+import { FormattedMessage, injectIntl, intlShape } from '../../util/reactIntl';
 import { propTypes } from '../../util/types';
 import { parse } from '../../util/urlHelpers';
-import { isScrollingDisabled } from '../../ducks/UI.duck';
-import {
-  Page,
-  NamedLink,
-  IconKeys,
-  IconKeysSuccess,
-  LayoutSingleColumn,
-  LayoutWrapperTopbar,
-  LayoutWrapperMain,
-  LayoutWrapperFooter,
-  Footer,
-} from '../../components';
-import { PasswordResetForm } from '../../forms';
-import { TopbarContainer } from '../../containers';
-
-import { resetPassword } from './PasswordResetPage.duck';
 import css from './PasswordResetPage.css';
+import { resetPassword } from './PasswordResetPage.duck';
+
 
 const parseUrlParams = location => {
   const params = parse(location.search);

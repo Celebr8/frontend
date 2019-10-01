@@ -1,41 +1,22 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { compose } from 'redux';
-import { connect } from 'react-redux';
-import { withRouter, Redirect } from 'react-router-dom';
-import { FormattedMessage, injectIntl, intlShape } from 'react-intl';
 import classNames from 'classnames';
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { Redirect, withRouter } from 'react-router-dom';
+import { compose } from 'redux';
+import { Footer, IconClose, IconEmailSent, InlineTextButton, LayoutSingleColumn, LayoutWrapperFooter, LayoutWrapperMain, LayoutWrapperTopbar, LinkTabNavHorizontal, Modal, NamedLink, NamedRedirect, Page, TermsOfService } from '../../components';
 import config from '../../config';
-import { propTypes } from '../../util/types';
-import { ensureCurrentUser } from '../../util/data';
-import {
-  isSignupEmailTakenError,
-  isTooManyEmailVerificationRequestsError,
-} from '../../util/errors';
-import {
-  Page,
-  NamedLink,
-  NamedRedirect,
-  LinkTabNavHorizontal,
-  IconEmailSent,
-  InlineTextButton,
-  IconClose,
-  LayoutSingleColumn,
-  LayoutWrapperTopbar,
-  LayoutWrapperMain,
-  LayoutWrapperFooter,
-  Footer,
-  Modal,
-  TermsOfService,
-} from '../../components';
-import { LoginForm, SignupForm } from '../../forms';
 import { TopbarContainer } from '../../containers';
-import { login, authenticationInProgress, signup } from '../../ducks/Auth.duck';
-import { isScrollingDisabled } from '../../ducks/UI.duck';
+import { authenticationInProgress, login, signup } from '../../ducks/Auth.duck';
+import { isScrollingDisabled, manageDisableScrolling } from '../../ducks/UI.duck';
 import { sendVerificationEmail } from '../../ducks/user.duck';
-import { manageDisableScrolling } from '../../ducks/UI.duck';
-
+import { LoginForm, SignupForm } from '../../forms';
+import { ensureCurrentUser } from '../../util/data';
+import { isSignupEmailTakenError, isTooManyEmailVerificationRequestsError } from '../../util/errors';
+import { FormattedMessage, injectIntl, intlShape } from '../../util/reactIntl';
+import { propTypes } from '../../util/types';
 import css from './AuthenticationPage.css';
+
 
 export class AuthenticationPageComponent extends Component {
   constructor(props) {

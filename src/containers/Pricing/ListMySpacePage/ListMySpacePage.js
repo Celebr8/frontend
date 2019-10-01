@@ -1,20 +1,19 @@
-import React from 'react';
 import PropTypes from 'prop-types';
-import { compose } from 'redux';
+import React from 'react';
 import { connect } from 'react-redux';
-import { injectIntl, intlShape } from 'react-intl';
-import { isScrollingDisabled } from '../../../ducks/UI.duck';
-import { TopbarContainer } from '../../../containers';
+import { compose } from 'redux';
 import {
-  Page,
+  Footer,
   LayoutSingleColumn,
+  LayoutWrapperFooter,
   LayoutWrapperMain,
   LayoutWrapperTopbar,
-  LayoutWrapperFooter,
-  Footer,
+  Page,
 } from '../../../components';
-
 import config from '../../../config';
+import { TopbarContainer } from '../../../containers';
+import { isScrollingDisabled } from '../../../ducks/UI.duck';
+import { injectIntl, intlShape } from '../../../util/reactIntl';
 
 const ListMySpacePageComponent = props => {
   const { scrollingDisabled, intl } = props;

@@ -1,18 +1,17 @@
-import React from 'react';
 import { bool, object, shape } from 'prop-types';
+import React from 'react';
 import { compose } from 'redux';
-import { FormattedMessage, injectIntl, intlShape } from 'react-intl';
 import config from '../../config';
 import routeConfiguration from '../../routeConfiguration';
-import { propTypes } from '../../util/types';
+import { FormattedMessage, injectIntl, intlShape } from '../../util/reactIntl';
 import { createResourceLocatorString } from '../../util/routes';
-
-import { stripeCountryConfigs } from './PayoutDetailsForm';
+import { propTypes } from '../../util/types';
 import PayoutDetailsAddress from './PayoutDetailsAddress';
 import PayoutDetailsBankDetails from './PayoutDetailsBankDetails';
-import PayoutDetailsPersonalDetails from './PayoutDetailsPersonalDetails';
 import PayoutDetailsBusinessProfile from './PayoutDetailsBusinessProfile';
+import { stripeCountryConfigs } from './PayoutDetailsForm';
 import css from './PayoutDetailsForm.css';
+import PayoutDetailsPersonalDetails from './PayoutDetailsPersonalDetails';
 
 const PayoutDetailsIndividualAccountComponent = props => {
   const { fieldRenderProps, currentUserId, intl, appConfig } = props;

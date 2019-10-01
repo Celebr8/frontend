@@ -10,14 +10,21 @@ import * as moment from 'moment';
 import { bool, func, object, string } from 'prop-types';
 import React, { Component, Fragment } from 'react';
 import { Form as FinalForm } from 'react-final-form';
-import { FieldCheckbox, FieldTextInput, Form, IconSpinner, NamedLink, PrimaryButton, SavedCardDetails, StripePaymentAddress } from '../../components';
+import {
+  FieldCheckbox,
+  FieldTextInput,
+  Form,
+  IconSpinner,
+  NamedLink,
+  PrimaryButton,
+  SavedCardDetails,
+  StripePaymentAddress,
+} from '../../components';
 import config from '../../config';
 import { ensurePaymentMethodCard } from '../../util/data';
 import { FormattedMessage, injectIntl, intlShape } from '../../util/reactIntl';
 import { propTypes } from '../../util/types';
 import css from './StripePaymentForm.css';
-
-
 
 /**
  * Translate a Stripe API error object.

@@ -46,8 +46,7 @@
   margin: 0 0 14px 0;
   color: var(--matterColorAnti);
 
-
-padding-top: 8px;
+  padding-top: 8px;
   padding-bottom: 0px;
 
   @media (--viewportMedium) {

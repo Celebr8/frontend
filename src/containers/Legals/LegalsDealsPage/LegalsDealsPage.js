@@ -1,24 +1,22 @@
-import React from 'react';
 import PropTypes from 'prop-types';
-import { compose } from 'redux';
+import React from 'react';
 import { connect } from 'react-redux';
-import { injectIntl, intlShape, FormattedMessage } from 'react-intl';
-import { isScrollingDisabled } from '../../../ducks/UI.duck';
-import { TopbarContainer } from '../../../containers';
+import { compose } from 'redux';
 import {
-  Page,
+  Footer,
   LayoutSideNavigation,
+  LayoutWrapperFooter,
   LayoutWrapperMain,
   LayoutWrapperSideNav,
   LayoutWrapperTopbar,
-  LayoutWrapperFooter,
-  Footer,
   LegalsDeals,
+  Page,
 } from '../../../components';
-
 import config from '../../../config';
+import { TopbarContainer } from '../../../containers';
+import { isScrollingDisabled } from '../../../ducks/UI.duck';
+import { FormattedMessage, injectIntl, intlShape } from '../../../util/reactIntl';
 import { legalsTabs } from '../tabs';
-
 import css from './LegalsDealsPage.css';
 
 const LegalsDealsPageComponent = props => {

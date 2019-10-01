@@ -1,10 +1,9 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { intlShape, injectIntl } from 'react-intl';
-import { Field } from 'react-final-form';
 import classNames from 'classnames';
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
+import { Field } from 'react-final-form';
 import { IconReviewStar, ValidationError } from '../../components';
-
+import { injectIntl, intlShape } from '../../util/reactIntl';
 import css from './FieldReviewRating.css';
 
 class FieldReviewRatingComponent extends Component {

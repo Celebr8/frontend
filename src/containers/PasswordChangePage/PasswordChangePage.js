@@ -1,25 +1,24 @@
-import React from 'react';
 import PropTypes from 'prop-types';
-import { compose } from 'redux';
+import React from 'react';
 import { connect } from 'react-redux';
-import { injectIntl, intlShape, FormattedMessage } from 'react-intl';
-import { propTypes } from '../../util/types';
-import { isScrollingDisabled } from '../../ducks/UI.duck';
+import { compose } from 'redux';
 import {
+  Footer,
   LayoutSideNavigation,
+  LayoutWrapperFooter,
   LayoutWrapperMain,
   LayoutWrapperSideNav,
   LayoutWrapperTopbar,
-  LayoutWrapperFooter,
-  Footer,
   Page,
   UserNav,
 } from '../../components';
-import { PasswordChangeForm } from '../../forms';
 import { TopbarContainer } from '../../containers';
-
-import { changePassword, changePasswordClear } from './PasswordChangePage.duck';
+import { isScrollingDisabled } from '../../ducks/UI.duck';
+import { PasswordChangeForm } from '../../forms';
+import { FormattedMessage, injectIntl, intlShape } from '../../util/reactIntl';
+import { propTypes } from '../../util/types';
 import css from './PasswordChangePage.css';
+import { changePassword, changePasswordClear } from './PasswordChangePage.duck';
 
 export const PasswordChangePageComponent = props => {
   const {

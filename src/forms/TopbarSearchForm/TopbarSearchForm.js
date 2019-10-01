@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { Form as FinalForm, Field } from 'react-final-form';
-import { intlShape, injectIntl } from 'react-intl';
 import classNames from 'classnames';
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
+import { Field, Form as FinalForm } from 'react-final-form';
 import { Form, LocationAutocompleteInput } from '../../components';
-
+import { injectIntl, intlShape } from '../../util/reactIntl';
 import css from './TopbarSearchForm.css';
+
 
 class TopbarSearchFormComponent extends Component {
   constructor(props) {

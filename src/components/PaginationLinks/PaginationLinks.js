@@ -1,12 +1,11 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { injectIntl, intlShape } from 'react-intl';
 import classNames from 'classnames';
 import range from 'lodash/range';
+import PropTypes from 'prop-types';
+import React from 'react';
 import { IconArrowHead, NamedLink } from '../../components';
-import { stringify } from '../../util/urlHelpers';
+import { injectIntl, intlShape } from '../../util/reactIntl';
 import { propTypes } from '../../util/types';
-
+import { stringify } from '../../util/urlHelpers';
 import css from './PaginationLinks.css';
 
 const { string, object } = PropTypes;

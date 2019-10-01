@@ -1,11 +1,10 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { FormattedMessage, intlShape, injectIntl } from 'react-intl';
 import classNames from 'classnames';
-import { propTypes } from '../../util/types';
+import PropTypes from 'prop-types';
+import React from 'react';
 import { IconReviewUser, Modal } from '../../components';
 import { ReviewForm } from '../../forms';
-
+import { FormattedMessage, injectIntl, intlShape } from '../../util/reactIntl';
+import { propTypes } from '../../util/types';
 import css from './ReviewModal.css';
 
 const ReviewModal = props => {

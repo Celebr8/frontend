@@ -2,7 +2,7 @@ import classNames from 'classnames';
 import { func, string } from 'prop-types';
 import React from 'react';
 import { Field, Form as FinalForm } from 'react-final-form';
-import { injectIntl, intlShape } from 'react-intl';
+import { injectIntl, intlShape } from '../../util/reactIntl';
 import { Form, LocationAutocompleteInput } from '../../components';
 import css from './LocationSearchForm.css';
 

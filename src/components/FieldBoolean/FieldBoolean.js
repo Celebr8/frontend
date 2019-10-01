@@ -1,6 +1,6 @@
 import React from 'react';
-import { injectIntl, intlShape } from 'react-intl';
 import { FieldSelect } from '../../components';
+import { injectIntl, intlShape } from '../../util/reactIntl';
 
 const FieldBoolean = props => {
   const { placeholder, intl, ...rest } = props;

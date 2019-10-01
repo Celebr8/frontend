@@ -2,7 +2,6 @@
 import * as moment from 'moment';
 import { array, arrayOf, bool, func, oneOf, shape, string } from 'prop-types';
 import React, { Component } from 'react';
-import { FormattedMessage, injectIntl, intlShape } from 'react-intl';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { compose } from 'redux';
@@ -10,10 +9,12 @@ import { BookingPanel, Footer, LayoutSingleColumn, LayoutWrapperFooter, LayoutWr
 import config from '../../config';
 import { NotFoundPage, TopbarContainer } from '../../containers';
 import { getMarketplaceEntities } from '../../ducks/marketplaceData.duck';
+import { initializeCardPaymentData } from '../../ducks/stripe.duck.js';
 import { isScrollingDisabled, manageDisableScrolling } from '../../ducks/UI.duck';
 import routeConfiguration from '../../routeConfiguration';
 import { formatMoney } from '../../util/currency';
 import { ensureListing, ensureOwnListing, ensureUser, userDisplayNameAsString } from '../../util/data';
+import { FormattedMessage, injectIntl, intlShape } from '../../util/reactIntl';
 import { richText } from '../../util/richText';
 import { createResourceLocatorString, findRouteByRouteName } from '../../util/routes';
 import { types as sdkTypes } from '../../util/sdkLoader';
@@ -21,7 +22,6 @@ import { LISTING_STATE_CLOSED, LISTING_STATE_PENDING_APPROVAL, propTypes } from 
 import { createSlug, LISTING_PAGE_DRAFT_VARIANT, LISTING_PAGE_PARAM_TYPE_DRAFT, LISTING_PAGE_PARAM_TYPE_EDIT, LISTING_PAGE_PENDING_APPROVAL_VARIANT } from '../../util/urlHelpers';
 import css from './ListingPage.css';
 import { loadData, sendEnquiry, setInitialValues } from './ListingPage.duck';
-import { initializeCardPaymentData } from '../../ducks/stripe.duck.js';
 import SectionAvatar from './SectionAvatar';
 import SectionDescriptionMaybe from './SectionDescriptionMaybe';
 import SectionFeaturesMaybe from './SectionFeaturesMaybe';

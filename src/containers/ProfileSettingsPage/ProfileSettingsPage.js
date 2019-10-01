@@ -1,26 +1,17 @@
-import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { compose } from 'redux';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { injectIntl, intlShape, FormattedMessage } from 'react-intl';
-import { propTypes } from '../../util/types';
-import { ensureCurrentUser } from '../../util/data';
-import { isScrollingDisabled } from '../../ducks/UI.duck';
-import {
-  Page,
-  UserNav,
-  LayoutSingleColumn,
-  LayoutWrapperTopbar,
-  LayoutWrapperMain,
-  LayoutWrapperFooter,
-  Footer,
-  NamedLink,
-} from '../../components';
-import { ProfileSettingsForm } from '../../forms';
+import { compose } from 'redux';
+import { Footer, LayoutSingleColumn, LayoutWrapperFooter, LayoutWrapperMain, LayoutWrapperTopbar, NamedLink, Page, UserNav } from '../../components';
 import { TopbarContainer } from '../../containers';
-
-import { updateProfile, uploadImage } from './ProfileSettingsPage.duck';
+import { isScrollingDisabled } from '../../ducks/UI.duck';
+import { ProfileSettingsForm } from '../../forms';
+import { ensureCurrentUser } from '../../util/data';
+import { FormattedMessage, injectIntl, intlShape } from '../../util/reactIntl';
+import { propTypes } from '../../util/types';
 import css from './ProfileSettingsPage.css';
+import { updateProfile, uploadImage } from './ProfileSettingsPage.duck';
+
 
 const onImageUploadHandler = (values, fn) => {
   const { id, imageId, file } = values;

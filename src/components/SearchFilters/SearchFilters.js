@@ -2,7 +2,6 @@ import classNames from 'classnames';
 import omit from 'lodash/omit';
 import { bool, func, number, object, shape, string } from 'prop-types';
 import React from 'react';
-import { FormattedMessage, injectIntl, intlShape } from 'react-intl';
 import { withRouter } from 'react-router-dom';
 import { compose } from 'redux';
 import emptySearchImage from '../../assets/empty.svg';
@@ -14,6 +13,7 @@ import {
 } from '../../components';
 import routeConfiguration from '../../routeConfiguration';
 import { parseDateFromISO8601, stringifyDateToISO8601 } from '../../util/dates';
+import { FormattedMessage, injectIntl, intlShape } from '../../util/reactIntl';
 import { createResourceLocatorString } from '../../util/routes';
 import { propTypes } from '../../util/types';
 import css from './SearchFilters.css';

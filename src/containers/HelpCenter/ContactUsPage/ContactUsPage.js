@@ -1,32 +1,25 @@
-import React from 'react';
 import PropTypes from 'prop-types';
-import { compose } from 'redux';
+import React from 'react';
 import { connect } from 'react-redux';
-
-import { injectIntl, intlShape, FormattedMessage } from 'react-intl';
-import { isScrollingDisabled } from '../../../ducks/UI.duck';
-import { TopbarContainer } from '../../../containers';
-
-import { helpCenterTabs } from '../tabs';
-
-import { ContactUsForm } from '../../../forms';
-
+import { compose } from 'redux';
 import {
-  Page,
+  Footer,
   LayoutSideNavigationWithHero,
-  LayoutWrapperMain,
+  LayoutWrapperFooter,
   LayoutWrapperHero,
+  LayoutWrapperMain,
   LayoutWrapperSideNav,
   LayoutWrapperTopbar,
-  LayoutWrapperFooter,
-  Footer,
+  Page,
 } from '../../../components';
-
 import config from '../../../config';
-
-import { sendContactUsMessage } from './ContactUsPage.duck';
-
+import { TopbarContainer } from '../../../containers';
+import { isScrollingDisabled } from '../../../ducks/UI.duck';
+import { ContactUsForm } from '../../../forms';
+import { FormattedMessage, injectIntl, intlShape } from '../../../util/reactIntl';
+import { helpCenterTabs } from '../tabs';
 import css from './ContactUsPage.css';
+import { sendContactUsMessage } from './ContactUsPage.duck';
 
 const ContactUsPageComponent = props => {
   const {

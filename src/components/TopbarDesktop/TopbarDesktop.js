@@ -1,21 +1,20 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { FormattedMessage, intlShape } from 'react-intl';
 import classNames from 'classnames';
-import { ACCOUNT_SETTINGS_PAGES } from '../../routeConfiguration';
-import { propTypes } from '../../util/types';
+import PropTypes from 'prop-types';
+import React from 'react';
 import {
   Avatar,
   InlineTextButton,
   Logo,
   Menu,
-  MenuLabel,
   MenuContent,
   MenuItem,
+  MenuLabel,
   NamedLink,
 } from '../../components';
 import { TopbarSearchForm } from '../../forms';
-
+import { ACCOUNT_SETTINGS_PAGES } from '../../routeConfiguration';
+import { FormattedMessage, intlShape } from '../../util/reactIntl';
+import { propTypes } from '../../util/types';
 import css from './TopbarDesktop.css';
 
 const TopbarDesktop = props => {

@@ -1,13 +1,12 @@
-import React from 'react';
 import { bool, object, shape } from 'prop-types';
+import React from 'react';
 import { compose } from 'redux';
-import { injectIntl, intlShape } from 'react-intl';
-
-import PayoutDetailsAddress from './PayoutDetailsAddress';
-import PayoutDetailsCompany from './PayoutDetailsCompany';
-import PayoutDetailsBankDetails from './PayoutDetailsBankDetails';
+import { injectIntl, intlShape } from '../../util/reactIntl';
 import PayoutDetailsAccountOpener from './PayoutDetailsAccountOpener';
 import PayoutDetailsAdditionalPersons from './PayoutDetailsAdditionalPersons';
+import PayoutDetailsAddress from './PayoutDetailsAddress';
+import PayoutDetailsBankDetails from './PayoutDetailsBankDetails';
+import PayoutDetailsCompany from './PayoutDetailsCompany';
 import { stripeCountryConfigs } from './PayoutDetailsForm';
 
 const CompanyAccountComponent = props => {

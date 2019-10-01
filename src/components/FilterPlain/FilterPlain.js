@@ -1,9 +1,8 @@
-import React, { Component } from 'react';
-import { bool, func, node, object, string } from 'prop-types';
 import classNames from 'classnames';
-import { injectIntl, intlShape, FormattedMessage } from 'react-intl';
-
+import { bool, func, node, object, string } from 'prop-types';
+import React, { Component } from 'react';
 import { FilterForm } from '../../forms';
+import { FormattedMessage, injectIntl, intlShape } from '../../util/reactIntl';
 import css from './FilterPlain.css';
 
 class FilterPlainComponent extends Component {

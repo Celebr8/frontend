@@ -10,12 +10,12 @@
  * component for them that can be used in the `BookingBreakdown` component.
  */
 import React from 'react';
-import { intlShape } from 'react-intl';
 import { formatMoney } from '../../util/currency';
 import { humanizeLineItemCode } from '../../util/data';
+import { intlShape } from '../../util/reactIntl';
 import { LINE_ITEMS, propTypes } from '../../util/types';
-
 import css from './BookingBreakdown.css';
+
 
 const LineItemUnknownItemsMaybe = props => {
   const { transaction, intl } = props;

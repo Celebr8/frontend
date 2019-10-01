@@ -9,13 +9,14 @@ const IconSocialMediaBlog = props => {
   const { rootClassName, className, width, height } = props;
   const classes = classNames(rootClassName || css.root, className);
   return (
-    <div className={classes}
-        width={ width || 10 }
-        height={ height || 17 }
-        viewBox="0 0 10 17"
-        xmlns="http://www.w3.org/2000/svg"
+    <div
+      className={classes}
+      width={width || 10}
+      height={height || 17}
+      viewBox="0 0 10 17"
+      xmlns="http://www.w3.org/2000/svg"
     >
-        <img  src={BlogIcon} height='30px' width='30px' alt="Go to blog"/>
+      <img src={BlogIcon} height="30px" width="30px" alt="Go to blog" />
     </div>
   );
 };

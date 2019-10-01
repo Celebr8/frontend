@@ -1,22 +1,12 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { FormattedMessage, injectIntl, intlShape } from 'react-intl';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
-import {
-  Footer,
-  LayoutSideNavigationWithHero,
-  LayoutWrapperFooter,
-  LayoutWrapperHero,
-  LayoutWrapperMain,
-  LayoutWrapperSideNav,
-  LayoutWrapperTopbar,
-  NamedLink,
-  Page,
-} from '../../../components';
+import { Footer, LayoutSideNavigationWithHero, LayoutWrapperFooter, LayoutWrapperHero, LayoutWrapperMain, LayoutWrapperSideNav, LayoutWrapperTopbar, NamedLink, Page } from '../../../components';
 import config from '../../../config';
 import { TopbarContainer } from '../../../containers';
 import { isScrollingDisabled } from '../../../ducks/UI.duck';
+import { FormattedMessage, injectIntl, intlShape } from '../../../util/reactIntl';
 import { helpCenterTabs } from '../tabs';
 import css from './DealsHelpPage.css';
 

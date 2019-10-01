@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
 import { bool, func, number, object, string } from 'prop-types';
-import { injectIntl, intlShape } from 'react-intl';
-
-import { FieldDateRangeController, FilterPopup, FilterPlain } from '../../components';
+import React, { Component } from 'react';
+import { FieldDateRangeController, FilterPlain, FilterPopup } from '../../components';
+import { injectIntl, intlShape } from '../../util/reactIntl';
 import css from './BookingDateRangeFilter.css';
+
 
 export class BookingDateRangeFilterComponent extends Component {
   constructor(props) {

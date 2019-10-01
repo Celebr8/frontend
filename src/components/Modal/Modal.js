@@ -8,12 +8,11 @@
  *   </Modal>
  * </Parent>
  */
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { FormattedMessage, intlShape, injectIntl } from 'react-intl';
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 import { Button, IconClose } from '../../components';
-
+import { FormattedMessage, injectIntl, intlShape } from '../../util/reactIntl';
 import css from './Modal.css';
 
 const KEY_CODE_ESCAPE = 27;

@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { FormattedMessage, injectIntl, intlShape } from 'react-intl';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import {
@@ -16,6 +15,7 @@ import {
 import config from '../../../config';
 import { TopbarContainer } from '../../../containers';
 import { isScrollingDisabled } from '../../../ducks/UI.duck';
+import { FormattedMessage, injectIntl, intlShape } from '../../../util/reactIntl';
 import { helpCenterTabs } from '../tabs';
 import css from './GuidebookForProvidersPage.css';
 

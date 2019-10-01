@@ -3,26 +3,25 @@
  * onFocus: renders given value in unformatted manner: "9999,99"
  * onBlur: formats the given input: "9 999,99 €"
  */
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { intlShape, injectIntl } from 'react-intl';
-import { Field } from 'react-final-form';
 import classNames from 'classnames';
 import Decimal from 'decimal.js';
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
+import { Field } from 'react-final-form';
 import { ValidationError } from '../../components';
-import { types as sdkTypes } from '../../util/sdkLoader';
 import {
-  isSafeNumber,
-  unitDivisor,
-  convertUnitToSubUnit,
   convertMoneyToNumber,
+  convertUnitToSubUnit,
   ensureDotSeparator,
   ensureSeparator,
+  isSafeNumber,
   truncateToSubUnitPrecision,
+  unitDivisor,
 } from '../../util/currency';
-import { propTypes } from '../../util/types';
 import * as log from '../../util/log';
-
+import { injectIntl, intlShape } from '../../util/reactIntl';
+import { types as sdkTypes } from '../../util/sdkLoader';
+import { propTypes } from '../../util/types';
 import css from './FieldCurrencyInput.css';
 
 const { Money } = sdkTypes;

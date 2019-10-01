@@ -13,8 +13,8 @@
 
 // React 16 depends on the collection types Map and Set, as well as requestAnimationFrame.
 // https://reactjs.org/docs/javascript-environment-requirements.html
-import 'core-js/es6/map';
-import 'core-js/es6/set';
+import 'core-js/features/map';
+import 'core-js/features/set';
 import Decimal from 'decimal.js';
 import 'raf/polyfill';
 import React from 'react';
@@ -120,4 +120,3 @@ export default renderApp;
 // matchPathname helps to figure out which route is called and if it has preloading needs
 // configureStore is used for creating initial store state for Redux after preloading
 export { matchPathname, configureStore, routeConfiguration, config };
-

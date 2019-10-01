@@ -1,45 +1,31 @@
-import React, { Component } from 'react';
+import difference from 'lodash/difference';
+import mapValues from 'lodash/mapValues';
+import moment from 'moment';
 import PropTypes from 'prop-types';
-import ReactDOMServer from 'react-dom/server';
-
+import React from 'react';
 // react-dates needs to be initialized before using any react-dates component
 // https://github.com/airbnb/react-dates#initialize
 // NOTE: Initializing it here will initialize it also for app.test.js
 import 'react-dates/initialize';
+import ReactDOMServer from 'react-dom/server';
 import Helmet from 'react-helmet';
-import { BrowserRouter, StaticRouter } from 'react-router-dom';
+import { HelmetProvider } from 'react-helmet-async';
 import { Provider } from 'react-redux';
-import difference from 'lodash/difference';
-import mapValues from 'lodash/mapValues';
-import moment from 'moment';
-import { IntlProvider, addLocaleData } from 'react-intl';
-import configureStore from './store';
+import { BrowserRouter, StaticRouter } from 'react-router-dom';
+import config from './config';
 import routeConfiguration from './routeConfiguration';
 import Routes from './Routes';
-import config from './config';
-import { loadReCaptcha } from 'react-recaptcha-google';
-
+import configureStore from './store';
 // Flex template application uses English translations as default.
 import defaultMessages from './translations/en.json';
-
-// If you want to change the language, change the imports to match the wanted locale:
-//   1) Change the language in the config.js file!
-//   2) Import correct locale rules for React Intl library
-//   3) Import correct locale rules for Moment library
-//   4) Use the `messagesInLocale` import to add the correct translation file.
-
-// Step 2:
-// Import locale rules for React Intl library
-import localeData from 'react-intl/locale-data/en';
-
 // Step 3:
 // If you are using a non-english locale with moment library,
 // you should also import time specific formatting rules for that locale
 // e.g. for French: import 'moment/locale/fr';
-
 // Step 4:
 // If you are using a non-english locale, point `messagesInLocale` to correct .json file
 import messagesInLocale from './translations/fr.json';
+import { IntlProvider } from './util/reactIntl';
 
 // Note that there is also translations in './translations/countryCodes.js' file
 // This file contains ISO 3166-1 alpha-2 country codes, country names and their translations in our default languages
@@ -76,36 +62,32 @@ const localeMessages = isTestEnv ? testMessages : messages;
 
 const setupLocale = () => {
   if (isTestEnv) {
-    // Don't change the locale in tests
+    // Use english as a default locale in tests
+    // This affects app.test.js and app.node.test.js tests
+    config.locale = 'en';
     return;
   }
-
-  // Add the translation messages
-  addLocaleData([...localeData]);
 
   // Set the Moment locale globally
   // See: http://momentjs.com/docs/#/i18n/changing-locale/
   moment.locale(config.locale);
 };
 
-export class ClientApp extends Component {
-  componentDidMount() {
-    loadReCaptcha();
-  }
-  render() {
-    const { store } = this.props;
-    setupLocale();
-    return (
-      <IntlProvider locale={config.locale} messages={localeMessages}>
-        <Provider store={store}>
+export const ClientApp = props => {
+  const { store } = props;
+  setupLocale();
+  return (
+    <IntlProvider locale={config.locale} messages={localeMessages} textComponent="span">
+      <Provider store={store}>
+        <HelmetProvider>
           <BrowserRouter>
             <Routes routes={routeConfiguration()} />
           </BrowserRouter>
-        </Provider>
-      </IntlProvider>
-    );
-  }
-}
+        </HelmetProvider>
+      </Provider>
+    </IntlProvider>
+  );
+};
 
 const { any, string } = PropTypes;
 

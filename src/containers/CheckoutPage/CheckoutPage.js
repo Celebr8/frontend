@@ -1,27 +1,57 @@
 import classNames from 'classnames';
 import { bool, func, instanceOf, object, oneOfType, shape, string } from 'prop-types';
 import React, { Component } from 'react';
-import { FormattedMessage, injectIntl, intlShape } from 'react-intl';
+import { FormattedMessage, injectIntl, intlShape } from '../../util/reactIntl';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { compose } from 'redux';
-import { AvatarMedium, BookingBreakdown, Logo, NamedLink, NamedRedirect, Page, ResponsiveImage } from '../../components';
+import {
+  AvatarMedium,
+  BookingBreakdown,
+  Logo,
+  NamedLink,
+  NamedRedirect,
+  Page,
+  ResponsiveImage,
+} from '../../components';
 import config from '../../config';
 import { handleCardPayment, retrievePaymentIntent } from '../../ducks/stripe.duck.js';
 import { isScrollingDisabled } from '../../ducks/UI.duck';
 import { StripePaymentForm } from '../../forms';
 import routeConfiguration from '../../routeConfiguration';
 import { formatMoney } from '../../util/currency';
-import { ensureBooking, ensureCurrentUser, ensureListing, ensurePaymentMethodCard, ensureStripeCustomer, ensureTransaction, ensureUser } from '../../util/data';
+import {
+  ensureBooking,
+  ensureCurrentUser,
+  ensureListing,
+  ensurePaymentMethodCard,
+  ensureStripeCustomer,
+  ensureTransaction,
+  ensureUser,
+} from '../../util/data';
 import { dateFromLocalToAPI, minutesBetween } from '../../util/dates';
-import { isTransactionChargeDisabledError, isTransactionInitiateAmountTooLowError, isTransactionInitiateBookingTimeNotAvailableError, isTransactionInitiateListingNotFoundError, isTransactionInitiateMissingStripeAccountError, isTransactionZeroPaymentError, transactionInitiateOrderStripeErrors } from '../../util/errors';
+import {
+  isTransactionChargeDisabledError,
+  isTransactionInitiateAmountTooLowError,
+  isTransactionInitiateBookingTimeNotAvailableError,
+  isTransactionInitiateListingNotFoundError,
+  isTransactionInitiateMissingStripeAccountError,
+  isTransactionZeroPaymentError,
+  transactionInitiateOrderStripeErrors,
+} from '../../util/errors';
 import { findRouteByRouteName, pathByRouteName } from '../../util/routes';
 import { TRANSITION_ENQUIRE, txIsPaymentExpired, txIsPaymentPending } from '../../util/transaction';
 // eslint-disable-next-line
 import { propTypes } from '../../util/types';
 import { createSlug } from '../../util/urlHelpers';
 import css from './CheckoutPage.css';
-import { confirmPayment, initiateOrder, sendMessage, setInitialValues, speculateTransaction } from './CheckoutPage.duck';
+import {
+  confirmPayment,
+  initiateOrder,
+  sendMessage,
+  setInitialValues,
+  speculateTransaction,
+} from './CheckoutPage.duck';
 import { clearData, storeData, storedData } from './CheckoutPageSessionHelpers';
 
 const STORAGE_KEY = 'CheckoutPage';
@@ -123,7 +153,7 @@ export class CheckoutPageComponent extends Component {
 
     // NOTE: stored data can be empty if user has already successfully completed transaction.
     const pageData = hasDataInProps
-    ? { bookingData, bookingDates, listing, transaction }
+      ? { bookingData, bookingDates, listing, transaction }
       : storedData(STORAGE_KEY);
 
     // Check if a booking is already created according to stored data.
@@ -354,7 +384,16 @@ export class CheckoutPageComponent extends Component {
 
     const { history, speculatedTransaction, currentUser, paymentIntent, dispatch } = this.props;
     const { card, message, formValues, paymentMethod } = values;
-    const { name, addressLine1, addressLine2, postal, city, state, country, saveAfterOnetimePayment } = formValues;
+    const {
+      name,
+      addressLine1,
+      addressLine2,
+      postal,
+      city,
+      state,
+      country,
+      saveAfterOnetimePayment,
+    } = formValues;
 
     // Billing address is recommended.
     // However, let's not assume that <StripePaymentAddress> data is among formValues.
@@ -516,7 +555,7 @@ export class CheckoutPageComponent extends Component {
         />
       ) : null;
 
-      const isPaymentExpired = checkIsPaymentExpired(existingTransaction);
+    const isPaymentExpired = checkIsPaymentExpired(existingTransaction);
 
     // Allow showing page when currentUser is still being downloaded,
     // but show payment form only when user info is loaded.

@@ -1,12 +1,11 @@
-import React, { Component } from 'react';
-import { string, bool, func } from 'prop-types';
-import { compose } from 'redux';
-import { FormattedMessage, injectIntl, intlShape } from 'react-intl';
-import { Form as FinalForm } from 'react-final-form';
 import classNames from 'classnames';
-import { Form, FieldTextInput, SecondaryButton } from '../../components';
+import { bool, func, string } from 'prop-types';
+import React, { Component } from 'react';
+import { Form as FinalForm } from 'react-final-form';
+import { compose } from 'redux';
+import { FieldTextInput, Form, SecondaryButton } from '../../components';
+import { FormattedMessage, injectIntl, intlShape } from '../../util/reactIntl';
 import { propTypes } from '../../util/types';
-
 import css from './SendMessageForm.css';
 
 const BLUR_TIMEOUT_MS = 100;

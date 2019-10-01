@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { compose } from 'redux';
-import { FormattedMessage, injectIntl, intlShape } from 'react-intl';
+import { FormattedMessage, injectIntl, intlShape } from '../../util/reactIntl';
 import { Form as FinalForm } from 'react-final-form';
 import * as ibantools from 'ibantools';
 import classNames from 'classnames';

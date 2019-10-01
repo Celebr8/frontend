@@ -1,47 +1,46 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { compose } from 'redux';
-import { connect } from 'react-redux';
-import { FormattedMessage, injectIntl, intlShape } from 'react-intl';
-import moment from 'moment';
 import classNames from 'classnames';
-import {
-  txIsAccepted,
-  txIsCanceled,
-  txIsDeclined,
-  txIsEnquired,
-  txIsRequested,
-  txHasBeenDelivered,
-  txIsPaymentExpired,
-  txIsPaymentPending,
-} from '../../util/transaction';
-import { LINE_ITEM_DAY, LINE_ITEM_UNITS, propTypes } from '../../util/types';
-import { formatMoney } from '../../util/currency';
-import { ensureCurrentUser } from '../../util/data';
-import { dateFromAPIToLocalNoon  } from '../../util/dates';
-import { getMarketplaceEntities } from '../../ducks/marketplaceData.duck';
-import { isScrollingDisabled } from '../../ducks/UI.duck';
+import moment from 'moment';
+import PropTypes from 'prop-types';
+import React from 'react';
+import { connect } from 'react-redux';
+import { compose } from 'redux';
 import {
   Avatar,
+  Footer,
+  IconSpinner,
+  LayoutSideNavigation,
+  LayoutWrapperFooter,
+  LayoutWrapperMain,
+  LayoutWrapperSideNav,
+  LayoutWrapperTopbar,
   NamedLink,
   NotificationBadge,
   Page,
   PaginationLinks,
   TabNav,
-  LayoutSideNavigation,
-  LayoutWrapperMain,
-  LayoutWrapperSideNav,
-  LayoutWrapperTopbar,
-  LayoutWrapperFooter,
-  Footer,
-  IconSpinner,
   UserDisplayName,
 } from '../../components';
-import { TopbarContainer, NotFoundPage } from '../../containers';
 import config from '../../config';
-
-import { loadData } from './InboxPage.duck';
+import { NotFoundPage, TopbarContainer } from '../../containers';
+import { getMarketplaceEntities } from '../../ducks/marketplaceData.duck';
+import { isScrollingDisabled } from '../../ducks/UI.duck';
+import { formatMoney } from '../../util/currency';
+import { ensureCurrentUser } from '../../util/data';
+import { dateFromAPIToLocalNoon } from '../../util/dates';
+import { FormattedMessage, injectIntl, intlShape } from '../../util/reactIntl';
+import {
+  txHasBeenDelivered,
+  txIsAccepted,
+  txIsCanceled,
+  txIsDeclined,
+  txIsEnquired,
+  txIsPaymentExpired,
+  txIsPaymentPending,
+  txIsRequested,
+} from '../../util/transaction';
+import { LINE_ITEM_DAY, LINE_ITEM_UNITS, propTypes } from '../../util/types';
 import css from './InboxPage.css';
+import { loadData } from './InboxPage.duck';
 
 const { arrayOf, bool, number, oneOf, shape, string } = PropTypes;
 

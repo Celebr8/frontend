@@ -64,7 +64,6 @@ export const isValidTransaction = transaction => {
 // Stores given bookingDates and listing to sessionStorage
 export const storeData = (bookingData, bookingDates, listing, transaction, storageKey) => {
   if (window && window.sessionStorage && listing && bookingDates && bookingData) {
-    
     const data = {
       bookingData,
       bookingDates,
@@ -72,7 +71,7 @@ export const storeData = (bookingData, bookingDates, listing, transaction, stora
       transaction,
       storedAt: new Date(),
     };
-   
+
     const replacer = function(k, v) {
       if (this[k] instanceof Date) {
         return { date: v, _serializedType: 'SerializableDate' };
@@ -93,9 +92,7 @@ export const storedData = storageKey => {
   if (window && window.sessionStorage) {
     const checkoutPageData = window.sessionStorage.getItem(storageKey);
 
-    
     const reviver = (k, v) => {
-     
       if (v && typeof v === 'object' && v._serializedType === 'SerializableDate') {
         // Dates are expected to be stored as:
         // { date: new Date(), _serializedType: 'SerializableDate' }

@@ -1,15 +1,15 @@
-import React from 'react';
-import { bool, func, shape, string } from 'prop-types';
-import { compose } from 'redux';
-import { Form as FinalForm } from 'react-final-form';
-import { intlShape, injectIntl, FormattedMessage } from 'react-intl';
 import classNames from 'classnames';
+import { bool, func, shape, string } from 'prop-types';
+import React from 'react';
+import { Form as FinalForm } from 'react-final-form';
+import { compose } from 'redux';
+import { Button, FieldCurrencyInput, Form } from '../../components';
 import config from '../../config';
-import { LINE_ITEM_NIGHT, LINE_ITEM_DAY, propTypes } from '../../util/types';
-import * as validators from '../../util/validators';
 import { formatMoney } from '../../util/currency';
+import { FormattedMessage, injectIntl, intlShape } from '../../util/reactIntl';
 import { types as sdkTypes } from '../../util/sdkLoader';
-import { Button, Form, FieldCurrencyInput } from '../../components';
+import { LINE_ITEM_DAY, LINE_ITEM_NIGHT, propTypes } from '../../util/types';
+import * as validators from '../../util/validators';
 import css from './EditListingPricingForm.css';
 
 const { Money } = sdkTypes;

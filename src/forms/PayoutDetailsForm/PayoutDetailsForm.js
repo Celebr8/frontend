@@ -1,19 +1,18 @@
-import React from 'react';
-import { bool, func, object, shape, string } from 'prop-types';
-import { compose } from 'redux';
-import { FormattedMessage, injectIntl, intlShape } from 'react-intl';
-import { Form as FinalForm } from 'react-final-form';
-import arrayMutators from 'final-form-arrays';
 import classNames from 'classnames';
-import config from '../../config';
-import { propTypes } from '../../util/types';
-import { isStripeInvalidPostalCode, isStripeError } from '../../util/errors';
-import * as validators from '../../util/validators';
+import arrayMutators from 'final-form-arrays';
+import { bool, func, object, shape, string } from 'prop-types';
+import React from 'react';
+import { Form as FinalForm } from 'react-final-form';
+import { compose } from 'redux';
 import { Button, ExternalLink, FieldRadioButton, FieldSelect, Form } from '../../components';
-
+import config from '../../config';
+import { isStripeError, isStripeInvalidPostalCode } from '../../util/errors';
+import { FormattedMessage, injectIntl, intlShape } from '../../util/reactIntl';
+import { propTypes } from '../../util/types';
+import * as validators from '../../util/validators';
 import PayoutDetailsCompanyAccount from './PayoutDetailsCompanyAccount';
-import PayoutDetailsIndividualAccount from './PayoutDetailsIndividualAccount';
 import css from './PayoutDetailsForm.css';
+import PayoutDetailsIndividualAccount from './PayoutDetailsIndividualAccount';
 
 const supportedCountries = config.stripe.supportedCountries.map(c => c.code);
 

@@ -1,24 +1,23 @@
-import React, { Component } from 'react';
-import { bool, string } from 'prop-types';
-import { compose } from 'redux';
-import { FormattedMessage, injectIntl, intlShape } from 'react-intl';
-import { Field, Form as FinalForm } from 'react-final-form';
-import isEqual from 'lodash/isEqual';
 import classNames from 'classnames';
-import { ensureCurrentUser } from '../../util/data';
-import { propTypes } from '../../util/types';
-import * as validators from '../../util/validators';
-import { isUploadImageOverLimitError } from '../../util/errors';
+import isEqual from 'lodash/isEqual';
+import { bool, string } from 'prop-types';
+import React, { Component } from 'react';
+import { Field, Form as FinalForm } from 'react-final-form';
+import { compose } from 'redux';
 import {
-  Form,
   Avatar,
   Button,
-  ImageFromFile,
-  IconSpinner,
-  FieldTextInput,
   FieldBirthdayInput,
+  FieldTextInput,
+  Form,
+  IconSpinner,
+  ImageFromFile,
 } from '../../components';
-
+import { ensureCurrentUser } from '../../util/data';
+import { isUploadImageOverLimitError } from '../../util/errors';
+import { FormattedMessage, injectIntl, intlShape } from '../../util/reactIntl';
+import { propTypes } from '../../util/types';
+import * as validators from '../../util/validators';
 import css from './ProfileSettingsForm.css';
 
 const ACCEPT_IMAGES = 'image/*';

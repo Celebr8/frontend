@@ -1,27 +1,26 @@
-import React from 'react';
 import PropTypes from 'prop-types';
-import { compose } from 'redux';
+import React from 'react';
 import { connect } from 'react-redux';
-import { injectIntl, intlShape, FormattedMessage } from 'react-intl';
-import { propTypes } from '../../util/types';
-import { ensureCurrentUser } from '../../util/data';
-import { fetchCurrentUser, sendVerificationEmail } from '../../ducks/user.duck';
+import { compose } from 'redux';
 import {
+  Footer,
   LayoutSideNavigation,
+  LayoutWrapperFooter,
   LayoutWrapperMain,
   LayoutWrapperSideNav,
   LayoutWrapperTopbar,
-  LayoutWrapperFooter,
-  Footer,
   Page,
   UserNav,
 } from '../../components';
-import { ContactDetailsForm } from '../../forms';
 import { TopbarContainer } from '../../containers';
-
 import { isScrollingDisabled } from '../../ducks/UI.duck';
-import { saveContactDetails, saveContactDetailsClear } from './ContactDetailsPage.duck';
+import { fetchCurrentUser, sendVerificationEmail } from '../../ducks/user.duck';
+import { ContactDetailsForm } from '../../forms';
+import { ensureCurrentUser } from '../../util/data';
+import { FormattedMessage, injectIntl, intlShape } from '../../util/reactIntl';
+import { propTypes } from '../../util/types';
 import css from './ContactDetailsPage.css';
+import { saveContactDetails, saveContactDetailsClear } from './ContactDetailsPage.duck';
 
 export const ContactDetailsPageComponent = props => {
   const {

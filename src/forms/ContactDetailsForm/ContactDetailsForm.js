@@ -1,21 +1,17 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { compose } from 'redux';
-import { FormattedMessage, injectIntl, intlShape } from 'react-intl';
-import { Form as FinalForm } from 'react-final-form';
-import isEqual from 'lodash/isEqual';
 import classNames from 'classnames';
+import isEqual from 'lodash/isEqual';
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
+import { Form as FinalForm } from 'react-final-form';
+import { compose } from 'redux';
+import { FieldPhoneNumberInput, FieldTextInput, Form, PrimaryButton } from '../../components';
+import { ensureCurrentUser } from '../../util/data';
+import { isChangeEmailTakenError, isChangeEmailWrongPassword, isTooManyEmailVerificationRequestsError } from '../../util/errors';
+import { FormattedMessage, injectIntl, intlShape } from '../../util/reactIntl';
 import { propTypes } from '../../util/types';
 import * as validators from '../../util/validators';
-import { ensureCurrentUser } from '../../util/data';
-import {
-  isChangeEmailTakenError,
-  isChangeEmailWrongPassword,
-  isTooManyEmailVerificationRequestsError,
-} from '../../util/errors';
-import { FieldPhoneNumberInput, Form, PrimaryButton, FieldTextInput } from '../../components';
-
 import css from './ContactDetailsForm.css';
+
 
 const SHOW_EMAIL_SENT_TIMEOUT = 2000;
 

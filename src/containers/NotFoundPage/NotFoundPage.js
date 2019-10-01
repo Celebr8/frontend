@@ -1,23 +1,22 @@
-import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { injectIntl, intlShape, FormattedMessage } from 'react-intl';
-import { compose } from 'redux';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import routeConfiguration from '../../routeConfiguration';
-import { createResourceLocatorString } from '../../util/routes';
-import { isScrollingDisabled } from '../../ducks/UI.duck';
+import { compose } from 'redux';
 import {
-  Page,
-  LayoutSingleColumn,
-  LayoutWrapperTopbar,
-  LayoutWrapperMain,
-  LayoutWrapperFooter,
   Footer,
+  LayoutSingleColumn,
+  LayoutWrapperFooter,
+  LayoutWrapperMain,
+  LayoutWrapperTopbar,
+  Page,
 } from '../../components';
-import { LocationSearchForm } from '../../forms';
 import { TopbarContainer } from '../../containers';
-
+import { isScrollingDisabled } from '../../ducks/UI.duck';
+import { LocationSearchForm } from '../../forms';
+import routeConfiguration from '../../routeConfiguration';
+import { FormattedMessage, injectIntl, intlShape } from '../../util/reactIntl';
+import { createResourceLocatorString } from '../../util/routes';
 import css from './NotFoundPage.css';
 
 export class NotFoundPageComponent extends Component {

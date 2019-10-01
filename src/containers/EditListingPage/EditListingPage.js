@@ -1,41 +1,39 @@
+import { bool, func, object, oneOf, shape, string } from 'prop-types';
 import React from 'react';
-import { bool, func, object, shape, string, oneOf } from 'prop-types';
-import { compose } from 'redux';
-import { withRouter } from 'react-router-dom';
-import { intlShape, injectIntl } from 'react-intl';
 import { connect } from 'react-redux';
-import { types as sdkTypes } from '../../util/sdkLoader';
-import {
-  LISTING_PAGE_PARAM_TYPE_DRAFT,
-  LISTING_PAGE_PARAM_TYPE_NEW,
-  LISTING_PAGE_PARAM_TYPES,
-  LISTING_PAGE_PENDING_APPROVAL_VARIANT,
-  createSlug,
-} from '../../util/urlHelpers';
-import { LISTING_STATE_DRAFT, LISTING_STATE_PENDING_APPROVAL, propTypes } from '../../util/types';
-import { ensureOwnListing } from '../../util/data';
-import { getMarketplaceEntities } from '../../ducks/marketplaceData.duck';
-import { manageDisableScrolling, isScrollingDisabled } from '../../ducks/UI.duck';
-import { stripeAccountClearError, createStripeAccount } from '../../ducks/stripe.duck';
+import { withRouter } from 'react-router-dom';
+import { compose } from 'redux';
 import { EditListingWizard, NamedRedirect, Page } from '../../components';
 import { TopbarContainer } from '../../containers';
-
+import { getMarketplaceEntities } from '../../ducks/marketplaceData.duck';
+import { createStripeAccount, stripeAccountClearError } from '../../ducks/stripe.duck';
+import { isScrollingDisabled, manageDisableScrolling } from '../../ducks/UI.duck';
+import { ensureOwnListing } from '../../util/data';
+import { injectIntl, intlShape } from '../../util/reactIntl';
+import { types as sdkTypes } from '../../util/sdkLoader';
+import { LISTING_STATE_DRAFT, LISTING_STATE_PENDING_APPROVAL, propTypes } from '../../util/types';
 import {
-  requestFetchBookings,
-  requestFetchAvailabilityExceptions,
+  createSlug,
+  LISTING_PAGE_PARAM_TYPES,
+  LISTING_PAGE_PARAM_TYPE_DRAFT,
+  LISTING_PAGE_PARAM_TYPE_NEW,
+  LISTING_PAGE_PENDING_APPROVAL_VARIANT,
+} from '../../util/urlHelpers';
+import css from './EditListingPage.css';
+import {
+  clearUpdatedTab,
+  loadData,
+  removeListingImage,
   requestCreateAvailabilityException,
-  requestDeleteAvailabilityException,
   requestCreateListingDraft,
+  requestDeleteAvailabilityException,
+  requestFetchAvailabilityExceptions,
+  requestFetchBookings,
+  requestImageUpload,
   requestPublishListingDraft,
   requestUpdateListing,
-  requestImageUpload,
   updateImageOrder,
-  removeListingImage,
-  loadData,
-  clearUpdatedTab,
 } from './EditListingPage.duck';
-
-import css from './EditListingPage.css';
 
 const { UUID } = sdkTypes;
 

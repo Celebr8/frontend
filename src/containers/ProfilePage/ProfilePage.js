@@ -1,34 +1,33 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { injectIntl, intlShape, FormattedMessage } from 'react-intl';
-import { compose } from 'redux';
-import { connect } from 'react-redux';
 import classNames from 'classnames';
-import { types as sdkTypes } from '../../util/sdkLoader';
-import { REVIEW_TYPE_OF_PROVIDER, REVIEW_TYPE_OF_CUSTOMER, propTypes } from '../../util/types';
-import { ensureCurrentUser, ensureUser } from '../../util/data';
-import { withViewport } from '../../util/contextHelpers';
-import { isScrollingDisabled } from '../../ducks/UI.duck';
-import { getMarketplaceEntities } from '../../ducks/marketplaceData.duck';
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { compose } from 'redux';
 import {
-  Page,
+  AvatarLarge,
+  ButtonTabNavHorizontal,
+  Footer,
   LayoutSideNavigation,
+  LayoutWrapperFooter,
   LayoutWrapperMain,
   LayoutWrapperSideNav,
   LayoutWrapperTopbar,
-  LayoutWrapperFooter,
-  Footer,
-  AvatarLarge,
-  NamedLink,
   ListingCard,
+  NamedLink,
+  Page,
   Reviews,
-  ButtonTabNavHorizontal,
 } from '../../components';
-import { TopbarContainer, NotFoundPage } from '../../containers';
-import { loadData } from './ProfilePage.duck';
 import config from '../../config';
-
+import { NotFoundPage, TopbarContainer } from '../../containers';
+import { getMarketplaceEntities } from '../../ducks/marketplaceData.duck';
+import { isScrollingDisabled } from '../../ducks/UI.duck';
+import { withViewport } from '../../util/contextHelpers';
+import { ensureCurrentUser, ensureUser } from '../../util/data';
+import { FormattedMessage, injectIntl, intlShape } from '../../util/reactIntl';
+import { types as sdkTypes } from '../../util/sdkLoader';
+import { propTypes, REVIEW_TYPE_OF_CUSTOMER, REVIEW_TYPE_OF_PROVIDER } from '../../util/types';
 import css from './ProfilePage.css';
+import { loadData } from './ProfilePage.duck';
 
 const { UUID } = sdkTypes;
 const MAX_MOBILE_SCREEN_WIDTH = 768;

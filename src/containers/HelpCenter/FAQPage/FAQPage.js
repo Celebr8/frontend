@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
-import { injectIntl, intlShape, FormattedMessage } from 'react-intl';
+import { injectIntl, intlShape, FormattedMessage } from '../../../util/reactIntl';
 import { isScrollingDisabled } from '../../../ducks/UI.duck';
 import { TopbarContainer } from '../../../containers';
 import { helpCenterTabs } from '../tabs';
@@ -357,7 +357,11 @@ class FAQPagePanelsBase extends React.Component {
                   click here
                 </NamedLink>{' '}
                 or email us at{' '}
-                <a href="mailto:support@celebr8.co?subject=How do I list my pub inquiry" target="_blank" rel="noopener noreferrer">
+                <a
+                  href="mailto:support@celebr8.co?subject=How do I list my pub inquiry"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   support@celebr8.co
                 </a>
                 .
@@ -1407,7 +1411,8 @@ class FAQPagePanelsBase extends React.Component {
               Please report any suspicious activity or users immediately by sending us an email at{' '}
               <a
                 href="mailto:support@celebr8.co?subject=User acting against Celebr8 policies"
-                target="_blank" rel="noopener noreferrer"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 support@celebr8.co
               </a>

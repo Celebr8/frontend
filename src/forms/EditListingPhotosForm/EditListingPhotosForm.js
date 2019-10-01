@@ -1,16 +1,16 @@
-import React, { Component } from 'react';
-import { array, bool, func, shape, string } from 'prop-types';
-import { compose } from 'redux';
-import { Form as FinalForm, Field } from 'react-final-form';
-import { FormattedMessage, intlShape, injectIntl } from 'react-intl';
-import isEqual from 'lodash/isEqual';
 import classNames from 'classnames';
-import { propTypes } from '../../util/types';
-import { nonEmptyArray, composeValidators } from '../../util/validators';
-import { isUploadImageOverLimitError } from '../../util/errors';
+import isEqual from 'lodash/isEqual';
+import { array, bool, func, shape, string } from 'prop-types';
+import React, { Component } from 'react';
+import { Field, Form as FinalForm } from 'react-final-form';
+import { compose } from 'redux';
 import { AddImages, Button, Form, ValidationError } from '../../components';
-
+import { isUploadImageOverLimitError } from '../../util/errors';
+import { FormattedMessage, injectIntl, intlShape } from '../../util/reactIntl';
+import { propTypes } from '../../util/types';
+import { composeValidators, nonEmptyArray } from '../../util/validators';
 import css from './EditListingPhotosForm.css';
+
 
 const ACCEPT_IMAGES = 'image/*';
 

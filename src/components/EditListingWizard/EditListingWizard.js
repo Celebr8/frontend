@@ -1,30 +1,29 @@
-import React, { Component } from 'react';
-import { array, bool, func, number, object, oneOf, shape, string } from 'prop-types';
-import { compose } from 'redux';
-import { FormattedMessage, injectIntl, intlShape } from 'react-intl';
 import classNames from 'classnames';
+import { array, bool, func, number, object, oneOf, shape, string } from 'prop-types';
+import React, { Component } from 'react';
+import { compose } from 'redux';
+import { Modal, NamedRedirect, Tabs } from '../../components';
+import { PayoutDetailsForm } from '../../forms';
 import { withViewport } from '../../util/contextHelpers';
+import { ensureCurrentUser, ensureListing } from '../../util/data';
+import { FormattedMessage, injectIntl, intlShape } from '../../util/reactIntl';
 import {
+  LISTING_PAGE_PARAM_TYPES,
   LISTING_PAGE_PARAM_TYPE_DRAFT,
   LISTING_PAGE_PARAM_TYPE_NEW,
-  LISTING_PAGE_PARAM_TYPES,
 } from '../../util/urlHelpers';
-import { ensureListing, ensureCurrentUser } from '../../util/data';
-import { PayoutDetailsForm } from '../../forms';
-import { Modal, NamedRedirect, Tabs } from '../../components';
-
+import css from './EditListingWizard.css';
 import EditListingWizardTab, {
   AVAILABILITY,
+  CAPACITY,
   DESCRIPTION,
   FEATURES,
-  CAPACITY,
-  REGULARLY_OPEN_ON,
-  POLICY,
   LOCATION,
-  PRICING,
   PHOTOS,
+  POLICY,
+  PRICING,
+  REGULARLY_OPEN_ON,
 } from './EditListingWizardTab';
-import css from './EditListingWizard.css';
 
 // TODO: PHOTOS panel needs to be the last one since it currently contains PayoutDetailsForm modal
 // All the other panels can be reordered.

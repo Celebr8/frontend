@@ -1,11 +1,11 @@
 import classNames from 'classnames';
 import { func, string } from 'prop-types';
 import React, { Component } from 'react';
-import { FormattedMessage, injectIntl, intlShape } from 'react-intl';
 import { NamedLink, ResponsiveImage, ReviewRating, Reviews } from '../../components';
 import { lazyLoadWithDimensions } from '../../util/contextHelpers';
 import { ensureListing, ensureUser } from '../../util/data';
 import ReviewData from '../../util/externalReviews';
+import { FormattedMessage, injectIntl, intlShape } from '../../util/reactIntl';
 import { richText } from '../../util/richText';
 import { propTypes } from '../../util/types';
 import { createSlug } from '../../util/urlHelpers';
@@ -57,12 +57,14 @@ export const ListingCardComponent = props => {
 
   function mostCommonNumber(numbers) {
     let map = new Map();
+    // eslint-disable-next-line
     for (let num of numbers) {
       map.set(num, (map.get(num) || 0) + 1);
     }
 
     let mostCommonNumber = NaN;
     let maxCount = -1;
+    // eslint-disable-next-line
     for (let [num, count] of map.entries()) {
       if (count > maxCount) {
         maxCount = count;

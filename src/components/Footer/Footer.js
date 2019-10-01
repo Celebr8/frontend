@@ -1,7 +1,6 @@
 import classNames from 'classnames';
 import { string } from 'prop-types';
 import React from 'react';
-import { FormattedMessage, injectIntl, intlShape } from 'react-intl';
 import {
   ExternalLink,
   IconSocialMediaFacebook,
@@ -11,11 +10,12 @@ import {
   NamedLink,
 } from '../../components';
 import config from '../../config';
+import { FormattedMessage, injectIntl, intlShape } from '../../util/reactIntl';
 import { twitterPageURL } from '../../util/urlHelpers';
 import css from './Footer.css';
 
 const renderSocialMediaLinks = intl => {
-  const { siteFacebookPage, siteInstagramPage, siteTwitterHandle} = config;
+  const { siteFacebookPage, siteInstagramPage, siteTwitterHandle } = config;
   const siteTwitterPage = twitterPageURL(siteTwitterHandle);
 
   const goToFb = intl.formatMessage({ id: 'Footer.goToFacebook' });
@@ -51,7 +51,7 @@ const renderSocialMediaLinks = intl => {
     </ExternalLink>
   ) : null;
 
- /* 
+  /* 
   const blogLink = celebr8BlogPage ? (
     <ExternalLink
       key="linkToBlog"
@@ -149,7 +149,7 @@ const Footer = props => {
                 </NamedLink>
               </li>
               <li key="blog" className={css.listItem}>
-              <a
+                <a
                   href="http://www.blog.celebr8.co/"
                   target="_blank"
                   rel="noopener noreferrer"

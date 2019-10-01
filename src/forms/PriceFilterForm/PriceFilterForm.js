@@ -1,11 +1,10 @@
-import React from 'react';
-import { bool, func, number, object, string } from 'prop-types';
 import classNames from 'classnames';
 import debounce from 'lodash/debounce';
+import { bool, func, number, object, string } from 'prop-types';
+import React from 'react';
 import { Field, Form as FinalForm, FormSpy } from 'react-final-form';
-import { injectIntl, intlShape, FormattedMessage } from 'react-intl';
-
 import { Form, RangeSlider } from '../../components';
+import { FormattedMessage, injectIntl, intlShape } from '../../util/reactIntl';
 import css from './PriceFilterForm.css';
 
 const DEBOUNCE_WAIT_TIME = 400;
@@ -13,7 +12,6 @@ const DEBOUNCE_WAIT_TIME = 400;
 // Helper function to parse value for min handle
 // Value needs to be between slider's minimum value and current maximum value
 const parseMin = (min, currentMax) => value => {
-  
   const parsedValue = Number.parseInt(value, 10);
   if (isNaN(parsedValue)) {
     return '';
@@ -24,7 +22,6 @@ const parseMin = (min, currentMax) => value => {
 // Helper function to parse value for max handle
 // Value needs to be between slider's max value and current minimum value
 const parseMax = (max, currentMin) => value => {
-  
   const parsedValue = Number.parseInt(value, 10);
   if (isNaN(parsedValue)) {
     return '';
@@ -95,7 +92,7 @@ const PriceFilterFormComponent = props => {
           max,
           step,
         } = formRenderProps;
-        
+
         const { minPrice: minPriceRaw, maxPrice: maxPriceRaw } = values;
         const minPrice = typeof minPriceRaw !== 'string' ? minPriceRaw : min;
         const maxPrice = typeof maxPriceRaw !== 'string' ? maxPriceRaw : max;

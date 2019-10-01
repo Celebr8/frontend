@@ -1,12 +1,11 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { compose } from 'redux';
-import { FormattedMessage, injectIntl, intlShape } from 'react-intl';
-import { Form as FinalForm } from 'react-final-form';
 import classNames from 'classnames';
-import { Form, PrimaryButton, FieldTextInput } from '../../components';
+import PropTypes from 'prop-types';
+import React from 'react';
+import { Form as FinalForm } from 'react-final-form';
+import { compose } from 'redux';
+import { FieldTextInput, Form, PrimaryButton } from '../../components';
+import { FormattedMessage, injectIntl, intlShape } from '../../util/reactIntl';
 import * as validators from '../../util/validators';
-
 import css from './PasswordResetForm.css';
 
 const PasswordResetFormComponent = props => (

@@ -1,10 +1,9 @@
-import React, { Component } from 'react';
-import { bool, func, node, number, object, string } from 'prop-types';
 import classNames from 'classnames';
-import { injectIntl, intlShape } from 'react-intl';
-
+import { bool, func, node, number, object, string } from 'prop-types';
+import React, { Component } from 'react';
 import { OutsideClickHandler } from '../../components';
 import { FilterForm } from '../../forms';
+import { injectIntl, intlShape } from '../../util/reactIntl';
 import css from './FilterPopup.css';
 
 const KEY_CODE_ESCAPE = 27;

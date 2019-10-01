@@ -1,29 +1,27 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { compose } from 'redux';
-import { connect } from 'react-redux';
-import { injectIntl, intlShape } from 'react-intl';
-import { isScrollingDisabled } from '../../../ducks/UI.duck';
-import { TopbarContainer } from '../../../containers';
-import {
-  Page,
-  LayoutSingleColumn,
-  LayoutWrapperMain,
-  LayoutWrapperTopbar,
-  LayoutWrapperFooter,
-  Footer,
-} from '../../../components';
-
 import Button from '@material-ui/core/Button';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardHeader from '@material-ui/core/CardHeader';
 import Grid from '@material-ui/core/Grid';
-import StarIcon from '@material-ui/icons/StarBorder';
 import Typography from '@material-ui/core/Typography';
+import StarIcon from '@material-ui/icons/StarBorder';
+import PropTypes from 'prop-types';
+import React from 'react';
+import { connect } from 'react-redux';
+import { compose } from 'redux';
+import {
+  Footer,
+  LayoutSingleColumn,
+  LayoutWrapperFooter,
+  LayoutWrapperMain,
+  LayoutWrapperTopbar,
+  Page,
+} from '../../../components';
 import config from '../../../config';
-
+import { TopbarContainer } from '../../../containers';
+import { isScrollingDisabled } from '../../../ducks/UI.duck';
+import { injectIntl, intlShape } from '../../../util/reactIntl';
 import css from './BookAPartyPage.css';
 
 const tiers = [

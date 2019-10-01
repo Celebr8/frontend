@@ -13,7 +13,10 @@
   --TopbarSearchForm_inputHeight: 53px;
   --TopbarSearchForm_topbarMargin: 94px;
   --TopbarSearchForm_bottomBorder: 3px;
-  --TopbarSearchForm_mobilePredictionTop: calc(var(--TopbarSearchForm_topbarMargin) + var(--TopbarSearchForm_inputHeight) - var(--TopbarSearchForm_bottomBorder));
+  --TopbarSearchForm_mobilePredictionTop: calc(
+    var(--TopbarSearchForm_topbarMargin) + var(--TopbarSearchForm_inputHeight) -
+      var(--TopbarSearchForm_bottomBorder)
+  );
 }
 
 .mobileInputRoot {
@@ -154,6 +157,9 @@
   box-shadow: 0 6px 5px rgba(0, 0, 0, 0.1);
   z-index: calc(var(--zIndexPopup) + 1);
 
-  margin-top: calc(var(--topbarHeightDesktop) - var(--TopbarSearchForm_inputHeight) + var(--TopbarSearchForm_bottomBorder));
+  margin-top: calc(
+    var(--topbarHeightDesktop) - var(--TopbarSearchForm_inputHeight) +
+      var(--TopbarSearchForm_bottomBorder)
+  );
   max-width: 500px;
 }

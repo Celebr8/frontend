@@ -1,16 +1,15 @@
-import React from 'react';
-import { string } from 'prop-types';
-import { FormattedMessage, intlShape } from 'react-intl';
 import Decimal from 'decimal.js';
-import { formatMoney } from '../../util/currency';
+import { string } from 'prop-types';
+import React from 'react';
 import config from '../../config';
+import { formatMoney } from '../../util/currency';
+import { FormattedMessage, intlShape } from '../../util/reactIntl';
 import { types as sdkTypes } from '../../util/sdkLoader';
 import {
-  propTypes,
   LINE_ITEM_CUSTOMER_COMMISSION,
   LINE_ITEM_PROVIDER_COMMISSION,
+  propTypes,
 } from '../../util/types';
-
 import css from './BookingBreakdown.css';
 
 const { Money } = sdkTypes;

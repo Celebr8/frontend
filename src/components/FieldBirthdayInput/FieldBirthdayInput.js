@@ -1,12 +1,12 @@
-import React, { Component } from 'react';
-import { func, instanceOf, object, node, string, bool } from 'prop-types';
-import { Field } from 'react-final-form';
-import { injectIntl, intlShape } from 'react-intl';
 import classNames from 'classnames';
 import range from 'lodash/range';
+import { bool, func, instanceOf, node, object, string } from 'prop-types';
+import React, { Component } from 'react';
+import { Field } from 'react-final-form';
 import { ValidationError } from '../../components';
-
+import { injectIntl, intlShape } from '../../util/reactIntl';
 import css from './FieldBirthdayInput.css';
+
 
 // Since final-form tracks the onBlur event for marking the field as
 // touched (which triggers possible error validation rendering), only

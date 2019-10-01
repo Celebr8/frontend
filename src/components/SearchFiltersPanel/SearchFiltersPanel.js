@@ -26,16 +26,15 @@
  * ) : null;
  */
 
-import React, { Component } from 'react';
-import { array, func, object, shape, string } from 'prop-types';
 import classNames from 'classnames';
-import { FormattedMessage, injectIntl, intlShape } from 'react-intl';
-import { withRouter } from 'react-router-dom';
 import omit from 'lodash/omit';
-
-import routeConfiguration from '../../routeConfiguration';
-import { createResourceLocatorString } from '../../util/routes';
+import { array, func, object, shape, string } from 'prop-types';
+import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 import { InlineTextButton } from '../../components';
+import routeConfiguration from '../../routeConfiguration';
+import { FormattedMessage, injectIntl, intlShape } from '../../util/reactIntl';
+import { createResourceLocatorString } from '../../util/routes';
 import css from './SearchFiltersPanel.css';
 
 class SearchFiltersPanelComponent extends Component {

@@ -1,26 +1,25 @@
-import React from 'react';
 import PropTypes from 'prop-types';
-import { intlShape } from 'react-intl';
-import routeConfiguration from '../../routeConfiguration';
-import {
-  LISTING_PAGE_PARAM_TYPE_DRAFT,
-  LISTING_PAGE_PARAM_TYPE_NEW,
-  LISTING_PAGE_PARAM_TYPES,
-} from '../../util/urlHelpers';
-import { ensureListing } from '../../util/data';
-import { createResourceLocatorString } from '../../util/routes';
+import React from 'react';
 import {
   EditListingAvailabilityPanel,
+  EditListingCapacityPanel,
   EditListingDescriptionPanel,
   EditListingFeaturesPanel,
-  EditListingCapacityPanel,
-  EditListingRegularlyOpenOnPanel,
   EditListingLocationPanel,
   EditListingPhotosPanel,
   EditListingPoliciesPanel,
   EditListingPricingPanel,
+  EditListingRegularlyOpenOnPanel,
 } from '../../components';
-
+import routeConfiguration from '../../routeConfiguration';
+import { ensureListing } from '../../util/data';
+import { intlShape } from '../../util/reactIntl';
+import { createResourceLocatorString } from '../../util/routes';
+import {
+  LISTING_PAGE_PARAM_TYPES,
+  LISTING_PAGE_PARAM_TYPE_DRAFT,
+  LISTING_PAGE_PARAM_TYPE_NEW,
+} from '../../util/urlHelpers';
 import css from './EditListingWizard.css';
 
 export const AVAILABILITY = 'availability';

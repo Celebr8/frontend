@@ -1,28 +1,27 @@
-import React, { Fragment } from 'react';
 import { bool, func } from 'prop-types';
-import { compose } from 'redux';
+import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
-import { injectIntl, intlShape, FormattedMessage } from 'react-intl';
-import { ensureCurrentUser } from '../../util/data';
-import { propTypes } from '../../util/types';
-import { isScrollingDisabled } from '../../ducks/UI.duck';
-import { stripeAccountClearError } from '../../ducks/stripe.duck';
+import { compose } from 'redux';
 import {
+  Footer,
   LayoutSideNavigation,
+  LayoutWrapperFooter,
   LayoutWrapperMain,
   LayoutWrapperSideNav,
   LayoutWrapperTopbar,
-  LayoutWrapperFooter,
-  Footer,
+  NamedLink,
   Page,
   UserNav,
-  NamedLink,
 } from '../../components';
-import { PayoutDetailsForm } from '../../forms';
 import { TopbarContainer } from '../../containers';
-import { savePayoutDetails, loadData } from './PayoutPreferencesPage.duck';
-
+import { stripeAccountClearError } from '../../ducks/stripe.duck';
+import { isScrollingDisabled } from '../../ducks/UI.duck';
+import { PayoutDetailsForm } from '../../forms';
+import { ensureCurrentUser } from '../../util/data';
+import { FormattedMessage, injectIntl, intlShape } from '../../util/reactIntl';
+import { propTypes } from '../../util/types';
 import css from './PayoutPreferencesPage.css';
+import { loadData, savePayoutDetails } from './PayoutPreferencesPage.duck';
 
 export const PayoutPreferencesPageComponent = props => {
   const {

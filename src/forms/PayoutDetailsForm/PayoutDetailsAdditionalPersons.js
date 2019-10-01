@@ -1,13 +1,11 @@
-import React from 'react';
 import { bool, func, object, string } from 'prop-types';
-import { FormattedMessage, intlShape } from 'react-intl';
+import React from 'react';
 import { FieldArray } from 'react-final-form-arrays';
 import { ExternalLink, IconAdd, IconClose, InlineTextButton } from '../../components';
-
+import { FormattedMessage, intlShape } from '../../util/reactIntl';
 import PayoutDetailsAddress from './PayoutDetailsAddress';
-import PayoutDetailsPersonalDetails from './PayoutDetailsPersonalDetails';
-
 import css from './PayoutDetailsForm.css';
+import PayoutDetailsPersonalDetails from './PayoutDetailsPersonalDetails';
 
 const PayoutDetailsAdditionalPersons = props => {
   const {

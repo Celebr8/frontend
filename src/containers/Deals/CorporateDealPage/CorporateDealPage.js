@@ -1,26 +1,13 @@
-import React from 'react';
 import PropTypes from 'prop-types';
-import { compose } from 'redux';
+import React from 'react';
 import { connect } from 'react-redux';
-import { injectIntl, intlShape, FormattedMessage } from 'react-intl';
-import { isScrollingDisabled } from '../../../ducks/UI.duck';
-import { TopbarContainer } from '../../../containers';
-
-import { dealsTabs } from '../tabs';
-
-import {
-  Page,
-  LayoutSideNavigationWithHero,
-  LayoutWrapperMain,
-  LayoutWrapperSideNav,
-  LayoutWrapperHero,
-  LayoutWrapperTopbar,
-  LayoutWrapperFooter,
-  Footer,
-  CorporateDeal,
-} from '../../../components';
+import { compose } from 'redux';
+import { CorporateDeal, Footer, LayoutSideNavigationWithHero, LayoutWrapperFooter, LayoutWrapperHero, LayoutWrapperMain, LayoutWrapperSideNav, LayoutWrapperTopbar, Page } from '../../../components';
 import config from '../../../config';
-
+import { TopbarContainer } from '../../../containers';
+import { isScrollingDisabled } from '../../../ducks/UI.duck';
+import { FormattedMessage, injectIntl, intlShape } from '../../../util/reactIntl';
+import { dealsTabs } from '../tabs';
 import css from './CorporateDealPage.css';
 
 const CorporateDealPageComponent = props => {

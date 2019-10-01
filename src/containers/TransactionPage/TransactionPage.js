@@ -1,42 +1,41 @@
-import React from 'react';
+import classNames from 'classnames';
 import PropTypes from 'prop-types';
-import { compose } from 'redux';
+import React from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import classNames from 'classnames';
-import { FormattedMessage, intlShape, injectIntl } from 'react-intl';
-import { createResourceLocatorString, findRouteByRouteName } from '../../util/routes';
-import routeConfiguration from '../../routeConfiguration';
-import { propTypes } from '../../util/types';
-import { ensureListing, ensureTransaction } from '../../util/data';
-import { dateFromAPIToLocalNoon } from '../../util/dates';
-import { createSlug } from '../../util/urlHelpers';
-import { txIsPaymentPending } from '../../util/transaction';
-import { getMarketplaceEntities } from '../../ducks/marketplaceData.duck';
-import { isScrollingDisabled, manageDisableScrolling } from '../../ducks/UI.duck';
-import { initializeCardPaymentData } from '../../ducks/stripe.duck.js';
+import { compose } from 'redux';
 import {
-  NamedRedirect,
-  TransactionPanel,
-  Page,
-  LayoutSingleColumn,
-  LayoutWrapperTopbar,
-  LayoutWrapperMain,
-  LayoutWrapperFooter,
   Footer,
+  LayoutSingleColumn,
+  LayoutWrapperFooter,
+  LayoutWrapperMain,
+  LayoutWrapperTopbar,
+  NamedRedirect,
+  Page,
+  TransactionPanel,
 } from '../../components';
 import { TopbarContainer } from '../../containers';
-
+import { getMarketplaceEntities } from '../../ducks/marketplaceData.duck';
+import { initializeCardPaymentData } from '../../ducks/stripe.duck.js';
+import { isScrollingDisabled, manageDisableScrolling } from '../../ducks/UI.duck';
+import routeConfiguration from '../../routeConfiguration';
+import { ensureListing, ensureTransaction } from '../../util/data';
+import { dateFromAPIToLocalNoon } from '../../util/dates';
+import { FormattedMessage, injectIntl, intlShape } from '../../util/reactIntl';
+import { createResourceLocatorString, findRouteByRouteName } from '../../util/routes';
+import { txIsPaymentPending } from '../../util/transaction';
+import { propTypes } from '../../util/types';
+import { createSlug } from '../../util/urlHelpers';
+import css from './TransactionPage.css';
 import {
   acceptSale,
   declineSale,
+  fetchMoreMessages,
   loadData,
-  setInitialValues,
   sendMessage,
   sendReview,
-  fetchMoreMessages,
+  setInitialValues,
 } from './TransactionPage.duck';
-import css from './TransactionPage.css';
 
 const PROVIDER = 'provider';
 const CUSTOMER = 'customer';

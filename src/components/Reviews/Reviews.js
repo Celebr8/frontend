@@ -1,8 +1,8 @@
 import classNames from 'classnames';
 import { arrayOf, string } from 'prop-types';
 import React from 'react';
-import { injectIntl, intlShape } from 'react-intl';
 import { Avatar, ReviewRating, UserDisplayName } from '../../components';
+import { injectIntl, intlShape } from '../../util/reactIntl';
 import { propTypes } from '../../util/types';
 import css from './Reviews.css';
 

@@ -1,30 +1,17 @@
-import React from 'react';
 import PropTypes from 'prop-types';
-import { compose } from 'redux';
+import React from 'react';
 import { connect } from 'react-redux';
-import { FormattedMessage, injectIntl, intlShape } from 'react-intl';
-import { propTypes } from '../../util/types';
-import { isPasswordRecoveryEmailNotFoundError } from '../../util/errors';
-import { isScrollingDisabled } from '../../ducks/UI.duck';
-import {
-  Page,
-  InlineTextButton,
-  IconKeys,
-  LayoutSingleColumn,
-  LayoutWrapperMain,
-  LayoutWrapperTopbar,
-  LayoutWrapperFooter,
-  Footer,
-} from '../../components';
-import { PasswordRecoveryForm } from '../../forms';
+import { compose } from 'redux';
+import { Footer, IconKeys, InlineTextButton, LayoutSingleColumn, LayoutWrapperFooter, LayoutWrapperMain, LayoutWrapperTopbar, Page } from '../../components';
 import { TopbarContainer } from '../../containers';
-
-import {
-  recoverPassword,
-  retypePasswordRecoveryEmail,
-  clearPasswordRecoveryError,
-} from './PasswordRecoveryPage.duck';
+import { isScrollingDisabled } from '../../ducks/UI.duck';
+import { PasswordRecoveryForm } from '../../forms';
+import { isPasswordRecoveryEmailNotFoundError } from '../../util/errors';
+import { FormattedMessage, injectIntl, intlShape } from '../../util/reactIntl';
+import { propTypes } from '../../util/types';
 import css from './PasswordRecoveryPage.css';
+import { clearPasswordRecoveryError, recoverPassword, retypePasswordRecoveryEmail } from './PasswordRecoveryPage.duck';
+
 
 export const PasswordRecoveryPageComponent = props => {
   const {

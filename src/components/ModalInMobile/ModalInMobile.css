@@ -5,9 +5,9 @@
   width: 100%;
   position: sticky;
   top: 70px;
-  background: #FCFCFC;
+  background: #fcfcfc;
   z-index: 1;
-  box-shadow: 0 12px 6px 6px #FCFCFC;
+  box-shadow: 0 12px 6px 6px #fcfcfc;
   padding: 20px 0;
   /* margin-left: -8px; */
 }

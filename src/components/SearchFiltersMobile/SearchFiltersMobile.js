@@ -2,7 +2,6 @@ import classNames from 'classnames';
 import omit from 'lodash/omit';
 import { array, bool, func, number, object, shape, string } from 'prop-types';
 import React, { Component } from 'react';
-import { FormattedMessage, injectIntl, intlShape } from 'react-intl';
 import { withRouter } from 'react-router-dom';
 import {
   Button,
@@ -12,6 +11,7 @@ import {
   SelectSingleFilter,
 } from '../../components';
 import routeConfiguration from '../../routeConfiguration';
+import { FormattedMessage, injectIntl, intlShape } from '../../util/reactIntl';
 import { createResourceLocatorString } from '../../util/routes';
 import { propTypes } from '../../util/types';
 import css from './SearchFiltersMobile.css';

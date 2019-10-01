@@ -128,8 +128,8 @@ const PanelHeading = props => {
           isCustomerBanned={isCustomerBanned}
         />
       );
-      
-      case HEADING_PAYMENT_PENDING:
+
+    case HEADING_PAYMENT_PENDING:
       return isCustomer ? (
         <HeadingCustomer
           className={titleClasses}

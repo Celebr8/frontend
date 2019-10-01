@@ -1,13 +1,12 @@
-import React from 'react';
-import { bool, func, shape, string } from 'prop-types';
-import { compose } from 'redux';
-import { Form as FinalForm } from 'react-final-form';
-import { intlShape, injectIntl, FormattedMessage } from 'react-intl';
 import classNames from 'classnames';
+import { bool, func, shape, string } from 'prop-types';
+import React from 'react';
+import { Form as FinalForm } from 'react-final-form';
+import { compose } from 'redux';
+import { Button, FieldCheckboxGroup, Form } from '../../components';
 import config from '../../config';
+import { FormattedMessage, injectIntl, intlShape } from '../../util/reactIntl';
 import { propTypes } from '../../util/types';
-import { Form, Button, FieldCheckboxGroup } from '../../components';
-
 import css from './EditListingRegularlyOpenOnForm.css';
 
 export const EditListingRegularlyOpenOnFormComponent = props => (

@@ -3,7 +3,6 @@ import debounce from 'lodash/debounce';
 import unionWith from 'lodash/unionWith';
 import { array, bool, func, object, oneOf, shape, string } from 'prop-types';
 import React, { Component } from 'react';
-import { injectIntl, intlShape } from 'react-intl';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { compose } from 'redux';
@@ -13,6 +12,7 @@ import { TopbarContainer } from '../../containers';
 import { getListingsById } from '../../ducks/marketplaceData.duck';
 import { isScrollingDisabled, manageDisableScrolling } from '../../ducks/UI.duck';
 import routeConfiguration from '../../routeConfiguration';
+import { injectIntl, intlShape } from '../../util/reactIntl';
 import { createResourceLocatorString, pathByRouteName } from '../../util/routes';
 import { propTypes } from '../../util/types';
 import { parse, stringify } from '../../util/urlHelpers';
@@ -121,8 +121,6 @@ export class SearchPageComponent extends Component {
     this.setState({ isMobileModalOpen: false });
   }
 
-  
-
   render() {
     const {
       intl,
@@ -143,7 +141,6 @@ export class SearchPageComponent extends Component {
       latlng: ['origin'],
       latlngBounds: ['bounds'],
     });
-
 
     const filters = this.filters();
 

@@ -4,25 +4,20 @@
  *
  * N.B. *isOutsideRange* in defaultProps is defining what dates are available to booking.
  */
-import React, { Component } from 'react';
-import { bool, func, instanceOf, shape, string, arrayOf } from 'prop-types';
-import {
-  SingleDatePicker,
-  isInclusivelyAfterDay,
-  isInclusivelyBeforeDay,
-  isSameDay,
-} from 'react-dates';
-import { intlShape, injectIntl } from 'react-intl';
 import classNames from 'classnames';
 import moment from 'moment';
+import { arrayOf, bool, func, instanceOf, shape, string } from 'prop-types';
+import React, { Component } from 'react';
+import { isInclusivelyAfterDay, isInclusivelyBeforeDay, isSameDay, SingleDatePicker } from 'react-dates';
 import config from '../../config';
-import { propTypes, TIME_SLOT_DAY } from '../../util/types';
-import { dateFromAPIToLocalNoon } from '../../util/dates';
 import { ensureTimeSlot } from '../../util/data';
-
+import { dateFromAPIToLocalNoon } from '../../util/dates';
+import { injectIntl, intlShape } from '../../util/reactIntl';
+import { propTypes, TIME_SLOT_DAY } from '../../util/types';
+import css from './DateInput.css';
 import NextMonthIcon from './NextMonthIcon';
 import PreviousMonthIcon from './PreviousMonthIcon';
-import css from './DateInput.css';
+
 
 export const HORIZONTAL_ORIENTATION = 'horizontal';
 export const ANCHOR_LEFT = 'left';

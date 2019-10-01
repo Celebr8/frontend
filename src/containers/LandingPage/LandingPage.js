@@ -1,28 +1,15 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { injectIntl, intlShape } from 'react-intl';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import { FormattedMessage } from 'react-intl';
 import { compose } from 'redux';
 import facebookImage from '../../assets/whichostFacebook-1200x630.png';
 import twitterImage from '../../assets/whichostTwitter-600x314.png';
-import {
-  Footer,
-  LayoutSingleColumn,
-  LayoutWrapperFooter,
-  LayoutWrapperMain,
-  LayoutWrapperTopbar,
-  Page,
-  SectionDeals,
-  SectionHero,
-  SectionHowItWorks,
-  SectionLocations,
-  SectionPublicans,
-} from '../../components';
+import { Footer, LayoutSingleColumn, LayoutWrapperFooter, LayoutWrapperMain, LayoutWrapperTopbar, Page, SectionDeals, SectionHero, SectionHowItWorks, SectionLocations, SectionPublicans } from '../../components';
 import config from '../../config';
 import { TopbarContainer } from '../../containers';
 import { isScrollingDisabled } from '../../ducks/UI.duck';
+import { FormattedMessage, injectIntl, intlShape } from '../../util/reactIntl';
 import css from './LandingPage.css';
 
 export const LandingPageComponent = props => {
@@ -61,8 +48,13 @@ export const LandingPageComponent = props => {
         </LayoutWrapperTopbar>
         <LayoutWrapperMain>
           <div className={css.heroContainer}>
-            <SectionHero className={css.hero} title={<FormattedMessage id="SectionHero.title" />}
-            subTitle={<FormattedMessage id="SectionHero.subTitle" />} history={history} location={location} />
+            <SectionHero
+              className={css.hero}
+              title={<FormattedMessage id="SectionHero.title" />}
+              subTitle={<FormattedMessage id="SectionHero.subTitle" />}
+              history={history}
+              location={location}
+            />
           </div>
           <ul className={css.sections}>
             <li className={css.section} style={{ backgroundColor: 'rgba(236, 80, 39, 0.03)' }}>

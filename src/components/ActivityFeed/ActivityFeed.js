@@ -1,37 +1,16 @@
-import React from 'react';
-import { string, arrayOf, bool, func, number } from 'prop-types';
-import { injectIntl, intlShape, FormattedMessage } from 'react-intl';
-import dropWhile from 'lodash/dropWhile';
 import classNames from 'classnames';
+import dropWhile from 'lodash/dropWhile';
+import { arrayOf, bool, func, number, string } from 'prop-types';
+import React from 'react';
 import { Avatar, InlineTextButton, ReviewRating, UserDisplayName } from '../../components';
+import { ensureListing, ensureTransaction, ensureUser } from '../../util/data';
 import { formatDate } from '../../util/dates';
-import { ensureTransaction, ensureUser, ensureListing } from '../../util/data';
-import {
-  TRANSITION_ACCEPT,
-  TRANSITION_CANCEL,
-  TRANSITION_COMPLETE,
-  TRANSITION_DECLINE,
-  TRANSITION_EXPIRE,
-  TRANSITION_CONFIRM_PAYMENT,
-  TRANSITION_REVIEW_1_BY_CUSTOMER,
-  TRANSITION_REVIEW_1_BY_PROVIDER,
-  TRANSITION_REVIEW_2_BY_CUSTOMER,
-  TRANSITION_REVIEW_2_BY_PROVIDER,
-  transitionIsReviewed,
-  txIsDelivered,
-  txIsInFirstReviewBy,
-  txIsReviewed,
-  isCustomerReview,
-  isProviderReview,
-  txRoleIsProvider,
-  txRoleIsCustomer,
-  getUserTxRole,
-  isRelevantPastTransition,
-} from '../../util/transaction';
-import { propTypes } from '../../util/types';
 import * as log from '../../util/log';
-
+import { FormattedMessage, injectIntl, intlShape } from '../../util/reactIntl';
+import { getUserTxRole, isCustomerReview, isProviderReview, isRelevantPastTransition, transitionIsReviewed, TRANSITION_ACCEPT, TRANSITION_CANCEL, TRANSITION_COMPLETE, TRANSITION_CONFIRM_PAYMENT, TRANSITION_DECLINE, TRANSITION_EXPIRE, TRANSITION_REVIEW_1_BY_CUSTOMER, TRANSITION_REVIEW_1_BY_PROVIDER, TRANSITION_REVIEW_2_BY_CUSTOMER, TRANSITION_REVIEW_2_BY_PROVIDER, txIsDelivered, txIsInFirstReviewBy, txIsReviewed, txRoleIsCustomer, txRoleIsProvider } from '../../util/transaction';
+import { propTypes } from '../../util/types';
 import css from './ActivityFeed.css';
+
 
 const Message = props => {
   const { message, intl } = props;
@@ -146,7 +125,7 @@ const resolveTransitionMessage = (
     case TRANSITION_COMPLETE:
       // Show the leave a review link if the state is delivered and if the current user is the first to leave a review
       const reviewPeriodJustStarted = txIsDelivered(transaction);
-      
+
       const reviewAsFirstLink = reviewPeriodJustStarted ? (
         <InlineTextButton onClick={onOpenReviewModal}>
           <FormattedMessage id="ActivityFeed.leaveAReview" values={{ displayName }} />

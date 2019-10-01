@@ -1,24 +1,23 @@
-import React from 'react';
 import PropTypes from 'prop-types';
-import { compose } from 'redux';
+import React from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import { FormattedMessage, injectIntl, intlShape } from 'react-intl';
-import { propTypes } from '../../util/types';
+import { compose } from 'redux';
+import {
+  Footer,
+  LayoutSingleColumn,
+  LayoutWrapperFooter,
+  LayoutWrapperMain,
+  LayoutWrapperTopbar,
+  Page,
+} from '../../components';
+import { TopbarContainer } from '../../containers';
 import { verify } from '../../ducks/EmailVerification.duck';
 import { isScrollingDisabled } from '../../ducks/UI.duck';
-import { parse } from '../../util/urlHelpers';
-import {
-  Page,
-  LayoutSingleColumn,
-  LayoutWrapperTopbar,
-  LayoutWrapperMain,
-  LayoutWrapperFooter,
-  Footer,
-} from '../../components';
 import { EmailVerificationForm } from '../../forms';
-import { TopbarContainer } from '../../containers';
-
+import { FormattedMessage, injectIntl, intlShape } from '../../util/reactIntl';
+import { propTypes } from '../../util/types';
+import { parse } from '../../util/urlHelpers';
 import css from './EmailVerificationPage.css';
 
 /**

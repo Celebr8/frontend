@@ -3,15 +3,14 @@ import moment from 'moment';
 import { arrayOf, bool, string } from 'prop-types';
 import React, { Component } from 'react';
 import { Form as FinalForm } from 'react-final-form';
-import { FormattedMessage, injectIntl, intlShape } from 'react-intl';
 import { compose } from 'redux';
 import { FieldDateInput, Form, PrimaryButton } from '../../components';
 import config from '../../config';
+import { FormattedMessage, injectIntl, intlShape } from '../../util/reactIntl';
 import { propTypes } from '../../util/types';
 import { required } from '../../util/validators';
 import css from './BookingDatesForm.css';
 import EstimatedBreakdownMaybe from './EstimatedBreakdownMaybe';
-const identity = v => v;
 
 export class BookingDatesFormComponent extends Component {
   constructor(props) {

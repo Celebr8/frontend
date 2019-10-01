@@ -1,8 +1,19 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { injectIntl, intlShape } from 'react-intl';
 import classNames from 'classnames';
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
+import { AvatarLarge, BookingPanel, ReviewModal, UserDisplayName } from '../../components';
+import config from '../../config';
+import { SendMessageForm } from '../../forms';
+import { formatMoney } from '../../util/currency';
 import {
+  ensureListing,
+  ensureTransaction,
+  ensureUser,
+  userDisplayNameAsString,
+} from '../../util/data';
+import { injectIntl, intlShape } from '../../util/reactIntl';
+import {
+  txHasBeenDelivered,
   txIsAccepted,
   txIsCanceled,
   txIsDeclined,
@@ -10,21 +21,9 @@ import {
   txIsPaymentExpired,
   txIsPaymentPending,
   txIsRequested,
-  txHasBeenDelivered,
 } from '../../util/transaction';
-import { LINE_ITEM_NIGHT, LINE_ITEM_DAY, propTypes } from '../../util/types';
-import {
-  ensureListing,
-  ensureTransaction,
-  ensureUser,
-  userDisplayNameAsString,
-} from '../../util/data';
+import { LINE_ITEM_DAY, LINE_ITEM_NIGHT, propTypes } from '../../util/types';
 import { isMobileSafari } from '../../util/userAgent';
-import { formatMoney } from '../../util/currency';
-import { AvatarLarge, BookingPanel, ReviewModal, UserDisplayName } from '../../components';
-import { SendMessageForm } from '../../forms';
-import config from '../../config';
-
 // These are internal components that make this file more readable.
 // Those come from the merge
 //
@@ -32,27 +31,24 @@ import config from '../../config';
 // TransactionPageTitle,
 // TransactionPageMessage,
 //
-
 import AddressLinkMaybe from './AddressLinkMaybe';
 import BreakdownMaybe from './BreakdownMaybe';
 import DetailCardHeadingsMaybe from './DetailCardHeadingsMaybe';
 import DetailCardImage from './DetailCardImage';
 import FeedSection from './FeedSection';
-import SaleActionButtonsMaybe from './SaleActionButtonsMaybe';
-import { OrderAttendance, OrderOccasion, OrderTime } from './TransactionPanel.helpers';
-
 import PanelHeading, {
-  HEADING_ENQUIRED,
-  HEADING_PAYMENT_PENDING,
-  HEADING_PAYMENT_EXPIRED,
-  HEADING_REQUESTED,
   HEADING_ACCEPTED,
-  HEADING_DECLINED,
   HEADING_CANCELED,
+  HEADING_DECLINED,
   HEADING_DELIVERED,
+  HEADING_ENQUIRED,
+  HEADING_PAYMENT_EXPIRED,
+  HEADING_PAYMENT_PENDING,
+  HEADING_REQUESTED,
 } from './PanelHeading';
-
+import SaleActionButtonsMaybe from './SaleActionButtonsMaybe';
 import css from './TransactionPanel.css';
+import { OrderAttendance, OrderOccasion, OrderTime } from './TransactionPanel.helpers';
 
 // Helper function to get display names for different roles
 const displayNames = (currentUser, currentProvider, currentCustomer, intl) => {
