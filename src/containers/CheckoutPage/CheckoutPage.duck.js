@@ -1,14 +1,14 @@
 import pick from 'lodash/pick';
 import config from '../../config';
+import { fetchCurrentUserHasOrdersSuccess } from '../../ducks/user.duck';
 import { denormalisedResponseEntities } from '../../util/data';
 import { storableError } from '../../util/errors';
+import * as log from '../../util/log';
 import {
+  TRANSITION_CONFIRM_PAYMENT,
   TRANSITION_REQUEST_PAYMENT,
   TRANSITION_REQUEST_PAYMENT_AFTER_ENQUIRY,
-  TRANSITION_CONFIRM_PAYMENT,
 } from '../../util/transaction';
-import * as log from '../../util/log';
-import { fetchCurrentUserHasOrdersSuccess } from '../../ducks/user.duck';
 
 // ================ Process alias ================ //
 
@@ -147,25 +147,24 @@ export const initiateOrder = (orderParams, transactionId) => (dispatch, getState
   dispatch(initiateOrderRequest());
 
   const bodyParams = transactionId
-  ? {
-      id: transactionId,
-      transition: TRANSITION_REQUEST_PAYMENT_AFTER_ENQUIRY,
-      params: orderParams,
-    }
-  : {
-      processAlias: config.bookingProcessAlias,
-      transition: TRANSITION_REQUEST_PAYMENT,
-      params: orderParams,
-    };
-const queryParams = {
-  include: ['booking', 'provider'],
-  expand: true,
-};
+    ? {
+        id: transactionId,
+        transition: TRANSITION_REQUEST_PAYMENT_AFTER_ENQUIRY,
+        params: orderParams,
+      }
+    : {
+        processAlias: config.bookingProcessAlias,
+        transition: TRANSITION_REQUEST_PAYMENT,
+        params: orderParams,
+      };
+  const queryParams = {
+    include: ['booking', 'provider'],
+    expand: true,
+  };
 
-const createOrder = transactionId ? sdk.transactions.transition : sdk.transactions.initiate;
+  const createOrder = transactionId ? sdk.transactions.transition : sdk.transactions.initiate;
 
-
-return createOrder(bodyParams, queryParams)
+  return createOrder(bodyParams, queryParams)
     .then(response => {
       const entities = denormalisedResponseEntities(response);
       const order = entities[0];
@@ -202,7 +201,7 @@ export const confirmPayment = orderParams => (dispatch, getState, sdk) => {
     .then(response => {
       const order = response.data.data;
       dispatch(confirmPaymentSuccess(order.id));
-      return order;      
+      return order;
     })
     .catch(e => {
       dispatch(confirmPaymentError(storableError(e)));

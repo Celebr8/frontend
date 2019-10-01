@@ -11,6 +11,7 @@ import { propTypes } from '../../util/types';
 import { required } from '../../util/validators';
 import css from './BookingDatesForm.css';
 import EstimatedBreakdownMaybe from './EstimatedBreakdownMaybe';
+const identity = v => v;
 
 export class BookingDatesFormComponent extends Component {
   constructor(props) {
@@ -65,8 +66,8 @@ export class BookingDatesFormComponent extends Component {
         onSubmit={this.handleFormSubmit}
         render={fieldRenderProps => {
           const {
-            DatePlaceholder,
             form,
+            DatePlaceholder,
             handleSubmit,
             intl,
             isOwnListing,

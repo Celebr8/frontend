@@ -1,58 +1,45 @@
-import React, { Component } from 'react';
 import classNames from 'classnames';
 import { bool, func, instanceOf, object, oneOfType, shape, string } from 'prop-types';
+import React, { Component } from 'react';
 import { FormattedMessage, injectIntl, intlShape } from 'react-intl';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { compose } from 'redux';
+import { AvatarMedium, BookingBreakdown, Logo, NamedLink, NamedRedirect, Page, ResponsiveImage } from '../../components';
 import config from '../../config';
-import {
-  AvatarMedium,
-  BookingBreakdown,
-  Logo,
-  NamedLink,
-  NamedRedirect,
-  Page,
-  ResponsiveImage,
-} from '../../components';
+import { handleCardPayment, retrievePaymentIntent } from '../../ducks/stripe.duck.js';
 import { isScrollingDisabled } from '../../ducks/UI.duck';
 import { StripePaymentForm } from '../../forms';
 import routeConfiguration from '../../routeConfiguration';
-import { pathByRouteName, findRouteByRouteName } from '../../util/routes';
 import { formatMoney } from '../../util/currency';
-import {
-  ensureListing,
-  ensureCurrentUser,
-  ensureUser,
-  ensureTransaction,
-  ensureBooking,
-} from '../../util/data';
+import { ensureBooking, ensureCurrentUser, ensureListing, ensurePaymentMethodCard, ensureStripeCustomer, ensureTransaction, ensureUser } from '../../util/data';
 import { dateFromLocalToAPI, minutesBetween } from '../../util/dates';
+import { isTransactionChargeDisabledError, isTransactionInitiateAmountTooLowError, isTransactionInitiateBookingTimeNotAvailableError, isTransactionInitiateListingNotFoundError, isTransactionInitiateMissingStripeAccountError, isTransactionZeroPaymentError, transactionInitiateOrderStripeErrors } from '../../util/errors';
+import { findRouteByRouteName, pathByRouteName } from '../../util/routes';
+import { TRANSITION_ENQUIRE, txIsPaymentExpired, txIsPaymentPending } from '../../util/transaction';
 // eslint-disable-next-line
-import { propTypes, LINE_ITEM_NIGHT, LINE_ITEM_DAY } from '../../util/types';
-import {
-  isTransactionInitiateAmountTooLowError,
-  isTransactionInitiateBookingTimeNotAvailableError,
-  isTransactionChargeDisabledError,
-  isTransactionInitiateListingNotFoundError,
-  isTransactionInitiateMissingStripeAccountError,
-  isTransactionZeroPaymentError,
-  transactionInitiateOrderStripeErrors,
-} from '../../util/errors';
+import { propTypes } from '../../util/types';
 import { createSlug } from '../../util/urlHelpers';
-import { TRANSITION_ENQUIRE, txIsPaymentPending, txIsPaymentExpired } from '../../util/transaction';
 import css from './CheckoutPage.css';
-import {
-  initiateOrder,
-  setInitialValues,
-  speculateTransaction,
-  confirmPayment,
-  sendMessage,
-} from './CheckoutPage.duck';
-import { handleCardPayment, retrievePaymentIntent } from '../../ducks/stripe.duck.js';
+import { confirmPayment, initiateOrder, sendMessage, setInitialValues, speculateTransaction } from './CheckoutPage.duck';
 import { clearData, storeData, storedData } from './CheckoutPageSessionHelpers';
 
 const STORAGE_KEY = 'CheckoutPage';
+
+// Payment charge options
+const ONETIME_PAYMENT = 'ONETIME_PAYMENT';
+const PAY_AND_SAVE_FOR_LATER_USE = 'PAY_AND_SAVE_FOR_LATER_USE';
+const USE_SAVED_CARD = 'USE_SAVED_CARD';
+
+const paymentFlow = (selectedPaymentMethod, saveAfterOnetimePayment) => {
+  // Payment mode could be 'replaceCard', but without explicit saveAfterOnetimePayment flag,
+  // we'll handle it as one-time payment
+  return selectedPaymentMethod === 'defaultCard'
+    ? USE_SAVED_CARD
+    : saveAfterOnetimePayment
+    ? PAY_AND_SAVE_FOR_LATER_USE
+    : ONETIME_PAYMENT;
+};
 
 // Stripe PaymentIntent statuses, where user actions are already completed
 // https://stripe.com/docs/payments/payment-intents/status
@@ -153,7 +140,7 @@ export class CheckoutPageComponent extends Component {
       pageData.bookingDates.bookingEnd &&
       !isBookingCreated;
 
-      if (shouldFetchSpeculatedTransaction) {
+    if (shouldFetchSpeculatedTransaction) {
       const listingId = pageData.listing.id;
       const { bookingStart, bookingEnd } = pageData.bookingDates;
 
@@ -182,9 +169,43 @@ export class CheckoutPageComponent extends Component {
   }
 
   handlePaymentIntent(handlePaymentParams) {
-    const { onInitiateOrder, onHandleCardPayment, onConfirmPayment, onSendMessage } = this.props;
-    const { pageData, speculatedTransaction, message } = handlePaymentParams;
+    const {
+      currentUser,
+      stripeCustomerFetched,
+      onInitiateOrder,
+      onHandleCardPayment,
+      onConfirmPayment,
+      onSendMessage,
+      onSavePaymentMethod,
+    } = this.props;
+    const {
+      pageData,
+      speculatedTransaction,
+      message,
+      paymentIntent,
+      selectedPaymentMethod,
+      saveAfterOnetimePayment,
+    } = handlePaymentParams;
     const storedTx = ensureTransaction(pageData.transaction);
+
+    const ensuredCurrentUser = ensureCurrentUser(currentUser);
+    const ensuredStripeCustomer = ensureStripeCustomer(ensuredCurrentUser.stripeCustomer);
+    const ensuredDefaultPaymentMethod = ensurePaymentMethodCard(
+      ensuredStripeCustomer.defaultPaymentMethod
+    );
+
+    let createdPaymentIntent = null;
+
+    const hasDefaultPaymentMethod = !!(
+      stripeCustomerFetched &&
+      ensuredStripeCustomer.attributes.stripeCustomerId &&
+      ensuredDefaultPaymentMethod.id
+    );
+    const stripePaymentMethodId = hasDefaultPaymentMethod
+      ? ensuredDefaultPaymentMethod.attributes.stripePaymentMethodId
+      : null;
+
+    const selectedPaymentFlow = paymentFlow(selectedPaymentMethod, saveAfterOnetimePayment);
 
     // Step 1: initiate order by requesting payment from Marketplace API
     const fnRequestPayment = fnParams => {
@@ -222,17 +243,26 @@ export class CheckoutPageComponent extends Component {
         : null;
 
       const { stripe, card, billingDetails, paymentIntent } = handlePaymentParams;
+      const stripeElementMaybe = selectedPaymentFlow !== USE_SAVED_CARD ? { card } : {};
+
+      // Note: payment_method could be set here for USE_SAVED_CARD flow.
+      // { payment_method: stripePaymentMethodId }
+      // However, we have set it already on API side, when PaymentIntent was created.
+      const paymentParams =
+        selectedPaymentFlow !== USE_SAVED_CARD
+          ? {
+              payment_method_data: {
+                billing_details: billingDetails,
+              },
+            }
+          : {};
 
       const params = {
         stripePaymentIntentClientSecret,
         orderId: order.id,
         stripe,
-        card,
-        paymentParams: {
-          payment_method_data: {
-            billing_details: billingDetails,
-          },
-        },
+        ...stripeElementMaybe,
+        paymentParams,
       };
 
       // If paymentIntent status is not waiting user action,
@@ -246,11 +276,35 @@ export class CheckoutPageComponent extends Component {
 
     // Step 3: complete order by confirming payment to Marketplace API
     // Parameter should contain { paymentIntent, transactionId } returned in step 2
-    const fnConfirmPayment = onConfirmPayment;
+    const fnConfirmPayment = fnParams => {
+      createdPaymentIntent = fnParams.paymentIntent;
+      return onConfirmPayment(fnParams);
+    };
 
     // Step 4: send initial message
     const fnSendMessage = fnParams => {
       return onSendMessage({ ...fnParams, message });
+    };
+
+    // Step 5: optionally save card as defaultPaymentMethod
+    const fnSavePaymentMethod = fnParams => {
+      const pi = createdPaymentIntent || paymentIntent;
+
+      if (selectedPaymentFlow === PAY_AND_SAVE_FOR_LATER_USE) {
+        return onSavePaymentMethod(ensuredStripeCustomer, pi.payment_method)
+          .then(response => {
+            if (response.errors) {
+              return { ...fnParams, paymentMethodSaved: false };
+            }
+            return { ...fnParams, paymentMethodSaved: true };
+          })
+          .catch(e => {
+            // Real error cases are catched already in paymentMethods page.
+            return { ...fnParams, paymentMethodSaved: false };
+          });
+      } else {
+        return Promise.resolve({ ...fnParams, paymentMethodSaved: true });
+      }
     };
 
     // Here we create promise calls in sequence
@@ -264,30 +318,34 @@ export class CheckoutPageComponent extends Component {
       fnRequestPayment,
       fnHandleCardPayment,
       fnConfirmPayment,
-      fnSendMessage
+      fnSendMessage,
+      fnSavePaymentMethod
     );
 
     // Create order aka transaction
     // NOTE: if unit type is line-item/units, quantity needs to be added.
     // The way to pass it to checkout page is through pageData.bookingData
     const tx = speculatedTransaction ? speculatedTransaction : storedTx;
+
+    // Note: optionalPaymentParams contains Stripe paymentMethod,
+    // but that can also be passed on Step 2
+    // stripe.handleCardPayment(stripe, { payment_method: stripePaymentMethodId })
+    const optionalPaymentParams =
+      selectedPaymentFlow === USE_SAVED_CARD && hasDefaultPaymentMethod
+        ? { paymentMethod: stripePaymentMethodId }
+        : selectedPaymentFlow === PAY_AND_SAVE_FOR_LATER_USE
+        ? { setupPaymentMethodForSaving: true }
+        : {};
+
     const orderParams = {
       listingId: pageData.listing.id,
       bookingStart: tx.booking.attributes.start,
       bookingEnd: tx.booking.attributes.end,
+      ...optionalPaymentParams,
     };
-      /* Not in v3.0.0 FWT
-      protectedData: {
-        attendance: values.attendance,
-        occasion: values.occasion,
-        time: values.time,
-      },
-    };
-    */
 
-     return handlePaymentIntentCreation(orderParams);
+    return handlePaymentIntentCreation(orderParams);
   }
-
   handleSubmit(values) {
     if (this.state.submitting) {
       return;
@@ -295,8 +353,8 @@ export class CheckoutPageComponent extends Component {
     this.setState({ submitting: true });
 
     const { history, speculatedTransaction, currentUser, paymentIntent, dispatch } = this.props;
-    const { card, message, formValues } = values;
-    const { name, addressLine1, addressLine2, postal, city, state, country } = formValues;
+    const { card, message, formValues, paymentMethod } = values;
+    const { name, addressLine1, addressLine2, postal, city, state, country, saveAfterOnetimePayment } = formValues;
 
     // Billing address is recommended.
     // However, let's not assume that <StripePaymentAddress> data is among formValues.
@@ -329,6 +387,8 @@ export class CheckoutPageComponent extends Component {
       billingDetails,
       message,
       paymentIntent,
+      selectedPaymentMethod: paymentMethod,
+      saveAfterOnetimePayment: !!saveAfterOnetimePayment,
     };
 
     this.handlePaymentIntent(requestPaymentParams)
