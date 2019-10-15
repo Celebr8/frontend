@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
-import { bool, func, node, object, string } from 'prop-types';
 import classNames from 'classnames';
-import { injectIntl, intlShape, FormattedMessage } from 'react-intl';
-
+import { bool, func, node, object, string } from 'prop-types';
+import React, { Component } from 'react';
+import { FormattedMessage, injectIntl, intlShape } from 'react-intl';
 import { FilterForm } from '../../forms';
 import css from './FilterPlain.css';
+
 
 class FilterPlainComponent extends Component {
   constructor(props) {

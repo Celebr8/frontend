@@ -1,30 +1,20 @@
-import React, { Component } from 'react';
-import { array, bool, func, number, object, oneOf, shape, string } from 'prop-types';
-import { compose } from 'redux';
-import { FormattedMessage, injectIntl, intlShape } from 'react-intl';
 import classNames from 'classnames';
-import { withViewport } from '../../util/contextHelpers';
-import {
-  LISTING_PAGE_PARAM_TYPE_DRAFT,
-  LISTING_PAGE_PARAM_TYPE_NEW,
-  LISTING_PAGE_PARAM_TYPES,
-} from '../../util/urlHelpers';
-import { ensureListing, ensureCurrentUser } from '../../util/data';
-import { PayoutDetailsForm } from '../../forms';
+import { array, bool, func, number, object, oneOf, shape, string } from 'prop-types';
+import React, { Component } from 'react';
+import { FormattedMessage, injectIntl, intlShape } from 'react-intl';
+import { compose } from 'redux';
 import { Modal, NamedRedirect, Tabs } from '../../components';
-
-import EditListingWizardTab, {
-  AVAILABILITY,
-  DESCRIPTION,
-  FEATURES,
-  CAPACITY,
-  REGULARLY_OPEN_ON,
-  POLICY,
-  LOCATION,
-  PRICING,
-  PHOTOS,
-} from './EditListingWizardTab';
+import config from '../../config';
+import { PayoutDetailsForm } from '../../forms';
+import { withViewport } from '../../util/contextHelpers';
+import { ensureCurrentUser, ensureListing } from '../../util/data';
+import { LISTING_PAGE_PARAM_TYPES, LISTING_PAGE_PARAM_TYPE_DRAFT, LISTING_PAGE_PARAM_TYPE_NEW } from '../../util/urlHelpers';
 import css from './EditListingWizard.css';
+import EditListingWizardTab, { AVAILABILITY, CAPACITY, DESCRIPTION, FEATURES, LOCATION, PHOTOS, POLICY, PRICING, REGULARLY_OPEN_ON } from './EditListingWizardTab';
+
+
+// Show availability calendar only if environment variable availabilityEnabled is true
+const availabilityMaybe = config.enableAvailability ? [AVAILABILITY] : [];
 
 // TODO: PHOTOS panel needs to be the last one since it currently contains PayoutDetailsForm modal
 // All the other panels can be reordered.
@@ -36,6 +26,7 @@ export const TABS = [
   POLICY,
   LOCATION,
   PRICING,
+  ...availabilityMaybe,
   PHOTOS,
 ];
 

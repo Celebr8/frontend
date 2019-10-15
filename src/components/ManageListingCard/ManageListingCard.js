@@ -1,43 +1,21 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { compose } from 'redux';
-import { withRouter } from 'react-router-dom';
-import { FormattedMessage, intlShape, injectIntl } from 'react-intl';
 import classNames from 'classnames';
+import PropTypes from 'prop-types';
+import React from 'react';
+import { FormattedMessage, injectIntl, intlShape } from 'react-intl';
+import { withRouter } from 'react-router-dom';
+import { compose } from 'redux';
+import { IconSpinner, InlineTextButton, Menu, MenuContent, MenuItem, MenuLabel, NamedLink, ResponsiveImage } from '../../components';
+import config from '../../config';
 import routeConfiguration from '../../routeConfiguration';
-import {
-  LINE_ITEM_NIGHT,
-  LINE_ITEM_DAY,
-  LISTING_STATE_PENDING_APPROVAL,
-  LISTING_STATE_CLOSED,
-  LISTING_STATE_DRAFT,
-  propTypes,
-} from '../../util/types';
 import { formatMoney } from '../../util/currency';
 import { ensureOwnListing } from '../../util/data';
-import {
-  LISTING_PAGE_PENDING_APPROVAL_VARIANT,
-  LISTING_PAGE_DRAFT_VARIANT,
-  LISTING_PAGE_PARAM_TYPE_DRAFT,
-  LISTING_PAGE_PARAM_TYPE_EDIT,
-  createSlug,
-} from '../../util/urlHelpers';
 import { createResourceLocatorString } from '../../util/routes';
-import config from '../../config';
-import {
-  InlineTextButton,
-  Menu,
-  MenuLabel,
-  MenuContent,
-  MenuItem,
-  NamedLink,
-  IconSpinner,
-  ResponsiveImage,
-} from '../../components';
-
+import { LINE_ITEM_DAY, LINE_ITEM_NIGHT, LISTING_STATE_CLOSED, LISTING_STATE_DRAFT, LISTING_STATE_PENDING_APPROVAL, propTypes } from '../../util/types';
+import { createSlug, LISTING_PAGE_DRAFT_VARIANT, LISTING_PAGE_PARAM_TYPE_DRAFT, LISTING_PAGE_PARAM_TYPE_EDIT, LISTING_PAGE_PENDING_APPROVAL_VARIANT } from '../../util/urlHelpers';
+import css from './ManageListingCard.css';
 import MenuIcon from './MenuIcon';
 import Overlay from './Overlay';
-import css from './ManageListingCard.css';
+
 
 // Menu content needs the same padding
 const MENU_CONTENT_OFFSET = -12;
