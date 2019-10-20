@@ -15,7 +15,7 @@ import {
   ResponsiveImage,
 } from '../../components';
 import config from '../../config';
-import { createStripePaymentToken } from '../../ducks/stripe.duck.js';
+import { createStripePaymentToken, clearStripePaymentToken } from '../../ducks/stripe.duck.js';
 import { isScrollingDisabled } from '../../ducks/UI.duck';
 import { StripePaymentForm } from '../../forms';
 import routeConfiguration from '../../routeConfiguration';
@@ -25,6 +25,7 @@ import { dateFromLocalToAPI } from '../../util/dates';
 import {
   isTransactionInitiateAmountTooLowError,
   isTransactionInitiateBookingTimeNotAvailableError,
+  isTransactionChargeDisabledError,
   isTransactionInitiateListingNotFoundError,
   isTransactionInitiateMissingStripeAccountError,
   isTransactionZeroPaymentError,
@@ -157,6 +158,7 @@ export class CheckoutPageComponent extends Component {
       sendOrderRequest,
       sendOrderRequestAfterEnquiry,
       speculatedTransaction,
+      onClearStripePaymentToken,
       dispatch,
     } = this.props;
 
@@ -200,6 +202,7 @@ export class CheckoutPageComponent extends Component {
         const orderDetailsPath = pathByRouteName('OrderDetailsPage', routes, {
           id: orderId.uuid,
         });
+        onClearStripePaymentToken();
         clearData(STORAGE_KEY);
         history.push(orderDetailsPath);
       })
@@ -315,6 +318,7 @@ export class CheckoutPageComponent extends Component {
     );
 
     const isAmountTooLowError = isTransactionInitiateAmountTooLowError(initiateOrderError);
+    const isChargeDisabledError = isTransactionChargeDisabledError(initiateOrderError);
     const isBookingTimeNotAvailableError = isTransactionInitiateBookingTimeNotAvailableError(
       initiateOrderError
     );
@@ -332,6 +336,12 @@ export class CheckoutPageComponent extends Component {
       initiateOrderErrorMessage = (
         <p className={css.orderError}>
           <FormattedMessage id="CheckoutPage.bookingTimeNotAvailableMessage" />
+        </p>
+      );
+    } else if (!listingNotFound && isChargeDisabledError) {
+      initiateOrderErrorMessage = (
+        <p className={css.orderError}>
+          <FormattedMessage id="CheckoutPage.chargeDisabledMessage" />
         </p>
       );
     } else if (!listingNotFound && stripeErrors && stripeErrors.length > 0) {
@@ -607,6 +617,7 @@ const mapDispatchToProps = dispatch => ({
     dispatch(initiateOrderAfterEnquiry(transactionId, params)),
   fetchSpeculatedTransaction: params => dispatch(speculateTransaction(params)),
   onCreateStripePaymentToken: params => dispatch(createStripePaymentToken(params)),
+  onClearStripePaymentToken: () => dispatch(clearStripePaymentToken()),
 });
 
 const CheckoutPage = compose(

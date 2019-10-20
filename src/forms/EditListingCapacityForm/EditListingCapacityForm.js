@@ -100,7 +100,7 @@ export const EditListingCapacityFormComponent = props => (
           <CapacitySlider
                 aria-label="Capacity slider"
                 defaultValue={initalSliderValue}
-                valueLabelDisplay="auto"
+                // valueLabelDisplay="auto"
                 name={name}
                 step={10}
                 min={10}

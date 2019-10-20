@@ -359,6 +359,7 @@ class FAQPagePanelsBase extends React.Component {
               <a
                 href="mailto:support@celebr8.co?subject=How do I list my pub inquiry"
                 target="_blank"
+                rel="noopener noreferrer"
               >
                 support@celebr8.co
               </a>
@@ -444,7 +445,7 @@ class FAQPagePanelsBase extends React.Component {
           <ExpansionPanelDetails>
             <Typography>
               We currently don't charge anything to list your pub on Celebr8. It's completely free.{' '}
-              <NamedLink name="NewListingPage" target="_blank">
+              <NamedLink name="NewListingPage" target="_blank" rel="noopener noreferrer">
                 List your pub now
               </NamedLink>
             </Typography>
@@ -486,18 +487,18 @@ class FAQPagePanelsBase extends React.Component {
               If at any time you feel that Celebr8's pricing is not worth the nominal fee to
               support the site, community, and offer the level of service and commitment that we do,
               please contact us <NamedLink name="ContactUsPage">here</NamedLink> or email us at{' '}
-              <a href="mailto:support@celebr8.co" target="_blank">
+              <a href="mailto:support@celebr8.co" target="_blank" rel="noopener noreferrer">
                 support@celebr8.co
               </a>
               . We will cancel your account for you if needed. We would also love to hear your
               feedback (good and bad at{' '}
-              <a href="mailto:feedback@celebr8.co" target="_blank">
+              <a href="mailto:feedback@celebr8.co" target="_blank" rel="noopener noreferrer">
                 feedback@celebr8.co
               </a>
               ), learn more about your pub's needs, and find the best way that Celebr8 can help
               you.
               </p>
-              <NamedLink name="FeesPage" target="_blank">
+              <NamedLink name="FeesPage" target="_blank" rel="noopener noreferrer">
                 Learn more about our fees.
               </NamedLink>
             </Typography>
@@ -1229,7 +1230,7 @@ class FAQPagePanelsBase extends React.Component {
                 While we do everything that we can to build the most trusted community of pubs to
                 book, we rely on the community of users to help us by being proactive and always
                 report any suspicious activity on our platform. We also have{' '}
-                <NamedLink name="CommunityGuidelinesPage" target="_blank">
+                <NamedLink name="CommunityGuidelinesPage" target="_blank" rel="noopener noreferrer">
                   Community Guidelines
                 </NamedLink>{' '}
                 in that outlines this in more detail.
@@ -1422,7 +1423,7 @@ class FAQPagePanelsBase extends React.Component {
             <Typography>
               Please report any suspicious activity or users immediately by sending us an email at{' '}
               <a href="mailto:support@celebr8.co?subject=User acting against Celebr8 policies"
-                target="_blank">
+                target="_blank" rel="noopener noreferrer">
                 support@celebr8.co
               </a>
               .

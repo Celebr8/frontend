@@ -39,7 +39,7 @@ const EditListingCapacityPanel = props => {
     <FormattedMessage id="EditListingCapacityPanel.createListingTitle" />
   );
 
-  const groupSize = publicData && publicData.groupSize;
+  // const groupSize = publicData && publicData.groupSize;
 
   let sliderValue = [30, 80] && publicData.groupSize;
   const getDataFromSlider = (dataFromChild) => {

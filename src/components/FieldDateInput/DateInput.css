@@ -26,6 +26,7 @@
   & :global(.SingleDatePicker) {
     display: block;
   }
+
   & :global(.SingleDatePicker_picker__directionLeft) {
     /* !important is added to top because react-dates uses inline style for height */
     /* Similar problem as in issue: https://github.com/airbnb/react-dates/issues/947 */
@@ -59,6 +60,7 @@
       border-bottom-width: 3px;
     }
   }
+
   & :global(.SingleDatePickerInput) {
     width: 100%;
     display: flex;
@@ -66,6 +68,7 @@
     border: none;
     background: none;
   }
+
   & :global(.DayPicker__horizontal) {
     margin: 0 auto;
     background-color: var(--marketplaceColor);
@@ -102,10 +105,12 @@
   & :global(.CalendarMonthGrid) {
     background-color: transparent;
   }
+
   & :global(.DateInput) {
     display: block;
     width: 100%;
   }
+
   & :global(.DayPicker_weekHeader) {
     color: var(--matterColorLight);
     top: 57px;
@@ -134,12 +139,14 @@
     width: 100%;
     height: 100%;
   }
+
   & :global(.CalendarDay) {
     @apply --marketplaceH4FontStyles;
     color: var(--matterColorLight);
     border: 0;
     margin-top: 0;
     margin-bottom: 0;
+    padding: 0 !important;
 
     @media (--viewportMedium) {
       margin-top: 0;
@@ -164,6 +171,7 @@
     background-image: transparent;
     background-color: transparent;
   }
+
   & :global(.CalendarDay__hovered_span .renderedDay) {
     display: flex;
     justify-content: center;
@@ -172,6 +180,7 @@
     height: var(--DateInput_selectionHeight);
     background-color: var(--DateInput_hoveredOverlayColor);
   }
+
   & :global(.CalendarDay__selected_span .renderedDay) {
     display: flex;
     justify-content: center;
@@ -181,11 +190,13 @@
     background-color: var(--successColor);
     transition: all 0.2s ease-out;
   }
+
   /* Remove default bg-color and use our extra span instead '.renderedDay' */
   & :global(.CalendarDay__selected) {
     background-color: transparent;
     background-image: none;
   }
+
   & :global(.CalendarDay__selected .renderedDay) {
     display: flex;
     justify-content: center;
@@ -195,10 +206,12 @@
     background-color: var(--successColor);
     border-radius: calc(var(--DateInput_selectionHeight) / 2);
   }
+
   /* Remove default bg-color and use our extra span instead '.renderedDay' */
   & :global(.CalendarDay__after-hovered) {
     background-color: transparent;
   }
+
   & :global(.CalendarDay__after-hovered .renderedDay) {
     display: flex;
     justify-content: center;
@@ -207,6 +220,7 @@
     height: var(--DateInput_selectionHeight);
     background-color: var(--DateInput_hoveredOverlayColor);
   }
+
   & :global(.CalendarDay:hover .renderedDay) {
     display: flex;
     justify-content: center;
@@ -215,6 +229,7 @@
     height: var(--DateInput_selectionHeight);
     background-color: var(--DateInput_hoveredOverlayColor);
   }
+
   /* Remove default bg-color and use our extra span instead '.renderedDay' */
   & :global(.CalendarDay__blocked_out_of_range),
   & :global(.CalendarDay__blocked_out_of_range:active),
@@ -223,6 +238,7 @@
     color: var(--marketplaceColorDark);
     border: 0;
   }
+
   /* Remove default bg-color and use our extra span instead '.renderedDay' */
   & :global(.CalendarDay__blocked_calendar),
   & :global(.CalendarDay__blocked_calendar:active),
@@ -231,12 +247,15 @@
     color: var(--marketplaceColorDark);
     border: 0;
   }
+
   & :global(.CalendarDay__blocked_out_of_range .CalendarDay__blocked_calendar .renderedDay) {
     background-color: transparent;
   }
+
   & :global(.DateInput_fang) {
     display: none;
   }
+
   & :global(.CalendarMonth_caption) {
     text-transform: capitalize;
   }
@@ -284,4 +303,8 @@
 .rootPreviousMonthIcon {
   stroke: var(--matterColorLight);
   fill: var(--matterColorLight);
+}
+
+table {
+  margin-top: 8px !important;
 }

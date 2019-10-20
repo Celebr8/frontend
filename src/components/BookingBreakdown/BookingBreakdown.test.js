@@ -1,13 +1,9 @@
-import React from 'react';
 import Decimal from 'decimal.js';
-import { fakeIntl, createBooking } from '../../util/test-data';
-import { renderDeep } from '../../util/test-helpers';
+import React from 'react';
 import { types as sdkTypes } from '../../util/sdkLoader';
-import {
-  TRANSITION_CANCEL,
-  TRANSITION_REQUEST,
-  TX_TRANSITION_ACTOR_CUSTOMER,
-} from '../../util/transaction';
+import { createBooking, fakeIntl } from '../../util/test-data';
+import { renderDeep } from '../../util/test-helpers';
+import { TRANSITION_CANCEL, TRANSITION_REQUEST, TX_TRANSITION_ACTOR_CUSTOMER } from '../../util/transaction';
 import { LINE_ITEM_NIGHT } from '../../util/types';
 import { BookingBreakdownComponent } from './BookingBreakdown';
 
@@ -159,7 +155,7 @@ describe('BookingBreakdown', () => {
             {
               code: 'line-item/provider-commission',
               includeFor: ['provider'],
-              percentage: new Decimal(-10),
+              percentage: new Decimal(1),
               lineTotal: new Money(-200, 'USD'),
               unitPrice: new Money(2000, 'USD'),
               reversal: false,
@@ -167,7 +163,7 @@ describe('BookingBreakdown', () => {
             {
               code: 'line-item/provider-commission',
               includeFor: ['provider'],
-              percentage: new Decimal(10),
+              percentage: new Decimal(-1),
               lineTotal: new Money(200, 'USD'),
               unitPrice: new Money(2000, 'USD'),
               reversal: true,
