@@ -6,7 +6,7 @@ import classNames from 'classnames';
 import { oneOf, string } from 'prop-types';
 import React from 'react';
 import { injectIntl, intlShape } from 'react-intl';
-import { LINE_ITEM_CUSTOMER_COMMISSION, LINE_ITEM_PROVIDER_COMMISSION, propTypes } from '../../util/types';
+import { propTypes } from '../../util/types';
 import css from './BookingBreakdown.css';
 import LineItemBookingPeriod from './LineItemBookingPeriod';
 import { default as LineItemCustomerCommissionMaybe, default as LineItemCustomerCommissionRefundMaybe } from './LineItemCustomerCommissionRefundMaybe';
@@ -27,12 +27,6 @@ export const BookingBreakdownComponent = props => {
 
   const isCustomer = userRole === 'customer';
   const isProvider = userRole === 'provider';
-
-  const hasCommissionLineItem = transaction.attributes.lineItems.find(item => {
-    const hasCustomerCommission = isCustomer && item.code === LINE_ITEM_CUSTOMER_COMMISSION;
-    const hasProviderCommission = isProvider && item.code === LINE_ITEM_PROVIDER_COMMISSION;
-    return (hasCustomerCommission || hasProviderCommission) && !item.reversal;
-  });
 
   const classes = classNames(rootClassName || css.root, className);
 
