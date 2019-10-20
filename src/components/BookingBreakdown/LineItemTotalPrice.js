@@ -1,11 +1,11 @@
-import React from 'react';
 import { bool } from 'prop-types';
+import React from 'react';
 import { FormattedMessage, intlShape } from 'react-intl';
 import { formatMoney } from '../../util/currency';
-import { txIsCanceled, txIsDelivered, txIsDeclined } from '../../util/transaction';
+import { txIsCanceled, txIsDeclined, txIsDelivered } from '../../util/transaction';
 import { propTypes } from '../../util/types';
-
 import css from './BookingBreakdown.css';
+
 
 const LineItemUnitPrice = props => {
   const { transaction, isProvider, intl } = props;

@@ -2,30 +2,28 @@
  * This component will show the booking info and calculated total price.
  * I.e. dates and other details related to payment decision in receipt format.
  */
-import React from 'react';
-import { oneOf, string } from 'prop-types';
-import { FormattedMessage, intlShape, injectIntl } from 'react-intl';
 import classNames from 'classnames';
-import {
-  propTypes,
-  LINE_ITEM_CUSTOMER_COMMISSION,
-  LINE_ITEM_PROVIDER_COMMISSION,
-} from '../../util/types';
-
-import LineItemUnitPriceMaybe from './LineItemUnitPriceMaybe';
+import { oneOf, string } from 'prop-types';
+import React from 'react';
+import { injectIntl, intlShape } from 'react-intl';
+import { LINE_ITEM_CUSTOMER_COMMISSION, LINE_ITEM_PROVIDER_COMMISSION, propTypes } from '../../util/types';
+import css from './BookingBreakdown.css';
 import LineItemBookingPeriod from './LineItemBookingPeriod';
-import LineItemUnitsMaybe from './LineItemUnitsMaybe';
-import LineItemSubTotalMaybe from './LineItemSubTotalMaybe';
-import LineItemCustomerCommissionRefundMaybe from './LineItemCustomerCommissionRefundMaybe';
+import { default as LineItemCustomerCommissionMaybe, default as LineItemCustomerCommissionRefundMaybe } from './LineItemCustomerCommissionRefundMaybe';
 import LineItemRefundMaybe from './LineItemRefundMaybe';
-import LineItemCustomerCommissionMaybe from './LineItemCustomerCommissionRefundMaybe';
+import LineItemSubTotalMaybe from './LineItemSubTotalMaybe';
 import LineItemTotalPrice from './LineItemTotalPrice';
+import LineItemUnitPriceMaybe from './LineItemUnitPriceMaybe';
+import LineItemUnitsMaybe from './LineItemUnitsMaybe';
 import LineItemUnknownItemsMaybe from './LineItemUnknownItemsMaybe';
 
-import css from './BookingBreakdown.css';
+
 
 export const BookingBreakdownComponent = props => {
   const { rootClassName, className, userRole, unitType, transaction, booking, intl } = props;
+
+  console.log(transaction);
+  
 
   const isCustomer = userRole === 'customer';
   const isProvider = userRole === 'provider';
@@ -67,11 +65,6 @@ export const BookingBreakdownComponent = props => {
 
       <hr className={css.totalDivider} />
       <LineItemTotalPrice transaction={transaction} isProvider={isProvider} intl={intl} />
-      {hasCommissionLineItem ? (
-        <span className={css.feeInfo}>
-          <FormattedMessage id="BookingBreakdown.commissionFeeNote" />
-        </span>
-      ) : null}
     </div>
   );
 };

@@ -25,19 +25,19 @@
  * currently the API doesn't support that for logged out users, and we
  * are forced to estimate the information here.
  */
-import React from 'react';
-import moment from 'moment';
 import Decimal from 'decimal.js';
+import moment from 'moment';
+import React from 'react';
+import { BookingBreakdown } from '../../components';
+import { convertMoneyToNumber, convertUnitToSubUnit, unitDivisor } from '../../util/currency';
+import { dateFromLocalToAPI, daysBetween, nightsBetween } from '../../util/dates';
 import { types as sdkTypes } from '../../util/sdkLoader';
-import { dateFromLocalToAPI, nightsBetween, daysBetween } from '../../util/dates';
-
 import { TRANSITION_REQUEST, TX_TRANSITION_ACTOR_CUSTOMER } from '../../util/transaction';
 import { LINE_ITEM_DAY, LINE_ITEM_NIGHT, LINE_ITEM_UNITS } from '../../util/types';
-
-import { unitDivisor, convertMoneyToNumber, convertUnitToSubUnit } from '../../util/currency';
-import { BookingBreakdown } from '../../components';
-
 import css from './BookingDatesForm.css';
+
+
+
 
 const { Money, UUID } = sdkTypes;
 
@@ -99,7 +99,7 @@ const estimatedTransaction = (unitType, bookingStart, bookingEnd, unitPrice, qua
       .toDate()
   );
 
-  const customerCommission = estimatedCustomerCommission(totalPrice, 10);
+  const customerCommission = estimatedCustomerCommission(totalPrice, 10);  
 
   return {
     id: new UUID('estimated-transaction'),
@@ -114,8 +114,8 @@ const estimatedTransaction = (unitType, bookingStart, bookingEnd, unitPrice, qua
         {
           code: unitType,
           includeFor: ['customer', 'provider'],
-          unitPrice: unitPrice,
           quantity: new Decimal(unitCount),
+          unitPrice: unitPrice,
           lineTotal: totalPrice,
           reversal: false,
         },
