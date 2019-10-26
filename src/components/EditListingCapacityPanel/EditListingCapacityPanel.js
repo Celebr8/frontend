@@ -37,27 +37,21 @@ const EditListingCapacityPanel = props => {
     <FormattedMessage id="EditListingCapacityPanel.createListingTitle" />
   );
 
-  // const groupSize = publicData && publicData.groupSize;
-
-  let sliderValue = [30, 80] && publicData.groupSize;
-  const getDataFromSlider = dataFromChild => {
-    sliderValue = dataFromChild;
-  };
+  const groupSize = publicData && publicData.groupSize;
+  const initialValues = { groupSize };
 
   return (
     <div className={classes}>
       <h1 className={css.title}>{panelTitle}</h1>
-      <p style={{ marginTop: -10, marginBottom: 80 }}>
-        <FormattedMessage id="EditListingCapacityPanel.info" />
-      </p>
-
       <EditListingCapacityForm
         className={css.form}
         name={GROUPSIZE_NAME}
-        initalSliderValue={sliderValue}
+        initialValues={initialValues}
         onSubmit={values => {
+          const { groupSize = [] } = values;
+
           const updatedValues = {
-            publicData: { groupSize: sliderValue },
+            publicData: { groupSize },
           };
           onSubmit(updatedValues);
         }}
@@ -66,7 +60,6 @@ const EditListingCapacityPanel = props => {
         updated={panelUpdated}
         updateInProgress={updateInProgress}
         fetchErrors={errors}
-        action={getDataFromSlider}
       />
     </div>
   );
