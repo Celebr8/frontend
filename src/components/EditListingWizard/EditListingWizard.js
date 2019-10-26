@@ -8,10 +8,23 @@ import config from '../../config';
 import { PayoutDetailsForm } from '../../forms';
 import { withViewport } from '../../util/contextHelpers';
 import { ensureCurrentUser, ensureListing } from '../../util/data';
-import { LISTING_PAGE_PARAM_TYPES, LISTING_PAGE_PARAM_TYPE_DRAFT, LISTING_PAGE_PARAM_TYPE_NEW } from '../../util/urlHelpers';
+import {
+  LISTING_PAGE_PARAM_TYPES,
+  LISTING_PAGE_PARAM_TYPE_DRAFT,
+  LISTING_PAGE_PARAM_TYPE_NEW,
+} from '../../util/urlHelpers';
 import css from './EditListingWizard.css';
-import EditListingWizardTab, { AVAILABILITY, CAPACITY, DESCRIPTION, FEATURES, LOCATION, PHOTOS, POLICY, PRICING, REGULARLY_OPEN_ON } from './EditListingWizardTab';
-
+import EditListingWizardTab, {
+  AVAILABILITY,
+  CAPACITY,
+  DESCRIPTION,
+  FEATURES,
+  LOCATION,
+  PHOTOS,
+  POLICY,
+  PRICING,
+  REGULARLY_OPEN_ON,
+} from './EditListingWizardTab';
 
 // Show availability calendar only if environment variable availabilityEnabled is true
 const availabilityMaybe = config.enableAvailability ? [AVAILABILITY] : [];

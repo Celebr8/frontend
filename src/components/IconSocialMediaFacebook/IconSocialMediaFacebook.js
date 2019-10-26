@@ -10,8 +10,8 @@ const IconSocialMediaFacebook = props => {
   return (
     <svg
       className={classes}
-      width={ width || 10 }
-      height={ height || 17 }
+      width={width || 10}
+      height={height || 17}
       viewBox="0 0 10 17"
       xmlns="http://www.w3.org/2000/svg"
     >

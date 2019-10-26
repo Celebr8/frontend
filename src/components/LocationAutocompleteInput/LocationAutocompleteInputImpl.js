@@ -11,8 +11,6 @@ import IconCurrentLocation from './IconCurrentLocation';
 import IconHourGlass from './IconHourGlass';
 import css from './LocationAutocompleteInput.css';
 
-
-
 // A list of default predictions that can be shown when the user
 // focuses on the autocomplete input without typing a search. This can
 // be used to reduce typing and Geocoding API calls for common

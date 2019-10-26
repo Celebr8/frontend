@@ -148,7 +148,7 @@ const resolveTransitionMessage = (
     case TRANSITION_COMPLETE:
       // Show the leave a review link if the state is delivered and if the current user is the first to leave a review
       const reviewPeriodJustStarted = txIsDelivered(transaction);
-      
+
       const reviewAsFirstLink = reviewPeriodJustStarted ? (
         <InlineTextButton onClick={onOpenReviewModal}>
           <FormattedMessage id="ActivityFeed.leaveAReview" values={{ displayName }} />

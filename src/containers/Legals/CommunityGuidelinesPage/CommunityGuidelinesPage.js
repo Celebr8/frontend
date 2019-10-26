@@ -53,8 +53,7 @@ const CommunityGuidelinesPageComponent = props => {
               suspend or terminate an Account for ongoing or serious violations. Fraudulent or
               illegal activity may also be subject to legal action taken. We reserve the right to
               also edit or remove content on our site that violates these Community Guidelines or if
-              we believe it adversely affects the integrity of the Celebr8 marketplace or its
-              users.
+              we believe it adversely affects the integrity of the Celebr8 marketplace or its users.
             </p>
 
             <p>
@@ -69,11 +68,11 @@ const CommunityGuidelinesPageComponent = props => {
             <h3>1. Comply with local laws, local zoning ordinances, and tax laws at all times.</h3>
 
             <p>
-              Celebr8 is not liable for ensuring compliance and it is the responsibility of pubs
-              and each listing owner to ensure all local laws, zoning ordinance, and also tax
-              compliance is met. You must also legally report income generated from Celebr8 to your
-              business and it is your responsibility to do so. If you are responsible for charging
-              local taxes on services, you must also comply with these regulations.{' '}
+              Celebr8 is not liable for ensuring compliance and it is the responsibility of pubs and
+              each listing owner to ensure all local laws, zoning ordinance, and also tax compliance
+              is met. You must also legally report income generated from Celebr8 to your business
+              and it is your responsibility to do so. If you are responsible for charging local
+              taxes on services, you must also comply with these regulations.{' '}
             </p>
 
             <h3>2. Accurate representation of the pubs, pricing, and services of each pub.</h3>
@@ -98,8 +97,8 @@ const CommunityGuidelinesPageComponent = props => {
             <h3>4. Include booking payments as credit towards the bill of the parties.</h3>
             <p>
               Most pubs already do this and Celebr8 will continue that tradition. All booking
-              payments must be used as credit towards the bill of the parties, and Celebr8
-              customers will except that.{' '}
+              payments must be used as credit towards the bill of the parties, and Celebr8 customers
+              will except that.{' '}
             </p>
 
             <h2>CUSTOMERS MUST:</h2>

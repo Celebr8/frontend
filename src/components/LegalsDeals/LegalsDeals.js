@@ -3,8 +3,6 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import css from './LegalsDeals.css';
 
-
-
 const LegalsDeals = props => {
   const { rootClassName, className } = props;
   const classes = classNames(rootClassName || css.root, className);

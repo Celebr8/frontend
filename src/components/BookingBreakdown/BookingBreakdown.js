@@ -9,15 +9,16 @@ import { injectIntl, intlShape } from 'react-intl';
 import { propTypes } from '../../util/types';
 import css from './BookingBreakdown.css';
 import LineItemBookingPeriod from './LineItemBookingPeriod';
-import { default as LineItemCustomerCommissionMaybe, default as LineItemCustomerCommissionRefundMaybe } from './LineItemCustomerCommissionRefundMaybe';
+import {
+  default as LineItemCustomerCommissionMaybe,
+  default as LineItemCustomerCommissionRefundMaybe,
+} from './LineItemCustomerCommissionRefundMaybe';
 import LineItemRefundMaybe from './LineItemRefundMaybe';
 import LineItemSubTotalMaybe from './LineItemSubTotalMaybe';
 import LineItemTotalPrice from './LineItemTotalPrice';
 import LineItemUnitPriceMaybe from './LineItemUnitPriceMaybe';
 import LineItemUnitsMaybe from './LineItemUnitsMaybe';
 import LineItemUnknownItemsMaybe from './LineItemUnknownItemsMaybe';
-
-
 
 export const BookingBreakdownComponent = props => {
   const { rootClassName, className, userRole, unitType, transaction, booking, intl } = props;

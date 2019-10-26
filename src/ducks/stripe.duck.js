@@ -24,7 +24,6 @@ export const CREATE_PAYMENT_TOKEN_ERROR = 'app/stripe/CREATE_PAYMENT_TOKEN_ERROR
 
 export const CLEAR_PAYMENT_TOKEN = 'app/stripe/CLEAR_PAYMENT_TOKEN';
 
-
 // ================ Reducer ================ //
 
 const initialState = {
@@ -103,7 +102,7 @@ export default function reducer(state = initialState, action = {}) {
             : p;
         }),
       };
-/*
+    /*
     case CREATE_PAYMENT_TOKEN_REQUEST:
       return {
         ...state,
@@ -116,20 +115,20 @@ export default function reducer(state = initialState, action = {}) {
       console.error(payload);
       return { ...state, stripePaymentTokenError: payload, stripePaymentTokenInProgress: false };
 */
-// v2.17.0 Update
-case CREATE_PAYMENT_TOKEN_REQUEST:
-  return {
-    ...state,
-    stripePaymentTokenError: null,
-    stripePaymentTokenInProgress: true,
-  };
-case CREATE_PAYMENT_TOKEN_SUCCESS:
-  return { ...state, stripePaymentTokenInProgress: false, stripePaymentToken: payload };
-case CREATE_PAYMENT_TOKEN_ERROR:
-  console.error(payload);
-  return { ...state, stripePaymentTokenError: payload, stripePaymentTokenInProgress: false };
-case CLEAR_PAYMENT_TOKEN:
-  return { ...state, stripePaymentToken: null };
+    // v2.17.0 Update
+    case CREATE_PAYMENT_TOKEN_REQUEST:
+      return {
+        ...state,
+        stripePaymentTokenError: null,
+        stripePaymentTokenInProgress: true,
+      };
+    case CREATE_PAYMENT_TOKEN_SUCCESS:
+      return { ...state, stripePaymentTokenInProgress: false, stripePaymentToken: payload };
+    case CREATE_PAYMENT_TOKEN_ERROR:
+      console.error(payload);
+      return { ...state, stripePaymentTokenError: payload, stripePaymentTokenInProgress: false };
+    case CLEAR_PAYMENT_TOKEN:
+      return { ...state, stripePaymentToken: null };
 
     default:
       return state;

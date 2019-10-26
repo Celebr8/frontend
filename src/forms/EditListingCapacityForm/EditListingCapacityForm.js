@@ -11,51 +11,51 @@ import { propTypes } from '../../util/types';
 import css from './EditListingCapacityForm.css';
 
 const CapacitySlider = withStyles({
-    root: {
-      height: 3,
-      padding: '13px 0',
-      color: '#EC5027'
+  root: {
+    height: 3,
+    padding: '13px 0',
+    color: '#EC5027',
+  },
+  thumb: {
+    height: 24,
+    width: 24,
+    backgroundColor: '#fff',
+    border: '2px solid #EC5027',
+    marginTop: -8,
+    marginLeft: -12,
+    '& .bar': {
+      height: 9,
+      width: 1,
+      backgroundColor: '#EC5027',
+      marginLeft: 1,
+      marginRight: 1,
     },
-    thumb: {
-      height: 24,
-      width: 24,
-      backgroundColor: '#fff',
-      border: '2px solid #EC5027',
-      marginTop: -8,
-      marginLeft: -12,
-      '& .bar': {
-        height: 9,
-        width: 1,
-        backgroundColor: '#EC5027',
-        marginLeft: 1,
-        marginRight: 1,
-      },
-      '&:focus,&:hover,&$active': {
-        boxShadow: 'none'
-      }
+    '&:focus,&:hover,&$active': {
+      boxShadow: 'none',
     },
-    active: {
-      color: '#EC5027'
-    },
-    valueLabel: {
-      left: 'calc(-50% + 4px)',
-    },
-    track: {
-      height: 8,
-      borderRadius: 4,
-      color: '#EC5027'
-    },
-    rail: {
-      color: '#ccc',
-      height: 8,
-      borderRadius: 4,
-    },
-  })//(Slider);
+  },
+  active: {
+    color: '#EC5027',
+  },
+  valueLabel: {
+    left: 'calc(-50% + 4px)',
+  },
+  track: {
+    height: 8,
+    borderRadius: 4,
+    color: '#EC5027',
+  },
+  rail: {
+    color: '#ccc',
+    height: 8,
+    borderRadius: 4,
+  },
+}); //(Slider);
 
 export const EditListingCapacityFormComponent = props => (
   <FinalForm
     {...props}
-    render= {fieldRenderProps => {
+    render={fieldRenderProps => {
       const {
         className,
         disabled,
@@ -68,7 +68,7 @@ export const EditListingCapacityFormComponent = props => (
         updateInProgress,
         fetchErrors,
         initalSliderValue,
-        action
+        action,
       } = fieldRenderProps;
 
       const { updateListingError, showListingsError } = fetchErrors || {};
@@ -87,8 +87,8 @@ export const EditListingCapacityFormComponent = props => (
       const submitReady = updated && pristine;
       const submitInProgress = updateInProgress;
       const submitDisabled = invalid || disabled || submitInProgress;
-      
-      const handleChange = (event, newValue) =>{
+
+      const handleChange = (event, newValue) => {
         action(newValue);
       };
 
@@ -98,16 +98,16 @@ export const EditListingCapacityFormComponent = props => (
           {errorMessageShowListing}
 
           <CapacitySlider
-                aria-label="Capacity slider"
-                defaultValue={initalSliderValue}
-                // valueLabelDisplay="auto"
-                name={name}
-                step={10}
-                min={10}
-                max={250}
-                valueLabelDisplay="on"
-                onChange={handleChange}
-            />
+            aria-label="Capacity slider"
+            defaultValue={initalSliderValue}
+            // valueLabelDisplay="auto"
+            name={name}
+            step={10}
+            min={10}
+            max={250}
+            valueLabelDisplay="on"
+            onChange={handleChange}
+          />
 
           <Button
             className={css.submitButton}

@@ -8,7 +8,10 @@ import { storableError } from '../../util/errors';
 import externalReviews from '../../util/externalReviews';
 import { types as sdkTypes } from '../../util/sdkLoader';
 import { TRANSITION_ENQUIRE } from '../../util/transaction';
-import { LISTING_PAGE_DRAFT_VARIANT, LISTING_PAGE_PENDING_APPROVAL_VARIANT } from '../../util/urlHelpers';
+import {
+  LISTING_PAGE_DRAFT_VARIANT,
+  LISTING_PAGE_PENDING_APPROVAL_VARIANT,
+} from '../../util/urlHelpers';
 const { UUID } = sdkTypes;
 
 // ================ Action types ================ //

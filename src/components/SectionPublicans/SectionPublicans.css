@@ -39,7 +39,7 @@
 .secondaryButton {
   @apply --marketplaceButtonStyles;
   margin-top: 20px;
-  background-color: #4A4A4A;
+  background-color: #4a4a4a;
 
   @media (--viewportMedium) {
     display: block;

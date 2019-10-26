@@ -27,8 +27,7 @@ const callLoadData = props => {
 
   if (shouldLoadData) {
     dispatch(loadData(match.params, location.search))
-      .then(() => {
-      })
+      .then(() => {})
       .catch(e => {
         log.error(e, 'load-data-failed', { routeName: name });
       });

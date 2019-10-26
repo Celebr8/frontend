@@ -45,7 +45,6 @@
   }
 }
 
-
 /* A wrapper for a responsive image that holds it's aspect ratio */
 .imageWrapper {
   position: relative;
@@ -88,7 +87,7 @@
   color: var(--matterColor);
   margin-top: 15px;
   margin-bottom: 0;
-  text-align: center
+  text-align: center;
 }
 
 .locationName {

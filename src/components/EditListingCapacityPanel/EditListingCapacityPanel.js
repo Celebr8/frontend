@@ -8,8 +8,6 @@ import { ensureListing } from '../../util/data';
 import { LISTING_STATE_DRAFT } from '../../util/types';
 import css from './EditListingCapacityPanel.css';
 
-
-
 const GROUPSIZE_NAME = 'groupSize';
 
 const EditListingCapacityPanel = props => {
@@ -22,7 +20,7 @@ const EditListingCapacityPanel = props => {
     submitButtonText,
     panelUpdated,
     updateInProgress,
-    errors
+    errors,
   } = props;
 
   const classes = classNames(rootClassName || css.root, className);
@@ -42,22 +40,22 @@ const EditListingCapacityPanel = props => {
   // const groupSize = publicData && publicData.groupSize;
 
   let sliderValue = [30, 80] && publicData.groupSize;
-  const getDataFromSlider = (dataFromChild) => {
+  const getDataFromSlider = dataFromChild => {
     sliderValue = dataFromChild;
-  }
+  };
 
   return (
     <div className={classes}>
       <h1 className={css.title}>{panelTitle}</h1>
-      <p style={{ marginTop: -10, marginBottom: 80 }} >
+      <p style={{ marginTop: -10, marginBottom: 80 }}>
         <FormattedMessage id="EditListingCapacityPanel.info" />
       </p>
-      
+
       <EditListingCapacityForm
         className={css.form}
         name={GROUPSIZE_NAME}
         initalSliderValue={sliderValue}
-        onSubmit={ values => {
+        onSubmit={values => {
           const updatedValues = {
             publicData: { groupSize: sliderValue },
           };
