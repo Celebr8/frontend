@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 const Deals = props => {
-
   // prettier-ignore
   return (
         <section>

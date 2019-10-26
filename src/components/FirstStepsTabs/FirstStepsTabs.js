@@ -6,7 +6,6 @@ import PropTypes from 'prop-types';
 import React, { Fragment } from 'react';
 import { NamedLink } from '../';
 
-
 function TabContainer(props) {
   return (
     <Typography component="div" style={{ padding: 8 * 3 }}>
@@ -42,11 +41,7 @@ const ForUser = () => (
     </p>
     <ol>
       <li>
-        Create a profile by clicking on{' '}
-        <a href="https://www.celebr8.co/signup">
-          Sign up
-        </a>
-        ;
+        Create a profile by clicking on <a href="https://www.celebr8.co/signup">Sign up</a>;
       </li>
       <li>Enter the needed information and click on the button "Sign up";</li>
       <li>
@@ -84,10 +79,20 @@ const ForUser = () => (
       employees and colleagues now! <i>(T&Cs apply)</i>
     </p>
     <h2>Contact us. We're here to help.</h2>
-    <p>If you're ready to start saving time but you still have questions that are not covered by our <a href="https://www.celebr8.co/help/faq" target="_blank" rel="noopener noreferrer">help center</a>, we invite you to <a href="https://www.celebr8.co/help/contact-us" target="_blank" rel="noopener noreferrer">contact us</a> and we'll assist you personally.</p>
-    <br/>
-	</TabContainer>
-)
+    <p>
+      If you're ready to start saving time but you still have questions that are not covered by our{' '}
+      <a href="https://www.celebr8.co/help/faq" target="_blank" rel="noopener noreferrer">
+        help center
+      </a>
+      , we invite you to{' '}
+      <a href="https://www.celebr8.co/help/contact-us" target="_blank" rel="noopener noreferrer">
+        contact us
+      </a>{' '}
+      and we'll assist you personally.
+    </p>
+    <br />
+  </TabContainer>
+);
 
 // const ItemTwoPleaseChangeMyName = () => (
 // 	<TabContainer>
@@ -137,11 +142,7 @@ const ForProvider = () => (
     <p>
       <ol>
         <li>
-          Create a profile by clicking on{' '}
-          <a href="https://www.celebr8.co/signup">
-            Sign up
-          </a>
-          ;
+          Create a profile by clicking on <a href="https://www.celebr8.co/signup">Sign up</a>;
         </li>
         <li>Enter the needed information and click on the button "Sign up";</li>
         <li>
@@ -208,7 +209,6 @@ class FirstStepsTabs extends React.Component {
   }
 
   render() {
-
     const tabs = {
       0: <ForUser />,
       1: <ForProvider />,

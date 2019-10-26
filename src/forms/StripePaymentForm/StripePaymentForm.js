@@ -16,9 +16,6 @@ import * as log from '../../util/log';
 import { propTypes } from '../../util/types';
 import css from './StripePaymentForm.css';
 
-
-
-
 /**
  * Translate a Stripe API error object.
  *

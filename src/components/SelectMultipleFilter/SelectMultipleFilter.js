@@ -5,7 +5,6 @@ import { injectIntl, intlShape } from 'react-intl';
 import { FieldCheckbox, FilterPlain, FilterPopup } from '../../components';
 import css from './SelectMultipleFilter.css';
 
-
 // SelectMultipleFilter doesn't need array mutators since it doesn't require validation.
 // TODO: Live edit didn't work with FieldCheckboxGroup
 //       There's a mutation problem: formstate.dirty is not reliable with it.

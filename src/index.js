@@ -120,4 +120,3 @@ export default renderApp;
 // matchPathname helps to figure out which route is called and if it has preloading needs
 // configureStore is used for creating initial store state for Redux after preloading
 export { matchPathname, configureStore, routeConfiguration, config };
-

@@ -41,7 +41,7 @@
 
 .iconSvgGroup {
   /* stroke: var(--marketplaceColor); */
-  stroke: #4A4A4A;
+  stroke: #4a4a4a;
   stroke-width: 2.5px;
 
   @media (--viewportMedium) {
@@ -127,7 +127,7 @@ bottom of the container.
     padding: 9px var(--LocationAutocompleteInput_sidePadding);
 
     @media (--viewportMedium) {
-      color: #4A4A4A;
+      color: #4a4a4a;
       padding: 10px var(--LocationAutocompleteInput_sidePaddingDesktop);
       padding-left: 43px;
       margin: 0;
@@ -141,7 +141,7 @@ bottom of the container.
       padding-left: 43px;
       border-top-right-radius: 20px;
       border-bottom-right-radius: 20px;
-      color: #4A4A4A;
+      color: #4a4a4a;
     }
   }
 }

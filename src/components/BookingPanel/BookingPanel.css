@@ -211,7 +211,7 @@
   display: none;
 }
 
-@media(min-width: 1024px) {
+@media (min-width: 1024px) {
   .reviewWrap {
     margin: 40px 0 40px 0px;
     display: block;

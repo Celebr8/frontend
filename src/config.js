@@ -1,11 +1,9 @@
-import * as custom from './marketplace-custom-config.js';
-import defaultLocationSearches from './default-location-searches';
-import { stripePublishableKey, stripeSupportedCountries } from './stripe-config';
-import { currencyConfiguration } from './currency-config';
-
 import dotenv from 'dotenv';
-
+import { currencyConfiguration } from './currency-config';
+import defaultLocationSearches from './default-location-searches';
+import * as custom from './marketplace-custom-config.js';
 import packageNpmConfig from './package.alias';
+import { stripePublishableKey, stripeSupportedCountries } from './stripe-config';
 
 dotenv.config();
 
@@ -75,7 +73,7 @@ const currencyConfig = currencyConfiguration(currency);
 
 // Listing minimum price in currency sub units, e.g. cents.
 // 0 means no restriction to the price
-const listingMinimumPriceSubUnits = 900;
+const listingMinimumPriceSubUnits = 0;
 
 // Sentry DSN (Data Source Name), a client key for authenticating calls to Sentry
 const sentryDsn = process.env.REACT_APP_SENTRY_DSN;

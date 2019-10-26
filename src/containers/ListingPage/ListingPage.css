@@ -1,6 +1,7 @@
 @import '../../marketplace.css';
 
-.root {}
+.root {
+}
 
 .pageRoot {
   display: flex;
@@ -20,7 +21,8 @@
   margin: 24px;
 }
 
-.sectionImages {}
+.sectionImages {
+}
 
 .threeToTwoWrapper {
   /* Layout */
@@ -231,7 +233,6 @@
 }
 
 .bookingPanel {
-
   @media (--viewportLarge) {
     display: block;
     margin-top: 95px;

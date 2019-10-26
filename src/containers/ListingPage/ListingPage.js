@@ -6,19 +6,40 @@ import { FormattedMessage, injectIntl, intlShape } from 'react-intl';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { compose } from 'redux';
-import { BookingPanel, Footer, LayoutSingleColumn, LayoutWrapperFooter, LayoutWrapperMain, LayoutWrapperTopbar, NamedLink, NamedRedirect, Page } from '../../components';
+import {
+  BookingPanel,
+  Footer,
+  LayoutSingleColumn,
+  LayoutWrapperFooter,
+  LayoutWrapperMain,
+  LayoutWrapperTopbar,
+  NamedLink,
+  NamedRedirect,
+  Page,
+} from '../../components';
 import config from '../../config';
 import { NotFoundPage, TopbarContainer } from '../../containers';
 import { getMarketplaceEntities } from '../../ducks/marketplaceData.duck';
 import { isScrollingDisabled, manageDisableScrolling } from '../../ducks/UI.duck';
 import routeConfiguration from '../../routeConfiguration';
 import { formatMoney } from '../../util/currency';
-import { ensureListing, ensureOwnListing, ensureUser, userDisplayNameAsString } from '../../util/data';
+import {
+  ensureListing,
+  ensureOwnListing,
+  ensureUser,
+  userDisplayNameAsString,
+} from '../../util/data';
 import { richText } from '../../util/richText';
 import { createResourceLocatorString, findRouteByRouteName } from '../../util/routes';
 import { types as sdkTypes } from '../../util/sdkLoader';
 import { LISTING_STATE_CLOSED, LISTING_STATE_PENDING_APPROVAL, propTypes } from '../../util/types';
-import { createSlug, LISTING_PAGE_DRAFT_VARIANT, LISTING_PAGE_PARAM_TYPE_DRAFT, LISTING_PAGE_PARAM_TYPE_EDIT, LISTING_PAGE_PENDING_APPROVAL_VARIANT } from '../../util/urlHelpers';
+import {
+  createSlug,
+  LISTING_PAGE_DRAFT_VARIANT,
+  LISTING_PAGE_PARAM_TYPE_DRAFT,
+  LISTING_PAGE_PARAM_TYPE_EDIT,
+  LISTING_PAGE_PENDING_APPROVAL_VARIANT,
+} from '../../util/urlHelpers';
 import css from './ListingPage.css';
 import { loadData, sendEnquiry, setInitialValues } from './ListingPage.duck';
 import SectionAvatar from './SectionAvatar';

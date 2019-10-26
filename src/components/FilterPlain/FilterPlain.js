@@ -5,7 +5,6 @@ import { FormattedMessage, injectIntl, intlShape } from 'react-intl';
 import { FilterForm } from '../../forms';
 import css from './FilterPlain.css';
 
-
 class FilterPlainComponent extends Component {
   constructor(props) {
     super(props);

@@ -1,6 +1,5 @@
 @import '../../marketplace.css';
 
-
 .dealsContainer {
   display: flex;
   flex-wrap: wrap;
@@ -23,7 +22,7 @@
 
 .cardImage {
   min-height: 200px;
-  background: grey
+  background: grey;
 }
 
 .birthdayGiftCard {

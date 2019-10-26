@@ -110,8 +110,8 @@
     margin-bottom: 0;
   }
 
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 .authorInfo {
@@ -160,7 +160,7 @@
   background-color: transparent;
   transform: scale(0.7);
   transform-origin: top right;
-  white-space: nowrap;  
+  white-space: nowrap;
 }
 #reviewStars svg {
   margin-left: 4px;
@@ -173,7 +173,7 @@
   padding-right: 0;
   font-size: 18px;
   transform: translateY(2px);
-  color: #B2B2B2;
+  color: #b2b2b2;
 }
 
 .longWord {

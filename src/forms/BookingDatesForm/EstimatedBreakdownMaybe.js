@@ -36,9 +36,6 @@ import { TRANSITION_REQUEST, TX_TRANSITION_ACTOR_CUSTOMER } from '../../util/tra
 import { LINE_ITEM_DAY, LINE_ITEM_NIGHT, LINE_ITEM_UNITS } from '../../util/types';
 import css from './BookingDatesForm.css';
 
-
-
-
 const { Money, UUID } = sdkTypes;
 
 const estimatedTotalPrice = (unitPrice, unitCount) => {
@@ -99,7 +96,7 @@ const estimatedTransaction = (unitType, bookingStart, bookingEnd, unitPrice, qua
       .toDate()
   );
 
-  const customerCommission = estimatedCustomerCommission(totalPrice, 10);  
+  const customerCommission = estimatedCustomerCommission(totalPrice, 10);
 
   return {
     id: new UUID('estimated-transaction'),

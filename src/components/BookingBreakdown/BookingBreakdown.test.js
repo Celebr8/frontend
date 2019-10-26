@@ -3,7 +3,11 @@ import React from 'react';
 import { types as sdkTypes } from '../../util/sdkLoader';
 import { createBooking, fakeIntl } from '../../util/test-data';
 import { renderDeep } from '../../util/test-helpers';
-import { TRANSITION_CANCEL, TRANSITION_REQUEST, TX_TRANSITION_ACTOR_CUSTOMER } from '../../util/transaction';
+import {
+  TRANSITION_CANCEL,
+  TRANSITION_REQUEST,
+  TX_TRANSITION_ACTOR_CUSTOMER,
+} from '../../util/transaction';
 import { LINE_ITEM_NIGHT } from '../../util/types';
 import { BookingBreakdownComponent } from './BookingBreakdown';
 

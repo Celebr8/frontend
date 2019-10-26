@@ -19,7 +19,12 @@ import { parse, stringify } from '../../util/urlHelpers';
 import MainPanel from './MainPanel';
 import css from './SearchPage.css';
 import { searchListings, searchMapListings, setActiveListing } from './SearchPage.duck';
-import { createSearchResultSchema, pickSearchParamsOnly, validFilterParams, validURLParamsForExtendedData } from './SearchPage.helpers';
+import {
+  createSearchResultSchema,
+  pickSearchParamsOnly,
+  validFilterParams,
+  validURLParamsForExtendedData,
+} from './SearchPage.helpers';
 
 // Pagination page size might need to be dynamic on responsive page layouts
 // Current design has max 3 columns 12 is divisible by 2 and 3
@@ -121,8 +126,6 @@ export class SearchPageComponent extends Component {
     this.setState({ isMobileModalOpen: false });
   }
 
-  
-
   render() {
     const {
       intl,
@@ -143,7 +146,6 @@ export class SearchPageComponent extends Component {
       latlng: ['origin'],
       latlngBounds: ['bounds'],
     });
-
 
     const filters = this.filters();
 

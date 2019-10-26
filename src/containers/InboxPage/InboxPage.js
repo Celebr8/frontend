@@ -16,7 +16,7 @@ import {
 import { LINE_ITEM_DAY, LINE_ITEM_UNITS, propTypes } from '../../util/types';
 import { formatMoney } from '../../util/currency';
 import { ensureCurrentUser } from '../../util/data';
-import { dateFromAPIToLocalNoon  } from '../../util/dates';
+import { dateFromAPIToLocalNoon } from '../../util/dates';
 import { getMarketplaceEntities } from '../../ducks/marketplaceData.duck';
 import { isScrollingDisabled } from '../../ducks/UI.duck';
 import {

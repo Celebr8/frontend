@@ -6,7 +6,6 @@ import { txIsCanceled, txIsDeclined, txIsDelivered } from '../../util/transactio
 import { propTypes } from '../../util/types';
 import css from './BookingBreakdown.css';
 
-
 const LineItemUnitPrice = props => {
   const { transaction, isProvider, intl } = props;
 
