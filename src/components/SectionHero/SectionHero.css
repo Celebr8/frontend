@@ -108,11 +108,13 @@
   text-shadow: 0 1px 3px #182043;
 
   @apply --SectionHero_animation;
-  animation-delay: 0.65s;
+  animation-delay: 0.7s;
+  border-radius: 2px;
 
   @media (--viewportMedium) {
+    display: block;
     max-width: var(--SectionHero_desktopTitleMaxWidth);
-    margin: 0 0 25px 0;
+    margin: 1px 1px 25px 1px;
   }
 }
 
