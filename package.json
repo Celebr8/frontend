@@ -33,7 +33,7 @@
     "lodash": "^4.17.15",
     "mailgun.js": "^2.0.1",
     "mapbox-gl-multitouch": "^1.0.3",
-    "moment": "^2.22.2",
+    "moment": "^2.29.2",
     "object.entries": "^1.0.4",
     "object.values": "^1.0.4",
     "path-to-regexp": "^2.4.0",
